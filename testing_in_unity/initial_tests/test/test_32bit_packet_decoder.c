@@ -5,7 +5,7 @@
 void test_CRC_should_ReturnValidOutput(void) 
 {
     char input[] = {"1234abcd"};
-    TEST_ASSERT_EQUAL_HEX32(0x1, _32bit_packet_decoder(input));
+    TEST_ASSERT_EQUAL_HEX32(0x3, _32bit_packet_decoder(input));
 }
 
 int main(void) 
