@@ -2,6 +2,12 @@
 
 int main(void)
 {
+    int i;
+    char ch;
+    
+    for(i = 0, ch = 'A'; i < 4; i++, ch += 2 * i)
+        printf("%c\n", ch);
+    /*
     char ch;
     printf("Enter char -> ");
     scanf("%c", &ch);
@@ -21,5 +27,6 @@ int main(void)
     laststep: printf("Step 3\n");
     }
     printf("Done\n");
+    */
     return 0;
 }
