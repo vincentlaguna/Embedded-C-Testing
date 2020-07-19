@@ -1,54 +1,69 @@
-ifeq ($(OSTYPE), cygwin)
+#We try to detect the OS we are running on, and adjust commands as needed
+ifeq ($(OSTYPE),cygwin)
 	CLEANUP = rm -f
-	MKDIR = -p
-	TARGET_EXTENSION = .out
-else ifeq ($(OS), Windows_NT
+	MKDIR = mkdir -p
+	TARGET_EXTENSION=.out
+else ifeq ($(OS),Windows_NT)
 	CLEANUP = del /F /Q
 	MKDIR = mkdir
-	TARGET_EXTENSION = .exe
+	TARGET_EXTENSION=.exe
 else
 	CLEANUP = rm -f
 	MKDIR = mkdir -p
-	TARGET_EXTENSION = .out
+	TARGET_EXTENSION=.out
 endif
 
-CC = gcc
-CFLAGS = -I. -I$(PATHU) -DTEST
-
+#Path Definitions
 PATHU = ../unity/
-PATHS = 
-PATHT = 
+PATHS = src/
+PATHT = test/
+PATHI = inc/
 PATHB = build/
 
-# Working files
-SRC = Test.c src.c unity.c
-OBJ = $(patsubst %.c, $(PATHB)%.o, $(SRC))
+#determine our source files
+SRCU = $(PATHU)unity.c
+SRCS = $(wildcard $(PATHS)*.c)
+SRCT = $(wildcard $(PATHT)*.c)
+SRC = $(SRCU) $(SRCS) $(SRCT)
+
+#Files We Are To Work With
+OBJU = $(patsubst $(PATHU)%.c,$(PATHB)%.o,$(SRCU))
+OBJS = $(patsubst $(PATHS)%.c,$(PATHB)%.o,$(SRCS))
+OBJT = $(patsubst $(PATHT)%.c,$(PATHB)%.o,$(SRCT))
+OBJ = $(OBJU) $(OBJS) $(OBJT)
+
+#Other files we care about
 DEP = $(PATHU)unity.h $(PATHU)unity_internals.h
 TGT = $(PATHB)test$(TARGET_EXTENSION)
 
+#Tool Definitions
+CC=gcc
+CFLAGS=-I. -I$(PATHU) -I$(PATHI) -I$(PATHS) -DTEST
+
 test: $(PATHB) $(TGT)
-	  ./$(TGT)
+	./$(TGT)
 
 $(PATHB)%.o:: $(PATHS)%.c $(DEP)
-			  $(CC) -c $(CFLAGS) $< -o $@
-	
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(PATHB)%.o:: $(PATHT)%.c $(DEP)
+	$(CC) -c $(CFLAGS) $< -o $@
+
 $(PATHB)%.o:: $(PATHU)%.c $(DEP)
-			  $(CC) -c $(CFLAGS) $< $(DEP)
+	$(CC) -c $(CFLAGS) $< -o $@
 
 $(TGT): $(OBJ)
-		gcc -o $@ $^
-		
+	gcc -o $@ $^
+
 clean:
-		$(CLEANUP) $(PATHB)*.o
-		$(CLEANUP) $(TGT)
+	$(CLEANUP) $(PATHB)*.o
+	$(CLEANUP) $(TGT)
 
 $(PATHB):
-			$(MKDIR) $(PATHB)
+	$(MKDIR) $(PATHB)
 
 all: clean test
 
 .PHONY: all
 .PHONY: clean
 .PHONY: test
-	
-	
