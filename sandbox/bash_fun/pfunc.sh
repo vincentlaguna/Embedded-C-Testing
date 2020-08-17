@@ -7,6 +7,12 @@ function ShowFiles() {
    local COUNT=1
    for FILE in $@
    do
-      echoo "FILE #$COUNT = $FILE"
+      echo "FILE #$COUNT = $FILE"
+      ((COUNT++))
    done
 }
+
+GetFiles
+ShowFiles $FILES
+
+exit 0
