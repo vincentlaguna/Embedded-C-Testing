@@ -5,4 +5,5 @@ See "Rights file".
 - Need to update makefiles...
 - Initialized circular buffer test, working out the workflow diagram
 - Added some bash scripting for practice
+- Learning about using pipes in functions for bash
 - 
