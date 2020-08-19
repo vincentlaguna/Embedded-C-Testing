@@ -6,4 +6,5 @@ See "Rights file".
 - Initialized circular buffer test, working out the workflow diagram
 - Added some bash scripting for practice
 - Learning about using pipes in functions for bash
+- Reading files in bash
 - 
