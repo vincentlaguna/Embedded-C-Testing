@@ -5,7 +5,7 @@ COUNT=1
 while IFS='' read -r LINE
 do
    echo "LINE $COUNT: $LINE"
-   if [ $COUNT -ge 3 ]
+   if [ $COUNT -ge 50 ]
    then
       break
    fi
