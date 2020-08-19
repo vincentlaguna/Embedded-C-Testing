@@ -13,3 +13,5 @@ do
 done < "$1"
 
 exit 0
+
+# You can run cksum <file> to verify > >> output
