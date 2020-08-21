@@ -14,4 +14,5 @@ Bash Scripting:
 - Using pipes in functions
 - Reading and writing files using redirection
 - Using the sleep command and how to put scripts to sleep
+- Watching procs with scripts
 - 
