@@ -8,3 +8,10 @@ See "Rights file".
 - Learning about using pipes in functions for bash
 - Reading and writing files using redirection in bash
 - 
+
+Bash Scripting:
+
+- Using pipes in functions
+- Reading and writing files using redirection
+- Using the sleep command and how to put scripts to sleep
+- 
