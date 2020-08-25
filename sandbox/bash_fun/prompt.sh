@@ -14,8 +14,16 @@ do
       continue
    elif [[ ! $NAME =~ ^[A-Za-z]+$ ]] # Alphabetical validation through regex
    then
-      echo "Non-alpha characters detected [$NAME]"
+      echo "Non-alpha characters detected [ $NAME ]"
       continue
-   elif [[ ! $NAME =~ ^[]+$ ]]
+   elif [[ ! $NAME =~ ^[0-9]+$ ]]
+   then
+      echo "Non-digit characters detected [ $AGE ]"
+      continue
+   fi
+   VALID=1
 done
+
+echo "Name = $NAME and Age = $AGE"
+
 exit 0
