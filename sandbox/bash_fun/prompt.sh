@@ -16,7 +16,7 @@ do
    then
       echo "Non-alpha characters detected [ $NAME ]"
       continue
-   elif [[ ! $NAME =~ ^[0-9]+$ ]]
+   elif [[ ! $AGE =~ ^[0-9]+$ ]]
    then
       echo "Non-digit characters detected [ $AGE ]"
       continue
