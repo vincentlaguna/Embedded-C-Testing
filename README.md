@@ -16,3 +16,5 @@ Bash Scripting:
 - Using the sleep command and how to put scripts to sleep
 - Watching procs with scripts
 - Getting input from the user and validating the input
+- How to create a simple guessing game in Bash
+- 
