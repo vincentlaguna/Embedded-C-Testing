@@ -2,8 +2,13 @@
 #include <unistd.h>
 #include <dirent.h>
 
+#define SIZE 512
+
 int main(void)
 {
-   puts("read and store filenames TEST");
+   DIR *directory;
+   FILE *output;
+   struct dirent *entry;
+   char path[SIZE];
    return(0);
 }
