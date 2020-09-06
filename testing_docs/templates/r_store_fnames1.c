@@ -26,7 +26,22 @@ int main(void)
    // Remove the newline
    for(x = 0; x < SIZE; x++)
    {
-      
+      if(path[x] == '\n')
+      {
+         path[x] = '\0';
+         break;
+      }
    }
+   // Change the directories supplied by the user
+   r = chdir(path);
+   // If this function fails -> likely invalid pathname by user input
+   if(r != 0)
+   {
+      printf("Unable to change to %s\n", path);
+      fclose(output); // Don't forget this part! Secure the file's data
+      return(1);
+   }
+   // Open the directory
+   
    return(0);
 }
