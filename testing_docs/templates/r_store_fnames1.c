@@ -42,6 +42,22 @@ int main(void)
       return(1);
    }
    // Open the directory
+   directory = opendir(path);
+   if(directory == NULL)
+   {
+      fprintf(stderr, "Unable to open %s\n", path);
+      fclose(output); // Don't forget this part! 
+      exit(1);
+   }
+   // Read the directory and save the filenames
+   while((entry = readdir(directory)) != NULL)
+   {
+      fprintf(output, "%s\n", entry->d_name);
+   }
+   printf("%s created listing files in %s\n", filename, path);
+   // Tidy-up
+   fclose(output);
+   closedir(directory);
    
    return(0);
 }
