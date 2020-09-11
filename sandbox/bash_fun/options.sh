@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # This is a basic bash script using the case statement
 while getopts u:p:ab option; do
    case $option in
