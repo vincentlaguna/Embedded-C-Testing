@@ -21,4 +21,9 @@ Bash Scripting:
 
 Docker Setup:
 
-- To Run: docker run -it --rm <>
+- To Run: docker run -it --rm <...>
+- To point to the same path as filesystem: docker run -it --rm -v $PWD:/...
+
+Command shortlist:
+
+- ceedling test:all

@@ -1,0 +1,350 @@
+#include "Core.h"
+#include "unity.h"
+#include "LED.h"
+
+void setUp(void)
+{
+}
+
+void tearDown(void)
+{
+}
+
+static uint32_t changes;
+
+#define TEST_RESET_BIT_MONITORING()    { LPC_GPIO1->FIOSET = 0; LPC_GPIO1->FIOCLR = 0; changes = 0; }
+#define TEST_MONITOR_BIT_CHANGES()     changes |= (LPC_GPIO1->FIOSET | LPC_GPIO1->FIOCLR)
+#define TEST_ASSERT_BITS_CHANGED(bits) TEST_ASSERT_EQUAL_HEX32(bits, changes)
+
+void test_LED_Init_should_ConfigureRegistersOfLED1OnOnly(void)
+{
+    LPC_GPIO1->FIOSET = 0;
+    LPC_GPIO1->FIOCLR = 0;
+    LPC_GPIO1->FIODIR = 0;
+    LPC_PINCON->PINSEL3  = 0xFFFFFFFF;
+    LPC_PINCON->PINMODE3 = 0xFFFFFFFF;
+
+    LED_Init();
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00B00000, LPC_GPIO1->FIOCLR);
+    TEST_ASSERT_EQUAL_HEX(0x00B40000, LPC_GPIO1->FIODIR);
+    TEST_ASSERT_EQUAL_HEX(0xFFFF30CF, LPC_PINCON->PINSEL3);
+    TEST_ASSERT_EQUAL_HEX(0xFFFF30CF, LPC_PINCON->PINMODE3);
+}
+
+void helperUpdatePin(void)
+{
+    LPC_GPIO1->FIOPIN |=  LPC_GPIO1->FIOSET;
+    LPC_GPIO1->FIOPIN &= ~LPC_GPIO1->FIOCLR;
+    LPC_GPIO1->FIOSET = 0;
+    LPC_GPIO1->FIOCLR = 0;
+}
+
+void test_LED_Toggle_should_ToggleTheCorrectOutput(void)
+{
+    LPC_GPIO1->FIOSET = 0;
+    LPC_GPIO1->FIOCLR = 0;
+    LPC_GPIO1->FIOPIN = 0;
+
+    LED_Init();
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00B00000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED0);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED0);
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED1);
+
+    TEST_ASSERT_EQUAL_HEX(0x00100000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED1);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00100000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED2);
+
+    TEST_ASSERT_EQUAL_HEX(0x00200000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED2);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00200000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED3);
+
+    TEST_ASSERT_EQUAL_HEX(0x00800000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Toggle(LED3);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00800000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+}
+
+void test_LED_On_should_EnableTheCorrectOutput(void)
+{
+    LPC_GPIO1->FIOSET = 0;
+    LPC_GPIO1->FIOCLR = 0;
+    LPC_GPIO1->FIOPIN = 0;
+
+    LED_Init();
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00B00000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED0);
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED0);
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED1);
+
+    TEST_ASSERT_EQUAL_HEX(0x00100000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED1);
+
+    TEST_ASSERT_EQUAL_HEX(0x00100000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED2);
+
+    TEST_ASSERT_EQUAL_HEX(0x00200000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED2);
+
+    TEST_ASSERT_EQUAL_HEX(0x00200000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED3);
+
+    TEST_ASSERT_EQUAL_HEX(0x00800000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_On(LED3);
+
+    TEST_ASSERT_EQUAL_HEX(0x00800000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+}
+
+void test_LED_Off_should_DisableTheCorrectOutput(void)
+{
+    LPC_GPIO1->FIOSET = 0;
+    LPC_GPIO1->FIOCLR = 0;
+    LPC_GPIO1->FIOPIN = 0;
+
+    LED_Init();
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00B00000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED0);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED0);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED1);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00100000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED1);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00100000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED2);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00200000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED2);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00200000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED3);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00800000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+
+    LED_Off(LED3);
+
+    TEST_ASSERT_EQUAL_HEX(0x00000000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00800000, LPC_GPIO1->FIOCLR);
+    helperUpdatePin();
+}
+
+void test_LED_Exec_should_DoNothingIfNothingToBlink(void)
+{
+    int i;
+
+    LED_Init();
+
+    LED_On(LED0);
+    LED_Off(LED1);
+    LED_Off(LED2);
+    LED_On(LED3);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+        LED_Exec();
+
+    TEST_ASSERT_BITS_CHANGED(0x00);
+}
+
+void test_LED_Exec_should_BlinkOneBitIfAsked(void)
+{
+    int i;
+
+    LED_Init();
+
+    LED_On(LED0);
+    LED_Blink(LED1);
+    LED_Off(LED2);
+    LED_On(LED3);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+    {
+        LED_Exec();
+        TEST_MONITOR_BIT_CHANGES();
+    }
+
+    TEST_ASSERT_BITS_CHANGED(0x00100000);
+}
+
+void test_LED_Exec_should_HandleChangesToBlinking(void)
+{
+    int i;
+
+    LED_Init();
+
+    LED_Blink(LED0);
+    LED_Off(LED1);
+    LED_Off(LED2);
+    LED_Off(LED3);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+    {
+        LED_Exec();
+        TEST_MONITOR_BIT_CHANGES();
+    }
+
+    TEST_ASSERT_BITS_CHANGED(0x00040000);
+
+    LED_On(LED0);
+    LED_Off(LED1);
+    LED_Off(LED2);
+    LED_Blink(LED3);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+    {
+        LED_Exec();
+        TEST_MONITOR_BIT_CHANGES();
+    }
+
+    TEST_ASSERT_BITS_CHANGED(0x00800000);
+}
+
+void test_LED_Exec_should_HandleSwitchingFromBlinkingAndBack(void)
+{
+    int i;
+
+    LED_Init();
+
+    LED_Off(LED0);
+    LED_Off(LED1);
+    LED_Blink(LED2);
+    LED_Off(LED3);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+    {
+        LED_Exec();
+        TEST_MONITOR_BIT_CHANGES();
+    }
+
+    TEST_ASSERT_BITS_CHANGED(0x00200000);
+
+    LED_Off(LED2);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+    {
+        LED_Exec();
+        TEST_MONITOR_BIT_CHANGES();
+    }
+
+    TEST_ASSERT_BITS_CHANGED(0x00000000);
+
+    LED_Blink(LED2);
+
+    TEST_RESET_BIT_MONITORING();
+
+    for (i=0; i < 32; i++)
+    {
+        LED_Exec();
+        TEST_MONITOR_BIT_CHANGES();
+    }
+
+    TEST_ASSERT_BITS_CHANGED(0x00200000);
+}
+
