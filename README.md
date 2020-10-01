@@ -18,3 +18,7 @@ Bash Scripting:
 - Getting input from the user and validating the input
 - How to create a simple guessing game in Bash
 - 
+
+Docker Setup:
+
+- To Run: docker run -it --rm <>
