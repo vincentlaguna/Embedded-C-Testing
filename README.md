@@ -29,3 +29,8 @@ Command shortlist:
 - ceedling test:all
 - when compiling using gstreamer libraries: pkg-config --cflags --libs gstreamer-1.0
 - Need to resize volume...
+
+Updates:
+
+- Migrated repository 10-10-2020
+- 
