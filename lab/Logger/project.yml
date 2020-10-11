@@ -1,0 +1,170 @@
+---
+
+:project:
+  :build_root: build
+  :release_build: TRUE
+  :test_file_prefix: Test
+  :use_exceptions: FALSE
+  :which_ceedling: gem
+  :options_paths:
+    - options
+
+:release_build:
+  :output: unit4.elf
+  :use_assembly: TRUE
+
+:paths:
+  :test:
+    - +:test/**
+    - -:test/support
+  :source:
+    - src/**
+    - micro/*
+    - lib/src/*
+  :include:
+    - inc/**
+    - lib/inc/*
+  :support:
+    - test/support
+
+:extension:
+  :assembly: '.S'
+
+:files:
+  :support:
+    - +:test/support/startup.c
+    - +:test/support/syscalls.c
+    - +:test/support/uart.c
+
+:defines:
+  :commmon: &common_defines []
+  :test:
+    - TEST
+  :release:
+    - TARGET_LPC1768
+
+:unity:
+  :defines:
+    - UNITY_EXCLUDE_STDINT_H
+    - UNITY_EXCLUDE_LIMITS_H
+    - UNITY_EXCLUDE_SIZEOF
+    - UNITY_INCLUDE_DOUBLE
+    - UNITY_SUPPORT_TEST_CASES
+    - UNITY_INT_WIDTH=32
+    - UNITY_LONG_WIDTH=32
+    - UNITY_INCLUDE_CONFIG_H
+
+:cmock:
+  :mock_path: 'build/mocks/'
+  :includes:
+    - stdint.h
+    - Defs.h
+    - LPC1768.h
+  :includes_h_pre_orig_header:
+    - stdint.h
+    - Defs.h
+    - LPC1768.h
+  :enforce_strict_ordering: FALSE
+  :verbosity: 1
+  :plugins:
+    - :expect
+    - :ignore
+    #- :array
+    #- :expect_any_args
+    #- :return_thru_ptr
+    #- :ignore_arg
+    #- :callback
+  :defines:
+    - CMOCK_MEM_STATIC
+    # Enough RAM for mocking but not too much to max out emulated RAM usage
+    - CMOCK_MEM_SIZE=20480
+    - CMOCK_MEM_ALIGN=2
+
+:test_runner:
+  :vendor_path: '..'
+  :defines:
+    - TEST_INSTANCES
+  :includes:
+    - stdint.h
+    - Core.h
+
+:module_generator:
+  :source:
+    :includes:
+      - Core.h
+
+:tools:
+  :test_compiler:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+      - -g
+      - -mcpu=cortex-m3
+      - -mthumb
+      - -Wall
+      - -Wno-address
+      - -I"$": COLLECTION_PATHS_TEST_SUPPORT_SOURCE_INCLUDE_VENDOR
+      - -D$: COLLECTION_DEFINES_TEST_AND_VENDOR
+      - -DSTACK_SIZE=2048
+      - -c ${1}
+      - -o ${2}
+  :test_linker:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+      - -mcpu=cortex-m3
+      - -mthumb
+      - -T test/support/qemu.ld
+      - ${1}
+      - -o ${2}
+      - -lm
+  :test_fixture:
+    :executable: qemu-system-arm
+    :stderr_redirect: :unix
+    :arguments:
+      - '-cpu cortex-m3'
+      - '-M lm3s6965evb'
+      - -no-reboot
+      - -nographic
+      - -kernel ${1}
+  :release_compiler:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+      - -std=c99
+      - -I"$": COLLECTION_PATHS_SOURCE_AND_INCLUDE
+      - -D$: DEFINES_RELEASE
+      - -c ${1}
+      - -o ${2}
+  :release_linker:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+      - --specs=nosys.specs
+      - -T micro/LPC1768.ld
+      - -Xlinker -Map=build/release/output.map
+      - ${1}
+      - -o ${2}
+  :release_assembler:
+    :executable: arm-none-eabi-as
+    :arguments:
+      - ${1}
+      - -o ${2}
+  :post_release:
+    #:executable: ruby
+    #:arguments:
+    #  - auto/fix_checksum.rb
+    #  - build/release/unit4.elf
+    #  - build/release/unit4_crc.bin
+    :executable: ruby
+    :arguments:
+      - auto/hot_melt.rb
+      - build/hot_melted.c
+
+:plugins:
+  :load_paths:
+    - "#{Ceedling.load_path}"
+  :enabled:
+    #- xml_tests_report
+    #- junit_tests_report
+    - stdout_pretty_tests_report
+    #- stdout_gtestlike_tests_report #<------ Enable This If Using Eclipse
+    - module_generator
+    - command_hooks
+...

@@ -1,0 +1,36 @@
+---
+
+:paths:
+  :test:
+    - -:test/**
+    - +:../finished/iteration4_completed/test/**
+    - -:../finished/iteration4_completed/test/support
+  :source:
+    - -:src/**
+    - +:../finished/iteration4_completed/src/**
+  :include: []
+  :support:
+    - -:test/support
+    - +:../finished/iteration4_completed/test/support
+
+:cmock:
+  :mock_path: 'build/mocks/'
+  :includes:
+    - stdint.h
+    - Defs.h
+    - LPC1768.h
+  :includes_h_pre_orig_header:
+    - stdint.h
+    - Defs.h
+    - LPC1768.h
+  :enforce_strict_ordering: TRUE
+  :verbosity: 1
+  :plugins:
+    - :expect
+    - :ignore
+    - :array
+    - :expect_any_args
+    - :return_thru_ptr
+    - :ignore_arg
+    - :callback
+...

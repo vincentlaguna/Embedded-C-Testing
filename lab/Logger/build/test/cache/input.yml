@@ -1,0 +1,245 @@
+---
+:project:
+  :use_exceptions: false
+  :use_mocks: true
+  :compile_threads: 1
+  :test_threads: 1
+  :use_test_preprocessor: false
+  :use_deep_dependencies: false
+  :generate_deep_dependencies: true
+  :test_file_prefix: Test
+  :options_paths:
+  - options
+  :release_build: true
+  :build_root: build
+  :which_ceedling: gem
+:release_build:
+  :use_assembly: true
+  :artifacts: []
+  :output: unit4.elf
+:paths:
+  :test:
+  - "+:test/**"
+  - "-:test/support"
+  :source:
+  - src/**
+  - micro/*
+  - lib/src/*
+  :support:
+  - test/support
+  :include:
+  - inc/**
+  - lib/inc/*
+  :libraries: []
+  :test_toolchain_include: []
+  :release_toolchain_include: []
+:files:
+  :test: []
+  :source: []
+  :assembly: []
+  :support:
+  - "+:test/support/startup.c"
+  - "+:test/support/syscalls.c"
+  - "+:test/support/uart.c"
+  :include: []
+:environment:
+- :rake_columns: '120'
+:defines:
+  :test:
+  - TEST
+  :test_preprocess: []
+  :release:
+  - TARGET_LPC1768
+  :release_preprocess: []
+  :use_test_definition: false
+  :commmon: []
+:libraries:
+  :flag: "-l${1}"
+  :path_flag: "-L ${1}"
+  :test: []
+  :test_preprocess: []
+  :release: []
+  :release_preprocess: []
+:flags: {}
+:extension:
+  :header: ".h"
+  :source: ".c"
+  :assembly: ".S"
+  :object: ".o"
+  :libraries:
+  - ".a"
+  - ".so"
+  :executable: ".out"
+  :map: ".map"
+  :list: ".lst"
+  :testpass: ".pass"
+  :testfail: ".fail"
+  :dependencies: ".d"
+:unity:
+  :vendor_path: "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/vendor"
+  :defines:
+  - UNITY_EXCLUDE_STDINT_H
+  - UNITY_EXCLUDE_LIMITS_H
+  - UNITY_EXCLUDE_SIZEOF
+  - UNITY_INCLUDE_DOUBLE
+  - UNITY_SUPPORT_TEST_CASES
+  - UNITY_INT_WIDTH=32
+  - UNITY_LONG_WIDTH=32
+  - UNITY_INCLUDE_CONFIG_H
+:cmock:
+  :vendor_path: "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/vendor"
+  :defines:
+  - CMOCK_MEM_STATIC
+  - CMOCK_MEM_SIZE=20480
+  - CMOCK_MEM_ALIGN=2
+  :includes:
+  - stdint.h
+  - Defs.h
+  - LPC1768.h
+  :mock_path: build/mocks
+  :includes_h_pre_orig_header:
+  - stdint.h
+  - Defs.h
+  - LPC1768.h
+  :enforce_strict_ordering: false
+  :verbosity: 1
+  :plugins:
+  - :expect
+  - :ignore
+  :mock_prefix: Mock
+  :unity_helper: false
+:cexception:
+  :vendor_path: "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/vendor"
+  :defines: []
+:test_runner:
+  :includes:
+  - stdint.h
+  - Core.h
+  :file_suffix: _runner
+  :vendor_path: ".."
+  :defines:
+  - TEST_INSTANCES
+:tools:
+  :test_compiler:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+    - "-g"
+    - "-mcpu=cortex-m3"
+    - "-mthumb"
+    - "-Wall"
+    - "-Wno-address"
+    - -I"$": COLLECTION_PATHS_TEST_SUPPORT_SOURCE_INCLUDE_VENDOR
+    - "-D$": COLLECTION_DEFINES_TEST_AND_VENDOR
+    - "-DSTACK_SIZE=2048"
+    - "-c ${1}"
+    - "-o ${2}"
+    :name: test_compiler
+    :stderr_redirect: :none
+    :background_exec: :none
+    :optional: false
+  :test_linker:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+    - "-mcpu=cortex-m3"
+    - "-mthumb"
+    - "-T test/support/qemu.ld"
+    - "${1}"
+    - "-o ${2}"
+    - "-lm"
+    :name: test_linker
+    :stderr_redirect: :none
+    :background_exec: :none
+    :optional: false
+  :test_fixture:
+    :executable: qemu-system-arm
+    :stderr_redirect: :unix
+    :arguments:
+    - "-cpu cortex-m3"
+    - "-M lm3s6965evb"
+    - "-no-reboot"
+    - "-nographic"
+    - "-kernel ${1}"
+    :name: test_fixture
+    :background_exec: :none
+    :optional: false
+  :release_compiler:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+    - "-std=c99"
+    - -I"$": COLLECTION_PATHS_SOURCE_AND_INCLUDE
+    - "-D$": DEFINES_RELEASE
+    - "-c ${1}"
+    - "-o ${2}"
+    :name: release_compiler
+    :stderr_redirect: :none
+    :background_exec: :none
+    :optional: false
+  :release_linker:
+    :executable: arm-none-eabi-gcc
+    :arguments:
+    - "--specs=nosys.specs"
+    - "-T micro/LPC1768.ld"
+    - "-Xlinker -Map=build/release/output.map"
+    - "${1}"
+    - "-o ${2}"
+    :name: release_linker
+    :stderr_redirect: :none
+    :background_exec: :none
+    :optional: false
+  :release_assembler:
+    :executable: arm-none-eabi-as
+    :arguments:
+    - "${1}"
+    - "-o ${2}"
+    :name: release_assembler
+    :stderr_redirect: :none
+    :background_exec: :none
+    :optional: false
+  :post_release:
+    :executable: ruby
+    :arguments:
+    - auto/hot_melt.rb
+    - build/hot_melted.c
+    :name: post_release
+    :stderr_redirect: :none
+    :background_exec: :none
+    :optional: false
+:test_compiler:
+  :arguments: []
+:test_linker:
+  :arguments: []
+:test_fixture:
+  :arguments: []
+  :link_objects: []
+:test_includes_preprocessor:
+  :arguments: []
+:test_file_preprocessor:
+  :arguments: []
+:test_dependencies_generator:
+  :arguments: []
+:release_compiler:
+  :arguments: []
+:release_linker:
+  :arguments: []
+:release_assembler:
+  :arguments: []
+:release_dependencies_generator:
+  :arguments: []
+:plugins:
+  :load_paths:
+  - "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/lib/../plugins"
+  :enabled:
+  - stdout_pretty_tests_report
+  - module_generator
+  - command_hooks
+  :display_raw_test_results: false
+  :stdout_pretty_tests_report_path: "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/lib/../plugins/stdout_pretty_tests_report"
+  :module_generator_path: "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/lib/../plugins/module_generator"
+  :command_hooks_path: "/var/lib/gems/2.4.0/gems/ceedling-0.30.0/lib/../plugins/command_hooks"
+:module_generator:
+  :source:
+    :includes:
+    - Core.h
+  :project_root: "./"
+  :source_root: src/
+  :test_root: test/

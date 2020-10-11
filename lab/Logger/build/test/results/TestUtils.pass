@@ -1,0 +1,30 @@
+---
+:source:
+  :path: test
+  :file: TestUtils.c
+:successes:
+- :test: test_MASK_RANGE_should_ReturnProperRangesGivenValidInputs
+  :line: 13
+  :message: ''
+  :unity_test_time: 0
+- :test: test_MASK_BIT_PAIR_should_ProperlyCreateMasksForBits0To31
+  :line: 45
+  :message: ''
+  :unity_test_time: 0
+- :test: test_MASK_RANGE_PAIRS_should_ReturnProperRangesGivenValidInputs
+  :line: 81
+  :message: ''
+  :unity_test_time: 0
+- :test: test_COUNT_HIGH_BITS8_should_ProperlyCountHighBitsInAByte
+  :line: 134
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 4
+  :passed: 4
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.008093192000160343
