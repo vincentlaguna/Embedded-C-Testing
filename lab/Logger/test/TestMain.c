@@ -17,6 +17,6 @@ void test_Main_NeedToImplement(void)
     //       See Lecture 9 for how to handle this special case.
     //
   
-    TEST_ASSERT_EQUAL(0, main());
+    TEST_ASSERT_EQUAL(0, TestableMain());
 }
 

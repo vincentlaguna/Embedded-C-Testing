@@ -6,8 +6,11 @@
 //       See Lecture 9 for how to handle this special case.
 // ========================================================
 //
-
+#ifndef TEST
 int main(void)
+#else
+int TestableMain(void)
+#endif
 {
    return -1;
 }
