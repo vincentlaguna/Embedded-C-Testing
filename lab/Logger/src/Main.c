@@ -12,5 +12,5 @@ int main(void)
 int TestableMain(void)
 #endif
 {
-   return -1;
+   return 0;
 }
