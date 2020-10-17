@@ -11,7 +11,7 @@
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_Main_NeedToImplement(void);
+extern void test_Main_Should_InitializeTheLedDriver(void);
 
 
 /*=======Mock Management=====*/
@@ -73,7 +73,7 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestMain.c");
-  run_test(test_Main_NeedToImplement, "test_Main_NeedToImplement", 13);
+  run_test(test_Main_Should_InitializeTheLedDriver, "test_Main_Should_InitializeTheLedDriver", 13);
 
   return UnityEnd();
 }
