@@ -12,5 +12,7 @@ int main(void)
 int TestableMain(void)
 #endif
 {
-   return 0;
+    LED_Init();    
+		
+    return 0;
 }
