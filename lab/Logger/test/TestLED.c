@@ -1,26 +1,36 @@
 #include "Core.h"
+#include "unity.h"
 #include "LED.h"
 
-#define LED_PORT		LPC_GPIO1
-#define LED_1_BIT		(18)
-#define LED_2_BIT		(20)
-#define LED_3_BIT		(21)
-#define LED_4_BIT		(23)
-
-#define LED_PINSEL 		LPC_PINCON->PINSEL3
-
-#define LED_PIN_BIT(bit)  	(0x3u << ((bit & 0x0F) << 1))
-
-static uint8_t BlinkMask;
-
-void LED_Init(void)
+void setUp(void)
 {
-    BlinkMask = 0xF;
+}
 
-    //We're just going to set LED 1 to signify we've started up... everything else starts low.
-    LED_PORT->FIOSET  = BIT_TO_MASK(LED_1_BIT);
-    LED_PORT->FIOCLR  = BIT_TO_MASK(LED_2_BIT) | BIT_TO_MASK(LED_3_BIT) | BIT_TO_MASK(LED_4_BIT);
-    LED_PORT->FIODIR |= BIT_TO_MASK(LED_1_BIT) | BIT_TO_MASK(LED_2_BIT) | BIT_TO_MASK(LED_3_BIT) | BIT_TO_MASK(LED_4_BIT);
-    //Set the mode for the bits we plan to use to make them all use pulldown resistors
-    LED_PINMODE = ~( LED_PIN_BIT(LED_1_BIT) | LED_PIN_BIT(LED_2_BIT) | LED_PIN_BIT(LED_3_BIT) | LED_PIN_BIT(LED_4_BIT));
- }
+void tearDown(void)
+{
+}
+
+void test_LED_Init_should_ConfigureRegistersofLED1OnOnly(void)
+{
+    LPC_GPIO1->FIOSET    = 0;
+    LPC_GPIO1->FIOCLR    = 0;
+    LPC_GPIO1->FIODIR    = 0;
+    LPC_PINCON->PINSEL3  = 0xFFFFFFFF;
+    LPC_PINCON->PINMODE3 = 0xFFFFFFFF;
+
+    LED_Init();
+
+    TEST_ASSERT_EQUAL_HEX(0x00040000, LPC_GPIO1->FIOSET);
+    TEST_ASSERT_EQUAL_HEX(0x00B00000, LPC_GPIO1->FIOCLR);
+    TEST_ASSERT_EQUAL_HEX(0x00B40000, LPC_GPIO1->FIODIR);
+    TEST_ASSERT_EQUAL_HEX(0xFFFF30CF, LPC_PINCON->PINSEL3);
+    TEST_ASSERT_EQUAL_HEX(0xFFFF30CF, LPC_PINCON->PINMODE3);
+}
+
+void helperUpdatePin(void)
+{
+    LPC_GPIO1->FIOPIN |=  LPC_GPIO1->FIOSET;
+    LPC_GPIO1->FIOPIN &= ~LPC_GPIO1->FIOCLR;
+    LPC_GPIO1->FIOSET = 0;
+    LPC_GPIO1->FIOCLR = 0;
+} 
