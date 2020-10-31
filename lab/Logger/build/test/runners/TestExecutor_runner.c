@@ -11,7 +11,8 @@
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_Executor_NeedToImplement(void);
+extern void test_Executor_Init_NeedToImplement(void);
+extern void test_Executor_Exec_NeedToImplement(void);
 
 
 /*=======Mock Management=====*/
@@ -73,7 +74,8 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestExecutor.c");
-  run_test(test_Executor_NeedToImplement, "test_Executor_NeedToImplement", 13);
+  run_test(test_Executor_Init_NeedToImplement, "test_Executor_Init_NeedToImplement", 12);
+  run_test(test_Executor_Exec_NeedToImplement, "test_Executor_Exec_NeedToImplement", 17);
 
   return UnityEnd();
 }
