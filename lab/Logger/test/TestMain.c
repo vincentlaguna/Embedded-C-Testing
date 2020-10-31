@@ -19,6 +19,11 @@ void test_Main_Should_InitializeTheDrivers(void)
     //       See Lecture 9 for how to handle this special case.
     //
     Executor_Init_Expect();
+    
+    Executor_Exec_ExpectAndReturn(TRUE);      
+    Executor_Exec_ExpectAndReturn(TRUE);
+    Executor_Exec_ExpectAndReturn(FALSE);   
+
     TEST_ASSERT_EQUAL(0, TestableMain());
 }
 

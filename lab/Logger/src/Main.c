@@ -1,4 +1,5 @@
 #include "Core.h"
+#include "Executor.h"
 #include "Main.h"
 
 //
@@ -12,7 +13,12 @@ int main(void)
 int TestableMain(void)
 #endif
 {
-    LED_Init();    
+    Executor_Init();    
+
+    while(Executor_Exec())
+    {
+        // Do nothing else...
+    };    
 		
     return 0;
 }

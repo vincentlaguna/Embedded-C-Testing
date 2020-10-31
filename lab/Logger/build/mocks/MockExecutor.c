@@ -5,6 +5,7 @@
 #include "cmock.h"
 #include "MockExecutor.h"
 
+static const char* CMockString_Executor_Exec = "Executor_Exec";
 static const char* CMockString_Executor_Init = "Executor_Init";
 
 typedef struct _CMOCK_Executor_Init_CALL_INSTANCE
@@ -13,10 +14,20 @@ typedef struct _CMOCK_Executor_Init_CALL_INSTANCE
 
 } CMOCK_Executor_Init_CALL_INSTANCE;
 
+typedef struct _CMOCK_Executor_Exec_CALL_INSTANCE
+{
+  UNITY_LINE_TYPE LineNumber;
+  bool ReturnVal;
+
+} CMOCK_Executor_Exec_CALL_INSTANCE;
+
 static struct MockExecutorInstance
 {
   char Executor_Init_IgnoreBool;
   CMOCK_MEM_INDEX_TYPE Executor_Init_CallInstance;
+  char Executor_Exec_IgnoreBool;
+  bool Executor_Exec_FinalReturn;
+  CMOCK_MEM_INDEX_TYPE Executor_Exec_CallInstance;
 } Mock;
 
 extern jmp_buf AbortFrame;
@@ -31,6 +42,14 @@ void MockExecutor_Verify(void)
   if (CMOCK_GUTS_NONE != call_instance)
   {
     UNITY_SET_DETAIL(CMockString_Executor_Init);
+    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
+  }
+  call_instance = Mock.Executor_Exec_CallInstance;
+  if (Mock.Executor_Exec_IgnoreBool)
+    call_instance = CMOCK_GUTS_NONE;
+  if (CMOCK_GUTS_NONE != call_instance)
+  {
+    UNITY_SET_DETAIL(CMockString_Executor_Exec);
     UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
   }
 }
@@ -82,5 +101,58 @@ void Executor_Init_CMockExpect(UNITY_LINE_TYPE cmock_line)
   Mock.Executor_Init_CallInstance = CMock_Guts_MemChain(Mock.Executor_Init_CallInstance, cmock_guts_index);
   Mock.Executor_Init_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+}
+
+bool Executor_Exec(void)
+{
+  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
+  CMOCK_Executor_Exec_CALL_INSTANCE* cmock_call_instance;
+  UNITY_SET_DETAIL(CMockString_Executor_Exec);
+  cmock_call_instance = (CMOCK_Executor_Exec_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.Executor_Exec_CallInstance);
+  Mock.Executor_Exec_CallInstance = CMock_Guts_MemNext(Mock.Executor_Exec_CallInstance);
+  if (Mock.Executor_Exec_IgnoreBool)
+  {
+    UNITY_CLR_DETAILS();
+    if (cmock_call_instance == NULL)
+      return Mock.Executor_Exec_FinalReturn;
+    Mock.Executor_Exec_FinalReturn = cmock_call_instance->ReturnVal;
+    return cmock_call_instance->ReturnVal;
+  }
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
+  cmock_line = cmock_call_instance->LineNumber;
+  UNITY_CLR_DETAILS();
+  return cmock_call_instance->ReturnVal;
+}
+
+void Executor_Exec_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, bool cmock_to_return)
+{
+  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Executor_Exec_CALL_INSTANCE));
+  CMOCK_Executor_Exec_CALL_INSTANCE* cmock_call_instance = (CMOCK_Executor_Exec_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
+  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
+  Mock.Executor_Exec_CallInstance = CMock_Guts_MemChain(Mock.Executor_Exec_CallInstance, cmock_guts_index);
+  Mock.Executor_Exec_IgnoreBool = (char)0;
+  cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ReturnVal = cmock_to_return;
+  Mock.Executor_Exec_IgnoreBool = (char)1;
+}
+
+void Executor_Exec_CMockStopIgnore(void)
+{
+  if(Mock.Executor_Exec_IgnoreBool)
+    Mock.Executor_Exec_CallInstance = CMock_Guts_MemNext(Mock.Executor_Exec_CallInstance);
+  Mock.Executor_Exec_IgnoreBool = (char)0;
+}
+
+void Executor_Exec_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, bool cmock_to_return)
+{
+  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_Executor_Exec_CALL_INSTANCE));
+  CMOCK_Executor_Exec_CALL_INSTANCE* cmock_call_instance = (CMOCK_Executor_Exec_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
+  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
+  Mock.Executor_Exec_CallInstance = CMock_Guts_MemChain(Mock.Executor_Exec_CallInstance, cmock_guts_index);
+  Mock.Executor_Exec_IgnoreBool = (char)0;
+  cmock_call_instance->LineNumber = cmock_line;
+  cmock_call_instance->ReturnVal = cmock_to_return;
 }
 

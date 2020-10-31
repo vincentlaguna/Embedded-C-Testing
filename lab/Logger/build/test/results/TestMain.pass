@@ -1,10 +1,10 @@
 ---
 :source:
   :path: test
-  :file: TestLED.c
+  :file: TestMain.c
 :successes:
-- :test: test_LED_Init_should_ConfigureRegistersofLED1OnOnly
-  :line: 13
+- :test: test_Main_Should_InitializeTheDrivers
+  :line: 15
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -15,4 +15,4 @@
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.007407260000036331
+:time: 0.007364410999798565

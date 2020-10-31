@@ -33,6 +33,12 @@ void Executor_Init_CMockIgnore(void);
 void Executor_Init_CMockStopIgnore(void);
 #define Executor_Init_Expect() Executor_Init_CMockExpect(__LINE__)
 void Executor_Init_CMockExpect(UNITY_LINE_TYPE cmock_line);
+#define Executor_Exec_IgnoreAndReturn(cmock_retval) Executor_Exec_CMockIgnoreAndReturn(__LINE__, cmock_retval)
+void Executor_Exec_CMockIgnoreAndReturn(UNITY_LINE_TYPE cmock_line, bool cmock_to_return);
+#define Executor_Exec_StopIgnore() Executor_Exec_CMockStopIgnore()
+void Executor_Exec_CMockStopIgnore(void);
+#define Executor_Exec_ExpectAndReturn(cmock_retval) Executor_Exec_CMockExpectAndReturn(__LINE__, cmock_retval)
+void Executor_Exec_CMockExpectAndReturn(UNITY_LINE_TYPE cmock_line, bool cmock_to_return);
 
 #if defined(__GNUC__) && !defined(__ICC) && !defined(__TMS470__)
 #if __GNUC__ > 4 || (__GNUC__ == 4 && (__GNUC_MINOR__ > 6 || (__GNUC_MINOR__ == 6 && __GNUC_PATCHLEVEL__ > 0)))
