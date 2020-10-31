@@ -8,26 +8,26 @@
 #endif /* TEST_INSTANCES */
 #include "stdint.h"
 #include "Core.h"
-#include "MockLED.h"
+#include "MockExecutor.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_Main_Should_InitializeTheLedDriver(void);
+extern void test_Main_Should_InitializeTheDrivers(void);
 
 
 /*=======Mock Management=====*/
 static void CMock_Init(void)
 {
-  MockLED_Init();
+  MockExecutor_Init();
 }
 static void CMock_Verify(void)
 {
-  MockLED_Verify();
+  MockExecutor_Verify();
 }
 static void CMock_Destroy(void)
 {
-  MockLED_Destroy();
+  MockExecutor_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -78,7 +78,7 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestMain.c");
-  run_test(test_Main_Should_InitializeTheLedDriver, "test_Main_Should_InitializeTheLedDriver", 15);
+  run_test(test_Main_Should_InitializeTheDrivers, "test_Main_Should_InitializeTheDrivers", 15);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
