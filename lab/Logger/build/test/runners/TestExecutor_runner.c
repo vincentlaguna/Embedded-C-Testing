@@ -2,28 +2,33 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
+#include "cmock.h"
 #ifndef TEST_INSTANCES
 #define TEST_INSTANCES
 #endif /* TEST_INSTANCES */
 #include "stdint.h"
 #include "Core.h"
+#include "MockLED.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_Executor_Init_NeedToImplement(void);
+extern void test_Executor_Init_should_InitializeAllSubsystems(void);
 extern void test_Executor_Exec_NeedToImplement(void);
 
 
 /*=======Mock Management=====*/
 static void CMock_Init(void)
 {
+  MockLED_Init();
 }
 static void CMock_Verify(void)
 {
+  MockLED_Verify();
 }
 static void CMock_Destroy(void)
 {
+  MockLED_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -74,8 +79,9 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestExecutor.c");
-  run_test(test_Executor_Init_NeedToImplement, "test_Executor_Init_NeedToImplement", 12);
-  run_test(test_Executor_Exec_NeedToImplement, "test_Executor_Exec_NeedToImplement", 17);
+  run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 13);
+  run_test(test_Executor_Exec_NeedToImplement, "test_Executor_Exec_NeedToImplement", 21);
 
+  CMock_Guts_MemFreeFinal();
   return UnityEnd();
 }

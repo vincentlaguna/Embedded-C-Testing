@@ -2,21 +2,21 @@
 :source:
   :path: test
   :file: TestExecutor.c
-:successes: []
+:successes:
+- :test: test_Executor_Init_should_InitializeAllSubsystems
+  :line: 13
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores:
-- :test: test_Executor_Init_NeedToImplement
-  :line: 14
-  :message: Need to Implement Executor_Init
-  :unity_test_time: 0
 - :test: test_Executor_Exec_NeedToImplement
-  :line: 19
+  :line: 23
   :message: Need to Implement Executor_Exec
   :unity_test_time: 0
 :counts:
   :total: 2
-  :passed: 0
+  :passed: 1
   :failed: 0
-  :ignored: 2
+  :ignored: 1
 :stdout: []
-:time: 0.0537621590000299
+:time: 0.0071526890001223364
