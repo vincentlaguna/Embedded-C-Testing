@@ -2,37 +2,27 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
-#include "cmock.h"
 #ifndef TEST_INSTANCES
 #define TEST_INSTANCES
 #endif /* TEST_INSTANCES */
 #include "stdint.h"
 #include "Core.h"
-#include "MockDigital.h"
-#include "MockLED.h"
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_Executor_Init_should_InitializeAllSubsystems(void);
-extern void test_Executor_Exec_should_AlwaysReturnTrue(void);
+extern void test_Digital_NeedToImplement(void);
 
 
 /*=======Mock Management=====*/
 static void CMock_Init(void)
 {
-  MockDigital_Init();
-  MockLED_Init();
 }
 static void CMock_Verify(void)
 {
-  MockDigital_Verify();
-  MockLED_Verify();
 }
 static void CMock_Destroy(void)
 {
-  MockDigital_Destroy();
-  MockLED_Destroy();
 }
 
 /*=======Test Reset Options=====*/
@@ -82,10 +72,8 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 /*=======MAIN=====*/
 int main(void)
 {
-  UnityBegin("TestExecutor.c");
-  run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 14);
-  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 24);
+  UnityBegin("TestDigital.c");
+  run_test(test_Digital_NeedToImplement, "test_Digital_NeedToImplement", 13);
 
-  CMock_Guts_MemFreeFinal();
   return UnityEnd();
 }

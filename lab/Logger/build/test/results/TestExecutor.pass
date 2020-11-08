@@ -4,11 +4,11 @@
   :file: TestExecutor.c
 :successes:
 - :test: test_Executor_Init_should_InitializeAllSubsystems
-  :line: 13
+  :line: 14
   :message: ''
   :unity_test_time: 0
 - :test: test_Executor_Exec_should_AlwaysReturnTrue
-  :line: 21
+  :line: 24
   :message: ''
   :unity_test_time: 0
 :failures: []
@@ -19,4 +19,4 @@
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.05160885099999746
+:time: 0.0070342389999495936

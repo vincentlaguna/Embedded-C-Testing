@@ -1,4 +1,5 @@
 #include "unity.h"
+#include "MockDigital.h"
 #include "MockLED.h"
 #include "Executor.h"
 
@@ -14,6 +15,8 @@ void test_Executor_Init_should_InitializeAllSubsystems(void)
 {
     
     LED_Init_Expect();
+
+    Digital_Init_Expect();
 
     Executor_Init();
 }
