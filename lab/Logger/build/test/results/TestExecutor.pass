@@ -7,16 +7,16 @@
   :line: 13
   :message: ''
   :unity_test_time: 0
-:failures: []
-:ignores:
-- :test: test_Executor_Exec_NeedToImplement
-  :line: 23
-  :message: Need to Implement Executor_Exec
+- :test: test_Executor_Exec_should_AlwaysReturnTrue
+  :line: 21
+  :message: ''
   :unity_test_time: 0
+:failures: []
+:ignores: []
 :counts:
   :total: 2
-  :passed: 1
+  :passed: 2
   :failed: 0
-  :ignored: 1
+  :ignored: 0
 :stdout: []
-:time: 0.0071526890001223364
+:time: 0.006964261999996779

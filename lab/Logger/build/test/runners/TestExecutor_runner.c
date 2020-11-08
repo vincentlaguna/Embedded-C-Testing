@@ -14,7 +14,7 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_Executor_Init_should_InitializeAllSubsystems(void);
-extern void test_Executor_Exec_NeedToImplement(void);
+extern void test_Executor_Exec_should_AlwaysReturnTrue(void);
 
 
 /*=======Mock Management=====*/
@@ -80,7 +80,7 @@ int main(void)
 {
   UnityBegin("TestExecutor.c");
   run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 13);
-  run_test(test_Executor_Exec_NeedToImplement, "test_Executor_Exec_NeedToImplement", 21);
+  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 21);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();

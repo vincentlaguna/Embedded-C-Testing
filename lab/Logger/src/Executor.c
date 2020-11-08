@@ -8,5 +8,5 @@ void Executor_Init(void)
 
 bool Executor_Exec(void)
 {
-    return false;
+    return true;
 }

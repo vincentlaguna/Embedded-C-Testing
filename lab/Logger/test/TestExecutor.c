@@ -18,7 +18,11 @@ void test_Executor_Init_should_InitializeAllSubsystems(void)
     Executor_Init();
 }
 
-void test_Executor_Exec_NeedToImplement(void)
+void test_Executor_Exec_should_AlwaysReturnTrue(void)
 {
-    TEST_IGNORE_MESSAGE("Need to Implement Executor_Exec");
+    TEST_ASSERT_TRUE(Executor_Exec());
+    TEST_ASSERT_TRUE(Executor_Exec());
+    TEST_ASSERT_TRUE(Executor_Exec());
+    TEST_ASSERT_TRUE(Executor_Exec());
+    TEST_ASSERT_TRUE(Executor_Exec());
 }
