@@ -10,7 +10,7 @@ void tearDown(void)
 {
 }
 
-void test_Digital_NeedToImplement(void)
+void test_Digital_Init_should_InitializeBitsForReading(void)
 {
-    TEST_IGNORE_MESSAGE("Need to Implement Digital");
+    TEST_IGNORE_MESSAGE("Need to Implement Digital_Init");
 }
