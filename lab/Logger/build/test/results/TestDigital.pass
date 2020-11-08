@@ -5,14 +5,18 @@
 :successes: []
 :failures: []
 :ignores:
-- :test: test_Digital_NeedToImplement
+- :test: test_Digital_Init_should_InitializeBitsForReading
   :line: 15
-  :message: Need to Implement Digital
+  :message: Need to Implement Digital_Init
+  :unity_test_time: 0
+- :test: test_Digital_GetBits_should_ReadDigitalInputsAndReturnCurrentValues
+  :line: 20
+  :message: Need to Implement Digital_GetBits
   :unity_test_time: 0
 :counts:
-  :total: 1
+  :total: 2
   :passed: 0
   :failed: 0
-  :ignored: 1
+  :ignored: 2
 :stdout: []
-:time: 0.051436870000088675
+:time: 0.007773950001137564

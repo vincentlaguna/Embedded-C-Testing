@@ -11,7 +11,8 @@
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_Digital_NeedToImplement(void);
+extern void test_Digital_Init_should_InitializeBitsForReading(void);
+extern void test_Digital_GetBits_should_ReadDigitalInputsAndReturnCurrentValues(void);
 
 
 /*=======Mock Management=====*/
@@ -73,7 +74,8 @@ static void run_test(UnityTestFunction func, const char* name, int line_num)
 int main(void)
 {
   UnityBegin("TestDigital.c");
-  run_test(test_Digital_NeedToImplement, "test_Digital_NeedToImplement", 13);
+  run_test(test_Digital_Init_should_InitializeBitsForReading, "test_Digital_Init_should_InitializeBitsForReading", 13);
+  run_test(test_Digital_GetBits_should_ReadDigitalInputsAndReturnCurrentValues, "test_Digital_GetBits_should_ReadDigitalInputsAndReturnCurrentValues", 18);
 
   return UnityEnd();
 }

@@ -6,6 +6,10 @@
 #include "MockLED.h"
 
 static const char* CMockString_LED_Init = "LED_Init";
+static const char* CMockString_LED_Off = "LED_Off";
+static const char* CMockString_LED_On = "LED_On";
+static const char* CMockString_LED_Toggle = "LED_Toggle";
+static const char* CMockString_id = "id";
 
 typedef struct _CMOCK_LED_Init_CALL_INSTANCE
 {
@@ -13,10 +17,35 @@ typedef struct _CMOCK_LED_Init_CALL_INSTANCE
 
 } CMOCK_LED_Init_CALL_INSTANCE;
 
+typedef struct _CMOCK_LED_On_CALL_INSTANCE
+{
+  UNITY_LINE_TYPE LineNumber;
+
+} CMOCK_LED_On_CALL_INSTANCE;
+
+typedef struct _CMOCK_LED_Off_CALL_INSTANCE
+{
+  UNITY_LINE_TYPE LineNumber;
+
+} CMOCK_LED_Off_CALL_INSTANCE;
+
+typedef struct _CMOCK_LED_Toggle_CALL_INSTANCE
+{
+  UNITY_LINE_TYPE LineNumber;
+  LED_ID_T Expected_id;
+
+} CMOCK_LED_Toggle_CALL_INSTANCE;
+
 static struct MockLEDInstance
 {
   char LED_Init_IgnoreBool;
   CMOCK_MEM_INDEX_TYPE LED_Init_CallInstance;
+  char LED_On_IgnoreBool;
+  CMOCK_MEM_INDEX_TYPE LED_On_CallInstance;
+  char LED_Off_IgnoreBool;
+  CMOCK_MEM_INDEX_TYPE LED_Off_CallInstance;
+  char LED_Toggle_IgnoreBool;
+  CMOCK_MEM_INDEX_TYPE LED_Toggle_CallInstance;
 } Mock;
 
 extern jmp_buf AbortFrame;
@@ -31,6 +60,30 @@ void MockLED_Verify(void)
   if (CMOCK_GUTS_NONE != call_instance)
   {
     UNITY_SET_DETAIL(CMockString_LED_Init);
+    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
+  }
+  call_instance = Mock.LED_On_CallInstance;
+  if (Mock.LED_On_IgnoreBool)
+    call_instance = CMOCK_GUTS_NONE;
+  if (CMOCK_GUTS_NONE != call_instance)
+  {
+    UNITY_SET_DETAIL(CMockString_LED_On);
+    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
+  }
+  call_instance = Mock.LED_Off_CallInstance;
+  if (Mock.LED_Off_IgnoreBool)
+    call_instance = CMOCK_GUTS_NONE;
+  if (CMOCK_GUTS_NONE != call_instance)
+  {
+    UNITY_SET_DETAIL(CMockString_LED_Off);
+    UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
+  }
+  call_instance = Mock.LED_Toggle_CallInstance;
+  if (Mock.LED_Toggle_IgnoreBool)
+    call_instance = CMOCK_GUTS_NONE;
+  if (CMOCK_GUTS_NONE != call_instance)
+  {
+    UNITY_SET_DETAIL(CMockString_LED_Toggle);
     UNITY_TEST_FAIL(cmock_line, CMockStringCalledLess);
   }
 }
@@ -82,5 +135,130 @@ void LED_Init_CMockExpect(UNITY_LINE_TYPE cmock_line)
   Mock.LED_Init_CallInstance = CMock_Guts_MemChain(Mock.LED_Init_CallInstance, cmock_guts_index);
   Mock.LED_Init_IgnoreBool = (char)0;
   cmock_call_instance->LineNumber = cmock_line;
+}
+
+void LED_On(void)
+{
+  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
+  CMOCK_LED_On_CALL_INSTANCE* cmock_call_instance;
+  UNITY_SET_DETAIL(CMockString_LED_On);
+  cmock_call_instance = (CMOCK_LED_On_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.LED_On_CallInstance);
+  Mock.LED_On_CallInstance = CMock_Guts_MemNext(Mock.LED_On_CallInstance);
+  if (Mock.LED_On_IgnoreBool)
+  {
+    UNITY_CLR_DETAILS();
+    return;
+  }
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
+  cmock_line = cmock_call_instance->LineNumber;
+  UNITY_CLR_DETAILS();
+}
+
+void LED_On_CMockIgnore(void)
+{
+  Mock.LED_On_IgnoreBool = (char)1;
+}
+
+void LED_On_CMockStopIgnore(void)
+{
+  Mock.LED_On_IgnoreBool = (char)0;
+}
+
+void LED_On_CMockExpect(UNITY_LINE_TYPE cmock_line)
+{
+  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_LED_On_CALL_INSTANCE));
+  CMOCK_LED_On_CALL_INSTANCE* cmock_call_instance = (CMOCK_LED_On_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
+  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
+  Mock.LED_On_CallInstance = CMock_Guts_MemChain(Mock.LED_On_CallInstance, cmock_guts_index);
+  Mock.LED_On_IgnoreBool = (char)0;
+  cmock_call_instance->LineNumber = cmock_line;
+}
+
+void LED_Off(void)
+{
+  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
+  CMOCK_LED_Off_CALL_INSTANCE* cmock_call_instance;
+  UNITY_SET_DETAIL(CMockString_LED_Off);
+  cmock_call_instance = (CMOCK_LED_Off_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.LED_Off_CallInstance);
+  Mock.LED_Off_CallInstance = CMock_Guts_MemNext(Mock.LED_Off_CallInstance);
+  if (Mock.LED_Off_IgnoreBool)
+  {
+    UNITY_CLR_DETAILS();
+    return;
+  }
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
+  cmock_line = cmock_call_instance->LineNumber;
+  UNITY_CLR_DETAILS();
+}
+
+void LED_Off_CMockIgnore(void)
+{
+  Mock.LED_Off_IgnoreBool = (char)1;
+}
+
+void LED_Off_CMockStopIgnore(void)
+{
+  Mock.LED_Off_IgnoreBool = (char)0;
+}
+
+void LED_Off_CMockExpect(UNITY_LINE_TYPE cmock_line)
+{
+  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_LED_Off_CALL_INSTANCE));
+  CMOCK_LED_Off_CALL_INSTANCE* cmock_call_instance = (CMOCK_LED_Off_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
+  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
+  Mock.LED_Off_CallInstance = CMock_Guts_MemChain(Mock.LED_Off_CallInstance, cmock_guts_index);
+  Mock.LED_Off_IgnoreBool = (char)0;
+  cmock_call_instance->LineNumber = cmock_line;
+}
+
+void LED_Toggle(LED_ID_T id)
+{
+  UNITY_LINE_TYPE cmock_line = TEST_LINE_NUM;
+  CMOCK_LED_Toggle_CALL_INSTANCE* cmock_call_instance;
+  UNITY_SET_DETAIL(CMockString_LED_Toggle);
+  cmock_call_instance = (CMOCK_LED_Toggle_CALL_INSTANCE*)CMock_Guts_GetAddressFor(Mock.LED_Toggle_CallInstance);
+  Mock.LED_Toggle_CallInstance = CMock_Guts_MemNext(Mock.LED_Toggle_CallInstance);
+  if (Mock.LED_Toggle_IgnoreBool)
+  {
+    UNITY_CLR_DETAILS();
+    return;
+  }
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringCalledMore);
+  cmock_line = cmock_call_instance->LineNumber;
+  {
+    UNITY_SET_DETAILS(CMockString_LED_Toggle,CMockString_id);
+    UNITY_TEST_ASSERT_EQUAL_MEMORY((void*)(&cmock_call_instance->Expected_id), (void*)(&id), sizeof(LED_ID_T), cmock_line, CMockStringMismatch);
+  }
+  UNITY_CLR_DETAILS();
+}
+
+void CMockExpectParameters_LED_Toggle(CMOCK_LED_Toggle_CALL_INSTANCE* cmock_call_instance, LED_ID_T id)
+{
+  memcpy((void*)(&cmock_call_instance->Expected_id), (void*)(&id),
+         sizeof(LED_ID_T[sizeof(id) == sizeof(LED_ID_T) ? 1 : -1])); /* add LED_ID_T to :treat_as_array if this causes an error */
+}
+
+void LED_Toggle_CMockIgnore(void)
+{
+  Mock.LED_Toggle_IgnoreBool = (char)1;
+}
+
+void LED_Toggle_CMockStopIgnore(void)
+{
+  Mock.LED_Toggle_IgnoreBool = (char)0;
+}
+
+void LED_Toggle_CMockExpect(UNITY_LINE_TYPE cmock_line, LED_ID_T id)
+{
+  CMOCK_MEM_INDEX_TYPE cmock_guts_index = CMock_Guts_MemNew(sizeof(CMOCK_LED_Toggle_CALL_INSTANCE));
+  CMOCK_LED_Toggle_CALL_INSTANCE* cmock_call_instance = (CMOCK_LED_Toggle_CALL_INSTANCE*)CMock_Guts_GetAddressFor(cmock_guts_index);
+  UNITY_TEST_ASSERT_NOT_NULL(cmock_call_instance, cmock_line, CMockStringOutOfMemory);
+  memset(cmock_call_instance, 0, sizeof(*cmock_call_instance));
+  Mock.LED_Toggle_CallInstance = CMock_Guts_MemChain(Mock.LED_Toggle_CallInstance, cmock_guts_index);
+  Mock.LED_Toggle_IgnoreBool = (char)0;
+  cmock_call_instance->LineNumber = cmock_line;
+  CMockExpectParameters_LED_Toggle(cmock_call_instance, id);
 }
 

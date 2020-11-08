@@ -21,11 +21,29 @@ void test_Executor_Init_should_InitializeAllSubsystems(void)
     Executor_Init();
 }
 
-void test_Executor_Exec_should_ToggleLed0_when_Digital0or1AreHigh(void)
+void test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh(void)
 {
-    Digital_GetBits_ExpectAndReturn(0x01);
+    Digital_GetBits_ExpectAndReturn(0x02);
     
     LED_Toggle_Expect(LED0);
+    
+    Executor_Exec();
+}
+
+void test_Executor_Exec_should_ToggleLed0_when_Digital0and1AreHigh(void)
+{
+    Digital_GetBits_ExpectAndReturn(0x03);
+    
+    LED_Toggle_Expect(LED0);
+    
+    Executor_Exec();
+}
+
+void test_Executor_Exec_should_NotToggleLed0_when_Digital0and1AreLow(void)
+{
+    Digital_GetBits_ExpectAndReturn(0x00);
+    
+    LED_Off_Expect(LED0);
     
     Executor_Exec();
 }

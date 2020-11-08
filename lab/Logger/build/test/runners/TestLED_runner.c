@@ -12,6 +12,8 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_LED_Init_should_ConfigureRegistersofLED1OnOnly(void);
+extern void test_LED_Toggle_should_ToggleTheCorrectOutput(void);
+extern void test_LED_On_should_EnableTheCorrectOutput(void);
 
 
 /*=======Mock Management=====*/
@@ -74,6 +76,8 @@ int main(void)
 {
   UnityBegin("TestLED.c");
   run_test(test_LED_Init_should_ConfigureRegistersofLED1OnOnly, "test_LED_Init_should_ConfigureRegistersofLED1OnOnly", 13);
+  run_test(test_LED_Toggle_should_ToggleTheCorrectOutput, "test_LED_Toggle_should_ToggleTheCorrectOutput", 38);
+  run_test(test_LED_On_should_EnableTheCorrectOutput, "test_LED_On_should_EnableTheCorrectOutput", 43);
 
   return UnityEnd();
 }

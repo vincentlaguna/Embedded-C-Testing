@@ -15,6 +15,9 @@
 extern void setUp(void);
 extern void tearDown(void);
 extern void test_Executor_Init_should_InitializeAllSubsystems(void);
+extern void test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh(void);
+extern void test_Executor_Exec_should_ToggleLed0_when_Digital0and1AreHigh(void);
+extern void test_Executor_Exec_should_NotToggleLed0_when_Digital0and1AreLow(void);
 extern void test_Executor_Exec_should_AlwaysReturnTrue(void);
 
 
@@ -84,7 +87,10 @@ int main(void)
 {
   UnityBegin("TestExecutor.c");
   run_test(test_Executor_Init_should_InitializeAllSubsystems, "test_Executor_Init_should_InitializeAllSubsystems", 14);
-  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 24);
+  run_test(test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh, "test_Executor_Exec_should_ToggleLed0_when_Digital1IsHigh", 24);
+  run_test(test_Executor_Exec_should_ToggleLed0_when_Digital0and1AreHigh, "test_Executor_Exec_should_ToggleLed0_when_Digital0and1AreHigh", 33);
+  run_test(test_Executor_Exec_should_NotToggleLed0_when_Digital0and1AreLow, "test_Executor_Exec_should_NotToggleLed0_when_Digital0and1AreLow", 42);
+  run_test(test_Executor_Exec_should_AlwaysReturnTrue, "test_Executor_Exec_should_AlwaysReturnTrue", 51);
 
   CMock_Guts_MemFreeFinal();
   return UnityEnd();
