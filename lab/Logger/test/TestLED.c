@@ -33,4 +33,9 @@ void helperUpdatePin(void)
     LPC_GPIO1->FIOPIN &= ~LPC_GPIO1->FIOCLR;
     LPC_GPIO1->FIOSET = 0;
     LPC_GPIO1->FIOCLR = 0;
+}
+
+void test_LED_Toggle_should_ToggleTheCorrectOutput(void)
+{
+    TEST_IGNORE_MESSAGE("Implement LED_Toggle");
 } 
