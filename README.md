@@ -32,8 +32,10 @@ Command shortlist:
 
 Updates:
 
-- Migrated repository 10-10-2020
+- (Udemy Course) Working on iteration 1 - 
+Second Feature "Let's get digital -14.09:30 
+--Need to fix the test buid, I don't know why it's broken... 
 - docker run -it --rm -v $PWD:/lab throwtheswitch/drsurly-course2
-- Working on iteration 1 - commit #7
+- Migrated repository 10-10-2020
 - 
 
