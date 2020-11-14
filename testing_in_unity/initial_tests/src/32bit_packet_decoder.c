@@ -8,7 +8,7 @@
 *                                                                              *
 ********************************************************************************/
 // Second working iteration optimized using bit-field
-
+// Refactor 201113-1920
 #include <stdio.h>
 #include <stdint.h>
 
