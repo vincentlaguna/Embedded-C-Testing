@@ -11,11 +11,14 @@ else
 	MKDIR = mkdir -p
 	TARGET_EXTENSION=.out
 endif
-
+# Path Definitions
 PATHU = ../unity/
 PATHS = src/
 PATHT = test/
 PATHI = inc/
 PATHB = build/
-
-SRCU
+#Files we are to work with
+SRCU = $(PATHU)unity.c
+SRCS = $(wildcard) $(PATHS)*.c)
+SRCT = $(wildcard) $(PATHT)*.c)
+SRC = $(SRCU) $(SRCS) $(SRCT)
