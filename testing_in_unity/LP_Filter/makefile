@@ -22,3 +22,5 @@ SRCU = $(PATHU)unity.c
 SRCS = $(wildcard) $(PATHS)*.c)
 SRCT = $(wildcard) $(PATHT)*.c)
 SRC = $(SRCU) $(SRCS) $(SRCT)
+#Other relevant files
+OBJU
