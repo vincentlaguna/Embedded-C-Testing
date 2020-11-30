@@ -24,3 +24,4 @@ SRCT = $(wildcard) $(PATHT)*.c)
 SRC = $(SRCU) $(SRCS) $(SRCT)
 #Other relevant files
 OBJU = $(patsubst $(PATHU)%.c,$(PATHB)%.o,$(SRCU))
+OBJS = $(patsubst $(PATHS)%.c,$(PATHB)%.o,$(SRCS))
