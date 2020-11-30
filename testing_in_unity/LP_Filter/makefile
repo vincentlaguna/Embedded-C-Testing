@@ -17,12 +17,15 @@ PATHS = src/
 PATHT = test/
 PATHI = inc/
 PATHB = build/
-#Files we are to work with
+#Determine the source files
 SRCU = $(PATHU)unity.c
 SRCS = $(wildcard) $(PATHS)*.c)
 SRCT = $(wildcard) $(PATHT)*.c)
 SRC = $(SRCU) $(SRCS) $(SRCT)
-#Other relevant files
+#Files we are to work with
 OBJU = $(patsubst $(PATHU)%.c,$(PATHB)%.o,$(SRCU))
 OBJS = $(patsubst $(PATHS)%.c,$(PATHB)%.o,$(SRCS))
 OBJT = $(patsubst $(PATHT)%.c,$(PATHT)%.o,$(SRCT))
+OBJ = $(OBJU) $(OBJS) $(OBJT)
+#Other relevant files
+DEP
