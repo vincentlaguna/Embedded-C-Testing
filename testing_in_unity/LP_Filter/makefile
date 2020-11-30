@@ -28,4 +28,6 @@ OBJS = $(patsubst $(PATHS)%.c,$(PATHB)%.o,$(SRCS))
 OBJT = $(patsubst $(PATHT)%.c,$(PATHT)%.o,$(SRCT))
 OBJ = $(OBJU) $(OBJS) $(OBJT)
 #Other relevant files
-DEP
+DEP = $(PATHU)unity.h $(PATHU)unity_internals.h
+TGT = $(PATHB)test $(TARGET_EXTENSION)
+#Tool definitions
