@@ -25,3 +25,4 @@ SRC = $(SRCU) $(SRCS) $(SRCT)
 #Other relevant files
 OBJU = $(patsubst $(PATHU)%.c,$(PATHB)%.o,$(SRCU))
 OBJS = $(patsubst $(PATHS)%.c,$(PATHB)%.o,$(SRCS))
+OBJT = $(patsubst $(PATHT)%.c,$(PATHT)%.o,$(SRCT))
