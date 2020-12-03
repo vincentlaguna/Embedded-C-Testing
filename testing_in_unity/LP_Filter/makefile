@@ -33,3 +33,17 @@ TGT = $(PATHB)test $(TARGET_EXTENSION)
 #Tool definitions
 CC=gcc
 CFLAGS=-I. -I$(PATHU) -I$(PATHI) -I$(PATHS) -DTEST
+
+clean:
+	$(CLEANUP) $(PATHB)*.o
+	$(CLEANUP) $(TGT)
+	
+$(PATHB):
+	$(MKDIR) $(PATHB)
+	
+all: clean test
+
+.PHONY: all
+.PHONY: clean
+.PHONY: test
+	
