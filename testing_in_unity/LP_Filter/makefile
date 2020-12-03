@@ -31,3 +31,5 @@ OBJ = $(OBJU) $(OBJS) $(OBJT)
 DEP = $(PATHU)unity.h $(PATHU)unity_internals.h
 TGT = $(PATHB)test $(TARGET_EXTENSION)
 #Tool definitions
+CC=gcc
+CFLAGS=-I. -I$(PATHU) -I$(PATHI) -I$(PATHS) -DTEST
