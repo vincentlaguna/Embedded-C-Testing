@@ -1,3 +1,12 @@
+// Download:
+// git clone git://git.drogon.net/wiringPi
+// Installation:
+// cd wiringPi
+// git pull origin
+// ./build
+// Testing:
+// gpio -v
+// gpio readall
 // Project for Reflex game on a RPi3-4 in C
 #include <stdio.h>
 #include <wiringPi.h>
@@ -14,6 +23,7 @@ static int switches[LED_NUM] =  {6,13,19,23,24,0};
 // Main function - need while loop somewhere?
 int main(void)
 {
+  wiringPiSetup(); // Initial wiringPi
   // Let's define our variables
   int rand_int         =  0;
   bool button_valid    =  FALSE;
