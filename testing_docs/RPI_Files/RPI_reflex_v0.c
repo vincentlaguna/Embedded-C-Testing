@@ -30,5 +30,20 @@ int main(void)
   bool button_invalid  =  FALSE;
   int points_max       =  10;
   
+  setenv("WIRINGPI_GPIOMEM", "1", 1);
+
+  pinMode(LedPin, OUTPUT); 
+  pinMode(ButtonPin, INPUT);
+
+  pullUpDnControl(ButtonPin, PUD_UP); //pull up to 3.3V,make GPIO1 a stable level
+
+  while(1)
+  {
+    digitalWrite(LedPin, HIGH);
+    if(digitalRead(ButtonPin) == 0)
+    { //indicate that button has pressed down
+      digitalWrite(LedPin, LOW); //led on
+		}
+	}
   return(0);
 }
