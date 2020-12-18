@@ -30,19 +30,35 @@ OBJ = $(OBJU) $(OBJS) $(OBJT)
 #Other relevant files
 DEP = $(PATHU)unity.h $(PATHU)unity_internals.h
 TGT = $(PATHB)test $(TARGET_EXTENSION)
-#Tool definitions
+#Tool Definitions
 CC=gcc
 CFLAGS=-I. -I$(PATHU) -I$(PATHI) -I$(PATHS) -DTEST
+
+test: $(PATHB) $(TGT)
+	./$(TGT)
+
+$(PATHB)%.o:: $(PATHS)%.c $(DEP)
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(PATHB)%.o:: $(PATHT)%.c $(DEP)
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(PATHB)%.o:: $(PATHU)%.c $(DEP)
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(TGT): $(OBJ)
+	gcc -o $@ $^
 
 clean:
 	$(CLEANUP) $(PATHB)*.o
 	$(CLEANUP) $(TGT)
-	
+
 $(PATHB):
 	$(MKDIR) $(PATHB)
-	
+
 all: clean test
 
 .PHONY: all
 .PHONY: clean
 .PHONY: test
+
