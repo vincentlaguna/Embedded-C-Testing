@@ -1,8 +1,7 @@
 #include "unity.h"
-#include "Filter.h"
 
-void test_TheFirst(void) {
-    TEST_ASSERT_EQUAL(1,2);
+void test_Walk_should_BeTenMinutes(void) {
+    TEST_ASSERT_TRUE(10, );
 }
 
 // void test_TheSecond(void) {
@@ -23,7 +22,7 @@ void test_TheFirst(void) {
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_TheFirst);
+    RUN_TEST(void test_Walk_should_BeTenMinutes);
     // RUN_TEST(test_TheSecond);
     // RUN_TEST(test_TheThird);
     // RUN_TEST(test_TheFourth);

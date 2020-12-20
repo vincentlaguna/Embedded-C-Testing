@@ -32,8 +32,15 @@ char gridSquare[11][11] =
   {'0','0','0','0','0','0','0','0','0','0','0'},
 };
 
+#ifdef TEST
+int Tenmw(void)
+{
+#endif
+
+#else
 int main(void)
 {
+#endif
   //char *walk = {"nsnsnsnsns"};
   
   displayBoard();
