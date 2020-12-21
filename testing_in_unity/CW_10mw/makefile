@@ -19,8 +19,8 @@ PATHI = inc/
 PATHB = build/
 #Determine the source files
 SRCU = $(PATHU)unity.c
-SRCS = $(wildcard) $(PATHS)*.c)
-SRCT = $(wildcard) $(PATHT)*.c)
+SRCS = $(wildcard $(PATHS)*.c)
+SRCT = $(wildcard $(PATHT)*.c)
 SRC = $(SRCU) $(SRCS) $(SRCT)
 #Files we are to work with
 OBJU = $(patsubst $(PATHU)%.c,$(PATHB)%.o,$(SRCU))
@@ -61,4 +61,3 @@ all: clean test
 .PHONY: all
 .PHONY: clean
 .PHONY: test
-

@@ -13,7 +13,7 @@
 *                                                                                  *
 * **********************************************************************************/
 #include <stdio.h>
-#include <stdbool.h>
+#define TEST
 
 void displayBoard(void);
 
@@ -62,12 +62,6 @@ int main(void)
   return(0);
 }
 
-// bool isValidWalk(const char *walk) 
-// {
-//   if ((sizeof(walk) / sizeof(walk[0])) != 10)
-//       return false;
-  
-// }
 
 void displayBoard(void)
 {

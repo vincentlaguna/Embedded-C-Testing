@@ -1,7 +1,9 @@
 #include "unity.h"
+#include "Tenmw.h"
 
 void test_Walk_should_BeTenMinutes(void) {
-    TEST_ASSERT_TRUE(10, );
+    
+    TEST_ASSERT_TRUE(1 == 0);
 }
 
 // void test_TheSecond(void) {
@@ -22,7 +24,7 @@ void test_Walk_should_BeTenMinutes(void) {
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(void test_Walk_should_BeTenMinutes);
+    RUN_TEST(test_Walk_should_BeTenMinutes);
     // RUN_TEST(test_TheSecond);
     // RUN_TEST(test_TheThird);
     // RUN_TEST(test_TheFourth);
