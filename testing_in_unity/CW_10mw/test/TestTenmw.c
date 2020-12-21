@@ -3,7 +3,7 @@
 
 void test_Walk_should_BeTenMinutes(void) 
 {
-  const char *walk = {"nsnsnsnsns\0"};
+  const char *walk = {"nsnsnsnsns"};
     
   TEST_ASSERT_TRUE(isValidWalk(&walk));
 }

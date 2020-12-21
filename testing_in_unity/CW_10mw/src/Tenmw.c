@@ -13,23 +13,10 @@
 *                                                                                  *
 * **********************************************************************************/
 #include <stdio.h>
+#include "Tenmw.h"
 //#define TEST
 
 char *walk = {"nsnsnsnsns"};
-
-int isValidWalk(const char *walk) 
-{
-  // if ((sizeof*(walk) / sizeof(walk[0])) != 10)
-  //     printf("%s\n", walk);
-  //     return 0;
-  // return 1;
-  while (*(walk) != '\0')
-    printf("%c ", *walk++); 
-    printf("\n%d\n", sizeof*(walk) / 1);
-  return 0;
-}
-
-void displayBoard(void);
 
 char gridSquare[11][11] =
 {
@@ -55,7 +42,7 @@ int Tenmw(void)
 int main(void)
 {
 #endif
-  isValidWalk(walk);
+
   displayBoard();
 //   char direction;
 //   int size = 0;
@@ -74,7 +61,6 @@ int main(void)
   // displayBoard(); / This is FUTILE!!!
   return(0);
 }
-
 
 void displayBoard(void)
 {
@@ -119,4 +105,16 @@ void displayBoard(void)
   
   printf("\n\n");
   
+}
+
+int isValidWalk(const char *walk) 
+{
+  // if ((sizeof*(walk) / sizeof(walk[0])) != 10)
+  //     printf("%s\n", walk);
+  //     return 0;
+  // return 1;
+  while (*(walk) != '\0')
+    printf("%c ", *walk++); 
+    printf("\n%d\n", sizeof*(walk) / 1);
+  return 0;
 }
