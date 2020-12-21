@@ -1,7 +1,7 @@
-ifeq ($(OSTYPE), cygwin)
+ifeq ($(OSTYPE),cygwin)
 	CLEANUP = rm -f
 	MKDIR = mkdir -p
-	TARGET_EXTENSION=.exe
+	TARGET_EXTENSION=.out
 else ifeq ($(OS), Windows_NT)
 	CLEANUP = del /F /Q
 	MKDIR = mkdir
