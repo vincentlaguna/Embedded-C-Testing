@@ -1,9 +1,11 @@
 #include "unity.h"
 #include "Tenmw.h"
 
-void test_Walk_should_BeTenMinutes(void) {
+void test_Walk_should_BeTenMinutes(void) 
+{
+  const char *walk = {"nsnsnsnsns\0"};
     
-    TEST_ASSERT_TRUE(1 == 0);
+  TEST_ASSERT_TRUE(isValidWalk(&walk));
 }
 
 // void test_TheSecond(void) {

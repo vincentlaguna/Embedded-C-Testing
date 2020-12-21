@@ -13,7 +13,21 @@
 *                                                                                  *
 * **********************************************************************************/
 #include <stdio.h>
-#define TEST
+//#define TEST
+
+char *walk = {"nsnsnsnsns"};
+
+int isValidWalk(const char *walk) 
+{
+  // if ((sizeof*(walk) / sizeof(walk[0])) != 10)
+  //     printf("%s\n", walk);
+  //     return 0;
+  // return 1;
+  while (*(walk) != '\0')
+    printf("%c ", *walk++); 
+    printf("\n%d\n", sizeof*(walk) / 1);
+  return 0;
+}
 
 void displayBoard(void);
 
@@ -41,8 +55,7 @@ int Tenmw(void)
 int main(void)
 {
 #endif
-  //char *walk = {"nsnsnsnsns"};
-  
+  isValidWalk(walk);
   displayBoard();
 //   char direction;
 //   int size = 0;
