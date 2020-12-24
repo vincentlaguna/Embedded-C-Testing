@@ -41,7 +41,7 @@ int main(void)
 {
 #endif
 
-  //displayBoard();
+  displayBoard();
   char *walk = {"nsnsnsnsns"};
   
   isValidWalk(walk);
