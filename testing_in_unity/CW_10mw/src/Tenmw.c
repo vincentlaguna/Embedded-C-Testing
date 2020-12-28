@@ -46,7 +46,8 @@ int main(void)
   
   if (isValidWalk(walk))
     printf("It was 10 chars!\n");
-  printf("Nope, not ten or your code SUCKS!\n");
+  else
+    printf("Nope, not ten or your code SUCKS!\n");
 //   char direction;
 //   int size = 0;
 //   char *s;
