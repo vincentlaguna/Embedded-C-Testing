@@ -14,7 +14,7 @@
 * **********************************************************************************/
 #include <stdio.h>
 #include "../inc/Tenmw.h"
-//#define _TEST
+#define _TEST
 
 char gridSquare[11][11] =
 {
@@ -49,12 +49,7 @@ int main(void)
   else
     printf("Nope, not ten or your code SUCKS!\n");
 //   char direction;
-//   int size = 0;
 //   char *s;
-  
-//   for (s = walk; s != '\0'; s++)
-//     size++;
-//   printf("%d", size);//worthless... 
   
   //switch (direction)
   //gridSquare[4][5];
