@@ -117,7 +117,7 @@ bool isValidWalk(const char *walk)
   
   while (*(walk) != '\0')
   {
-    printf("%c ", *walk++);
+    //printf("%c ", *walk++);
     printf(" %d ", ++ct);
   }
   if (ct == 10)
