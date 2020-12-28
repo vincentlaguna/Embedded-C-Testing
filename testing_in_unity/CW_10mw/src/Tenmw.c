@@ -44,7 +44,9 @@ int main(void)
   displayBoard();
   char *walk = {"nsnsnsnsns"};
   
-  isValidWalk(walk);
+  if (isValidWalk(walk))
+    printf("It was 10 chars!\n");
+  printf("Nope, not ten or your code SUCKS!\n");
 //   char direction;
 //   int size = 0;
 //   char *s;
@@ -117,5 +119,7 @@ bool isValidWalk(const char *walk)
     printf("%c ", *walk++);
     printf(" %d ", ++ct);
   }
-  printf("\n%d", ct);
+  if (ct == 10)
+    return true;
+  false;
 }
