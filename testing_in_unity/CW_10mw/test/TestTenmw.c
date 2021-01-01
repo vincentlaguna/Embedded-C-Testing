@@ -5,7 +5,7 @@ void test_walk_should_BeTenMinutes(void)
 {
   const char *walk = {"nsnsnsnsns"};
     
-  TEST_ASSERT_TRUE(isValidWalk(walk));
+  TEST_ASSERT_TRUE(isValidWalkLength(walk));
 }
 
 void test_fWalk_should_notBeTenMinutes(void) 
@@ -13,6 +13,13 @@ void test_fWalk_should_notBeTenMinutes(void)
   const char *fWalk = {"nsnsnsnsnsx"};
     
   TEST_ASSERT_FALSE(isValidWalk(fWalk));
+}
+
+void test_moveWalker_should_return_movedPosition(void)
+{
+  const char *walk = {"e"};
+  
+  TEST_ASSERT_TRUE(moveWalker(walk), gridSquare)
 }
 // void test_TheSecond(void) {
 //     TEST_ASSERT_EQUAL(2,3);

@@ -53,10 +53,6 @@ int main(void)
   
   //switch (direction)
   //gridSquare[4][5];
-  // while (walk != '\0')
-  // {
-  //   printf("%s", walk);
-  // }
   // displayBoard(); / This is FUTILE!!!
   return(0);
 }
@@ -106,7 +102,7 @@ void displayBoard(void)
   
 }
 
-bool isValidWalk(const char *walk) 
+bool isValidWalkLength(const char *walk) 
 {
   int ct = 0;
   
@@ -119,4 +115,9 @@ bool isValidWalk(const char *walk)
   if (ct == 10)
     return true;
   false;
+}
+
+char *moveWalker(char *walk)
+{
+  //gridSquare[0][4] = 'W';
 }
