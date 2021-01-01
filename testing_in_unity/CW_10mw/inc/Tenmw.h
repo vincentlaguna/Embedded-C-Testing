@@ -11,6 +11,6 @@ bool isValidWalkLength(const char *walk);
 
 bool isValidWalk(char *pGridPosition);
 
-char *moveWalker(char *walk);
+void moveWalker(char gridSquare[][11]);
 
 #endif //TENMW_H

@@ -13,6 +13,7 @@
 *                                                                                  *
 * **********************************************************************************/
 #include <stdio.h>
+#include <stdlib.h>
 #include "../inc/Tenmw.h"
 //#define _TEST
 #define SQUARE_DIMENSION 11
@@ -42,21 +43,43 @@ int main(void)
 {
 #endif
 
+char gridSquare[11][11] =
+{
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','H','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+  {'0','0','0','0','0','0','0','0','0','0','0'},
+};
+
   displayBoard();
   char *walk = {"nsnsnsnsns"};
   
-  moveWalker(gridSquare, walk);
+  //moveWalker(gridSquare[11]);
+  
+  int row, col = SQUARE_DIMENSION - 1;
+  
+  for (int x = 0; x < row; x++)
+  {
+    for (int y = 0; y < col; y++)
+    {
+      printf("%c ", *(gridSquare + ((x * col) + y)));
+    }
+    printf("\n");
+  }
   
   if (isValidWalk(walk))
     printf("It was 10 chars!\n");
   else
     printf("Nope, not ten or your code SUCKS!\n");
-//   char direction;
-//   char *s;
-  
-  //switch (direction)
-  //gridSquare[4][5];
-  // displayBoard(); / This is FUTILE!!!
+
+
   return(0);
 }
 
@@ -125,16 +148,18 @@ bool isValidWalk(char *pGridPosition)
   
 }
 
-char *moveWalker(char *gridSquare, char *walk)
-{
-  char *pWalker = NULL;
+// void moveWalker(char *gridSquare)
+// {
+//   int row = SQUARE_DIMENSION;
+//   int col = SQUARE_DIMENSION;
   
-  for (int x = 0; x < SQUARE_DIMENSION; x++)
-  {
-    for (int y = 0; y < SQUARE_DIMENSION; y++)
-    {
-      printf("%c ", *(gridSquare + ((x * SQUARE_DIMENSION) + y)));
-    }
-    printf("\n");
-  }
-}
+//   for (int x = 0; x < row; x++)
+//   {
+//     for (int y = 0; y < col; y++)
+//     {
+//       printf("%c ", *(gridSquare + ((x * col) + y)));
+//     }
+//     printf("\n");
+//   }
+  
+// }
