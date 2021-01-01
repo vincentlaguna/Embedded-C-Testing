@@ -110,7 +110,8 @@ bool isValidWalk(const char *walk)
 {
   int ct = 0;
   
-  while (*(walk) != '\0')
+  //while (*(walk) != '\0')
+  while (walk)
   {
     *walk++;
     ++ct;
