@@ -15,11 +15,17 @@ void test_fWalk_should_notBeTenMinutes(void)
   TEST_ASSERT_FALSE(isValidWalk(fWalk));
 }
 
-void test_moveWalker_should_return_movedPosition(void)
+void test_moveWalker_should_return_validPosition(void)
 {
   const char *walk = {"e"};
   
-  TEST_ASSERT_EQUAL(gridSquare[0][4], 'W');
+  moveWalker(walk);
+  
+  int gridPosition = 0;
+  
+  (gridSquare[0][4] == "W") ? (gridPosition = 1) : (gridPosition = 0);
+  
+  TEST_ASSERT_EQUAL(gridPosition, 1);
 }
 // void test_TheSecond(void) {
 //     TEST_ASSERT_EQUAL(2,3);
@@ -37,11 +43,13 @@ void test_moveWalker_should_return_movedPosition(void)
 //     TEST_ASSERT_FALSE(1 == 1);
 // }
 
-int main(void) {
+int main(void) 
+{
     UNITY_BEGIN();
+    
     RUN_TEST(test_walk_should_BeTenMinutes);
     RUN_TEST(test_fWalk_should_notBeTenMinutes);
-    // RUN_TEST(test_TheSecond);
+    RUN_TEST(test_moveWalker_should_return_validPosition);
     // RUN_TEST(test_TheThird);
     // RUN_TEST(test_TheFourth);
     // RUN_TEST(test_TheFifth);

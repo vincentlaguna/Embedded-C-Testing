@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include "../inc/Tenmw.h"
 //#define _TEST
+#define SQUARE_DIMENSION 11
 
 char gridSquare[11][11] =
 {
@@ -43,6 +44,8 @@ int main(void)
 
   displayBoard();
   char *walk = {"nsnsnsnsns"};
+  
+  moveWalker(gridSquare, walk);
   
   if (isValidWalk(walk))
     printf("It was 10 chars!\n");
@@ -122,7 +125,16 @@ bool isValidWalk(char *pGridPosition)
   
 }
 
-char *moveWalker(char *walk)
+char *moveWalker(char *gridSquare, char *walk)
 {
-  //gridSquare[0][4] = 'W';
+  char *pWalker = NULL;
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      printf("%c ", *(gridSquare + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
 }
