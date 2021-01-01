@@ -19,7 +19,7 @@ void test_moveWalker_should_return_movedPosition(void)
 {
   const char *walk = {"e"};
   
-  TEST_ASSERT_TRUE(moveWalker(walk), gridSquare)
+  TEST_ASSERT_EQUAL(gridSquare[0][4], 'W');
 }
 // void test_TheSecond(void) {
 //     TEST_ASSERT_EQUAL(2,3);

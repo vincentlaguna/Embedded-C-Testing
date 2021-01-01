@@ -14,7 +14,7 @@
 * **********************************************************************************/
 #include <stdio.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[11][11] =
 {
@@ -115,6 +115,11 @@ bool isValidWalkLength(const char *walk)
   if (ct == 10)
     return true;
   false;
+}
+
+bool isValidWalk(char *pGridPosition)
+{
+  
 }
 
 char *moveWalker(char *walk)

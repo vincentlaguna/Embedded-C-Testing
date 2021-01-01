@@ -9,6 +9,8 @@ void displayBoard(void);
 
 bool isValidWalkLength(const char *walk);
 
+bool isValidWalk(char *pGridPosition);
+
 char *moveWalker(char *walk);
 
 #endif //TENMW_H
