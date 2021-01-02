@@ -12,14 +12,14 @@ void test_fWalk_should_notBeTenMinutes(void)
 {
   const char *fWalk = {"nsnsnsnsnsx"};
     
-  TEST_ASSERT_FALSE(isValidWalk(fWalk));
+  TEST_ASSERT_FALSE(isValidWalkLength(fWalk));
 }
 
 void test_moveWalker_should_return_validPosition(void)
 {
   const char *walk = {"e"};
   
-  moveWalker(walk);
+  //moveWalker(walk);
   
   int gridPosition = 0;
   
