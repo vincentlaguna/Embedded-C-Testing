@@ -9,8 +9,4 @@ void displayBoard(void);
 
 bool isValidWalkLength(const char *walk);
 
-bool isValidWalk(char *pGridPosition);
-
-void moveWalker(char gridSquare[][11]);
-
 #endif //TENMW_H
