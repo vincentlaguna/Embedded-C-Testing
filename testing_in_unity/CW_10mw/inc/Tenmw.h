@@ -7,6 +7,8 @@ extern char gridSquare[11][11];
 
 void displayBoard(void);
 
+void displayGrid(char *grid, int row, int col);
+
 bool isValidWalkLength(const char *walk);
 
 #endif //TENMW_H
