@@ -134,7 +134,7 @@ bool isValidWalkLength(const char *walk)
   false;
 }
 
-void displayGrid(char *grid, int n);
+void displayGrid(char *grid, int n)
 {
   for (int x = 0; x <= n; ++x)
   {
