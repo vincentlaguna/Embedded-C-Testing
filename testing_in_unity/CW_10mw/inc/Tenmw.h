@@ -3,7 +3,7 @@
 
 #include <stdbool.h>
 
-extern char gridSquare[11][11];
+//extern char gridSquare[11][11];
 
 void displayBoard(void);
 

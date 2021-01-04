@@ -57,9 +57,11 @@ int main(void)
 //   {'0','0','0','0','0','0','0','0','0','0','0'},
 //   {'0','0','0','0','0','0','0','0','0','0','0'},
 // };
-
+  char *pGrid;
+  pGrid = gridSquare;
+  
   displayBoard();
-  displayGrid(gridSquare[11], 11, 11);
+  displayGrid(pGrid, 11);
   char *walk = {"nsnsnsnsns"};
   
   
@@ -132,13 +134,13 @@ bool isValidWalkLength(const char *walk)
   false;
 }
 
-void displayGrid(const char *grid, int row, int col)
+void displayGrid(char *grid, int n);
 {
-  for (int x = 0; x <= 12; ++x)
+  for (int x = 0; x <= n; ++x)
   {
-    for (int y = 0; y <= 12; ++y)
+    for (int y = 0; y <= n; ++y)
     {
-      printf("%c ", *(gridSquare + ((x * 12) + y)));
+      printf("%c ", *(grid + ((x * n) + y)));
     }
     printf("\n");
   }
