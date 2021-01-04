@@ -136,14 +136,16 @@ bool isValidWalkLength(const char *walk)
 
 void displayGrid(char *grid, int n)
 {
-  for (int x = 0; x <= n; ++x)
+  *(grid + (5 * 8) + 1) = 'w';
+  for (int x = 0; x < n; x++)
   {
-    for (int y = 0; y <= n; ++y)
+    for (int y = 0; y < n; y++)
     {
       printf("%c ", *(grid + ((x * n) + y)));
     }
     printf("\n");
   }
+  printf("\n");
 }
 
 // void moveWalker(char *gridSquare)
