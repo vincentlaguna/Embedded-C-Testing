@@ -136,7 +136,7 @@ bool isValidWalkLength(const char *walk)
 
 void displayGrid(char *grid, int n)
 {
-  *(grid + (0 * 1) + 1) = 'X';
+  *(grid + (0 * n) + 1) = 'X';
   for (int x = 0; x < n; x++)
   {
     for (int y = 0; y < n; y++)
