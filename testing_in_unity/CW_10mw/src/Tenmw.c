@@ -15,10 +15,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/Tenmw.h"
-//#define _TEST
-#define SQUARE_DIMENSION 11
+#define _TEST
 
-char gridSquare[11][11] =
+char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
   {'0','0','0','0','0','0','0','0','0','0','0'},
   {'0','0','0','0','0','0','0','0','0','0','0'},
@@ -61,7 +60,11 @@ int main(void)
   pGrid = gridSquare;
   
   displayBoard();
-  displayGrid(pGrid, 11);
+  
+  #ifndef _Test
+  displayGrid(pGrid, SQUARE_DIMENSION);
+  #endif
+  
   char *walk = {"nsnsnsnsns"};
   
   
@@ -136,7 +139,7 @@ bool isValidWalkLength(const char *walk)
 
 void displayGrid(char *grid, int n)
 {
-  *(grid + (0 * n) + 1) = 'X';
+  *(grid + (5 * n) + 4) = 'X';
   for (int x = 0; x < n; x++)
   {
     for (int y = 0; y < n; y++)

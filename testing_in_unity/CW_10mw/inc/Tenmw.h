@@ -1,9 +1,11 @@
 #ifndef TENMW_H
 #define TENMW_H
 
+#define SQUARE_DIMENSION 11
+
 #include <stdbool.h>
 
-//extern char gridSquare[11][11];
+extern char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION];
 
 void displayBoard(void);
 
