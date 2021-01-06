@@ -19,19 +19,27 @@ void test_moveWalker_should_return_validPosition(void)
 {
   const char *walk = {"e"};
   
-#ifdef _TEST
   char *pGridPos;
   pGridPos = gridSquare;
+  
+  #ifdef _TEST
   displayGrid(pGridPos, SQUARE_DIMENSION);
-#endif
+  #endif
   
   //moveWalker(walk);
   
   int gridPosition = 0;
   
-  (*(pGridPos + (5 * SQUARE_DIMENSION) + 4) == 'X') ? (gridPosition = 1) : (gridPosition = 0);
+  if (*(pGridPos + (5 * SQUARE_DIMENSION) + 4) == 'X')
+  {
+    gridPosition = 1;
+  }
+  else
+  {
+    gridPosition = 0;
+  }
   
-  TEST_ASSERT_EQUAL(gridPosition, 1);
+  TEST_ASSERT_EQUAL(1, gridPosition);
 }
 // void test_TheSecond(void) {
 //     TEST_ASSERT_EQUAL(2,3);
