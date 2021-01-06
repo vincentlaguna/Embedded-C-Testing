@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <wiringPi.h>
+#include <stdbool.h>
 
 #define LED_NUM  6
 #define TRUE     1
