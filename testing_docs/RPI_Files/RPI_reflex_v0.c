@@ -1,13 +1,3 @@
-// Download:
-// git clone git://git.drogon.net/wiringPi
-// Installation:
-// cd wiringPi
-// git pull origin
-// ./build
-// Testing:
-// gpio -v
-// gpio readall
-// Project for Reflex game on a RPi3-4 in C
 #include <stdio.h>
 #include <wiringPi.h>
 
