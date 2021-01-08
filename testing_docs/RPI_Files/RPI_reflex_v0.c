@@ -10,16 +10,18 @@ typedef int bool
 // Maybe a struct implementation may be a better option???
 static int leds[6]           =  {5,12,17,22,25};
 static int switches[LED_NUM] =  {6,13,19,23,24,0};
+// Let's Declare our function prototypes
+int buttonPressed(int *pSwitches, int *pLeds);
 // Main function - need while loop somewhere?
 int main(void)
 {
   wiringPiSetup(); // Initial wiringPi
   // Let's define our variables
-  int  rand_int         =  0;
-  bool button_valid     =  FALSE;
-  bool button_invalid   =  FALSE;
-  int  points_max       =  10;
-  int deduction         =  5
+  int   rand_int        =  0;
+  bool  button_valid    =  FALSE;
+  bool  button_invalid  =  FALSE;
+  int   points_max      =  10;
+  int   deduction       =  5;
   
   //setenv("WIRINGPI_GPIOMEM", "1", 1); // Might not need this?
 
@@ -38,3 +40,5 @@ int main(void)
 	}
   return(0);
 }
+// Let's define our functions
+int buttonPressed(int *pSwitches, int *pLeds);
