@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <wiringPi.h>
-#include <stdbool.h>
 
 #define LED_NUM  6
 #define TRUE     1
@@ -9,19 +8,20 @@
 typedef int bool
 // Define the arrays of elements that will correspond to our LED's and switches
 // Maybe a struct implementation may be a better option???
-static int leds[6]           =  {5,12,17,22,0};
+static int leds[6]           =  {5,12,17,22,25};
 static int switches[LED_NUM] =  {6,13,19,23,24,0};
 // Main function - need while loop somewhere?
 int main(void)
 {
   wiringPiSetup(); // Initial wiringPi
   // Let's define our variables
-  int rand_int         =  0;
-  bool button_valid    =  FALSE;
-  bool button_invalid  =  FALSE;
-  int points_max       =  10;
+  int  rand_int         =  0;
+  bool button_valid     =  FALSE;
+  bool button_invalid   =  FALSE;
+  int  points_max       =  10;
+  int deduction         =  5
   
-  setenv("WIRINGPI_GPIOMEM", "1", 1);
+  //setenv("WIRINGPI_GPIOMEM", "1", 1); // Might not need this?
 
   pinMode(LedPin, OUTPUT); 
   pinMode(ButtonPin, INPUT);
