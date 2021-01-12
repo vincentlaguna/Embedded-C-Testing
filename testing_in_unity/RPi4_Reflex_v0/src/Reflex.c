@@ -5,7 +5,7 @@
 int init_Buttons(void)
 {
   Buttons *button;
-  button = (struct*)malloc(sizeof(Buttons));
+  button = (Buttons *)malloc(sizeof(Buttons));
 //   wiringPiSetup();
 //   pinMode(LedPin, OUTPUT); 
 //   pinMode(ButtonPin, INPUT);
