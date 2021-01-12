@@ -1,10 +1,10 @@
 #ifndef REFLEX_H
 #define REFLEX_H
 
-typedef struct Buttons
+typedef struct
 {
   int button1;   
-};
+}Buttons;
 
 int init_Buttons(void);
 
