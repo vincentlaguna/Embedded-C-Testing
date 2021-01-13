@@ -1,5 +1,6 @@
 #ifndef REFLEX_H
 #define REFLEX_H
+#include <stdint.h>
 
 typedef struct
 {
