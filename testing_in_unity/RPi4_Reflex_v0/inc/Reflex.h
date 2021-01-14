@@ -28,4 +28,6 @@ typedef struct
 
 int Buttons_Init(void);
 
+int LEDS_Init(void);
+
 #endif //REFLEX_H

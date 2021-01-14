@@ -10,8 +10,22 @@ int Buttons_Init(void)
 //   pinMode(LedPin, OUTPUT); 
 //   pinMode(ButtonPin, INPUT);
 //   pullUpDnControl(ButtonPin, PUD_UP); //pull up to 3.3V,make GPIO1 a stable level
-  button->button_1 = 1;
+  button->button_1 |= ON;
   if (button->button_1)
+    return 1;
+  return 0;
+}
+
+int LEDS_Init(void)
+{
+  LEDS *LED;
+  LED = (LEDS *)malloc(sizeof(LEDS));
+//   wiringPiSetup();
+//   pinMode(LedPin, OUTPUT); 
+//   pinMode(ButtonPin, INPUT);
+//   pullUpDnControl(ButtonPin, PUD_UP); //pull up to 3.3V,make GPIO1 a stable level
+  LED->LED_1 |= ON;
+  if (LED->LED_1)
     return 1;
   return 0;
 }

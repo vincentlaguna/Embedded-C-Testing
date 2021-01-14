@@ -5,6 +5,10 @@ void test_Buttons_Init_should_Initialize(void) {
     TEST_ASSERT_EQUAL(1, Buttons_Init());
 }
 
+void test_LEDS_Init_should_Initialize(void) {
+    TEST_ASSERT_EQUAL(1, LEDS_Init());
+}
+
 // void test_TheSecond(void) {
 //     TEST_ASSERT_EQUAL(2,3);
 // }
@@ -24,6 +28,7 @@ void test_Buttons_Init_should_Initialize(void) {
 int main(void) {
     UNITY_BEGIN();
     RUN_TEST(test_Buttons_Init_should_Initialize);
+    RUN_TEST(test_LEDS_Init_should_Initialize);
     // RUN_TEST(test_TheSecond);
     // RUN_TEST(test_TheThird);
     // RUN_TEST(test_TheFourth);
