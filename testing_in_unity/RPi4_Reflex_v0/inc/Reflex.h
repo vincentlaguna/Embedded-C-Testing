@@ -15,6 +15,6 @@ typedef struct
   uint8_t         :2;
 }Buttons;
 
-int init_Buttons(void);
+int Buttons_Init(void);
 
 #endif //REFLEX_H

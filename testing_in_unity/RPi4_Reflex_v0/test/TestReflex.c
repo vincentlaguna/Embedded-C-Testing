@@ -1,8 +1,8 @@
 #include "../inc/Reflex.h"
 #include "unity.h"
 
-void test_Buttons_should_Initialize(void) {
-    TEST_ASSERT_EQUAL(1, init_Buttons());
+void test_Buttons_Init_should_Initialize(void) {
+    TEST_ASSERT_EQUAL(1, Buttons_Init());
 }
 
 // void test_TheSecond(void) {
@@ -23,7 +23,7 @@ void test_Buttons_should_Initialize(void) {
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_Buttons_should_Initialize);
+    RUN_TEST(test_Buttons_Init_should_Initialize);
     // RUN_TEST(test_TheSecond);
     // RUN_TEST(test_TheThird);
     // RUN_TEST(test_TheFourth);

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "../inc/Reflex.h"
 
-int init_Buttons(void)
+int Buttons_Init(void)
 {
   Buttons *button;
   button = (Buttons *)malloc(sizeof(Buttons));
