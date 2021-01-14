@@ -6,6 +6,17 @@
 
 typedef struct
 {
+  uint8_t LED_1 :1;
+  uint8_t LED_2 :1;
+  uint8_t LED_3 :1;
+  uint8_t LED_4 :1;
+  uint8_t LED_5 :1;
+  uint8_t LED_6 :1;
+  uint8_t         :2;
+}LEDS;
+
+typedef struct
+{
   uint8_t button1 :1;
   uint8_t button2 :1;
   uint8_t button3 :1;
