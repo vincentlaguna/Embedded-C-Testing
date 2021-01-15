@@ -11,7 +11,14 @@ int Buttons_Init(void)
 //   pinMode(ButtonPin, INPUT);
 //   pullUpDnControl(ButtonPin, PUD_UP); //pull up to 3.3V,make GPIO1 a stable level
   button->button_1 |= ON;
-  if (button->button_1)
+  button->button_2 |= ON;
+  button->button_3 |= ON;
+  button->button_4 |= ON;
+  button->button_5 |= ON;
+  button->button_6 |= ON;
+  
+  if (button->button_1 && button->button_2 && button->button_3
+      && button->button_1 && button->button_1 &&)
     return 1;
   return 0;
 }
