@@ -34,7 +34,7 @@ int LEDS_Init(void)
   LED->LED_1 |= ON;
   LED->LED_2 |= ON;
   LED->LED_3 |= ON;
-  LED->LED_4 |= OFF;
+  LED->LED_4 |= ON;
   LED->LED_5 |= ON;
   LED->LED_6 |= ON;
   
