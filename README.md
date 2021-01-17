@@ -1,4 +1,6 @@
 # Embedded-C-Testing
+- Implementation of newly created Bash scripts for the RPi4
+- Refactoring existing test scripts (work)
 - Need to create and update the make files to run in unity
 - Note* Code and exercises are pulled from the Test-Driven Development for Embedded C book
 See "Rights file".
