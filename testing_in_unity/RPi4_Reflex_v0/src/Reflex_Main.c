@@ -4,7 +4,7 @@
 #define _TEST
 
 #ifdef _TEST
-int Tenmw(void)
+int Reflex(void)
 {
 #endif
 
