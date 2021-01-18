@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
