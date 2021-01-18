@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -59,14 +59,15 @@ int main(void)
   char *pGrid;
   pGrid = gridSquare;
   
+  char *walk = {"nsnsnsnsns"};
+  
   displayBoard();
   
   #ifndef _Test
   displayGrid(pGrid, SQUARE_DIMENSION);
   #endif
   
-  char *walk = {"nsnsnsnsns"};
-  
+  moveWalker(walk, pGrid, SQUARE_DIMENSION);
   
   if (isValidWalkLength(walk))
     printf("It was 10 chars!\n");
@@ -150,8 +151,11 @@ void displayGrid(char *grid, int n)
   printf("\n");
 }
 
-void moveWalker(char *grid, int n)
+void moveWalker(const char *walk, char *grid, int n)
 {
+  // Implement a for loop that can iterate over each char of walk, then create a switch case during
+  // the loop which assigns the correct position according to each char being iterated?
+  // I think that might be the right idea, we will see...
   *(grid + (5 * n) + 4) = 'X';
   for (int x = 0; x < n; x++)
   {
