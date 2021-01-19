@@ -156,6 +156,10 @@ void moveWalker(const char *walk, char *grid, int n)
   // Implement a for loop that can iterate over each char of walk, then create a switch case during
   // the loop which assigns the correct position according to each char being iterated?
   // I think that might be the right idea, we will see...
+  for (int direction = 0; *walk != '\0'; *walk++, direction++)
+  {
+    printf("%d = %c\n", direction, *walk);
+  }
   *(grid + (5 * n) + 4) = 'X';
   for (int x = 0; x < n; x++)
   {
