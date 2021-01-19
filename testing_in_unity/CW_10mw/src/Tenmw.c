@@ -162,10 +162,19 @@ void moveWalker(const char *walk, char *grid, int n)
     switch (*walk)
     {
       case 'n':
-        *(grid + (5 * n) + 3) = 'X';
+        *(grid + (4 * n) + 5) = 'X';
         break;
-      default:
-        printf("Somthing is wrong with the *char input! Exiting the H*** out!...\n");
+      case 's':
+        *(grid + (6 * n) + 5) = 'X';
+        break;
+      case 'e':
+        *(grid + (5 * n) + 4) = 'X';
+        break;
+      case 'w':
+        *(grid + (5 * n) + 6) = 'X';
+        break;
+      //default:
+        //printf("Somthing is wrong with the *char input! Exiting the H*** out!...\n");
     }
   }
   //*(grid + (5 * n) + 4) = 'X';
