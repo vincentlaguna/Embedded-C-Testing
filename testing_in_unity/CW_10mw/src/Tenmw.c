@@ -159,8 +159,16 @@ void moveWalker(const char *walk, char *grid, int n)
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
     printf("%d = %c\n", direction, *walk);
+    switch (*walk)
+    {
+      case 'n':
+        *(grid + (5 * n) + 3) = 'X';
+        break;
+      default:
+        printf("Somthing is wrong with the *char input! Exiting the H*** out!...\n");
+    }
   }
-  *(grid + (5 * n) + 4) = 'X';
+  //*(grid + (5 * n) + 4) = 'X';
   for (int x = 0; x < n; x++)
   {
     for (int y = 0; y < n; y++)
