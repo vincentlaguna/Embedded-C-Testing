@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -156,13 +156,16 @@ void moveWalker(const char *walk, char *grid, int n)
   // Implement a for loop that can iterate over each char of walk, then create a switch case during
   // the loop which assigns the correct position according to each char being iterated?
   // I think that might be the right idea, we will see...
+  char marker = 'X';
+  char pMarker = &marker;
+  
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
     printf("%d = %c\n", direction, *walk);
     switch (*walk)
     {
       case 'n':
-        *(grid + (4 * n) + 5) = 'X';
+        *(grid + (4 * n) + 5) = pMarker;
         break;
       case 's':
         *(grid + (6 * n) + 5) = 'X';
