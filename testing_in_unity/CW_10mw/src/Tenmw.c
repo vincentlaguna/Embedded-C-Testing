@@ -157,8 +157,9 @@ void moveWalker(const char *walk, char *grid, int n)
   // the loop which assigns the correct position according to each char being iterated?
   // I think that might be the right idea, we will see...
   
-  int row =
-  char marker = *(grid + (5 * n) + 5);
+  int row = 5
+  int position = 5
+  char marker = 'X';
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
