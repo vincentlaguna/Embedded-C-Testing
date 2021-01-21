@@ -59,7 +59,7 @@ int main(void)
   char *pGrid;
   pGrid = gridSquare;
   
-  char *walk = {"nnnnnnnnnn"};
+  char *walk = {"nnwwssesen"};
   
   displayBoard();
   
@@ -156,9 +156,9 @@ void moveWalker(const char *walk, char *grid, int n)
   // Implement a for loop that can iterate over each char of walk, then create a switch case during
   // the loop which assigns the correct position according to each char being iterated?
   // I think that might be the right idea, we will see...
-  
-  int row = 5
-  int position = 5
+  int row = 5;
+  int position = 5;
+  bool backHome = false
   char marker = 'X';
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
@@ -167,16 +167,16 @@ void moveWalker(const char *walk, char *grid, int n)
     switch (*walk)
     {
       case 'n':
-        *(grid + (4 * n) + 5) = marker;
+        *(grid + (row-- * n) + position) = marker;
         break;
       case 's':
-        *(grid + (6 * n) + 5) = marker;
+        *(grid + (row++ * n) + position) = marker;
         break;
       case 'e':
-        *(grid + (5 * n) + 4) = marker;
+        *(grid + (row * n) + position--) = marker;
         break;
       case 'w':
-        *(grid + (5 * n) + 6) = marker;
+        *(grid + (row * n) + position++) = marker;
         break;
       //default:
         //printf("Somthing is wrong with the *char input! Exiting the H*** out!...\n");
