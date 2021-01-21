@@ -59,7 +59,7 @@ int main(void)
   char *pGrid;
   pGrid = gridSquare;
   
-  char *walk = {"nnwwssesen"};
+  char *walk = {"nnwwssesee"};
   
   displayBoard();
   
@@ -158,7 +158,7 @@ void moveWalker(const char *walk, char *grid, int n)
   // I think that might be the right idea, we will see...
   int row = 5;
   int position = 5;
-  bool backHome = false
+  bool backHome = false;
   char marker = 'X';
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
@@ -192,4 +192,8 @@ void moveWalker(const char *walk, char *grid, int n)
     printf("\n");
   }
   printf("\n");
+  
+  if (marker == *(grid + (row * n) + position))
+      backHome = true;
+      printf("\nWalker is Back Home!");
 }
