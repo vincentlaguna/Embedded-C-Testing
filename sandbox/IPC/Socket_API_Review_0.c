@@ -42,4 +42,18 @@ struct hostent // Keeps information relating to a Server
 // 8. Release the connection ("close")
 
 // Remember: Socket, Bind, Listen, Accept, Connect, Send, Receive, Close
+// Working with sockets is similar to working with file:
+// socket() and accept() functions both return handles (file descriptors) r/w
 
+// Socket Functions:
+
+// 1. socket()
+// 2. connect() - Client Programs
+// 3. bind() - Server Only
+// 4. listen() and accept()
+// 5. read(), recv(), recvfrom() or recvmesg()
+// 6. write(), send(), sendto() or sendmsg()
+// 7. close()
+
+// Remember: All of the above functions require <sys/types.h>, <sys/sockets.h>
+// #includes, except for read/write/close, which are defined in <unistd.h>
