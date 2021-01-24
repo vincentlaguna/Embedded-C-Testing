@@ -86,4 +86,23 @@ int recvfrom(int sockfd, void *buf, int len, unsigned int flags,
              struct sockaddr *from, int *fromlen);
 // Attempts to write n bytes from the buffer pointed to by *buf to the file
 // associated with the open file descripter, fildes
-int write(int fildes, const void *buf, int nbyte);
+int write(int fildes/*File descriptor*/, const void *buf/*ptr to data to be sent*/,
+          int nbyte/*# of bytes to be written*/);
+// Used to send data over stream sockets or connected datagram sockets
+int send(int sockfd, const void *msg/*ptr to the data to send*/,
+         int len/*Length of data*/, int flags); // Returns n bytes sent out
+// For unconnected datagram sockets
+int sendto(int sockfd, const void *msg, int len, unsigned int flags,
+           const struct sockaddr *to/*ptr to sockaddr for the host where the
+           data is sent to*/, int tolen/*sizeof(struct sockaddr)*/);
+// Attempts to read nbyte bytes from the file associated with the buffer,
+// fildes, into the buffer pointed to by *buf
+int read(int fildes, const void *buf/*Buffer to read the info into*/,
+         int nbytes); // Returns the n bytes actually written to the file
+// associated with fildes
+// Used to close the communication between the Client and the Server
+int close(int sockfd);
+// Used to "gracefully" close the communication between the Client and the Server
+int shutdown(int sockfd, int how/*0 = receiving is not allowed
+             1 = sending is not allowed, 2 = send/receieve not allowed,
+             when set to 2 = same as close()*/);
