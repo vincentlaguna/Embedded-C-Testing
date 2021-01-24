@@ -34,8 +34,8 @@ void *function_1(void *data) // Function to pass to pthread_create
 {
   int *x = (int *)data; // Type-cast to *int, as the prototype
                         // only allows for a void *
+  counter++;
+  
   printf("Message is %d, thread_id -> %lud modified the counter to = %d\n", *x, pthread_self(), counter);
   printf("Message is %d, thread_id -> %lud read the counter = %d\n", *x, pthread_self(), counter);
-  
-  counter++;
 }
