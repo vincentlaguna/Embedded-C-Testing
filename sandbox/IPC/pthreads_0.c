@@ -5,6 +5,7 @@
 #define NTHREADS 10
 
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t condition_mutext = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t evens_done = PTHREAD_COND_INITIALIZER;
 
 int number_evens_finished = 0;
