@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>
 
 #define NTHREADS 10
 
@@ -42,6 +43,7 @@ int main(void)
       //pthread_exit(&thread_id[j]); // Kill Threads before exiting the program
     }
     counter = 0;
+    number_evens_finished = 0;
   }
   return(0);
 }
@@ -50,7 +52,8 @@ void *function_1(void *data) // Function to pass to pthread_create
 {
   int *x = (int *)data; // Type-cast to *int, as the prototype
                         // only allows for a void *
-  pthread_mutex_lock(&lock);
+  pthread_mutex_lock(&condition_mutext);
+  //pthread_mutex_lock(&lock);
   
   if (*x % 2 == 0)
   {
@@ -58,8 +61,13 @@ void *function_1(void *data) // Function to pass to pthread_create
   }
   else
   {
-    pthread_cond_wait(&evens_done, &lock); 
+    pthread_cond_wait(&evens_done, &lock, &condition_mutext); 
   }
+  
+  pthread_mutex_unlock(&condition_mutext);
+  
+  pthread_mutex_lock(&lock);
+  
   counter++;
   
   printf("Message is %d, thread_id -> %lud modified the counter to = %d\n", *x, pthread_self(), counter);
