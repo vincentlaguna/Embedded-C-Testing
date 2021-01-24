@@ -26,7 +26,8 @@ int main(void)
       values[i] = i;
       pthread_create(&thread_id[i], NULL, function_1, &values[i]);
     }
-    
+    // Need to wait until all Threads have been created and running
+    // Even try to signal (or there will be a race condition)
     sleep(1);
     
     while(1)
