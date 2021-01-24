@@ -12,18 +12,21 @@ int main(void)
   pthread_t thread_id[NTHREADS]; // Create array of 10 threads
   int values[NTHREADS];
   
-  for (int i = 0; i < NTHREADS; i++) // For-Loop to create the 10 threads
+  for (int k = 0; k < 150; k++)
   {
-    values[i] = i;
-    pthread_create(&thread_id[i], NULL, function_1, &values[i]);
-  }
+    for (int i = 0; i < NTHREADS; i++) // For-Loop to create the 10 threads
+    {
+        values[i] = i;
+        pthread_create(&thread_id[i], NULL, function_1, &values[i]);
+    }
   
-  for (int j = 0; j < NTHREADS; j++)
-  {
-    pthread_join(thread_id[j], NULL); // Join the 10 threads to Main
-    pthread_exit(&thread_id[j]); // Kill Threads before exiting the program
+    for (int j = 0; j < NTHREADS; j++)
+    {
+        pthread_join(thread_id[j], NULL); // Join the 10 threads to Main
+        //pthread_exit(&thread_id[j]); // Kill Threads before exiting the program
+    }
+    counter = 0;
   }
-  
   return(0);
 }
 
