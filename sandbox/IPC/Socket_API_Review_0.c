@@ -53,7 +53,15 @@ struct hostent // Keeps information relating to a Server
 // 4. listen() and accept()
 // 5. read(), recv(), recvfrom() or recvmesg()
 // 6. write(), send(), sendto() or sendmsg()
-// 7. close()
+// 7. close() and shutdown()
 
 // Remember: All of the above functions require <sys/types.h>, <sys/sockets.h>
 // #includes, except for read/write/close, which are defined in <unistd.h>
+
+int socket(int family/*i.e., AF_INET - IPv4*/, int type/*i.e., SOCK_STREAM*/,
+           int protocol/*i.e., IPPROTO_TCP/UDP/SCTP*/); // Returns socket descriptor
+int setsockopt(int sockfd, int level, int optname,
+               const void *optval, socklen_t optlen); // Manipulate options
+int connect(int sockfd/*socket descriptor returned from socket()*/,
+            struct sockaddr *serv_addr/*ptr to sockaddr containing dest. IP/port*/,
+            int addrlen);
