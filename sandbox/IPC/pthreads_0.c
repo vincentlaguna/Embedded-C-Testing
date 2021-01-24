@@ -61,7 +61,7 @@ void *function_1(void *data) // Function to pass to pthread_create
   }
   else
   {
-    pthread_cond_wait(&evens_done, &lock, &condition_mutext); 
+    pthread_cond_wait(&evens_done, &condition_mutext); 
   }
   
   pthread_mutex_unlock(&condition_mutext);
