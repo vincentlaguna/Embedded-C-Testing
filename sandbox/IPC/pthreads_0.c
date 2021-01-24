@@ -3,6 +3,8 @@
 
 #define NTHREADS 10
 
+pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+
 int counter = 0; // Global variable to be manipulated by our threads
 
 void *function_1(void *data);
@@ -34,8 +36,11 @@ void *function_1(void *data) // Function to pass to pthread_create
 {
   int *x = (int *)data; // Type-cast to *int, as the prototype
                         // only allows for a void *
+  pthread_mutex_lock(&lock);
   counter++;
   
   printf("Message is %d, thread_id -> %lud modified the counter to = %d\n", *x, pthread_self(), counter);
   printf("Message is %d, thread_id -> %lud read the counter = %d\n", *x, pthread_self(), counter);
+
+  pthread_mutex_unlock(&lock);
 }
