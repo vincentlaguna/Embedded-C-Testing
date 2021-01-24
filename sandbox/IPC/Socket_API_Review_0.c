@@ -73,3 +73,17 @@ int bind(int sockfd, struct sockaddr *my_addr/*ptr containing local IP/port*/,
 // For Example:
 server.sin_port = 0;
 server.sin_addr = INADDR_ANY;
+// Called only by the server
+int listen(int sockfd, int backlog/*Max # of allowed connections*/);
+// Waits until a client contacts the server
+int accept(int sockfd, struct sockaddr *cliaddr/*Client IP/port*/, 
+           socklen_t *addrlen);
+// Used to receive data over stream sockets or connected datagram sockets           
+int recv(int sockfd, void *buf/*Buffer to read info into*/,
+         int len/*Max buf length*/, unsigned int flags); // Returns # bytes read into buffer
+// Used to receive data from unconnected datagram sockets
+int recvfrom(int sockfd, void *buf, int len, unsigned int flags,
+             struct sockaddr *from, int *fromlen);
+// Attempts to write n bytes from the buffer pointed to by *buf to the file
+// associated with the open file descripter, fildes
+int write(int fildes, const void *buf, int nbyte);
