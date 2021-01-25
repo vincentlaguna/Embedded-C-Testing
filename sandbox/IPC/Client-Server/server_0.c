@@ -24,7 +24,16 @@ short createSocket(void)
 {
   short servSocket;
   printf("\n<<< This is a simplified example of creating a Server-side "
-         "socket for a TCP/IP connection >>>\n");
+         "socket for a TCP/IP connection >>>\n\n");
+  servSocket = socket(AF_INET, SOCK_STREAM, 0);
+  
+  return servSocket;
+}
+
+int bindCreatedServSocket(int servSocket)
+{
+  int iRetVal = -1;
+  int clientPort = 12345;
 }
 
 // int main(void)
