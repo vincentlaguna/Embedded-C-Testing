@@ -19,8 +19,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
-
-short createSocket(void)
+// Helper Functions
+short createSocket(void) // Create local Server Socket (Streaming Socket)
 {
   short servSocket;
   printf("\n<<< This is a simplified example of creating a Server-side "
@@ -30,10 +30,12 @@ short createSocket(void)
   return servSocket;
 }
 
-int bindCreatedServSocket(int servSocket)
+int bindCreatedServSocket(int servSocket) // Wraps the bind() call
 {
   int iRetVal = -1;
-  int clientPort = 12345;
+  int clientPort = 12345; // Needs to be greater than sys ports (>1024)
+  
+  struct sockaddr_in remote = {0};
 }
 
 // int main(void)
