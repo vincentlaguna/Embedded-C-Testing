@@ -59,7 +59,7 @@ int main(void)
   char *pGrid;
   pGrid = gridSquare;
   
-  char *walk = {"nnwwwsseee"};
+  char *walk = {"nnwwwsseen"};
   
   displayBoard();
   
