@@ -70,7 +70,7 @@ int main(void)
   moveWalker(walk, pGrid, SQUARE_DIMENSION);
   
   if (isValidWalkLength(walk))
-    printf("It was 10 chars!\n");
+    printf("\nIt was 10 chars!\n");
   else
     printf("Nope, not ten or your code SUCKS!\n");
 
@@ -194,6 +194,12 @@ void moveWalker(const char *walk, char *grid, int n)
   printf("\n");
   
   if (marker == *(grid + (row * n) + position))
-      backHome = true;
-      printf("\nWalker is Back Home!");
+  {
+    backHome = true;
+    printf("\nWalker is Back Home!\n");
+  }
+  else
+  {
+    printf("\nSorry, walker did not make it back home...\n");
+  }
 }
