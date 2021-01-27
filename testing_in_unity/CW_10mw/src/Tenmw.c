@@ -202,4 +202,5 @@ void moveWalker(const char *walk, char *grid, int n)
   {
     printf("\nSorry, walker did not make it back home...\n");
   }
+  displayBoard();
 }
