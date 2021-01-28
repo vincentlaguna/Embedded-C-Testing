@@ -15,9 +15,9 @@ void test_fWalk_should_notBeTenMinutes(void)
   TEST_ASSERT_FALSE(isValidWalkLength(fWalk));
 }
 
-// void test_moveWalker_should_return_validPosition(void)
-// {
-//   const char *walk = {"e"};
+void test_moveWalker_should_return_validPosition(void)
+{
+   const char *walk = {"nnwwwsseee"};
   
 //   char *pGridPos;
 //   pGridPos = gridSquare;
