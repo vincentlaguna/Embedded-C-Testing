@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -64,12 +64,26 @@ int main(void)
   displayBoard();
   
   #ifndef _Test
-  displayGrid(pGrid, SQUARE_DIMENSION);
+    displayGrid(pGrid, SQUARE_DIMENSION);
   #endif
   
   moveWalker(walk, pGrid, SQUARE_DIMENSION);
   
   displayBoard();
+  
+  displayGrid(pGrid, SQUARE_DIMENSION);
+  
+  #ifndef _Test
+    if (marker == *(grid + (row * n) + position))
+    {
+      backHome = true;
+      printf("\nWalker is Back Home!\n");
+    }
+    else
+    {
+      printf("\nSorry, walker did not make it back home...\n");
+    }
+  #endif
   
   if (isValidWalkLength(walk))
     printf("\nIt was 10 chars!\n");
