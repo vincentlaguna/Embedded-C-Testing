@@ -69,6 +69,8 @@ int main(void)
   
   moveWalker(walk, pGrid, SQUARE_DIMENSION);
   
+  displayBoard();
+  
   if (isValidWalkLength(walk))
     printf("\nIt was 10 chars!\n");
   else
@@ -183,24 +185,24 @@ void moveWalker(const char *walk, char *grid, int n)
     }
   }
   //*(grid + (5 * n) + 4) = 'X';
-  for (int x = 0; x < n; x++)
-  {
-    for (int y = 0; y < n; y++)
-    {
-      printf("%c ", *(grid + ((x * n) + y)));
-    }
-    printf("\n");
-  }
-  printf("\n");
+  // for (int x = 0; x < n; x++)
+  // {
+  //   for (int y = 0; y < n; y++)
+  //   {
+  //     printf("%c ", *(grid + ((x * n) + y)));
+  //   }
+  //   printf("\n");
+  // }
+  // printf("\n");
   
-  if (marker == *(grid + (row * n) + position))
-  {
-    backHome = true;
-    printf("\nWalker is Back Home!\n");
-  }
-  else
-  {
-    printf("\nSorry, walker did not make it back home...\n");
-  }
-  displayBoard();
+  // if (marker == *(grid + (row * n) + position))
+  // {
+  //   backHome = true;
+  //   printf("\nWalker is Back Home!\n");
+  // }
+  // else
+  // {
+  //   printf("\nSorry, walker did not make it back home...\n");
+  // }
+  // displayBoard();
 }
