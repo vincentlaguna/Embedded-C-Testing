@@ -18,29 +18,9 @@ void test_fWalk_should_notBeTenMinutes(void)
 void test_moveWalker_should_return_validPosition(void)
 {
    const char *walk = {"nnwwwsseee"};
-  
-//   char *pGridPos;
-//   pGridPos = gridSquare;
-  
-//   #ifdef _TEST
-//   displayGrid(pGridPos, SQUARE_DIMENSION);
-//   #endif
-  
-//   //moveWalker(walk);
-  
-//   int gridPosition = 0;
-  
-//   if (*(pGridPos + (5 * SQUARE_DIMENSION) + 4) == 'X')
-//   {
-//     gridPosition = 1;
-//   }
-//   else
-//   {
-//     gridPosition = 0;
-//   }
-  
-//   TEST_ASSERT_EQUAL(1, gridPosition);
-// }
+
+}
+
 // void test_TheSecond(void) {
 //     TEST_ASSERT_EQUAL(2,3);
 // }
@@ -59,13 +39,13 @@ void test_moveWalker_should_return_validPosition(void)
 
 int main(void) 
 {
-    UNITY_BEGIN();
+  UNITY_BEGIN();
     
-    RUN_TEST(test_walk_should_BeTenMinutes);
-    RUN_TEST(test_fWalk_should_notBeTenMinutes);
-    //RUN_TEST(test_moveWalker_should_return_validPosition);
-    // RUN_TEST(test_TheThird);
-    // RUN_TEST(test_TheFourth);
-    // RUN_TEST(test_TheFifth);
-    return UNITY_END();
+  RUN_TEST(test_walk_should_BeTenMinutes);
+  RUN_TEST(test_fWalk_should_notBeTenMinutes);
+  //RUN_TEST(test_moveWalker_should_return_validPosition);
+  // RUN_TEST(test_TheThird);
+  // RUN_TEST(test_TheFourth);
+  // RUN_TEST(test_TheFifth);
+  return UNITY_END();
 }
