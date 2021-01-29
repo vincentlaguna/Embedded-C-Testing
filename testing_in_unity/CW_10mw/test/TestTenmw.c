@@ -17,7 +17,12 @@ void test_fWalk_should_notBeTenMinutes(void)
 
 void test_moveWalkerHome_should_return_validPosition(void)
 {
-   const char *walk = {"nnwwwsseee"};
+  char *pGrid;
+  pGrid = gridSquare;
+  
+  const char *walk = {"nnwwwsseee"};
+  
+  TEST_ASSERT_TRUE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
 
 }
 
