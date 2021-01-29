@@ -13,6 +13,6 @@ void displayGrid(char *grid, int n);
 
 bool isValidWalkLength(const char *walk);
 
-void moveWalker(const char *walk, char *grid, int n);
+bool moveWalkerHome(const char *walk, char *grid, int n);
 
 #endif //TENMW_H
