@@ -38,6 +38,7 @@ int bindCreatedServSocket(int servSocket) // Wraps the bind() call
   struct sockaddr_in remote = {0};
 }
 
+
 // int main(void)
 // {
 //     printf("\n<<< This is a simplified example of creating a Server-side "
