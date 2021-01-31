@@ -48,7 +48,7 @@ int main(void)
     
   RUN_TEST(test_walk_should_BeTenMinutes);
   RUN_TEST(test_fWalk_should_notBeTenMinutes);
-  RUN_TEST(test_moveWalker_should_return_validPosition);
+  RUN_TEST(test_moveWalkerHome_should_return_validPosition);
   // RUN_TEST(test_TheThird);
   // RUN_TEST(test_TheFourth);
   // RUN_TEST(test_TheFifth);
