@@ -69,35 +69,34 @@ int main(void)
   displayBoard();
   
   #ifndef _Test
-    
     displayGrid(pGrid, SQUARE_DIMENSION);
-  
+    moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
   #endif
   
-  moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
+  
   
   displayBoard();
   
   displayGrid(pGrid, SQUARE_DIMENSION);
   
-  #ifndef _Test
+  // #ifndef _Test
     
-    if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
-    {
-      backHome = true;
-      printf("\nWalker is Back Home!\n");
-    }
-    else
-    {
-      printf("\nSorry, walker did not make it back home...\n");
-    }
+  //   if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+  //   {
+  //     backHome = true;
+  //     printf("\nWalker is Back Home!\n");
+  //   }
+  //   else
+  //   {
+  //     printf("\nSorry, walker did not make it back home...\n");
+  //   }
 
-  if (isValidWalkLength(walk))
-    printf("\nIt was 10 chars!\n");
-  else
-    printf("Nope, not ten or your code SUCKS!\n");
+  // if (isValidWalkLength(walk))
+  //   printf("\nIt was 10 chars!\n");
+  // else
+  //   printf("Nope, not ten or your code SUCKS!\n");
   
-  #endif
+  // #endif
 
   return(0);
 }
@@ -187,7 +186,10 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
+    #ifndef _TEST
     printf("%d = %c\n", direction, *walk);
+    #endif
+    
     switch (*walk)
     {
       case 'n':
@@ -217,14 +219,20 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   // }
   // printf("\n");
   
-  // if (marker == *(grid + (row * n) + position))
-  // {
-  //   backHome = true;
-  //   printf("\nWalker is Back Home!\n");
-  // }
-  // else
-  // {
-  //   printf("\nSorry, walker did not make it back home...\n");
-  // }
-  // displayBoard();
+  if (marker == *(grid + (row * n) + position))
+  {
+    backHome = true;
+    printf("\nWalker is Back Home!\n");
+    return true;
+  }
+  else
+  {
+    printf("\nSorry, walker did not make it back home...\n");
+    return false;
+  }
+  #ifndef _TEST
+  
+  displayBoard();
+
+  #endif
 }

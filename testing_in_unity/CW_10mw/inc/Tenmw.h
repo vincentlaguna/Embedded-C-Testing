@@ -5,11 +5,6 @@
 
 #include <stdbool.h>
 
-int row = 5;
-int position = 5;
-bool backHome = false;
-char marker = 'X';
-
 extern char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION];
 
 void displayBoard(void);
