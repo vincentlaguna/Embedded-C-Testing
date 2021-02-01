@@ -17,10 +17,10 @@
 #include "../inc/Tenmw.h"
 #define _TEST
 // Globals
-int row = 5;
-int position = 5;
-bool backHome = false;
-char marker = 'X';
+// int row = 5;
+// int position = 5;
+// bool backHome = false;
+// char marker = 'X';
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -74,7 +74,7 @@ int main(void)
   
   #endif
   
-  moveWalker(walk, pGrid, SQUARE_DIMENSION);
+  moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
   
   displayBoard();
   
@@ -175,15 +175,15 @@ void displayGrid(char *grid, int n)
   printf("\n");
 }
 
-void moveWalker(const char *walk, char *grid, int n)
+bool moveWalkerHome(const char *walk, char *grid, int n)
 {
   // Implement a for loop that can iterate over each char of walk, then create a switch case during
   // the loop which assigns the correct position according to each char being iterated?
   // I think that might be the right idea, we will see...
-  // int row = 5;
-  // int position = 5;
-  // bool backHome = false;
-  // char marker = 'X';
+  int row = 5;
+  int position = 5;
+  bool backHome = false;
+  char marker = 'X';
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
