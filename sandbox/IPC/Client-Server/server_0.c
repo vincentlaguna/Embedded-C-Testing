@@ -15,6 +15,7 @@
 // }
 // end loop
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
@@ -26,6 +27,7 @@ short createSocket(void) // Create local Server Socket (Streaming Socket)
   printf("\n<<< This is a simplified example of creating a Server-side "
          "socket for a TCP/IP connection >>>\n\n");
   servSocket = socket(AF_INET, SOCK_STREAM, 0);
+  printf("\n<<< Created Server-Side Socket >>>\n\n");
   
   return servSocket;
 }
