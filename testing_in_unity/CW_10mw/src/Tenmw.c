@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "../inc/Tenmw.h"
-//#define _TEST
+#define _TEST
 // Globals
 int row = 5;
 int position = 5;
@@ -69,7 +69,9 @@ int main(void)
   displayBoard();
   
   #ifndef _Test
+    
     displayGrid(pGrid, SQUARE_DIMENSION);
+  
   #endif
   
   moveWalker(walk, pGrid, SQUARE_DIMENSION);
@@ -79,6 +81,7 @@ int main(void)
   displayGrid(pGrid, SQUARE_DIMENSION);
   
   #ifndef _Test
+    
     if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
     {
       backHome = true;
@@ -88,13 +91,13 @@ int main(void)
     {
       printf("\nSorry, walker did not make it back home...\n");
     }
-  #endif
-  
+
   if (isValidWalkLength(walk))
     printf("\nIt was 10 chars!\n");
   else
     printf("Nope, not ten or your code SUCKS!\n");
-
+  
+  #endif
 
   return(0);
 }
