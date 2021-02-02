@@ -23,7 +23,7 @@
 // Helper Functions
 short createSocket(void) // Create local Server Socket (Streaming Socket)
 {
-  short servSocket;
+  short servSocket = 0;
   printf("\n<<< This is a simplified example of creating a Server-side "
          "socket for a TCP/IP connection >>>\n\n");
   servSocket = socket(AF_INET, SOCK_STREAM, 0);
