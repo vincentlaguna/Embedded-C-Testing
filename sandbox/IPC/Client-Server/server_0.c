@@ -38,6 +38,16 @@ int bindCreatedServSocket(int servSocket) // Wraps the bind() call
   int clientPort = 12345; // Needs to be greater than sys ports (>1024)
   
   struct sockaddr_in remote = {0};
+  // Internet address family
+  remote.sin_family = AF_INET;
+  // Any incoming interface
+  // The htonl() function converts the unsigned integer hostlong from 
+  // host byte order to network byte order
+  remote.sin_addr.sin_addr = htonl(INADDR_ANY);
+  // The htons function takes a 16-bit number in host byte order 
+  // and returns a 16-bit number in network byte order used in 
+  // TCP/IP networks (the AF_INET or AF_INET6 address family)
+  remote.sin_port = htons(clientPort); // Local Port
 }
 
 
