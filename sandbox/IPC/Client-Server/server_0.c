@@ -62,6 +62,20 @@ int main(int argc, char *argv[])
   char msg[100] = {0};
   const char *pMsg = "<<< This message is from SERVER_0 >>>";
   // Create Socket
-  
+  printf("\n<<< The SOCKET has been created >>>\n\n");
+  // Bind
+  if(bindCreatedServSocket(socket_desc) < 0)
+  {
+    perror("BIND Failed."); // Print the error message
+    return 1;
+  }
+  printf("\n<<< BIND Done >>>\n\n");
+  // Listen
+  listen(socket_desc, 3); //
+  // Accept incoming connections
+  while(1)
+  {
+    
+  }
   return(0);
 }
