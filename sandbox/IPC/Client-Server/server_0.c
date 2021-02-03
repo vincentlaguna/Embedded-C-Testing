@@ -71,10 +71,20 @@ int main(int argc, char *argv[])
   }
   printf("\n<<< BIND Done >>>\n\n");
   // Listen
-  listen(socket_desc, 3); //
+  listen(socket_desc, 3); // Number of MAX connections
   // Accept incoming connections
   while(1)
   {
+    printf("\n<<< Waiting for incoming connections...\n\n");
+    clientLen = sizeof(struct sockaddr_in);
+    // Accept connection from an incoming client
+    sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+    
+    if(sock < 0)
+    {
+      perror("ACCEPT Failed.");
+      return 1;
+    }
     
   }
   return(0);
