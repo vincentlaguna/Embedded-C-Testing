@@ -48,12 +48,20 @@ int bindCreatedServSocket(int servSocket) // Wraps the bind() call
   // and returns a 16-bit number in network byte order used in 
   // TCP/IP networks (the AF_INET or AF_INET6 address family)
   remote.sin_port = htons(clientPort); // Local Port
+  
+  iRetVal = bind(servSocket, (struct sockaddr *)&remote, sizeof(remote));
+  return iRetVal;
 }
 
-
-// int main(void)
-// {
-//     printf("\n<<< This is a simplified example of creating a Server-side "
-//          "socket for TCP/IP connection >>>\n");
-//     return(0);
-// }
+int main(int argc, char *argv[])
+{
+  int socket_desc = 0, sock = 0; clientLen = 0;
+  struct sockaddr_in client;
+  // Initialize message buffers
+  char clientMsg[200] = {0};
+  char msg[100] = {0};
+  const char *pMsg = "<<< This message is from SERVER_0 >>>";
+  // Create Socket
+  
+  return(0);
+}
