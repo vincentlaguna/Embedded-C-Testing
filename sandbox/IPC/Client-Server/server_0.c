@@ -13,7 +13,7 @@
 //   send(their_socket_descriptor, <the stuff you want to send>)
 //   close(my_socket_descriptor)
 // }
-// end loop
+// End loop
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/socket.h>
