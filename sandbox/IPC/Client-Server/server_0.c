@@ -103,8 +103,15 @@ int main(int argc, char *argv[])
    }
    else
    {
-     
+     strcpy(message, "INVALID MESSAGE!");
    }
+   // Send some data
+   if(send(sock, message, strlen(message), 0) < 0)
+   {
+     printf("\nSEND Failed.\n");
+   }
+   close(sock);
+   sleep(1);
   }
   return(0);
 }
