@@ -90,6 +90,13 @@ int main(int argc, char *argv[])
    memset(clientMsg, '\0', sizeof(clientMsg));
    memset(message, '\0', sizeof(message));
    // Receive a reply from the Client
+   if(recv(sock, clientMsg, 200, 0) < 0)
+   {
+     printf("\nRECEIVE Failed.\n");
+     break;
+   }
+   printf("\nClient Reply: %s\n\n", clientMsg);
+   
   }
   return(0);
 }
