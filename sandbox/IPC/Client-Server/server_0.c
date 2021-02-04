@@ -63,6 +63,12 @@ int main(int argc, char *argv[])
   const char *pMsg = "<<< This message is from SERVER_0 >>>";
   // Create Socket
   socket_desc = createSocket();
+  
+  if(socket_desc == -1)
+  {
+    printf("\nCreation of SOCKET Failed.\n");
+    return 1;
+  }
   printf("\n<<< The SOCKET has been created >>>\n\n");
   
   // Bind
