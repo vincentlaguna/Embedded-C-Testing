@@ -85,7 +85,11 @@ int main(int argc, char *argv[])
       perror("ACCEPT Failed.");
       return 1;
     }
-   printf("") 
+   printf("\nConnection ACCEPTED\n\n");
+   // Message Buffers
+   memset(clientMsg, '\0', sizeof(clientMsg));
+   memset(message, '\0', sizeof(message));
+   // Receive a reply from the Client
   }
   return(0);
 }
