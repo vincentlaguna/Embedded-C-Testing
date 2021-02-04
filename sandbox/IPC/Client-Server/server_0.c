@@ -43,7 +43,7 @@ int bindCreatedServSocket(int servSocket) // Wraps the bind() call
   // Any incoming interface
   // The htonl() function converts the unsigned integer hostlong from 
   // host byte order to network byte order
-  remote.sin_addr.sin_addr = htonl(INADDR_ANY);
+  remote.sin_addr.s_addr = htonl(INADDR_ANY);
   // The htons function takes a 16-bit number in host byte order 
   // and returns a 16-bit number in network byte order used in 
   // TCP/IP networks (the AF_INET or AF_INET6 address family)
@@ -55,7 +55,7 @@ int bindCreatedServSocket(int servSocket) // Wraps the bind() call
 
 int main(int argc, char *argv[])
 {
-  int socket_desc = 0, sock = 0; clientLen = 0;
+  int socket_desc = 0, sock = 0, clientLen = 0;
   struct sockaddr_in client;
   // Initialize message buffers
   char clientMsg[200] = {0};
@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
    printf("\nConnection ACCEPTED\n\n");
    // Message Buffers
    memset(clientMsg, '\0', sizeof(clientMsg));
-   memset(message, '\0', sizeof(message));
+   memset(msg, '\0', sizeof(msg));
    // Receive a reply from the Client
    if(recv(sock, clientMsg, 200, 0) < 0)
    {
