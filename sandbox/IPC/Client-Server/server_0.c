@@ -62,7 +62,9 @@ int main(int argc, char *argv[])
   char msg[100] = {0};
   const char *pMsg = "<<< This message is from SERVER_0 >>>";
   // Create Socket
+  socket_desc = createSocket();
   printf("\n<<< The SOCKET has been created >>>\n\n");
+  
   // Bind
   if(bindCreatedServSocket(socket_desc) < 0)
   {
@@ -99,14 +101,14 @@ int main(int argc, char *argv[])
    
    if(strcmp(pMsg, clientMsg) == 0)
    {
-     strcpy(message, "<<< This message is to confirm ACK >>>");
+     strcpy(msg, "<<< This message is to confirm ACK >>>");
    }
    else
    {
-     strcpy(message, "INVALID MESSAGE!");
+     strcpy(msg, "INVALID MESSAGE!");
    }
    // Send some data
-   if(send(sock, message, strlen(message), 0) < 0)
+   if(send(sock, msg, strlen(msg), 0) < 0)
    {
      printf("\nSEND Failed.\n");
    }
