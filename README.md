@@ -35,6 +35,7 @@ Command shortlist:
 Updates:
 
 - Updated Network Bash Shell Scripts v.1.0 (Private) 02062021
+- Finished CodeWars project, overkill on what the requirements were, but I used TDD 8>)
 - Implementation of RPi4 Reflex v.0 - TDD approach using Unity.
 - Swithing projects = Reflex input using wiringPi library and 10-minute walk problem
 - (Udemy Course) Working on iteration 1 - 
