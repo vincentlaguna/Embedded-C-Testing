@@ -43,3 +43,17 @@ int socketConnect(int clientSocket)
   iRetVal = connect(clientSocket, (struct sockaddr *)&remote, sizeof(remote));
   return iRetVal;
 }
+// Send the data to the server and set the timeout of 20 seconds
+int socketSend(int clientSocket, char *pRqst, short lenpRqst)
+{
+  int shortRetVal = -1;
+  struct timeval timeValue;
+  timeValue.tv_sec = 20; // 20 Second time-out
+  timeValue.tv_usec = 0;
+  
+  if(setsockopt(clientSocket, SOL_SOCKET, SO_SNDTIMEO, (char *)&timeValue, sizeof(timeValue)) < 0)
+  {
+    printf("\nTIME OUT.\n");
+    return -1;
+  }
+}
