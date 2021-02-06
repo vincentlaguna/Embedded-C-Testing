@@ -12,6 +12,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
+// Helper Functions
 // Create a socket for server communication
 short createSocket(void)
 {
@@ -24,5 +25,21 @@ short createSocket(void)
 // Try to connect to Server
 int socketConnect(int clientSocket)
 {
-    
+  int iRetVal = -1;
+  int serverPort = 12345 // Match the "clientPort" on Server-Side code
+  
+  struct sockaddr_in remote = {0};
+  // Internet address family
+  remote.sin_family = AF_INET;
+  // Any incoming interface
+  // The htonl() function converts the unsigned integer hostlong from 
+  // host byte order to network byte order
+  remote.sin_addr.s_addr = inet_addr("127.0.0.1"); // Server address (local host = testing)
+  // The htons function takes a 16-bit number in host byte order 
+  // and returns a 16-bit number in network byte order used in 
+  // TCP/IP networks (the AF_INET or AF_INET6 address family)
+  remote.sin_port = htons(serverPort); // Note the opposite on Server-Side code
+  
+  iRetVal = connect(clientSocket, (struct sockaddr *)&remote, sizeof(remote));
+  return iRetVal;
 }
