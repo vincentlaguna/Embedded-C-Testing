@@ -17,4 +17,12 @@ short createSocket(void)
 {
   short clientSocket;
   printf("\n<<< Creation of Client-Side Socket >>>\n\n");
+  clientSocket = socket(AF_INET, SOCK_STREAM, 0);
+  printf("\nSuccess!\n");
+  return clientSocket;
+}
+// Try to connect to Server
+int socketConnect(int clientSocket)
+{
+    
 }
