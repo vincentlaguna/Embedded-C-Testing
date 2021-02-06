@@ -56,4 +56,24 @@ int socketSend(int clientSocket, char *pRqst, short lenpRqst)
     printf("\nTIME OUT.\n");
     return -1;
   }
+  // Calling send() to send the request to the Server
+  shortRetVal = send(clientSocket, pRqst, 0);
+  return shortRetVal;
+}
+// Receive data from the Server
+int socketReceive(int clientSocket, char *pRsp, short recvSize)
+{
+  int shortRetVal = -1;
+  struct timeval timeValue;
+  timeValue.tv_sec = 20; // 20 Second time-out
+  timeValue.tv_usec = 0;
+  
+  if(setsockopt(clientSocket, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeValue, sizeof(timeValue)) < 0)
+  {
+    printf("\nTIME OUT.\n");
+    return -1;
+  }
+  shortRetVal = recv(clientSocket, pRsp, recvSize, 0);
+  printf("\nResponse %s\n", pRsp);
+  return shortRetVal;
 }
