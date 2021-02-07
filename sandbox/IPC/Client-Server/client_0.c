@@ -81,9 +81,22 @@ int socketReceive(int clientSocket, char *pRsp, short recvSize)
 int main(void)
 {
   int clientSocket = 0, readSize = 0;
-  struct sockaddr_in Server;
+  struct sockaddr_in Server; // This is where we fill-in the Server-Side address info
   char sendToServer[100] = {0};
   char serverReply[100] = {0};
+  // Create the Socket
+  clientSocket = createSocket();
+  
+  if(clientSocket == -1)
+  {
+    printf("\nClient Socket Creation Failed.\n");
+    return 1;
+  }
+  printf("\nCreation of Client Socket = Successful\n\n");
+  // Connect to the Remote Server
+  
+  printf("Please Enter the Message: ");
+  fgets(sendToServer, 100, stdin);
   
   return(0);
 }
