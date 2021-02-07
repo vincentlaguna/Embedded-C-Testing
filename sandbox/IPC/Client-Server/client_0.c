@@ -94,9 +94,17 @@ int main(void)
   }
   printf("\nCreation of Client Socket = Successful\n\n");
   // Connect to the Remote Server
-  
+  if(socketConnect(clientSocket) < 0)
+  {
+    perror("CONNECT Failed.");
+    return 1;
+  }
+  printf("\nConnection to Remote Server = Successful\n\n");
   printf("Please Enter the Message: ");
   fgets(sendToServer, 100, stdin);
+  // Send data to the Remote Server
+  socketSend(clientSocket, sendToServer, strlen(sendToServer));
+  // Received the data from the Remote Server
   
   return(0);
 }
