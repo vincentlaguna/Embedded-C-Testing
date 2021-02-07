@@ -77,3 +77,9 @@ int socketReceive(int clientSocket, char *pRsp, short recvSize)
   printf("\nResponse %s\n", pRsp);
   return shortRetVal;
 }
+// Main Driver Program
+int main(void)
+{
+  
+  return(0);
+}
