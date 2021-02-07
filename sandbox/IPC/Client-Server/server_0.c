@@ -21,6 +21,8 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
+#define TEST_PORT 12345
+#define _LOCAL_TEST
 // Helper Functions
 short createSocket(void) // Create local Server Socket (Streaming Socket)
 {
@@ -36,7 +38,7 @@ short createSocket(void) // Create local Server Socket (Streaming Socket)
 int bindCreatedServSocket(int servSocket) // Wraps the bind() call
 {
   int iRetVal = -1;
-  int clientPort = 12345; // Needs to be greater than sys ports (>1024)
+  int clientPort = TEST_PORT; // Needs to be greater than sys ports (>1024)
   
   struct sockaddr_in remote = {0};
   // Internet address family
@@ -71,7 +73,6 @@ int main(int argc, char *argv[])
     return 1;
   }
   printf("\n<<< The SOCKET has been created >>>\n\n");
-  
   // Bind
   if(bindCreatedServSocket(socket_desc) < 0)
   {
@@ -82,8 +83,10 @@ int main(int argc, char *argv[])
   // Listen
   listen(socket_desc, 3); // Number of MAX connections
   // Accept incoming connections
+#ifdef _LOCAL_TEST
   while(1)
   {
+#endif
     printf("\n<<< Waiting for incoming connections...\n\n");
     clientLen = sizeof(struct sockaddr_in);
     // Accept connection from an incoming client
@@ -96,15 +99,25 @@ int main(int argc, char *argv[])
     }
    printf("\nConnection ACCEPTED\n\n");
    // Message Buffers
-   memset(clientMsg, '\0', sizeof(clientMsg));
-   memset(msg, '\0', sizeof(msg));
+   memset(clientMsg, '\0', sizeof clientMsg);
+   memset(msg, '\0', sizeof msg);
    // Receive a reply from the Client
    if(recv(sock, clientMsg, 200, 0) < 0)
    {
      printf("\nRECEIVE Failed.\n");
+   #ifdef _LOCAL_TEST
      break;
+   #endif
    }
    printf("\nClient Reply: %s\n\n", clientMsg);
+   
+ #ifndef _LOCAL_TEST
+  int i = atoi(clientMsg);
+   i--;
+   sprintf(msg, "%d", i);
+   
+   close(sock);
+ #endif
    
    if(strncmp(pMsg, clientMsg) == 0)
    {
@@ -121,6 +134,10 @@ int main(int argc, char *argv[])
    }
    close(sock);
    sleep(1);
+   printf("\n<<< Waiting for incoming connections...\n\n");
+   // Accept Connection from another incoming Client
+#ifdef _LOCAL_TEST   
   }
+#endif
   return(0);
 }
