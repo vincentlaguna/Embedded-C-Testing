@@ -80,6 +80,10 @@ int socketReceive(int clientSocket, char *pRsp, short recvSize)
 // Main Driver Program
 int main(void)
 {
+  int clientSocket = 0, readSize = 0;
+  struct sockaddr_in Server;
+  char sendToServer[100] = {0};
+  char serverReply[100] = {0};
   
   return(0);
 }
