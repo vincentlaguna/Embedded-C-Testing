@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
    }
    printf("\nClient Reply: %s\n\n", clientMsg);
    
-   if(strcmp(pMsg, clientMsg) == 0)
+   if(strncmp(pMsg, clientMsg) == 0)
    {
      strcpy(msg, "<<< This message is to confirm ACK >>>");
    }
