@@ -97,45 +97,63 @@ int main(int argc, char *argv[])
       perror("ACCEPT Failed.");
       return 1;
     }
-   printf("\nConnection ACCEPTED\n\n");
-   // Message Buffers
-   memset(clientMsg, '\0', sizeof clientMsg);
-   memset(msg, '\0', sizeof msg);
-   // Receive a reply from the Client
-   if(recv(sock, clientMsg, 200, 0) < 0)
-   {
-     printf("\nRECEIVE Failed.\n");
-   #ifdef _LOCAL_TEST
-     break;
-   #endif
-   }
-   printf("\nClient Reply: %s\n\n", clientMsg);
+    printf("\nConnection ACCEPTED\n\n");
+    // Message Buffers
+    memset(clientMsg, '\0', sizeof clientMsg);
+    memset(msg, '\0', sizeof msg);
+    // Receive a reply from the Client
+    if(recv(sock, clientMsg, 200, 0) < 0)
+    {
+      printf("\nRECEIVE Failed.\n");
+    #ifdef _LOCAL_TEST
+      break;
+    #endif
+    }
+    printf("\nClient Reply: %s\n\n", clientMsg);
    
- #ifndef _LOCAL_TEST
-  int i = atoi(clientMsg);
-   i--;
-   sprintf(msg, "%d", i);
+  #ifndef _LOCAL_TEST
+    int i = atoi(clientMsg);
+    i--;
+    sprintf(msg, "%d", i);
    
-   close(sock);
- #endif
+    close(sock);
+  #endif
+  
+  #ifdef _LOCAL_TEST 
+    if(strncmp(pMsg, clientMsg) == 0)
+    {
+      strcpy(msg, "<<< This message is to confirm ACK >>>");
+    }
+    else
+    {
+      strcpy(msg, "INVALID MESSAGE!");
+    }
+    // Send some data
+    if(send(sock, msg, strlen(msg), 0) < 0)
+    {
+      printf("\nSEND Failed.\n");
+    }
+    close(sock);
+    sleep(1);
+  #endif  
+  
+  #ifndef _LOCAL_TEST
+    printf("\n<<< Waiting for incoming connections...\n\n");
+    // Accept Connection from another incoming Client
+    sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen)
    
-   if(strncmp(pMsg, clientMsg) == 0)
-   {
-     strcpy(msg, "<<< This message is to confirm ACK >>>");
-   }
-   else
-   {
-     strcpy(msg, "INVALID MESSAGE!");
-   }
-   // Send some data
-   if(send(sock, msg, strlen(msg), 0) < 0)
-   {
-     printf("\nSEND Failed.\n");
-   }
-   close(sock);
-   sleep(1);
-   printf("\n<<< Waiting for incoming connections...\n\n");
-   // Accept Connection from another incoming Client
+    if(sock < 0)
+    {
+      perror("ACCEPT Failed.");
+      return 1;
+    }
+    printf("\nConnection ACCEPTED\n\n");
+    // Send some Data
+    if(send(sock, msg, strlen(msg), 0) < 0)
+    {
+      printf("\nSEND Failed.\n");
+      return 1;
+    }
 #ifdef _LOCAL_TEST   
   }
 #endif
