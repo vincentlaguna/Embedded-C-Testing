@@ -26,7 +26,7 @@ short createSocket(void)
 int socketConnect(int clientSocket)
 {
   int iRetVal = -1;
-  int serverPort = 12345 // Match the "clientPort" on Server-Side code
+  int serverPort = 12345; // Match the "clientPort" on Server-Side code
   
   struct sockaddr_in remote = {0};
   // Internet address family
@@ -57,7 +57,7 @@ int socketSend(int clientSocket, char *pRqst, short lenpRqst)
     return -1;
   }
   // Calling send() to send the request to the Server
-  shortRetVal = send(clientSocket, pRqst, 0);
+  shortRetVal = send(clientSocket, pRqst, lenpRqst, 0);
   return shortRetVal;
 }
 // Receive data from the Server
