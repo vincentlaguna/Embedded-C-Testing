@@ -45,7 +45,7 @@ int socketConnect(int clientSocket)
   // TCP/IP networks (the AF_INET or AF_INET6 address family)
   remote.sin_port = htons(serverPort); // Note the opposite on Server-Side code
   
-  iRetVal = connect(clientSocket, (struct sockaddr *)&remote, sizeof(remote));
+  iRetVal = connect(clientSocket, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
   return iRetVal;
 }
 // Send the data to the server and set the timeout of 20 seconds
