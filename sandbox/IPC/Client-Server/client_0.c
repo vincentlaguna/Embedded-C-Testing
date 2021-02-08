@@ -12,6 +12,11 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
+#define TEST_PORT 12345
+#define _LOCAL_TEST
+#ifdef _LOCAL_TEST
+  #define LOCAL "127.0.0.1"
+#endif
 // Helper Functions
 // Create a socket for server communication
 short createSocket(void)
@@ -26,7 +31,7 @@ short createSocket(void)
 int socketConnect(int clientSocket)
 {
   int iRetVal = -1;
-  int serverPort = 12345; // Match the "clientPort" on Server-Side code
+  int serverPort = TEST_PORT; // Match the "clientPort" on Server-Side code
   
   struct sockaddr_in remote = {0};
   // Internet address family
@@ -34,7 +39,7 @@ int socketConnect(int clientSocket)
   // Any incoming interface
   // The htonl() function converts the unsigned integer hostlong from 
   // host byte order to network byte order
-  remote.sin_addr.s_addr = inet_addr("127.0.0.1"); // Server address (local host = testing)
+  remote.sin_addr.s_addr = inet_addr(LOCAL); // Server address (local host = testing)
   // The htons function takes a 16-bit number in host byte order 
   // and returns a 16-bit number in network byte order used in 
   // TCP/IP networks (the AF_INET or AF_INET6 address family)
