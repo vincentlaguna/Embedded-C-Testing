@@ -21,7 +21,7 @@
 #include <unistd.h>
 #include <string.h>
 #define TEST_PORT 12345
-#define _LOCAL_TEST
+//#define _LOCAL_TEST
 // Helper Functions
 short createSocket(void) // Create local Server Socket (Streaming Socket)
 {
@@ -139,7 +139,7 @@ int main(int argc, char *argv[])
   #ifndef _LOCAL_TEST
     printf("\n<<< Waiting for incoming connections...\n\n");
     // Accept Connection from another incoming Client
-    sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen)
+    sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
    
     if(sock < 0)
     {
@@ -153,6 +153,7 @@ int main(int argc, char *argv[])
       printf("\nSEND Failed.\n");
       return 1;
     }
+  #endif
 #ifdef _LOCAL_TEST   
   }
 #endif
