@@ -34,6 +34,7 @@ Command shortlist:
 
 Updates:
 
+- Moving unto more network testing using the Socket API (C)
 - Updated Network Bash Shell Scripts v.1.0 (Private) 02062021
 - Finished CodeWars project, overkill on what the requirements were, but I used TDD 8>)
 - Implementation of RPi4 Reflex v.0 - TDD approach using Unity.
