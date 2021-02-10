@@ -26,3 +26,9 @@ short createSocket(void)
   printf("\nSuccess!\n");
   return clientSocket_1;
 }
+// Try to Connect to Server
+int socketConnect(int clientSocket_1)
+{
+  int iRetVal = -1;
+  int serverPort = TEST_PORT;
+}
