@@ -22,4 +22,7 @@ short createSocket(void)
 {
   short clientSocket_1;
   printf("\n<<< Creation of Client-Side Socket >>>\n\n");
+  clientSocket_1 = socket(AF_INET, SOCK_STREAM, 0);
+  printf("\nSuccess!\n");
+  return clientSocket_1;
 }
