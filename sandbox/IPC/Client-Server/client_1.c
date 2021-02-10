@@ -20,5 +20,6 @@
 // Create a Socket for Server Communication
 short createSocket(void)
 {
-  
+  short clientSocket_1;
+  printf("\n<<< Creation of Client-Side Socket >>>\n\n");
 }
