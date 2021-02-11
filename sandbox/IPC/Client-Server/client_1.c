@@ -38,4 +38,20 @@ int socketConnect(int clientSocket_1)
   iRetVal = connect(clientSocket_1, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
   return iRetVal;
 }
-
+// Receive Data from the Server
+int socketReceive(int clientSocket_1, char *pRsp, short recvSize)
+{
+  int shortRetVal = -1;
+  struct timeval timeValue
+  timeValue.tv_sec = 20;
+  timeValue.tv_usec = 0;
+  
+  if(setsockopt(clientSocket_1, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeValue, sizeof(timeValue)) < 0)
+  {
+    printf("\nTIME OUT.\n");
+    return -1;
+  }
+  shortRetVal = recv(clientSocket_1, pRsp, recvSize, 0);
+  printf("\nResponse %s\n", pRsp);
+  return shortRetVal;
+}
