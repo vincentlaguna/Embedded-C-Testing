@@ -35,4 +35,7 @@ int socketConnect(int clientSocket_1)
   remote.sin_family = AF_INET;
   remote.sin_addr.s_addr = inet_addr(LOCAL);
   remote.sin_port = htons(serverPort);
+  iRetVal = connect(clientSocket_1, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
+  return iRetVal;
 }
+
