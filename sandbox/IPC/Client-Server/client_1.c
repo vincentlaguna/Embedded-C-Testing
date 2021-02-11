@@ -31,4 +31,6 @@ int socketConnect(int clientSocket_1)
 {
   int iRetVal = -1;
   int serverPort = TEST_PORT;
+  struct sockaddr_in remote = {0};
+  remote.sin_addr.s_addr = inet_addr(LOCAL);
 }
