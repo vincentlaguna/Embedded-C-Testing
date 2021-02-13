@@ -58,5 +58,7 @@ int socketReceive(int clientSocket_1, char *pRsp, short recvSize)
 // Main Driver Program
 int main(int argc, char *arg[])
 {
+  int clientSocket_1 = 0, readSize = 0;
+  struct soackaddr_in Server;
   return (0);
 }
