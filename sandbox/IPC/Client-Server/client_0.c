@@ -39,7 +39,7 @@ int socketConnect(int clientSocket)
   // Any incoming interface
   // The htonl() function converts the unsigned integer hostlong from 
   // host byte order to network byte order
-  remote.sin_addr.s_addr = inet_addr(LOCAL); // Server address (local host = testing)
+  remote.sin_addr.s_addr = inet_addr("LOCAL"); // Server address (local host = testing)
   // The htons function takes a 16-bit number in host byte order 
   // and returns a 16-bit number in network byte order used in 
   // TCP/IP networks (the AF_INET or AF_INET6 address family)

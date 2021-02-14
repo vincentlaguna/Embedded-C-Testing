@@ -14,7 +14,7 @@
 #include <string.h>
 #define TEST_PORT 12345
 #ifdef _LOCAL_TEST
-  #define LOCAL "127.0.0.1"
+  #define LOCAL 127.0.0.1
 #endif
 // Helper Functions
 // Create a Socket for Server Communication
@@ -33,7 +33,7 @@ int socketConnect(int clientSocket_1)
   int serverPort = TEST_PORT;
   struct sockaddr_in remote = {0};
   remote.sin_family = AF_INET;
-  remote.sin_addr.s_addr = inet_addr(LOCAL);
+  remote.sin_addr.s_addr = inet_addr("LOCAL");
   remote.sin_port = htons(serverPort);
   iRetVal = connect(clientSocket_1, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
   return iRetVal;
@@ -42,7 +42,7 @@ int socketConnect(int clientSocket_1)
 int socketReceive(int clientSocket_1, char *pRsp, short recvSize)
 {
   int shortRetVal = -1;
-  struct timeval timeValue
+  struct timeval timeValue;
   timeValue.tv_sec = 20;
   timeValue.tv_usec = 0;
   
@@ -59,7 +59,7 @@ int socketReceive(int clientSocket_1, char *pRsp, short recvSize)
 int main(int argc, char *arg[])
 {
   int clientSocket_1 = 0, readSize = 0;
-  struct soackaddr_in Server;
+  //struct soackaddr_in remote = {0};
   char serverReply[100] = {0};
   clientSocket_1 = createSocket();
   
