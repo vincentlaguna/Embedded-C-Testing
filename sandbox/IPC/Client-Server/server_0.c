@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
   // Initialize message buffers
   char clientMsg[200] = {0};
   char msg[100] = {0};
-  const char *pMsg = "<<< This message is from SERVER_0 >>>";
+  //const char *pMsg = "<<< This message is from SERVER_0 >>>";
   // Create Socket
   socket_desc = createSocket();
   
@@ -82,10 +82,10 @@ int main(int argc, char *argv[])
   // Listen
   listen(socket_desc, 3); // Number of MAX connections
   // Accept incoming connections
-#ifdef _LOCAL_TEST
-  while(1)
-  {
-#endif
+// #ifdef _LOCAL_TEST
+//   while(1)
+//   {
+// #endif
     printf("\n<<< Waiting for incoming connections...\n\n");
     clientLen = sizeof(struct sockaddr_in);
     // Accept connection from an incoming client
@@ -104,9 +104,9 @@ int main(int argc, char *argv[])
     if(recv(sock, clientMsg, 200, 0) < 0)
     {
       printf("\nRECEIVE Failed.\n");
-    #ifdef _LOCAL_TEST
-      break;
-    #endif
+    // #ifdef _LOCAL_TEST
+    //   break;
+    // #endif
     }
     printf("\nClient Reply: %s\n\n", clientMsg);
    
@@ -118,23 +118,23 @@ int main(int argc, char *argv[])
     close(sock);
   #endif
   
-  #ifdef _LOCAL_TEST 
-    if(strncmp(pMsg, clientMsg) == 0)
-    {
-      strcpy(msg, "<<< This message is to confirm ACK >>>");
-    }
-    else
-    {
-      strcpy(msg, "INVALID MESSAGE!");
-    }
-    // Send some data
-    if(send(sock, msg, strlen(msg), 0) < 0)
-    {
-      printf("\nSEND Failed.\n");
-    }
-    close(sock);
-    sleep(1);
-  #endif  
+  // #ifdef _LOCAL_TEST 
+  //   if(strncmp(pMsg, clientMsg) == 0)
+  //   {
+  //     strcpy(msg, "<<< This message is to confirm ACK >>>");
+  //   }
+  //   else
+  //   {
+  //     strcpy(msg, "INVALID MESSAGE!");
+  //   }
+  //   // Send some data
+  //   if(send(sock, msg, strlen(msg), 0) < 0)
+  //   {
+  //     printf("\nSEND Failed.\n");
+  //   }
+  //   close(sock);
+  //   sleep(1);
+  // #endif  
   
   #ifndef _LOCAL_TEST
     printf("\n<<< Waiting for incoming connections...\n\n");
@@ -154,8 +154,8 @@ int main(int argc, char *argv[])
       return 1;
     }
   #endif
-#ifdef _LOCAL_TEST   
-  }
-#endif
+// #ifdef _LOCAL_TEST   
+//   }
+// #endif
   return(0);
 }
