@@ -68,6 +68,17 @@ int main(int argc, char *arg[])
     printf("\nClient 1 Socket Creation Failed.\n");
     return 1;
   }
+  printf("\nCreation of Client 1 Socket = Successful.\n\n");
+  if(socketConnect(clientSocket_1) < 0)
+  {
+    perror("CONNECT Failed.\n");
+    return 1;
+  }
+  printf("\nConnection to Remote Server = Successful.\n\n");
+  // Receive Data from the Remote Server
+  readSize = socketReceive(clientSocket_1, serverReply, 200);
+  printf("\nServer Response: %s: readSize %d\n\n", serverReply, readSize);
+  close(clientSocket_1);
   
   return (0);
 }

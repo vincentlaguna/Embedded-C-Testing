@@ -15,7 +15,7 @@
 #define TEST_PORT 12345
 #define _LOCAL_TEST
 #ifdef _LOCAL_TEST
-  #define LOCAL "127.0.0.1"
+  #define LOCAL 127.0.0.1
 #endif
 // Helper Functions
 // Create a socket for server communication
