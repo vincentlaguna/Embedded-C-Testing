@@ -30,7 +30,7 @@ short createSocket(void) // Create local Server Socket (Streaming Socket)
          "socket for a TCP/IP connection >>>\n\n");
   servSocket = socket(AF_INET, SOCK_STREAM, 0);
   printf("\n<<< Created Server-Side Socket >>>\n\n");
-  
+
   return servSocket;
 }
 

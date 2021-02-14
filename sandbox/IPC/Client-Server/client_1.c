@@ -13,17 +13,18 @@
 #include <unistd.h>
 #include <string.h>
 #define TEST_PORT 12345
+#define _LOCAL_TEST
 #ifdef _LOCAL_TEST
-  #define LOCAL 127.0.0.1
+  #define LOCAL "127.0.0.1"
 #endif
 // Helper Functions
 // Create a Socket for Server Communication
 short createSocket(void)
 {
   short clientSocket_1;
-  printf("\n<<< Creation of Client-Side Socket >>>\n\n");
+  printf("\n<<< Creation of Client-Side Socket >>>\n");
   clientSocket_1 = socket(AF_INET, SOCK_STREAM, 0);
-  printf("\nSuccess!\n");
+  printf("Success!\n");
   return clientSocket_1;
 }
 // Try to Connect to Server
@@ -33,7 +34,7 @@ int socketConnect(int clientSocket_1)
   int serverPort = TEST_PORT;
   struct sockaddr_in remote = {0};
   remote.sin_family = AF_INET;
-  remote.sin_addr.s_addr = inet_addr("LOCAL");
+  remote.sin_addr.s_addr = inet_addr(LOCAL);
   remote.sin_port = htons(serverPort);
   iRetVal = connect(clientSocket_1, (struct sockaddr *)&remote, sizeof(struct sockaddr_in));
   return iRetVal;

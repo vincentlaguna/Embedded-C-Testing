@@ -15,7 +15,7 @@
 #define TEST_PORT 12345
 #define _LOCAL_TEST
 #ifdef _LOCAL_TEST
-  #define LOCAL 127.0.0.1
+  #define LOCAL "127.0.0.1"
 #endif
 // Helper Functions
 // Create a socket for server communication
@@ -24,7 +24,7 @@ short createSocket(void)
   short clientSocket;
   printf("\n<<< Creation of Client-Side Socket >>>\n\n");
   clientSocket = socket(AF_INET, SOCK_STREAM, 0);
-  printf("\nSuccess!\n");
+  printf("Success!\n");
   return clientSocket;
 }
 // Try to connect to Server
@@ -39,7 +39,7 @@ int socketConnect(int clientSocket)
   // Any incoming interface
   // The htonl() function converts the unsigned integer hostlong from 
   // host byte order to network byte order
-  remote.sin_addr.s_addr = inet_addr("LOCAL"); // Server address (local host = testing)
+  remote.sin_addr.s_addr = inet_addr(LOCAL); // Server address (local host = testing)
   // The htons function takes a 16-bit number in host byte order 
   // and returns a 16-bit number in network byte order used in 
   // TCP/IP networks (the AF_INET or AF_INET6 address family)
@@ -104,7 +104,7 @@ int main(void)
     perror("CONNECT Failed.");
     return 1;
   }
-  printf("\nConnection to Remote Server = Successful\n\n");
+  printf("Connection to Remote Server = Successful\n\n");
   printf("Please Enter the Message: ");
   fgets(sendToServer, 100, stdin);
   // Send data to the Remote Server
