@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
     //   break;
     // #endif
     }
-    printf("\nClient Reply: %s\n\n", clientMsg);
+    printf("Client Reply: %s\n", clientMsg);
    
   #ifndef _LOCAL_TEST
     int i = atoi(clientMsg);
