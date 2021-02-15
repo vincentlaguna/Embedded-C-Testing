@@ -110,13 +110,13 @@ int main(int argc, char *argv[])
     }
     printf("Client Reply: %s\n", clientMsg);
    
-  #ifndef _LOCAL_TEST
+ //#ifndef _LOCAL_TEST
     int i = atoi(clientMsg);
     i--;
     sprintf(msg, "%d", i);
    
     close(sock);
-  #endif
+  //#endif
   
   // #ifdef _LOCAL_TEST 
   //   if(strncmp(pMsg, clientMsg) == 0)
@@ -136,7 +136,7 @@ int main(int argc, char *argv[])
   //   sleep(1);
   // #endif  
   
-  #ifndef _LOCAL_TEST
+  //#ifndef _LOCAL_TEST
     printf("\n<<< Waiting for incoming connections...\n\n");
     // Accept Connection from another incoming Client
     sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
@@ -153,7 +153,7 @@ int main(int argc, char *argv[])
       printf("\nSEND Failed.\n");
       return 1;
     }
-  #endif
+  //#endif
 // #ifdef _LOCAL_TEST   
 //   }
 // #endif
