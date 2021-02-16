@@ -62,6 +62,7 @@ int main(int argc, char *arg[])
   int clientSocket_1 = 0, readSize = 0;
   //struct soackaddr_in remote = {0};
   char serverReply[100] = {0};
+  
   clientSocket_1 = createSocket();
   
   if(clientSocket_1 == -1)
