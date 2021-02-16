@@ -12,7 +12,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
-#define TEST_PORT 12346
+#define TEST_PORT 12345
 #define _LOCAL_TEST
 #ifdef _LOCAL_TEST
   #define LOCAL "127.0.0.1"
@@ -71,6 +71,7 @@ int main(int argc, char *arg[])
     return 1;
   }
   printf("\nCreation of Client 1 Socket = Successful.\n\n");
+  
   if(socketConnect(clientSocket_1) < 0)
   {
     perror("CONNECT Failed.\n");
