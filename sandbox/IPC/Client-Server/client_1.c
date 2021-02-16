@@ -12,7 +12,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string.h>
-#define TEST_PORT 12345
+#define TEST_PORT 12346
 #define _LOCAL_TEST
 #ifdef _LOCAL_TEST
   #define LOCAL "127.0.0.1"

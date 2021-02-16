@@ -111,8 +111,8 @@ int main(void)
   // Send data to the Remote Server // Somthing is wrong here, it closes...
   socketSend(clientSocket, sendToServer, strlen(sendToServer));
   // Received the data from the Remote Server
-  readSize = socketReceive(clientSocket, serverReply, 200);
-  printf("\nServer Response: %s\n\n", serverReply);
+  //readSize = socketReceive(clientSocket, serverReply, 200);
+  //printf("\nServer Response: %s\n\n", serverReply);
   close(clientSocket);
   
   return(0);
