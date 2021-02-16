@@ -85,10 +85,11 @@ int socketReceive(int clientSocket, char *pRsp, short recvSize)
 // Main Driver Program
 int main(void)
 {
-  int clientSocket = 0, readSize = 0;
+  int clientSocket = 0; 
+  //int readSize = 0;
   struct sockaddr_in Server; // This is where we fill-in the Server-Side address info
   char sendToServer[100] = {0};
-  char serverReply[100] = {0};
+  //char serverReply[100] = {0};
   // Create the Socket
   clientSocket = createSocket();
   
