@@ -98,14 +98,14 @@ int main(void)
     printf("\nClient Socket Creation Failed.\n");
     return 1;
   }
-  printf("\nCreation of Client Socket = Successful\n\n");
+  printf("\nCreation of Client Socket = Successful\n");
   // Connect to the Remote Server
   if(socketConnect(clientSocket) < 0)
   {
     perror("CONNECT Failed.");
     return 1;
   }
-  printf("Connection to Remote Server = Successful\n\n");
+  printf("Connection to Remote Server = Successful\n");
   printf("Please Enter the Message: ");
   fgets(sendToServer, 100, stdin);
   // Send data to the Remote Server // Somthing is wrong here, it closes...
