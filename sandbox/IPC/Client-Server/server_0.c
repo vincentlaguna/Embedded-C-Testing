@@ -137,7 +137,7 @@ int main(int argc, char *argv[])
   // #endif  
   
   //#ifndef _LOCAL_TEST
-    printf("\n<<< Waiting for incoming connections...\n\n");
+    printf("\n<<< Waiting for incoming connections...\n");
     // Accept Connection from another incoming Client
     sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
    
