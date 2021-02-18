@@ -119,4 +119,4 @@ int main(void)
   
   return(0);
 }
-// Continue the open communication
+// Continue the open communication, maybe write to a file?
