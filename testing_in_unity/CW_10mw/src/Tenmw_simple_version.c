@@ -1,6 +1,17 @@
+#include <stdio.h>
 #include <stdbool.h>
-#define SQUARE_DIMENSION 11
+#define  SQUARE_DIMENSION 11
 
+bool isValidWalk(const char *walk);
+
+int main(void)
+{
+  char *walk = {"nnwwwsseen"};
+  
+  isValidWalk(walk) ? puts("True") : puts("False");
+  
+  return(0);
+}
 
 bool isValidWalk(const char *walk) 
 {
@@ -60,20 +71,14 @@ bool isValidWalk(const char *walk)
         break;
       case 'w': *(pGrid + (row * SQUARE_DIMENSION) + position++) = marker;
         break;
+    }
   }
   // Check if marker is back in the home position
   if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
     isWalkerBackHome = true;
 
   // Final check for single boolean return: check both requirements == true
-  if (isValidWalk && isWalkerBackHome)
+  if (isValidWalkLength && isWalkerBackHome)
     return true;
-}
-
-int main(void)
-{
-  char *walk = {"nnwwwsseen"};
-  
-  (isValidWalk(walk)) ? puts("True"); : puts("False");
-  return(0);
+  return false;
 }
