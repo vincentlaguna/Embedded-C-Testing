@@ -50,7 +50,7 @@ bool isValidWalk(const char *walk)
   while (*walk)
   {
     *walk++;
-    count++;
+    ++count;
   } 
   // Validate char array is of 10 characters
   if (count == 10)
