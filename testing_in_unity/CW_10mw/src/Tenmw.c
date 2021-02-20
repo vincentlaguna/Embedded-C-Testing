@@ -144,6 +144,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   char marker = 'X';
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
+  //while (*walk)
   {
     // #ifndef _TEST
     //   printf("%d = %c\n", direction, *walk);
@@ -185,6 +186,15 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
 
 void displayWinBoard(void)
 {
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      gridSquare[x][y] = ' ';
+    }
+  }
+  
+  gridSquare[5][5] = 'H';
   
   printf("\t _________________________________________________________________ \n");
   printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
