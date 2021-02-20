@@ -143,8 +143,8 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   bool backHome = false;
   char marker = 'X';
   
-  for (int direction = 0; *walk != '\0'; *walk++, direction++)
-  //while (*walk)
+  for (; *walk != '\0'; *walk++)
+  //for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
     // #ifndef _TEST
     //   printf("%d = %c\n", direction, *walk);
