@@ -14,13 +14,9 @@
 * **********************************************************************************/
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 #include "../inc/Tenmw.h"
-#define _TEST
-// Globals
-// int row = 5;
-// int position = 5;
-// bool backHome = false;
-// char marker = 'X';
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -47,57 +43,22 @@ int main(void)
 {
 #endif
 
-// char gridSquare[11][11] =
-// {
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','H','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-//   {'0','0','0','0','0','0','0','0','0','0','0'},
-// };
   char *pGrid;
   pGrid = gridSquare;
   
   char *walk = {"nnwwwsseee"};
   
-  displayBoard();
+  //displayBoard();
   
   #ifndef _Test
     displayGrid(pGrid, SQUARE_DIMENSION);
     moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
   #endif
   
-  
-  
-  displayBoard();
+  //displayBoard();
   
   displayGrid(pGrid, SQUARE_DIMENSION);
   
-  // #ifndef _Test
-    
-  //   if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
-  //   {
-  //     backHome = true;
-  //     printf("\nWalker is Back Home!\n");
-  //   }
-  //   else
-  //   {
-  //     printf("\nSorry, walker did not make it back home...\n");
-  //   }
-
-  // if (isValidWalkLength(walk))
-  //   printf("\nIt was 10 chars!\n");
-  // else
-  //   printf("Nope, not ten or your code SUCKS!\n");
-  
-  // #endif
-
   return(0);
 }
 
@@ -186,9 +147,9 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   
   for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
-    #ifndef _TEST
-    printf("%d = %c\n", direction, *walk);
-    #endif
+    // #ifndef _TEST
+    //   printf("%d = %c\n", direction, *walk);
+    // #endif
     
     switch (*walk)
     {
@@ -204,20 +165,10 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
       case 'w':
         *(grid + (row * n) + position++) = marker;
         break;
-      //default:
-        //printf("Somthing is wrong with the *char input! Exiting the H*** out!...\n");
     }
+    displayGrid(grid, SQUARE_DIMENSION);
+    sleep(2);
   }
-  //*(grid + (5 * n) + 4) = 'X';
-  // for (int x = 0; x < n; x++)
-  // {
-  //   for (int y = 0; y < n; y++)
-  //   {
-  //     printf("%c ", *(grid + ((x * n) + y)));
-  //   }
-  //   printf("\n");
-  // }
-  // printf("\n");
   
   if (marker == *(grid + (row * n) + position))
   {
@@ -230,9 +181,8 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     printf("\nSorry, walker did not make it back home...\n");
     return false;
   }
-  #ifndef _TEST
   
-  displayBoard();
-
-  #endif
+  // #ifndef _TEST
+  //   displayBoard();
+  // #endif
 }
