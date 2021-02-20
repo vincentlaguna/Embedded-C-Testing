@@ -5,7 +5,7 @@
 
 #include <stdbool.h>
 
-extern char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION];
+//extern char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION];
 
 void displayBoard(void);
 
