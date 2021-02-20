@@ -9,6 +9,8 @@
 
 void displayBoard(void);
 
+void displayWinBoard(void);
+
 void displayGrid(char *grid, int n);
 
 bool isValidWalkLength(const char *walk);
