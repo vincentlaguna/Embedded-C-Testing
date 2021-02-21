@@ -20,10 +20,10 @@ char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 
 bool isValidWalk(const char *walk) 
 {
-  char                      *pGrid;
-  char marker              = 'X';
-  char                      *pMarker;
-  pMarker                  = &marker;
+  //char                      *pGrid;
+  //char marker              = 'X';
+  //char                      *pMarker;
+  //pMarker                  = &marker;
   pGrid                    = (char *)malloc(sizeof(gridSquare));
   int  count               = 0;
   int  row                 = 5;
@@ -50,25 +50,6 @@ bool isValidWalk(const char *walk)
   }
   printf("\n");
   
-  for (; *walk != '\0'; *walk++)
-  {
-    switch (*walk)
-    {
-      case 'n': 
-        *(pGrid + (row-- * SQUARE_DIMENSION) + position) = *pMarker;
-        break;
-      case 's': 
-        *(pGrid + (row++ * SQUARE_DIMENSION) + position) = *pMarker;
-        break;
-      case 'e':
-        *(pGrid + (row * SQUARE_DIMENSION) + position--) = *pMarker;
-        break;
-      case 'w':
-        *(pGrid + (row * SQUARE_DIMENSION) + position++) = *pMarker;
-        break;
-    }
-  }
-  
   for (int x = 0; x < SQUARE_DIMENSION; x++)
   {
     for (int y = 0; y < SQUARE_DIMENSION; y++)
@@ -83,11 +64,39 @@ bool isValidWalk(const char *walk)
   if (*pMarker == *(pGrid + (row * SQUARE_DIMENSION) + position))
     isBackHome = true;
   
-  if (isValidWalkLength && isBackHome)
+  if (isValidWalkLength/* && isBackHome */)
     return true;
   return false;
   
   free(pGrid);
+}
+
+bool moveWalker(const char *walk, char *grid, int n)
+{
+  int row = 5;
+  int position = 5;
+  bool backHome = false;
+  char marker = 'X';
+  
+  for (; *walk != '\0'; *walk++)
+  {
+    switch (*walk)
+    {
+      case 'n': 
+        *(grid + (row-- * n) + position) = marker;
+        break;
+      case 's': 
+        *(grid + (row++ * n) + position) = marker;
+        break;
+      case 'e':
+        *(grid + (row * n) + position--) = marker;
+        break;
+      case 'w':
+        *(grid + (row * n) + position++) = marker;
+        break;
+    }
+  }
+  
 }
 
 int main(void)
