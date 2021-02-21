@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#define SQUARE_DIMENSION 11
+
+char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
+  {
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+    {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  };
+
+bool isValidWalk(const char *walk) 
+{
+  char                      *pGrid;
+  pGrid                    = (char *)malloc(sizeof(gridSquare));
+  int  count               = 0;
+  int  row                 = 5;
+  int  position            = 5;
+  char marker              = 'X';
+  bool isBackHome          = false;
+  bool isValidWalkLength   = false;
+  
+  while (*walk)
+  {
+    *walk++;
+    ++count;
+  }
+  if (count == 10)
+    isValidWalkLength = true;
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      *(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
+      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
+  
+  for (int i = 0; *walk != '\0'; i++, *walk++)
+  {
+    switch (*walk)
+    {
+      case 'n': 
+        *(pGrid + (row-- * SQUARE_DIMENSION) + position) = marker;
+        break;
+      case 's': 
+        *(pGrid + (row++ * SQUARE_DIMENSION) + position) = marker;
+        break;
+      case 'e':
+        *(pGrid + (row * SQUARE_DIMENSION) + position--) = marker;
+        break;
+      case 'w':
+        *(pGrid + (row * SQUARE_DIMENSION) + position++) = marker;
+        break;
+    }
+  }
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      //*(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
+      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
+  
+  if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+    isBackHome = true;
+  
+  if (isValidWalkLength && isBackHome)
+    return true;
+  return false;
+  
+  free(pGrid);
+}
+
+int main(void)
+{
+  char *walk = {"nnwwwsseee"};
+  
+  if (isValidWalk(walk))
+  {
+    printf("Pass\n");
+  }
+  else
+  {
+    printf("Fail\n");
+  }
+  return(0);
+}
