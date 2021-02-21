@@ -48,7 +48,7 @@ bool isValidWalk(const char *walk)
   }
   printf("\n");
   
-  for (int i = 0; *walk != '\0'; i++, *walk++)
+  for (; *walk != '\0'; *walk++)
   {
     switch (*walk)
     {
