@@ -96,7 +96,7 @@ bool moveWalker(const char *walk, char *grid, int n)
         break;
     }
   }
-  if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+  if (marker == *(grid + (row * n) + position))
     return true;
   return false;
 }
@@ -115,8 +115,6 @@ int main(void)
   {
     printf("Fail\n");
   }
-  
-  
   
   if (moveWalker(walk, pGrid, SQUARE_DIMENSION))
   {
