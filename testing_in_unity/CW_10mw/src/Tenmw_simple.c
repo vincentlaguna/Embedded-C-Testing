@@ -103,6 +103,8 @@ bool moveWalker(const char *walk, char *grid, int n)
 
 int main(void)
 {
+  char        *pGrid;
+  pGrid      = gridSquare;
   char *walk = {"nnwwwsseee"};
   
   if (isValidWalk(walk))
@@ -114,6 +116,16 @@ int main(void)
     printf("Fail\n");
   }
   
-  moveWalker(walk, )
+  
+  
+  if (moveWalker(walk, pGrid, SQUARE_DIMENSION))
+  {
+    printf("Move Pass\n");
+  }
+  else
+  {
+    printf("Move Fail\n");
+  }
+  
   return(0);
 }
