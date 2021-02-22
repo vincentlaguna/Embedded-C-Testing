@@ -24,7 +24,7 @@ bool isValidWalk(const char *walk)
   //char marker              = 'X';
   //char                      *pMarker;
   //pMarker                  = &marker;
-  pGrid                    = (char *)malloc(sizeof(gridSquare));
+  //pGrid                    = (char *)malloc(sizeof(gridSquare));
   int  count               = 0;
   int  row                 = 5;
   int  position            = 5;
@@ -61,7 +61,7 @@ bool isValidWalk(const char *walk)
   }
   printf("\n");
   
-  if (*pMarker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+  if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
     isBackHome = true;
   
   if (isValidWalkLength/* && isBackHome */)
@@ -75,7 +75,7 @@ bool moveWalker(const char *walk, char *grid, int n)
 {
   int row = 5;
   int position = 5;
-  bool backHome = false;
+  //bool isBackHome = false;
   char marker = 'X';
   
   for (; *walk != '\0'; *walk++)
@@ -96,7 +96,9 @@ bool moveWalker(const char *walk, char *grid, int n)
         break;
     }
   }
-  
+  if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+    return true;
+  return false;
 }
 
 int main(void)
@@ -111,5 +113,7 @@ int main(void)
   {
     printf("Fail\n");
   }
+  
+  moveWalker(walk, )
   return(0);
 }
