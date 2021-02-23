@@ -39,27 +39,27 @@ bool isValidWalk(const char *walk)
   if (count == 10)
     isValidWalkLength = true;
   
-  for (int x = 0; x < SQUARE_DIMENSION; x++)
-  {
-    for (int y = 0; y < SQUARE_DIMENSION; y++)
-    {
-      *(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
-      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
-    }
-    printf("\n");
-  }
-  printf("\n");
+  // for (int x = 0; x < SQUARE_DIMENSION; x++)
+  // {
+  //   for (int y = 0; y < SQUARE_DIMENSION; y++)
+  //   {
+  //     *(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
+  //     printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+  //   }
+  //   printf("\n");
+  // }
+  // printf("\n");
   
-  for (int x = 0; x < SQUARE_DIMENSION; x++)
-  {
-    for (int y = 0; y < SQUARE_DIMENSION; y++)
-    {
-      //*(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
-      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
-    }
-    printf("\n");
-  }
-  printf("\n");
+  // for (int x = 0; x < SQUARE_DIMENSION; x++)
+  // {
+  //   for (int y = 0; y < SQUARE_DIMENSION; y++)
+  //   {
+  //     //*(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
+  //     printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+  //   }
+  //   printf("\n");
+  // }
+  // printf("\n");
   
   // if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
   //   isBackHome = true;
