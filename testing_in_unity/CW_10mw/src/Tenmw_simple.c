@@ -105,7 +105,9 @@ int main(void)
 {
   char        *pGrid;
   pGrid      = gridSquare;
-  char *walk = {"nnwwwsseee"};
+  //char *walk = {"nnwwwsseee"};
+  char *walk = {"nsnwensses"}; // Not Valid
+  //char *walk = {"nsnwensse"}; // Not Valid
   
   if (isValidWalk(walk))
   {
