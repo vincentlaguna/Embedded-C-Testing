@@ -117,16 +117,6 @@ int main(void)
   {
     printf("Fail\n");
   }
-  
-  // if (moveWalker(walk, pGrid, SQUARE_DIMENSION))
-  // {
-  //   printf("Move Pass\n");
-  // }
-  // else
-  // {
-  //   printf("Move Fail\n");
-  // }
-  //free(pGrid);
-  
+
   return(0);
 }
