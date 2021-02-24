@@ -106,16 +106,16 @@ int main(void)
   char        *pGrid;
   pGrid      = gridSquare;
   //char *walk = {"nnwwwsseee"};
-  char *walk = {"nsnwensses"}; // Not Valid
-  //char *walk = {"nsnwensse"}; // Not Valid
+  //char *walk = {"nsnwensses"}; // Not Valid Move
+  char *walk = {"nsnwensse"}; // Not Valid Length
   
   if (isValidWalk(walk))
   {
-    printf("Pass\n");
+    printf("Length Pass\n");
   }
   else
   {
-    printf("Fail\n");
+    printf("Length Fail\n");
   }
   
   if (moveWalker(walk, pGrid, SQUARE_DIMENSION))
