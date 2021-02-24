@@ -23,38 +23,9 @@
 #define TEST_PORT 12345
 //#define _LOCAL_TEST
 // Helper Functions
-short createSocket(void) // Create local Server Socket (Streaming Socket)
-{
-  short servSocket = 0;
-  printf("\n<<< This is a simplified example of creating a Server-side "
-         "socket for a TCP/IP connection >>>\n\n");
-  servSocket = socket(AF_INET, SOCK_STREAM, 0);
-  printf("\n<<< Created Server-Side Socket >>>\n\n");
-
-  return servSocket;
-}
-
-int bindCreatedServSocket(int servSocket) // Wraps the bind() call
-{
-  int iRetVal = -1;
-  int clientPort = TEST_PORT; // Needs to be greater than sys ports (>1024)
-  
-  struct sockaddr_in remote = {0};
-  // Internet address family
-  remote.sin_family = AF_INET;
-  // Any incoming interface
-  // The htonl() function converts the unsigned integer hostlong from 
-  // host byte order to network byte order
-  remote.sin_addr.s_addr = htonl(INADDR_ANY);
-  // The htons function takes a 16-bit number in host byte order 
-  // and returns a 16-bit number in network byte order used in 
-  // TCP/IP networks (the AF_INET or AF_INET6 address family)
-  remote.sin_port = htons(clientPort); // Local Port
-  
-  iRetVal = bind(servSocket, (struct sockaddr *)&remote, sizeof(remote));
-  return iRetVal;
-}
-
+short createSocket(void);
+int bindCreatedServSocket(int servSocket);
+// Main Driver Program for Server
 int main(int argc, char *argv[])
 {
   int socket_desc = 0, sock = 0, clientLen = 0;
@@ -159,4 +130,36 @@ int main(int argc, char *argv[])
 //   }
 // #endif
   return(0);
+}
+
+short createSocket(void) // Create local Server Socket (Streaming Socket)
+{
+  short servSocket = 0;
+  printf("\n<<< This is a simplified example of creating a Server-side "
+         "socket for a TCP/IP connection >>>\n\n");
+  servSocket = socket(AF_INET, SOCK_STREAM, 0);
+  printf("\n<<< Created Server-Side Socket >>>\n\n");
+
+  return servSocket;
+}
+
+int bindCreatedServSocket(int servSocket) // Wraps the bind() call
+{
+  int iRetVal = -1;
+  int clientPort = TEST_PORT; // Needs to be greater than sys ports (>1024)
+  
+  struct sockaddr_in remote = {0};
+  // Internet address family
+  remote.sin_family = AF_INET;
+  // Any incoming interface
+  // The htonl() function converts the unsigned integer hostlong from 
+  // host byte order to network byte order
+  remote.sin_addr.s_addr = htonl(INADDR_ANY);
+  // The htons function takes a 16-bit number in host byte order 
+  // and returns a 16-bit number in network byte order used in 
+  // TCP/IP networks (the AF_INET or AF_INET6 address family)
+  remote.sin_port = htons(clientPort); // Local Port
+  
+  iRetVal = bind(servSocket, (struct sockaddr *)&remote, sizeof(remote));
+  return iRetVal;
 }
