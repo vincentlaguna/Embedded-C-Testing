@@ -109,6 +109,7 @@ int main(int argc, char *argv[])
     // #endif
     }
     printf("Client Reply: %s\n", clientMsg);
+    //sprintf(local file to write to...)
    
  //#ifndef _LOCAL_TEST
     int i = atoi(clientMsg);
