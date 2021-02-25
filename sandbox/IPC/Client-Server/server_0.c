@@ -25,6 +25,7 @@
 // Helper Functions
 short createSocket(void);
 int bindCreatedServSocket(int servSocket);
+
 // Main Driver Program for Server
 int main(int argc, char *argv[])
 {
@@ -33,6 +34,9 @@ int main(int argc, char *argv[])
   // Initialize message buffers
   char clientMsg[200] = {0};
   char msg[100] = {0};
+  // File OPS
+  FILE *fp;
+  fp = fopen("../Client-Server/ServerLog_0.txt", w+);
   //const char *pMsg = "<<< This message is from SERVER_0 >>>";
   // Create Socket
   socket_desc = createSocket();
