@@ -85,13 +85,13 @@ int main(int argc, char *argv[])
     }
     printf("Client Reply: %s\n", clientMsg);
     //sprintf(local file to write to...)
-    fprintf(fp, "Client Reply: %s is logged unto Server_0", clientMsg);
+    fprintf(fp, "Client Reply: %s\n", clientMsg);
    
  //#ifndef _LOCAL_TEST
     int i = atoi(clientMsg); // change to ouptut to a file and log
     i--;
     sprintf(msg, "%d", i);
-    fprintf(fp, "Message Decrement: %d", i);
+    fprintf(fp, "Client 1 connected: %d", i);
    
     close(sock);
   //#endif
