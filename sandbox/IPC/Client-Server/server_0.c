@@ -83,7 +83,7 @@ int main(int argc, char *argv[])
     //sprintf(local file to write to...)
    
  //#ifndef _LOCAL_TEST
-    int i = atoi(clientMsg);
+    int i = atoi(clientMsg); // change to ouptut to a file and log
     i--;
     sprintf(msg, "%d", i);
    
