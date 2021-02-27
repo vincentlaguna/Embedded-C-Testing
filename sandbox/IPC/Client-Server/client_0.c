@@ -88,7 +88,8 @@ int main(void)
   int clientSocket = 0; 
   //int readSize = 0;
   struct sockaddr_in Server; // This is where we fill-in the Server-Side address info
-  char sendToServer[100] = {0};
+  int sendToServer = 1;
+  //char sendToServer[100] = {0};
   //char serverReply[100] = {0};
   // Create the Socket
   clientSocket = createSocket();
@@ -107,10 +108,11 @@ int main(void)
   }
   printf("Connection to Remote Server = Successful\n\n");
   printf("Please Enter the Message: ");
-  //fgets(sendToServer, 100, stdin);
+  fgets(sendToServer, 100, stdin);
   // Find a way to induce the data into a variable and send to server
   // Send data to the Remote Server // Somthing is wrong here, it closes...
-  socketSend(clientSocket, sendToServer, strlen(sendToServer));
+  //socketSend(clientSocket, sendToServer, strlen(sendToServer));
+  socketSend(clientSocket, sendToServer, sizeof(int));
   // Received the data from the Remote Server
   //readSize = socketReceive(clientSocket, serverReply, 200);
   //printf("\nServer Response: %s\n\n", serverReply);
