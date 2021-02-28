@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#define SQUARE_DIMENSION 11
+#define  SQUARE_DIMENSION 11
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
   {
