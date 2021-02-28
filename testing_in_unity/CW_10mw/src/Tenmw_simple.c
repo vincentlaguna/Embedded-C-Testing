@@ -20,14 +20,6 @@ char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 
 bool isValidWalk(const char *walk) 
 {
-  // char                      *pGrid;
-  // char marker              = 'X';
-  // char                      *pMarker;
-  // pMarker                  = &marker;
-  // pGrid                    = (char *)malloc(sizeof(gridSquare));
-  // int  row                 = 5;
-  // int  position            = 5;
-  // bool isBackHome          = false;
   int  count               = 0;
   bool isValidWalkLength   = false;
   
