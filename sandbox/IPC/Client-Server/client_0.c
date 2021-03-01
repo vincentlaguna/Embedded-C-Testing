@@ -107,9 +107,9 @@ int main(void)
     return 1;
   }
   printf("Connection to Remote Server = Successful\n\n");
-  //printf("Please Enter the Message: ");
-  //fgets(sendToServer, 100, stdin);
-  fprintf(sendToServer, 100, sendToServer);
+  printf("Please Enter the Message: ");
+  fgets(sendToServer, 100, stdin);
+  //fprintf(sendToServer, 100, sendToServer);
   // Find a way to induce the data into a variable and send to server
   // Send data to the Remote Server // Somthing is wrong here, it closes...
   socketSend(clientSocket, sendToServer, strlen(sendToServer));
