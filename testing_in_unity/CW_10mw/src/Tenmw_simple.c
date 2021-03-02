@@ -110,7 +110,7 @@ int main(void)
   //char *walk = {"nsnsnsnsns"}; // Pass
   //char *walk = {"nsnwensses"}; // Not Valid Move
   //char *walk = {"nsnwensse"}; // Not Valid Length and Move
-  char *walk = {"nsnsnsnsnn"}; // Not Valid Move
+  char *walk = {"nnnnnnnnnn"}; // Not Valid Move
   
   if (isValidWalk(walk) && moveWalker(walk, pGrid, SQUARE_DIMENSION))
   {
