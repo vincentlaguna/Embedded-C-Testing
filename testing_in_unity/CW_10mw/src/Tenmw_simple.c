@@ -76,10 +76,21 @@ bool isValidWalk(const char *walk)
 
 bool moveWalker(const char *walk, char *grid, int n)
 {
-  int row = 5;
-  int position = 5;
+  int row = 11;
+  int position = 11;
   //bool isBackHome = false;
   char marker = 'X';
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      *(grid + ((x * SQUARE_DIMENSION) + y)) = '0';
+      printf("%c ", *(grid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
   
   for (; *walk != '\0'; *walk++)
   {
@@ -98,7 +109,29 @@ bool moveWalker(const char *walk, char *grid, int n)
         *(grid + (row * n) + position++) = marker;
         break;
     }
+    for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      //*(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
+      printf("%c ", *(grid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
   }
+  printf("\n");
+  }
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      //*(pGrid + ((x * SQUARE_DIMENSION) + y)) = '0';
+      printf("%c ", *(grid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
+  
   if (marker == *(grid + (row * n) + position))
     return true;
   return false;
