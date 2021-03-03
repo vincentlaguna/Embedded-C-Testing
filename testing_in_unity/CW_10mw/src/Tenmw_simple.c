@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <unistd.h>
 #define  SQUARE_DIMENSION 22
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
@@ -119,6 +120,7 @@ bool moveWalker(const char *walk, char *grid, int n)
     printf("\n");
   }
   printf("\n");
+  sleep(1);
   }
   
   for (int x = 0; x < SQUARE_DIMENSION; x++)
