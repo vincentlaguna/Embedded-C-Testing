@@ -134,7 +134,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   }
   printf("\n");
   
-  if (marker == *(grid + (row * n) + position))
+  if (marker == *(grid + (row * SQUARE_DIMENSION) + position))
     return true;
   return false;
 }
