@@ -52,7 +52,6 @@ bool moveWalker(const char *walk, char *grid, int n)
 {
   int row = 11;
   int position = 11;
-  //bool isBackHome = false;
   char marker = 'X';
   
   for (int x = 0; x < SQUARE_DIMENSION; x++)
@@ -116,12 +115,14 @@ int main(void)
 {
   char        *pGrid;
   pGrid      = (char *)malloc(sizeof(gridSquare));
-  char *walk = {"nnwwwsseee"}; // Pass
+  //char *walk = {"nnwwwsseee"}; // Pass
   //char *walk = {"nsnsnsnsns"}; // Pass
-  //char *walk = {"nsnwensses"}; // Not Valid Move
+  char *walk = {"nnnnnsssss"}; // Not Valid Move
   //char *walk = {"nsnwensse"}; // Not Valid Length and Move
   //char *walk = {"wwwwwwwwww"}; // Not Valid Move
   //char *walk = {"nnnnnnnnnn"}; // Not Valid Move
+  //char *walk = {"ssssssssss"}; // Not Valid Move
+  //char *walk = {"eeeeeeeeee"}; // Not Valid Move
   
   if (isValidWalk(walk) && moveWalker(walk, pGrid, SQUARE_DIMENSION))
   {
