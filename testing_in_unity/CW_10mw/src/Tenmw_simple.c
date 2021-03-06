@@ -53,9 +53,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   int   row       = 11;
   int   position  = 11;
   char  home = *(grid + (row * SQUARE_DIMENSION) + position);
-  //int   *home_addr;
-  //home_addr  = &home;
-  char marker = 'X';
+  char  marker = 'X';
   
   for (int x = 0; x < SQUARE_DIMENSION; x++)
   {
@@ -72,16 +70,20 @@ bool moveWalker(const char *walk, char *grid, int n)
   {
     switch (*walk)
     {
-      case 'n': 
+      case 'n':
+        //marker = *(grid + (row-- * n) + position);
         *(grid + (row-- * n) + position) = marker;
         break;
       case 's': 
+        //marker = *(grid + (row-- * n) + position);
         *(grid + (row++ * n) + position) = marker;
         break;
       case 'e':
+        //marker = *(grid + (row-- * n) + position);
         *(grid + (row * n) + position--) = marker;
         break;
       case 'w':
+        //marker = *(grid + (row-- * n) + position);
         *(grid + (row * n) + position++) = marker;
         break;
     }
@@ -93,10 +95,9 @@ bool moveWalker(const char *walk, char *grid, int n)
         printf("%c ", *(grid + ((x * SQUARE_DIMENSION) + y)));
       }
     printf("\n");
-  }
+    }
   printf("\n");
   sleep(1);
-    
   }
   
   for (int x = 0; x < SQUARE_DIMENSION; x++)
@@ -110,8 +111,8 @@ bool moveWalker(const char *walk, char *grid, int n)
   }
   printf("\n");
   
-  //if (marker == *(grid + (row * SQUARE_DIMENSION) + position))
-  if (marker == home)
+  if (marker == *(grid + (row * SQUARE_DIMENSION) + position))
+  //if (marker == home)
     return true;
   return false;
 }
