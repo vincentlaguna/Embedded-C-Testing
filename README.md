@@ -34,6 +34,7 @@ Command shortlist:
 
 Updates:
 
+- Updated Network Bash Shell Scripts v.1.1 (Private) 03072021
 - Moving unto more network testing using the Socket API (C)
 - Updated Network Bash Shell Scripts v.1.0 (Private) 02062021
 - Finished CodeWars project, overkill on what the requirements were, but I used TDD 8>)
