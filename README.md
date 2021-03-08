@@ -45,4 +45,3 @@ Updates:
 - Need to fix the test buid, I don't know why it's broken... 
 - docker run -it --rm -v $PWD:/lab throwtheswitch/drsurly-course2
 - Migrated repository 10-10-2020
-

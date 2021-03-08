@@ -121,10 +121,11 @@ int main(void)
 {
   char        *pGrid;
   pGrid      = (char *)malloc(sizeof(gridSquare));
-  char *walk = {"nnwwwsseee"}; // Pass
+  //char *walk = {"nnwwwsseee"}; // Pass
   //char *walk = {"nsnsnsnsns"}; // Pass
-  //char *walk = {"eeeewnwwww"}; // Not Valid Move
   //char *walk = {"nsnwensse"}; // Not Valid Length and Move
+  char *walk = {"nnwwwssees"}; // Not Valid Move
+  //char *walk = {"eeeewnwwww"}; // Not Valid Move
   //char *walk = {"wwwwwwwwww"}; // Not Valid Move
   //char *walk = {"nnnnnnnnnn"}; // Not Valid Move
   //char *walk = {"ssssssssss"}; // Not Valid Move
