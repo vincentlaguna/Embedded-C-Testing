@@ -53,7 +53,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   int   row       = 11;
   int   position  = 11;
   //char  home = *(grid + (row * SQUARE_DIMENSION) + position);
-  int   home = &grid + (row * SQUARE_DIMENSION) + position;
+  //int   home = &grid + (row * SQUARE_DIMENSION) + position;
   char  marker = 'X';
   
   for (int x = 0; x < SQUARE_DIMENSION; x++)
@@ -112,8 +112,8 @@ bool moveWalker(const char *walk, char *grid, int n)
   }
   printf("\n");
   
-  //if (marker == *(grid + (row * SQUARE_DIMENSION) + position))
-  if (&marker == home)
+  if (marker == *(grid + (row * SQUARE_DIMENSION) + position))
+  //if (&marker == home)
     return true;
   return false;
 }
