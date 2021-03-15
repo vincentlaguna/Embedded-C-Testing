@@ -44,8 +44,13 @@ bool isValidWalk(const char *walk)
     isValidWalkLength = true;
  
   if (isValidWalkLength)
+  {
     return true;
-  return false;
+  }
+  else
+  {
+    return false;
+  }
 }
 
 bool moveWalker(const char *walk, char *grid, int n)
