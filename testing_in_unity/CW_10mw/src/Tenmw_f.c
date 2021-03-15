@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #define SQUARE_DIMENSION 22
 
-int main(void)
+int Tenmw_f(void)
 {
   return(0);
 }
