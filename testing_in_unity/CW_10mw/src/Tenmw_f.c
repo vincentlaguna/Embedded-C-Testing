@@ -83,6 +83,7 @@ int main(void)
   }
   else
   {
+    isBackHome = false;
     printf("Walker did not make it :(\n");
   }
     
