@@ -6,6 +6,8 @@
 int main(void)
 {
   // Char array used for input test
+  // Need to create a random char generator to produce a large amount of input
+  // for thorough testing
   char *walk = {"ewewewewew"}; // Pass
   //char *walk = {"nnwwwsseee"}; // Pass
   //char *walk = {"nsnsnsnsns"}; // Pass
