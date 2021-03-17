@@ -127,6 +127,8 @@ int main(void)
 {
   char        *pGrid;
   pGrid      = (char *)malloc(sizeof(gridSquare));
+  // Need to create a random char generator to produce a large amount of input
+  // for testing
   char *walk = {"ewewewewew"}; // Pass
   //char *walk = {"nnwwwsseee"}; // Pass
   //char *walk = {"nsnsnsnsns"}; // Pass
