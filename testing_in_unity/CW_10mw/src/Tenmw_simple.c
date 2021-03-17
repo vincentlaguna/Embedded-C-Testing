@@ -3,7 +3,8 @@
 #include <time.h>
 #include <stdbool.h>
 #include <unistd.h>
-#define  SQUARE_DIMENSION 22
+#define  SQUARE_DIMENSION   22
+#define  MAX_RAND_NUM       4
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
   {
@@ -36,7 +37,7 @@ bool moveWalker(const char *walk, char *grid, int n);
 
 int main(void)
 {
-  char        *pGrid;
+  char         *pGrid;
   pGrid      = (char *)malloc(sizeof(gridSquare));
   
   // Need to create a random char generator to produce a large amount of input
@@ -161,5 +162,20 @@ bool moveWalker(const char *walk, char *grid, int n)
 
 char *randomWalkGenerator(void)
 {
+  char  *randomWalk = {'\0'};
+  int   charNum     = 0;
+  
+  srand((unsigned) time(NULL));
+  
+  for (int i = 0; i <= MAX_RAND_NUM; i++)
+  {
+    charNum = rand() % MAX_RAND_NUM + 1;
+    switch (charNum)
+    {
+      case 1: *(++randomWalk) = 'n';
+        break;
+      case 2: *(++randomWalk) = 's';
+    }
+  }
   
 }
