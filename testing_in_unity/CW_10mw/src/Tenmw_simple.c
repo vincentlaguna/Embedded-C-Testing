@@ -5,7 +5,7 @@
 #include <unistd.h>
 #define  SQUARE_DIMENSION   22
 #define  MAX_RAND_NUM       4
-#define  RAND_WALK_TEST
+//#define  RAND_WALK_TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
   {
@@ -35,6 +35,7 @@ char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 
 bool isValidWalk(const char *walk);
 bool moveWalker(const char *walk, char *grid, int n);
+//void randomWalkGenerator(void);
 
 int main(void)
 {
@@ -54,6 +55,8 @@ int main(void)
   //char *walk = {"nnnnnnnnnn"}; // Not Valid Move
   //char *walk = {"ssssssssss"}; // Not Valid Move
   //char *walk = {"eeeeeeeeee"}; // Not Valid Move
+  
+  //randomWalkGenerator();
   
   if (isValidWalk(walk) && moveWalker(walk, pGrid, SQUARE_DIMENSION))
   {
@@ -103,7 +106,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   {
     for (int y = 0; y < SQUARE_DIMENSION; y++)
     {
-      *(grid + ((x * SQUARE_DIMENSION) + y)) = '0';
+      *(grid + ((x * SQUARE_DIMENSION) + y)) = ' ';
       printf("%c ", *(grid + ((x * SQUARE_DIMENSION) + y)));
     }
     printf("\n");
@@ -161,28 +164,28 @@ bool moveWalker(const char *walk, char *grid, int n)
   return false;
 }
 
-char *randomWalkGenerator(void)
-{
-  char  *randomWalk = {'\0'};
-  int   charNum     = 0;
+// void randomWalkGenerator(void)
+// {
+//   char  *randomWalk = {'\0'};
+//   int   charNum     = 0;
   
-  srand((unsigned) time(NULL));
+//   srand((unsigned) time(NULL));
   
-  for (int i = 0; i <= MAX_RAND_NUM; i++)
-  {
-    charNum = rand() % MAX_RAND_NUM + 1;
-    switch (charNum)
-    {
-      case 1: *(++randomWalk) = 'n';
-        break;
-      case 2: *(++randomWalk) = 's';
-        break;
-      case 3: *(++randomWalk) = 'e';
-        break;
-      case 4: *(++randomWalk) = 'w';
-        break;
-    }
-  }
-  printf("%s\n", *randomWalk);
-  return randomWalk;
-}
+//   for (int i = 0; i <= 10; i++)
+//   {
+//     charNum = rand() % MAX_RAND_NUM + 1;
+//     switch (charNum)
+//     {
+//       case 1: *++randomWalk = 'n';
+//         break;
+//       case 2: *++randomWalk = 's';
+//         break;
+//       case 3: *++randomWalk = 'e';
+//         break;
+//       case 4: *++randomWalk = 'w';
+//         break;
+//     }
+//   }
+//   printf("%s\n", randomWalk);
+//   //return randomWalk;
+// }
