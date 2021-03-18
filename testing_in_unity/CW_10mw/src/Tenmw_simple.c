@@ -35,7 +35,7 @@ char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 
 bool isValidWalk(const char *walk);
 bool moveWalker(const char *walk, char *grid, int n);
-//void randomWalkGenerator(void);
+void randomWalkGenerator(void);
 
 int main(void)
 {
@@ -60,13 +60,13 @@ int main(void)
   
   if (isValidWalk(walk) && moveWalker(walk, pGrid, SQUARE_DIMENSION))
   {
-    printf("Length and Move Pass\n");
+    printf("Length and Move Pass\n\n");
   }
   else
   {
-    printf("Fail\n");
+    printf("Fail\n\n");
   }
-  
+  randomWalkGenerator();
   free(pGrid);
   return(0);
 }
@@ -144,7 +144,7 @@ bool moveWalker(const char *walk, char *grid, int n)
     printf("\n");
     }
   printf("\n");
-  sleep(1);
+  //sleep(1);
   }
   
   for (int x = 0; x < SQUARE_DIMENSION; x++)
@@ -164,28 +164,34 @@ bool moveWalker(const char *walk, char *grid, int n)
   return false;
 }
 
-// void randomWalkGenerator(void)
-// {
-//   char  *randomWalk = {'\0'};
-//   int   charNum     = 0;
+void randomWalkGenerator(void)
+{
+  char  randomWalk[10] = {'\0'};
+  int   charNum     = 0;
   
-//   srand((unsigned) time(NULL));
+  srand((unsigned) time(NULL));
   
-//   for (int i = 0; i <= 10; i++)
-//   {
-//     charNum = rand() % MAX_RAND_NUM + 1;
-//     switch (charNum)
-//     {
-//       case 1: *++randomWalk = 'n';
-//         break;
-//       case 2: *++randomWalk = 's';
-//         break;
-//       case 3: *++randomWalk = 'e';
-//         break;
-//       case 4: *++randomWalk = 'w';
-//         break;
-//     }
-//   }
-//   printf("%s\n", randomWalk);
-//   //return randomWalk;
-// }
+  for (int i = 0; i < 10; i++)
+  {
+    charNum = rand() % MAX_RAND_NUM + 1;
+    switch (charNum)
+    {
+      case 1: randomWalk[i] = 'n';
+        break;
+      // case 2: *++randomWalk = 's';
+      //   break;
+      // case 3: *++randomWalk = 'e';
+      //   break;
+      // case 4: *++randomWalk = 'w';
+      //   break;
+    }
+    printf("%d\n", charNum);
+  }
+  printf("\n");
+  for (int i = 0; i < 10; i++)
+  {
+    printf("%c", randomWalk[i]);
+  }
+  printf("\n");
+  //return randomWalk;
+}
