@@ -58,16 +58,14 @@ int main(void)
   
   //moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION);
   
-  for (int i = 0; i < 10; i++)
+
+  if (isValidWalk(walk) && moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION))
   {
-    if (isValidWalk(walk) && moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION))
-    {
-      printf("Length and Move Pass\n\n");
-    }
-    else
-    {
-      printf("Fail\n\n");
-    }
+    printf("Length and Move Pass\n\n");
+  }
+  else
+  {
+    printf("Fail\n\n");
   }
   //randomWalkGenerator();
   free(pGrid);
