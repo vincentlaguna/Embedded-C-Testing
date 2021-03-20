@@ -56,8 +56,10 @@ int main(void)
   //char *walk = {"ssssssssss"}; // Not Valid Move
   //char *walk = {"eeeeeeeeee"}; // Not Valid Move
   
-  //moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION);
-  
+  for (int i = 0; i < 20; i++)
+  {
+    moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION);
+  }
 
   if (isValidWalk(walk) && moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION))
   {
@@ -162,7 +164,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   if (marker == *(grid + (row * SQUARE_DIMENSION) + position))
   //if (&marker == home)
     return true;
-  return false;
+  //return false;
 }
 
 char* randomWalkGenerator(void)
