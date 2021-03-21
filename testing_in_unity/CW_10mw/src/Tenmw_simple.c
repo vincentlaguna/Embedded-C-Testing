@@ -56,6 +56,7 @@ int main(void)
   //char *walk = {"ssssssssss"}; // Not Valid Move
   //char *walk = {"eeeeeeeeee"}; // Not Valid Move
   
+  
   for (int i = 0; i < 20; i++)
   {
     moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION);
