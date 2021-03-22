@@ -46,7 +46,7 @@ int main(void)
   // for thorough testing
   
   //char *walk = {"ewewewewew"}; // Pass
-  char *walk = {"nnwwwsseee"}; // Pass
+  //char *walk = {"nnwwwsseee"}; // Pass
   //char *walk = {"nsnsnsnsns"}; // Pass
   //char *walk = {"nsnwensse"}; // Not Valid Length and Move
   //char *walk = {"nnwwwssees"}; // Not Valid Move
@@ -56,20 +56,20 @@ int main(void)
   //char *walk = {"ssssssssss"}; // Not Valid Move
   //char *walk = {"eeeeeeeeee"}; // Not Valid Move
   
-  
-  for (int i = 0; i < 20; i++)
-  {
-    moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION);
-  }
+  char *walk = randomWalkGenerator();
+  // for (int i = 0; i < 20; i++)
+  // {
+  //   moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION);
+  // }
 
-  if (isValidWalk(walk) && moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION))
-  {
-    printf("Length and Move Pass\n\n");
-  }
-  else
-  {
-    printf("Fail\n\n");
-  }
+  // if (isValidWalk(walk) && moveWalker(randomWalkGenerator(), pGrid, SQUARE_DIMENSION))
+  // {
+  //   printf("Length and Move Pass\n\n");
+  // }
+  // else
+  // {
+  //   printf("Fail\n\n");
+  // }
   //randomWalkGenerator();
   free(pGrid);
   return(0);
