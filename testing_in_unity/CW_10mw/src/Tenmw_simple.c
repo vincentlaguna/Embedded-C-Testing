@@ -194,11 +194,11 @@ char* randomWalkGenerator(void)
     //printf("%d\n", charNum);
   }
   printf("\n");
-  // for (int i = 0; i < 10; i++)
-  // {
-  //   printf("%c", randomWalk[i]);
-  // }
-  // printf("\n");
+  for (int i = 0; i < 10; i++)
+  {
+    printf("%c", randomWalk[i]);
+  }
+  printf("\n");
   pWalk = randomWalk;
   return pWalk;
 }
