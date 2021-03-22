@@ -118,7 +118,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   }
   printf("\n");
   
-  for (int i = 0; *walk != '\0'; i++, *walk++)
+  for (; *walk != '\0'; *walk++)
   {
     switch (*walk)
     {
@@ -139,7 +139,7 @@ bool moveWalker(const char *walk, char *grid, int n)
         *(grid + (row * n) + position++) = marker;
         break;
     }
-    printf("%d\n", i);
+  
     for (int x = 0; x < SQUARE_DIMENSION; x++)
     {
       for (int y = 0; y < SQUARE_DIMENSION; y++)
