@@ -118,7 +118,7 @@ bool moveWalker(const char *walk, char *grid, int n)
   }
   printf("\n");
   
-  for (; *walk != '\0'; *walk++)
+  for (int i = 0; *walk != '\0'; i++, *walk++)
   {
     switch (*walk)
     {
@@ -139,7 +139,7 @@ bool moveWalker(const char *walk, char *grid, int n)
         *(grid + (row * n) + position++) = marker;
         break;
     }
-    
+    printf("%d\n", i);
     for (int x = 0; x < SQUARE_DIMENSION; x++)
     {
       for (int y = 0; y < SQUARE_DIMENSION; y++)
@@ -171,7 +171,7 @@ bool moveWalker(const char *walk, char *grid, int n)
 
 char* randomWalkGenerator(void)
 {
-  char  randomWalk[10] = {'\0'};
+  char  randomWalk[11] = {'\0'};
   char *pWalk = malloc(11);
   int   charNum     = 0;
   
@@ -200,5 +200,6 @@ char* randomWalkGenerator(void)
   }
   printf("\n");
   pWalk = randomWalk;
+  printf("%s\n", pWalk);
   return pWalk;
 }
