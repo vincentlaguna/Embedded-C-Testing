@@ -177,7 +177,7 @@ char* randomWalkGenerator(void)
   
   srand((unsigned) time(NULL));
   
-  for (int i = 0; i < 13; i++)
+  for (int i = 0; i < 14; i++)
   {
     charNum = rand() % MAX_RAND_NUM + 1;
     switch (charNum)
