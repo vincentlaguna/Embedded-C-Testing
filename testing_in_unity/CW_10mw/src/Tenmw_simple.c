@@ -171,7 +171,7 @@ bool moveWalker(const char *walk, char *grid, int n)
 
 char* randomWalkGenerator(void)
 {
-  char  randomWalk[10] = {'\0'};
+  char  randomWalk[10];
   char  *pWalk         = (char *)malloc(sizeof(randomWalk));
   int   charNum        = 0;
   
