@@ -20,7 +20,8 @@ void test_moveWalkerHome_should_return_validPosition(void)
   char *pGrid;
   pGrid = gridSquare;
   
-  const char *walk = {"nnwwwsseen"};
+  //const char *walk = {"nnwwwsseen"};
+  const char *walk = {"wwwwwwwwww"};
   
   TEST_ASSERT_FALSE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
 
