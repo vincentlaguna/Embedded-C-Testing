@@ -191,7 +191,7 @@ char* randomWalkGenerator(void)
       case 4: randomWalk[i] = 'w';
         break;
     }
-    //printf("%d\n", charNum);
+    printf("%d\n", charNum);
   }
   randomWalk[10] = '\0';
   printf("\n");
