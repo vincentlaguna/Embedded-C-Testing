@@ -5,7 +5,7 @@
 #include <unistd.h>
 #define  SQUARE_DIMENSION   22
 #define  MAX_RAND_NUM       4
-//#define  RAND_WALK_TEST
+#define  RAND_WALK_TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
   {
