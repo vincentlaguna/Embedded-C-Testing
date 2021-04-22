@@ -1,7 +1,7 @@
 #ifndef TENMW_H
 #define TENMW_H
 
-#define SQUARE_DIMENSION 11
+#define SQUARE_DIMENSION 22
 
 #include <stdbool.h>
 
