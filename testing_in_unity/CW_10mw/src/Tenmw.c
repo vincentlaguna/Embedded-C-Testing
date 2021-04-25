@@ -67,8 +67,8 @@ void displayBoard(void)
   // printf("\n\n\tTen Minute walk grid\n\n");
   // printf("\n\n\tWalker [x] - Home ['0']\n\n\n"); 
   
-  printf("\t _________________________________________________________________ ___ \n");
-  printf("\t|     |     |     |     |     |     |     |     |     |     |     |   |\n");
+  printf("\t _________________________________________________________________ \n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
   printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[0][0], gridSquare[0][1], gridSquare[0][2], gridSquare[0][3], gridSquare[0][4], gridSquare[0][5], gridSquare[0][6], gridSquare[0][7], gridSquare[0][8], gridSquare[0][9], gridSquare[0][10]);
   printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
   printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
