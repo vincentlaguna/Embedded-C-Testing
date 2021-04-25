@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -67,8 +67,8 @@ void displayBoard(void)
   // printf("\n\n\tTen Minute walk grid\n\n");
   // printf("\n\n\tWalker [x] - Home ['0']\n\n\n"); 
   
-  printf("\t _________________________________________________________________ _________________________________________________________________ \n");
-  printf("\t|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |\n");
+  printf("\t _________________________________________________________________ ___ \n");
+  printf("\t|     |     |     |     |     |     |     |     |     |     |     |   |\n");
   printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[0][0], gridSquare[0][1], gridSquare[0][2], gridSquare[0][3], gridSquare[0][4], gridSquare[0][5], gridSquare[0][6], gridSquare[0][7], gridSquare[0][8], gridSquare[0][9], gridSquare[0][10]);
   printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
   printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
@@ -101,9 +101,7 @@ void displayBoard(void)
   printf("\t|     |     |     |     |     |     |     |     |     |     |     |\n");
   printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[10][0], gridSquare[10][1], gridSquare[10][2], gridSquare[10][3], gridSquare[10][4], gridSquare[10][5], gridSquare[10][6], gridSquare[10][7], gridSquare[10][8], gridSquare[10][9], gridSquare[10][10]);
   printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
-  
-  //printf("\n");
-  
+
 }
 
 bool isValidWalkLength(const char *walk) 
@@ -237,6 +235,6 @@ void displayWinBoard(void)
     printf("\t|  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |  %c  |\n", gridSquare[10][0], gridSquare[10][1], gridSquare[10][2], gridSquare[10][3], gridSquare[10][4], gridSquare[10][5], gridSquare[10][6], gridSquare[10][7], gridSquare[10][8], gridSquare[10][9], gridSquare[10][10]);
     printf("\t|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
   
-    sleep(0.75);
+    sleep(1.0);
   }
 }  
