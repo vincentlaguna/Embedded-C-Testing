@@ -34,7 +34,7 @@ Command shortlist:
 
 Updates:
 
-- Count variable is not incrementing Shell Script v.1.2 (Private) 050521
+- Count variable is not incrementing Shell Script v.1.2 (Private) 050521 (Updated)
 - Need to update Bash Shell Script v.1.2 (Private) to fix "no log dump w/o connection to host" 042821
 - Need to update Bash Shell Script v.1.2 (Private) for saving last input settings 
 - Need to restructure CW_10mw test 
