@@ -34,7 +34,7 @@ Command shortlist:
 
 Updates:
 
-- Started unit testing trl - utils - 05172021 - debug... way too many ERRORS!
+- Started unit testing trl - utils - 05172021 - refactor to zero
 - Count variable is not incrementing Shell Script v.1.2 (Private) 050521 (Updated)
 - Need to update Bash Shell Script v.1.2 (Private) to fix "no log dump w/o connection to host" 042821
 - Need to update Bash Shell Script v.1.2 (Private) for saving last input settings 
