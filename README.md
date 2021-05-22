@@ -33,7 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
-- Initial transition to unit testing using Google C++ Testin Framework - 052121
+- Initial transition to unit testing using Google C++ Testing Framework - 052121
 - Started unit testing trl - 05172021 - try another function
 - Count variable is not incrementing Shell Script v.1.2 (Private) 050521 (Updated)
 - Need to update Bash Shell Script v.1.2 (Private) to fix "no log dump w/o connection to host" 042821
