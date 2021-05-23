@@ -25,7 +25,17 @@ TEST(TestCountPositives, EmptyVectorTest)
   std::vector<int> inputVector{};
   // Act
   int count = countPositives(inputVector);
-  // Assert *Unit testing convention: expected value goes first
+  // Assert 
+  ASSERT_EQ(0, count);
+}
+
+TEST(TestCountPositives, AllNegativesVectorTest)
+{
+  // Arrange
+  std::vector<int> inputVector{-2, -4, -6};
+  // Act
+  int count = countPositives(inputVector);
+  // Assert 
   ASSERT_EQ(0, count);
 }
 
