@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
+vector
+-
 
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/main.cpp
 iostream
