@@ -202,6 +202,9 @@ Project_BINARY_DIR:STATIC=/home/ec2-user/environment/test_space_0/GoogleTest/GTe
 //Value Computed by CMake
 Project_SOURCE_DIR:STATIC=/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0
 
+//Dependencies for target
+commonLibrary_LIB_DEPENDS:STATIC=
+
 
 ########################
 # INTERNAL cache entries
