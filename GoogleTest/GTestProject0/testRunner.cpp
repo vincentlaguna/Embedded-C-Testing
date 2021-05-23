@@ -19,6 +19,16 @@ TEST(TestCountPositives, BasicTest)
   ASSERT_EQ(3, count);
 }
 
+TEST(TestCountPositives, EmptyVectorTest)
+{
+  // Arrange
+  std::vector<int> inputVector{};
+  // Act
+  int count = countPositives(inputVector);
+  // Assert *Unit testing convention: expected value goes first
+  ASSERT_EQ(0, count);
+}
+
 int main(int argc, char **argv)
 {
   testing::InitGoogleTest(&argc, argv);
