@@ -19,4 +19,8 @@ LibraryCode.hpp
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
 vector
 -
+cctype
+-
+string.h
+-
 

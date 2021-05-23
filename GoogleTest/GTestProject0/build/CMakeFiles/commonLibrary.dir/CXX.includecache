@@ -11,6 +11,10 @@ LibraryCode.hpp
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
 algorithm
 -
+cctype
+-
+string.h
+-
 
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
 vector

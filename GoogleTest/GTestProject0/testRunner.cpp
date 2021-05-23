@@ -2,6 +2,9 @@
 #include <gtest/gtest.h>
 #include "LibraryCode.hpp"
 #include <vector>
+#include <cctype>
+#include <string.h>
+
 
 // Simple Test Case for simple function
 TEST(TestSample, TestAddition)
@@ -36,9 +39,20 @@ TEST(TestCountPositives, AllNegativesVectorTest)
   // Act
   int count = countPositives(inputVector);
   // Assert 
-  EXPECT_EQ(1, count);
-  // After the Assertion
+  EXPECT_EQ(0, count);
+  // After the Assertion (EXPECT = non-fatal)
   std::cout << "\nAfter the Assertion (non-fatal)\n\n";
+}
+
+TEST(ToUpperTest, BasicTest)
+{
+  // Arrange
+  char inputString[] = "Hello World";
+  char expectedVal[] = "HELLO WORLD";
+  // Act
+  toUpper(inputString);
+  // Assert
+  EXPECT_EQ(0, strcmp(expectedVal, inputString));
 }
 
 int main(int argc, char **argv)
