@@ -12,6 +12,24 @@ TEST(TestSample, TestAddition)
   ASSERT_EQ(2, add(1, 1));
 }
 
+TEST(SquareRootTest, PosArgTest)
+{
+  // Arrange
+  double inputVal = -9;
+  // Act
+  // Assert
+  ASSERT_THROW(mySqrt(inputVal), std::runtime_error);
+}
+
+TEST(SquareRootTest, NegArgTest)
+{
+  // Arrange
+  double inputVal = 9;
+  // Act
+  // Assert
+  ASSERT_NO_THROW(mySqrt(inputVal));
+}
+
 TEST(TestCountPositives, BasicTest)
 {
   // Arrange
@@ -48,11 +66,16 @@ TEST(ToUpperTest, BasicTest)
 {
   // Arrange
   char inputString[] = "Hello World";
-  char expectedVal[] = "HELLO WORLD";
+  //char expectedVal[] = "HELLO WORLD";
   // Act
   toUpper(inputString);
   // Assert
-  EXPECT_EQ(0, strcmp(expectedVal, inputString));
+  //EXPECT_EQ(0, strcmp(expectedVal, inputString));
+  EXPECT_STREQ("HELLO WORLD", inputString);
+  // If not C-style string:
+  std::string str(inputString);
+  // Assert
+  EXPECT_EQ("HELLO WORLD", str);
 }
 
 int main(int argc, char **argv)
