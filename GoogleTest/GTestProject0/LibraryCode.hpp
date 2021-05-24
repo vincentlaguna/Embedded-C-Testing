@@ -8,3 +8,4 @@ double mySqrt(double x);
 int countPositives(std::vector<int> const &inputVector);
 
 void toUpper(char *inputString);
+// Move unto implementing classes here or new lib.hpp
