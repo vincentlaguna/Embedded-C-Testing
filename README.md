@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Started running initial sample tests -> beggining class tests next - 052321 
 - Initial transition to unit testing using Google C++ Testing Framework - 052121
 - Started unit testing trl - 05172021 - try another function
 - Count variable is not incrementing Shell Script v.1.2 (Private) 050521 (Updated)
