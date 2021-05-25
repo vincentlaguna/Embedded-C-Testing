@@ -78,6 +78,8 @@ TEST(ToUpperTest, BasicTest)
   EXPECT_EQ("HELLO WORLD", str);
 }
 
+// Begin Class Assertions here (for now...)
+
 int main(int argc, char **argv)
 {
   testing::InitGoogleTest(&argc, argv);
