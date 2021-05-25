@@ -11,8 +11,8 @@
 int main(int argc, char **argv)
 {
   //testing::InitGoogleTest(&argc, argv);
-  std::cout << "Actual Application Code: \n";
-  std::cout << "2 + 3 = " << add(2, 3) << "\n";
+  // std::cout << "Actual Application Code: \n";
+  // std::cout << "2 + 3 = " << add(2, 3) << "\n";
   
   //return RUN_ALL_TESTS();
 }

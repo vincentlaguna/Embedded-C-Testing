@@ -11,18 +11,8 @@ LibraryCode.hpp
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
 iostream
 -
-algorithm
--
-math.h
--
 stdexcept
--
-cctype
--
-string.h
 -
 
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
-vector
--
 

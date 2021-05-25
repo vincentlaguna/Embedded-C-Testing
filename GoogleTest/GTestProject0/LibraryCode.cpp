@@ -1,16 +1,34 @@
 #include "LibraryCode.hpp"
 #include <iostream>
-#include <string.h>
+#include <stdexcept>
+// #include <string.h>
 // #include <algorithm>
 // #include <math.h>
-// #include <stdexcept>
 // #include <cctype>
 // Simple Function Definition
 
 Account::Account()
 : mBalance {0} {}
 
+void Account::deposit(double amount)
+{
+  
+}
 
+void Account::withdraw(double amount)
+{
+
+}
+
+double Account::getBalance() const
+{
+    
+}
+
+void Account::transfer(Account &to, double amount)
+{
+    
+}
 
 // int add(int a, int b)
 // {

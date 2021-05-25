@@ -4,13 +4,13 @@
 
 class Account
 {
-  public
+  public:
     Account();
     void deposit(double amount);
     void withdraw(double amount);
     double getBalance() const;
     void transfer(Account &to, double amount);
-  private
+  private:
     double mBalance;
 };
 
