@@ -19,7 +19,7 @@ TEST(AccountTest, TestEmptyAccount)
   ASSERT_EQ(0, amount);
 }
 
-TEST(AccountTest, WithdrawEmptyTest)
+TEST(AccountTest, TestWithdrawEmpty)
 {
   // Arrange
   Account testAccount;
@@ -28,6 +28,18 @@ TEST(AccountTest, WithdrawEmptyTest)
   // withdraw(amount);
   // Assert
   ASSERT_THROW(testAccount.withdraw(amount), std::runtime_error);
+}
+
+TEST(AccountTest, TestDeposit)
+{
+  // Arrange
+  Account testAccount;
+  //double balance = testAccount.getBalance();
+  //double amount = 100.0;
+  // Act
+  testAccount.deposit(100.0);
+  // Assert
+  ASSERT_EQ(100.0, testAccount.getBalance());
 }
 
 // TEST(AccountTest, WithdrawAmountTest)
