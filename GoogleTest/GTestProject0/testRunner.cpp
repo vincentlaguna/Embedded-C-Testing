@@ -33,13 +33,13 @@ TEST(AccountTest, TestWithdrawEmpty)
 TEST(AccountTest, TestDeposit)
 {
   // Arrange
-  Account testAccount;
+  Account account;
   //double balance = testAccount.getBalance();
   //double amount = 100.0;
   // Act
-  testAccount.deposit(100.0);
+  account.deposit(100.0);
   // Assert
-  ASSERT_EQ(100.0, testAccount.getBalance());
+  ASSERT_EQ(100.0, account.getBalance());
 }
 
 // TEST(AccountTest, WithdrawAmountTest)
