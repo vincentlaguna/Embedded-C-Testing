@@ -1,11 +1,23 @@
 #include <iostream>
+#include <stdexcept>
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include "LibraryCode.hpp"
 // #include <vector>
 // #include <cctype>
 // #include <string.h>
 
 // Account Class Tests
+
+TEST(AccountTest, TestEmptyAccount)
+{
+  // Arrange
+  Account testAccount;
+  // Act
+  double  amount = testAccount.getBalance();
+  // Assert
+  ASSERT_EQ(0, amount);
+}
 
 TEST(AccountTest, WithdrawEmptyTest)
 {
@@ -17,6 +29,17 @@ TEST(AccountTest, WithdrawEmptyTest)
   // Assert
   ASSERT_THROW(testAccount.withdraw(amount), std::runtime_error);
 }
+
+// TEST(AccountTest, WithdrawAmountTest)
+// {
+//   // Arrange
+//   Account testAccount;
+//   double amount = 100.0;
+//   // Act
+//   // withdraw(amount);
+//   // Assert
+//   EXPECT_EQ(amount, testAccount.withdraw(amount));
+// }
 
 // // Simple Test Case for simple function
 // TEST(TestSample, TestAddition)

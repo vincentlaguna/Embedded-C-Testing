@@ -18,8 +18,11 @@ void Account::deposit(double amount)
 void Account::withdraw(double amount)
 {
   if (mBalance < amount)
+  {
     std::cout << "Exception Thrown\n";
-    throw std::runtime_error("Balance is Empty!");
+    throw std::runtime_error("Insufficient Funds");
+  }
+  mBalance -= amount;
 }
 
 double Account::getBalance() const
