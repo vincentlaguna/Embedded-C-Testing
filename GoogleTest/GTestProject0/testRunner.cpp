@@ -37,10 +37,20 @@ TEST(AccountTest, TestWithdrawOK)
   Account account;
   account.deposit(100.0);
   // Act
-  account.withdraw(50.5);
   // Assert
-  ASSERT_EQ(49.5, account.getBalance());
+  ASSERT_THROW(account.withdraw(100.01), std::runtime_error);
 }
+
+// TEST(AccountTest, TestWithdrawOKInsufficientFunds)
+// {
+//   // Arrange
+//   Account account;
+//   account.deposit(100.5);
+//   // Act
+//   account.transfer(newAccount,)
+//   // Assert
+//   ASSERT_EQ(49.5, account.getBalance());
+// }
 
 // // Simple Test Case for simple function
 // TEST(TestSample, TestAddition)
