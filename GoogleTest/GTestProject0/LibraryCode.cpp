@@ -12,7 +12,7 @@ Account::Account()
 
 void Account::deposit(double amount)
 {
-  
+  mBalance += amount;
 }
 
 void Account::withdraw(double amount)
@@ -27,7 +27,7 @@ void Account::withdraw(double amount)
 
 double Account::getBalance() const
 {
-    
+  return mBalance;
 }
 
 void Account::transfer(Account &to, double amount)
