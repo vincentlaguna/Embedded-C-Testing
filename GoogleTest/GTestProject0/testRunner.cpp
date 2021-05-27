@@ -34,7 +34,7 @@ TEST(AccountTest, TestDeposit)
 {
   // Arrange
   Account account;
-  //double balance = testAccount.getBalance();
+  double balance = account.getBalance();
   //double amount = 100.0;
   // Act
   account.deposit(100.0);
