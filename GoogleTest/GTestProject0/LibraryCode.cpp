@@ -32,7 +32,8 @@ double Account::getBalance() const
 
 void Account::transfer(Account &to, double amount)
 {
-    
+   withdraw(amount); // Throw exception if insufficient funds
+   to.deposit(amount);
 }
 
 // int add(int a, int b)
