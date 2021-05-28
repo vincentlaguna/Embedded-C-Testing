@@ -5,7 +5,21 @@
 // #include <algorithm>
 // #include <math.h>
 // #include <cctype>
-// Simple Function Definition
+
+/**********PARAMETIZED TEST CASES**********/
+
+Validator::Validator(int low, int high)
+  : mLow {low}, mHigh {high} {}
+
+bool Validator::inRange(int valueToTest)
+{
+  return mLow <= valueToTest && valueToTest <= mhigh;
+}
+
+/******************************************/
+
+
+/**********ACCOUNT CLASS TEST CASES**********
 
 Account::Account()
 : mBalance {0} {}
@@ -36,37 +50,46 @@ void Account::transfer(Account &to, double amount)
    to.deposit(amount);
 }
 
-// int add(int a, int b)
-// {
-//   return a + b;
-// }
+/******************************************/
 
-// double mySqrt(double input)
-// {
-//   if (input < 0)
-//   {
-//     std::cout << "Exception Thrown\n";
-//     throw std::runtime_error("Negative Argument!");
-//   }
-//   std::cout << "No Exception Thrown.\n";
-//   return sqrt(input);
-// }
 
-// // Used in the countPositives() function
-// bool isPositive(int x)
-// {
-//   return x >= 0;
-// }
-// // Count the number of positive occurrences in the inputVector
-// int countPositives(std::vector<int> const &inputVector)
-// {
-//   return std::count_if(inputVector.begin(), inputVector.end(), isPositive);
-// }
-// // Convert chars to uppercase in c-style *string
-// void toUpper(char *inputString)
-// {
-//   for (unsigned int i = 0; i < strlen(inputString); i++)
-//   {
-//     inputString[i] = toupper(inputString[i]);
-//   }
-// }
+/**********SIMPLE TEST CASES**********
+
+// Simple Function Definition
+
+int add(int a, int b)
+{
+  return a + b;
+}
+
+double mySqrt(double input)
+{
+  if (input < 0)
+  {
+    std::cout << "Exception Thrown\n";
+    throw std::runtime_error("Negative Argument!");
+  }
+  std::cout << "No Exception Thrown.\n";
+  return sqrt(input);
+}
+
+// Used in the countPositives() function
+bool isPositive(int x)
+{
+  return x >= 0;
+}
+// Count the number of positive occurrences in the inputVector
+int countPositives(std::vector<int> const &inputVector)
+{
+  return std::count_if(inputVector.begin(), inputVector.end(), isPositive);
+}
+// Convert chars to uppercase in c-style *string
+void toUpper(char *inputString)
+{
+  for (unsigned int i = 0; i < strlen(inputString); i++)
+  {
+    inputString[i] = toupper(inputString[i]);
+  }
+}
+
+/*************************************/
