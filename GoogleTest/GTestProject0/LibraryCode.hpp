@@ -8,7 +8,7 @@ class Validator
   public:
     
     Validator(int low, int high);
-    bool inRange(int ValueToTest);
+    bool inRange(int valueToTest);
     
   private:
     

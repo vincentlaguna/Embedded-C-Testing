@@ -1,20 +1,20 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_cc472/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_cc472.dir/build.make CMakeFiles/cmTC_cc472.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_f5b68/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f5b68.dir/build.make CMakeFiles/cmTC_f5b68.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_cc472.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_cc472.dir/CheckSymbolExists.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_cc472
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cc472.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_cc472.dir/CheckSymbolExists.c.o  -o cmTC_cc472 
-CMakeFiles/cmTC_cc472.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_f5b68.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_f5b68.dir/CheckSymbolExists.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_f5b68
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f5b68.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_f5b68.dir/CheckSymbolExists.c.o  -o cmTC_f5b68 
+CMakeFiles/cmTC_f5b68.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [cmTC_cc472] Error 1
+gmake[1]: *** [cmTC_f5b68] Error 1
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-gmake: *** [cmTC_cc472/fast] Error 2
+gmake: *** [cmTC_f5b68/fast] Error 2
 
 File /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -34,18 +34,18 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_c70ae/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_c70ae.dir/build.make CMakeFiles/cmTC_c70ae.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_d59fb/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_d59fb.dir/build.make CMakeFiles/cmTC_d59fb.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c70ae.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c70ae.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_c70ae
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c70ae.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_c70ae.dir/CheckFunctionExists.c.o  -o cmTC_c70ae -lpthreads 
+Building C object CMakeFiles/cmTC_d59fb.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_d59fb.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_d59fb
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d59fb.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_d59fb.dir/CheckFunctionExists.c.o  -o cmTC_d59fb -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-gmake[1]: *** [cmTC_c70ae] Error 1
+gmake[1]: *** [cmTC_d59fb] Error 1
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-gmake: *** [cmTC_c70ae/fast] Error 2
+gmake: *** [cmTC_d59fb/fast] Error 2
 
 

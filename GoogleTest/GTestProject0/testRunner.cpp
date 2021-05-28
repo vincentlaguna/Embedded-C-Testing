@@ -23,8 +23,29 @@
 
 class ValidatorFixture : public testing::TestWithParam<int>
 {
+  public:
   
+  protected:
+    
+    Validator mValidator {5, 10};  
 };
+
+// TESTS
+
+TEST_P(ValidatorFixture, TestinRange)
+{
+  // ARRANGE
+  // Get input parameters
+  int param = GetParam();
+  // ACT
+  bool isInside = mValidator.inRange(param);
+  // ASSERT
+  ASSERT_TRUE(isInside);
+}
+
+// Instantiate Test Suite
+
+INSTANTIATE_TEST_SUITE_P(InRangeTrue, ValidatorFixture, testing::Values(5, 6, 7, 9, 10));
 
 /******************************************/
 

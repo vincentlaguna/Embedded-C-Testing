@@ -9,7 +9,7 @@
 /**********PARAMETIZED TEST CASES**********/
 
 Validator::Validator(int low, int high)
-  : mLow {low}, mHigh {high} {}
+  : mLow {low}, mhigh {high} {}
 
 bool Validator::inRange(int valueToTest)
 {
