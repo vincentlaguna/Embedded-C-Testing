@@ -9,16 +9,6 @@
 
 // Account Class Tests
 
-TEST(AccountTest, TestEmptyAccount)
-{
-  // Arrange
-  Account account;
-  // Act
-  double  amount = account.getBalance();
-  // Assert
-  ASSERT_EQ(0, amount);
-}
-
 // Create Account Test Fixture Class
 
 class AccountTestFixture : public testing::Test
@@ -30,7 +20,7 @@ class AccountTestFixture : public testing::Test
   
   protected:
   
-    Account account;
+    Account *account;
 };
 
 // Setup
@@ -38,7 +28,10 @@ class AccountTestFixture : public testing::Test
 void AccountTestFixture::SetUp()
 {
   std::cout << "\nAccount Test Fixture SetUp() called\n";
-  account.deposit(100.05);
+  
+  account = new Account();
+  
+  account->deposit(100.05);
 }
 
 // TearDown
@@ -46,7 +39,8 @@ void AccountTestFixture::SetUp()
 void AccountTestFixture::TearDown()
 {
   std::cout << "\nAccount Test Fixture TearDown() called\n";
-  account.deposit(100.05);
+  
+  delete account;
 }
 
 
@@ -59,7 +53,7 @@ TEST_F(AccountTestFixture, TestDeposit)
   // Act
   // account.deposit(100.0);
   // Assert
-  ASSERT_EQ(100.05, account.getBalance());
+  ASSERT_EQ(100.05, account->getBalance());
 }
 
 TEST_F(AccountTestFixture, TestWithdrawOK)
@@ -68,9 +62,9 @@ TEST_F(AccountTestFixture, TestWithdrawOK)
   // Account account;
   // account.deposit(100.0);
   // Act
-  account.withdraw(50.05);
+  account->withdraw(50.05);
   // Assert
-  ASSERT_EQ(50, account.getBalance());
+  ASSERT_EQ(50, account->getBalance());
 }
 
 TEST_F(AccountTestFixture, TestWithdrawInsufficientFunds)
@@ -80,7 +74,7 @@ TEST_F(AccountTestFixture, TestWithdrawInsufficientFunds)
   // account.deposit(100.0);
   // Act
   // Assert
-  ASSERT_THROW(account.withdraw(100.06), std::runtime_error);
+  ASSERT_THROW(account->withdraw(100.06), std::runtime_error);
 }
 
 TEST_F(AccountTestFixture, TestTransferOK)
@@ -90,9 +84,9 @@ TEST_F(AccountTestFixture, TestTransferOK)
   // account.deposit(100.05);
   Account newAccount;
   // Act
-  account.transfer(newAccount, 50);
+  account->transfer(newAccount, 50);
   // Assert
-  ASSERT_EQ(50.05, account.getBalance());
+  ASSERT_EQ(50.05, account->getBalance());
   ASSERT_EQ(50, newAccount.getBalance());
 }
 
@@ -104,7 +98,7 @@ TEST_F(AccountTestFixture, TestTransferInsufficientFunds)
   Account newAccount;
   // Act
   // Assert
-  ASSERT_THROW(account.transfer(newAccount, 100000.00), std::runtime_error);
+  ASSERT_THROW(account->transfer(newAccount, 100000.00), std::runtime_error);
 }
 // // Simple Test Case for simple function
 // TEST(TestSample, TestAddition)

@@ -19,7 +19,7 @@ void Account::withdraw(double amount)
 {
   if (mBalance < amount)
   {
-    std::cout << "Exception Thrown\n";
+    std::cout << "\nException Thrown\n";
     throw std::runtime_error("Insufficient Funds");
   }
   mBalance -= amount;
