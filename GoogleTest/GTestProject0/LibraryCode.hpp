@@ -1,6 +1,24 @@
 #pragma once
 // #include <vector>
-// Move unto implementing classes here or new lib.hpp
+
+/**********PARAMETIZED TEST CASES**********/
+
+class Validator
+{
+  public:
+    
+    Validator(int low, int high);
+    bool inRange(int ValueToTest);
+    
+  private:
+    
+    int mLow, mhigh;
+};
+
+/******************************************/
+
+
+/**********ACCOUNT CLASS TEST CASES**********
 
 class Account
 {
@@ -14,11 +32,20 @@ class Account
     double mBalance;
 };
 
+/********************************************/
+
+
+
+/**********SIMPLE TEST CASES**********
+
 // Simple Function Definition
-// int add(int a, int b);
 
-// double mySqrt(double x);
+int add(int a, int b);
 
-// int countPositives(std::vector<int> const &inputVector);
+double mySqrt(double x);
 
-// void toUpper(char *inputString);
+int countPositives(std::vector<int> const &inputVector);
+
+void toUpper(char *inputString);
+
+/*************************************/
