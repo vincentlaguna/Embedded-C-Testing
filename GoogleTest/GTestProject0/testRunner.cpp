@@ -14,14 +14,31 @@
 class AccountTestFixture : public testing::Test
 {
   public:
-  
+    
+    AccountTestFixture();
+    virtual ~AccountTestFixture();
+    
     void SetUp() override;
     void TearDown() override;
   
   protected:
   
-    Account *account;
+    Account *account; 
 };
+
+// Test Fixture Constructor
+
+AccountTestFixture::AccountTestFixture()
+{
+  std::cout << "\nConstructor called\n";
+}
+
+// Test Fixture Destructor
+
+AccountTestFixture::~AccountTestFixture()
+{
+  std::cout << "\nConstructor called\n";
+}
 
 // Setup
 
