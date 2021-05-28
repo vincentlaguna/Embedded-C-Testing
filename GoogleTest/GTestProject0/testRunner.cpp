@@ -21,7 +21,7 @@
 
 // Create Validator Test Fixture
 
-class ValidatorFixture : public testing::TestWithParam<int>
+class ValidatorNegativeFixture : public testing::TestWithParam<int>
 {
   public:
   
@@ -32,20 +32,33 @@ class ValidatorFixture : public testing::TestWithParam<int>
 
 // TESTS
 
-TEST_P(ValidatorFixture, TestinRange)
+// TEST_P(ValidatorFixture, TestinRange)
+// {
+//   // ARRANGE
+//   // Get input parameters from testing::Values()
+//   int param = GetParam();
+//   std::cout << "Param = " << param << "\n";
+//   // ACT
+//   bool isInside = mValidator.inRange(param);
+//   // ASSERT
+//   ASSERT_TRUE(isInside);
+// }
+// // Instantiate Test Suite
+// INSTANTIATE_TEST_SUITE_P(InRangeTrue, ValidatorFixture, testing::Values(5, 6, 7, 9, 10));
+
+TEST_P(ValidatorNegativeFixture, TestNotInRange)
 {
   // ARRANGE
   // Get input parameters
   int param = GetParam();
+  std::cout << "Param = " << param << "\n";
   // ACT
   bool isInside = mValidator.inRange(param);
   // ASSERT
-  ASSERT_TRUE(isInside);
+  ASSERT_FALSE(isInside);
 }
-
 // Instantiate Test Suite
-
-INSTANTIATE_TEST_SUITE_P(InRangeTrue, ValidatorFixture, testing::Values(5, 6, 7, 9, 10));
+INSTANTIATE_TEST_SUITE_P(InRangeFalse, ValidatorNegativeFixture, testing::Values(-50, 4, 11, 100));
 
 /******************************************/
 
