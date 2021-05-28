@@ -51,7 +51,7 @@ TEST_P(ValidatorNegativeFixture, TestNotInRange)
   // ARRANGE
   // Get input parameters
   int param = GetParam();
-  std::cout << "Param = " << param << "\n";
+  std::cout << "\nParam not in range = " << param << "\n\n";
   // ACT
   bool isInside = mValidator.inRange(param);
   // ASSERT
