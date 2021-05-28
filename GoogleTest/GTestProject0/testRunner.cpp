@@ -21,7 +21,7 @@
 
 // Create Validator Test Fixture
 
-class ValidatorNegativeFixture : public testing::TestWithParam<int>
+class ValidatorFixture : public testing::TestWithParam<std::tuple<int, bool>>
 {
   public:
   
@@ -32,33 +32,47 @@ class ValidatorNegativeFixture : public testing::TestWithParam<int>
 
 // TESTS
 
-// TEST_P(ValidatorFixture, TestinRange)
-// {
-//   // ARRANGE
-//   // Get input parameters from testing::Values()
-//   int param = GetParam();
-//   std::cout << "Param = " << param << "\n";
-//   // ACT
-//   bool isInside = mValidator.inRange(param);
-//   // ASSERT
-//   ASSERT_TRUE(isInside);
-// }
-// // Instantiate Test Suite
-// INSTANTIATE_TEST_SUITE_P(InRangeTrue, ValidatorFixture, testing::Values(5, 6, 7, 9, 10));
-
-TEST_P(ValidatorNegativeFixture, TestNotInRange)
+TEST_P(ValidatorFixture, TestInRange)
 {
   // ARRANGE
-  // Get input parameters
-  int param = GetParam();
-  std::cout << "\nParam not in range = " << param << "\n\n";
+  // Get input parameters from testing::Values()
+  std::tuple<int, bool> tuple = GetParam();
+  
+  int param = std::get<0>(tuple);
+  
+  bool expectedValue = std::get<1>(tuple);
+  
+  std::cout << "Param = " << param << " expected value = " << expectedValue << "\n";
   // ACT
   bool isInside = mValidator.inRange(param);
   // ASSERT
-  ASSERT_FALSE(isInside);
+  ASSERT_EQ(expectedValue, isInside);
 }
 // Instantiate Test Suite
-INSTANTIATE_TEST_SUITE_P(InRangeFalse, ValidatorNegativeFixture, testing::Values(-50, 4, 11, 100));
+INSTANTIATE_TEST_SUITE_P(InRangeTrue, ValidatorFixture, testing::Values(
+                          std::make_tuple(-50, false),
+                          std::make_tuple(4, false),
+                          std::make_tuple(5, true),
+                          std::make_tuple(6, true),
+                          std::make_tuple(7, true),
+                          std::make_tuple(9, true),
+                          std::make_tuple(10, true),
+                          std::make_tuple(11, false),
+                          std::make_tuple(100, false)));
+
+// TEST_P(ValidatorNegativeFixture, TestNotInRange)
+// {
+//   // ARRANGE
+//   // Get input parameters
+//   int param = GetParam();
+//   std::cout << "\nParam not in range = " << param << "\n\n";
+//   // ACT
+//   bool isInside = mValidator.inRange(param);
+//   // ASSERT
+//   ASSERT_FALSE(isInside);
+// }
+// // Instantiate Test Suite
+// INSTANTIATE_TEST_SUITE_P(InRangeFalse, ValidatorNegativeFixture, testing::Values(-50, 4, 11, 100));
 
 /******************************************/
 
