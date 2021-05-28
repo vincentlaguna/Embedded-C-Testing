@@ -19,44 +19,75 @@ TEST(AccountTest, TestEmptyAccount)
   ASSERT_EQ(0, amount);
 }
 
-TEST(AccountTest, TestDeposit)
-{
-  // Arrange
-  Account account;
-  double balance = account.getBalance();
-  //double amount = 100.0;
-  // Act
-  account.deposit(100.0);
-  // Assert
-  ASSERT_EQ(100.0, account.getBalance());
-}
+// Create Account Test Fixture Class
 
-TEST(AccountTest, TestWithdrawOK)
+class AccountTestFixture : public testing::Test
 {
-  // Arrange
-  Account account;
-  account.deposit(100.0);
-  // Act
-  account.withdraw(50.5);
-  // Assert
-  ASSERT_EQ(49.5, account.getBalance());
-}
+  public:
+  
+    void SetUp() override;
+    void TearDown() override;
+  
+  protected:
+  
+    Account account;
+};
 
-TEST(AccountTest, TestWithdrawInsufficientFunds)
-{
-  // Arrange
-  Account account;
-  account.deposit(100.0);
-  // Act
-  // Assert
-  ASSERT_THROW(account.withdraw(100.01), std::runtime_error);
-}
+// Setup
 
-TEST(AccountTest, TestTransferOK)
+void AccountTestFixture::SetUp()
 {
-  // Arrange
-  Account account;
+  std::cout << "\nAccount Test Fixture SetUp() called\n";
   account.deposit(100.05);
+}
+
+// TearDown
+
+void AccountTestFixture::TearDown()
+{
+  std::cout << "\nAccount Test Fixture TearDown() called\n";
+  account.deposit(100.05);
+}
+
+
+
+TEST_F(AccountTestFixture, TestDeposit)
+{
+  // Arrange
+  // Account account;
+  // double balance = account.getBalance();
+  // Act
+  // account.deposit(100.0);
+  // Assert
+  ASSERT_EQ(100.05, account.getBalance());
+}
+
+TEST_F(AccountTestFixture, TestWithdrawOK)
+{
+  // Arrange
+  // Account account;
+  // account.deposit(100.0);
+  // Act
+  account.withdraw(50.05);
+  // Assert
+  ASSERT_EQ(50, account.getBalance());
+}
+
+TEST_F(AccountTestFixture, TestWithdrawInsufficientFunds)
+{
+  // Arrange
+  // Account account;
+  // account.deposit(100.0);
+  // Act
+  // Assert
+  ASSERT_THROW(account.withdraw(100.06), std::runtime_error);
+}
+
+TEST_F(AccountTestFixture, TestTransferOK)
+{
+  // Arrange
+  // Account account;
+  // account.deposit(100.05);
   Account newAccount;
   // Act
   account.transfer(newAccount, 50);
@@ -65,11 +96,11 @@ TEST(AccountTest, TestTransferOK)
   ASSERT_EQ(50, newAccount.getBalance());
 }
 
-TEST(AccountTest, TestTransferInsufficientFunds)
+TEST_F(AccountTestFixture, TestTransferInsufficientFunds)
 {
   // Arrange
-  Account account;
-  account.deposit(100.05);
+  // Account account;
+  // account.deposit(100.05);
   Account newAccount;
   // Act
   // Assert
