@@ -3,17 +3,19 @@
 #include <gmock/gmock.h>
 #include "LibraryCode.hpp"
 
+/*************************************/
+
 // Simple Test Case for simple function (currently in TestRunner.cpp)
 
-// int add(int a, int b)
-// {
-//   return a + b;
-// }
+int add(int a, int b)
+{
+  return a + b;
+}
 
-// TEST(TestSample, TestAddition)
-// {
-//   ASSERT_EQ(2, add(1, 1));
-// }
+TEST(TestSample, TestAddition)
+{
+  ASSERT_EQ(2, add(1, 1));
+}
 
 /*************************************/
 
