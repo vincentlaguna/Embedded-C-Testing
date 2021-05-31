@@ -33,7 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
-- Linked Google Mock in local VS project - 052821
+- Linked Google Mock in local VS project - 052921
 - Started running initial sample tests -> beggining class tests next - 052321 
 - Initial transition to unit testing using Google C++ Testing Framework - 052121
 - Started unit testing trl - 05172021 - try another function
