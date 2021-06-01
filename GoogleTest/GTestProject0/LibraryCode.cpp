@@ -6,7 +6,7 @@
 // #include <math.h>
 // #include <cctype>
 
-/**********PARAMETIZED TEST CASES**********/
+/**********PARAMETIZED TEST CASES**********
 
 Validator::Validator(int low, int high)
   : mLow {low}, mhigh {high} {}

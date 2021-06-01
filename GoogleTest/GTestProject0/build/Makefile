@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/ec2-user/environment/test_space_0/GoogleTest/GTestProje
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/local/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -77,6 +66,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/local/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,70 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named testRunner
+# Target rules for targets named myExecutable
 
 # Build rule for target.
-testRunner: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 testRunner
-.PHONY : testRunner
+myExecutable: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 myExecutable
+.PHONY : myExecutable
 
 # fast build rule for target.
-testRunner/fast:
-	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/build
-.PHONY : testRunner/fast
-
-#=============================================================================
-# Target rules for targets named commonLibrary
-
-# Build rule for target.
-commonLibrary: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 commonLibrary
-.PHONY : commonLibrary
-
-# fast build rule for target.
-commonLibrary/fast:
-	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/build
-.PHONY : commonLibrary/fast
-
-#=============================================================================
-# Target rules for targets named mainApp
-
-# Build rule for target.
-mainApp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mainApp
-.PHONY : mainApp
-
-# fast build rule for target.
-mainApp/fast:
-	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/build
-.PHONY : mainApp/fast
-
-LibraryCode.o: LibraryCode.cpp.o
-
-.PHONY : LibraryCode.o
-
-# target to build an object file
-LibraryCode.cpp.o:
-	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/LibraryCode.cpp.o
-.PHONY : LibraryCode.cpp.o
-
-LibraryCode.i: LibraryCode.cpp.i
-
-.PHONY : LibraryCode.i
-
-# target to preprocess a source file
-LibraryCode.cpp.i:
-	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/LibraryCode.cpp.i
-.PHONY : LibraryCode.cpp.i
-
-LibraryCode.s: LibraryCode.cpp.s
-
-.PHONY : LibraryCode.s
-
-# target to generate assembly for a file
-LibraryCode.cpp.s:
-	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/LibraryCode.cpp.s
-.PHONY : LibraryCode.cpp.s
+myExecutable/fast:
+	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/build
+.PHONY : myExecutable/fast
 
 main.o: main.cpp.o
 
@@ -182,7 +129,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -191,7 +138,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -200,35 +147,8 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/main.cpp.s
 .PHONY : main.cpp.s
-
-testRunner.o: testRunner.cpp.o
-
-.PHONY : testRunner.o
-
-# target to build an object file
-testRunner.cpp.o:
-	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/testRunner.cpp.o
-.PHONY : testRunner.cpp.o
-
-testRunner.i: testRunner.cpp.i
-
-.PHONY : testRunner.i
-
-# target to preprocess a source file
-testRunner.cpp.i:
-	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/testRunner.cpp.i
-.PHONY : testRunner.cpp.i
-
-testRunner.s: testRunner.cpp.s
-
-.PHONY : testRunner.s
-
-# target to generate assembly for a file
-testRunner.cpp.s:
-	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/testRunner.cpp.s
-.PHONY : testRunner.cpp.s
 
 # Help Target
 help:
@@ -236,20 +156,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... testRunner"
-	@echo "... commonLibrary"
 	@echo "... rebuild_cache"
-	@echo "... mainApp"
-	@echo "... LibraryCode.o"
-	@echo "... LibraryCode.i"
-	@echo "... LibraryCode.s"
+	@echo "... myExecutable"
+	@echo "... edit_cache"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... testRunner.o"
-	@echo "... testRunner.i"
-	@echo "... testRunner.s"
 .PHONY : help
 
 

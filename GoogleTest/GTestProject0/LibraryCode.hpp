@@ -1,7 +1,7 @@
 #pragma once
 // #include <vector>
 
-/**********PARAMETIZED TEST CASES**********/
+/**********PARAMETIZED TEST CASES**********
 
 class Validator
 {

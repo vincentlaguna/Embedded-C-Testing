@@ -11,7 +11,7 @@
 
 // INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
 
-/**********PARAMETIZED TEST CASES**********/
+/**********PARAMETIZED TEST CASES**********
 
 // TESTS
 
@@ -208,6 +208,11 @@ TEST(SquareRootTest, PosArgTest)
   ASSERT_THROW(mySqrt(inputVal), std::runtime_error);
 }
 
+/*************************************/
+
+
+/**********INITIAL TEST CASES**********
+
 TEST(SquareRootTest, NegArgTest)
 {
   // Arrange
@@ -267,6 +272,9 @@ TEST(ToUpperTest, BasicTest)
 
 /*************************************/
 
+
+/**********TEST RUNNER MAIN**********
+
 int main(int argc, char **argv)
 {
   testing::InitGoogleTest(&argc, argv);
@@ -274,4 +282,4 @@ int main(int argc, char **argv)
   return RUN_ALL_TESTS();
 }
 
-/*************************************/
+/************************************/

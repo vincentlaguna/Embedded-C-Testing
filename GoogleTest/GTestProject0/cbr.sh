@@ -8,6 +8,11 @@ cmake ..
 
 make
 
-./testRunner
+if [ -x testRunner ];
+then
+	./testRunner
+else
+	./myExecutable
+fi
 
 exit 0

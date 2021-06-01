@@ -1,5 +1,3 @@
-/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/edit_cache.dir
-/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/testRunner.dir
-/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/commonLibrary.dir
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/rebuild_cache.dir
-/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/mainApp.dir
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/myExecutable.dir
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/edit_cache.dir
