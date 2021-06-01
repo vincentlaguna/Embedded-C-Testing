@@ -91,6 +91,8 @@ myExecutable_EXTERNAL_OBJECTS =
 myExecutable: CMakeFiles/myExecutable.dir/main.cpp.o
 myExecutable: CMakeFiles/myExecutable.dir/build.make
 myExecutable: /usr/lib/libgtest.a
+myExecutable: /usr/lib/libgmock.a
+myExecutable: /usr/lib/libgmock_main.a
 myExecutable: CMakeFiles/myExecutable.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable myExecutable"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myExecutable.dir/link.txt --verbose=$(VERBOSE)

@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
-
 /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/main.cpp
 iostream
 -
@@ -15,6 +13,4 @@ gtest/gtest.h
 -
 gmock/gmock.h
 -
-LibraryCode.hpp
-/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
 
