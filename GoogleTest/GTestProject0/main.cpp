@@ -3,7 +3,7 @@
 #include <gmock/gmock.h>
 #include "LibraryCode.hpp"
 
-/*************************************/
+/*************************************
 
 // Simple Test Case for simple function (currently in TestRunner.cpp)
 
