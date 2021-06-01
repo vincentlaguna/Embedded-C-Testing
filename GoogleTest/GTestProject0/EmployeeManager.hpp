@@ -1,7 +1,27 @@
-#include "IDatabaseConnection.hpp"
+#include    "IDatabaseConnection.hpp"
 
-#include <map>
-#include <vector>
-#include <string>
+#include    <map>
+#include    <vector>
+#include    <string>
 
-class
+class       EmployeeManager
+{
+  public:
+  
+    EmployeeManager(IDatabaseConnection *dbConnection);
+    ~EmployeeManager();
+    
+    void    setSalary(int employeeId, float newSalary);
+    float   getSalary(int employeeId) const;
+    
+    std::map<string, float>  getSalariesGreater(float low) const;
+    std::map<string, float>  getSalariesBetween(float low, float high) const;
+    
+  private:
+    
+    std::map<std::string, float> vectorToMap(std::vector<Employee> const &employees) const;
+    
+  private:
+  
+    IDatabaseConnection  *mDbConnection;
+};
