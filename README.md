@@ -33,6 +33,8 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+
+- GMock preparation for Employee Database Manager Project - 053121
 - Linked Google Mock in local VS project - 052921
 - Started running initial sample tests -> beggining class tests next - 052321 
 - Initial transition to unit testing using Google C++ Testing Framework - 052121
