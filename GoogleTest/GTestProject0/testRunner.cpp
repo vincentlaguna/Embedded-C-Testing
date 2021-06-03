@@ -36,7 +36,7 @@ class MockDatabaseConnection : public IDatabaseConnection
 TEST(TestEmployeeManager, TestConnection)
 {
   // ARRANGE
-  IDatabaseConnection dbConnection;
+  IDatabaseConnection dbConnection("dummyConnection");
   EmployeeManager EmployeeManager(&dbConnection);
   // ACT
   
