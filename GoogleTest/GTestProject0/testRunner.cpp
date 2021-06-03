@@ -1,15 +1,51 @@
-#include <iostream>
-#include <stdexcept>
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
-#include "LibraryCode.hpp"
+// #include <iostream>
+// #include <stdexcept>
+// #include <gtest/gtest.h>
+// #include <gmock/gmock.h>
+// #include "LibraryCode.hpp"
 // #include <vector>
 // #include <cctype>
 // #include <string.h>
 
+// Employee Manager Project
+
+#include <map>
+#include "IDatabaseConnection.hpp"
+#include "EmployeeManager.hpp"
+#include "Employee.hpp"
+
 // MACROS
 
 // INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
+
+
+/**********EMPLOYEE MANAGER PROJECT - TEST CASES**********/
+
+// Create Mock Database Connection Class
+
+class MockDatabaseConnection : public IDatabaseConnection
+{
+  public:
+    
+    MockDatabaseConnection(std::string serverAddress);
+};
+
+// TESTS
+
+// TEST_P(ValidatorFixture, TestInRange)
+// {
+//   // ARRANGE
+ 
+//   // ACT
+  
+//   // ASSERT
+  
+// }
+
+// Instantiate Test Suite
+
+/*********************************************************/
+
 
 /**********PARAMETIZED TEST CASES**********
 
@@ -273,7 +309,7 @@ TEST(ToUpperTest, BasicTest)
 /*************************************/
 
 
-/**********TEST RUNNER MAIN**********
+/**********TEST RUNNER MAIN**********/
 
 int main(int argc, char **argv)
 {

@@ -3,6 +3,8 @@
 #include <gmock/gmock.h>
 // #include "LibraryCode.hpp"
 
+/**********GMOCK CLASS TEST CASES**********
+
 class SomeClass
 {
   public:
@@ -33,6 +35,8 @@ TEST(TestSample, TestMock)
   mc.someMethod();
 }
 
+/******************************************/
+
 
 /**********SIMPLE TEST CASES**********
 
@@ -48,7 +52,7 @@ TEST(TestSample, TestAddition)
   ASSERT_EQ(2, add(1, 1));
 }
 
-/*************************************/
+/*************************************
 
 int main(int argc, char **argv)
 {
