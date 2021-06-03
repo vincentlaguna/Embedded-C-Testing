@@ -27,20 +27,22 @@ class MockDatabaseConnection : public IDatabaseConnection
 {
   public:
     
-    MockDatabaseConnection(std::string serverAddress);
+    MockDatabaseConnection(std::string serverAddress)
+      : IDatabaseConnection(serverAddress) {}
 };
 
 // TESTS
 
-// TEST_P(ValidatorFixture, TestInRange)
-// {
-//   // ARRANGE
- 
-//   // ACT
+TEST(TestEmployeeManager, TestConnection)
+{
+  // ARRANGE
+  IDatabaseConnection dbConnection;
+  EmployeeManager EmployeeManager(&dbConnection);
+  // ACT
   
-//   // ASSERT
+  // ASSERT
   
-// }
+}
 
 // Instantiate Test Suite
 
