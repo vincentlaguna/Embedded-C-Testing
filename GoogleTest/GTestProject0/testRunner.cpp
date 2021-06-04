@@ -29,6 +29,8 @@ class MockDatabaseConnection : public IDatabaseConnection
     
     MockDatabaseConnection(std::string serverAddress)
       : IDatabaseConnection(serverAddress) {}
+      
+      MOCK_METHOD0(void, connect, ());
 };
 
 // TESTS
