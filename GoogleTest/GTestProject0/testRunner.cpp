@@ -27,21 +27,27 @@ class MockDatabaseConnection : public IDatabaseConnection
 {
   public:
     
-    MockDatabaseConnection(std::string serverAddress)
-      : IDatabaseConnection(serverAddress) {}
+    MockDatabaseConnection(std::string serverAddress);
+      // : IDatabaseConnection(serverAddress) {}
       
-      MOCK_METHOD0(void, connect, ());
+      MOCK_METHOD0(connect, void());
+      MOCK_METHOD0(disconnect, void());
 };
+
+MockDatabaseConnection::MockDatabaseConnection(std::string serverAddress) : IDatabaseConnection(serverAddress)
+{
+  
+}
 
 // TESTS
 
 TEST(TestEmployeeManager, TestConnection)
 {
   // ARRANGE
-  IDatabaseConnection dbConnection("dummyConnection");
+  MockDatabaseConnection dbConnection("dummyConnection");
   // EXPECT_CALL(dbConnection, connect());
   
-  EmployeeManager EmployeeManager(&dbConnection);
+  EmployeeManager employeeManager(&dbConnection);
   // ACT
   
   // ASSERT
