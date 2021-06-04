@@ -111,17 +111,110 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myExecutable
+# Target rules for targets named mainApp
 
 # Build rule for target.
-myExecutable: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myExecutable
-.PHONY : myExecutable
+mainApp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mainApp
+.PHONY : mainApp
 
 # fast build rule for target.
-myExecutable/fast:
-	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/build
-.PHONY : myExecutable/fast
+mainApp/fast:
+	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/build
+.PHONY : mainApp/fast
+
+#=============================================================================
+# Target rules for targets named databaseConnectionLibrary
+
+# Build rule for target.
+databaseConnectionLibrary: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 databaseConnectionLibrary
+.PHONY : databaseConnectionLibrary
+
+# fast build rule for target.
+databaseConnectionLibrary/fast:
+	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/build
+.PHONY : databaseConnectionLibrary/fast
+
+#=============================================================================
+# Target rules for targets named testRunner
+
+# Build rule for target.
+testRunner: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 testRunner
+.PHONY : testRunner
+
+# fast build rule for target.
+testRunner/fast:
+	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/build
+.PHONY : testRunner/fast
+
+#=============================================================================
+# Target rules for targets named employeeManagerLibrary
+
+# Build rule for target.
+employeeManagerLibrary: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 employeeManagerLibrary
+.PHONY : employeeManagerLibrary
+
+# fast build rule for target.
+employeeManagerLibrary/fast:
+	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/build
+.PHONY : employeeManagerLibrary/fast
+
+EmployeeManager.o: EmployeeManager.cpp.o
+
+.PHONY : EmployeeManager.o
+
+# target to build an object file
+EmployeeManager.cpp.o:
+	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/EmployeeManager.cpp.o
+.PHONY : EmployeeManager.cpp.o
+
+EmployeeManager.i: EmployeeManager.cpp.i
+
+.PHONY : EmployeeManager.i
+
+# target to preprocess a source file
+EmployeeManager.cpp.i:
+	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/EmployeeManager.cpp.i
+.PHONY : EmployeeManager.cpp.i
+
+EmployeeManager.s: EmployeeManager.cpp.s
+
+.PHONY : EmployeeManager.s
+
+# target to generate assembly for a file
+EmployeeManager.cpp.s:
+	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/EmployeeManager.cpp.s
+.PHONY : EmployeeManager.cpp.s
+
+IDatabaseConnection.o: IDatabaseConnection.cpp.o
+
+.PHONY : IDatabaseConnection.o
+
+# target to build an object file
+IDatabaseConnection.cpp.o:
+	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/IDatabaseConnection.cpp.o
+.PHONY : IDatabaseConnection.cpp.o
+
+IDatabaseConnection.i: IDatabaseConnection.cpp.i
+
+.PHONY : IDatabaseConnection.i
+
+# target to preprocess a source file
+IDatabaseConnection.cpp.i:
+	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/IDatabaseConnection.cpp.i
+.PHONY : IDatabaseConnection.cpp.i
+
+IDatabaseConnection.s: IDatabaseConnection.cpp.s
+
+.PHONY : IDatabaseConnection.s
+
+# target to generate assembly for a file
+IDatabaseConnection.cpp.s:
+	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/IDatabaseConnection.cpp.s
+.PHONY : IDatabaseConnection.cpp.s
 
 main.o: main.cpp.o
 
@@ -129,7 +222,7 @@ main.o: main.cpp.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/main.cpp.o
+	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -138,7 +231,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -147,8 +240,35 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles/myExecutable.dir/build.make CMakeFiles/myExecutable.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+testRunner.o: testRunner.cpp.o
+
+.PHONY : testRunner.o
+
+# target to build an object file
+testRunner.cpp.o:
+	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/testRunner.cpp.o
+.PHONY : testRunner.cpp.o
+
+testRunner.i: testRunner.cpp.i
+
+.PHONY : testRunner.i
+
+# target to preprocess a source file
+testRunner.cpp.i:
+	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/testRunner.cpp.i
+.PHONY : testRunner.cpp.i
+
+testRunner.s: testRunner.cpp.s
+
+.PHONY : testRunner.s
+
+# target to generate assembly for a file
+testRunner.cpp.s:
+	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/testRunner.cpp.s
+.PHONY : testRunner.cpp.s
 
 # Help Target
 help:
@@ -157,11 +277,23 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... myExecutable"
+	@echo "... mainApp"
+	@echo "... databaseConnectionLibrary"
 	@echo "... edit_cache"
+	@echo "... testRunner"
+	@echo "... employeeManagerLibrary"
+	@echo "... EmployeeManager.o"
+	@echo "... EmployeeManager.i"
+	@echo "... EmployeeManager.s"
+	@echo "... IDatabaseConnection.o"
+	@echo "... IDatabaseConnection.i"
+	@echo "... IDatabaseConnection.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... testRunner.o"
+	@echo "... testRunner.i"
+	@echo "... testRunner.s"
 .PHONY : help
 
 

@@ -1,1 +1,0 @@
-/usr/bin/c++     CMakeFiles/myExecutable.dir/main.cpp.o  -o myExecutable /usr/lib/libgtest.a /usr/lib/libgmock.a /usr/lib/libgmock_main.a -lpthread 

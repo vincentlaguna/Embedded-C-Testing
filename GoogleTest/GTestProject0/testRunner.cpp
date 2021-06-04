@@ -1,7 +1,7 @@
-// #include <iostream>
+#include <iostream>
 // #include <stdexcept>
-// #include <gtest/gtest.h>
-// #include <gmock/gmock.h>
+#include <gtest/gtest.h>
+#include <gmock/gmock.h>
 // #include "LibraryCode.hpp"
 // #include <vector>
 // #include <cctype>
@@ -37,6 +37,8 @@ TEST(TestEmployeeManager, TestConnection)
 {
   // ARRANGE
   IDatabaseConnection dbConnection("dummyConnection");
+  // EXPECT_CALL(dbConnection, connect());
+  
   EmployeeManager EmployeeManager(&dbConnection);
   // ACT
   
@@ -315,9 +317,9 @@ TEST(ToUpperTest, BasicTest)
 
 int main(int argc, char **argv)
 {
-  testing::InitGoogleTest(&argc, argv);
+  // testing::InitGoogleTest(&argc, argv);
   
-  return RUN_ALL_TESTS();
+  // return RUN_ALL_TESTS();
 }
 
 /************************************/

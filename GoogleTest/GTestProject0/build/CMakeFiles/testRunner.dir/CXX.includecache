@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/Employee.hpp
+string
+-
+
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/EmployeeManager.hpp
+IDatabaseConnection.hpp
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/IDatabaseConnection.hpp
+map
+-
+vector
+-
+string
+-
+
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/IDatabaseConnection.hpp
+Employee.hpp
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/Employee.hpp
+string
+-
+vector
+-
+
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/testRunner.cpp
+iostream
+-
+gtest/gtest.h
+-
+gmock/gmock.h
+-
+map
+-
+IDatabaseConnection.hpp
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/IDatabaseConnection.hpp
+EmployeeManager.hpp
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/EmployeeManager.hpp
+Employee.hpp
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/Employee.hpp
+

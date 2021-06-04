@@ -14,8 +14,8 @@ class       EmployeeManager
     void    setSalary(int employeeId, float newSalary);
     float   getSalary(int employeeId) const;
     
-    std::map<string, float>  getSalariesGreater(float low) const;
-    std::map<string, float>  getSalariesBetween(float low, float high) const;
+    std::map<std::string, float>  getSalariesGreater(float low) const;
+    std::map<std::string, float>  getSalariesBetween(float low, float high) const;
     
   private:
     

@@ -6,7 +6,7 @@ IDatabaseConnection::IDatabaseConnection(std::string serverAddress)
 
 void  IDatabaseConnection::connect()
 {
-  std::cout << "Connecting to Database Server " << serverAddress << "\n";
+  std::cout << "Connecting to Database Server " << mServerAddress << "\n";
   // Initialize real database connection
 }
 
