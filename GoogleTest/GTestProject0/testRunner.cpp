@@ -43,15 +43,10 @@ MockDatabaseConnection::MockDatabaseConnection(std::string serverAddress) : IDat
 
 TEST(TestEmployeeManager, TestConnection)
 {
-  // ARRANGE
   MockDatabaseConnection dbConnection("dummyConnection");
-  // EXPECT_CALL(dbConnection, connect());
-  
+  EXPECT_CALL(dbConnection, connect());
+  EXPECT_CALL(dbConnection, disconnect());
   EmployeeManager employeeManager(&dbConnection);
-  // ACT
-  
-  // ASSERT
-  
 }
 
 // Instantiate Test Suite
@@ -325,9 +320,9 @@ TEST(ToUpperTest, BasicTest)
 
 int main(int argc, char **argv)
 {
-  // testing::InitGoogleTest(&argc, argv);
+  testing::InitGoogleTest(&argc, argv);
   
-  // return RUN_ALL_TESTS();
+  return RUN_ALL_TESTS();
 }
 
 /************************************/
