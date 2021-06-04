@@ -32,6 +32,21 @@ class MockDatabaseConnection : public IDatabaseConnection
       
       MOCK_METHOD0(connect, void());
       MOCK_METHOD0(disconnect, void());
+      
+      // MOCK_METHOD0(getSalary, float(int));
+      // MOCK_METHOD0(updateSalary, void(int, float));
+      
+      // MOCK_METHOD0(getSalariesRange, std::vector<Employee>(float), (const));
+      // MOCK_METHOD0(getSalariesRange, std::vector<Employee>(float, float), (const));
+      
+      // MOCK_METHOD0(someMethod, (std::map<std::string, float>)());
+      
+      // Here for reference only when creating MOCK methods
+      // virtual float getSalary(int id) const = 0; // SELECT * FROM employees WHERE id=...
+      // virtual void  updateSalary(int id, float newSalary) = 0;
+    
+      // virtual std::vector<Employee> getSalariesRange(float low) const = 0; // Just > low
+      // virtual std::vector<Employee> getSalariesRange(float low, float high) const = 0;
 };
 
 MockDatabaseConnection::MockDatabaseConnection(std::string serverAddress) : IDatabaseConnection(serverAddress)

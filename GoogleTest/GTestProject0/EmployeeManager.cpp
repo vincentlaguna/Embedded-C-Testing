@@ -37,7 +37,7 @@ EmployeeManager::~EmployeeManager()
 //   return vectorToMap(mDbConnection->getSalariesRange(low));
 // }
 
-// std::map<sd::string, float> EmployeeManager::getSalariesBetween(float low, float high) const
+// std::map<std::string, float> EmployeeManager::getSalariesBetween(float low, float high) const
 // {
 //   return vectorToMap(mDbConnection->getSalariesRange(low, high));
 // }
