@@ -12,15 +12,15 @@ EmployeeManager::~EmployeeManager()
   mDbConnection->disconnect();
 }
 
-// float EmployeeManager::getSalary(int employeeId) const
-// {
-//   return mDbConnection->getSalary(employeeId);
-// }
+float EmployeeManager::getSalary(int employeeId) const
+{
+  return mDbConnection->getSalary(employeeId);
+}
 
-// void EmployeeManager::setSalary(int employeeId, float newSalary)
-// {
-//   mDbConnection->updateSalary(employeeId, newSalary);
-// }
+void EmployeeManager::setSalary(int employeeId, float newSalary)
+{
+  mDbConnection->updateSalary(employeeId, newSalary);
+}
 
 // std::map<std::string, float> EmployeeManager::vectorToMap(std::vector<Employee> const &employees) const
 // {

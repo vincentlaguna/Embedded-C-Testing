@@ -33,11 +33,11 @@ class MockDatabaseConnection : public IDatabaseConnection
       MOCK_METHOD0(connect, void());
       MOCK_METHOD0(disconnect, void());
       
-      // MOCK_CONST_METHOD0(getSalary, float(int));
-      // MOCK_METHOD0(updateSalary, void(int, float));
+      MOCK_CONST_METHOD1(getSalary, float(int));
+      MOCK_METHOD2(updateSalary, void(int, float));
       
-      // MOCK_METHOD0(getSalariesRange, std::vector<Employee>(float), (const));
-      // MOCK_METHOD0(getSalariesRange, std::vector<Employee>(float, float), (const));
+      // MOCK_CONST_METHOD1(getSalariesRange, std::vector<Employee>(float));
+      // MOCK_CONST_METHOD2(getSalariesRange, std::vector<Employee>(float, float));
       
       // MOCK_METHOD0(someMethod, (std::map<std::string, float>)());
       
@@ -58,10 +58,27 @@ MockDatabaseConnection::MockDatabaseConnection(std::string serverAddress) : IDat
 
 TEST(TestEmployeeManager, TestConnection)
 {
+  // Arrange
   MockDatabaseConnection dbConnection("dummyConnection");
+  // Assert
   EXPECT_CALL(dbConnection, connect());
   EXPECT_CALL(dbConnection, disconnect());
+  // Act
   EmployeeManager employeeManager(&dbConnection);
+}
+
+TEST(TestEmployeeManager, TestUpdateSalary)
+{
+  // Arrange
+  MockDatabaseConnection dbConnection("dummyConnection");
+  // Assert
+  EXPECT_CALL(dbConnection, connect());
+  EXPECT_CALL(dbConnection, disconnect());
+  EXPECT_CALL(dbConnection, updateSalary(testing::_, testing::_)).Times(1);
+  // Act
+  EmployeeManager employeeManager(&dbConnection);
+  
+  employeeManager.setSalary(50, 6000); 
 }
 
 // Instantiate Test Suite
