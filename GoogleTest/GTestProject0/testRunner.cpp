@@ -33,7 +33,7 @@ class MockDatabaseConnection : public IDatabaseConnection
       MOCK_METHOD0(connect, void());
       MOCK_METHOD0(disconnect, void());
       
-      // MOCK_METHOD0(getSalary, float(int));
+      // MOCK_CONST_METHOD0(getSalary, float(int));
       // MOCK_METHOD0(updateSalary, void(int, float));
       
       // MOCK_METHOD0(getSalariesRange, std::vector<Employee>(float), (const));
