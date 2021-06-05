@@ -36,8 +36,8 @@ class MockDatabaseConnection : public IDatabaseConnection
       MOCK_CONST_METHOD1(getSalary, float(int));
       MOCK_METHOD2(updateSalary, void(int, float));
       
-      // MOCK_CONST_METHOD1(getSalariesRange, std::vector<Employee>(float));
-      // MOCK_CONST_METHOD2(getSalariesRange, std::vector<Employee>(float, float));
+      MOCK_CONST_METHOD1(getSalariesRange, std::vector<Employee>(float));
+      MOCK_CONST_METHOD2(getSalariesRange, std::vector<Employee>(float, float));
       
       // MOCK_METHOD0(someMethod, (std::map<std::string, float>)());
       
@@ -79,6 +79,34 @@ TEST(TestEmployeeManager, TestUpdateSalary)
   EmployeeManager employeeManager(&dbConnection);
   
   employeeManager.setSalary(50, 6000); 
+}
+
+TEST(TestEmployeeManager, TestSalaryInRange)
+{
+  // Arrange
+  const int low = 5000, high = 8000;
+  std::vector<Employee> returnedVector {
+                                          Employee {1, 5600, "John"},
+                                          Employee {2, 7000, "Jane"},
+                                          Employee {3, 6600, "Alex"}
+                                        };
+                                        
+  MockDatabaseConnection dbConnection("dummyConnection");
+  
+  EXPECT_CALL(dbConnection, connect());
+  EXPECT_CALL(dbConnection, disconnect());
+  EXPECT_CALL(dbConnection,
+              getSalariesRange(low, high)).WillOnce(testing::Return(returnedVector));
+  // Act
+  EmployeeManager employeeManager(&dbConnection);
+  // Assert
+  std::map<std::string, float> returnedMap = employeeManager.getSalariesBetween(low, high);
+  
+  for (auto it = returnedMap.begin(); it != returnedMap.end(); it++)
+  {
+    std::cout << it->first << " " << it->second << "\n";
+    ASSERT_THAT(it->second, testing::AnyOf(testing::Gt(low), testing::Lt(high-3000)));
+  }
 }
 
 // Instantiate Test Suite
