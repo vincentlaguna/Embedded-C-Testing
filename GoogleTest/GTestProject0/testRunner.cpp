@@ -56,6 +56,17 @@ MockDatabaseConnection::MockDatabaseConnection(std::string serverAddress) : IDat
 
 // TESTS
 
+TEST(TestEmployeeManager, TestConnectionError)
+{
+  // Arrange
+  MockDatabaseConnection dbConnection("dummyAddress");
+  EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Throw(std::runtime_error("Dummy Error")));
+  // EXPECT_CALL(dbConnection, disconnect());
+  // Act
+  // Assert
+  ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
+}
+
 TEST(TestEmployeeManager, TestConnection)
 {
   // Arrange
