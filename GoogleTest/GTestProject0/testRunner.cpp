@@ -89,7 +89,9 @@ TEST(TestEmployeeManager, TestGetSalary)
   MockDatabaseConnection dbConnection("dummyConnection");
   EXPECT_CALL(dbConnection, connect());
   EXPECT_CALL(dbConnection, disconnect());
-  EXPECT_CALL(dbConnection, getSalary(testing::_)).WillOnce(testing::Return(salary));
+  EXPECT_CALL(dbConnection, getSalary(testing::_)).Times(1).WillOnce(testing::Return(salary));
+  // EXPECT_CALL(dbConnection, getSalary(4)).WillOnce(testing::Return(4000));
+  // EXPECT_CALL(dbConnection, getSalary(45)).WillOnce(testing::Return(4000));
   // Act
   EmployeeManager employeeManager(&dbConnection);
   // Assert
