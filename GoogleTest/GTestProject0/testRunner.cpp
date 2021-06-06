@@ -81,6 +81,23 @@ TEST(TestEmployeeManager, TestUpdateSalary)
   employeeManager.setSalary(50, 6000); 
 }
 
+TEST(TestEmployeeManager, TestGetSalary)
+{
+  // Arrange
+  const int employeeID = 50;
+  const float salary = 6100.0;
+  MockDatabaseConnection dbConnection("dummyConnection");
+  EXPECT_CALL(dbConnection, connect());
+  EXPECT_CALL(dbConnection, disconnect());
+  EXPECT_CALL(dbConnection, getSalary(testing::_)).WillOnce(testing::Return(salary));
+  // Act
+  EmployeeManager employeeManager(&dbConnection);
+  // Assert
+  float returnedSalary = employeeManager.getSalary(employeeID); 
+  
+  ASSERT_EQ(salary, returnedSalary);
+}
+
 TEST(TestEmployeeManager, TestSalaryInRange)
 {
   // Arrange
@@ -104,7 +121,7 @@ TEST(TestEmployeeManager, TestSalaryInRange)
   
   for (auto it = returnedMap.begin(); it != returnedMap.end(); it++)
   {
-    std::cout << it->first << " " << it->second << "\n";
+    std::cout << "\n" << it->first << " " << it->second << "\n";
     ASSERT_THAT(it->second, testing::AnyOf(testing::Gt(low), testing::Lt(high-3000)));
   }
 }
