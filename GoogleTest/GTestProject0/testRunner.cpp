@@ -74,18 +74,18 @@ TEST(TestEmployeeManager, TestConnectionErrorAction)
   ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
 }
 
-void someFreeFunction
+void someFreeFunction()
 {
   std::cout << "Free Function being called\n";
+  throw std::runtime_error("Dummy Exception");
 }
 
 TEST(TestEmployeeManager, TestConnectionErrorInvoke)
 {
   // Arrange
   MockDatabaseConnection dbConnection("dummyAddress");
-  // EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Throw(std::runtime_error("Dummy Error")));
-  EXPECT_CALL(dbConnection, connect()).WillOnce(myThrow());
-  // EXPECT_CALL(dbConnection, disconnect()); // Don't need here anymore...
+
+  EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(someFreeFunction));
   // Act
   // Assert
   ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
