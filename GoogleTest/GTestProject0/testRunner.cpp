@@ -74,18 +74,27 @@ TEST(TestEmployeeManager, TestConnectionErrorAction)
   ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
 }
 
-void someFreeFunction()
-{
-  std::cout << "Free Function being called\n";
-  throw std::runtime_error("Dummy Exception");
-}
+// Refactored the following action invocation through the use of a lambda inside the assertion
+// void someFreeFunction()
+// {
+//   std::cout << "Free Function being called\n";
+//   throw std::runtime_error("Dummy Exception");
+// }
 
 TEST(TestEmployeeManager, TestConnectionErrorInvoke)
 {
   // Arrange
   MockDatabaseConnection dbConnection("dummyAddress");
 
-  EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(someFreeFunction));
+  //EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(someFreeFunction));
+  // Refactored to use a lambda for the action invocation:
+  EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(
+      [] ()
+      {
+        std::cout << "Lambda called\n";
+        throw std::runtime_error("Dummy Error");
+      }));
+  
   // Act
   // Assert
   ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
