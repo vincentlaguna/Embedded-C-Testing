@@ -137,8 +137,8 @@ clean: CMakeFiles/databaseConnectionLibrary.dir/clean
 # Target rules for target CMakeFiles/testRunner.dir
 
 # All Build rule for target.
-CMakeFiles/testRunner.dir/all: CMakeFiles/employeeManagerLibrary.dir/all
 CMakeFiles/testRunner.dir/all: CMakeFiles/databaseConnectionLibrary.dir/all
+CMakeFiles/testRunner.dir/all: CMakeFiles/employeeManagerLibrary.dir/all
 	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/depend
 	$(MAKE) -f CMakeFiles/testRunner.dir/build.make CMakeFiles/testRunner.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles --progress-num=7,8 "Built target testRunner"
