@@ -39,6 +39,12 @@ class MockDatabaseConnection : public IDatabaseConnection
       MOCK_CONST_METHOD1(getSalariesRange, std::vector<Employee>(float));
       MOCK_CONST_METHOD2(getSalariesRange, std::vector<Employee>(float, float));
       
+      void someMemberMethod()
+      {
+        std::cout << "Member Method called\n";
+        throw std::runtime_error("Dummy Error");
+      }
+      
       // MOCK_METHOD0(someMethod, (std::map<std::string, float>)());
       
       // Here for reference only when creating MOCK methods
@@ -85,16 +91,16 @@ TEST(TestEmployeeManager, TestConnectionErrorInvoke)
 {
   // Arrange
   MockDatabaseConnection dbConnection("dummyAddress");
-
+  auto boundMethod = std::bind(&MockDatabaseConnection::someMemberMethod, &dbConnection);
   //EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(someFreeFunction));
   // Refactored to use a lambda for the action invocation:
-  EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(
-      [] ()
-      {
-        std::cout << "Lambda called\n";
-        throw std::runtime_error("Dummy Error");
-      }));
-  
+  // EXPECT_CALL(dbConnection, connect()).WillOnce(testing::Invoke(
+  //     [] ()
+  //     {
+  //       std::cout << "Lambda called\n";
+  //       throw std::runtime_error("Dummy Error");
+  //     }));
+  EXPECT_CALL(dbConnection, connect()).WillOnce(testing::InvokeWithoutArgs(boundMethod));
   // Act
   // Assert
   ASSERT_THROW(EmployeeManager employeeManager(&dbConnection), std::runtime_error);
