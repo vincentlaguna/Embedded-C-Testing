@@ -1,25 +1,31 @@
 #include <iostream>
-// #include <stdexcept>
+#include <stdexcept>
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-// #include "LibraryCode.hpp"
-// #include <vector>
+#include "LibraryCode.hpp"
+#include <vector>
 // #include <cctype>
 // #include <string.h>
 
-// Employee Manager Project
+/*****Employee Manager Project*****
 
 #include <map>
 #include "IDatabaseConnection.hpp"
 #include "EmployeeManager.hpp"
 #include "Employee.hpp"
 
+/**********************************/
+
 // MACROS
 
 // INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
 
+/**********VECTOR ASSERTIONS - TEST CASES**********/
 
-/**********EMPLOYEE MANAGER PROJECT - TEST CASES**********/
+
+/**************************************************/
+
+/**********EMPLOYEE MANAGER PROJECT - TEST CASES**********
 
 // Create Mock Database Connection Class
 
