@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Nearing completion - 06082021
 - Implementation of Employee DB Mngr. Project in progress 06032021
 - GMock preparation for Employee Database Manager Project - 053121
 - Linked Google Mock in local VS project - 052921
