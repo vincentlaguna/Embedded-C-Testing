@@ -22,6 +22,14 @@
 
 /**********VECTOR ASSERTIONS - TEST CASES**********/
 
+TEST(VectorTests, ElementsAreTest)
+{
+  // Arrange
+  std::vector<int> v = generateNumbers(5, 3); // 0, 1, 2, 0, 1
+  // Act
+  // Assert
+  ASSERT_THAT(v, testing::ElementsAre(0, 1, 2, 0, 1));
+}
 
 /**************************************************/
 
