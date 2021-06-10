@@ -3,10 +3,7 @@
 
 /**********VECTOR ASSERTIONS - TEST CASES**********/
 
-std::vector<int> generateNumbers(int n, int limit)
-{
-  
-}
+std::vector<int> generateNumbers(int n, int limit);
 
 /**************************************************/
 

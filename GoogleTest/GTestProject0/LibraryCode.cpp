@@ -1,10 +1,29 @@
 #include "LibraryCode.hpp"
 #include <iostream>
 #include <stdexcept>
+#include <vector>
 // #include <string.h>
 // #include <algorithm>
 // #include <math.h>
 // #include <cctype>
+
+/**********VECTOR ASSERTIONS - TEST CASES**********/
+
+std::vector<int> generateNumbers(int n, int limit)
+{
+  std::vector<int> result;
+  
+  if (limit <= 0)
+    throw std::runtime_error("Argument must be >= 0");
+  
+  for (int i {0}; i < n; i++)
+    result.push_back(i % limit);
+  
+  return result;
+}
+
+/**************************************************/
+
 
 /**********PARAMETIZED TEST CASES**********
 
