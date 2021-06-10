@@ -28,28 +28,28 @@ The CXX compiler identification is GNU, found in "/home/ec2-user/environment/tes
 Determining if the C compiler works passed with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_58483/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_58483.dir/build.make CMakeFiles/cmTC_58483.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_0b09d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_0b09d.dir/build.make CMakeFiles/cmTC_0b09d.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_58483.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_58483.dir/testCCompiler.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_58483
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_58483.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_58483.dir/testCCompiler.c.o  -o cmTC_58483 
+Building C object CMakeFiles/cmTC_0b09d.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_0b09d.dir/testCCompiler.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_0b09d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b09d.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0b09d.dir/testCCompiler.c.o  -o cmTC_0b09d 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_9a462/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_9a462.dir/build.make CMakeFiles/cmTC_9a462.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_e6a7f/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e6a7f.dir/build.make CMakeFiles/cmTC_e6a7f.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_9a462
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a462.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o  -o cmTC_9a462 
+Building C object CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_e6a7f
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6a7f.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o  -o cmTC_e6a7f 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper
@@ -59,9 +59,9 @@ Thread model: posix
 gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) 
 COMPILER_PATH=/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/:/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9a462' '-mtune=generic' '-march=x86-64'
- /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgtHUG7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9a462 /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9a462' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e6a7f' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaMKlBw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e6a7f /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e6a7f' '-mtune=generic' '-march=x86-64'
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -69,14 +69,14 @@ Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_9a462/fast"]
-  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_9a462.dir/build.make CMakeFiles/cmTC_9a462.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_e6a7f/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_e6a7f.dir/build.make CMakeFiles/cmTC_e6a7f.dir/build]
   ignore line: [gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_9a462]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9a462.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o  -o cmTC_9a462 ]
+  ignore line: [Building C object CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o   -c /usr/local/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_e6a7f]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6a7f.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o  -o cmTC_e6a7f ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) ]
   ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/:/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_9a462' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccgtHUG7.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_9a462 /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_e6a7f' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccaMKlBw.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_e6a7f /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o]
     arg [/usr/libexec/gcc/x86_64-amazon-linux/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccgtHUG7.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccaMKlBw.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -108,7 +108,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_9a462] ==> ignore
+    arg [cmTC_e6a7f] ==> ignore
     arg [/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o] ==> ignore
@@ -117,7 +117,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/usr/lib/gcc/x86_64-amazon-linux/7/../../..] ==> dir [/usr/lib/gcc/x86_64-amazon-linux/7/../../..]
-    arg [CMakeFiles/cmTC_9a462.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_e6a7f.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -144,14 +144,14 @@ Parsed C implicit link information from above output:
 Detecting C [-std=c11] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_e9bae/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_e9bae.dir/build.make CMakeFiles/cmTC_e9bae.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_183db/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_183db.dir/build.make CMakeFiles/cmTC_183db.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e9bae.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_e9bae.dir/feature_tests.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_e9bae
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9bae.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e9bae.dir/feature_tests.c.o  -o cmTC_e9bae 
+Building C object CMakeFiles/cmTC_183db.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_183db.dir/feature_tests.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_183db
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_183db.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_183db.dir/feature_tests.c.o  -o cmTC_183db 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -164,14 +164,14 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Detecting C [-std=c99] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_36805/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_36805.dir/build.make CMakeFiles/cmTC_36805.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_46846/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_46846.dir/build.make CMakeFiles/cmTC_46846.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_36805.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_36805.dir/feature_tests.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_36805
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36805.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_36805.dir/feature_tests.c.o  -o cmTC_36805 
+Building C object CMakeFiles/cmTC_46846.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_46846.dir/feature_tests.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_46846
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46846.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_46846.dir/feature_tests.c.o  -o cmTC_46846 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -184,14 +184,14 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Detecting C [-std=c90] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_b8226/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_b8226.dir/build.make CMakeFiles/cmTC_b8226.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_e6952/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_e6952.dir/build.make CMakeFiles/cmTC_e6952.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_b8226.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_b8226.dir/feature_tests.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_b8226
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b8226.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b8226.dir/feature_tests.c.o  -o cmTC_b8226 
+Building C object CMakeFiles/cmTC_e6952.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_e6952.dir/feature_tests.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_e6952
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e6952.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e6952.dir/feature_tests.c.o  -o cmTC_e6952 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -202,28 +202,28 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Determining if the CXX compiler works passed with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_c8062/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_c8062.dir/build.make CMakeFiles/cmTC_c8062.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_fd6b1/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_fd6b1.dir/build.make CMakeFiles/cmTC_fd6b1.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c8062.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_c8062.dir/testCXXCompiler.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_c8062
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8062.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c8062.dir/testCXXCompiler.cxx.o  -o cmTC_c8062 
+Building CXX object CMakeFiles/cmTC_fd6b1.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_fd6b1.dir/testCXXCompiler.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_fd6b1
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fd6b1.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_fd6b1.dir/testCXXCompiler.cxx.o  -o cmTC_fd6b1 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_b0df5/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_b0df5.dir/build.make CMakeFiles/cmTC_b0df5.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_f3d5c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_f3d5c.dir/build.make CMakeFiles/cmTC_f3d5c.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_b0df5
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0df5.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b0df5 
+Building CXX object CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_f3d5c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3d5c.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f3d5c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper
@@ -233,9 +233,9 @@ Thread model: posix
 gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) 
 COMPILER_PATH=/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/:/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b0df5' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAuap2z.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b0df5 /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b0df5' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f3d5c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc42Af8R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f3d5c /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f3d5c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -243,14 +243,14 @@ Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
   ignore line: [Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_b0df5/fast"]
-  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_b0df5.dir/build.make CMakeFiles/cmTC_b0df5.dir/build]
+  ignore line: [Run Build Command:"/usr/bin/gmake" "cmTC_f3d5c/fast"]
+  ignore line: [/usr/bin/gmake -f CMakeFiles/cmTC_f3d5c.dir/build.make CMakeFiles/cmTC_f3d5c.dir/build]
   ignore line: [gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_b0df5]
-  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0df5.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_b0df5 ]
+  ignore line: [Building CXX object CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o -c /usr/local/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_f3d5c]
+  ignore line: [/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f3d5c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_f3d5c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper]
@@ -260,13 +260,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) ]
   ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/7/:/usr/libexec/gcc/x86_64-amazon-linux/:/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-amazon-linux/7/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-amazon-linux/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_b0df5' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccAuap2z.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_b0df5 /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_f3d5c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/libexec/gcc/x86_64-amazon-linux/7/collect2 -plugin /usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc42Af8R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_f3d5c /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o /usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o -L/usr/lib/gcc/x86_64-amazon-linux/7 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-amazon-linux/7/../../.. CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-amazon-linux/7/crtend.o /usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crtn.o]
     arg [/usr/libexec/gcc/x86_64-amazon-linux/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/libexec/gcc/x86_64-amazon-linux/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/libexec/gcc/x86_64-amazon-linux/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccAuap2z.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc42Af8R.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -282,7 +282,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_b0df5] ==> ignore
+    arg [cmTC_f3d5c] ==> ignore
     arg [/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-amazon-linux/7/../../../../lib64/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-amazon-linux/7/crtbegin.o] ==> ignore
@@ -291,7 +291,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
     arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
     arg [-L/usr/lib/gcc/x86_64-amazon-linux/7/../../..] ==> dir [/usr/lib/gcc/x86_64-amazon-linux/7/../../..]
-    arg [CMakeFiles/cmTC_b0df5.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_f3d5c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -316,14 +316,14 @@ Parsed CXX implicit link information from above output:
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_ae115/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_ae115.dir/build.make CMakeFiles/cmTC_ae115.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_d344c/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_d344c.dir/build.make CMakeFiles/cmTC_d344c.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ae115.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_ae115.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ae115
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ae115.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ae115.dir/feature_tests.cxx.o  -o cmTC_ae115 
+Building CXX object CMakeFiles/cmTC_d344c.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_d344c.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d344c
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d344c.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_d344c.dir/feature_tests.cxx.o  -o cmTC_d344c 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -389,14 +389,14 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_c97c7/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_c97c7.dir/build.make CMakeFiles/cmTC_c97c7.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_a3907/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a3907.dir/build.make CMakeFiles/cmTC_a3907.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_c97c7.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_c97c7.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_c97c7
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c97c7.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c97c7.dir/feature_tests.cxx.o  -o cmTC_c97c7 
+Building CXX object CMakeFiles/cmTC_a3907.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_a3907.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a3907
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3907.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a3907.dir/feature_tests.cxx.o  -o cmTC_a3907 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -462,14 +462,14 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_a9d36/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_a9d36.dir/build.make CMakeFiles/cmTC_a9d36.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_a8351/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_a8351.dir/build.make CMakeFiles/cmTC_a8351.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_a9d36.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_a9d36.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_a9d36
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a9d36.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a9d36.dir/feature_tests.cxx.o  -o cmTC_a9d36 
+Building CXX object CMakeFiles/cmTC_a8351.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_a8351.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_a8351
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8351.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_a8351.dir/feature_tests.cxx.o  -o cmTC_a8351 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -535,14 +535,14 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_e9323/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_e9323.dir/build.make CMakeFiles/cmTC_e9323.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_92c21/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_92c21.dir/build.make CMakeFiles/cmTC_92c21.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_e9323.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_e9323.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_e9323
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e9323.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_e9323.dir/feature_tests.cxx.o  -o cmTC_e9323 
+Building CXX object CMakeFiles/cmTC_92c21.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_92c21.dir/feature_tests.cxx.o -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_92c21
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92c21.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_92c21.dir/feature_tests.cxx.o  -o cmTC_92c21 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
@@ -606,28 +606,28 @@ gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/
 Determining if the include file pthread.h exists passed with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_47443/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_47443.dir/build.make CMakeFiles/cmTC_47443.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_2914d/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_2914d.dir/build.make CMakeFiles/cmTC_2914d.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_47443.dir/CheckIncludeFile.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_47443.dir/CheckIncludeFile.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
-Linking C executable cmTC_47443
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_47443.dir/link.txt --verbose=1
-/usr/bin/cc      CMakeFiles/cmTC_47443.dir/CheckIncludeFile.c.o  -o cmTC_47443 
+Building C object CMakeFiles/cmTC_2914d.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_2914d.dir/CheckIncludeFile.c.o   -c /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_2914d
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2914d.dir/link.txt --verbose=1
+/usr/bin/cc      CMakeFiles/cmTC_2914d.dir/CheckIncludeFile.c.o  -o cmTC_2914d 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 
 Determining if the function pthread_create exists in the pthread passed with the following output:
 Change Dir: /home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/gmake" "cmTC_486bd/fast"
-/usr/bin/gmake -f CMakeFiles/cmTC_486bd.dir/build.make CMakeFiles/cmTC_486bd.dir/build
+Run Build Command:"/usr/bin/gmake" "cmTC_231a2/fast"
+/usr/bin/gmake -f CMakeFiles/cmTC_231a2.dir/build.make CMakeFiles/cmTC_231a2.dir/build
 gmake[1]: Entering directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_486bd.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_486bd.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_486bd
-/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_486bd.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_486bd.dir/CheckFunctionExists.c.o  -o cmTC_486bd -lpthread 
+Building C object CMakeFiles/cmTC_231a2.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_231a2.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_231a2
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_231a2.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_231a2.dir/CheckFunctionExists.c.o  -o cmTC_231a2 -lpthread 
 gmake[1]: Leaving directory `/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/build/CMakeFiles/CMakeTmp'
 
 

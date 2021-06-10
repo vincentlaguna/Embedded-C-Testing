@@ -31,10 +31,14 @@ TEST(VectorTests, ElementsAreTest)
   ASSERT_THAT(v, testing::ElementsAre(0, 1, 2, 0, 1));
 }
 
-// TEST(VectorTests, RangeTest)
-// {
-//   std::vector<int> v = generateNumbers(5, 3);
-// }
+TEST(VectorTests, RangeTest)
+{
+  using namespace testing;
+  
+  std::vector<int> v = generateNumbers(5, 3);
+
+  ASSERT_THAT(v, Each(AllOf(Ge(0), Lt(3))));
+}
 
 /**************************************************/
 
