@@ -34,9 +34,10 @@ TEST(VectorTests, ElementsAreTest)
 TEST(VectorTests, RangeTest)
 {
   using namespace testing;
-  
+  // Arrange
   std::vector<int> v = generateNumbers(5, 3);
-
+  // Act
+  // Assert
   ASSERT_THAT(v, Each(AllOf(Ge(0), Lt(3))));
 }
 
