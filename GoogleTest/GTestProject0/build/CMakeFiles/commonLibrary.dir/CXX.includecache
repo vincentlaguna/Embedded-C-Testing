@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.cpp
+LibraryCode.hpp
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
+iostream
+-
+stdexcept
+-
+
+/home/ec2-user/environment/test_space_0/GoogleTest/GTestProject0/LibraryCode.hpp
+vector
+-
+

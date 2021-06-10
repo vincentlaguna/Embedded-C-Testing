@@ -31,7 +31,13 @@ TEST(VectorTests, ElementsAreTest)
   ASSERT_THAT(v, testing::ElementsAre(0, 1, 2, 0, 1));
 }
 
+// TEST(VectorTests, RangeTest)
+// {
+//   std::vector<int> v = generateNumbers(5, 3);
+// }
+
 /**************************************************/
+
 
 /**********EMPLOYEE MANAGER PROJECT - TEST CASES**********
 

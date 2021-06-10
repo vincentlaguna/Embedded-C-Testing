@@ -56,17 +56,6 @@ CMAKE_BINARY_DIR = /home/ec2-user/environment/test_space_0/GoogleTest/GTestProje
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
@@ -77,6 +66,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/local/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -111,32 +111,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mainApp
-
-# Build rule for target.
-mainApp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mainApp
-.PHONY : mainApp
-
-# fast build rule for target.
-mainApp/fast:
-	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/build
-.PHONY : mainApp/fast
-
-#=============================================================================
-# Target rules for targets named databaseConnectionLibrary
-
-# Build rule for target.
-databaseConnectionLibrary: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 databaseConnectionLibrary
-.PHONY : databaseConnectionLibrary
-
-# fast build rule for target.
-databaseConnectionLibrary/fast:
-	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/build
-.PHONY : databaseConnectionLibrary/fast
-
-#=============================================================================
 # Target rules for targets named testRunner
 
 # Build rule for target.
@@ -150,71 +124,57 @@ testRunner/fast:
 .PHONY : testRunner/fast
 
 #=============================================================================
-# Target rules for targets named employeeManagerLibrary
+# Target rules for targets named commonLibrary
 
 # Build rule for target.
-employeeManagerLibrary: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 employeeManagerLibrary
-.PHONY : employeeManagerLibrary
+commonLibrary: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 commonLibrary
+.PHONY : commonLibrary
 
 # fast build rule for target.
-employeeManagerLibrary/fast:
-	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/build
-.PHONY : employeeManagerLibrary/fast
+commonLibrary/fast:
+	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/build
+.PHONY : commonLibrary/fast
 
-EmployeeManager.o: EmployeeManager.cpp.o
+#=============================================================================
+# Target rules for targets named mainApp
 
-.PHONY : EmployeeManager.o
+# Build rule for target.
+mainApp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mainApp
+.PHONY : mainApp
 
-# target to build an object file
-EmployeeManager.cpp.o:
-	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/EmployeeManager.cpp.o
-.PHONY : EmployeeManager.cpp.o
+# fast build rule for target.
+mainApp/fast:
+	$(MAKE) -f CMakeFiles/mainApp.dir/build.make CMakeFiles/mainApp.dir/build
+.PHONY : mainApp/fast
 
-EmployeeManager.i: EmployeeManager.cpp.i
+LibraryCode.o: LibraryCode.cpp.o
 
-.PHONY : EmployeeManager.i
-
-# target to preprocess a source file
-EmployeeManager.cpp.i:
-	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/EmployeeManager.cpp.i
-.PHONY : EmployeeManager.cpp.i
-
-EmployeeManager.s: EmployeeManager.cpp.s
-
-.PHONY : EmployeeManager.s
-
-# target to generate assembly for a file
-EmployeeManager.cpp.s:
-	$(MAKE) -f CMakeFiles/employeeManagerLibrary.dir/build.make CMakeFiles/employeeManagerLibrary.dir/EmployeeManager.cpp.s
-.PHONY : EmployeeManager.cpp.s
-
-IDatabaseConnection.o: IDatabaseConnection.cpp.o
-
-.PHONY : IDatabaseConnection.o
+.PHONY : LibraryCode.o
 
 # target to build an object file
-IDatabaseConnection.cpp.o:
-	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/IDatabaseConnection.cpp.o
-.PHONY : IDatabaseConnection.cpp.o
+LibraryCode.cpp.o:
+	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/LibraryCode.cpp.o
+.PHONY : LibraryCode.cpp.o
 
-IDatabaseConnection.i: IDatabaseConnection.cpp.i
+LibraryCode.i: LibraryCode.cpp.i
 
-.PHONY : IDatabaseConnection.i
+.PHONY : LibraryCode.i
 
 # target to preprocess a source file
-IDatabaseConnection.cpp.i:
-	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/IDatabaseConnection.cpp.i
-.PHONY : IDatabaseConnection.cpp.i
+LibraryCode.cpp.i:
+	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/LibraryCode.cpp.i
+.PHONY : LibraryCode.cpp.i
 
-IDatabaseConnection.s: IDatabaseConnection.cpp.s
+LibraryCode.s: LibraryCode.cpp.s
 
-.PHONY : IDatabaseConnection.s
+.PHONY : LibraryCode.s
 
 # target to generate assembly for a file
-IDatabaseConnection.cpp.s:
-	$(MAKE) -f CMakeFiles/databaseConnectionLibrary.dir/build.make CMakeFiles/databaseConnectionLibrary.dir/IDatabaseConnection.cpp.s
-.PHONY : IDatabaseConnection.cpp.s
+LibraryCode.cpp.s:
+	$(MAKE) -f CMakeFiles/commonLibrary.dir/build.make CMakeFiles/commonLibrary.dir/LibraryCode.cpp.s
+.PHONY : LibraryCode.cpp.s
 
 main.o: main.cpp.o
 
@@ -276,18 +236,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... mainApp"
-	@echo "... databaseConnectionLibrary"
 	@echo "... edit_cache"
 	@echo "... testRunner"
-	@echo "... employeeManagerLibrary"
-	@echo "... EmployeeManager.o"
-	@echo "... EmployeeManager.i"
-	@echo "... EmployeeManager.s"
-	@echo "... IDatabaseConnection.o"
-	@echo "... IDatabaseConnection.i"
-	@echo "... IDatabaseConnection.s"
+	@echo "... commonLibrary"
+	@echo "... rebuild_cache"
+	@echo "... mainApp"
+	@echo "... LibraryCode.o"
+	@echo "... LibraryCode.i"
+	@echo "... LibraryCode.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

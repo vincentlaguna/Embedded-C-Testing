@@ -1,8 +1,12 @@
 #pragma once
-// #include <vector>
+#include <vector>
 
-/**********VECTOR ASSERTIONS - TEST CASES**********
+/**********VECTOR ASSERTIONS - TEST CASES**********/
 
+std::vector<int> generateNumbers(int n, int limit)
+{
+  
+}
 
 /**************************************************/
 
