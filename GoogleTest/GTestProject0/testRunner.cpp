@@ -20,6 +20,52 @@
 
 // INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
 
+/********** ASSERTIONS - TEST CASES**********
+
+TEST(, )
+{
+  // Arrange
+  
+  // Act
+  
+  // Assert
+}
+
+TEST(, )
+{
+  // Arrange
+  
+  // Act
+  
+  // Assert
+}
+
+/**************************************************/
+
+
+/**********CALLBACK ASSERTIONS - TEST CASES**********/
+
+TEST(, )
+{
+  // Arrange
+  
+  // Act
+  
+  // Assert
+}
+
+TEST(, )
+{
+  // Arrange
+  
+  // Act
+  
+  // Assert
+}
+
+/**************************************************/
+
+
 /**********VECTOR ASSERTIONS - TEST CASES**********/
 
 TEST(VectorTests, ElementsAreTest)
