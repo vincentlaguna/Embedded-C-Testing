@@ -18,7 +18,7 @@
 
 // INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
 
-/********** Pre-Processor #defines - TEST CASES**********/
+/********** Pre-Processor #defines - TEST CASES**********
 
 // Implement and Test Pre-Processor defines for cross-plaform compatibility
 
