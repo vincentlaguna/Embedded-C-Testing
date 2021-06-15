@@ -18,7 +18,7 @@
 
 // INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
 
-/********** Pre-Processor #defines - TEST CASES**********
+/********** Pre-Processor #defines - TEST CASES**********/
 
 // Implement and Test Pre-Processor defines for cross-plaform compatibility
 
@@ -26,6 +26,17 @@
 // or WIN32, or __WIN32__
 
 TEST(UnixSuite, DummyTest1)
+{
+  std::cout << "Dummy Test 1 - UNIX \n";
+  
+  #ifdef __WIN32
+  FAIL();
+  #else
+  SUCCEED();
+  #endif
+}
+
+TEST(WindowsSuite, DummyTest1)
 {
   std::cout << "Dummy Test 1 - UNIX \n";
   
@@ -85,7 +96,7 @@ TEST(, )
 /**************************************************/
 
 
-/**********VECTOR ASSERTIONS - TEST CASES**********/
+/**********VECTOR ASSERTIONS - TEST CASES**********
 
 TEST(VectorTests, ElementsAreTest)
 {
@@ -539,6 +550,20 @@ TEST(ToUpperTest, BasicTest)
 
 int main(int argc, char **argv)
 {
+  /********** Pre-Processor Defines **********/
+  
+  #ifdef __WIN32
+    
+    testing::GTEST_FLAG(filter) = "WindowsSuite.*";
+  
+  #else
+    
+    testing::GTEST_FLAG(filter) = "UnixSuite.*";
+    
+  #endif
+  
+  /*******************************************/
+  
   testing::InitGoogleTest(&argc, argv);
   
   return RUN_ALL_TESTS();
