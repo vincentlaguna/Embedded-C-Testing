@@ -16,6 +16,10 @@
 
 /**********************************/
 
+// INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
+
+/********** Pre-Processor #defines - TEST CASES**********/
+
 // Implement and Test Pre-Processor defines for cross-plaform compatibility
 
 // #define __WIN32
@@ -32,9 +36,8 @@ TEST(UnixSuite, DummyTest1)
   #endif
 }
 
-// MACROS
+/********************************************************/
 
-// INSTANTIATE_TEST_CASE -> Deprecated. Use -> INSTANTIATE_TEST_SUITE
 
 /********** ASSERTIONS - TEST CASES**********
 
