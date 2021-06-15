@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Having trouble on last section of the course, reverted to last working state: vector assertions - 061421
 - Nearing completion - 060821
 - Implementation of Employee DB Mngr. Project in progress - 060321
 - GMock preparation for Employee Database Manager Project - 053121
