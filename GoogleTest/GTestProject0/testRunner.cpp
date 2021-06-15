@@ -7,6 +7,8 @@
 // #include <cctype>
 // #include <string.h>
 
+// Implement Pre-Processor defines for cross-plaform compatibility
+
 /*****Employee Manager Project*****
 
 #include <map>
