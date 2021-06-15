@@ -7,8 +7,6 @@
 // #include <cctype>
 // #include <string.h>
 
-// Implement Pre-Processor defines for cross-plaform compatibility
-
 /*****Employee Manager Project*****
 
 #include <map>
@@ -17,6 +15,22 @@
 #include "Employee.hpp"
 
 /**********************************/
+
+// Implement and Test Pre-Processor defines for cross-plaform compatibility
+
+// #define __WIN32
+// or WIN32, or __WIN32__
+
+TEST(UnixSuite, DummyTest1)
+{
+  std::cout << "Dummy Test 1 - UNIX \n";
+  
+  #ifdef __WIN32
+  FAIL();
+  #else
+  SUCCEED();
+  #endif
+}
 
 // MACROS
 
