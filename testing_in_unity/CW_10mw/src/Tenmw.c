@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+//#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -43,10 +43,11 @@ int main(void)
 {
 #endif
 
-  char *pGrid;
+  char *pGrid = NULL;
   pGrid = gridSquare;
   
-  char *walk = {"nnwwwsseee"}; // Valid
+  // char *walk = {"nnwwwsseee"}; // Valid
+  char *walk = {"eeeeeeeeee"}; // Not Valid - Out of bounds
   //char *walk = {"nsnwensses"}; // Not Valid
   //displayBoard();
   
@@ -139,6 +140,8 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   int row = 5;
   int position = 5;
   bool backHome = false;
+  bool outOfbounds = false;
+  int nCount, sCount, eCount, wCount = 0;
   char marker = 'X';
   
   for (; *walk != '\0'; *walk++)
@@ -152,15 +155,19 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     {
       case 'n':
         *(grid + (row-- * n) + position) = marker;
+        nCount++;
         break;
       case 's':
         *(grid + (row++ * n) + position) = marker;
+        sCount++;
         break;
       case 'e':
         *(grid + (row * n) + position--) = marker;
+        eCount++;
         break;
       case 'w':
         *(grid + (row * n) + position++) = marker;
+        wCount++;
         break;
     }
     //displayGrid(grid, SQUARE_DIMENSION);
@@ -168,7 +175,11 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     sleep(1);
   }
   
-  if (marker == *(grid + (row * n) + position))
+  if ((nCount || sCount || eCount || wCount) >= 5)
+  {
+    printf("\nSorry, walker went out of bounds!\n");
+  }
+  else if (marker == *(grid + (row * n) + position))
   {
     backHome = true;
     displayWinBoard();

@@ -11,13 +11,14 @@ void test_walk_should_BeTenMinutes(void)
 void test_fWalk_should_notBeTenMinutes(void) 
 {
   const char *fWalk = {"nsnsnsnsnsx"};
+  printf("\n");
     
   TEST_ASSERT_FALSE(isValidWalkLength(fWalk));
 }
 
 void test_moveWalkerHome_should_return_validPosition(void)
 {
-  char *pGrid;
+  char *pGrid = NULL;
   pGrid = gridSquare;
   
   const char *walk = {"nnwwwsseen"};
@@ -29,7 +30,7 @@ void test_moveWalkerHome_should_return_validPosition(void)
 
 void test_moveWalkerHome_should_return_False_onInvalidPosition(void)
 {
-  char *pGrid;
+  char *pGrid = NULL;
   pGrid = gridSquare;
   
   const char *walk = {"nnwwwsseee"};
