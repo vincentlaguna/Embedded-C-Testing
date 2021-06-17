@@ -175,16 +175,17 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     sleep(1);
   }
   
-  if ((nCount) || (sCount) || (eCount) || (wCount)) >= 5)
-  {
-    printf("\nSorry, walker went out of bounds!\n");
-  }
-  else if (marker == *(grid + (row * n) + position))
+  
+  if (marker == *(grid + (row * n) + position))
   {
     backHome = true;
     displayWinBoard();
     printf("\nWalker is Back Home!\n");
     return true;
+  }
+  else if ((nCount || sCount || eCount || wCount) >= 5)
+  {
+    printf("\nSorry, walker went out of bounds!\n");
   }
   else
   {

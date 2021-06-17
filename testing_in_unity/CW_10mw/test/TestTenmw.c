@@ -39,6 +39,17 @@ void test_moveWalkerHome_should_return_False_onInvalidPosition(void)
 
 }
 
+void test_moveWalkerOutofBounds_should_return_False(void)
+{
+  char *pGrid = NULL;
+  pGrid = gridSquare;
+  
+  const char *walk = {"eeeeeeeeee"};
+  
+  TEST_ASSERT_FALSE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
+
+}
+
 // void test_TheFourth(void) {
 //     TEST_ASSERT_TRUE(0 == 1);
 // }
@@ -55,7 +66,7 @@ int main(void)
   RUN_TEST(test_fWalk_should_notBeTenMinutes);
   RUN_TEST(test_moveWalkerHome_should_return_validPosition);
   RUN_TEST(test_moveWalkerHome_should_return_False_onInvalidPosition);
-  // RUN_TEST(test_TheFourth);
+  RUN_TEST(test_moveWalkerOutofBounds_should_return_False);
   // RUN_TEST(test_TheFifth);
   return UNITY_END();
 }
