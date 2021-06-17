@@ -189,6 +189,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   else
   {
     printf("\nSorry, walker did not make it back home...\n");
+    printf("count = %d\n", eCount);
     return false;
   }
 }  
