@@ -43,17 +43,18 @@ int main(void)
 {
 #endif
 
-  char *pGrid = NULL;
+  // char *pGrid = NULL;
+  void *pGrid = NULL;
   pGrid = gridSquare;
   
   // char *walk = {"nnwwwsseee"}; // Valid
-  char *walk = {"eeeeeeeeee"}; // Not Valid - Out of bounds
+  char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds
   //char *walk = {"nsnwensses"}; // Not Valid
   
 #ifndef _TEST
     
   displayBoard();
-  displayGrid(pGrid, SQUARE_DIMENSION);
+  // displayGrid(pGrid, SQUARE_DIMENSION);
   moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
 #endif
   
@@ -138,7 +139,8 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   int row = 5;
   int position = 5;
   bool backHome = false;
-  bool outOfbounds = false;
+  // bool outOfbounds = false;
+  int boundary = 5;
   int nCount, sCount, eCount, wCount = 0;
   char marker = 'X';
   
@@ -168,6 +170,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
         wCount++;
         break;
     }
+    
   #ifndef _TEST
     
     displayGrid(grid, SQUARE_DIMENSION);
@@ -175,9 +178,10 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     sleep(0.5);
     
   #endif
+  
   }
   
-  printf("count = %d\n", eCount);
+  // printf("\ncount = %d\n", eCount); // Debug... 
   if (marker == *(grid + (row * n) + position))
   {
     backHome = true;
@@ -191,7 +195,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     printf("\nWalker is Back Home!\n");
     return true;
   }
-  else if ((nCount || sCount || eCount || wCount) > 5)
+  if ((nCount) || (sCount) || (eCount) || (wCount) > boundary) // Freaking parenthesis... really?
   {
     printf("\nSorry, walker went out of bounds!\n");
     return false;
@@ -199,7 +203,6 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   else
   {
     printf("\nSorry, walker did not make it back home...\n");
-    // printf("count = %d\n", eCount); // debug
     return false;
   }
 }  
