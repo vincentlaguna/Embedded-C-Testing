@@ -262,4 +262,89 @@ void displayWinBoard(void)
   
     sleep(1.0);
   }
-}  
+}
+
+/*****CodeWars Implementation*****
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#define SQUARE_DIMENSION 11
+
+char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
+{
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+};
+
+void *pGrid               = NULL;
+pGrid                     = gridSquare;
+// Define local variables
+int   charCount           = 0;
+int   row                 = 5;
+int   position            = 5;
+int   boundary            = 5;
+int   nCount              = 0;
+int   sCount              = 0;
+int   eCount              = 0;
+int   wCount              = 0;
+char  marker              = 'X';
+// Define Booleans
+bool isValidWalkLength    = false;
+bool isWalkerHome         = false;
+bool isWalkerWithinBounds = false;
+
+// Confirm Walk Lenth
+while (*walk)
+  {
+    *walk++;
+    ++ct;
+  }
+  if (ct == 10)
+    isValidWalkLength     = true;
+  isValidWalkLength       = false;
+
+// Confirm Walker Made it Home
+for (; *walk != '\0'; *walk++)
+{
+  switch (*walk)
+  {
+      case 'n':
+        *(grid + (row-- * n) + position) = marker;
+        nCount++;
+        break;
+      case 's':
+        *(grid + (row++ * n) + position) = marker;
+        sCount++;
+        break;
+      case 'e':
+        *(grid + (row * n) + position--) = marker;
+        eCount++;
+        break;
+      case 'w':
+        *(grid + (row * n) + position++) = marker;
+        wCount++;
+        break;
+    }
+}
+
+if (marker == *(grid + (row * n) + position))
+  isWalkerHome            = true;
+
+if ((nCount) || (sCount) || (eCount) || (wCount) < boundary)
+  isWalkerWithinBounds    = true;
+
+if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
+  return true;
+return false;
+
+/*********************************/
