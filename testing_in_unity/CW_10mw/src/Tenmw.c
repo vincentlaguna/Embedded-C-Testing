@@ -177,7 +177,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   #endif
   }
   
-  
+  printf("count = %d\n", eCount);
   if (marker == *(grid + (row * n) + position))
   {
     backHome = true;
