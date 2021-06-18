@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+// #define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -46,18 +46,16 @@ int main(void)
   char *pGrid = NULL;
   pGrid = gridSquare;
   
-  char *walk = {"nnwwwsseee"}; // Valid
-  // char *walk = {"eeeeeeeeee"}; // Not Valid - Out of bounds
+  // char *walk = {"nnwwwsseee"}; // Valid
+  char *walk = {"eeeeeeeeee"}; // Not Valid - Out of bounds
   //char *walk = {"nsnwensses"}; // Not Valid
-  //displayBoard();
   
-  #ifndef _TEST
-    //displayGrid(pGrid, SQUARE_DIMENSION);
-    moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
-  #endif
-  
-  //displayBoard();
-  //displayGrid(pGrid, SQUARE_DIMENSION);
+#ifndef _TEST
+    
+  displayBoard();
+  displayGrid(pGrid, SQUARE_DIMENSION);
+  moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
+#endif
   
   return(0);
 }
@@ -170,20 +168,30 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
         wCount++;
         break;
     }
-    //displayGrid(grid, SQUARE_DIMENSION);
-    // displayBoard();
-    // sleep(1);
+  #ifndef _TEST
+    
+    displayGrid(grid, SQUARE_DIMENSION);
+    displayBoard();
+    sleep(0.5);
+    
+  #endif
   }
   
   
   if (marker == *(grid + (row * n) + position))
   {
     backHome = true;
-    // displayWinBoard();
+    
+  #ifndef _TEST
+    
+    displayWinBoard();
+  
+  #endif
+    
     printf("\nWalker is Back Home!\n");
     return true;
   }
-  else if ((nCount || sCount || eCount || wCount) >= 5)
+  else if ((nCount || sCount || eCount || wCount) > 5)
   {
     printf("\nSorry, walker went out of bounds!\n");
     return false;
