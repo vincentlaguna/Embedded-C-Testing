@@ -175,7 +175,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
     
     displayGrid(grid, SQUARE_DIMENSION);
     displayBoard();
-    sleep(0.5);
+    sleep(1);
     
   #endif
   
