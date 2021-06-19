@@ -303,7 +303,7 @@ bool isValidWalkLength    = false;
 bool isWalkerHome         = false;
 bool isWalkerWithinBounds = false;
 
-// Confirm Walk Lenth
+// Confirm Walk Length
 while (*walk)
   {
     *walk++;
