@@ -12,6 +12,8 @@
 * return you to your starting point. Return false otherwise.                       *
 *                                                                                  *
 * **********************************************************************************/
+#ifndef
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -264,7 +266,10 @@ void displayWinBoard(void)
   }
 }
 
-/*****CodeWars Implementation*****
+#endif // 
+
+#ifdef _CW
+/*****CodeWars Implementation*****/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -349,6 +354,23 @@ bool isValidWalk(const char *walk)
   if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
     return true;
   return false;
+}
+
+int main(void)
+{
+  // char *pGrid = NULL;
+  void *pGrid = NULL;
+  pGrid = gridSquare;
+  
+  // char *walk = {"nnwwwsseee"}; // Valid
+  char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds
+  //char *walk = {"nsnwensses"}; // Not Valid
+  
+  if (isValidWalk(walk))
+    printf("PASSED...\n");
+  printf("No Egg...\n");
+  
+  return(0);
 }
 
 /*********************************/
