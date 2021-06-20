@@ -323,7 +323,7 @@ bool isValidWalk(const char *walk)
   isValidWalkLength       = false;
   
   // Confirm Walker Made it Home
-  for (; walk != '\0'; walk++)
+  for (; *walk != '\0'; walk++)
   {
     switch (*walk)
     {
