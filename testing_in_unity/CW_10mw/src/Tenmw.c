@@ -323,7 +323,7 @@ bool isValidWalk(const char *walk)
   
   if (charCount == 10)
   { 
-    isValidWalkLength     = true;
+    isValidWalkLength       = true;
     printf("charCount = [%d]\n", charCount); // Debug...
   }
   else
@@ -373,8 +373,8 @@ int main(void)
   // void *pGrid = NULL;
   // pGrid = gridSquare;
   
-  // char *walk = {"nnwwwsseee"}; // Valid
-  char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds Length
+  char *walk = {"nnwwwsseee"}; // Valid
+  // char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds Length
   //char *walk = {"nsnwensse"}; // Not Valid
   //char *walk = {"nsnwensses"}; // Not Valid
   
