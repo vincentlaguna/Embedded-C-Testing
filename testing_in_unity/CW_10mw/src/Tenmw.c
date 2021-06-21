@@ -362,9 +362,12 @@ bool isValidWalk(const char *walk)
 //   isWalkerWithinBounds    = true;
 
 //   if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
-  if (isValidWalkLength)
-        return true;
-  return false;
+  
+  // if (isValidWalkLength)
+  //       return true;
+  // return false;
+  
+  isValidWalkLength ? return true : return false;
 }
 
 int main(void)
