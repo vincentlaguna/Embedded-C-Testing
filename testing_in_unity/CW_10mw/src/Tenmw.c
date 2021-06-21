@@ -14,7 +14,7 @@
 * **********************************************************************************/
 #define _CW
 #ifndef _CW
-
+/******************** NCW ***********************
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -267,110 +267,123 @@ void displayWinBoard(void)
   }
 }
 
+/******************** NCW ***********************/
+
 #endif // 
 
 #ifdef _CW
+
 /*****CodeWars Implementation*****/
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#define SQUARE_DIMENSION 11
+#include                    <stdio.h>
+#include                    <stdlib.h>
+#include                    <stdbool.h>
+// #define                     SQUARE_DIMENSION 11
 
-char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
-{
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-};
+// char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
+// {
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+// };
 
 bool isValidWalk(const char *walk) 
 {
-  char *pGrid               = (char *)malloc(sizeof(gridSquare));
-  pGrid                     = gridSquare;
+  // char *pGrid               = (char *)malloc(sizeof(gridSquare));
+  // pGrid                     = gridSquare;
   // Define local variables
   int   charCount           = 0;
-  int   row                 = 5;
-  int   position            = 5;
-  int   boundary            = 5;
-  int   nCount              = 0;
-  int   sCount              = 0;
-  int   eCount              = 0;
-  int   wCount              = 0;
-  char  marker              = 'X';
-  // Define Booleans
+//   int   row                 = 5;
+//   int   position            = 5;
+//   int   boundary            = 5;
+//   int   nCount              = 0;
+//   int   sCount              = 0;
+//   int   eCount              = 0;
+//   int   wCount              = 0;
+//   char  marker              = 'X';
+//   // Define Booleans
   bool isValidWalkLength    = false;
-  bool isWalkerHome         = false;
-  bool isWalkerWithinBounds = false;
+//   bool isWalkerHome         = false;
+//   bool isWalkerWithinBounds = false;
   
   // Confirm Walk Length
-  while (walk)
+  while (*walk)
   {
-    walk++;
+    *walk++;
     ++charCount;
   }
   
   if (charCount == 10)
+  { 
     isValidWalkLength     = true;
-  isValidWalkLength       = false;
-  
-  // Confirm Walker Made it Home
-  for (; *walk != '\0'; walk++)
-  {
-    switch (*walk)
-    {
-      case 'n':
-        *(pGrid + (row-- * SQUARE_DIMENSION) + position) = marker;
-        nCount++;
-        break;
-      case 's':
-        *(pGrid + (row++ * SQUARE_DIMENSION) + position) = marker;
-        sCount++;
-        break;
-      case 'e':
-        *(pGrid + (row * SQUARE_DIMENSION) + position--) = marker;
-        eCount++;
-        break;
-      case 'w':
-        *(pGrid + (row * SQUARE_DIMENSION) + position++) = marker;
-        wCount++;
-        break;
-      }
+    printf("charCount = [%d]\n", charCount); // Debug...
   }
+  else
+  {
+    isValidWalkLength       = false;
+    printf("charCount = [%d]\n", charCount); // Debug...
+  }
+//   // Confirm Walker Made it Home
+//   for (; *walk != '\0'; *walk++)
+//   {
+//     switch (*walk)
+//     {
+//       case 'n':
+//         *(pGrid + (row-- * SQUARE_DIMENSION) + position) = marker;
+//         nCount++;
+//         break;
+//       case 's':
+//         *(pGrid + (row++ * SQUARE_DIMENSION) + position) = marker;
+//         sCount++;
+//         break;
+//       case 'e':
+//         *(pGrid + (row * SQUARE_DIMENSION) + position--) = marker;
+//         eCount++;
+//         break;
+//       case 'w':
+//         *(pGrid + (row * SQUARE_DIMENSION) + position++) = marker;
+//         wCount++;
+//         break;
+//       }
+//   }
   
-  if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
-  isWalkerHome            = true;
+//   if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+//   isWalkerHome            = true;
 
-  if ((nCount) || (sCount) || (eCount) || (wCount) < boundary)
-  isWalkerWithinBounds    = true;
+//   if ((nCount) || (sCount) || (eCount) || (wCount) < boundary)
+//   isWalkerWithinBounds    = true;
 
-  if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
-    return true;
+//   if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
+  if (isValidWalkLength)
+        return true;
   return false;
 }
 
 int main(void)
 {
   // char *pGrid = NULL;
-  void *pGrid = NULL;
-  pGrid = gridSquare;
+  // void *pGrid = NULL;
+  // pGrid = gridSquare;
   
   // char *walk = {"nnwwwsseee"}; // Valid
-  char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds
+  char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds Length
+  //char *walk = {"nsnwensse"}; // Not Valid
   //char *walk = {"nsnwensses"}; // Not Valid
   
-  if (isValidWalk(walk))
-    printf("PASSED...\n");
-  printf("No Egg...\n");
-  
+  // if (isValidWalk(walk))
+  //   printf("PASSED...\n");
+  // printf("No Egg...\n");
+
+  (isValidWalk(walk)) ? printf("PASSED...\n") : printf("No Egg...\n"); 
+    
   return(0);
 }
 
