@@ -278,27 +278,27 @@ void displayWinBoard(void)
 #include                    <stdio.h>
 #include                    <stdlib.h>
 #include                    <stdbool.h>
-// #define                     SQUARE_DIMENSION 11
+#define                     SQUARE_DIMENSION 11
 
-// char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
-// {
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-// };
+char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
+{
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+};
 
 bool isValidWalk(const char *walk) 
 {
-  // char *pGrid               = (char *)malloc(sizeof(gridSquare));
-  // pGrid                     = gridSquare;
+  void *pGrid               = (char *)malloc(sizeof(gridSquare));
+  pGrid                     = gridSquare;
   // Define local variables
   int   charCount           = 0;
 //   int   row                 = 5;
@@ -363,11 +363,9 @@ bool isValidWalk(const char *walk)
 
 //   if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
   
-  // if (isValidWalkLength)
-  //       return true;
-  // return false;
-  
-  isValidWalkLength ? return true : return false;
+  if (isValidWalkLength)
+        return true;
+  return false;
 }
 
 int main(void)
