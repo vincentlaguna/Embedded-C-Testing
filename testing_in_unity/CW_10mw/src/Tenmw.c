@@ -301,18 +301,18 @@ bool isValidWalk(const char *walk)
   pGrid                     = gridSquare;
   // Define local variables
   int   charCount           = 0;
-//   int   row                 = 5;
-//   int   position            = 5;
-//   int   boundary            = 5;
-//   int   nCount              = 0;
-//   int   sCount              = 0;
-//   int   eCount              = 0;
-//   int   wCount              = 0;
-//   char  marker              = 'X';
-//   // Define Booleans
+  int   row                 = 5;
+  int   position            = 5;
+  int   boundary            = 5;
+  int   nCount              = 0;
+  int   sCount              = 0;
+  int   eCount              = 0;
+  int   wCount              = 0;
+  char  marker              = 'X';
+  // Define Booleans
   bool isValidWalkLength    = false;
-//   bool isWalkerHome         = false;
-//   bool isWalkerWithinBounds = false;
+  bool isWalkerHome         = false;
+  bool isWalkerWithinBounds = false;
   
   // Confirm Walk Length
   while (*walk)
