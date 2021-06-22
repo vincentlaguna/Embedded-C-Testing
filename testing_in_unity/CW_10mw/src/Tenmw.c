@@ -297,7 +297,7 @@ char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 
 bool isValidWalk(const char *walk) 
 {
-  void *pGrid               = (char *)malloc(sizeof(gridSquare));
+  char *pGrid               = (char *)malloc(sizeof(gridSquare));
   pGrid                     = gridSquare;
   // Define local variables
   int   charCount           = 0;
@@ -331,39 +331,40 @@ bool isValidWalk(const char *walk)
     isValidWalkLength       = false;
     printf("charCount = [%d]\n", charCount); // Debug...
   }
-//   // Confirm Walker Made it Home
-//   for (; *walk != '\0'; *walk++)
-//   {
-//     switch (*walk)
-//     {
-//       case 'n':
-//         *(pGrid + (row-- * SQUARE_DIMENSION) + position) = marker;
-//         nCount++;
-//         break;
-//       case 's':
-//         *(pGrid + (row++ * SQUARE_DIMENSION) + position) = marker;
-//         sCount++;
-//         break;
-//       case 'e':
-//         *(pGrid + (row * SQUARE_DIMENSION) + position--) = marker;
-//         eCount++;
-//         break;
-//       case 'w':
-//         *(pGrid + (row * SQUARE_DIMENSION) + position++) = marker;
-//         wCount++;
-//         break;
-//       }
-//   }
+  // Confirm Walker Made it Home
+  for (; *walk != '\0'; *walk++)
+  {
+    switch (*walk)
+    {
+      case 'n':
+        *(pGrid + (row-- * SQUARE_DIMENSION) + position) = marker;
+        nCount++;
+        break;
+      case 's':
+        *(pGrid + (row++ * SQUARE_DIMENSION) + position) = marker;
+        sCount++;
+        break;
+      case 'e':
+        *(pGrid + (row * SQUARE_DIMENSION) + position--) = marker;
+        eCount++;
+        break;
+      case 'w':
+        *(pGrid + (row * SQUARE_DIMENSION) + position++) = marker;
+        wCount++;
+        break;
+      }
+  }
   
-//   if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
-//   isWalkerHome            = true;
+  if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
+    isWalkerHome            = true;
 
 //   if ((nCount) || (sCount) || (eCount) || (wCount) < boundary)
 //   isWalkerWithinBounds    = true;
 
 //   if ((isValidWalkLength) && (isWalkerHome) && (isWalkerWithinBounds) != false)
   
-  if (isValidWalkLength)
+  // if (isValidWalkLength)
+  if (isWalkerHome)
         return true;
   return false;
 }
