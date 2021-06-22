@@ -331,6 +331,18 @@ bool isValidWalk(const char *walk)
     isValidWalkLength       = false;
     printf("charCount = [%d]\n", charCount); // Debug...
   }
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      *(pGrid + (x * SQUARE_DIMENSION)) = '0';
+      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
+  
   // Confirm Walker Made it Home
   for (; *walk != '\0'; *walk++)
   {
@@ -354,6 +366,16 @@ bool isValidWalk(const char *walk)
         break;
       }
   }
+  
+  for (int x = 0; x < SQUARE_DIMENSION; x++)
+  {
+    for (int y = 0; y < SQUARE_DIMENSION; y++)
+    {
+      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
   
   if (marker == *(pGrid + (row * SQUARE_DIMENSION) + position))
     isWalkerHome            = true;
