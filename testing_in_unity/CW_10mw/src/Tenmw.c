@@ -366,6 +366,7 @@ bool isValidWalk(const char *walk)
   // if (isValidWalkLength)
   if (isWalkerHome)
         return true;
+  printf("Failing, yet again...");      
   return false;
 }
 
