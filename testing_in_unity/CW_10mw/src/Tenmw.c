@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-// #define _TEST
+#define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -57,7 +57,7 @@ int main(void)
 #ifndef _TEST
     
   displayBoard();
-  // displayGrid(pGrid, SQUARE_DIMENSION);
+  displayGrid(pGrid, SQUARE_DIMENSION);
   moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
 #endif
   
@@ -336,8 +336,8 @@ bool isValidWalk(const char *walk)
   {
     for (int y = 0; y < SQUARE_DIMENSION; y++)
     {
-      *(pGrid + (x * SQUARE_DIMENSION)) = '0';
       printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
+      *(pGrid + (x * SQUARE_DIMENSION)) = '0';
     }
     printf("\n");
   }
