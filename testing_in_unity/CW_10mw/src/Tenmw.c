@@ -12,14 +12,14 @@
 * return you to your starting point. Return false otherwise.                       *
 *                                                                                  *
 * **********************************************************************************/
-#define _CW
+// #define _CW
 #ifndef _CW
 /******************** NCW ***********************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+// #define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
