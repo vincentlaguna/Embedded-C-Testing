@@ -280,7 +280,7 @@ void displayWinBoard(void)
 #include                    <stdbool.h>
 #define                     SQUARE_DIMENSION 11
 
-char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
+const char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
@@ -298,7 +298,7 @@ char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 bool isValidWalk(const char *walk) 
 {
   char *pGrid               = (char *)malloc(sizeof(gridSquare));
-  pGrid                     = gridSquare;
+  // pGrid                     = gridSquare;
   // Define local variables
   int   charCount           = 0;
   int   row                 = 5;
