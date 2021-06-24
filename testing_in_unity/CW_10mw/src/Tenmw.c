@@ -12,14 +12,14 @@
 * return you to your starting point. Return false otherwise.                       *
 *                                                                                  *
 * **********************************************************************************/
-// #define _CW
+#define _CW
 #ifndef _CW
 /******************** NCW ***********************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-#define _TEST
+// #define _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -336,8 +336,8 @@ bool isValidWalk(const char *walk)
   {
     for (int y = 0; y < SQUARE_DIMENSION; y++)
     {
-      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
       *(pGrid + (x * SQUARE_DIMENSION)) = '0';
+      printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
     }
     printf("\n");
   }
