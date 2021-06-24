@@ -280,24 +280,7 @@ void displayWinBoard(void)
 #include                    <stdbool.h>
 #define                     SQUARE_DIMENSION 11
 
-// char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
-// {
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-//   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-// };
-
-bool isValidWalk(const char *walk) 
-{
-  char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
+char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
@@ -311,7 +294,9 @@ bool isValidWalk(const char *walk)
   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
   {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
 };
-  
+
+bool isValidWalk(const char *walk) 
+{
   char *pGrid               = (char *)malloc(sizeof(gridSquare));
   pGrid                     = gridSquare;
   // Define local variables
@@ -351,7 +336,7 @@ bool isValidWalk(const char *walk)
   {
     for (int y = 0; y < SQUARE_DIMENSION; y++)
     {
-      *(pGrid + (x * SQUARE_DIMENSION)) = '0';
+      *(pGrid + (x * SQUARE_DIMENSION) + y) = '0';
       printf("%c ", *(pGrid + ((x * SQUARE_DIMENSION) + y)));
     }
     printf("\n");
