@@ -12,7 +12,7 @@
 * return you to your starting point. Return false otherwise.                       *
 *                                                                                  *
 * **********************************************************************************/
-#define _CW
+// #define _CW
 #ifndef _CW
 /******************** NCW ***********************/
 #include <stdio.h>
