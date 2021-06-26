@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Re-factoring build on private repo using Unity for our System Variable - 062621
 - Migrating GTest items to private repo for testing production code - setup - 062321
 - Cleaning up unused portions in this EC2 instance, need to complete the CW_10mw project - 061621
 - Having trouble on last section of the course, reverted to last working state: vector assertions - 061421
