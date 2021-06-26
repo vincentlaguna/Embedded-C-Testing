@@ -50,8 +50,8 @@ int main(void)
   void *pGrid = NULL;
   pGrid = gridSquare;
   
-  // char *walk = {"nnwwwsseee"}; // Valid
-  char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds
+  char *walk = {"nnwwwsseee"}; // Valid
+  // char *walk = {"eeeeeennnn"}; // Not Valid - Out of bounds
   //char *walk = {"nsnwensses"}; // Not Valid
   
 #ifndef _TEST
