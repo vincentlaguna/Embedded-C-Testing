@@ -96,7 +96,7 @@ TEST(, )
 /**************************************************/
 
 
-/**********VECTOR ASSERTIONS - TEST CASES**********
+/**********VECTOR ASSERTIONS - TEST CASES**********/
 
 TEST(VectorTests, ElementsAreTest)
 {
