@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- See "Google Test Projects Updates" - 06282021
 - Re-factoring build on private repo using Unity for our System Variables and Base defines - 062621
 - Migrating GTest items to private repo for testing production code - setup - 062321
 - Cleaning up unused portions in this EC2 instance, need to complete the CW_10mw project - 061621
@@ -60,3 +61,6 @@ Updates:
 - Need to fix the test buid, I don't know why it's broken... 
 - docker run -it --rm -v $PWD:/lab throwtheswitch/drsurly-course2
 - Migrated repository 10-10-2020
+
+Google Test Projects Updates:
+- Initial setup and commit for simple Google Test Projects - 06282021
