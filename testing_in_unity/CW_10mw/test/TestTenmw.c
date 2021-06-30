@@ -52,7 +52,7 @@ void test_moveWalkerOutofBounds_should_return_False(void)
 
 // void test_TheFourth(void) {
 //     TEST_ASSERT_TRUE(0 == 1);
-// }
+// } // Let's try a random char generator....
 
 // void test_TheFifth(void) {
 //     TEST_ASSERT_FALSE(1 == 1);
