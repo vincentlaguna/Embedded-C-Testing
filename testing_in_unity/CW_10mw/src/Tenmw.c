@@ -46,6 +46,7 @@ int main(void)
 {
 #endif
 
+  /*
   // char *pGrid = NULL;
   void *pGrid = NULL;
   pGrid = gridSquare;
@@ -59,7 +60,10 @@ int main(void)
   displayBoard();
   displayGrid(pGrid, SQUARE_DIMENSION);
   moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
+  
 #endif
+  */
+  randomCharGenerator();
   
   return(0);
 }
