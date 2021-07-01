@@ -1,8 +1,8 @@
 #ifndef     TENMW_H
+
 #define     TENMW_H
-
 #define     SQUARE_DIMENSION 11
-
+#include    <stdlib.h>
 #include    <stdbool.h>
 
 extern char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION];
@@ -21,7 +21,7 @@ bool        moveWalkerHome(const char *walk, char *grid, int n);
 
 void /*char*/        randomCharGenerator(void)
 {
-  printf("\n\tTesting Random Char Function\n")
+  printf("\n\tTesting Random Char Function\n\n");
 }
 
 /*********************************************/
