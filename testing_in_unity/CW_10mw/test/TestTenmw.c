@@ -21,11 +21,10 @@ void test_moveWalkerHome_should_return_True_onValidPosition(void)
   char *pGrid = NULL;
   pGrid = gridSquare;
   
-  const char *walk = {"nnwwwsseen"};
-  //const char *walk = {"wwwwwwwwww"};
+  char *walk = {"nnwwwsseee"};
+  // const char *walk = {"wwwwwwwwww"};
   
-  TEST_ASSERT_FALSE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
-
+  TEST_ASSERT_TRUE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
 }
 
 void test_moveWalkerHome_should_return_False_onInvalidPosition(void)
@@ -33,10 +32,9 @@ void test_moveWalkerHome_should_return_False_onInvalidPosition(void)
   char *pGrid = NULL;
   pGrid = gridSquare;
   
-  const char *walk = {"nnwwwsseee"};
+  char *walk = {"nsnwensses"};
   
-  TEST_ASSERT_TRUE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
-
+  TEST_ASSERT_FALSE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
 }
 
 void test_moveWalkerOutofBounds_should_return_False(void)
@@ -47,12 +45,18 @@ void test_moveWalkerOutofBounds_should_return_False(void)
   const char *walk = {"eeeeeeeeee"};
   
   TEST_ASSERT_FALSE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
-
 }
 
-// void test_TheFourth(void) {
-//     TEST_ASSERT_TRUE(0 == 1);
-// } // Let's try a random char generator....
+// void test_moveWalkerHome_should_return_True_onValidPosition(void)
+// {
+//   char *pGrid = NULL;
+//   pGrid = gridSquare;
+  
+//   const char *walk = {"nnwwwsseen"};
+//   //const char *walk = {"wwwwwwwwww"};
+  
+//   TEST_ASSERT_FALSE(moveWalkerHome(walk, pGrid, SQUARE_DIMENSION));
+// }
 
 // void test_TheFifth(void) {
 //     TEST_ASSERT_FALSE(1 == 1);

@@ -17,13 +17,13 @@ bool        isValidWalkLength(const char *walk);
 
 bool        moveWalkerHome(const char *walk, char *grid, int n);
 
-/**********  Random Char Generator  **********/
+// /**********  Random Char Generator  **********/
 
-void /*char*/        randomCharGenerator(void)
-{
-  printf("\n\tTesting Random Char Function\n\n");
-}
+// void /*char*/        randomCharGenerator(void)
+// {
+//   printf("\n\tTesting Random Char Function\n\n");
+// }
 
-/*********************************************/
+// /*********************************************/
 
 #endif //TENMW_H

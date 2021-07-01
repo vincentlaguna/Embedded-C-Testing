@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "../inc/Tenmw.h"
-// #define _TEST
+#define  _TEST
 
 char gridSquare[SQUARE_DIMENSION][SQUARE_DIMENSION] =
 {
@@ -46,7 +46,7 @@ int main(void)
 {
 #endif
 
-  /*
+  
   // char *pGrid = NULL;
   void *pGrid = NULL;
   pGrid = gridSquare;
@@ -62,8 +62,8 @@ int main(void)
   moveWalkerHome(walk, pGrid, SQUARE_DIMENSION);
   
 #endif
-  */
-  randomCharGenerator();
+  
+  // randomCharGenerator();
   
   return(0);
 }
@@ -152,12 +152,7 @@ bool moveWalkerHome(const char *walk, char *grid, int n)
   char marker = 'X';
   
   for (; *walk != '\0'; *walk++)
-  //for (int direction = 0; *walk != '\0'; *walk++, direction++)
   {
-    // #ifndef _TEST
-    //   printf("%d = %c\n", direction, *walk);
-    // #endif
-    
     switch (*walk)
     {
       case 'n':
