@@ -16,7 +16,7 @@ void test_fWalk_should_notBeTenMinutes(void)
   TEST_ASSERT_FALSE(isValidWalkLength(fWalk));
 }
 
-void test_moveWalkerHome_should_return_validPosition(void)
+void test_moveWalkerHome_should_return_True_onValidPosition(void)
 {
   char *pGrid = NULL;
   pGrid = gridSquare;
@@ -64,7 +64,7 @@ int main(void)
     
   RUN_TEST(test_walk_should_BeTenMinutes);
   RUN_TEST(test_fWalk_should_notBeTenMinutes);
-  RUN_TEST(test_moveWalkerHome_should_return_validPosition);
+  RUN_TEST(test_moveWalkerHome_should_return_True_onValidPosition);
   RUN_TEST(test_moveWalkerHome_should_return_False_onInvalidPosition);
   RUN_TEST(test_moveWalkerOutofBounds_should_return_False);
   // RUN_TEST(test_TheFifth);
