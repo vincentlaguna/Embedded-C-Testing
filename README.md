@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Started course: UAMx ProgC01 - 07022021
 - See "Google Test Projects Updates" - 06302021
 - Migrating GTest items to private repo for testing production code - setup - 062321
 - Cleaning up unused portions in this EC2 instance, need to complete the CW_10mw project - 061621
