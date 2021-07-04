@@ -8,11 +8,11 @@
 
 int main(void)
 {
-  int     temporadas;
-  int     capitulos;
-  int     duracion;
-  double  intro;
-  double  total;
+  int   temporadas;
+  int   capitulos;
+  int   duracion;
+  float intro;
+  float total;
   
   printf("\nPiensa en una serie que hayas visto...\n\n");
   printf("¿Cuántas temporadas tiene?\n");
@@ -23,14 +23,16 @@ int main(void)
   scanf("%d", &capitulos);
   printf("¿Cuántos minutos duran aproximadamente los capítulos?\n");
   printf("Entre numero: ");
-  scanf("%lf", &duracion);
+  scanf("%d", &duracion);
   printf("¿Y su intro?\n");
   printf("Entre numero: ");
-  scanf("%lf", &intro);
+  scanf("%f", &intro);
   
-  total = temporadas * capitulos * (duracion - intro) / 60;
+  printf("t = %d, c = %d, d = %d, i = %f\n", temporadas, capitulos, duracion, intro); // Debug
   
-  printf("\n¡En total has invertido unas %lf horas en ver la serie!\n", total);
+  total = ((duracion - intro) * capitulos * temporadas) / 60;
+  
+  printf("\n¡En total has invertido unas %.2f horas en ver la serie!\n", total);
   
   return(0);
 }
