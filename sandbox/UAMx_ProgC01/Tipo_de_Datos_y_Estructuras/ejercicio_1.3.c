@@ -14,6 +14,11 @@ int main(void)
   float intro;
   float total;
   
+  /******************************************/
+
+
+/**********ACCOUNT CLASS TEST CASES**********
+  
   printf("\nPiensa en una serie que hayas visto...\n\n");
   printf("¿Cuántas temporadas tiene?\n");
   printf("Entre numero: ");
