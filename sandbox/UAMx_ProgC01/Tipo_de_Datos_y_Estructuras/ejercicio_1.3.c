@@ -40,4 +40,23 @@ int main(void)
 }
 
 /******************************************/
+
+#include <stdio.h>
+
+int main() 
+{
+  double euros;
+  double dolares;
+   
+  printf("Introduzca cantidad en dólares: ");
+  scanf("%lf", &dolares);
+   
+  euros = dolares * 0.859;
+  printf("%.2lf dólares son %.2lf euros.\n", euros, dolares);
+   
+  return 0;
+}
+
+/******************************************/
+
   
