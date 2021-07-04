@@ -4,6 +4,8 @@
 // ¿Cuántos minutos duran aproximadamente los capítulos? 22
 // ¿Y su intro? 0.5
 // ¡En total has invertido unas 10.75 horas en ver la serie!
+
+/******************************************
 #include <stdio.h>
 
 int main(void)
@@ -13,12 +15,7 @@ int main(void)
   int   duracion;
   float intro;
   float total;
-  
-  /******************************************/
 
-
-/**********ACCOUNT CLASS TEST CASES**********
-  
   printf("\nPiensa en una serie que hayas visto...\n\n");
   printf("¿Cuántas temporadas tiene?\n");
   printf("Entre numero: ");
@@ -41,3 +38,6 @@ int main(void)
   
   return(0);
 }
+
+/******************************************/
+  
