@@ -192,35 +192,30 @@ int main() {
 
 #include <stdio.h>
 
-int main() {
-    // char    Sexo      = 'M';
-    // int     CP        = 2764;
-    // int     HP        = 159;
-    // double  Peso      = 183.0;
-    // float   Altura    = 2.32;
-    // int     Caramelos = 266;
-    int     CP, HP, Caramelos;
-    char    Sexo;
-    double  Altura;
-    double  Peso;
+int main() 
+{
+  int     CP, HP, Caramelos;
+  char    Sexo;
+  double  Altura;
+  double  Peso;
     
-    printf("Entre El Sexo: ");
-    scanf("%c", &Sexo);
-    printf("Entre CP: ");
-    scanf("%d", &CP);
-    printf("Entre HP: ");
-    scanf("%d", &HP);
-    printf("Entre El Peso: ");
-    scanf("%lf", &Peso);
-    printf("Entre La Altura: ");
-    scanf("%lf", &Altura);
-    printf("Entre Numero de Caramelos: ");
-    scanf("%d", &Caramelos);
+  printf("Entre El Sexo: ");
+  scanf("%c", &Sexo);
+  printf("Entre CP: ");
+  scanf("%d", &CP);
+  printf("Entre HP: ");
+  scanf("%d", &HP);
+  printf("Entre El Peso: ");
+  scanf("%lf", &Peso);
+  printf("Entre La Altura: ");
+  scanf("%lf", &Altura);
+  printf("Entre Numero de Caramelos: ");
+  scanf("%d", &Caramelos);
     
-    printf("Sexo: %c, CP: %d, HP: %d, Peso: %.1lf, Altura: %.2lf, Caramelos: %d\n", 
+  printf("Sexo: %c, CP: %d, HP: %d, Peso: %.1lf, Altura: %.2lf, Caramelos: %d\n", 
             Sexo, CP, HP, Peso, Altura, Caramelos);
    
-    return 0;
+  return 0;
 }
 
 /*********************************************/  
