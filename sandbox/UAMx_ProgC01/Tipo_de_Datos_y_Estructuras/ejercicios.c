@@ -185,7 +185,7 @@ int main() {
 /*********************************************/  
 
 
-/*************** Ejercicio 2.2 ***************/
+/*************** Ejercicio 2.2 ***************
 // Modifica ahora el programa anterior para que no inicialice el valor de las variables al declararlas, 
 // sino que se soliciten al usuario de una en una y después las muestre por pantalla.
 // Recuerda, hemos definido los siguientes atributos: sexo (M/F), CP, HP, peso, altura y caramelos.
@@ -214,6 +214,48 @@ int main()
     
   printf("Sexo: %c, CP: %d, HP: %d, Peso: %.1lf, Altura: %.2lf, Caramelos: %d\n", 
             Sexo, CP, HP, Peso, Altura, Caramelos);
+   
+  return 0;
+}
+
+/*********************************************/ 
+
+
+/*************** Ejercicio 2.3 ***************/
+// Vamos a cambiar el programa anterior para que muestre por pantalla el tamaño'
+// de cada variable con el operador sizeof() en vez de su valor. 
+// Con los datos del ejemplo que hemos ido utilizando, la salida del programa sería:
+// Tamaño variable sexo: ...
+// Tamaño variable CP: ...
+// Tamaño variable HP: ...
+// Tamaño variable peso: ...
+// Tamaño variable altura: ...
+// Tamaño variable caramelos: ...
+
+#include <stdio.h>
+
+int main() 
+{
+  int     CP, HP, Caramelos;
+  char    Sexo;
+  double  Altura;
+  double  Peso;
+    
+  printf("Entre El Sexo: ");
+  scanf("%c", &Sexo);
+  printf("Entre CP: ");
+  scanf("%d", &CP);
+  printf("Entre HP: ");
+  scanf("%d", &HP);
+  printf("Entre El Peso: ");
+  scanf("%lf", &Peso);
+  printf("Entre La Altura: ");
+  scanf("%lf", &Altura);
+  printf("Entre Numero de Caramelos: ");
+  scanf("%d", &Caramelos);
+    
+  printf("Sexo: %d, CP: %d, HP: %d, Peso: %d, Altura: %d, Caramelos: %d\n", 
+            sizeof(char), sizeof(int), sizeof(int), sizeof(double), sizeof(double), sizeof(int));
    
   return 0;
 }
