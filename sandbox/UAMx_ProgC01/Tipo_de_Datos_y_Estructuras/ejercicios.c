@@ -45,7 +45,7 @@ int main(void)
 
 #include <stdio.h>
 
-int main() 
+int main(void) 
 {
   double euros;
   double dolares;
@@ -139,7 +139,7 @@ int main(void)
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     int x=1, y=2;
     double x=3.5;
     char c='d';
@@ -168,7 +168,7 @@ int main() {
 
 #include <stdio.h>
 
-int main() {
+int main(void) {
     char    Sexo      = 'M';
     int     CP        = 2764;
     int     HP        = 159;
@@ -192,7 +192,7 @@ int main() {
 
 #include <stdio.h>
 
-int main() 
+int main(void) 
 {
   int     CP, HP, Caramelos;
   char    Sexo;
@@ -234,7 +234,7 @@ int main()
 
 #include <stdio.h>
 
-int main() 
+int main(void) 
 {
   int     CP, HP, Caramelos;
   char    Sexo;
@@ -254,7 +254,7 @@ int main()
   printf("Entre Numero de Caramelos: ");
   scanf("%d", &Caramelos);
     
-  printf("Sexo: %d, CP: %d, HP: %d, Peso: %d, Altura: %d, Caramelos: %d\n", 
+  printf("Tamaño de:\nSexo: %d, CP: %d, HP: %d, Peso: %d, Altura: %d, Caramelos: %d\n", 
             sizeof(char), sizeof(int), sizeof(int), sizeof(double), sizeof(double), sizeof(int));
    
   return 0;
