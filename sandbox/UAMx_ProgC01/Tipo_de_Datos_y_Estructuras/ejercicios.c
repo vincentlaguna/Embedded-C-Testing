@@ -51,10 +51,11 @@ int main()
   double dolares;
    
   printf("Introduzca cantidad en dólares: ");
-  scanf("%lf", &dolares);
+  scanf("%o", &dolares);
    
   euros = dolares * 0.859;
-  printf("%.2lf dólares son %.2lf euros.\n", euros, dolares);
+  // printf("%.2lf dólares son %.2lf euros.\n", euros, dolares);
+  printf("%o dólares son %o euros.\n", euros, dolares);
    
   return 0;
 }
@@ -62,7 +63,7 @@ int main()
 /*********************************************/
 
 
-/*************** Ejercicio 1.4 ***************/
+/*************** Ejercicio 1.4 ***************
 // Ahora escribe un programa que pida al usuario el número de horas que ha pasado jugando en sus 
 // últimos cinco videojuegos y cuánto le costaron para saber por cuánto le sale de media la hora jugada.
 // Como puedes suponer, la fórmula para calcular dicho tiempo sería:
@@ -131,10 +132,54 @@ int main(void)
   return(0);
 }
 
+/*********************************************/ 
+
+
+/*********************************************
+
+#include <stdio.h>
+
+int main() {
+    int x=1, y=2;
+    double x=3.5;
+    char c='d';
+   
+    printf("%d %d\n", x, y);
+    printf("%lf\n", x);
+    printf("%c\n", c);
+   
+    return 0;
+}
 
 /*********************************************/ 
 
-/*************** Ejercicio 1.3 ***************/
+
+/*************** Ejercicio 2.1 ***************/
+// Escribe un programa que muestre por pantalla los siguientes datos de usuario en el mismo orden:
+// Sexo: M
+// CP: 2764
+// HP: 159
+// Peso: 183.0
+// Altura: 2.32
+// Caramelos: 266
+// Para ello, declara las variables del tipo que consideres (int, double, etc.). 
+// Ten en cuenta que debes inicializar las variables en su declaración, no solicitar los valores al usuario.
+
+#include <stdio.h>
+
+int main() {
+    char    Sexo      = 'M';
+    int     CP        = 2764;
+    int     HP        = 159;
+    double  Peso      = 183.0;
+    float   Altura    = 2.32;
+    int     Caramelos = 266;
+   
+    printf("Sexo: %c, CP: %d, HP: %d, Peso: %.1lf, Altura: %.2lf, Caramelos: %d\n", 
+            Sexo, CP, HP, Peso, Altura, Caramelos);
+   
+    return 0;
+}
 
 /*********************************************/  
 
