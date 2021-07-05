@@ -126,7 +126,7 @@ int main(void)
   
   total = (((precio1/tiempo1) + (precio2/tiempo2) + (precio3/tiempo3) + (precio4/tiempo4) + (precio5/tiempo5)) / 5);
   
-  printf("\n¡Los últimos 5 juegos te han salido a %lf euros la hora!\n", total);
+  printf("\n¡Los últimos 5 juegos te han salido a %lf euros la hora!\n\n", total);
   
   return(0);
 }
