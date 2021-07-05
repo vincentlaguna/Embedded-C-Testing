@@ -154,7 +154,7 @@ int main() {
 /*********************************************/ 
 
 
-/*************** Ejercicio 2.1 ***************/
+/*************** Ejercicio 2.1 ***************
 // Escribe un programa que muestre por pantalla los siguientes datos de usuario en el mismo orden:
 // Sexo: M
 // CP: 2764
@@ -163,7 +163,8 @@ int main() {
 // Altura: 2.32
 // Caramelos: 266
 // Para ello, declara las variables del tipo que consideres (int, double, etc.). 
-// Ten en cuenta que debes inicializar las variables en su declaración, no solicitar los valores al usuario.
+// Ten en cuenta que debes inicializar las variables en su declaración, 
+// no solicitar los valores al usuario.
 
 #include <stdio.h>
 
@@ -183,10 +184,60 @@ int main() {
 
 /*********************************************/  
 
-/*************** Ejercicio 1.3 ***************/
+
+/*************** Ejercicio 2.2 ***************/
+// Modifica ahora el programa anterior para que no inicialice el valor de las variables al declararlas, 
+// sino que se soliciten al usuario de una en una y después las muestre por pantalla.
+// Recuerda, hemos definido los siguientes atributos: sexo (M/F), CP, HP, peso, altura y caramelos.
+
+#include <stdio.h>
+
+int main() {
+    // char    Sexo      = 'M';
+    // int     CP        = 2764;
+    // int     HP        = 159;
+    // double  Peso      = 183.0;
+    // float   Altura    = 2.32;
+    // int     Caramelos = 266;
+    int     CP, HP, Caramelos;
+    char    Sexo;
+    double  Altura;
+    double  Peso;
+    
+    printf("Entre El Sexo: ");
+    scanf("%c", &Sexo);
+    printf("Entre CP: ");
+    scanf("%d", &CP);
+    printf("Entre HP: ");
+    scanf("%d", &HP);
+    printf("Entre El Peso: ");
+    scanf("%lf", &Peso);
+    printf("Entre La Altura: ");
+    scanf("%lf", &Altura);
+    printf("Entre Numero de Caramelos: ");
+    scanf("%d", &Caramelos);
+    
+    printf("Sexo: %c, CP: %d, HP: %d, Peso: %.1lf, Altura: %.2lf, Caramelos: %d\n", 
+            Sexo, CP, HP, Peso, Altura, Caramelos);
+   
+    return 0;
+}
+
+/*********************************************/  
+
+
+/*********************************************/
+
+/*********************************************/  
+
+/*************** Ejercicio 2.3 ***************/
 
 /*********************************************/  
 
 /*************** Ejercicio 1.3 ***************/
+
+/*********************************************/  
+
+/*********************************************/
 
 /*********************************************/  
