@@ -299,8 +299,8 @@ int main()
   printf("Introduce una letra: ");
   scanf("%c", &c1);
   printf("Introduce otra letra: ");
-  scanf("%c", &c2);
-  
+  // scanf("%c", &c2); // El programa lee la segunda entrada como "\n"...
+  scanf("\n%c", &c2); // Solucion
   printf("Has introducido las letras %c y %c\n", c1, c2);
   printf("Has introducido las letras con número %d y %d\n", c1, c2);
   
