@@ -276,12 +276,13 @@ int main(void)
 
 int main(void) 
 {
-  setlocale(LC_CTYPE, ""); 
-  char uno     = 67;
-  char dos     = 130;
-  char tres    = 115;
-  char cuatro  = 97;
-  char cinco   = 114;
+  setlocale(LC_ALL, "es_SP");
+  
+  unsigned char uno     = 67+1;
+  unsigned char dos     = 130+1;
+  unsigned char tres    = 115+1;
+  unsigned char cuatro  = 97+1;
+  unsigned char cinco   = 114+1;
    
   printf("\n '%c' '%c' '%c' '%c' '%c' \n", uno, dos, tres, cuatro, cinco);
    
