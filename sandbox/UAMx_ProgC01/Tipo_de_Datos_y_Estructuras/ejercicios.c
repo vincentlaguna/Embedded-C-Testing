@@ -221,7 +221,7 @@ int main(void)
 /*********************************************/ 
 
 
-/*************** Ejercicio 2.3 ***************/
+/*************** Ejercicio 2.3 ***************
 // Vamos a cambiar el programa anterior para que muestre por pantalla el tamaño'
 // de cada variable con el operador sizeof() en vez de su valor. 
 // Con los datos del ejemplo que hemos ido utilizando, la salida del programa sería:
@@ -261,6 +261,34 @@ int main(void)
 }
 
 /*********************************************/  
+
+/*************** Ejercicio 2.4 ***************/
+// Vamos a escribir un programa que nos permita cifrar cinco letras mediante el cifrado César. 
+// Este algoritmo de cifrado consiste en sustituir la letra original por la que corresponde 
+// 3 posiciones después en el alfabeto; es decir, la letra 'a' se sustituye por la letra 'd'.
+// De esta forma, si el programa codifica 'm', 'a', 'n', 'o', 's' tendrá esta salida:
+// La palabra original es: manos
+// La palabra cifrada es: pdqrv
+
+#include <stdio.h>
+#include <wchar.h>
+#include <locale.h>
+
+int main(void) 
+{
+  setlocale(LC_CTYPE, ""); 
+  char uno     = 67;
+  char dos     = 130;
+  char tres    = 115;
+  char cuatro  = 97;
+  char cinco   = 114;
+   
+  printf("\n '%c' '%c' '%c' '%c' '%c' \n", uno, dos, tres, cuatro, cinco);
+   
+  return 0;
+}
+
+/*********************************************/
 
 
 /*********************************************/
