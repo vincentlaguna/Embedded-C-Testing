@@ -262,7 +262,7 @@ int main(void)
 
 /*********************************************/  
 
-/*************** Ejercicio 2.4 ***************/
+/*************** Ejercicio 2.4 ***************
 // Vamos a escribir un programa que nos permita cifrar cinco letras mediante el cifrado César. 
 // Este algoritmo de cifrado consiste en sustituir la letra original por la que corresponde 
 // 3 posiciones después en el alfabeto; es decir, la letra 'a' se sustituye por la letra 'd'.
@@ -291,6 +291,21 @@ int main(void)
 
 /*********************************************/
 
+#include <stdio.h>
+
+int main() 
+{
+  char c1, c2;
+  printf("Introduce una letra: ");
+  scanf("%c", &c1);
+  printf("Introduce otra letra: ");
+  scanf("%c", &c2);
+  
+  printf("Has introducido las letras %c y %c\n", c1, c2);
+  printf("Has introducido las letras con número %d y %d\n", c1, c2);
+  
+  return 0;
+}
 
 /*********************************************/
 
