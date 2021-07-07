@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Start looking into SystemTap implementation in the kernel - 07072021
 - Started course: UAMx ProgC01 - 07032021
 - See "Google Test Projects Updates" - 06302021
 - Migrating GTest items to private repo for testing production code - setup - 062321
