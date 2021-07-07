@@ -351,6 +351,49 @@ int main(void)
 
 /*********************************************/
 
+
+/*************** Ejercicio 2.6 ***************/
+// Y por último, vamos a modificar el programa anterior para que nos permita 
+// descifrar cinco letras que introduzca el usuario, de una en una.
+// Este sería un ejemplo de entrada y salida del programa, utilizando 
+// la palabra cifrada que hemos obtenido en el programa anterior:
+// Introduce un carácter: K
+// Introduce un segundo carácter: r
+// Introduce un tercer carácter: p
+// Introduce otro carácter: h
+// Introduce el último carácter: u
+// La palabra cifrada es: Krphu
+// La palabra original es: Homer
+
+#include <stdio.h>
+#include <wchar.h>
+#include <locale.h>
+
+int main(void) 
+{
+  setlocale(LC_ALL, "es_SP");
+  
+  unsigned char c1, c2, c3, c4, c5 = 0;
+  
+  printf("\nIntroduce un carácter: ");
+  scanf("%c", &c1);
+  printf("Introduce un segundo carácter: ");
+  scanf("\n%c", &c2);
+  printf("Introduce un tercer carácter: ");
+  scanf("\n%c", &c3);
+  printf("Introduce un otro carácter: ");
+  scanf("\n%c", &c4);
+  printf("Introduce el último carácter: ");
+  scanf("\n%c", &c5);
+  
+  printf("\nLa palabra original es: %c%c%c%c%c\n", c1, c2, c3, c4, c5);
+  printf("La palabra original es: %c%c%c%c%c\n\n", c1 - 2, c2 - 2, c3 - 2, c4 - 2, c5 - 2); 
+  
+  return 0;
+}
+
+/*********************************************/  
+
 /*********************************************/  
 
 /*********************************************/  
