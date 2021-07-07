@@ -387,7 +387,7 @@ int main(void)
   scanf("\n%c", &c5);
   
   printf("\nLa palabra cifrada es: %c%c%c%c%c\n", c1, c2, c3, c4, c5);
-  printf("La palabra original es: %c%c%c%c%c\n\n", c1 + 2, c2 + 2, c3 + 2, c4 + 2, c5 + 2); 
+  printf("La palabra original es: %c%c%c%c%c\n\n", c1 - 3, c2 - 3, c3 - 3, c4 - 3, c5 - 3); 
   
   return 0;
 }
