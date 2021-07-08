@@ -33,6 +33,7 @@ Command shortlist:
 - Need to resize volume...
 
 Updates:
+- Added template for user proc .c/.h in trl_testing - 07082021
 - Start looking into SystemTap implementation in the kernel - 07072021
 - Started course: UAMx ProgC01 - 07032021
 - See "Google Test Projects Updates" - 06302021
