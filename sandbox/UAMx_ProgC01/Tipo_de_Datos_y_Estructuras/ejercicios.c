@@ -420,8 +420,8 @@ int main() {
           d, f, l, i, s, c);
   
   double x;
-  // v 5.0 / 2 = correct value assigned (2 gets promoted to double)
-  x = 5 / 2; // Incorrect value gets assigned as a double (5 nor 2 get promoted)
+  x = 5.0 / 2; // = correct value assigned (2 gets promoted to double)
+  // x = 5 / 2; // Incorrect value gets assigned as a double (5 nor 2 get promoted)
   printf("%lf\n", x);          
     
 
