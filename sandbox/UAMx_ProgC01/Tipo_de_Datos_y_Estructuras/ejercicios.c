@@ -432,47 +432,43 @@ int main() {
 
 
 /**************** Prueba 2.1 ****************/
-Escribe un programa que solicite una altura en cm, 
-una edad en años y la inicial de un nombre. 
-El programa debe calcular el peso ideal de acuerdo con la fórmula de Perroult:
+// Escribe un programa que solicite una altura en cm, 
+// una edad en años y la inicial de un nombre. 
+// El programa debe calcular el peso ideal de acuerdo con la fórmula de Perroult:
 
-peso = altura - 100 + (9*edad)/100.0
+// peso = altura - 100 + (9*edad)/100.0
 
-La altura puede ser un número con decimales. La edad será un número entero. 
-Utiliza tres decimales para mostrar el peso y uno para mostrar la altura.
-Los mensajes se han de mostrar tal y como aparecen en el siguiente ejemplo 
-de ejecución y en el mismo orden (variando solo según los datos introducidos por el usuario).
-Lo que sigue es un ejemplo de ejecución del programa:
+// La altura puede ser un número con decimales. La edad será un número entero. 
+// Utiliza tres decimales para mostrar el peso y uno para mostrar la altura.
+// Los mensajes se han de mostrar tal y como aparecen en el siguiente ejemplo 
+// de ejecución y en el mismo orden (variando solo según los datos introducidos por el usuario).
+// Lo que sigue es un ejemplo de ejecución del programa:
 
-Por favor, introduce la altura en cm: 175.5
-A continuación, introduce la edad en años: 18
-Por último, introduce la inicial del nombre: C
-El peso ideal de C, que mide 175.5 cm y tiene 18 años es de 77.120 kg.
+// Por favor, introduce la altura en cm: 175.5
+// A continuación, introduce la edad en años: 18
+// Por último, introduce la inicial del nombre: C
+// El peso ideal de C, que mide 175.5 cm y tiene 18 años es de 77.120 kg.
 
 #include <stdio.h>
 
 int main(void) 
 {
-  double  altura;
   int     edad;
-  char    ;
+  char    nombre;
+  double  altura;
   double  peso;
     
-  printf("Entre El: ");
-  scanf("%c", &);
-  printf("Entre CP: ");
-  scanf("%d", &CP);
-  printf("Entre HP: ");
-  scanf("%d", &HP);
-  printf("Entre El Peso: ");
-  scanf("%lf", &Peso);
-  printf("Entre La Altura: ");
-  scanf("%lf", &Altura);
-  printf("Entre Numero de Caramelos: ");
-  scanf("%d", &Caramelos);
+  printf("Por favor, introduce la altura en cm: ");
+  scanf("%lf", &altura);
+  printf("A continuación, introduce la edad en años: ");
+  scanf("%d", &edad);
+  printf("Por último, introduce la inicial del nombre: ");
+  scanf("%lf", &nombre);
+  
+  peso = altura - 100 + (9 * edad) / 100.0;
     
-  printf("Tamaño de:\nSexo: %d, CP: %d, HP: %d, Peso: %d, Altura: %d, Caramelos: %d\n", 
-            sizeof(char), sizeof(int), sizeof(int), sizeof(double), sizeof(double), sizeof(int));
+  printf("El peso ideal de %c, que mide %.2lf cm y tiene %d años es de %.3lf kg.\n",
+          nombre, altura, edad, peso);
    
   return 0;
 }
