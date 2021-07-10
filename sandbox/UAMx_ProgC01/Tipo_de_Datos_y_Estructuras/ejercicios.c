@@ -458,16 +458,16 @@ int main(void)
   double  altura;
   double  peso;
     
-  printf("Por favor, introduce la altura en cm: ");
+  printf("\nPor favor, introduce la altura en cm: ");
   scanf("%lf", &altura);
   printf("A continuación, introduce la edad en años: ");
   scanf("%d", &edad);
   printf("Por último, introduce la inicial del nombre: ");
-  scanf("%lf", &nombre);
+  scanf("%d", &nombre);
   
   peso = altura - 100 + (9 * edad) / 100.0;
     
-  printf("El peso ideal de %c, que mide %.2lf cm y tiene %d años es de %.3lf kg.\n",
+  printf("\nEl peso ideal de %c, que mide %.2lf cm y tiene %d años es de %.3lf kg.\n\n",
           nombre, altura, edad, peso);
    
   return 0;
