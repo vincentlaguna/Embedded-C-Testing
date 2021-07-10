@@ -463,7 +463,7 @@ int main(void)
   printf("A continuación, introduce la edad en años: ");
   scanf("%d", &edad);
   printf("Por último, introduce la inicial del nombre: ");
-  scanf("%d", &nombre);
+  scanf("\n%c", &nombre);
   
   peso = altura - 100 + (9 * edad) / 100.0;
     
