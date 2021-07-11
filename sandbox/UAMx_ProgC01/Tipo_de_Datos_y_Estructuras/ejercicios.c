@@ -513,7 +513,7 @@ int main(void)
 
 
 /********************************************
-// Tablas y Cadenas - Macros y Constantes
+// Tablas y Cadenas - Macros y Constantes - #define
 
 #include <stdio.h>
 
@@ -541,7 +541,7 @@ int main(void)
 /*********************************************/  
 
 
-/*************** Ejercicio 3.1 ***************/
+/*************** Ejercicio 3.1 ***************
 // Seguro que alguna vez te has preguntado cuán ligero serías en otros planetas.
 // Gracias a la relación de peso de la Tierra con otros planetas que encontrarás 
 // en muchas páginas web, como esta sobre el peso (Wikipedia), 
@@ -598,6 +598,33 @@ int main(void)
 }
 
 /*********************************************/  
+
+
+/*********************************************/  
+// Tablas y Cadenas - Macros y Constantes - const
+
+#include <stdio.h>
+
+int main(void) 
+{
+  int ancho, largo;
+  double ancho_p, largo_p;
+  const double pies_por_cm = 0.0328;
+   
+  printf ("Introduce el ancho: ");
+  scanf ("%d", &ancho);
+  ancho_p = ancho * pies_por_cm;
+   
+  printf ("Introduce el largo: ");
+  scanf ("%d", &largo);
+  largo_p = largo * pies_por_cm;
+
+  printf ("%d x %d cm son %.2lf x %.2lf pies.\n", ancho, largo, ancho_p, largo_p);
+
+  return 0;
+}
+
+/*********************************************/
 
 
 /**************** Prueba 3.1 ****************
