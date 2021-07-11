@@ -583,13 +583,13 @@ int main(void)
   
   printf("\nIntroduce tu peso: ");
   scanf("%lf", &peso);
-  printf("Tu peso en la Tierra es %.2lf\n", peso);
+  printf("\nTu peso en la Tierra es %.2lf\n", peso);
   printf("Tu peso en la Luna es %.2lf\n", peso * LUNA);
   printf("Tu peso en Marte es %.2lf\n", peso * MARTE);
   printf("Tu peso en Júpiter es %.2lf\n", peso * JUPITER);
   printf("Tu peso en el planeta Miller es %.2lf\n", peso * MILLER);
   printf("Tu peso en Pandora es %.2lf\n", peso * PANDORA);
-  printf("Tu peso en Vulcano es %.2lf\n", peso * VULCANO);
+  printf("Tu peso en Vulcano es %.2lf\n\n", peso * VULCANO);
 
   return 0;
 }
