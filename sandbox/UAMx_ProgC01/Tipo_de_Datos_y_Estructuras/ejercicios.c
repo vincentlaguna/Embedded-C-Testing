@@ -676,6 +676,7 @@ int main(void)
 {
   printf("MULT(5,5): %d\n", MULT(5,5));
   printf("MULT(2+3,3+2): %d\n", MULT(2+3,3+2));
+  printf("3 % 5 = %d\n", 3 % 5);
   
   return 0;
 }
