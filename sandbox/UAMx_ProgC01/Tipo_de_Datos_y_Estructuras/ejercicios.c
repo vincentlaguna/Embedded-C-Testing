@@ -670,7 +670,7 @@ int main(void)
 // Tablas y Cadenas - Macros y Constantes - Macros con Parametros
 #include <stdio.h>
 
-#define MULT(A, B) A*B
+#define MULT(A, B) (A)*(B)
 
 int main(void)
 {
