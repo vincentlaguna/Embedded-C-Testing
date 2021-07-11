@@ -600,7 +600,7 @@ int main(void)
 /*********************************************/  
 
 
-/*********************************************/  
+/*********************************************  
 // Tablas y Cadenas - Macros y Constantes - const
 
 #include <stdio.h>
@@ -627,6 +627,56 @@ int main(void)
 
   printf ("%d x %d cm son %.2lf x %.2lf pies.\n", ancho, largo, ancho_p, largo_p);
 
+  return 0;
+}
+
+/*********************************************/
+
+
+/*********************************************  
+// Tablas y Cadenas - Macros y Constantes - const
+
+#include <stdio.h>
+
+int main(void) 
+{
+  int ancho, largo;
+  double ancho_p, largo_p;
+  const double pies_por_cm = 0.0328;
+   
+  printf ("Introduce el ancho: ");
+  scanf ("%d", &ancho);
+  ancho_p = ancho * pies_por_cm;
+  
+  // pies_por_cm = 0.0327; // No compila porque pies_por_cm es "read-only"
+  
+  printf ("Introduce el largo: ");
+  scanf ("%d", &largo);
+  largo_p = largo * pies_por_cm;
+  
+  // printf ("Introduce pies for cm: "); // Si compila, pero el resultado puede ser
+  // // impredicible y se debe evitar
+  // scanf ("%d", &pies_por_cm);
+
+  printf ("%d x %d cm son %.2lf x %.2lf pies.\n", ancho, largo, ancho_p, largo_p);
+
+  return 0;
+}
+
+/*********************************************/
+
+
+/*********************************************/  
+// Tablas y Cadenas - Macros y Constantes - Macros con Parametros
+#include <stdio.h>
+
+#define MULT(A, B) A*B
+
+int main(void)
+{
+  printf("MULT(5,5): %d\n", MULT(5,5));
+  printf("MULT(2+3,3+2): %d\n", MULT(2+3,3+2));
+  
   return 0;
 }
 
