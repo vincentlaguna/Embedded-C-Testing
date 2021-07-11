@@ -431,7 +431,7 @@ int main() {
 /*********************************************/  
 
 
-/**************** Prueba 2.1 ****************/
+/**************** Prueba 2.1 ****************
 // Escribe un programa que solicite una altura en cm, 
 // una edad en años y la inicial de un nombre. 
 // El programa debe calcular el peso ideal de acuerdo con la fórmula de Perroult:
@@ -474,6 +474,44 @@ int main(void)
 }
 
 /********************************************/  
+
+
+
+/**************** Prueba 2.2 ****************/
+Escribe un programa que solicite uno a uno dos caracteres.
+El programa debe sumar el código ASCII de ambos caracteres y mostrar 
+el resultado, incluyendo el código ASCII de cada uno de ellos.
+Los mensajes se han de mostrar tal y como aparecen 
+en el siguiente ejemplo de ejecución y en el mismo orden 
+(variando solo según los datos introducidos por el usuario).
+Lo que sigue es un ejemplo de ejecución del programa:
+
+Por favor, introduce un carácter: A
+Por favor, introduce otro carácter: L
+Si sumamos el código ASCII del carácter A que es 65 
+con el código ASCII del carácter L que es 76 obtenemos el número 141
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+  char    caracter1, caracter2;
+    
+  printf("\nPor favor, introduce un carácter: ");
+  scanf("%c", &caracter1);
+  printf("Por favor, introduce otro carácter: ");
+  scanf("%c", &caracter2);
+  
+  printf("\nSi sumamos el código ASCII del carácter %c que es %d con el código "
+         "ASCII del carácter %c que es %d obtenemos el número %d\n\n",
+          caracter1, caracter1, caracter2, caracter2, caracter1 + caracter2);
+   
+  return 0;
+}
+
+/********************************************/  
+
 
 
 /*********************************************/  
