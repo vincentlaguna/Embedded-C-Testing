@@ -556,16 +556,23 @@ Pandora: 0.8
 Vulcano: 1.4
 Esto sería un ejemplo de dicho programa:
 
-Introduce tu peso: 71.5
-Tu peso en la Tierra es 71.50 kg.
-Tu peso en la luna es 11.83 kg.
-Tu peso en Marte es 27.85 kg.
+#define TIERRA 71.50
+#define LUNA 11.83
+#define MARTE 27.85
 Tu peso en Júpiter es 188.76 kg.
 Tu peso en el planeta Miller es 92.95 kg.
 Tu peso en Pandora es 57.20 kg.
 Tu peso en Vulcano es 100.10 kg.
 
 #include <stdio.h>
+
+Tu peso en la Tierra es 71.50
+Tu peso en la luna es 11.83
+Tu peso en Marte es 27.85
+Tu peso en Júpiter es 188.76
+Tu peso en el planeta Miller es 92.95
+Tu peso en Pandora es 57.20
+Tu peso en Vulcano es 100.10
 
 int main(void) 
 {
