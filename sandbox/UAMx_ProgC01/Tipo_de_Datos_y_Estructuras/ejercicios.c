@@ -539,59 +539,58 @@ int main(void)
 
 
 /*************** Ejercicio 3.1 ***************/
-Seguro que alguna vez te has preguntado cuán ligero serías en otros planetas.
-Gracias a la relación de peso de la Tierra con otros planetas que encontrarás 
-en muchas páginas web, como esta sobre el peso (Wikipedia), 
-¡podemos calcularlo fácilmente!
+// Seguro que alguna vez te has preguntado cuán ligero serías en otros planetas.
+// Gracias a la relación de peso de la Tierra con otros planetas que encontrarás 
+// en muchas páginas web, como esta sobre el peso (Wikipedia), 
+// ¡podemos calcularlo fácilmente!
 
-Nosotros te dejamos aquí algunos pesos relativos para diferentes cuerpos 
-celestes, utiliza varios de ellos para hacer un programa que muestre 
-el peso que introduzca el usuario en cada uno de ellos:
+// Nosotros te dejamos aquí algunos pesos relativos para diferentes cuerpos 
+// celestes, utiliza varios de ellos para hacer un programa que muestre 
+// el peso que introduzca el usuario en cada uno de ellos:
 
-Luna: 0.1655
-Marte: 0.3895 (pues Mark Watney debería haber ido un poquito más ligero en la película...)
-Júpiter: 2.640
-(Cuidado con las olas) Miller: 1.3
-Pandora: 0.8
-Vulcano: 1.4
-Esto sería un ejemplo de dicho programa:
+// Tu peso en la Tierra es 71.50
+// Tu peso en la luna es 11.83
+// Tu peso en Marte es 27.85
+// Tu peso en Júpiter es 188.76
+// Tu peso en el planeta Miller es 92.95
+// Tu peso en Pandora es 57.20
+// Tu peso en Vulcano es 100.10
 
-#define TIERRA 71.50
-#define LUNA 11.83
-#define MARTE 27.85
-Tu peso en Júpiter es 188.76 kg.
-Tu peso en el planeta Miller es 92.95 kg.
-Tu peso en Pandora es 57.20 kg.
-Tu peso en Vulcano es 100.10 kg.
+// Esto sería un ejemplo de dicho programa:
+
+// Introduce tu peso: 71.5
+
+// Luna: 0.1655
+// Marte: 0.3895 (pues Mark Watney debería haber ido un poquito más ligero en la película...)
+// Júpiter: 2.640
+// (Cuidado con las olas) Miller: 1.3
+// Pandora: 0.8
+// Vulcano: 1.4
 
 #include <stdio.h>
 
-Tu peso en la Tierra es 71.50
-Tu peso en la luna es 11.83
-Tu peso en Marte es 27.85
-Tu peso en Júpiter es 188.76
-Tu peso en el planeta Miller es 92.95
-Tu peso en Pandora es 57.20
-Tu peso en Vulcano es 100.10
+#define  LUNA     0.1655
+#define  MARTE    0.3895
+#define  MILLER   1.3
+#define  PANDORA  0.8
+#define  JUPITER  2.640
+#define  VULCANO  1.4
+
 
 int main(void) 
 {
   double peso;
   
   printf("\nIntroduce tu peso: ");
-  scanf("%c", &c1);
-  printf("Introduce un segundo carácter: ");
-  scanf("\n%c", &c2);
-  printf("Introduce un tercer carácter: ");
-  scanf("\n%c", &c3);
-  printf("Introduce un otro carácter: ");
-  scanf("\n%c", &c4);
-  printf("Introduce el último carácter: ");
-  scanf("\n%c", &c5);
-  
-  printf("\nLa palabra cifrada es: %c%c%c%c%c\n", c1, c2, c3, c4, c5);
-  printf("La palabra original es: %c%c%c%c%c\n\n", c1 - 3, c2 - 3, c3 - 3, c4 - 3, c5 - 3); 
-  
+  scanf("%lf", &peso);
+  printf("Tu peso en la Tierra es %.2lf\n", peso);
+  printf("Tu peso en la Luna es %.2lf\n", peso * LUNA);
+  printf("Tu peso en Marte es %.2lf\n", peso * MARTE);
+  printf("Tu peso en Júpiter es %.2lf\n", peso * JUPITER);
+  printf("Tu peso en el planeta Miller es %.2lf\n", peso * MILLER);
+  printf("Tu peso en Pandora es %.2lf\n", peso * PANDORA);
+  printf("Tu peso en Vulcano es %.2lf\n", peso * VULCANO);
+
   return 0;
 }
 
