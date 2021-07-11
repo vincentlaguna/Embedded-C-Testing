@@ -529,7 +529,8 @@ int main(void)
   scanf ("%d", &largo);
   largo_p = largo * PIES_POR_CM;
 
-  printf ("%d x %d cm son %.2lf x %.2lf pies.\n", ancho, largo, ancho_p, largo_p);
+  printf ("%d x %d cm son %.2lf x %.2lf pies.\n",
+           ancho, largo, ancho_p, largo_p);
 
   return 0;
 }
