@@ -509,7 +509,7 @@ int main(void)
   return 0;
 }
 
-/********************************************/  
+/********************************************
 // Tablas y Cadenas - Macros y Constantes
 
 #include <stdio.h>
@@ -532,6 +532,59 @@ int main(void)
   printf ("%d x %d cm son %.2lf x %.2lf pies.\n",
            ancho, largo, ancho_p, largo_p);
 
+  return 0;
+}
+
+/*********************************************/  
+
+
+/*************** Ejercicio 3.1 ***************/
+Seguro que alguna vez te has preguntado cuán ligero serías en otros planetas.
+Gracias a la relación de peso de la Tierra con otros planetas que encontrarás 
+en muchas páginas web, como esta sobre el peso (Wikipedia), 
+¡podemos calcularlo fácilmente!
+
+Nosotros te dejamos aquí algunos pesos relativos para diferentes cuerpos 
+celestes, utiliza varios de ellos para hacer un programa que muestre 
+el peso que introduzca el usuario en cada uno de ellos:
+
+Luna: 0.1655
+Marte: 0.3895 (pues Mark Watney debería haber ido un poquito más ligero en la película...)
+Júpiter: 2.640
+(Cuidado con las olas) Miller: 1.3
+Pandora: 0.8
+Vulcano: 1.4
+Esto sería un ejemplo de dicho programa:
+
+Introduce tu peso: 71.5
+Tu peso en la Tierra es 71.50 kg.
+Tu peso en la luna es 11.83 kg.
+Tu peso en Marte es 27.85 kg.
+Tu peso en Júpiter es 188.76 kg.
+Tu peso en el planeta Miller es 92.95 kg.
+Tu peso en Pandora es 57.20 kg.
+Tu peso en Vulcano es 100.10 kg.
+
+#include <stdio.h>
+
+int main(void) 
+{
+  double peso;
+  
+  printf("\nIntroduce tu peso: ");
+  scanf("%c", &c1);
+  printf("Introduce un segundo carácter: ");
+  scanf("\n%c", &c2);
+  printf("Introduce un tercer carácter: ");
+  scanf("\n%c", &c3);
+  printf("Introduce un otro carácter: ");
+  scanf("\n%c", &c4);
+  printf("Introduce el último carácter: ");
+  scanf("\n%c", &c5);
+  
+  printf("\nLa palabra cifrada es: %c%c%c%c%c\n", c1, c2, c3, c4, c5);
+  printf("La palabra original es: %c%c%c%c%c\n\n", c1 - 3, c2 - 3, c3 - 3, c4 - 3, c5 - 3); 
+  
   return 0;
 }
 
