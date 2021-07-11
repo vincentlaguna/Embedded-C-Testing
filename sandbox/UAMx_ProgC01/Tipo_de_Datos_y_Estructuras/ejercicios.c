@@ -614,10 +614,16 @@ int main(void)
   printf ("Introduce el ancho: ");
   scanf ("%d", &ancho);
   ancho_p = ancho * pies_por_cm;
-   
+  
+  // pies_por_cm = 0.0327; // No compila porque pies_por_cm es "read-only"
+  
   printf ("Introduce el largo: ");
   scanf ("%d", &largo);
   largo_p = largo * pies_por_cm;
+  
+  // printf ("Introduce pies for cm: "); // Si compila, pero el resultado puede ser
+  // // impredicible y se debe evitar
+  // scanf ("%d", &pies_por_cm);
 
   printf ("%d x %d cm son %.2lf x %.2lf pies.\n", ancho, largo, ancho_p, largo_p);
 
