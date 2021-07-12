@@ -742,8 +742,9 @@ int main(void)
 /********************************************/
 
 
-/*********************************************/
-//
+/*********************************************
+// Introduccion a las Tablas 0
+
 #include <stdio.h>
 
 #define DIM 3
@@ -757,6 +758,81 @@ int main(void)
   
   for(int i = 0; i < sizeof(datos_b)/datos_b[0]; i++)
     printf("%d, %lf\n", datos_b[i], datos_b[i]);
+    
+  return 0;
+}
+
+/*********************************************/  
+
+
+/*********************************************
+// Introduccion a las Tablas 1
+
+#include <stdio.h>
+
+#define DIM 3
+
+int main(void) 
+{
+  int datos[DIM];
+
+  // datos[0] = 5;
+  // printf("Introduce un número: ");
+  // scanf("%d", &datos[1]);
+  // datos[2] = (datos[0]+datos[1])*2;
+  
+  // printf("Los elementos de la tabla son %d\n", datos);
+  
+  printf("Introduce los números de la tabla: ");
+  scanf("%d", datos);
+
+  printf("Los elementos de la tabla son %d, %d y %d.\n", datos[0], datos[1], datos[2]);
+
+  
+  // for(int i = 0; i < sizeof(datos_b)/datos_b[0]; i++)
+    // printf("%d, %lf\n", datos_b[i], datos_b[i]);
+  
+  return 0;
+}
+
+/*********************************************/  
+
+
+/*************** Ejercicio 3.3 ***************/
+Vamos a escribir un programa que calcule la media de experiencia obtenida
+en las últimas 5 partidas al LoL con 3 de tus campeones más habituales.
+
+Para ello, declararemos 3 tablas y las inicializaremos con los valores que consideremos. 
+Después, mostraremos por pantalla la media de cada campeón.
+
+Por ejemplo, esta podría ser una salida de tu programa:
+
+Media experiencia últimas 5 partidas con Kassadin: 130.20
+Media experiencia últimas 5 partidas con Ahri: 115.40
+Media experiencia últimas 5 partidas con Jax: 98.80
+
+#include <stdio.h>
+
+#define DIM 5
+
+int main(void) 
+{
+  double kassadin[DIM];
+  double ahri[DIM];
+  double jax[DIM];
+  double media_de_kassadin;
+  double media_de_ahri;
+  double jax;
+
+  printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Kassadin: ");
+  scanf("%lf %lf %lf %lf %lf", &kassadin[0], &kassadin[1], &kassadin[2], &kassadin[3], &kassadin[4]);
+
+  printf("Los elementos de la tabla son %d, %d y %d.\n", datos[0], datos[1], datos[2]);
+
+  
+  // for(int i = 0; i < sizeof(datos_b)/datos_b[0]; i++)
+    // printf("%d, %lf\n", datos_b[i], datos_b[i]);
+  
   return 0;
 }
 
@@ -769,11 +845,11 @@ int main(void)
 
 /*********************************************/
 
-/*************** Ejercicio 3.2 ***************/
+/*************** Ejercicio 3.3 ***************/
 
 /*********************************************/  
 
-/*************** Ejercicio 3.3 ***************/
+/*************** Ejercicio 3.4 ***************/
 
 /*********************************************/
 
