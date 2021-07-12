@@ -743,7 +743,7 @@ int main(void)
 
 
 /*********************************************/
-
+//
 #include <stdio.h>
 
 #define DIM 3
@@ -751,10 +751,12 @@ int main(void)
 int main(void) 
 {
   int datos_a[DIM] = {8,7.5,9};   // 3 elementos
-  int datos_b[] = {8,7,9};      // 3 elementos
+  int datos_b[] = {8,7,9,};      // 3 elementos
   int datos_c[DIM+2] = {8,7,9}; // 5 elementos
   int datos_d[DIM+22] = {0};    // 25 elementos
-
+  
+  for(int i = 0; i < sizeof(datos_b)/datos_b[0]; i++)
+    printf("%d, %lf\n", datos_b[i], datos_b[i]);
   return 0;
 }
 
