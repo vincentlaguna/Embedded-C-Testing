@@ -799,17 +799,17 @@ int main(void)
 
 
 /*************** Ejercicio 3.3 ***************/
-Vamos a escribir un programa que calcule la media de experiencia obtenida
-en las últimas 5 partidas al LoL con 3 de tus campeones más habituales.
+// Vamos a escribir un programa que calcule la media de experiencia obtenida
+// en las últimas 5 partidas al LoL con 3 de tus campeones más habituales.
 
-Para ello, declararemos 3 tablas y las inicializaremos con los valores que consideremos. 
-Después, mostraremos por pantalla la media de cada campeón.
+// Para ello, declararemos 3 tablas y las inicializaremos con los valores que consideremos. 
+// Después, mostraremos por pantalla la media de cada campeón.
 
-Por ejemplo, esta podría ser una salida de tu programa:
+// Por ejemplo, esta podría ser una salida de tu programa:
 
-Media experiencia últimas 5 partidas con Kassadin: 130.20
-Media experiencia últimas 5 partidas con Ahri: 115.40
-Media experiencia últimas 5 partidas con Jax: 98.80
+// Media experiencia últimas 5 partidas con Kassadin: 130.20
+// Media experiencia últimas 5 partidas con Ahri: 115.40
+// Media experiencia últimas 5 partidas con Jax: 98.80
 
 #include <stdio.h>
 
