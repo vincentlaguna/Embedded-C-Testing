@@ -835,7 +835,6 @@ int main(void)
   for(int i = 0; i < DIM; i++)
   {
     cuenta_de_kassadin += kassadin[i];
-    printf("%lf\n", kassadin[i]);
   }
   media_de_kassadin = cuenta_de_kassadin / 5;
   
@@ -845,7 +844,6 @@ int main(void)
   for(int i = 0; i < DIM; i++)
   {
     cuenta_de_ahri += ahri[i];
-    printf("%lf\n", ahri[i]);
   }
   media_de_ahri = cuenta_de_ahri / 5; 
   
@@ -855,13 +853,12 @@ int main(void)
   for(int i = 0; i < DIM; i++)
   {
     cuenta_de_jax += jax[i];
-    printf("%lf\n", jax[i]);
   }
   media_de_jax = cuenta_de_jax / 5; 
   
-  printf("\nMedia experiencia últimas 5 partidas con Kassadin: %lf\n", media_de_kassadin);
-  printf("\nMedia experiencia últimas 5 partidas con Ahri: %lf\n", media_de_ahri);
-  printf("\nMedia experiencia últimas 5 partidas con Jax: %lf\n\n", media_de_jax);
+  printf("\nMedia experiencia últimas 5 partidas con Kassadin: %.2lf\n", media_de_kassadin);
+  printf("\nMedia experiencia últimas 5 partidas con Ahri: %.2lf\n", media_de_ahri);
+  printf("\nMedia experiencia últimas 5 partidas con Jax: %.2lf\n\n", media_de_jax);
   
   return 0;
 }
