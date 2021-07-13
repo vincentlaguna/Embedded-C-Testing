@@ -817,27 +817,51 @@ int main(void)
 
 int main(void) 
 {
-  double cuenta = 0;
   double kassadin[DIM];
-  // double ahri[DIM];
-  // double jax[DIM];
+  double cuenta_de_kassadin;
   double media_de_kassadin;
-  // double media_de_ahri;
-  // double jax;
+  
+  double ahri[DIM];
+  double cuenta_de_ahri;
+  double media_de_ahri;
+  
+  double jax[DIM];
+  double cuenta_de_jax;
+  double media_de_jax;
 
   printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Kassadin: ");
   scanf("\n%lf %lf %lf %lf %lf", &kassadin[0], &kassadin[1], &kassadin[2], &kassadin[3], &kassadin[4]);
   
   for(int i = 0; i < DIM; i++)
   {
-    cuenta += kassadin[i];
+    cuenta_de_kassadin += kassadin[i];
     printf("%lf\n", kassadin[i]);
   }
-  media_de_kassadin = cuenta / 5; 
+  media_de_kassadin = cuenta_de_kassadin / 5;
   
-  // printf("Los elementos de la tabla son %d, %d y %d.\n", datos[0], datos[1], datos[2]);
+  printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Ahri: ");
+  scanf("\n%lf %lf %lf %lf %lf", &ahri[0], &ahri[1], &ahri[2], &ahri[3], &ahri[4]);
+  
+  for(int i = 0; i < DIM; i++)
+  {
+    cuenta_de_ahri += ahri[i];
+    printf("%lf\n", ahri[i]);
+  }
+  media_de_ahri = cuenta_de_ahri / 5; 
+  
+  printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Jax: ");
+  scanf("\n%lf %lf %lf %lf %lf", &jax[0], &jax[1], &jax[2], &jax[3], &jax[4]);
+  
+  for(int i = 0; i < DIM; i++)
+  {
+    cuenta_de_jax += jax[i];
+    printf("%lf\n", jax[i]);
+  }
+  media_de_jax = cuenta_de_jax / 5; 
+  
   printf("\nMedia experiencia últimas 5 partidas con Kassadin: %lf\n", media_de_kassadin);
-  
+  printf("\nMedia experiencia últimas 5 partidas con Ahri: %lf\n", media_de_ahri);
+  printf("\nMedia experiencia últimas 5 partidas con Jax: %lf\n\n", media_de_jax);
   
   return 0;
 }
