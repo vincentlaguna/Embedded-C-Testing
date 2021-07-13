@@ -826,12 +826,12 @@ int main(void)
   // double jax;
 
   printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Kassadin: ");
-  scanf("%lf %lf %lf %lf %lf", &kassadin[0], &kassadin[1], &kassadin[2], &kassadin[3], &kassadin[4]);
+  scanf("\n%lf %lf %lf %lf %lf", &kassadin[0], &kassadin[1], &kassadin[2], &kassadin[3], &kassadin[4]);
   
-  for(int i = 0; i < sizeof(kassadin)/kassadin[0]; i++)
+  for(int i = 0; i < DIM; i++)
   {
     cuenta += kassadin[i];
-    printf("%lf\n");
+    printf("%lf\n", kassadin[i]);
   }
   media_de_kassadin = cuenta / 5; 
   
