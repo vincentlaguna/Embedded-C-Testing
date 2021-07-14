@@ -798,7 +798,7 @@ int main(void)
 /*********************************************/  
 
 
-/*************** Ejercicio 3.3 ***************/
+/*************** Ejercicio 3.3 ***************
 // Vamos a escribir un programa que calcule la media de experiencia obtenida
 // en las últimas 5 partidas al LoL con 3 de tus campeones más habituales.
 
@@ -864,8 +864,23 @@ int main(void)
 }
 
 /*********************************************/  
+// Introduccion a las Tablas Bidimensionales
 
+#include <stdio.h>
 
+#define DIM 2
+
+int main (void) 
+{
+  int num[DIM][DIM] = {{1, 3}, {5, 3}};
+  int deter = 0;
+   
+  deter = num[0][0] * num[1][1] - num[1][0] * num[0][1];
+
+  printf ("El determinante es: %d ", deter);
+
+  return 0;
+}
 
 /*********************************************/  
 
