@@ -863,7 +863,7 @@ int main(void)
   return 0;
 }
 
-/*********************************************/  
+/*********************************************/ 
 // Introduccion a las Tablas Bidimensionales
 
 #include <stdio.h>
@@ -886,11 +886,32 @@ int main (void)
 
 
 
-/*********************************************/
-
 /*************** Ejercicio 3.4 ***************/
+// Vamos a modificar el programa anterior, que calcula la media
+// de experiencia obtenida en las últimas 5 partidas al 
+// LoL con 3 de tus campeones más habituales.
+
+// Ahora, en vez de declarar 3 tablas, vamos a declarar una matriz 
+// (tabla bidimensional), donde cada fila corresponderá a un campeón. 
+// Al igual que ocurría en el programa anterior, será necesario 
+// inicializar la matriz con los valores que consideremos y 
+// después mostrar por pantalla la media de cada campeón.
+
+// La salida del programa debería ser la misma que la del programa 
+// anterior si utilizas los mismos datos de inicialización. 
+// En nuestro ejemplo, guardaremos en la primera fila los datos de 
+// nuestro campeón Kassadin, después los de Ahri y por último los de Jax:
+
+// Media experiencia últimas 5 partidas con Kassadin: 130.20
+// Media experiencia últimas 5 partidas con Ahri: 115.40
+// Media experiencia últimas 5 partidas con Jax: 98.80
 
 /*********************************************/  
+
+
+/*********************************************/
+
+
 
 /*************** Ejercicio 3.5 ***************/
 
