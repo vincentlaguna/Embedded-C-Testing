@@ -863,7 +863,7 @@ int main(void)
   return 0;
 }
 
-/*********************************************/ 
+/*********************************************
 // Introduccion a las Tablas Bidimensionales
 
 #include <stdio.h>
