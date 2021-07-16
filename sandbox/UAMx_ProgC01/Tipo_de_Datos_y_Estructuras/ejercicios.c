@@ -886,7 +886,7 @@ int main (void)
 
 
 
-/*************** Ejercicio 3.4 ***************/
+/*************** Ejercicio 3.4 ***************
 // Vamos a modificar el programa anterior, que calcula la media
 // de experiencia obtenida en las últimas 5 partidas al 
 // LoL con 3 de tus campeones más habituales.
@@ -906,8 +906,109 @@ int main (void)
 // Media experiencia últimas 5 partidas con Ahri: 115.40
 // Media experiencia últimas 5 partidas con Jax: 98.80
 
-/*********************************************/  
+#include <stdio.h>
 
+#define DIM 5
+
+int main(void) 
+{
+  double kassadin[DIM];
+  double cuenta_de_kassadin;
+  double media_de_kassadin;
+  
+  double ahri[DIM];
+  double cuenta_de_ahri;
+  double media_de_ahri;
+  
+  double jax[DIM];
+  double cuenta_de_jax;
+  double media_de_jax;
+
+  printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Kassadin: ");
+  scanf("\n%lf %lf %lf %lf %lf", &kassadin[0], &kassadin[1], &kassadin[2], &kassadin[3], &kassadin[4]);
+  
+  for(int i = 0; i < DIM; i++)
+  {
+    cuenta_de_kassadin += kassadin[i];
+  }
+  media_de_kassadin = cuenta_de_kassadin / 5;
+  
+  printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Ahri: ");
+  scanf("\n%lf %lf %lf %lf %lf", &ahri[0], &ahri[1], &ahri[2], &ahri[3], &ahri[4]);
+  
+  for(int i = 0; i < DIM; i++)
+  {
+    cuenta_de_ahri += ahri[i];
+  }
+  media_de_ahri = cuenta_de_ahri / 5; 
+  
+  printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Jax: ");
+  scanf("\n%lf %lf %lf %lf %lf", &jax[0], &jax[1], &jax[2], &jax[3], &jax[4]);
+  
+  for(int i = 0; i < DIM; i++)
+  {
+    cuenta_de_jax += jax[i];
+  }
+  media_de_jax = cuenta_de_jax / 5; 
+  
+  printf("\nMedia experiencia últimas 5 partidas con Kassadin: %.2lf\n", media_de_kassadin);
+  printf("\nMedia experiencia últimas 5 partidas con Ahri: %.2lf\n", media_de_ahri);
+  printf("\nMedia experiencia últimas 5 partidas con Jax: %.2lf\n\n", media_de_jax);
+  
+  return 0;
+}
+
+/*********************************************/  
+#include <stdio.h>
+#include <stdlib.h>
+// Definition for singly-linked list.
+struct ListNode 
+{
+  int val;
+  struct ListNode *next;
+} listNodeArr[3];
+
+// struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2)
+// {
+//   struct ListNode *retNode = NULL;
+//   retNode = (struct ListNode*)malloc(sizeof(struct ListNode));
+//   // retNode->val = 1;
+//   retNode->val = l1->val + l2->val;
+//   printf("%d\n\n", retNode->val);
+    
+//   return retNode;
+// }
+
+int main(void)
+{
+  for (int i = 0; i < 3; i++)
+  {
+    struct listNodeArr[i]->val = i;
+  }
+  
+  for (int i = 0; i < 3; i++)
+  {
+    while (struct listNodeArr[i]->next != NULL)
+    {
+      printf("\nlistNodeArr[%d]->val = %d\n\n", struct listNodeArr[i]->val);
+    }
+  }
+  // struct ListNode *l1, *l2;
+  
+  // l1 = (struct ListNode*)malloc(sizeof(struct ListNode));
+  // l2 = (struct ListNode*)malloc(sizeof(struct ListNode));
+  
+  // l1->val = 2;
+  // l2->val = 2;
+  
+  // printf("\nl1->val = %d, l2->val = %d\n\n", l1->val, l2->val);
+  
+  // addTwoNumbers(l1, l2);
+  
+  // printf("\nretNode->val = %d\n\n", retNode->val);
+  
+  return(0);
+}
 
 /*********************************************/
 
