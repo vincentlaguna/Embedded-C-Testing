@@ -988,12 +988,12 @@ int main(void)
 
 #include <stdio.h>
 
-#define   COL  2
 #define   FILA 3
+#define   COL  2
 
 int main (void) 
 {
-  char flota[DIM][DIM] = 
+  char flota[FILA][COL] = 
   {
     {'O', 'X'},
     {'X', 'X'},
@@ -1004,16 +1004,23 @@ int main (void)
   
   printf("\nIntroduce una fila: ");
   scanf("%d", &entradaFila1);
+  if (entradaFila1 > 2) entradaFila1 = 2;
   printf("\nIntroduce una columna: ");
   scanf("%d", &entradaCol1);
+  if (entradaCol1 > 1) entradaCol1 = 1;
   
-  printf("\nEn la fila 1, columna 2 encontramos: %c\n\n", )
+  printf("\nEn la fila %d, columna %d encontramos: %c\n\n",
+          entradaFila1+1, entradaCol1+1, flota[entradaFila1][entradaCol1]);
   
   printf("\nIntroduce una fila: ");
-  scanf("%d")
-  deter = num[0][0] * num[1][1] - num[1][0] * num[0][1];
-
-  printf ("\nEl determinante es: %d \n\n", deter);
+  scanf("%d", &entradaFila2);
+  if (entradaFila2 > 2) entradaFila2 = 2;
+  printf("\nIntroduce una columna: ");
+  scanf("%d", &entradaCol2);
+  if (entradaCol2 > 1) entradaCol2 = 1;
+  
+  printf("\nEn la fila %d, columna %d encontramos: %c\n\n",
+          entradaFila2+1, entradaCol2+1, flota[entradaFila2][entradaCol2]);
 
   return 0;
 }
