@@ -997,7 +997,7 @@ int main (void)
    
   deter = num[0][0] * num[1][1] - num[1][0] * num[0][1];
 
-  printf ("El determinante es: %d ", deter);
+  printf ("\nEl determinante es: %d \n\n", deter);
 
   return 0;
 }
