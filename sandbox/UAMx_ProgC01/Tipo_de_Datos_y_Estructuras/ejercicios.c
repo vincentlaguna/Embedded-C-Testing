@@ -877,7 +877,7 @@ int main (void)
    
   deter = num[0][0] * num[1][1] - num[1][0] * num[0][1];
 
-  printf ("El determinante es: %d ", deter);
+  printf ("\nEl determinante es: %d \n\n", deter);
 
   return 0;
 }
@@ -988,13 +988,29 @@ int main(void)
 
 #include <stdio.h>
 
-#define DIM 2
+#define   COL  2
+#define   FILA 3
 
 int main (void) 
 {
-  int num[DIM][DIM] = {{1, 3}, {5, 3}};
-  int deter = 0;
-   
+  char flota[DIM][DIM] = 
+  {
+    {'O', 'X'},
+    {'X', 'X'},
+    {'X', 'O'},
+  };
+  
+  int  entradaFila1, entradaFila2, entradaCol1, entradaCol2 = 0;
+  
+  printf("\nIntroduce una fila: ");
+  scanf("%d", &entradaFila1);
+  printf("\nIntroduce una columna: ");
+  scanf("%d", &entradaCol1);
+  
+  printf("\nEn la fila 1, columna 2 encontramos: %c\n\n", )
+  
+  printf("\nIntroduce una fila: ");
+  scanf("%d")
   deter = num[0][0] * num[1][1] - num[1][0] * num[0][1];
 
   printf ("\nEl determinante es: %d \n\n", deter);
