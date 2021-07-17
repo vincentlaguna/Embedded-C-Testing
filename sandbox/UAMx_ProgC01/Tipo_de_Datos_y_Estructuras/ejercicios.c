@@ -919,48 +919,43 @@ enum      { partida1, partida2, partida3,
 int main(void) 
 {
   double matriz[JUGADORES][JUGADAS];
-  // double cuenta_de_kassadin;
-  
-  // double ahri[DIM];
-  // double cuenta_de_ahri;
-  // double media_de_ahri;
-  
-  // double jax[DIM];
-  // double cuenta_de_jax;
-  // double media_de_jax;
+  double cuenta_de_kassadin;
+  double cuenta_de_ahri;
+  double cuenta_de_jax;
 
   printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Kassadin: ");
   scanf("\n%lf %lf %lf %lf %lf", &matriz[kassadin][partida1], &matriz[kassadin][partida2],
          &matriz[kassadin][partida3], &matriz[kassadin][partida4], &matriz[kassadin][partida5]);
   
-  for(int i = 0; i < JUGADAS -1; i++)
+  for(int i = 0; i < JUGADAS - 1; i++)
   {
     cuenta_de_kassadin += matriz[kassadin][i];
   }
   matriz[kassadin][media] = cuenta_de_kassadin / 5;
   
   printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Ahri: ");
-  scanf("\n%lf %lf %lf %lf %lf", &matriz[kassadin][partida1], &matriz[kassadin][partida2],
-         &matriz[kassadin][partida3], &matriz[kassadin][partida4], &matriz[kassadin][partida5]);
+  scanf("\n%lf %lf %lf %lf %lf", &matriz[ahri][partida1], &matriz[ahri][partida2],
+         &matriz[ahri][partida3], &matriz[ahri][partida4], &matriz[ahri][partida5]);
   
-  for(int i = 0; i < JUGADAS -1; i++)
+  for(int i = 0; i < JUGADAS - 1; i++)
   {
-    cuenta_de_kassadin += matriz[kassadin][i];
+    cuenta_de_ahri += matriz[ahri][i];
   }
-  matriz[kassadin][media] = cuenta_de_kassadin / 5;
+  matriz[ahri][media] = cuenta_de_ahri / 5;
   
   printf("\nIntroduce la experiencia obtenida en las últimas 5 partidas al LoL de Jax: ");
-  scanf("\n%lf %lf %lf %lf %lf", &jax[0], &jax[1], &jax[2], &jax[3], &jax[4]);
+  scanf("\n%lf %lf %lf %lf %lf", &matriz[jax][partida1], &matriz[jax][partida2],
+         &matriz[jax][partida3], &matriz[jax][partida4], &matriz[jax][partida5]);
   
-  for(int i = 0; i < DIM; i++)
+  for(int i = 0; i < JUGADAS - 1; i++)
   {
-    cuenta_de_jax += jax[i];
+    cuenta_de_jax += matriz[jax][i];
   }
-  media_de_jax = cuenta_de_jax / 5; 
+  matriz[jax][media] = cuenta_de_ahri / 5;
   
-  printf("\nMedia experiencia últimas 5 partidas con Kassadin: %.2lf\n", media_de_kassadin);
-  printf("\nMedia experiencia últimas 5 partidas con Ahri: %.2lf\n", media_de_ahri);
-  printf("\nMedia experiencia últimas 5 partidas con Jax: %.2lf\n\n", media_de_jax);
+  printf("\nMedia experiencia últimas 5 partidas con Kassadin: %.2lf\n", matriz[kassadin][media]);
+  printf("\nMedia experiencia últimas 5 partidas con Ahri: %.2lf\n", matriz[ahri][media]);
+  printf("\nMedia experiencia últimas 5 partidas con Jax: %.2lf\n\n", matriz[jax][media]);
   
   return 0;
 }
