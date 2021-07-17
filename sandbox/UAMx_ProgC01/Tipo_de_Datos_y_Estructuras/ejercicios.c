@@ -963,6 +963,33 @@ int main(void)
 /*********************************************
 
 
+/*************** Ejercicio 3.5 ***************/
+// Vamos a descansar un poco del LoL. Ahora toca escribir un programa 
+// que permita a un usuario jugar a hundir la flota de forma muuuy simple.
+// Partimos de una tabla bidimensional de 3 filas y 2 columnas a la que 
+// inicializamos con dos 'O' en donde consideremos,
+// y todo lo demás con 'X'. Por ejemplo:
+
+// |_X_|_O_|
+// |_O_|_X_|
+// |_X_|_X_|
+
+// El jugador tendrá 2 oportunidades para adivinar la posición de los barcos,
+// y en cada intento se informará si en la posición seleccionada se ha 
+// encontrado una 'O' o una 'X'.
+// Un ejemplo de programa sería:
+
+// Introduce una fila: 1
+// Introduce una columna: 2
+// En la fila 1, columna 2 encontramos: O
+// Introduce una fila: 3
+// Introduce una columna: 1
+// En la fila 3, columna 1 encontramos: X
+
+
+/*********************************************/
+
+
 
 /*********************************************/
 
