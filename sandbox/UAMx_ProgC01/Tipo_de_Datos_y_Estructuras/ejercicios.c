@@ -1049,7 +1049,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.6 ***************/
+/*************** Ejercicio 3.6 ***************
 // Escribe un programa que muestre la longitud de una palabra.
 // Este sería un ejemplo del mismo, inicializando la variable 
 // con la palabra supercalifragilisticoespialidoso:
@@ -1060,12 +1060,32 @@ int main(void)
 
 int main(void)
 {
+  char palabra[] = "supercalifragilisticoespialidoso";
   
+  printf("\nLa longitud de la palabra \"supercalifragilisticoespialidoso\" es: %d\n\n",
+          strlen(palabra));
+          
   return(0);
 }
 
+/*********************************************/
+
 
 /*********************************************/
+
+#include <stdio.h>
+
+int main(void) 
+{
+  char variable = 'A';
+  
+  printf("\n%c\n\n", variable);
+  
+  return 0;
+}
+
+/*********************************************/  
+
 
 /*************** Ejercicio 3.6 ***************/
 
