@@ -1094,8 +1094,8 @@ int main(void)
 // y después un número inferior al tamaño de dicha palabra.
 // El programa introducirá el valor ASCII 0 en la posición 
 // indicada por el usuario y mostrará la cadena resultante.
-// Nota: Puedes asumir que el usuario siempre va a intrudcir un número inferior al tamaño de la palabra
-
+// Nota: Puedes asumir que el usuario siempre va a intrudcir
+// un número inferior al tamaño de la palabra.
 // Este sería un ejemplo del mismo:
 
 // Escribe una palabra: supercalifragilisticoespialidoso
@@ -1108,6 +1108,14 @@ int main(void)
 
 int main(void)
 {
+  char *palabra;
+  
+  printf("\nEscribe una palabra: ");
+  scanf("%s", palabra);
+  printf("\nLa longitud de la palabra es: %d\n\n", strlen(palabra));
+  
+  printf("Indica un número menor a dicha longitud: ");
+  scanf("%d")
   
   
   return(0);
