@@ -1104,23 +1104,23 @@ int main(void)
 // La palabra cortada en la letra 23 es: supercalifragilisticoes.
 
 #include <stdio.h>
-#include <stdio.h>
+#include <string.h>
+#define  DIM  32
 
 int main(void)
 {
-  char  numero;
-  char *palabra;
-  char *palabraCortada;
+  char  numero             = 0;
+  char  palabra[32]        = "\0";
+  // char  palabraCortada[32] = "\0";
   
   printf("\nEscribe una palabra: ");
   scanf("%s", palabra);
   printf("\nLa longitud de la palabra es: %d\n\n", strlen(palabra));
   
-  // printf("Indica un número menor a dicha longitud: ");
-  // scanf("%d", &numero);
-  
-  // while ()
-  // printf("La palabra cortada en la letra %d es: %s\n\n", numero, );
+  printf("Indica un número menor a dicha longitud: ");
+  scanf("%d", &numero);
+  palabra[numero] = '\0';
+  printf("\nLa palabra cortada en la letra %d es: %s\n\n", numero, palabra);
   
   
   return(0);
