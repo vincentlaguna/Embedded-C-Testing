@@ -1108,14 +1108,19 @@ int main(void)
 
 int main(void)
 {
+  char  numero;
   char *palabra;
+  char *palabraCortada;
   
   printf("\nEscribe una palabra: ");
   scanf("%s", palabra);
   printf("\nLa longitud de la palabra es: %d\n\n", strlen(palabra));
   
-  printf("Indica un número menor a dicha longitud: ");
-  scanf("%d")
+  // printf("Indica un número menor a dicha longitud: ");
+  // scanf("%d", &numero);
+  
+  // while ()
+  // printf("La palabra cortada en la letra %d es: %s\n\n", numero, );
   
   
   return(0);
