@@ -1071,15 +1071,16 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 
 #include <stdio.h>
+#include <string.h>
 
 int main(void) 
 {
-  char variable = 'A';
+  char variable = "A";
   
-  printf("\n%c\n\n", variable);
+  printf("\n%d\n\n", strlen(variable));
   
   return 0;
 }
@@ -1087,9 +1088,40 @@ int main(void)
 /*********************************************/  
 
 
-/*************** Ejercicio 3.6 ***************/
+/*************** Ejercicio 3.7 ***************/
+
+// Vamos a escribir un programa que pida una palabra 
+// y después un número inferior al tamaño de dicha palabra.
+// El programa introducirá el valor ASCII 0 en la posición 
+// indicada por el usuario y mostrará la cadena resultante.
+// Nota: Puedes asumir que el usuario siempre va a intrudcir un número inferior al tamaño de la palabra
+
+// Este sería un ejemplo del mismo:
+
+// Escribe una palabra: supercalifragilisticoespialidoso
+// La longitud de dicha palabra es: 32.
+// Indica un número menor a dicha longitud: 23
+// La palabra cortada en la letra 23 es: supercalifragilisticoes.
+
+#include <stdio.h>
+#include <stdio.h>
+
+int main(void)
+{
+  
+  
+  return(0);
+}
+
+
 
 /*********************************************/
+
+
+/*************** Ejercicio 3.7 ***************/
+
+/*********************************************/
+
 
 /*********************************************/  
 
