@@ -963,7 +963,7 @@ int main(void)
 /*********************************************
 
 
-/*************** Ejercicio 3.5 ***************/
+/*************** Ejercicio 3.5 ***************
 // Vamos a descansar un poco del LoL. Ahora toca escribir un programa 
 // que permita a un usuario jugar a hundir la flota de forma muuuy simple.
 // Partimos de una tabla bidimensional de 3 filas y 2 columnas a la que 
@@ -1026,8 +1026,25 @@ int main (void)
 }
 
 /*********************************************/
+// Analizando strlen()
 
+#include <stdio.h>
+#include <string.h>
 
+#define DIM 20
+
+int main(void)
+{
+  char nombre1[DIM] = "Ana";
+  char nombre2[DIM] = "Anacleto";
+  char nombre3[DIM] = "Anastasia";
+  
+  printf("La longitud de nombre1 es %d\n", strlen(nombre1));
+  printf("La longitud de nombre2 es %d\n", strlen(nombre2));
+  printf("La longitud de nombre3 es %d\n", strlen(nombre3));
+  
+  return 0;
+}
 
 /*********************************************/
 
