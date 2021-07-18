@@ -1025,7 +1025,7 @@ int main (void)
   return 0;
 }
 
-/*********************************************/
+/*********************************************
 // Analizando strlen()
 
 #include <stdio.h>
@@ -1049,8 +1049,25 @@ int main(void)
 /*********************************************/
 
 
+/*************** Ejercicio 3.6 ***************/
+// Escribe un programa que muestre la longitud de una palabra.
+// Este sería un ejemplo del mismo, inicializando la variable 
+// con la palabra supercalifragilisticoespialidoso:
+// La longitud de la cadena es: 32.
 
-/*************** Ejercicio 3.5 ***************/
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+  
+  return(0);
+}
+
+
+/*********************************************/
+
+/*************** Ejercicio 3.6 ***************/
 
 /*********************************************/
 
