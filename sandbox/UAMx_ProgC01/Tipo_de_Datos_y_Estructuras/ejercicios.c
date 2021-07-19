@@ -1088,7 +1088,7 @@ int main(void)
 /*********************************************/  
 
 
-/*************** Ejercicio 3.7 ***************/
+/*************** Ejercicio 3.7 ***************
 
 // Vamos a escribir un programa que pida una palabra 
 // y después un número inferior al tamaño de dicha palabra.
@@ -1146,6 +1146,30 @@ int main(void)
   printf("\nHola, %s.\n\n", nombre);
 
   return 0;
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Analizando fgets()
+
+#include <stdio.h>
+
+#define TAM 16
+
+int main(void)
+{
+  char nombre[TAM], ciudad[TAM];
+
+  printf("Introduce tu nombre: ");
+  scanf("%s", nombre);
+
+  printf("Introduce tu ciudad de residencia: ");
+  gets(ciudad);
+
+  printf("Hola, %s. Vives en %s.\n", nombre, ciudad);
+
 }
 
 /*********************************************/
