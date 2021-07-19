@@ -1088,7 +1088,7 @@ int main(void)
 /*********************************************/  
 
 
-/*************** Ejercicio 3.7 ***************
+/*************** Ejercicio 3.7 ***************/
 
 // Vamos a escribir un programa que pida una palabra 
 // y después un número inferior al tamaño de dicha palabra.
@@ -1129,7 +1129,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/  
+/*********************************************
 // Analizando gets()
 
 #include <stdio.h>
