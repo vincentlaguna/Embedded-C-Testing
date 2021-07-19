@@ -1162,15 +1162,16 @@ int main(void)
 {
   char nombre[TAM], ciudad[TAM];
 
-  printf("Introduce tu nombre: ");
+  printf("\nIntroduce tu nombre: ");
   scanf("%s", nombre);
   getchar();
 
   printf("Introduce tu ciudad de residencia: ");
   gets(ciudad);
 
-  printf("Hola, %s. Vives en %s.\n", nombre, ciudad);
-
+  printf("Hola, %s. Vives en %s.\n\n", nombre, ciudad);
+  
+  return(0);
 }
 
 /*********************************************/
