@@ -1152,7 +1152,7 @@ int main(void)
 
 
 /*********************************************/
-// Analizando fgets()
+// Analizando getchar()
 
 #include <stdio.h>
 
@@ -1164,6 +1164,7 @@ int main(void)
 
   printf("Introduce tu nombre: ");
   scanf("%s", nombre);
+  getchar();
 
   printf("Introduce tu ciudad de residencia: ");
   gets(ciudad);
