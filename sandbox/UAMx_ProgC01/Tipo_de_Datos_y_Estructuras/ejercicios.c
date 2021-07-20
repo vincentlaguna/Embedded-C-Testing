@@ -1177,8 +1177,8 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************
-// Analizando getchar()
+/*********************************************/
+// Analizando gets()
 
 #include <stdio.h>
 
@@ -1186,18 +1186,21 @@ int main(void)
 
 int main(void)
 {
+  // int  edad;
   char nombre[DIM];
   char ciudad[DIM];
-
+  // printf("\nIntroduce tu edad: ");
   printf("\nIntroduce tu nombre: ");
-  scanf("%s", &nombre);
-  // gets(nombre);
-
+  // scanf("%s", &nombre);
+  gets(nombre);
+  // gets(edad);
+  
   printf("Introduce tu ciudad de residencia: ");
-  gets(ciudad);
-  // scanf("%s", ciudad);
+  // gets(ciudad);
+  scanf("%s", ciudad);
 
   printf("\nHola, %s. Vives en %s.\n\n", nombre, ciudad);
+  // printf("\nHola, tienes %d años.\n\n", edad);
   
   return(0);
 }
