@@ -1176,6 +1176,32 @@ int main(void)
 
 /*********************************************/
 
+
+/*********************************************/
+// Analizando getchar()
+
+#include <stdio.h>
+
+#define DIM 128
+
+int main(void)
+{
+  char nombre[DIM];
+  char ciudad[DIM];
+
+  printf("Introduce tu nombre: ");
+  gets(nombre);
+
+  printf("Introduce tu ciudad de residencia: ");
+  scanf("%s", ciudad);
+
+  printf("Hola, %s. Vives en %s.\n", nombre, ciudad);
+  
+  return(0);
+}
+
+/*********************************************/
+
 /*************** Ejercicio 3.8 ***************/
 
 /*********************************************/
