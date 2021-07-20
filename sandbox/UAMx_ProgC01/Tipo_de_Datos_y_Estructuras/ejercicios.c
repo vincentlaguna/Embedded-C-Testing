@@ -1177,7 +1177,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Analizando getchar()
 
 #include <stdio.h>
@@ -1190,10 +1190,12 @@ int main(void)
   char ciudad[DIM];
 
   printf("\nIntroduce tu nombre: ");
-  gets(nombre);
+  scanf("%s", &nombre);
+  // gets(nombre);
 
   printf("Introduce tu ciudad de residencia: ");
-  scanf("%s", ciudad);
+  gets(ciudad);
+  // scanf("%s", ciudad);
 
   printf("\nHola, %s. Vives en %s.\n\n", nombre, ciudad);
   
