@@ -1223,7 +1223,7 @@ int main(void)
 
   printf("\nAnais vs. Anabel: %d\n", strcmp(nombre1, nombre2));
   printf("Anais vs. Anais: %d\n", strcmp(nombre1, nombre1));
-  printf("Anabel vs. Ana: %d\n\n", strcmp(nombre2, nombre1));
+  printf("Anabel vs. Anais: %d\n\n", strcmp(nombre2, nombre1));
   
   return(0);
 }
