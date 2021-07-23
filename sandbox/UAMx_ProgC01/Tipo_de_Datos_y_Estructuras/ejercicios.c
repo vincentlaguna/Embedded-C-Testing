@@ -1231,7 +1231,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.8 ***************/
+/*************** Ejercicio 3.8 ***************
 // Escribe un programa que solicite dos cadenas por teclado
 // y escriba por pantalla el valor numérico devuelto por strcmp().
 // Para poder utilizar esta función debes incluir la biblioteca 
@@ -1268,7 +1268,7 @@ int main(void)
 }
 
 /*********************************************/
-
+// Analizando strcpy()
 #include <stdio.h>
 #include <string.h>
 
@@ -1276,14 +1276,15 @@ int main(void)
 
 int main(void)
 {
-  int x=3, y;
-  char nombre1[DIM]="Ana", nombre2[DIM];
+  int x = 3, y;
+  char nombre1[DIM] /*="Pedro"*/, nombre2[DIM] = "Luis";
 
   y = x;
-  nombre2 = nombre1;
+  // nombre2 = nombre1;
+  strcpy(nombre2, nombre1);
 
-  printf("x=%d, y=%d\n", x, y);
-  printf("nombre1=%s, nombre2=%s\n", nombre1, nombre2);
+  printf("\nx = %d, y = %d\n", x, y);
+  printf("nombre1 = %s, nombre2 = %s\n\n", nombre1, nombre2);
 
   
   return(0);
