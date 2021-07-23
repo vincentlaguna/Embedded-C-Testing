@@ -1245,16 +1245,22 @@ int main(void)
 #include <stdio.h>
 #include <string.h>
 
-#define DIM 8
+#define DIM 32
 
 int main(void)
 {
-  char nombre1[DIM] = "Anais";
-  char nombre2[DIM] = "Anabel";
+  
+  char cadena1[DIM];
+  char cadena2[DIM];
+  
+  printf("\nIntroduce la primera palabra: ");
+  gets(nombre);
+  
+  printf("Introduce la primera palabra: ");
+  scanf("%s", ciudad);
 
-  printf("\nAnais vs. Anabel: %d\n", strcmp(nombre1, nombre2));
-  printf("Anais vs. Anais: %d\n", strcmp(nombre1, nombre1));
-  printf("Anabel vs. Anais: %d\n\n", strcmp(nombre2, nombre1));
+  printf("\nHola, %s. Vives en %s.\n\n", nombre, ciudad);
+
   
   return(0);
 }
