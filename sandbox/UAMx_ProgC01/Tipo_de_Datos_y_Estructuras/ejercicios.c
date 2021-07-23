@@ -1269,6 +1269,34 @@ int main(void)
 
 /*********************************************/
 
+#include <stdio.h>
+#include <string.h>
+
+#define DIM 8
+
+int main(void)
+{
+  int x=3, y;
+  char nombre1[DIM]="Ana", nombre2[DIM];
+
+  y = x;
+  nombre2 = nombre1;
+
+  printf("x=%d, y=%d\n", x, y);
+  printf("nombre1=%s, nombre2=%s\n", nombre1, nombre2);
+
+  
+  return(0);
+}
+
+
+
+/*********************************************/
+
+
+
+/*********************************************/
+
 /*************** Ejercicio 3.8 ***************/
 
 /*********************************************/
