@@ -1373,29 +1373,28 @@ int main(void)
 // El resto de la divisón de 17 y 3 es 2
 
 #include <stdio.h>
-#include <string.h>
 
 #define DIM 6
 
 int main(void)
 {
-  double        mediaPar;
-  double        mediaImpar;
-  unsigned int  cadena[DIM];
-  unsigned int  resto;
+  double      mediaPar;
+  double      mediaImpar;
+  signed int  cadena[DIM];
+  signed int  resto;
   
   printf("\nIntroduce el primer número entero: ");
-  scanf("%d", cadena[0]);
-  printf("\nIntroduce el segundo número entero: ");
-  scanf("%d", cadena[1]);
-  printf("\nIntroduce el tercer número entero: ");
-  scanf("%d", cadena[2]);
-  printf("\nIntroduce el cuarto número entero: ");
-  scanf("%d", cadena[3]);
-  printf("\nIntroduce el quinto número entero: ");
-  scanf("%d", cadena[4]);
-  printf("\nIntroduce el sexto número entero: ");
-  scanf("%d", cadena[5]);
+  scanf("%d", &cadena[0]);
+  printf("Introduce el segundo número entero: ");
+  scanf("%d", &cadena[1]);
+  printf("Introduce el tercer número entero: ");
+  scanf("%d", &cadena[2]);
+  printf("Introduce el cuarto número entero: ");
+  scanf("%d", &cadena[3]);
+  printf("Introduce el quinto número entero: ");
+  scanf("%d", &cadena[4]);
+  printf("Introduce el sexto número entero: ");
+  scanf("%d", &cadena[5]);
   
   for (int i = 0; i < DIM; i++)
   {
@@ -1416,10 +1415,10 @@ int main(void)
   printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
           cadena[0], cadena[2], cadena[4]);
           
-  printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
+  printf("La media de los números %d, %d y %d es %lf\n\n", 
           cadena[1], cadena[3], cadena[5]);
           
-  printf("\nEl resto de la divisón de %d y %d es %d\n\n", 
+  printf("El resto de la divisón de %d y %d es %d\n\n", 
           cadena[5], cadena[0], resto);
           
   return(0);
