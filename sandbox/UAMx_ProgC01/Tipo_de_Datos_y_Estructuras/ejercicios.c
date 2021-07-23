@@ -1375,25 +1375,48 @@ int main(void)
 #include <stdio.h>
 #include <string.h>
 
-#define DIM 128
+#define DIM 6
 
 int main(void)
 {
-  char cadena[DIM];
-  char copia[DIM];
-  signed int valor;
+  double        mediaPar;
+  double        mediaImpar;
+  unsigned int  cadena[DIM];
+  unsigned int  resto;
   
-  printf("\nIntroduce una cadena de caracteres: ");
-  gets(cadena);
+  printf("\nIntroduce el primer número entero: ");
+  scanf("%d", cadena[0]);
+  printf("\nIntroduce el segundo número entero: ");
+  scanf("%d", cadena[1]);
+  printf("\nIntroduce el tercer número entero: ");
+  scanf("%d", cadena[2]);
+  printf("\nIntroduce el cuarto número entero: ");
+  scanf("%d", cadena[3]);
+  printf("\nIntroduce el quinto número entero: ");
+  scanf("%d", cadena[4]);
+  printf("\nIntroduce el sexto número entero: ");
+  scanf("%d", cadena[5]);
   
-  printf("\nLa cadena de caracteres copiada es: %s = %d\n",
-          cadena, strlen(cadena));
+  for (int i = 0; i < DIM; i++)
+  {
+    if (cadena[i] % 2 == 0)
+      mediaPar += cadena[i];
+  }
+  mediaPar /= DIM;
   
-  strcpy(copia, cadena);
-  valor = strcmp(cadena, copia);
-
-  printf("\nEl valor devuelto por la comparación de las cadenas es: %d\n\n", valor);
-
+  printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
+          cadena[0], cadena[2], cadena[4]);
+          
+  for (int i = 0; i < DIM; i++)
+  {
+    if (cadena[i] % 2 == 0)
+      mediaPar += cadena[i];
+  }
+  mediaPar /= DIM;
+  
+  printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
+          cadena[0], cadena[2], cadena[4]);
+          
   return(0);
 }
 
