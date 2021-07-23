@@ -1208,7 +1208,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Analizando strcmp()
 
 #include <stdio.h>
@@ -1230,6 +1230,36 @@ int main(void)
 
 /*********************************************/
 
+
+/*************** Ejercicio 3.8 ***************/
+Escribe un programa que solicite dos cadenas por teclado
+y escriba por pantalla el valor numérico devuelto por strcmp().
+Para poder utilizar esta función debes incluir la biblioteca 
+string.h al principio del programa.
+Lo que sigue es un ejemplo de ejecución del programa:
+
+Introduce una cadena: Hola caracola
+Introduce otra cadena: Hasta luego cocodrilo
+El valor devuelto por la comparación de las cadenas es: 14
+
+#include <stdio.h>
+#include <string.h>
+
+#define DIM 8
+
+int main(void)
+{
+  char nombre1[DIM] = "Anais";
+  char nombre2[DIM] = "Anabel";
+
+  printf("\nAnais vs. Anabel: %d\n", strcmp(nombre1, nombre2));
+  printf("Anais vs. Anais: %d\n", strcmp(nombre1, nombre1));
+  printf("Anabel vs. Anais: %d\n\n", strcmp(nombre2, nombre1));
+  
+  return(0);
+}
+
+/*********************************************/
 
 /*************** Ejercicio 3.8 ***************/
 
