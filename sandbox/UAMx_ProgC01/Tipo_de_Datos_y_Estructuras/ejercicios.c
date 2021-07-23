@@ -1267,7 +1267,7 @@ int main(void)
   return(0);
 }
 
-/*********************************************/
+/*********************************************
 // Analizando strcpy()
 #include <stdio.h>
 #include <string.h>
@@ -1277,7 +1277,7 @@ int main(void)
 int main(void)
 {
   int x = 3, y;
-  char nombre1[DIM] /*="Pedro"*/, nombre2[DIM] = "Luis";
+  char nombre1[DIM] = Pedro, nombre2[DIM] = "Luis";
 
   y = x;
   // nombre2 = nombre1;
@@ -1286,15 +1286,52 @@ int main(void)
   printf("\nx = %d, y = %d\n", x, y);
   printf("nombre1 = %s, nombre2 = %s\n\n", nombre1, nombre2);
 
-  
   return(0);
 }
-
-
 
 /*********************************************/
 
 
+/*************** Ejercicio 3.8 ***************/
+// Por último, vamos a escribir un programa más 
+// complejo que nos permita jugar con cadenas de caracteres. 
+// Para ello, vamos a solicitar al usuario una cadena de 
+// caracteres, que vamos a copiar en otra variable, para después 
+// comparar ambas variables. Te recomendamos que muestres por 
+// pantalla la cadena de caracteres que se ha copiado en la 
+// segunda variable, así como el valor numérico de la comparación pues, 
+// si todas las operaciones se han realizado correctamente, debería ser 0.
+// Este sería un ejemplo del mismo:
+
+// Introduce una cadena de caracteres: La respuesta de la vida, 
+// el universo y todo lo demás es... 42
+// La cadena de caracteres copiada es: La respuesta de la vida, 
+// el universo y todo lo demás es... 42
+// El resultado de comparar ambas cadenas es: 0
+
+#include <stdio.h>
+#include <string.h>
+
+#define DIM 128
+
+int main(void)
+{
+  char cadena[DIM];
+  char copia[DIM];
+  signed int valor;
+  
+  printf("\nIntraoduce una cadena de caracteres: ");
+  gets(cadena);
+  
+  printf("\nLa cadena de caracteres copiada es: %s = %d\n", cadena, sizeof(cadena));
+  
+  strcpy(copia, cadena);
+  valor = strcmp(cadena, copia);
+
+  printf("\nEl valor devuelto por la comparación de las cadenas es: %d\n\n", valor);
+
+  return(0);
+}
 
 /*********************************************/
 
