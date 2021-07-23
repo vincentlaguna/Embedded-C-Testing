@@ -1292,7 +1292,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.8 ***************/
+/*************** Ejercicio 3.8 ***************
 // Por último, vamos a escribir un programa más 
 // complejo que nos permita jugar con cadenas de caracteres. 
 // Para ello, vamos a solicitar al usuario una cadena de 
@@ -1335,6 +1335,70 @@ int main(void)
 }
 
 /*********************************************/
+
+
+/**************** Prueba 3.1 ****************/
+// Escribe un programa en C que declare:
+// Una tabla de seis enteros (utiliza una macro para el tamaño).
+// Un entero para almacenar el resto de una división.
+// Dos variables de tipo float a double para calcular unos valores medios.
+// A continuación solicitará seis números enteros y los almacenará en 
+// cada una de las posiciones de la tabla.
+
+// Seguidamente calculará la media de las posiciones pares de la tabla 
+// (incluida la posición cero) y la guardará en una variable.
+
+// A continuación calculará la media de las posiciones impares 
+// de la tabla y la guardará en otra variable.
+
+// Por último, calculará el resto de la división de las primeras 
+// y última posiciones de la tabla.
+
+// Antes de terminar mostrará por pantalla tres mensajes 
+// con toda la información calculada.
+
+// Los mensajes se han de mostrar tal y como aparecen en el 
+// siguiente ejemplo de ejecución y en el mismo orden 
+// (variando solo según los datos introducidos por el usuario).
+// Lo que sigue es un ejemplo de ejecución del programa:
+
+// Introduce el primer número entero: 3
+// Introduce el segundo número entero: 312
+// Introduce el tercer número entero: -45
+// Introduce el cuarto número entero: 129
+// Introduce el quinto número entero: 81
+// Introduce el sexto número entero: 17
+// La media de los números 3, -45 y 81 es 13.000000
+// La media de los números 312, 129 y 17 es 152.666667
+// El resto de la divisón de 17 y 3 es 2
+
+#include <stdio.h>
+#include <string.h>
+
+#define DIM 128
+
+int main(void)
+{
+  char cadena[DIM];
+  char copia[DIM];
+  signed int valor;
+  
+  printf("\nIntroduce una cadena de caracteres: ");
+  gets(cadena);
+  
+  printf("\nLa cadena de caracteres copiada es: %s = %d\n",
+          cadena, strlen(cadena));
+  
+  strcpy(copia, cadena);
+  valor = strcmp(cadena, copia);
+
+  printf("\nEl valor devuelto por la comparación de las cadenas es: %d\n\n", valor);
+
+  return(0);
+}
+
+/*********************************************/
+
 
 /*************** Ejercicio 3.8 ***************/
 
