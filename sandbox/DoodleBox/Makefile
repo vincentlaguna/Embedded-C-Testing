@@ -48,7 +48,8 @@ CCLAGS=-I. -I$(PATHS)
 test: $(PATHB) $(TGT)
 	./$(TGT)
 
-$(PATHB)%.o:: $(PATHS)%.c $(DEP)
+# $(PATHB)%.o:: $(PATHS)%.c $(DEP)
+$(PATHB)%.o:: $(PATHS)%.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
 # $(PATHB)%.o:: $(PATHT)%.c $(DEP)
