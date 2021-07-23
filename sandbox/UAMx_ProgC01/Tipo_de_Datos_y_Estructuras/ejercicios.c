@@ -1320,10 +1320,11 @@ int main(void)
   char copia[DIM];
   signed int valor;
   
-  printf("\nIntraoduce una cadena de caracteres: ");
+  printf("\nIntroduce una cadena de caracteres: ");
   gets(cadena);
   
-  printf("\nLa cadena de caracteres copiada es: %s = %d\n", cadena, sizeof(cadena));
+  printf("\nLa cadena de caracteres copiada es: %s = %d\n",
+          cadena, strlen(cadena));
   
   strcpy(copia, cadena);
   valor = strcmp(cadena, copia);
