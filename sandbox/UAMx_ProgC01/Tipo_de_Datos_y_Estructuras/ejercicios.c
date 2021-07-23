@@ -1371,7 +1371,6 @@ int main(void)
 // La media de los números 3, -45 y 81 es 13.000000
 // La media de los números 312, 129 y 17 es 152.666667
 // El resto de la divisón de 17 y 3 es 2
-
 #include <stdio.h>
 
 #define DIM 6
@@ -1408,15 +1407,15 @@ int main(void)
     }
   }
   
-  mediaPar    /= DIM;
-  mediaImpar  /= DIM;
-  resto       =  cadena[5] % cadena[0];
+  mediaPar   /= 3;
+  mediaImpar /= 3;
+  resto      = cadena[5] % cadena[0];
   
   printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
-          cadena[0], cadena[2], cadena[4]);
+          cadena[0], cadena[2], cadena[4], mediaPar);
           
   printf("La media de los números %d, %d y %d es %lf\n\n", 
-          cadena[1], cadena[3], cadena[5]);
+          cadena[1], cadena[3], cadena[5], mediaImpar);
           
   printf("El resto de la divisón de %d y %d es %d\n\n", 
           cadena[5], cadena[0], resto);
