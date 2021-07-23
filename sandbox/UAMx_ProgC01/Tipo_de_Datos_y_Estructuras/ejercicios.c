@@ -1249,17 +1249,19 @@ int main(void)
 
 int main(void)
 {
-  
   char cadena1[DIM];
   char cadena2[DIM];
+  signed int  valor;
   
-  printf("\nIntroduce la primera palabra: ");
+  printf("\nIntroduce una cadena: ");
   gets(cadena1);
   
-  printf("Introduce la segunda palabra: ");
-  scanf("%s", ciudad);
+  printf("Introduce otra cadena: ");
+  scanf("%s", cadena2);
+  
+  valor = strcmp(cadena1, cadena2);
 
-  printf("\nHola, %s. Vives en %s.\n\n", nombre, ciudad);
+  printf("\nEl valor devuelto por la comparación de las cadenas es: %d\n\n", valor);
 
   
   return(0);
