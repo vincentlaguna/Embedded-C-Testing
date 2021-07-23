@@ -1399,23 +1399,28 @@ int main(void)
   
   for (int i = 0; i < DIM; i++)
   {
-    if (cadena[i] % 2 == 0)
+    if (i % 2 == 0)
+    {
       mediaPar += cadena[i];
+    }
+    else
+    {
+      mediaImpar += cadena[i];
+    }
   }
-  mediaPar /= DIM;
+  
+  mediaPar    /= DIM;
+  mediaImpar  /= DIM;
+  resto       =  cadena[5] % cadena[0];
   
   printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
           cadena[0], cadena[2], cadena[4]);
           
-  for (int i = 0; i < DIM; i++)
-  {
-    if (cadena[i] % 2 == 0)
-      mediaPar += cadena[i];
-  }
-  mediaPar /= DIM;
-  
   printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
-          cadena[0], cadena[2], cadena[4]);
+          cadena[1], cadena[3], cadena[5]);
+          
+  printf("\nEl resto de la divisón de %d y %d es %d\n\n", 
+          cadena[5], cadena[0], resto);
           
   return(0);
 }
