@@ -1254,9 +1254,9 @@ int main(void)
   char cadena2[DIM];
   
   printf("\nIntroduce la primera palabra: ");
-  gets(nombre);
+  gets(cadena1);
   
-  printf("Introduce la primera palabra: ");
+  printf("Introduce la segunda palabra: ");
   scanf("%s", ciudad);
 
   printf("\nHola, %s. Vives en %s.\n\n", nombre, ciudad);
