@@ -1444,6 +1444,7 @@ int main(void)
 // Si a la palabra universidad, que tiene 11 caracteres, 
 // le intercambiamos el primer y último carácter obtenemos 
 // la palabra dniversidau
+
 #include <stdio.h>
 #include <string.h>
 
@@ -1451,48 +1452,15 @@ int main(void)
 
 int main(void)
 {
+  int   tam;
   char  palabra[DIM];
   char  palabraMod[DIM];
   
   printf("\nIntroduce una palabra: ");
-  gets("%d", &cadena);
+  gets(palabra);
   printf("\nSi a la palabra %s le intercambiamos el primer y último"
          "carácter, obtenemos la palabra: %s\n\n",);
-  scanf("%d", &cadena[1]);
-  printf("Introduce el tercer número entero: ");
-  scanf("%d", &cadena[2]);
-  printf("Introduce el cuarto número entero: ");
-  scanf("%d", &cadena[3]);
-  printf("Introduce el quinto número entero: ");
-  scanf("%d", &cadena[4]);
-  printf("Introduce el sexto número entero: ");
-  scanf("%d", &cadena[5]);
-  
-  for (int i = 0; i < DIM; i++)
-  {
-    if (i % 2 == 0)
-    {
-      mediaPar += cadena[i];
-    }
-    else
-    {
-      mediaImpar += cadena[i];
-    }
-  }
-  
-  mediaPar   /= 3;
-  mediaImpar /= 3;
-  resto      = cadena[5] % cadena[0];
-  
-  printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
-          cadena[0], cadena[2], cadena[4], mediaPar);
-          
-  printf("La media de los números %d, %d y %d es %lf\n\n", 
-          cadena[1], cadena[3], cadena[5], mediaImpar);
-          
-  printf("El resto de la divisón de %d y %d es %d\n\n", 
-          cadena[5], cadena[0], resto);
-          
+ 
   return(0);
 }
 
