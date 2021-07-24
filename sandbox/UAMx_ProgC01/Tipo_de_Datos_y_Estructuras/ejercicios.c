@@ -1444,21 +1444,20 @@ int main(void)
 // Si a la palabra universidad, que tiene 11 caracteres, 
 // le intercambiamos el primer y último carácter obtenemos 
 // la palabra dniversidau
-
 #include <stdio.h>
+#include <string.h>
 
-#define DIM 6
+#define DIM 32
 
 int main(void)
 {
-  double      mediaPar;
-  double      mediaImpar;
-  signed int  cadena[DIM];
-  signed int  resto;
+  char  palabra[DIM];
+  char  palabraMod[DIM];
   
-  printf("\nIntroduce el primer número entero: ");
-  scanf("%d", &cadena[0]);
-  printf("Introduce el segundo número entero: ");
+  printf("\nIntroduce una palabra: ");
+  gets("%d", &cadena);
+  printf("\nSi a la palabra %s le intercambiamos el primer y último"
+         "carácter, obtenemos la palabra: %s\n\n",);
   scanf("%d", &cadena[1]);
   printf("Introduce el tercer número entero: ");
   scanf("%d", &cadena[2]);
