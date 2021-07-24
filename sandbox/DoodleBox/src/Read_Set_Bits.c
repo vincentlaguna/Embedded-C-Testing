@@ -14,9 +14,9 @@ int main(int argc, char **argv)
   // Enter the bit position you want to set...
   printf("Enter the nth bit position to check and set (0-31): ");
   scanf("%d", &position); 
-  // Right-shift num (n) number of times and perform bitwise & with 1
+  // Right-shift num (n) position times and perform bitwise & with 1
   bitStatus = (num >> position) & 1;
-  puts("The %d bit is set to: %d\n", position, bitStatus);
+  printf("The %d bit is set to: %d\n\n", position, bitStatus);
   
   return(0);
 }
