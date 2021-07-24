@@ -1458,8 +1458,12 @@ int main(void)
   
   printf("\nIntroduce una palabra: ");
   gets(palabra);
-  printf("\nSi a la palabra %s le intercambiamos el primer y último"
-         "carácter, obtenemos la palabra: %s\n\n",);
+  
+  tam = strlen(palabra);
+  
+  printf("\nSi a la palabra %s, que tiene %d caracteres, le intercambiamos "
+         "el primer y último carácter, obtenemos la palabra: %s\n\n",
+          palabra, tam, palabra);
  
   return(0);
 }
