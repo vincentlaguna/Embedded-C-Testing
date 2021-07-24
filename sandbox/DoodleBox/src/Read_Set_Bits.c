@@ -16,8 +16,16 @@ int main(int argc, char **argv)
   scanf("%d", &position); 
   // Right-shift num (n) position times and perform bitwise & with 1
   bitStatus = (num >> position) & 1;
-  printf("The %d bit is set to: %d\n\n", position, bitStatus);
+  printf("\nThe %d bit is set to: %d\n", position, bitStatus);
+  // Left-shift 1, position times and perform bitwise | with num
+  newNum = (1 << position) | num;
+  puts("Bit is set successfully.");
   
+  printf("\nNumber before setting the %d bit: %d (in decimal)\n",
+          position, num);
+  printf("Number after setting the %d bit: %d (in decimal)\n\n",
+          position, newNum);
+          
   return(0);
 }
 
