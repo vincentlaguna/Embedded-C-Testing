@@ -1337,7 +1337,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.1 ****************/
+/**************** Prueba 3.1 ****************
 // Escribe un programa en C que declare:
 // Una tabla de seis enteros (utiliza una macro para el tamaño).
 // Un entero para almacenar el resto de una división.
@@ -1371,6 +1371,80 @@ int main(void)
 // La media de los números 3, -45 y 81 es 13.000000
 // La media de los números 312, 129 y 17 es 152.666667
 // El resto de la divisón de 17 y 3 es 2
+#include <stdio.h>
+
+#define DIM 6
+
+int main(void)
+{
+  double      mediaPar;
+  double      mediaImpar;
+  signed int  cadena[DIM];
+  signed int  resto;
+  
+  printf("\nIntroduce el primer número entero: ");
+  scanf("%d", &cadena[0]);
+  printf("Introduce el segundo número entero: ");
+  scanf("%d", &cadena[1]);
+  printf("Introduce el tercer número entero: ");
+  scanf("%d", &cadena[2]);
+  printf("Introduce el cuarto número entero: ");
+  scanf("%d", &cadena[3]);
+  printf("Introduce el quinto número entero: ");
+  scanf("%d", &cadena[4]);
+  printf("Introduce el sexto número entero: ");
+  scanf("%d", &cadena[5]);
+  
+  for (int i = 0; i < DIM; i++)
+  {
+    if (i % 2 == 0)
+    {
+      mediaPar += cadena[i];
+    }
+    else
+    {
+      mediaImpar += cadena[i];
+    }
+  }
+  
+  mediaPar   /= 3;
+  mediaImpar /= 3;
+  resto      = cadena[5] % cadena[0];
+  
+  printf("\nLa media de los números %d, %d y %d es %lf\n\n", 
+          cadena[0], cadena[2], cadena[4], mediaPar);
+          
+  printf("La media de los números %d, %d y %d es %lf\n\n", 
+          cadena[1], cadena[3], cadena[5], mediaImpar);
+          
+  printf("El resto de la divisón de %d y %d es %d\n\n", 
+          cadena[5], cadena[0], resto);
+          
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 3.2 ****************/
+// Escribe un programa en C que solicite una cadena de caracteres
+// y muestre por pantalla la cadena original, su tamaño y la 
+// cadena con el primer y último carácter intercambiados.
+
+// Para esto tendrá que declarar las variables y realizar las 
+// operaciones adecuadas.
+
+// Los mensajes se han de mostrar tal y como aparecen en el 
+// siguiente ejemplo de ejecución y en el mismo orden 
+// (variando sólo según los datos introducidos por el usuario).
+
+// Lo que sigue es un ejemplo de ejecución del programa:
+
+// Introduce una palabra: universidad
+// Si a la palabra universidad, que tiene 11 caracteres, 
+// le intercambiamos el primer y último carácter obtenemos 
+// la palabra dniversidau
+
 #include <stdio.h>
 
 #define DIM 6
