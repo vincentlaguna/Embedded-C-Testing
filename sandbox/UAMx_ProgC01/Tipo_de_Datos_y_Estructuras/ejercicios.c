@@ -1426,7 +1426,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.2 ****************/
+/**************** Prueba 3.2 ****************
 // Escribe un programa en C que solicite una cadena de caracteres
 // y muestre por pantalla la cadena original, su tamaño y la 
 // cadena con el primer y último carácter intercambiados.
@@ -1477,6 +1477,31 @@ int main(void)
          "el primer y último carácter, obtenemos la palabra: %s\n\n",
           palabra, tam, palabraMod);
  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Introduccion a las Estructuras
+#include  <stdio.h>
+#include  <string.h>
+
+#define   MAX_STR   128 
+
+typedef struct
+{
+  char   autor[MAX_STR];
+  char  titulo[MAX_STR];
+  int   year;
+} Libro;
+
+int main(void)
+{
+  
+  printf("nombre1 = %s, nombre2 = %s\n\n", nombre1, nombre2);
+
   return(0);
 }
 
