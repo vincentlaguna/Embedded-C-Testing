@@ -1465,7 +1465,7 @@ int main(void)
   primer     = palabra[0];
   ultimo     = palabra[sizeof(palabra-1)];
   palabra[0] = ultimo;
-  palabra[sizeof(palabra-1)] = primer;
+  ultimo = primer;
   
   printf("%c\n", primer);
   printf("%c\n", ultimo);
