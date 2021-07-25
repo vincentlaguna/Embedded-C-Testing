@@ -1465,12 +1465,14 @@ int main(void)
   
   tam        = strlen(palabra);
   primer     = palabraMod[0];
-  ultimo     = palabraMod[strlen(palabraMod-1)];
-  palabraMod[strlen(palabraMod-1)] = primer;
+  ultimo     = palabraMod[strlen(palabraMod)-1];
+  palabraMod[strlen(palabraMod)-1] = primer;
   palabraMod[0] = ultimo;
-  printf("%d\n", strlen(palabraMod));
-  printf("%c\n", primer);
-  printf("%c\n", ultimo);
+  
+  printf("Largura: %d\n", strlen(palabraMod));
+  printf("Primer carácter: %c\n", primer);
+  printf("último carácter: %c\n", ultimo);
+  
   printf("\nSi a la palabra %s, que tiene %d caracteres, le intercambiamos "
          "el primer y último carácter, obtenemos la palabra: %s\n\n",
           palabra, tam, palabraMod);
