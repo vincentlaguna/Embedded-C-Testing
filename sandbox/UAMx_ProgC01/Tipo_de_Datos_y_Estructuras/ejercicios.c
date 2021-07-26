@@ -1485,6 +1485,7 @@ int main(void)
 
 /*********************************************/
 // Introduccion a las Estructuras
+
 #include  <stdio.h>
 #include  <string.h>
 
