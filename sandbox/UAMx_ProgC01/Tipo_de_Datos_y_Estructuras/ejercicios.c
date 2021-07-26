@@ -1496,11 +1496,11 @@ typedef struct
   char   autor[MAX_STR];
   char  titulo[MAX_STR];
   int   year;
-} Libro;
+} Libro = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
 
 int main(void)
 {
-  Libro novela = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
+  // Libro novela = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
   
   printf("\n%s fue escrito por %s en el %d\n\n",
           novela.titulo, novela.autor, novela.year);
