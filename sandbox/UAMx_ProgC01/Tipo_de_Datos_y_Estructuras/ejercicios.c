@@ -1500,6 +1500,7 @@ typedef struct
 
 int main(void)
 {
+  
   Libro novela = { "Mario Vargas Llosa", "El héroe discreto"/*, 2013*/ };
   
   // printf("Introduzca el autor del libro: ");
@@ -1516,9 +1517,6 @@ int main(void)
   printf("\n%s fue escrito por %s en el %d\n\n",
           novela.titulo, novela.autor, novela.year);
           
-  // printf("\n%s fue escrito por %s en el %d\n\n",
-          // titulo, autor, year);
-  
   return(0);
 }
 
