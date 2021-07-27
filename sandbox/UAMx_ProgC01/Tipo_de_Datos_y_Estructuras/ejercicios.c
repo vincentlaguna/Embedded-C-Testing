@@ -1500,7 +1500,7 @@ typedef struct
 
 int main(void)
 {
-  Libro novela = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
+  Libro novela = { "Mario Vargas Llosa", "El héroe discreto"/*, 2013*/ };
   
   // printf("Introduzca el autor del libro: ");
   // scanf("%s", Libro.autor);
@@ -1508,6 +1508,10 @@ int main(void)
   // scanf("%s", Libro.titulo);
   // printf("Introduzca el año de publicación: ");
   // scanf("%d", &Libro.anyo);
+  
+  printf("\nIntroduzca el año de publicación de %s, de %s: ",
+          novela.titulo, novela.autor);
+  scanf("%d", &novela.year);
   
   printf("\n%s fue escrito por %s en el %d\n\n",
           novela.titulo, novela.autor, novela.year);
