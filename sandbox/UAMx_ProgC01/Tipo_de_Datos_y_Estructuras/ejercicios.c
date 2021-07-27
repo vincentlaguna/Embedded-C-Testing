@@ -1550,22 +1550,24 @@ asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
 
 #define   MAX_STR   128 
 
-typedef struct
+typedef   struct
 {
-  int   nivel;
-  int   experiencia; // = 2013;
-  int   
-  char  nombre[MAX_STR];
-  
-} Libro; // = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
+  char    nombre[MAX_STR];
+  char    ultCampeon[MAX_STR];
+  int     nivel;
+  int     experiencia;
+  int     asesinatos;
+  int     muerto;
+  int     assists;
+  double  ratioKDA;
+} _Datos;
 
 int main(void)
 {
+  _Datos datos;
   
-  Libro novela = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
-  
-  // printf("Introduzca el autor del libro: ");
-  // scanf("%s", Libro.autor);
+  printf("¿Cuál es tu nombre de invocador?: ");
+  scanf("%s", datos.nombre);
   // printf("Introduzca el título del libro: ");
   // scanf("%s", Libro.titulo);
   // printf("Introduzca el año de publicación: ");
