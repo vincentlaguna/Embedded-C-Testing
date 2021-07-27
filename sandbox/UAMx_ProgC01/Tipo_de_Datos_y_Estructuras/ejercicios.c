@@ -1509,11 +1509,11 @@ int main(void)
   // printf("Introduzca el año de publicación: ");
   // scanf("%d", &Libro.anyo);
   
-  // printf("\n%s fue escrito por %s en el %d\n\n",
-          // novela.titulo, novela.autor, novela.year);
-          
   printf("\n%s fue escrito por %s en el %d\n\n",
-          titulo, autor, year);
+          novela.titulo, novela.autor, novela.year);
+          
+  // printf("\n%s fue escrito por %s en el %d\n\n",
+          // titulo, autor, year);
   
   return(0);
 }
