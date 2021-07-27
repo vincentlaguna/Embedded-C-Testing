@@ -1524,26 +1524,26 @@ int main(void)
 
 
 /*************** Ejercicio 4.1 ***************/
-Vamos a hacer un programa que solicite al usuario datos
-sobre su última partida al LoL y muestre el ratio 
-KDA por pantalla, que se calcula con la fórmula: 
-(K+A)/D, sea K Kills, A Assists y D Deaths.
+// Vamos a hacer un programa que solicite al usuario datos
+// sobre su última partida al LoL y muestre el ratio 
+// KDA por pantalla, que se calcula con la fórmula: 
+// (K+A)/D, sea K Kills, A Assists y D Deaths.
 
-Para ello, será necesario almacenarlos en una estructura, 
-que al menos deberá contener: nombre de usuario, 
-nivel del usuario, experiencia, nombre del campeón, 
-asesinatos, muertes y asistencias.
+// Para ello, será necesario almacenarlos en una estructura, 
+// que al menos deberá contener: nombre de usuario, 
+// nivel del usuario, experiencia, nombre del campeón, 
+// asesinatos, muertes y asistencias.
 
-Este sería un ejemplo de programa:
+// Este sería un ejemplo de programa:
 
-¿Cuál es tu nombre de invocador? asdfg
-¿Cuál es tu nivel? 67
-¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
-¿Con qué campeón has jugado tu última partida? Soraka
-¿Cuántos asesinatos has hecho? 1
-¿Cuántas veces has muerto? 3
-¿Y cuántas asistencias has hecho? 18
-asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
+// ¿Cuál es tu nombre de invocador? asdfg
+// ¿Cuál es tu nivel? 67
+// ¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
+// ¿Con qué campeón has jugado tu última partida? Soraka
+// ¿Cuántos asesinatos has hecho? 1
+// ¿Cuántas veces has muerto? 3
+// ¿Y cuántas asistencias has hecho? 18
+// asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
 
 #include  <stdio.h>
 #include  <string.h>
@@ -1566,7 +1566,7 @@ int main(void)
 {
   _Datos datos;
   
-  printf("¿Cuál es tu nombre de invocador?: ");
+  printf("\n¿Cuál es tu nombre de invocador?: ");
   scanf("%s", datos.nombre);
   // printf("Introduzca el título del libro: ");
   // scanf("%s", Libro.titulo);
@@ -1577,8 +1577,9 @@ int main(void)
   //         novela.titulo, novela.autor);
   // scanf("%d", &novela.year);
   
-  printf("\n%s fue escrito por %s en el %d\n\n",
-          novela.titulo, novela.autor, novela.year);
+  printf("\n%s\n", datos.nombre);
+  // printf("\n%s fue escrito por %s en el %d\n\n",
+  //         novela.titulo, novela.autor, novela.year);
           
   return(0);
 }
