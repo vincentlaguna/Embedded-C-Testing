@@ -1524,26 +1524,26 @@ int main(void)
 
 
 /*************** Ejercicio 4.1 ***************/
-// Vamos a hacer un programa que solicite al usuario datos
-// sobre su última partida al LoL y muestre el ratio 
-// KDA por pantalla, que se calcula con la fórmula: 
-// (K+A)/D, sea K Kills, A Assists y D Deaths.
+Vamos a hacer un programa que solicite al usuario datos
+sobre su última partida al LoL y muestre el ratio 
+KDA por pantalla, que se calcula con la fórmula: 
+(K+A)/D, sea K Kills, A Assists y D Deaths.
 
-// Para ello, será necesario almacenarlos en una estructura, 
-// que al menos deberá contener: nombre de usuario, 
-// nivel del usuario, experiencia, nombre del campeón, 
-// asesinatos, muertes y asistencias.
+Para ello, será necesario almacenarlos en una estructura, 
+que al menos deberá contener: nombre de usuario, 
+nivel del usuario, experiencia, nombre del campeón, 
+asesinatos, muertes y asistencias.
 
-// Este sería un ejemplo de programa:
+Este sería un ejemplo de programa:
 
-// ¿Cuál es tu nombre de invocador? asdfg
-// ¿Cuál es tu nivel? 67
-// ¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
-// ¿Con qué campeón has jugado tu última partida? Soraka
-// ¿Cuántos asesinatos has hecho? 1
-// ¿Cuántas veces has muerto? 3
-// ¿Y cuántas asistencias has hecho? 18
-// asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
+¿Cuál es tu nombre de invocador? asdfg
+¿Cuál es tu nivel? 67
+¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
+¿Con qué campeón has jugado tu última partida? Soraka
+¿Cuántos asesinatos has hecho? 1
+¿Cuántas veces has muerto? 3
+¿Y cuántas asistencias has hecho? 18
+asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
 
 #include  <stdio.h>
 #include  <string.h>
@@ -1552,9 +1552,11 @@ int main(void)
 
 typedef struct
 {
-  char   autor[MAX_STR]; // = "Mario Vargas Llosa";
-  char  titulo[MAX_STR]; // = "El héroe discreto";
-  int   year; // = 2013;
+  int   nivel;
+  int   experiencia; // = 2013;
+  int   
+  char  nombre[MAX_STR];
+  
 } Libro; // = { "Mario Vargas Llosa", "El héroe discreto", 2013 };
 
 int main(void)
