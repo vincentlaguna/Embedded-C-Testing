@@ -1,4 +1,4 @@
-/********* Reading and Setting Bits *********/
+/********* Reading and Setting Bits *********
 
 #include <stdio.h>
 

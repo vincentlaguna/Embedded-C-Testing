@@ -53,7 +53,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************
+/*********************************************/
 
 #include <stdio.h>
 
@@ -71,6 +71,67 @@ int main(int argc, char **argv)
 /*********************************************/
 
 /*********************************************/  
+
+/*********************************************
+#include  <stdio.h>
+#include  <string.h>
+#include  <stdlib.h>
+
+#define   MAX_STR   128 
+
+typedef   struct
+{
+  char    string[MAX_STR];
+  struct _node_t *next;
+} _node_t;
+
+_node_t *head = NULL;
+
+void insertAtHead(_node_t *p, char *string);
+
+int main(void)
+{
+  
+  char *entry = '\0';
+  // head = (_node_t*)malloc(sizeof(_node_t));
+  
+  if (!head)
+  {
+    printf("Malloc Failed.\n");
+    return -1;
+  }
+  else
+  {
+    printf("\nEnter String: ");
+    scanf("%s", head->string);
+  }
+  
+  _node_t *node1 = NULL;
+  node1 = (_node_t*)malloc(sizeof(_node_t));
+  
+  if (!node1)
+  {
+    printf("Malloc Failed.\n");
+    return -1;
+  }
+  else
+  {
+    printf("\nEnter String for node1: ");
+    scanf("%s", node1->string);
+    head->next = node1->next;
+    node1->next = next;
+  }
+  
+  printf("\n%s, %s\n\n", head->next, node1->???)                              
+
+  return(0);
+}
+
+void insertAtHead(_node_t *p, char *string) 
+{
+    
+}
+
 
 /*********************************************/
 
