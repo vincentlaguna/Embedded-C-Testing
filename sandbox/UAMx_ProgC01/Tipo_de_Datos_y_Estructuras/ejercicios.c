@@ -1602,10 +1602,12 @@ typedef   struct
 
 _node_t *head = NULL;
 
+void insertAtHead(_node_t *p, char *string);
+
 int main(void)
 {
   
-  
+  char *entry = '\0';
   // head = (_node_t*)malloc(sizeof(_node_t));
   
   if (!head)
