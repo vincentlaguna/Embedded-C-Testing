@@ -1569,14 +1569,37 @@ int main(void)
   printf("\n¿Cuál es tu nombre de invocador?: ");
   scanf("%s", datos.nombre);
   
-  printf("\n¿Cuál es tu nivel?: ");
-  scanf("%s", datos.nivel);
+  printf("¿Cuál es tu nivel?: ");
+  scanf("%d", &datos.nivel);
  
-  printf("\n¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
-  scanf("%s", datos.experiencia);
+  printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+  scanf("%d", &datos.experiencia);
   
-  printf("\n¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
-  scanf("%s", datos.experiencia);
+  printf("¿Con qué campeón has jugado tu última partida?: ");
+  scanf("%s", datos.ultCampeon);
+  
+  printf("¿Cuántos asesinatos has hecho?: ");
+  scanf("%d", &datos.asesinatos);
+  
+  printf("¿Cuántas veces has muerto?: ");
+  scanf("%d", &datos.muerto);
+  
+  printf("¿Y cuántas asistencias has hecho?: ");
+  scanf("%d", &datos.assists);
+  
+  // KDA Ratio = (K+A) / Max(1,D)
+  // = (6+3) / Max (1, 4)
+  // = 2.25 is the KDA ratio
+  
+  if (!datos.muerto >= 1)
+    datos.muerto = 1;
+  
+  datos.ratioKDA = (datos.asesinatos + datos.assists) / datos.muerto;
+  
+  printf("\n%s, de nivel %d y experiencia %d,"
+         "tu KDA ratio con %s ha sido %.2lf.\n\n", 
+          datos.nombre, datos.nivel, datos.experiencia,
+          datos.ultCampeon, datos.ratioKDA);
   
   
           
