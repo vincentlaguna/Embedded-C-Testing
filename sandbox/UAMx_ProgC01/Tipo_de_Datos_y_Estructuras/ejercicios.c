@@ -1523,7 +1523,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.1 ***************/
+/*************** Ejercicio 4.1 ***************
 // Vamos a hacer un programa que solicite al usuario datos
 // sobre su última partida al LoL y muestre el ratio 
 // KDA por pantalla, que se calcula con la fórmula: 
@@ -1585,6 +1585,61 @@ int main(void)
 }
 
 /*********************************************/
+
+
+/*********************************************/
+#include  <stdio.h>
+#include  <string.h>
+#include  <stdlib.h>
+
+#define   MAX_STR   128 
+
+typedef   struct
+{
+  char    string[MAX_STR];
+  struct _node_t *next;
+} _node_t;
+
+int main(void)
+{
+  _node_t *head = NULL;
+  
+  head = (_node_t*)malloc(sizeof(_node_t));
+  
+  if (!head)
+  {
+    printf("Malloc Failed.\n");
+    return -1;
+  }
+  else
+  {
+    printf("\nEnter String: ");
+    scanf("%s", head->string);
+  }
+  
+  _node_t *node1 = NULL;
+  node1 = (_node_t*)malloc(sizeof(_node_t));
+  
+  if (!node1)
+  {
+    printf("Malloc Failed.\n");
+    return -1;
+  }
+  else
+  {
+    printf("\nEnter String for node1: ");
+    scanf("%s", node1->string);
+    head->next = node1->next;
+    node1->next = next;
+  }
+  
+  printf("\n%s, %s\n\n", head->next, node1->)
+
+  return(0);
+}
+
+/*********************************************/
+
 
 /*************** Ejercicio 4.1 ***************/
 
