@@ -1588,15 +1588,13 @@ int main(void)
   scanf("%d", &datos.assists);
   
   // KDA Ratio = (K+A) / Max(1,D)
-  // = (6+3) / Max (1, 4)
-  // = 2.25 is the KDA ratio
-  
+
   if (!datos.muerto >= 1)
     datos.muerto = 1;
   
-  datos.ratioKDA = (datos.asesinatos + datos.assists) / datos.muerto;
+  datos.ratioKDA = (datos.asesinatos + datos.assists) / (double)datos.muerto;
   
-  printf("\n%s, de nivel %d y experiencia %d,"
+  printf("\n%s, de nivel %d y experiencia %d, "
          "tu KDA ratio con %s ha sido %.2lf.\n\n", 
           datos.nombre, datos.nivel, datos.experiencia,
           datos.ultCampeon, datos.ratioKDA);
