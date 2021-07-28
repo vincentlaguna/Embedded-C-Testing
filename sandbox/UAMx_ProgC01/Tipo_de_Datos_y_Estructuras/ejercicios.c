@@ -1600,11 +1600,13 @@ typedef   struct
   struct _node_t *next;
 } _node_t;
 
+_node_t *head = NULL;
+
 int main(void)
 {
-  _node_t *head = NULL;
   
-  head = (_node_t*)malloc(sizeof(_node_t));
+  
+  // head = (_node_t*)malloc(sizeof(_node_t));
   
   if (!head)
   {
