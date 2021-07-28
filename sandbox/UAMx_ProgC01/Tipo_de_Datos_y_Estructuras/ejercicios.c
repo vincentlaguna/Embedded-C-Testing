@@ -1633,7 +1633,7 @@ int main(void)
     node1->next = next;
   }
   
-  printf("\n%s, %s\n\n", head->next, node1->)
+  printf("\n%s, %s\n\n", head->next, node1->???)
 
   return(0);
 }
