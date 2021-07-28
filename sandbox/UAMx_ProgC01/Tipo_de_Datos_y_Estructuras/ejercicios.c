@@ -1631,7 +1631,7 @@ int main(void)
   
   novela.fechas_ediciones[1] = 2015;
   
-  printf("%s fue escrito por %s y publicado en %d, %d y %d.\n",
+  printf("\n\%s fue escrito por %s y publicado en %d, %d y %d.\n\n",
           novela.titulo, novela.autor, novela.fechas_ediciones[0], 
           novela.fechas_ediciones[1], novela.fechas_ediciones[2]);
           
