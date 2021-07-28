@@ -1523,7 +1523,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.1 ***************
+/*************** Ejercicio 4.1 ***************/
 // Vamos a hacer un programa que solicite al usuario datos
 // sobre su última partida al LoL y muestre el ratio 
 // KDA por pantalla, que se calcula con la fórmula: 
@@ -1568,18 +1568,17 @@ int main(void)
   
   printf("\n¿Cuál es tu nombre de invocador?: ");
   scanf("%s", datos.nombre);
-  // printf("Introduzca el título del libro: ");
-  // scanf("%s", Libro.titulo);
-  // printf("Introduzca el año de publicación: ");
-  // scanf("%d", &Libro.anyo);
   
-  // printf("\nIntroduzca el año de publicación de %s, de %s: ",
-  //         novela.titulo, novela.autor);
-  // scanf("%d", &novela.year);
+  printf("\n¿Cuál es tu nivel?: ");
+  scanf("%s", datos.nivel);
+ 
+  printf("\n¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+  scanf("%s", datos.experiencia);
   
-  printf("\n%s\n", datos.nombre);
-  // printf("\n%s fue escrito por %s en el %d\n\n",
-  //         novela.titulo, novela.autor, novela.year);
+  printf("\n¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+  scanf("%s", datos.experiencia);
+  
+  
           
   return(0);
 }
