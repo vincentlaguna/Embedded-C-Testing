@@ -1599,8 +1599,6 @@ int main(void)
           datos.nombre, datos.nivel, datos.experiencia,
           datos.ultCampeon, datos.ratioKDA);
   
-  
-          
   return(0);
 }
 
