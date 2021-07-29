@@ -91,36 +91,31 @@ void insertAtHead(_node_t *p, char *string);
 
 int main(void)
 {
+  _node_t *current = NULL;
+  char    *entry = '\0';
+  int     items;
   
-  char *entry = '\0';
-  // head = (_node_t*)malloc(sizeof(_node_t));
+  printf("\nPlease enter number of items: ");
+  scanf("%d", &items);
   
-  if (!head)
+  for (int i = 0; i <= items; i++)
   {
-    printf("Malloc Failed.\n");
-    return -1;
-  }
-  else
-  {
-    printf("\nEnter String: ");
-    scanf("%s", head->string);
+    printf("\nPlease enter item number %d: ");
+    scanf("%s", entry);
+    insertAtHead(head, entry);
   }
   
-  _node_t *node1 = NULL;
-  node1 = (_node_t*)malloc(sizeof(_node_t));
+  current = head;
   
-  if (!node1)
+  printf("\nDumping of list:\n\n");
+  
+  while (current->next != NULL)
   {
-    printf("Malloc Failed.\n");
-    return -1;
+    printf("%s\n", current->string);
+    current = current->next;
   }
-  else
-  {
-    printf("\nEnter String for node1: ");
-    scanf("%s", node1->string);
-    head->next = node1->next;
-    node1->next = next;
-  }
+  
+ 
   
   printf("\n%s, %s\n\n", head->next, node1->???)                              
 
@@ -130,6 +125,8 @@ int main(void)
 void insertAtHead(_node_t *p, char *string) 
 {
     _node_t *current = (_node_t *)malloc(sizeof(_node_t));
+    current->next = NULL;
+    current->string = string;
     current = p;
 }
 
