@@ -53,7 +53,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 
 #include <stdio.h>
 
@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 
 /*********************************************/  
 
-/*********************************************
+/*********************************************/
 #include  <stdio.h>
 #include  <string.h>
 #include  <stdlib.h>
@@ -129,7 +129,8 @@ int main(void)
 
 void insertAtHead(_node_t *p, char *string) 
 {
-    
+    _node_t *current = (_node_t *)malloc(sizeof(_node_t));
+    current = p;
 }
 
 
