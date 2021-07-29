@@ -1605,7 +1605,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Estructuras con Tablas
 
 #include  <stdio.h>
@@ -1640,10 +1640,83 @@ int main(void)
 
 /*********************************************/
 
+
+/*************** Ejercicio 4.2 ***************/
+Vamos a cambiar el programa anterior para que almacene los 
+datos de asesinatos, muertes y asistencias en una tabla de enteros.
+La salida debe ser la misma que en el programa anterior:
+
+¿Cuál es tu nombre de invocador? asdfg
+¿Cuál es tu nivel? 67
+¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
+¿Con qué campeón has jugado tu última partida? Soraka
+¿Cuántos asesinatos has hecho? 1
+¿Cuántas veces has muerto? 3
+¿Y cuántas asistencias has hecho? 18
+asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
+
+#include  <stdio.h>
+#include  <string.h>
+
+#define   MAX_STR   128 
+
+typedef   struct
+{
+  char    nombre[MAX_STR];
+  char    ultCampeon[MAX_STR];
+  int     nivel;
+  int     experiencia;
+  int     asesinatos;
+  int     muerto;
+  int     assists;
+  double  ratioKDA;
+} _Datos;
+
+int main(void)
+{
+  _Datos datos;
+  
+  printf("\n¿Cuál es tu nombre de invocador?: ");
+  scanf("%s", datos.nombre);
+  
+  printf("¿Cuál es tu nivel?: ");
+  scanf("%d", &datos.nivel);
+ 
+  printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+  scanf("%d", &datos.experiencia);
+  
+  printf("¿Con qué campeón has jugado tu última partida?: ");
+  scanf("%s", datos.ultCampeon);
+  
+  printf("¿Cuántos asesinatos has hecho?: ");
+  scanf("%d", &datos.asesinatos);
+  
+  printf("¿Cuántas veces has muerto?: ");
+  scanf("%d", &datos.muerto);
+  
+  printf("¿Y cuántas asistencias has hecho?: ");
+  scanf("%d", &datos.assists);
+  
+  // KDA Ratio = (K+A) / Max(1,D)
+
+  if (!datos.muerto >= 1)
+    datos.muerto = 1;
+  
+  datos.ratioKDA = (datos.asesinatos + datos.assists) / (double)datos.muerto;
+  
+  printf("\n%s, de nivel %d y experiencia %d, "
+         "tu KDA ratio con %s ha sido %.2lf.\n\n", 
+          datos.nombre, datos.nivel, datos.experiencia,
+          datos.ultCampeon, datos.ratioKDA);
+  
+  return(0);
+}
+
 /*********************************************/
 
+/*********************************************/
 
-/*************** Ejercicio 4.1 ***************/
+/*************** Ejercicio 4.2 ***************/
 
 /*********************************************/
 
