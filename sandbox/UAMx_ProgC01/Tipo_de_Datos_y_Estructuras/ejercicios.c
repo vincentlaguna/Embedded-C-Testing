@@ -1699,8 +1699,7 @@ int main(void)
   
   // KDA Ratio = (K+A) / Max(1,D)
 
-  if (!datos.muerto >= 1)
-    datos.muerto = 1;
+  if (!datos.muerto >= 1) { datos.muerto = 1; }
   
   datos.ratioKDA = (datos.asesinatos + datos.assists) / (double)datos.muerto;
   
