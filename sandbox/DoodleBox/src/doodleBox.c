@@ -77,11 +77,11 @@ int main(int argc, char **argv)
 #include  <string.h>
 #include  <stdlib.h>
 
-#define   MAX_STR   128 
+// #define   MAX_STR   128 
 
 typedef   struct
 {
-  char    string[MAX_STR];
+  char    *string;
   struct _node_t *next;
 } _node_t;
 
@@ -92,13 +92,13 @@ void insertAtHead(_node_t *p, char *string);
 int main(void)
 {
   _node_t *current = NULL;
-  char    *entry = '\0';
+  char    *entry;
   int     items;
   
   printf("\nPlease enter number of items: ");
   scanf("%d", &items);
   
-  for (int i = 0; i <= items; i++)
+  for (int i = 0; i < items; i++)
   {
     printf("\nPlease enter item number %d: ");
     scanf("%s", entry);
@@ -115,10 +115,6 @@ int main(void)
     current = current->next;
   }
   
- 
-  
-  printf("\n%s, %s\n\n", head->next, node1->???)                              
-
   return(0);
 }
 
