@@ -1693,10 +1693,10 @@ int main(void)
   scanf("%d", &datos.kda[asesinatos]);
   
   printf("¿Cuántas veces has muerto?: ");
-  scanf("%d", &datos.[muertes]);
+  scanf("%d", &datos.kda[muertes]);
   
   printf("¿Y cuántas asistencias has hecho?: ");
-  scanf("%d", &datos.[assists]);
+  scanf("%d", &datos.kda[assists]);
   
   // KDA Ratio = (K+A) / Max(1,D)
 
