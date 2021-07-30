@@ -1642,24 +1642,26 @@ int main(void)
 
 
 /*************** Ejercicio 4.2 ***************/
-Vamos a cambiar el programa anterior para que almacene los 
-datos de asesinatos, muertes y asistencias en una tabla de enteros.
-La salida debe ser la misma que en el programa anterior:
+// Vamos a cambiar el programa anterior para que almacene los 
+// datos de asesinatos, muertes y asistencias en una tabla de enteros.
+// La salida debe ser la misma que en el programa anterior:
 
-¿Cuál es tu nombre de invocador? asdfg
-¿Cuál es tu nivel? 67
-¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
-¿Con qué campeón has jugado tu última partida? Soraka
-¿Cuántos asesinatos has hecho? 1
-¿Cuántas veces has muerto? 3
-¿Y cuántas asistencias has hecho? 18
-asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
+// ¿Cuál es tu nombre de invocador? asdfg
+// ¿Cuál es tu nivel? 67
+// ¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
+// ¿Con qué campeón has jugado tu última partida? Soraka
+// ¿Cuántos asesinatos has hecho? 1
+// ¿Cuántas veces has muerto? 3
+// ¿Y cuántas asistencias has hecho? 18
+// asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
 
 #include  <stdio.h>
 #include  <string.h>
 
 #define   MAX_STR   128
-#define   MAX_E     64
+#define   KDA       3
+
+enum { asesinatos, muertes, assists };
 
 typedef   struct
 {
@@ -1667,7 +1669,7 @@ typedef   struct
   char    ultCampeon[MAX_STR];
   int     nivel;
   int     experiencia;
-  int     kda[MAX_E]; // Una tabla
+  int     kda[KDA]; // Una tabla
   double  ratioKDA;
 } _Datos;
 
@@ -1688,19 +1690,19 @@ int main(void)
   scanf("%s", datos.ultCampeon);
   
   printf("¿Cuántos asesinatos has hecho?: ");
-  scanf("%d", &datos.asesinatos);
+  scanf("%d", &datos.kda[asesinatos]);
   
   printf("¿Cuántas veces has muerto?: ");
-  scanf("%d", &datos.muerto);
+  scanf("%d", &datos.[muertes]);
   
   printf("¿Y cuántas asistencias has hecho?: ");
-  scanf("%d", &datos.assists);
+  scanf("%d", &datos.[assists]);
   
   // KDA Ratio = (K+A) / Max(1,D)
 
-  if (!datos.muerto >= 1) { datos.muerto = 1; }
+  if (!datos.kda[muertes] >= 1) { datos.kda[muertes] = 1; }
   
-  datos.ratioKDA = (datos.asesinatos + datos.assists) / (double)datos.muerto;
+  datos.ratioKDA = (datos.kda[asesinatos] + datos.kda[assists]) / (double)datos.kda[muertes];
   
   printf("\n%s, de nivel %d y experiencia %d, "
          "tu KDA ratio con %s ha sido %.2lf.\n\n", 
