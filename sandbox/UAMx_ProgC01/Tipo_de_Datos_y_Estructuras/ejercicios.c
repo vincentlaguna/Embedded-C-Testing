@@ -1667,7 +1667,7 @@ typedef   struct
   char    ultCampeon[MAX_STR];
   int     nivel;
   int     experiencia;
-  int     asesinatos[MAX_E];
+  int     asesinatos[MAX_E]; // Una tabla
   int     muerto[MAX_E];
   int     assists[MAX_E];
   double  ratioKDA;
