@@ -1658,7 +1658,8 @@ asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
 #include  <stdio.h>
 #include  <string.h>
 
-#define   MAX_STR   128 
+#define   MAX_STR   128
+#define   MAX_E     64
 
 typedef   struct
 {
@@ -1666,9 +1667,9 @@ typedef   struct
   char    ultCampeon[MAX_STR];
   int     nivel;
   int     experiencia;
-  int     asesinatos;
-  int     muerto;
-  int     assists;
+  int     asesinatos[MAX_E];
+  int     muerto[MAX_E];
+  int     assists[MAX_E];
   double  ratioKDA;
 } _Datos;
 
