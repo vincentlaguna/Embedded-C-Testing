@@ -1754,7 +1754,7 @@ int main(void)
   printf("Introduce el año de publicación del libro: ");
   scanf("%d", &novela.anyo);
 
-  printf("%s fue escrito en %d por %s %s %s.\n",
+  printf("\n%s fue escrito en %d por %s %s %s.\n\n",
           novela.titulo, novela.anyo, novela.autor.nombre,
           novela.autor.primer_apellido, novela.autor.segundo_apellido);
           
@@ -1788,5 +1788,3 @@ int main(void)
 }
 
 /*********************************************/
-
-v
