@@ -1730,7 +1730,7 @@ typedef     struct
 
 typedef     struct
 {
-  Escritor  autor;
+  Escritor  escritor;
   char      titulo[MAX_STR];
   int       anyo;
 } Libro;
@@ -1740,13 +1740,13 @@ int main(void)
   Libro     novela;
 
   printf("Introduce el nombre del autor: ");
-  gets(novela.autor.nombre);
+  gets(novela.escritor.nombre);
     
   printf("Introduce el primer apellido del autor: ");
-  gets(novela.autor.primer_apellido);
+  gets(novela.escritor.primer_apellido);
   
   printf("Introduce el segundo apellido del autor: ");
-  gets(novela.autor.segundo_apellido);
+  gets(novela.escritor.segundo_apellido);
   
   printf("Introduce el título del libro: ");
   gets(novela.titulo);
@@ -1755,8 +1755,8 @@ int main(void)
   scanf("\n%d", &novela.anyo);
 
   printf("\n%s fue escrito en %d por %s %s %s.\n\n",
-          novela.titulo, novela.anyo, novela.autor.nombre,
-          novela.autor.primer_apellido, novela.autor.segundo_apellido);
+          novela.titulo, novela.anyo, novela.escritor.nombre,
+          novela.escritor.primer_apellido, novela.escritor.segundo_apellido);
           
   return(0);
 }
