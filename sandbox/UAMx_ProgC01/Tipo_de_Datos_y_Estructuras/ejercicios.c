@@ -1717,25 +1717,27 @@ int main(void)
 
 /*********************************************/
 // Estructuras Anidadas
-#include  <stdio.h>
+#include    <stdio.h>
 
-#define MAX_STR 128
+#define     MAX_STR 128
 
-typedef struct {
-    char nombre[MAX_STR];
-    char primer_apellido[MAX_STR];
-    char segundo_apellido[MAX_STR];
+typedef     struct
+{
+  char      nombre[MAX_STR];
+  char      primer_apellido[MAX_STR];
+  char      segundo_apellido[MAX_STR];
 } Escritor;
 
-typedef struct {
-    Escritor autor;
-    char titulo[MAX_STR];
-    int anyo;
+typedef     struct
+{
+  Escritor  autor;
+  char      titulo[MAX_STR];
+  int       anyo;
 } Libro;
 
 int main(void)
 {
-  Libro novela;
+  Libro     novela;
 
   printf("Introduce el nombre del autor: ");
   gets(novela.autor.nombre);
