@@ -1641,7 +1641,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.2 ***************/
+/*************** Ejercicio 4.2 ***************
 // Vamos a cambiar el programa anterior para que almacene los 
 // datos de asesinatos, muertes y asistencias en una tabla de enteros.
 // La salida debe ser la misma que en el programa anterior:
@@ -1714,14 +1714,41 @@ int main(void)
 
 /*********************************************/
 
-/*********************************************/
-
-/*************** Ejercicio 4.2 ***************/
 
 /*********************************************/
+// Estructuras Anidadas
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
 
 /*********************************************/
 
+
+/*************** Ejercicio 4.2 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
 /*********************************************/
 
 
+/*********************************************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
