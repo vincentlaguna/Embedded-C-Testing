@@ -120,10 +120,10 @@ int main(void)
 
 void insertAtHead(_node_t *p, char *string) 
 {
-    _node_t *current = (_node_t *)malloc(sizeof(_node_t));
-    current->next = NULL;
-    current->string = string;
-    current = p;
+  _node_t *current = (_node_t *)malloc(sizeof(_node_t));
+  current->next = NULL;
+  current->string = string;
+  current = p;
 }
 
 
