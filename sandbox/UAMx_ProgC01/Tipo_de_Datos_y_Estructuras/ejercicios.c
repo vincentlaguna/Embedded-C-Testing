@@ -1752,12 +1752,12 @@ int main(void)
   gets(novela.titulo);
   
   printf("Introduce el año de publicación del libro: ");
-  scanf("%d\n", &novela.anyo);
+  scanf("\n%d", &novela.anyo);
 
   printf("\n%s fue escrito en %d por %s %s %s.\n\n",
           novela.titulo, novela.anyo, novela.escritor.nombre,
           novela.escritor.primer_apellido, novela.escritor.segundo_apellido);
-          
+  
   return(0);
 }
 
