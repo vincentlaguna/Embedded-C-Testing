@@ -1715,7 +1715,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Estructuras Anidadas
 #include    <stdio.h>
 
@@ -1757,6 +1757,99 @@ int main(void)
   printf("\n%s fue escrito en %d por %s %s %s.\n\n",
           novela.titulo, novela.anyo, novela.escritor.nombre,
           novela.escritor.primer_apellido, novela.escritor.segundo_apellido);
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.3 ***************/
+Ahora vamos a cambiar el programa anterior para que utilice 
+estructuras anidadas. Para ello, añadiremos una nueva estructura, 
+juego, en la que guardaremos algunas de las variables que teníamos 
+antes como parte del invocador. Es decir, tendremos dos estructuras:
+
+- invocador, que contiene: el nombre usuario, su nivel, la experiencia 
+que lleva adquirida en dicho nivel y un juego (variable de tipo estructurado).
+
+- juego, que contiene: el nombre de invocador del campeón 
+y su KDA (como tabla de enteros).
+
+La salida será la misma que la de los programas anteriores:
+
+¿Cuál es tu nombre de invocador? asdfg
+¿Cuál es tu nivel? 67
+¿Cuánta experiencia has adquirido ya en dicho nivel? 2651
+¿Con qué campeón has jugado tu última partida? Soraka
+¿Cuántos asesinatos has hecho? 1
+¿Cuántas veces has muerto? 3
+¿Y cuántas asistencias has hecho? 18
+asdfg, de nivel 67 y experiencia 2651, tu KDA ratio con Soraka ha sido 6.33.
+
+#include  <stdio.h>
+#include  <string.h>
+
+#define   MAX_STR   128
+#define   KDA       3
+
+enum { asesinatos, muertes, assists };
+
+typedef   struct
+{
+  char    nombre[MAX_STR];
+  char    ultCampeon[MAX_STR];
+  int     nivel;
+  int     experiencia;
+  int     kda[KDA]; // Una tabla
+  double  ratioKDA;
+} _Invocador;
+
+typedef   struct
+{
+  char    nombre[MAX_STR];
+  char    ultCampeon[MAX_STR];
+  int     nivel;
+  int     experiencia;
+  int     kda[KDA]; // Una tabla
+  double  ratioKDA;
+} _Juego;
+
+int main(void)
+{
+  _Datos datos;
+  
+  printf("\n¿Cuál es tu nombre de invocador?: ");
+  scanf("%s", datos.nombre);
+  
+  printf("¿Cuál es tu nivel?: ");
+  scanf("%d", &datos.nivel);
+ 
+  printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+  scanf("%d", &datos.experiencia);
+  
+  printf("¿Con qué campeón has jugado tu última partida?: ");
+  scanf("%s", datos.ultCampeon);
+  
+  printf("¿Cuántos asesinatos has hecho?: ");
+  scanf("%d", &datos.kda[asesinatos]);
+  
+  printf("¿Cuántas veces has muerto?: ");
+  scanf("%d", &datos.kda[muertes]);
+  
+  printf("¿Y cuántas asistencias has hecho?: ");
+  scanf("%d", &datos.kda[assists]);
+  
+  // KDA Ratio = (K+A) / Max(1,D)
+
+  if (!datos.kda[muertes] >= 1) { datos.kda[muertes] = 1; }
+  
+  datos.ratioKDA = (datos.kda[asesinatos] + datos.kda[assists]) / (double)datos.kda[muertes];
+  
+  printf("\n%s, de nivel %d y experiencia %d, "
+         "tu KDA ratio con %s ha sido %.2lf.\n\n", 
+          datos.nombre, datos.nivel, datos.experiencia,
+          datos.ultCampeon, datos.ratioKDA);
   
   return(0);
 }
