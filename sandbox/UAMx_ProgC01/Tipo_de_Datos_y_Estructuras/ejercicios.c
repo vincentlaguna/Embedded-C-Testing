@@ -1764,7 +1764,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.3 ***************/
+/*************** Ejercicio 4.3 ***************
 // Ahora vamos a cambiar el programa anterior para que utilice 
 // estructuras anidadas. Para ello, añadiremos una nueva estructura, 
 // juego, en la que guardaremos algunas de las variables que teníamos 
@@ -1856,6 +1856,53 @@ int main(void)
 }
 
 /*********************************************/
+
+
+/*********************************************/
+// Tablas de Estructuras
+#include    <stdio.h>
+
+#define     MAX_STR     128
+#define     DIM_NOVELAS 4
+
+typedef     struct
+{
+  char      nombre[MAX_STR];
+  char      primer_apellido[MAX_STR];
+  char      segundo_apellido[MAX_STR];
+} Escritor;
+
+typedef     struct
+{
+  Escritor  autor;
+  char      titulo[MAX_STR];
+  int       anyo;
+} Libro;
+
+int main(void)
+{
+  Libro novelas[DIM_NOVELAS];
+
+  /* Primer libro */
+  printf("\nIntroduce el nombre del autor del primer libro: ");
+  gets(novelas[0].autor.nombre);
+  printf("Introduce el título del primer libro: ");
+  gets(novelas[0].titulo);
+
+  /* Segundo libro */
+  printf("Introduce el nombre del autor del segundo libro: ");
+  gets(novelas[1].autor.nombre);
+  printf("Introduce el título del segundo libro: ");
+  gets(novelas[1].titulo);
+
+  printf("\n%s fue escrito por %s.\n", novelas[0].titulo, novelas[0].autor.nombre);
+  printf("%s fue escrito por %s.\n\n", novelas[1].titulo, novelas[1].autor.nombre);
+  
+  return(0);
+}
+
+/*********************************************/
+
 
 
 /*************** Ejercicio 4.2 ***************
