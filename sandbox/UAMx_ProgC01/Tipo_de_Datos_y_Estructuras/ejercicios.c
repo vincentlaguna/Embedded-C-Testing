@@ -1802,32 +1802,21 @@ enum
 
 typedef   struct
 {
-  // char    nombre[MAX_STR];
   char    ultCampeon[MAX_STR];
-  // int     nivel;
-  // int     experiencia;
-  int     kda[KDA]; // Una tabla
+  int     kda[KDA];
   double  ratioKDA;
-  
 } _Juego;
 
 typedef   struct
 {
-  
   char    nombre[MAX_STR];
-  // char    ultCampeon[MAX_STR];
   int     nivel;
   int     experiencia;
-  // int     kda[KDA]; // Una tabla
-  // double  ratioKDA;
   _Juego  juego;
-  
 } _Invocador;
-
 
 int main(void)
 {
-  // _Juego      juego;
   _Invocador  invocador;
   
   printf("\n¿Cuál es tu nombre de invocador?: ");
@@ -1855,9 +1844,8 @@ int main(void)
 
   if (!invocador.juego.kda[muertes] >= 1) { invocador.juego.kda[muertes] = 1; }
   
-  invocador.juego.ratioKDA = 
-  
-  (invocador.juego.kda[asesinatos] + invocador.juego.kda[assists]) / (double)invocador.juego.kda[muertes];
+  invocador.juego.ratioKDA = (invocador.juego.kda[asesinatos] + 
+  invocador.juego.kda[assists]) / (double)invocador.juego.kda[muertes];
   
   printf("\n%s, de nivel %d y experiencia %d, "
          "tu KDA ratio con %s ha sido %.2lf.\n\n", 
