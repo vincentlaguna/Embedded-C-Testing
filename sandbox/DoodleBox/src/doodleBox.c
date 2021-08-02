@@ -79,53 +79,34 @@ int main(int argc, char **argv)
 
 // #define   MAX_STR   128 
 
-typedef   struct
+typedef   struct  node
 {
-  char    *string;
-  struct _node_t *next;
+  
+  char            *pString;
+  struct  node    *next;
+
 } _node_t;
 
-_node_t *head = NULL;
+typedef   _node_t *pListNode;
 
-void insertAtHead(_node_t *p, char *string);
+void      insert(pListNode *head, char pString);
+void      printList(pListNode head);
 
 int main(void)
 {
-  _node_t *current = NULL;
-  char    *entry;
-  int     items;
-  
-  printf("\nPlease enter number of items: ");
-  scanf("%d", &items);
-  
-  for (int i = 0; i < items; i++)
-  {
-    printf("\nPlease enter item number %d: ");
-    scanf("%s", entry);
-    insertAtHead(head, entry);
-  }
-  
-  current = head;
-  
-  printf("\nDumping of list:\n\n");
-  
-  while (current->next != NULL)
-  {
-    printf("%s\n", current->string);
-    current = current->next;
-  }
   
   return(0);
 }
 
-void insertAtHead(_node_t *p, char *string) 
+void      insert(pListNode *head, char pString)
 {
-  _node_t *current = (_node_t *)malloc(sizeof(_node_t));
-  current->next = NULL;
-  current->string = string;
-  current = p;
+  
 }
 
+void      printList(pListNode head)
+{
+  
+}
 
 /*********************************************/
 
