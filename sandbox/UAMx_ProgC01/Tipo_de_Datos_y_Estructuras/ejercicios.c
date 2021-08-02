@@ -1905,58 +1905,58 @@ int main(void)
 
 
 /*************** Ejercicio 4.4 ***************/
-Vamos a modificar el programa anterior para trabajar con tablas de 
-estructuras, de forma que calculemos el KDA total de los cinco 
-jugadores que han participado en la partida.
+// Vamos a modificar el programa anterior para trabajar con tablas de 
+// estructuras, de forma que calculemos el KDA total de los cinco 
+// jugadores que han participado en la partida.
 
-Para obtener dicho dato es necesario sumar por un lado los 
-asesinatos de los cinco jugadores, por otro las muertes y finalmente 
-las asistencias. Asimismo, calcularemos el ratio de ese KDA total.
+// Para obtener dicho dato es necesario sumar por un lado los 
+// asesinatos de los cinco jugadores, por otro las muertes y finalmente 
+// las asistencias. Asimismo, calcularemos el ratio de ese KDA total.
 
-La salida será muy similar a la de los programas anteriores, pero en 
-este programa no vamos a solicitar la experiencia ni el nivel del usuario:
+// La salida será muy similar a la de los programas anteriores, pero en 
+// este programa no vamos a solicitar la experiencia ni el nivel del usuario:
 
-DATOS JUGADOR 1
-¿Cuál es tu nombre de invocador? j1
-¿Con qué campeón has jugado tu última partida? Zoe
-¿Cuántos asesinatos has hecho? 1
-¿Cuántas veces has muerto? 6
-¿Y cuántas asistencias has hecho? 3
-j1, tu KDA ratio con Zoe ha sido 0.67.
+// DATOS JUGADOR 1
+// ¿Cuál es tu nombre de invocador? j1
+// ¿Con qué campeón has jugado tu última partida? Zoe
+// ¿Cuántos asesinatos has hecho? 1
+// ¿Cuántas veces has muerto? 6
+// ¿Y cuántas asistencias has hecho? 3
+// j1, tu KDA ratio con Zoe ha sido 0.67.
 
-DATOS JUGADOR 2
-¿Cuál es tu nombre de invocador? j2
-¿Con qué campeón has jugado tu última partida? Udyr
-¿Cuántos asesinatos has hecho? 5
-¿Cuántas veces has muerto? 6
-¿Y cuántas asistencias has hecho? 3
-j2, tu KDA ratio con Udyr ha sido 1.33.
+// DATOS JUGADOR 2
+// ¿Cuál es tu nombre de invocador? j2
+// ¿Con qué campeón has jugado tu última partida? Udyr
+// ¿Cuántos asesinatos has hecho? 5
+// ¿Cuántas veces has muerto? 6
+// ¿Y cuántas asistencias has hecho? 3
+// j2, tu KDA ratio con Udyr ha sido 1.33.
 
-DATOS JUGADOR 3
-¿Cuál es tu nombre de invocador? j3
-¿Con qué campeón has jugado tu última partida? Morgana
-¿Cuántos asesinatos has hecho? 3
-¿Cuántas veces has muerto? 7
-¿Y cuántas asistencias has hecho? 18
-j3, tu KDA ratio con Morgana ha sido 3.00.
+// DATOS JUGADOR 3
+// ¿Cuál es tu nombre de invocador? j3
+// ¿Con qué campeón has jugado tu última partida? Morgana
+// ¿Cuántos asesinatos has hecho? 3
+// ¿Cuántas veces has muerto? 7
+// ¿Y cuántas asistencias has hecho? 18
+// j3, tu KDA ratio con Morgana ha sido 3.00.
 
-DATOS JUGADOR 4
-¿Cuál es tu nombre de invocador? j4
-¿Con qué campeón has jugado tu última partida? Olaf
-¿Cuántos asesinatos has hecho? 26
-¿Cuántas veces has muerto? 3
-¿Y cuántas asistencias has hecho? 3
-j4, tu KDA ratio con Olaf ha sido 9.67.
+// DATOS JUGADOR 4
+// ¿Cuál es tu nombre de invocador? j4
+// ¿Con qué campeón has jugado tu última partida? Olaf
+// ¿Cuántos asesinatos has hecho? 26
+// ¿Cuántas veces has muerto? 3
+// ¿Y cuántas asistencias has hecho? 3
+// j4, tu KDA ratio con Olaf ha sido 9.67.
 
-DATOS JUGADOR 5
-¿Cuál es tu nombre de invocador? j5
-¿Con qué campeón has jugado tu última partida? Jhin
-¿Cuántos asesinatos has hecho? 3
-¿Cuántas veces has muerto? 6
-¿Y cuántas asistencias has hecho? 10
-j5, tu KDA ratio con Jhin ha sido 2.17.
+// DATOS JUGADOR 5
+// ¿Cuál es tu nombre de invocador? j5
+// ¿Con qué campeón has jugado tu última partida? Jhin
+// ¿Cuántos asesinatos has hecho? 3
+// ¿Cuántas veces has muerto? 6
+// ¿Y cuántas asistencias has hecho? 10
+// j5, tu KDA ratio con Jhin ha sido 2.17.
 
-Usuarios j1, j2, j3, j4 y j5, el KDA de vuestra partida ha sido 38/28/37 y su ratio 2.68.
+// Usuarios j1, j2, j3, j4 y j5, el KDA de vuestra partida ha sido 38/28/37 y su ratio 2.68.
 
 #include  <stdio.h>
 #include  <string.h>
