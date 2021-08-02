@@ -72,7 +72,7 @@ int main(int argc, char **argv)
 #include  <string.h>
 #include  <stdlib.h>
 
-// #define   MAX_STR   128 
+#define   MAX_STR   128 
 
 typedef   struct  node
 {
@@ -89,11 +89,11 @@ void      printList(pListNode head);
 
 int main(void)
 {
-  char    *pUserString = '\0';
+  char    userString[MAX_STR];
   
   printf("\nEnter string to store at first node of the linked list: ");
-  scanf("%s", pUserString);
-  printf("\nString entered: %s\n\n", *pUserString);
+  scanf("%s", userString);
+  printf("\nString entered: %s\n\n", userString);
   
   return(0);
 }
