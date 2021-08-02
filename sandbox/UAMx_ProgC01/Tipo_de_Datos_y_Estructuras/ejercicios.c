@@ -1999,9 +1999,9 @@ typedef   struct
 
 int main(void)
 {
-  double      mediaTotal;
-  double      mediaUsuarios[KDA];
-  _Invocador  invocador[JUGADORES];
+  static int     mediaUsuarios[KDA];
+  static double  mediaTotal;
+  _Invocador     invocador[JUGADORES];
   
   for (int i = 0; i < JUGADORES; i++)
   {
@@ -2036,6 +2036,12 @@ int main(void)
     mediaUsuarios[asesinatos] += invocador[i].juego.kda[asesinatos];
     mediaUsuarios[muertes]    += invocador[i].juego.kda[muertes];
     mediaUsuarios[assists]    += invocador[i].juego.kda[assists];
+    
+    // printf("\nCuenta = mediaUsuarios[asesinatos]: %d, mediaUsuarios[muertes]: %d, "
+    //       "mediaUsuarios[assists]: %d.\n\n", 
+    //         mediaUsuarios[asesinatos], 
+    //         mediaUsuarios[muertes],
+    //         mediaUsuarios[assists]);
   
     printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
             i+1, invocador[i].nombre, 
