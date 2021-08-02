@@ -1962,6 +1962,7 @@ Usuarios j1, j2, j3, j4 y j5, el KDA de vuestra partida ha sido 38/28/37 y su ra
 #include  <string.h>
 
 #define   MAX_STR   128
+#define   JUGADORES 5
 #define   KDA       3
 
 enum 
@@ -1970,6 +1971,16 @@ enum
   muertes, 
   assists
 };
+
+enum 
+{ 
+  jugador1, 
+  jugador2, 
+  jugador3,
+  jugador4,
+  jugador5,
+};
+
 
 typedef   struct
 {
@@ -1988,40 +1999,42 @@ typedef   struct
 
 int main(void)
 {
-  _Invocador  invocador;
+  _Invocador  invocador[JUGADORES];
   
-  printf("\n¿Cuál es tu nombre de invocador?: ");
-  scanf("%s", invocador.nombre);
+  for (int i = 0; i < JUGADORES; i++)
+  {
+    printf("\nDATOS JUGADOR %d\n", i);
+    printf("\n¿Cuál es tu nombre de invocador?: ");
+    scanf("%s", invocador[i].nombre);
   
-  printf("¿Cuál es tu nivel?: ");
-  scanf("%d", &invocador.nivel);
+    // printf("¿Cuál es tu nivel?: ");
+    // scanf("%d", &invocador[i].nivel);
  
-  printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
-  scanf("%d", &invocador.experiencia);
+    // printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+    // scanf("%d", &invocador.experiencia);
   
-  printf("¿Con qué campeón has jugado tu última partida?: ");
-  scanf("%s", invocador.juego.ultCampeon);
+    printf("¿Con qué campeón has jugado tu última partida?: ");
+    scanf("%s", invocador[i].juego.ultCampeon);
   
-  printf("¿Cuántos asesinatos has hecho?: ");
-  scanf("%d", &invocador.juego.kda[asesinatos]);
+    printf("¿Cuántos asesinatos has hecho?: ");
+    scanf("%d", &invocador.juego.kda[asesinatos]);
   
-  printf("¿Cuántas veces has muerto?: ");
-  scanf("%d", &invocador.juego.kda[muertes]);
+    printf("¿Cuántas veces has muerto?: ");
+    scanf("%d", &invocador.juego.kda[muertes]);
   
-  printf("¿Y cuántas asistencias has hecho?: ");
-  scanf("%d", &invocador.juego.kda[assists]);
+    printf("¿Y cuántas asistencias has hecho?: ");
+    scanf("%d", &invocador.juego.kda[assists]);
+    
+    // KDA Ratio = (K+A) / Max(1,D)
+    if (!invocador[i].juego.kda[muertes] >= 1) { invocador[i].juego.kda[muertes] = 1; }
   
-  // KDA Ratio = (K+A) / Max(1,D)
-
-  if (!invocador.juego.kda[muertes] >= 1) { invocador.juego.kda[muertes] = 1; }
+    invocador[i].juego.ratioKDA = (invocador[i].juego.kda[asesinatos] + 
+    invocador[i].juego.kda[assists]) / (double)invocador[i].juego.kda[muertes];
   
-  invocador.juego.ratioKDA = (invocador.juego.kda[asesinatos] + 
-  invocador.juego.kda[assists]) / (double)invocador.juego.kda[muertes];
-  
-  printf("\n%s, de nivel %d y experiencia %d, "
-         "tu KDA ratio con %s ha sido %.2lf.\n\n", 
-          invocador.nombre, invocador.nivel, invocador.experiencia,
-          invocador.juego.ultCampeon, invocador.juego.ratioKDA);
+    printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
+            i+1, invocador[i].nombre, 
+            invocador[i].juego.ultCampeon,
+            invocador.juego.ratioKDA);
   
   return(0);
 }
