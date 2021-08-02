@@ -2019,13 +2019,13 @@ int main(void)
     scanf("%s", invocador[i].juego.ultCampeon);
   
     printf("¿Cuántos asesinatos has hecho?: ");
-    scanf("%d", &invocador.juego.kda[asesinatos]);
+    scanf("%d", &invocador[i].juego.kda[asesinatos]);
   
     printf("¿Cuántas veces has muerto?: ");
-    scanf("%d", &invocador.juego.kda[muertes]);
+    scanf("%d", &invocador[i].juego.kda[muertes]);
   
     printf("¿Y cuántas asistencias has hecho?: ");
-    scanf("%d", &invocador.juego.kda[assists]);
+    scanf("%d", &invocador[i].juego.kda[assists]);
     
     // KDA Ratio = (K+A) / Max(1,D)
     if (!invocador[i].juego.kda[muertes] >= 1) { invocador[i].juego.kda[muertes] = 1; }
@@ -2040,7 +2040,7 @@ int main(void)
     printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
             i+1, invocador[i].nombre, 
             invocador[i].juego.ultCampeon,
-            invocador.juego.ratioKDA);
+            invocador[i].juego.ratioKDA);
   }
     // KDA Ratio = (K+A) / Max(1,D)
     if (!mediaUsuarios[muertes] >= 1) { mediaUsuarios[muertes] = 1; }
