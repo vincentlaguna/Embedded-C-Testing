@@ -89,6 +89,11 @@ void      printList(pListNode head);
 
 int main(void)
 {
+  char    *pUserString = '\0';
+  
+  printf("\nEnter string to store at first node of the linked list: ");
+  scanf("%s", pUserString);
+  printf("\nString entered: %s\n\n", *pUserString);
   
   return(0);
 }
