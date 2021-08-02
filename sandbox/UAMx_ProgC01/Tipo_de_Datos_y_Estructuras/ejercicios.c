@@ -1992,18 +1992,19 @@ typedef   struct
 typedef   struct
 {
   char    nombre[MAX_STR];
-  int     nivel;
-  int     experiencia;
+  // int     nivel;
+  // int     experiencia;
   _Juego  juego;
 } _Invocador;
 
 int main(void)
 {
   _Invocador  invocador[JUGADORES];
+  double      mediaUsuarios[KDA];
   
   for (int i = 0; i < JUGADORES; i++)
   {
-    printf("\nDATOS JUGADOR %d\n", i);
+    printf("\nDATOS JUGADOR %d\n", i+1);
     printf("\n¿Cuál es tu nombre de invocador?: ");
     scanf("%s", invocador[i].nombre);
   
@@ -2030,11 +2031,21 @@ int main(void)
   
     invocador[i].juego.ratioKDA = (invocador[i].juego.kda[asesinatos] + 
     invocador[i].juego.kda[assists]) / (double)invocador[i].juego.kda[muertes];
+    
+    mediaUsuarios[asesinatos] += invocador[i].juego.kda[asesinatos];
+    mediaUsuarios[muertes]    += invocador[i].juego.kda[muertes];
+    mediaUsuarios[assists]    += invocador[i].juego.kda[assists];
   
     printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
             i+1, invocador[i].nombre, 
             invocador[i].juego.ultCampeon,
             invocador.juego.ratioKDA);
+  }
+    // KDA Ratio = (K+A) / Max(1,D)
+    if (!invocador[i].juego.kda[muertes] >= 1) { invocador[i].juego.kda[muertes] = 1; }
+  
+    invocador[i].juego.ratioKDA = (invocador[i].juego.kda[asesinatos] + 
+    invocador[i].juego.kda[assists]) / (double)invocador[i].juego.kda[muertes];
   
   return(0);
 }
