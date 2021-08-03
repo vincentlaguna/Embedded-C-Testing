@@ -91,7 +91,9 @@ int main(void)
 {
   char    userString[MAX_STR];
   
-  pListNode = malloc()
+   _node_t *pListNode = NULL;
+  
+  pListNode = malloc(sizeof(_node_t));
   
   printf("\nEnter string to store at first node of the linked list: ");
   scanf("%s", userString);
