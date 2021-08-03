@@ -91,7 +91,7 @@ int main(void)
 {
   char    userString[MAX_STR];
   
-   _node_t *pListNode = NULL;
+  _node_t *pListNode = NULL;
   
   pListNode = malloc(sizeof(_node_t));
   
