@@ -84,7 +84,7 @@ typedef   struct  node
 
 typedef   _node_t *pListNode;
 
-void      insert(pListNode *head, char pString);
+void      insert(pListNode *head, char *pString);
 void      printList(pListNode head);
 
 int main(void)
@@ -104,17 +104,17 @@ int main(void)
   return(0);
 }
 
-void      insert(pListNode *head, char pString)
+void      insert(pListNode *head, char *pString)
 {
-  pListNode newNode = NULL;
-  newNode           = head;
+  // pListNode newNode = NULL;
+  // newNode           = head;
   
-  if (!newNode)
-  {
-    newNode = malloc(sizeof(_node_t));
-    newNode->next = head;
-    newNode = head;
-  }
+  // if (!newNode)
+  // {
+  //   newNode = malloc(sizeof(_node_t));
+  //   newNode->next = head;
+  //   newNode = head;
+  // }
   
 }
 
