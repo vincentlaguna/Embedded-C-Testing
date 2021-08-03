@@ -2072,7 +2072,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Tablas de Estructuras 1
 #include    <stdio.h>
 
@@ -2106,7 +2106,7 @@ int main(void)
   printf("Introduce el título del primer libro: ");
   gets(novelas[0].titulo);
 
-  // Segundo libro */
+  // Segundo libro
   printf("Introduce el nombre del autor del segundo libro: ");
   gets(novelas[1].autores[0].nombre);
   printf("Introduce el título del segundo libro: ");
@@ -2115,6 +2115,73 @@ int main(void)
   printf("%s fue escrito por %s y %s.\n", novelas[0].titulo, novelas[0].autores[0].nombre, novelas[0].autores[1].nombre);
   printf("%s fue escrito por %s.\n", novelas[1].titulo, novelas[1].autores[0].nombre);
   
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.5 ***************/
+Vamos a hacer un último programa, el más complejo de los 
+que hemos hecho hasta ahora, en el que queremos trabajar 
+con tablas de estructuras que contienen como atributo 
+tablas de otra estructura. Para ello, vamos a convertir la 
+variable partida del invocador, que era de tipo juego, 
+en una tabla de estructuras; de esta forma podremos 
+guardar varias partidas que ha hecho un usuario.
+
+Con esta estructura en mente, tenemos que solicitar los datos
+de 3 partidas a 2 jugadores para calcular la media de KDA ratio
+que han hecho en las últimas 3 partidas, de forma individual.
+
+Para obtener dicho dato es necesario calcular el KDA ratio de 
+cada partida y hacer la media de dichos 3 ratios para cada jugador.
+
+a salida seguirá siendo ligeramente similar a los programas anteriores:
+
+DATOS JUGADOR 1
+¿Cuál es tu nombre de invocador? j1
+¿Con qué campeón has jugado tu última partida? Malzahar
+¿Cuántos asesinatos has hecho? 8
+¿Cuántas veces has muerto? 4
+¿Y cuántas asistencias has hecho? 6
+
+¿Con qué campeón jugaste tu penúltima partida? Alistar
+¿Cuántos asesinatos hiciste? 2
+¿Cuántas veces te mataron? 5
+¿Y cuántas asistencias hiciste? 12
+
+¿Con qué campeón jugaste tu antepenúltima partida? Thresh
+¿Cuántos asesinatos hiciste? 4
+¿Cuántas veces te mataron? 9
+¿Y cuántas asistencias hiciste? 13
+
+j1, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.73.
+
+DATOS JUGADOR 2
+¿Cuál es tu nombre de invocador? j2
+¿Con qué campeón has jugado tu última partida? Udyr
+¿Cuántos asesinatos has hecho? 5
+¿Cuántas veces has muerto? 6
+¿Y cuántas asistencias has hecho? 3
+
+¿Con qué campeón jugaste tu penúltima partida? Zyra
+¿Cuántos asesinatos hiciste? 3
+¿Cuántas veces te mataron? 6
+¿Y cuántas asistencias hiciste? 10
+
+¿Con qué campeón jugaste tu antepenúltima partida? Galio
+¿Cuántos asesinatos hiciste? 5
+¿Cuántas veces te mataron? 6
+¿Y cuántas asistencias hiciste? 10
+
+j2, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.00.
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
