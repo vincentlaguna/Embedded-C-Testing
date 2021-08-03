@@ -1859,7 +1859,7 @@ int main(void)
 
 
 /*********************************************
-// Tablas de Estructuras
+// Tablas de Estructuras 0
 #include    <stdio.h>
 
 #define     MAX_STR     128
@@ -1904,7 +1904,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.4 ***************/
+/*************** Ejercicio 4.4 ***************
 // Vamos a modificar el programa anterior para trabajar con tablas de 
 // estructuras, de forma que calculemos el KDA total de los cinco 
 // jugadores que han participado en la partida.
@@ -2066,6 +2066,28 @@ int main(void)
             mediaUsuarios[assists],
             mediaTotal);
   
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Tablas de Estructuras 1
+#include  <stdio.h>
+
+#define   MAX_STR     128
+#define   DIM_NOVELAS 4
+#define   DIM_AUTORES 3
+
+typedef   struct
+{
+  char nombre[MAX_STR];
+}
+
+int main(void)
+{
+ 
   return(0);
 }
 

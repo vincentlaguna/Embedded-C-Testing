@@ -98,12 +98,13 @@ int main(void)
   {
     printf("\nEnter %d string to store at first node of the linked list: ", i+1);
     scanf("%s", userString);
-    printf("\nString entered: %s\n\n", userString);
+    // printf("\nString entered: %s\n\n", userString);
   
     insert(&head, userString);
   
-    printf("\nString in Node %d: %s\n\n", i+1, head->pString);
+    // printf("\nString in Node %d: %s\n\n", i+1, head->pString);
   }
+  printList(head);
   
   return(0);
 }
