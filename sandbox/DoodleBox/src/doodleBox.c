@@ -91,19 +91,30 @@ int main(void)
 {
   char    userString[MAX_STR];
   
-  _node_t *pListNode = NULL;
+  pListNode head = NULL;
   
-  pListNode = malloc(sizeof(_node_t));
+  // head = malloc(sizeof(_node_t));
   
   printf("\nEnter string to store at first node of the linked list: ");
   scanf("%s", userString);
   printf("\nString entered: %s\n\n", userString);
+  
+  insert(head, userString);
   
   return(0);
 }
 
 void      insert(pListNode *head, char pString)
 {
+  pListNode newNode = NULL;
+  newNode           = head;
+  
+  if (!newNode)
+  {
+    newNode = malloc(sizeof(_node_t));
+    newNode->next = head;
+    newNode = head;
+  }
   
 }
 
