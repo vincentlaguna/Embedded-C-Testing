@@ -122,7 +122,7 @@ void      printList(pListNode head)
   pListNode pCurrent = head;
   int i              = 1;
   
-  while (pCurrent)
+  while (pCurrent->next)
   {
     pCurrent = pCurrent->next;
     printf("\nString in Node %d: %s\n\n", i, head->pString);
