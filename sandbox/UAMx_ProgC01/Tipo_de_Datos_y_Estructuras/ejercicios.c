@@ -2122,66 +2122,169 @@ int main(void)
 
 
 /*************** Ejercicio 4.5 ***************/
-Vamos a hacer un último programa, el más complejo de los 
-que hemos hecho hasta ahora, en el que queremos trabajar 
-con tablas de estructuras que contienen como atributo 
-tablas de otra estructura. Para ello, vamos a convertir la 
-variable partida del invocador, que era de tipo juego, 
-en una tabla de estructuras; de esta forma podremos 
-guardar varias partidas que ha hecho un usuario.
+// Vamos a hacer un último programa, el más complejo de los 
+// que hemos hecho hasta ahora, en el que queremos trabajar 
+// con tablas de estructuras que contienen como atributo 
+// tablas de otra estructura. Para ello, vamos a convertir la 
+// variable partida del invocador, que era de tipo juego, 
+// en una tabla de estructuras; de esta forma podremos 
+// guardar varias partidas que ha hecho un usuario.
 
-Con esta estructura en mente, tenemos que solicitar los datos
-de 3 partidas a 2 jugadores para calcular la media de KDA ratio
-que han hecho en las últimas 3 partidas, de forma individual.
+// Con esta estructura en mente, tenemos que solicitar los datos
+// de 3 partidas a 2 jugadores para calcular la media de KDA ratio
+// que han hecho en las últimas 3 partidas, de forma individual.
 
-Para obtener dicho dato es necesario calcular el KDA ratio de 
-cada partida y hacer la media de dichos 3 ratios para cada jugador.
+// Para obtener dicho dato es necesario calcular el KDA ratio de 
+// cada partida y hacer la media de dichos 3 ratios para cada jugador.
 
-a salida seguirá siendo ligeramente similar a los programas anteriores:
+// a salida seguirá siendo ligeramente similar a los programas anteriores:
 
-DATOS JUGADOR 1
-¿Cuál es tu nombre de invocador? j1
-¿Con qué campeón has jugado tu última partida? Malzahar
-¿Cuántos asesinatos has hecho? 8
-¿Cuántas veces has muerto? 4
-¿Y cuántas asistencias has hecho? 6
+// DATOS JUGADOR 1
+// ¿Cuál es tu nombre de invocador? j1
+// ¿Con qué campeón has jugado tu última partida? Malzahar
+// ¿Cuántos asesinatos has hecho? 8
+// ¿Cuántas veces has muerto? 4
+// ¿Y cuántas asistencias has hecho? 6
 
-¿Con qué campeón jugaste tu penúltima partida? Alistar
-¿Cuántos asesinatos hiciste? 2
-¿Cuántas veces te mataron? 5
-¿Y cuántas asistencias hiciste? 12
+// ¿Con qué campeón jugaste tu penúltima partida? Alistar
+// ¿Cuántos asesinatos hiciste? 2
+// ¿Cuántas veces te mataron? 5
+// ¿Y cuántas asistencias hiciste? 12
 
-¿Con qué campeón jugaste tu antepenúltima partida? Thresh
-¿Cuántos asesinatos hiciste? 4
-¿Cuántas veces te mataron? 9
-¿Y cuántas asistencias hiciste? 13
+// ¿Con qué campeón jugaste tu antepenúltima partida? Thresh
+// ¿Cuántos asesinatos hiciste? 4
+// ¿Cuántas veces te mataron? 9
+// ¿Y cuántas asistencias hiciste? 13
 
-j1, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.73.
+// j1, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.73.
 
-DATOS JUGADOR 2
-¿Cuál es tu nombre de invocador? j2
-¿Con qué campeón has jugado tu última partida? Udyr
-¿Cuántos asesinatos has hecho? 5
-¿Cuántas veces has muerto? 6
-¿Y cuántas asistencias has hecho? 3
+// DATOS JUGADOR 2
+// ¿Cuál es tu nombre de invocador? j2
+// ¿Con qué campeón has jugado tu última partida? Udyr
+// ¿Cuántos asesinatos has hecho? 5
+// ¿Cuántas veces has muerto? 6
+// ¿Y cuántas asistencias has hecho? 3
 
-¿Con qué campeón jugaste tu penúltima partida? Zyra
-¿Cuántos asesinatos hiciste? 3
-¿Cuántas veces te mataron? 6
-¿Y cuántas asistencias hiciste? 10
+// ¿Con qué campeón jugaste tu penúltima partida? Zyra
+// ¿Cuántos asesinatos hiciste? 3
+// ¿Cuántas veces te mataron? 6
+// ¿Y cuántas asistencias hiciste? 10
 
-¿Con qué campeón jugaste tu antepenúltima partida? Galio
-¿Cuántos asesinatos hiciste? 5
-¿Cuántas veces te mataron? 6
-¿Y cuántas asistencias hiciste? 10
+// ¿Con qué campeón jugaste tu antepenúltima partida? Galio
+// ¿Cuántos asesinatos hiciste? 5
+// ¿Cuántas veces te mataron? 6
+// ¿Y cuántas asistencias hiciste? 10
 
-j2, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.00.
+// j2, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.00.
 
 #include  <stdio.h>
+#include  <string.h>
+
+#define   MAX_STR   128
+#define   JUGADORES 5
+#define   KDA       3
+
+enum 
+{ 
+  asesinatos, 
+  muertes, 
+  assists
+};
+
+enum 
+{ 
+  jugador1, 
+  jugador2, 
+  jugador3,
+  jugador4,
+  jugador5,
+};
+
+
+typedef   struct
+{
+  char    ultCampeon[MAX_STR];
+  int     kda[KDA];
+  double  ratioKDA;
+} _Juego;
+
+typedef   struct
+{
+  char    nombre[MAX_STR];
+  // int     nivel;
+  // int     experiencia;
+  _Juego  juego;
+} _Invocador;
 
 int main(void)
 {
+  static int     mediaUsuarios[KDA];
+  static double  mediaTotal;
+  _Invocador     invocador[JUGADORES];
+  
+  for (int i = 0; i < JUGADORES; i++)
+  {
+    printf("\nDATOS JUGADOR %d\n", i+1);
+    printf("\n¿Cuál es tu nombre de invocador?: ");
+    scanf("%s", invocador[i].nombre);
+  
+    // printf("¿Cuál es tu nivel?: ");
+    // scanf("%d", &invocador[i].nivel);
  
+    // printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
+    // scanf("%d", &invocador.experiencia);
+  
+    printf("¿Con qué campeón has jugado tu última partida?: ");
+    scanf("%s", invocador[i].juego.ultCampeon);
+  
+    printf("¿Cuántos asesinatos has hecho?: ");
+    scanf("%d", &invocador[i].juego.kda[asesinatos]);
+  
+    printf("¿Cuántas veces has muerto?: ");
+    scanf("%d", &invocador[i].juego.kda[muertes]);
+  
+    printf("¿Y cuántas asistencias has hecho?: ");
+    scanf("%d", &invocador[i].juego.kda[assists]);
+    
+    // KDA Ratio = (K+A) / Max(1,D)
+    if (!invocador[i].juego.kda[muertes] >= 1) { invocador[i].juego.kda[muertes] = 1; }
+  
+    invocador[i].juego.ratioKDA = (invocador[i].juego.kda[asesinatos] + 
+    invocador[i].juego.kda[assists]) / (double)invocador[i].juego.kda[muertes];
+    
+    mediaUsuarios[asesinatos] += invocador[i].juego.kda[asesinatos];
+    mediaUsuarios[muertes]    += invocador[i].juego.kda[muertes];
+    mediaUsuarios[assists]    += invocador[i].juego.kda[assists];
+    
+    // printf("\nCuenta = mediaUsuarios[asesinatos]: %d, mediaUsuarios[muertes]: %d, "
+    //       "mediaUsuarios[assists]: %d.\n\n", 
+    //         mediaUsuarios[asesinatos], 
+    //         mediaUsuarios[muertes],
+    //         mediaUsuarios[assists]);
+  
+    printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
+            i+1, invocador[i].nombre, 
+            invocador[i].juego.ultCampeon,
+            invocador[i].juego.ratioKDA);
+  }
+    // KDA Ratio = (K+A) / Max(1,D)
+    if (!mediaUsuarios[muertes] >= 1) { mediaUsuarios[muertes] = 1; }
+  
+    mediaTotal = (mediaUsuarios[asesinatos] + 
+    mediaUsuarios[assists]) / (double)mediaUsuarios[muertes];
+    
+    printf("\nUsuarios %s, %s, %s, %s y %s, el KDA de vuestra partida ha sido "
+           "%d/%d/%d y su ratio %.2lf.\n\n", 
+            invocador[jugador1].nombre, 
+            invocador[jugador2].nombre, 
+            invocador[jugador3].nombre,
+            invocador[jugador4].nombre,
+            invocador[jugador5].nombre,
+            mediaUsuarios[asesinatos],
+            mediaUsuarios[muertes],
+            mediaUsuarios[assists],
+            mediaTotal);
+  
   return(0);
 }
 
