@@ -96,7 +96,7 @@ int main(void)
   // head = malloc(sizeof(_node_t));
   for (int i = 0; i < 3; i++)
   {
-    printf("\nEnter %d string to store at first node of the linked list: ", i+1);
+    printf("\nEnter string #%d to store at first node #%d of the linked list: ", i+1, i+1);
     scanf("%s", userString);
     // printf("\nString entered: %s\n\n", userString);
   
@@ -120,12 +120,12 @@ void      insert(pListNode *head, char *pString)
 void      printList(pListNode head)
 {
   pListNode pCurrent = head;
-  int i              = 1;
+  int i              = 0;
   
   while (pCurrent->next)
   {
     pCurrent = pCurrent->next;
-    printf("\nString in Node %d: %s\n\n", i, head->pString);
+    printf("\nString in Node %d: %s\n", i+1, pCurrent->pString);
     i++;
   }
 }
