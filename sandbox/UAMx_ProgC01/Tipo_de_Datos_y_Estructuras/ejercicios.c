@@ -2180,9 +2180,11 @@ int main(void)
 #include  <stdio.h>
 #include  <string.h>
 
-#define   MAX_STR   128
-#define   JUGADORES 5
 #define   KDA       3
+#define   MAX_STR   128
+#define   PARTIDAS  3
+#define   JUGADORES 2
+
 
 enum 
 { 
@@ -2213,7 +2215,7 @@ typedef   struct
   char    nombre[MAX_STR];
   // int     nivel;
   // int     experiencia;
-  _Juego  juego;
+  _Juego  partida[3];
 } _Invocador;
 
 int main(void)
