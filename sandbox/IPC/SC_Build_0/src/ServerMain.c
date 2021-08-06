@@ -10,7 +10,7 @@
 
 /* Includes: ****************************************************************/
 
-#include  "T_Server.h"
+#include  "../inc/T_Server.h"
 
 /****************************************************************************/
 
@@ -55,86 +55,72 @@ int main(int argc, char *argv[])
   // Listen
   listen(uSrvSok, 3); // Number of MAX connections
   // Accept incoming connections
-#ifdef _LOCAL_TEST
-  while(1)
+  while (1)
   {
-#endif
     printf("\n<<< Waiting for incoming connections...\n\n");
     clLen                 = sizeof(S_SADDR_IN);
     // Accept connection from an incoming client
-    sok = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+    sok = accept(socket_desc, (S_SADDR *)&clL, (socklen_t *)&clL);
     
-    if(sock < 0)
+    if (sok < 0)
     {
       perror("ACCEPT Failed.");
-      return 1;
+      return EXIT_FAILURE;
     }
+    
     printf("\nConnection ACCEPTED\n\n");
     // Message Buffers
-    memset(clientMsg, '\0', sizeof clientMsg);
+    memset(clLMsg, '\0', sizeof clMsg);
     memset(msg, '\0', sizeof msg);
     // Receive a reply from the Client
-    if(recv(sock, clientMsg, 200, 0) < 0)
+    if (recv(sok, clMsg, 200, 0) < 0)
     {
+      
       printf("\nRECEIVE Failed.\n");
-    // #ifdef _LOCAL_TEST
-    //   break;
-    // #endif
+      break;
     }
-    printf("Client Reply: %s\n", clientMsg);
-    //sprintf(local file to write to...)
-    fprintf(fp, "Client Reply: %s\n", clientMsg);
-   
- //#ifndef _LOCAL_TEST
-    int i = atoi(clientMsg); // change to ouptut to a file and log
-    i--;
-    sprintf(msg, "%d", i);
-    fprintf(fp, "Client 1 connected: %d", i);
-   
-    close(sock);
-  //#endif
-  
-  // #ifdef _LOCAL_TEST 
-  //   if(strncmp(pMsg, clientMsg) == 0)
-  //   {
-  //     strcpy(msg, "<<< This message is to confirm ACK >>>");
-  //   }
-  //   else
-  //   {
-  //     strcpy(msg, "INVALID MESSAGE!");
-  //   }
-  //   // Send some data
-  //   if(send(sock, msg, strlen(msg), 0) < 0)
-  //   {
-  //     printf("\nSEND Failed.\n");
-  //   }
-  //   close(sock);
-  //   sleep(1);
-  // #endif  
-  
-  //#ifndef _LOCAL_TEST
+    
+    printf("Client Reply: %s\n", clMsg);
+    
+    if (strncmp(pMsg, clMsg) == 0)
+    {
+      strcpy(msg, "<<< This message is to confirm ACK >>>");
+    }
+    else
+    {
+      strcpy(msg, "INVALID MESSAGE!");
+    }
+    // Send some data
+    if(send(sok, msg, strlen(msg), 0) < 0)
+    {
+      printf("\nSEND Failed.\n");
+      return EXIT_FAILURE;
+    }
+    
     printf("\n<<< Waiting for incoming connections...\n");
     // Accept Connection from another incoming Client
-    sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+    sok = accept(uSrvSok, (S_SADDR *)&clL, (socklen_t*)&clLen);
    
-    if(sock < 0)
+    if (sok < 0)
     {
       perror("ACCEPT Failed.");
       return 1;
     }
     printf("\nConnection ACCEPTED\n\n");
     // Send some Data
-    if(send(sock, msg, strlen(msg), 0) < 0)
+    if (send(sok, msg, strlen(msg), 0) < 0)
     {
       printf("\nSEND Failed.\n");
       return 1;
     }
-  //#endif
-// #ifdef _LOCAL_TEST   
-//   }
-// #endif
-  fclose(fp);
+    
+    close(sok);
+    sleep(1);
+    
+  }
+  
   return(0);
+
 }
 
 /****************************************************************************/

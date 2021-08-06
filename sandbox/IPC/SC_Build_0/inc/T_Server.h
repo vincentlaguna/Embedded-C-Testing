@@ -23,8 +23,8 @@
 
 /* Defines: ****************************************************************/
 
-#define	TEST_PORT     					12345
 #define LOCAL_TEST
+#define	TEST_PORT     					12345
 #define	S_SADDR		 struct				sockaddr
 #define S_SADDR_IN struct      	sockaddr_in
 
