@@ -56,6 +56,8 @@ typedef	struct        					DataBuffer
 uint16_t	SokInit_Handlr(void);
 uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok);
 uint32_t	SokConnect_Hndlr(uint32_t uClSok);
+uint32_t	SokSend_Hndlr(uint32_t uClSok, char *pRqst, uint16_t pRqstLen);
+uint32_t	SokRcv_Hndlr(uint32_t uClSok, char *pRsp, uint16_t rcvSize);
 
 /****************************************************************************/
 #endif // T_SCCommon_H

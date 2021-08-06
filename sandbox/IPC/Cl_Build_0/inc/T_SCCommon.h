@@ -27,6 +27,7 @@
 #define	TEST_PORT     					12345
 #define	S_SADDR	   struct				sockaddr
 #define S_SADDR_IN struct    		sockaddr_in
+#define TIME_V		 struct				timeval
 #define LOCAL_IP								"127.0.0.1"
 
 /****************************************************************************/
@@ -55,6 +56,8 @@ typedef	struct        					DataBuffer
 uint16_t	SokInit_Handlr(void);
 uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok);
 uint32_t	SokConnect_Hndlr(uint32_t uClSok);
+uint32_t	SokSend_Hndlr(uint32_t uClSok, char *pRqst, uint16_t pRqstLen);
+uint32_t	SokRcv_Hndlr(uint32_t uClSok, char *pRsp, uint16_t rcvSize);
 
 /****************************************************************************/
 #endif // T_SCCommon_H
