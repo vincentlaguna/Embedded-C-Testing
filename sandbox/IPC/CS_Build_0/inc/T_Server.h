@@ -1,11 +1,14 @@
 /*****************************************************************************
-Author(s):
-
-File:		T_Server.h
-
-Description:
-
+* Author(s):                                                                 *
+*                                                                            *
+* File:		T_Server.h                                                         *
+*                                                                            *
+* Description: Server-side code common header file                           *
+*                                                                            *
 *****************************************************************************/
+// Header Include Guards
+#ifndef     T_SERVER_H
+#define     T_SERVER_H
 
 /* Includes: ****************************************************************/
 
@@ -28,7 +31,7 @@ Description:
 /* Data Sructure Definitions: ***********************************************/
 
 /* Data Buffer **************************************************************/
-//
+
 typedef	struct        DataBuffer
 {
 	uint32_t					  uBufferType;		// Type of Buffer	
@@ -44,5 +47,10 @@ typedef	struct        DataBuffer
 /****************************************************************************/
 
 /* Function Prototypes: *****************************************************/
+// Helper Functions
+
+uint16_t	SokInit_Handlr(void);
+uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok);
 
 /****************************************************************************/
+#endif // T_Server_H
