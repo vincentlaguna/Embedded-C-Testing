@@ -139,7 +139,7 @@ void      printList(pListNode head)
 
 int main(int argc, char **argv)
 {
-  printf("\nsize of short: %d\n\n", sizeof(short));
+  printf("\nsize of short: %d\n\n", sizeof(int));
   
   return(0);
 }
