@@ -1,9 +1,10 @@
-# Embedded-C-Testing
+# Embedded-C-Testing:
+
 - Implementation of newly created Bash scripts for the RPi4
 - Refactoring existing test scripts (work)
 - Need to create and update the make files to run in unity
-- Note* Code and exercises are pulled from the Test-Driven Development for Embedded C book
-See "Rights file".
+- Note* Code and exercises are pulled from the Test-Driven Development 
+for Embedded C book. See "Rights file".
 - Need to update makefiles...
 - Initialized circular buffer test, working out the workflow diagram
 - Added some bash scripting for practice
@@ -29,10 +30,11 @@ Docker Setup:
 Command shortlist:
 
 - ceedling test:all
-- when compiling using gstreamer libraries: pkg-config --cflags --libs gstreamer-1.0
-- Need to resize volume...
+- when compiling using gstreamer libraries: 
+pkg-config --cflags --libs gstreamer-1.0
 
 Updates:
+
 - Initial commit for Client-Server app on Rpi4                          08052021
 - Creating Test branch from Master (trl_testing)                        07262021
 - Updated source files in trl_testing for feature addition              07252021
