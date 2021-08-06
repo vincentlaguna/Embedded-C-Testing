@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
   // Initialize message buffers
   char        msg[100]    = {0};
   char        clMsg[200]  = {0};
-  const char  *pMsg       = "Server Response: SUCCESS";
+  const char  *pMsg       = clMsg;
   // Create Socket
   uSrvSok                 = SokInit_Handlr();
   // Error Handling
