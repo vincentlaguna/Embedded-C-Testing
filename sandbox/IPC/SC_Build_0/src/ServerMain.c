@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
   // Initialize message buffers
   char        msg[100]    = {0};
   char        clMsg[200]  = {0};
-  const char  pMsg        = "Server Response: SUCCESS";
+  const char  *pMsg       = "Server Response: SUCCESS";
   // Create Socket
   uSrvSok                 = SokInit_Handlr();
   // Error Handling
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
     printf("\n<<< Waiting for incoming connections...\n\n");
     clLen                 = sizeof(S_SADDR_IN);
     // Accept connection from an incoming client
-    sok = accept(socket_desc, (S_SADDR *)&clL, (socklen_t *)&clL);
+    sok = accept(uSrvSok, (S_SADDR *)&cL, (socklen_t *)&cL);
     
     if (sok < 0)
     {
@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
     
     printf("\nConnection ACCEPTED\n\n");
     // Message Buffers
-    memset(clLMsg, '\0', sizeof clMsg);
+    memset(clMsg, '\0', sizeof clMsg);
     memset(msg, '\0', sizeof msg);
     // Receive a reply from the Client
     if (recv(sok, clMsg, 200, 0) < 0)
@@ -82,7 +82,7 @@ int main(int argc, char *argv[])
     
     printf("Client Reply: %s\n", clMsg);
     
-    if (strncmp(pMsg, clMsg) == 0)
+    if (strncmp(pMsg, clMsg, sizeof(pMsg)) == 0)
     {
       strcpy(msg, "<<< This message is to confirm ACK >>>");
     }
@@ -99,7 +99,7 @@ int main(int argc, char *argv[])
     
     printf("\n<<< Waiting for incoming connections...\n");
     // Accept Connection from another incoming Client
-    sok = accept(uSrvSok, (S_SADDR *)&clL, (socklen_t*)&clLen);
+    sok = accept(uSrvSok, (S_SADDR *)&cL, (socklen_t*)&clLen);
    
     if (sok < 0)
     {
