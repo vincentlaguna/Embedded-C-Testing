@@ -10,29 +10,14 @@
 
 /* Includes: ****************************************************************/
 
-#include  <stdio.h>
-#include  <stdlib.h>
-#include  <string.h>
-#include  <sys/socket.h>
-#include  <arpa/inet.h>
-#include  <unistd.h>
+#include "T_Server.h"
 
 /****************************************************************************/
 
-
-/* Defines: ****************************************************************/
-
-#define LOCAL_TEST
-#define	TEST_PORT           12345
-#define S_SADDR struct      sockaddr_in
-
+/* Defines: *****************************************************************/
 /****************************************************************************/
-
 
 /* Typedefs: ****************************************************************/
-
-
-
 /****************************************************************************/
 
 /* Function Definitions: ****************************************************/
@@ -83,8 +68,11 @@ uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok)
   S_SADDR   Srv           = {0};
   Srv.sin_family          = AF_INET;
   Srv.sin_addr.s_addr     = htonl(INADDR_ANY);
+  Srv.sin_port            = htons(clPort);
+  // Bind System Call
+  retVal  = bind(uSrvSok, (S_SADDR *)&Srv, sizeof(Srv));
   // Function Return
-  return hSocket;    
+  return retVal;    
 }
 
 // End BindSrvSok_Handlr() 
