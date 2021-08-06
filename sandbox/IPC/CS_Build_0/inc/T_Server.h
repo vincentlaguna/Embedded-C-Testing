@@ -30,12 +30,11 @@ File:		T_TEST.H
 typedef	struct        DataBuffer
 {
 	uint32_t					  uBufferType;		// Type of Buffer	
-	ServEntry*			    pSrvEntry;		  // Pointer to the Data Buffer
-	uint32_t					  ulFlags;			  // TBD
+// 	ServEntry*			    pSrvEntry;		  // Pointer to the Data Buffer <TBD>
 	uint32_t					  uDataSize;		  // Size of data
 	uint32_t					  uBufferSize;		// Buffer size
-	uint32_t					  uHead;					// Head
-	uint32_t					  uTail;					// Tail
+	uint32_t					  *pHead;					// Head
+	uint32_t					  *pTail;					// Tail
 	uint8_t*					  pBuffer;				// This Buffer
 
 } DataBuffer_t;
