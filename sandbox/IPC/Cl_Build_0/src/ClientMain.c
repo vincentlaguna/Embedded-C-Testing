@@ -1,9 +1,9 @@
 /*****************************************************************************
 * Author(s):                                                                 *
 *                                                                            *
-* File:		ServerMain.c                                                         *
+* File:		ClientMain.c                                                       *
 *                                                                            *
-* Description: Server-side Main                                              *
+* Description: Client-side Main                                              *
 *                                                                            *
 *****************************************************************************/
 
@@ -25,19 +25,18 @@
 int main(int argc, char *argv[])
 {
   // Initialize Local Variables
-  uint16_t    uSrvSok     = 0; 
-  uint16_t    sok         = 0; 
-  uint16_t    clLen       = 0;
-  
-  S_SADDR     cL;
+  uint16_t    uClSok        = 0; 
+  uint16_t    sok           = 0; 
+  uint16_t    clLen         = 0;
+  // This is where we fill-in the Server-Side address info
+  S_SADDR_IN  Srv; 
   // Initialize message buffers
-  char        msg[100]    = {0};
-  char        clMsg[200]  = {0};
-  const char  *pMsg       = "Server Response: SUCCESS";
+  char        sndToSrv[100] = {"Client (n) Connected"};
+  char        srvReply[200] = {0};
   // Create Socket
-  uSrvSok                 = SokInit_Handlr();
+  uClSok                    = SokInit_Handlr();
   // Error Handling
-  if (uSrvSok == -1)
+  if (uClSok == -1)
   {
     printf("\nCreation of SOCKET Failed.\n");
     return EXIT_FAILURE;
@@ -47,84 +46,27 @@ int main(int argc, char *argv[])
   
   printf("\n>>> The SOCKET has been created >>>\n\n");
   // Bind
-  if (BindSrvSok_Hndlr(uSrvSok) < 0)
+  if (SokConnect_Hndlr(uClSok) < 0)
   {
-    perror("BIND Failed."); // Print the error message
+    perror("CONNECT Failed."); // Print the error message
     return EXIT_FAILURE;
   }
   
   sleep(1);
   
-  printf("\n<<< BIND Done >>>\n\n");
-  // Listen
-  listen(uSrvSok, 3); // Number of MAX connections
+  printf("Connection to Remote Server = Successful\n\n");
+  printf("Please Enter the Message: ");
+  fgets(sndToSrv, 100, stdin);
   
   sleep(1);
-  
-  // Accept incoming connections
-  while (1)
-  {
-    printf("\n<<< Waiting for incoming connections...\n\n");
-    clLen                 = sizeof(S_SADDR_IN);
-    // Accept connection from an incoming client
-    sok = accept(uSrvSok, (S_SADDR *)&cL, (socklen_t *)&cL);
-    
-    if (sok < 0)
-    {
-      perror("ACCEPT Failed.");
-      return EXIT_FAILURE;
-    }
-    
-    printf("\nConnection ACCEPTED\n\n");
-    // Message Buffers
-    memset(clMsg, '\0', sizeof clMsg);
-    memset(msg, '\0', sizeof msg);
-    // Receive a reply from the Client
-    if (recv(sok, clMsg, 200, 0) < 0)
-    {
-      
-      printf("\nRECEIVE Failed.\n");
-      break;
-    }
-    
-    printf("Client Reply: %s\n", clMsg);
-    
-    if (strncmp(pMsg, clMsg, sizeof(pMsg)) == 0)
-    {
-      strcpy(msg, "<<< This message is to confirm ACK >>>");
-    }
-    else
-    {
-      strcpy(msg, "INVALID MESSAGE!");
-    }
-    // Send some data
-    if(send(sok, msg, strlen(msg), 0) < 0)
-    {
-      printf("\nSEND Failed.\n");
-      return EXIT_FAILURE;
-    }
-    
-    printf("\n<<< Waiting for incoming connections...\n");
-    // Accept Connection from another incoming Client
-    sok = accept(uSrvSok, (S_SADDR *)&cL, (socklen_t*)&clLen);
-   
-    if (sok < 0)
-    {
-      perror("ACCEPT Failed.");
-      return 1;
-    }
-    printf("\nConnection ACCEPTED\n\n");
-    // Send some Data
-    if (send(sok, msg, strlen(msg), 0) < 0)
-    {
-      printf("\nSEND Failed.\n");
-      return 1;
-    }
-    
-    close(sok);
-    sleep(1);
-    
-  }
+  // Send data to the Remote Server 
+  SokSend_Hndlr(uClSok, sndToSrv, strlen(sndToSrv));
+  // Received the data from the Remote Server
+  SokRcv_Hndlr(uClSok, srvReply, 200);
+  // Output Server Response
+  printf("\nServer Response: %s\n\n", srvReply);
+  // Close the Client Socket
+  close(uClSok);
   
   return(0);
 

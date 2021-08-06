@@ -99,10 +99,10 @@ uint32_t	SokSend_Hndlr(uint32_t uClSok, char *pRqst, uint16_t pRqstLen)
   // Local Variables
   uint32_t    retVal      = -1;
   TIME_V      Tv;
-  Tv.tv_sec               = 20 // Time-Out in Seconds
-  Tv.tv                   = 0;
+  Tv.tv_sec               = 20; // Time-Out in Seconds
+  Tv.tv_usec              = 0;
   // Set Socket Options
-  if (setsockopt(uClSok, SOL_SOCKET, SO_SNDTIMEO, (char *)&tv, sizeof(tv)) < 0)
+  if (setsockopt(uClSok, SOL_SOCKET, SO_SNDTIMEO, (char *)&Tv, sizeof(Tv)) < 0)
   {
     printf("\nTIME OUT.\n");
     return EXIT_FAILURE;
@@ -122,7 +122,7 @@ uint32_t	SokSend_Hndlr(uint32_t uClSok, char *pRqst, uint16_t pRqstLen)
 * Name:			  SokRcv_Handlr()                                                *
 * Purpose:    Handles receiving Data form the Server                         *
 * Parameters: Unsigned 32-bit integer for Client Socket, (char) Pointer to   *
-*             Response, Unsigned 16-bit integer for Length of the Response   *
+*             Response, Unsigned 16-bit integer for Size of the Response     *
 * Returns:		Unsigned 32-bit integer                                        *
 *                                                                            *
 *****************************************************************************/
@@ -132,16 +132,18 @@ uint32_t	SokRcv_Hndlr(uint32_t uClSok, char *pRsp, uint16_t rcvSize)
   // Local Variables
   uint32_t    retVal      = -1;
   TIME_V      Tv;
-  Tv.tv_sec               = 20 // Time-Out in Seconds
-  Tv.tv                   = 0;
+  Tv.tv_sec               = 20; // Time-Out in Seconds
+  Tv.tv_usec              = 0;
   // Set Socket Options
-  if (setsockopt(uClSok, SOL_SOCKET, SO_RCVTIMEO, (char *)&tv, sizeof(tv)) < 0)
+  if (setsockopt(uClSok, SOL_SOCKET, SO_RCVTIMEO, (char *)&Tv, sizeof(Tv)) < 0)
   {
     printf("\nTIME OUT.\n");
     return EXIT_FAILURE;
   }
-  // Send System Call to send request (parameters) to the Server
+  // Receive System Call to  receieve (parameters) from the Server
   retVal = recv(uClSok, pRsp, rcvSize, 0);
+  // Output Response
+  printf("\nResponse: %s\n\n", pRsp);
   // Function Return
   return      retVal;    
 }
