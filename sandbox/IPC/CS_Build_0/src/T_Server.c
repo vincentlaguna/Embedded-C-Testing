@@ -7,6 +7,7 @@
 *                                                                            *
 *****************************************************************************/
 
+
 /* Includes: ****************************************************************/
 
 #include  <stdio.h>
@@ -18,28 +19,19 @@
 
 /****************************************************************************/
 
+
 /* Defines: ****************************************************************/
 
-#define	TEST_PORT     12345
 #define LOCAL_TEST
+#define	TEST_PORT           12345
+#define S_SADDR struct      sockaddr_in
 
 /****************************************************************************/
 
-/* Data Sructure Definitions: ***********************************************/
 
-/* Data Buffer **************************************************************/
+/* Typedefs: ****************************************************************/
 
-typedef	struct        DataBuffer
-{
-	uint32_t					  uBufferType;		// Type of Buffer	
-// 	ServEntry*			    pSrvEntry;		  // Pointer to the Data Buffer <TBD>
-	uint32_t					  uDataSize;		  // Size of data
-	uint32_t					  uBufferSize;		// Buffer size
-	uint32_t					  *pHead;					// Head
-	uint32_t					  *pTail;					// Tail
-	uint8_t*					  pBuffer;				// This Buffer
 
-} DataBuffer_t;
 
 /****************************************************************************/
 
@@ -48,7 +40,7 @@ typedef	struct        DataBuffer
 
 /*****************************************************************************
 *                                                                            *
-* Name:			  SokInit_Handlr(void)                                           *
+* Name:			  SokInit_Handlr()                                               *
 * Purpose:    Handles the creation of a Socket                               *
 * Parameters: None                                                           *  
 * Returns:		Unsigned 16-bit integer                                        *
@@ -57,12 +49,47 @@ typedef	struct        DataBuffer
 
 uint16_t	SokInit_Handlr(void)
 {
-  
+  // Local Variables
+  uint32_t                  hSocket;
+  // Output
+  printf("\n>>> Server-Side Socket Initialization >>>\n\n");
+  // Socket System Call
+  hSocket                 = socket(AF_INET, SOCK_STREAM, 0);
+  // Output Validation
+  printf("\n<<< Server-Side Socket Init Success <<<\n\n");
+  // Function Return
+  return                    hSocket;
 }
 
-// End 
+// End SokInit_Handlr()
 /****************************************************************************/
-uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok);
+
+
+/*****************************************************************************
+*                                                                            *
+* Name:			  BindSrvSok_Handlr()                                            *
+* Purpose:    Handles the binding of a Socket to the Server                  *
+* Parameters: Unsigned 32-bit integer                                        *  
+* Returns:		Unsigned 32-bit integer                                        *
+*                                                                            *
+*****************************************************************************/
+
+uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok)
+{
+  // Local Variables
+  uint32_t  retVal        = -1;
+  uint32_t  clPort        = TEST_PORT;
+  // sock_addr_in initialization
+  S_SADDR   Srv           = {0};
+  Srv.sin_family          = AF_INET;
+  Srv.sin_addr.s_addr     = htonl(INADDR_ANY);
+  // Function Return
+  return hSocket;    
+}
+
+// End BindSrvSok_Handlr() 
+/****************************************************************************/
+
 
 /****************************************************************************/
 // End T_Server.c
