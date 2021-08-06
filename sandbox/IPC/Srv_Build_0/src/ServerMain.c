@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
       break;
     }
     
-    printf("Client Reply: %s\n", clMsg);
+    printf("Client Message: %s\n", clMsg);
     
     if (strncmp(pMsg, clMsg, sizeof(pMsg)) == 0)
     {
