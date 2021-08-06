@@ -25,7 +25,8 @@
 
 #define	TEST_PORT     					12345
 #define LOCAL_TEST
-#define S_SADDR struct      		sockaddr_in
+#define	S_SADDR		 struct				sockaddr
+#define S_SADDR_IN struct      	sockaddr_in
 
 /****************************************************************************/
 

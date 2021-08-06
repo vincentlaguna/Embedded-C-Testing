@@ -25,46 +25,44 @@
 int main(int argc, char *argv[])
 {
   // Initialize Local Variables
-  uint16_t  uSrvSok       = 0; 
-  uint16_t  sock          = 0; 
-  uint16_t  clLen         = 0;
+  uint16_t    uSrvSok     = 0; 
+  uint16_t    sok         = 0; 
+  uint16_t    clLen       = 0;
   
-  S_SADDR   cL;
+  S_SADDR     cL;
   // Initialize message buffers
-  char      msg[100]      = {0};
-  char      clMsg[200]    = {0};
-  
-  // File OPS
-  FILE *fp;
-  fp = fopen("../Client-Server/ServerLog_0.txt", "w+");
-  //const char *pMsg = "<<< This message is from SERVER_0 >>>";
+  char        msg[100]    = {0};
+  char        clMsg[200]  = {0};
+  const char  pMsg        = "Server Response: SUCCESS";
   // Create Socket
-  socket_desc = createSocket();
-  
-  if(socket_desc == -1)
+  uSrvSok                 = SokInit_Handlr();
+  // Error Handling
+  if (uSrvSok == -1)
   {
     printf("\nCreation of SOCKET Failed.\n");
-    return 1;
+    return EXIT_FAILURE;
   }
-  printf("\n<<< The SOCKET has been created >>>\n\n");
+  
+  printf("\n>>> The SOCKET has been created >>>\n\n");
   // Bind
-  if(bindCreatedServSocket(socket_desc) < 0)
+  if (BindSrvSok_Hndlr(uSrvSok) < 0)
   {
     perror("BIND Failed."); // Print the error message
-    return 1;
+    return EXIT_FAILURE;
   }
+  
   printf("\n<<< BIND Done >>>\n\n");
   // Listen
-  listen(socket_desc, 3); // Number of MAX connections
+  listen(uSrvSok, 3); // Number of MAX connections
   // Accept incoming connections
-// #ifdef _LOCAL_TEST
-//   while(1)
-//   {
-// #endif
+#ifdef _LOCAL_TEST
+  while(1)
+  {
+#endif
     printf("\n<<< Waiting for incoming connections...\n\n");
-    clientLen = sizeof(struct sockaddr_in);
+    clLen                 = sizeof(S_SADDR_IN);
     // Accept connection from an incoming client
-    sock = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
+    sok = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&clientLen);
     
     if(sock < 0)
     {
