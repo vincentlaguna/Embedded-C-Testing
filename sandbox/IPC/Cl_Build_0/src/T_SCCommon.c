@@ -10,7 +10,7 @@
 
 /* Includes: ****************************************************************/
 
-#include "../inc/T_Server.h"
+#include "../inc/T_SCCommon.h"
 
 /****************************************************************************/
 
@@ -38,10 +38,14 @@ uint16_t	SokInit_Handlr(void)
   uint32_t                  hSok;
   // Output
   printf("\n>>> Server-Side Socket Initialization >>>\n\n");
+  
+  sleep(1);
+  
   // Socket System Call
   hSok                   = socket(AF_INET, SOCK_STREAM, 0);
   // Output Validation
   printf("\n<<< Server-Side Socket Init Success <<<\n\n");
+  sleep(1);
   // Function Return
   return                    hSok;
 }
@@ -71,7 +75,7 @@ uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok)
   Srv.sin_addr.s_addr     = htonl(INADDR_ANY);
   Srv.sin_port            = htons(sPort);
   // Bind System Call
-  retVal    = bind(uSrvSok, (S_SADDR_IN *)&Srv, sizeof(Srv));
+  retVal    = bind(uSrvSok, (S_SADDR *)&Srv, sizeof(Srv));
   // Function Return
   return      retVal;    
 }

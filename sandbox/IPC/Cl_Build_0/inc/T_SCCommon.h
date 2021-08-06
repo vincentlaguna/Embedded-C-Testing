@@ -1,14 +1,14 @@
 /*****************************************************************************
 * Author(s):                                                                 *
 *                                                                            *
-* File:		T_Server.h                                                         *
+* File:		T_SCCommon.h                                                         *
 *                                                                            *
-* Description: Server-side code common header file                           *
+* Description: Server-Client side code common header file                           *
 *                                                                            *
 *****************************************************************************/
 // Header Include Guards
-#ifndef		T_SERVER_H
-#define 	T_SERVER_H
+#ifndef		T_SCCommon_H
+#define 	T_SCCommon_H
 
 /* Includes: ****************************************************************/
 
@@ -25,8 +25,8 @@
 
 #define LOCAL_TEST
 #define	TEST_PORT     					12345
-#define	S_SADDR		 struct				sockaddr
-#define S_SADDR_IN struct      	sockaddr_in
+#define	S_SADDR	   struct				sockaddr
+#define S_SADDR_IN struct      			sockaddr_in
 
 /****************************************************************************/
 
@@ -55,4 +55,4 @@ uint16_t	SokInit_Handlr(void);
 uint32_t	BindSrvSok_Hndlr(uint32_t uSrvSok);
 
 /****************************************************************************/
-#endif // T_Server_H
+#endif // T_SCCommon_H

@@ -10,7 +10,7 @@
 
 /* Includes: ****************************************************************/
 
-#include  "../inc/T_Server.h"
+#include  "../inc/T_SCCommon.h"
 
 /****************************************************************************/
 
@@ -43,6 +43,8 @@ int main(int argc, char *argv[])
     return EXIT_FAILURE;
   }
   
+  sleep(1);
+  
   printf("\n>>> The SOCKET has been created >>>\n\n");
   // Bind
   if (BindSrvSok_Hndlr(uSrvSok) < 0)
@@ -51,9 +53,14 @@ int main(int argc, char *argv[])
     return EXIT_FAILURE;
   }
   
+  sleep(1);
+  
   printf("\n<<< BIND Done >>>\n\n");
   // Listen
   listen(uSrvSok, 3); // Number of MAX connections
+  
+  sleep(1);
+  
   // Accept incoming connections
   while (1)
   {
