@@ -1,7 +1,7 @@
 /*****************************************************************************
 * Author(s):                                                                 *
 *                                                                            *
-* File:		ServerMain.c                                                         *
+* File:		ServerMain.c                                                       *
 *                                                                            *
 * Description: Server-side Main                                              *
 *                                                                            *
