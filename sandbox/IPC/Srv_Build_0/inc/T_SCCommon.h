@@ -1,9 +1,9 @@
 /*****************************************************************************
 * Author(s):                                                                 *
 *                                                                            *
-* File:		T_SCCommon.h                                                       *
+* File:		T_SCCommon.h                                                     *
 *                                                                            *
-* Description: Server-Client side code common header file                    *
+* Description: Server-Client code common header file                         *
 *                                                                            *
 *****************************************************************************/
 // Header Include Guards
@@ -25,10 +25,11 @@
 
 #define LOCAL_TEST
 #define	TEST_PORT     					12345
-#define TIME_V		 struct				timeval
+#define TIME_V	   struct				timeval
 #define	S_SADDR	   struct				sockaddr
-#define S_SADDR_IN struct    		sockaddr_in
-#define LOCAL_IP								"127.0.0.1"
+#define S_SADDR_IN struct    		    sockaddr_in
+#define LOCAL_IP						"127.0.0.1"
+#define MAX_STR_SZ						256
 
 /****************************************************************************/
 
@@ -38,14 +39,12 @@
 
 typedef	struct        					DataBuffer
 {
-	uint32_t					  					uBufferType;		// Type of Buffer	
-// 	ServEntry*			  		  		pSrvEntry;		  // Pointer to the Data Buffer <TBD>
-	uint32_t					  					uDataSize;		  // Size of data
-	uint32_t					  					uBufferSize;		// Buffer size
-	uint32_t					  					*pHead;					// Head
-	uint32_t					  					*pTail;					// Tail
-	uint8_t*					  					pBuffer;				// This Buffer
-
+	char								cPayload[MAX_STR_SZ];		
+	uint32_t					  		uBufferType;	// Type of Buffer	
+	uint32_t					  		uDataSize;	    // Size of data
+	uint32_t					  		*pHead;			// Head
+	uint32_t					  		*pTail;			// Tail
+	
 } DataBuffer_t;
 
 /****************************************************************************/

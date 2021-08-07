@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
   // Accept incoming connections
   while (1)
   {
-    printf("\n<<< Waiting for incoming connections...\n\n");
+    printf("\n>>> Waiting for incoming connections...\n\n");
     clLen                 = sizeof(S_SADDR_IN);
     // Accept connection from an incoming client
     sok = accept(uSrvSok, (S_SADDR *)&cL, (socklen_t *)&cL);
@@ -82,7 +82,6 @@ int main(int argc, char *argv[])
     // Receive a reply from the Client
     if (recv(sok, clMsg, 200, 0) < 0)
     {
-      
       printf("\nRECEIVE Failed.\n");
       break;
     }
