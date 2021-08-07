@@ -25,9 +25,9 @@
 
 #define LOCAL_TEST
 #define	TEST_PORT     					12345
+#define TIME_V		 struct				timeval
 #define	S_SADDR	   struct				sockaddr
 #define S_SADDR_IN struct    		sockaddr_in
-#define TIME_V		 struct				timeval
 #define LOCAL_IP								"127.0.0.1"
 
 /****************************************************************************/
