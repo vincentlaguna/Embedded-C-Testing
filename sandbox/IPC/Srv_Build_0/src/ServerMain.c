@@ -31,10 +31,10 @@ int main(int argc, char *argv[])
   
   S_SADDR     cL;
   // Initialize buffers to store the data
-  char        msg[100]    = {0};
-  char        clMsg[200]  = {0};
-  const char  *pMsg       = clMsg;
-  // pDbuff      dBff;
+  // char        msg[100]    = {0};
+  // char        clMsg[200]  = {0};
+  // const char  *pMsg       = clMsg;
+  DataBuffer_t  SrvDbuff;
   // Create Socket
   uSrvSok                 = SokInit_Handlr();
   // Error Handling
@@ -78,6 +78,7 @@ int main(int argc, char *argv[])
     
     printf("\nConnection ACCEPTED\n\n");
     // Buffers
+    
     // memset(clMsg, '\0', sizeof clMsg);
     // memset(msg, '\0', sizeof msg);
     // // Receive a reply from the Client
@@ -120,27 +121,28 @@ int main(int argc, char *argv[])
     //   printf("\nSEND Failed.\n");
     //   return 1;
     // }
-    memset(clMsg, '\0', sizeof clMsg);
-    memset(msg, '\0', sizeof msg);
+    
+    uint32_t  DbuffSize    = sizeof(DataBuffer_t);
+    memset(SrvDbuff.cPayload, '\0', MAX_STR_SZ);
     // Receive a reply from the Client
-    if (recv(sok, clMsg, 200, 0) < 0)
+    if (recv(sok, SrvDbuff.cPayload, DbuffSize, 0) < 0)
     {
       printf("\nRECEIVE Failed.\n");
       break;
     }
     
-    printf("Client Message: %s\n", clMsg);
+    printf("Client Message: %s\n", SrvDbuff.cPayload);
     
-    if (strncmp(pMsg, clMsg, sizeof(pMsg)) == 0)
-    {
-      strcpy(msg, "Message Received Successfully");
-    }
-    else
-    {
-      strcpy(msg, "INVALID MESSAGE!");
-    }
+    // if (strncmp(pMsg, clMsg, sizeof(pMsg)) == 0)
+    // {
+    //   strcpy(msg, "Message Received Successfully");
+    // }
+    // else
+    // {
+    //   strcpy(msg, "INVALID MESSAGE!");
+    // }
     // Send some data
-    if(send(sok, msg, strlen(msg), 0) < 0)
+    if(send(sok, SrvDbuff.cPayload, MAX_STR_SZ, 0) < 0)
     {
       printf("\nSEND Failed.\n");
       return EXIT_FAILURE;
@@ -157,11 +159,11 @@ int main(int argc, char *argv[])
     }
     printf("\nConnection ACCEPTED\n\n");
     // Send some Data
-    if (send(sok, msg, strlen(msg), 0) < 0)
-    {
-      printf("\nSEND Failed.\n");
-      return 1;
-    }
+    // if (send(sok, msg, strlen(msg), 0) < 0)
+    // {
+    //   printf("\nSEND Failed.\n");
+    //   return 1;
+    // }
     
     close(sok);
     sleep(1);
