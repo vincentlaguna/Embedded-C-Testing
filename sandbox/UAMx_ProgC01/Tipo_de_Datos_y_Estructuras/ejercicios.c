@@ -2197,9 +2197,6 @@ enum
 { 
   jugador1, 
   jugador2, 
-  jugador3,
-  jugador4,
-  jugador5,
 };
 
 
