@@ -2210,8 +2210,6 @@ typedef   struct
 typedef   struct
 {
   char    nombre[MAX_STR];
-  // int     nivel;
-  // int     experiencia;
   _Juego  partida[3];
 } _Invocador;
 
@@ -2226,12 +2224,6 @@ int main(void)
     printf("\nDATOS JUGADOR %d\n", i+1);
     printf("\n¿Cuál es tu nombre de invocador?: ");
     scanf("%s", invocador[i].nombre);
-  
-    // printf("¿Cuál es tu nivel?: ");
-    // scanf("%d", &invocador[i].nivel);
- 
-    // printf("¿Cuánta experiencia has adquirido ya en dicho nivel?: ");
-    // scanf("%d", &invocador.experiencia);
   
     printf("¿Con qué campeón has jugado tu última partida?: ");
     scanf("%s", invocador[i].juego.ultCampeon);
