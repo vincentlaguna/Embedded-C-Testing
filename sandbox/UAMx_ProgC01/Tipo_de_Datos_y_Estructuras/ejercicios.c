@@ -2219,7 +2219,7 @@ int main(void)
   static double  mediaTotal;
   _Invocador     invocador[JUGADORES];
   
-  for (int i = 0; i < JUGADORES; i++)
+  for (int i = 0; i < PARTIDAS; i++)
   {
     printf("\nDATOS JUGADOR %d\n", i+1);
     printf("\n¿Cuál es tu nombre de invocador?: ");
