@@ -2238,14 +2238,14 @@ int main(void)
     scanf("%d", &invocador[i].partida[0].kda[assists]);
     
     // KDA Ratio = (K+A) / Max(1,D)
-    if (!invocador[i].juego.kda[muertes] >= 1) { invocador[i].juego.kda[muertes] = 1; }
+    if (!invocador[i].partida[0].kda[muertes] >= 1) { invocador[i].partida[0].kda[muertes] = 1; }
   
-    invocador[i].juego.ratioKDA = (invocador[i].juego.kda[asesinatos] + 
-    invocador[i].juego.kda[assists]) / (double)invocador[i].juego.kda[muertes];
+    invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
+    invocador[i].partida[0].kda[assists]) / (double)invocador[i].partida[0].kda[muertes];
     
-    mediaUsuarios[asesinatos] += invocador[i].juego.kda[asesinatos];
-    mediaUsuarios[muertes]    += invocador[i].juego.kda[muertes];
-    mediaUsuarios[assists]    += invocador[i].juego.kda[assists];
+    mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
+    mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
+    mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
     
     for (int i = 0; i < JUGADORES; i++)
   {
@@ -2266,14 +2266,14 @@ int main(void)
     scanf("%d", &invocador[i].partida[1].kda[assists]);
     
     // KDA Ratio = (K+A) / Max(1,D)
-    if (!invocador[i].juego.kda[muertes] >= 1) { invocador[i].juego.kda[muertes] = 1; }
+    if (!invocador[i].partida[1].kda[muertes] >= 1) { invocador[i].partida[1].kda[muertes] = 1; }
   
-    invocador[i].juego.ratioKDA = (invocador[i].juego.kda[asesinatos] + 
-    invocador[i].juego.kda[assists]) / (double)invocador[i].juego.kda[muertes];
+    invocador[i].partida[1].ratioKDA = (invocador[i].juego.kda[asesinatos] + 
+    invocador[i].partida[1].kda[assists]) / (double)invocador[i].partida[1].kda[muertes];
     
-    mediaUsuarios[asesinatos] += invocador[i].juego.kda[asesinatos];
-    mediaUsuarios[muertes]    += invocador[i].juego.kda[muertes];
-    mediaUsuarios[assists]    += invocador[i].juego.kda[assists];
+    mediaUsuarios[asesinatos] += invocador[i].partida[1].kda[asesinatos];
+    mediaUsuarios[muertes]    += invocador[i].partida[1].kda[muertes];
+    mediaUsuarios[assists]    += invocador[i].partida[1].kda[assists];
     
     printf("\nCuenta = mediaUsuarios[asesinatos]: %d, mediaUsuarios[muertes]: %d, "
           "mediaUsuarios[assists]: %d.\n\n", 
