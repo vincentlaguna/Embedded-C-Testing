@@ -2216,7 +2216,7 @@ typedef   struct
 int main(void)
 {
   static int     mediaUsuarios[KDA];
-  static double  mediaTotal;
+  static double  mediaPartidas;
   _Invocador     invocador[JUGADORES];
   
   for (int i = 0; i < JUGADORES; i++)
@@ -2225,33 +2225,37 @@ int main(void)
     
     for (int j = 0; j < PARTIDAS; j++)
     {
+      printf("\n¿Cuál es tu nombre de invocador?: ");
+      scanf("%s", invocador[i].partida[j].nombre);
+    
+      printf("¿Con qué campeón has jugado tu última partida?: ");
+      scanf("%s", invocador[i].partida[j].ultCampeon);
+    
+      printf("¿Cuántos asesinatos has hecho?: ");
+      scanf("%d", &invocador[i].partida[j].kda[asesinatos]);
+    
+      printf("¿Cuántas veces has muerto?: ");
+      scanf("%d", &invocador[i].partida[j].kda[muertes]);
+    
+      printf("¿Y cuántas asistencias has hecho?: ");
+      scanf("%d", &invocador[i].partida[j].kda[assists]);
       
-  
-    printf("\n¿Cuál es tu nombre de invocador?: ");
-    scanf("%s", invocador[i].partida[j].nombre);
-  
-    printf("¿Con qué campeón has jugado tu última partida?: ");
-    scanf("%s", invocador[i].partida[j].ultCampeon);
-  
-    printf("¿Cuántos asesinatos has hecho?: ");
-    scanf("%d", &invocador[i].partida[j].kda[asesinatos]);
-  
-    printf("¿Cuántas veces has muerto?: ");
-    scanf("%d", &invocador[i].partida[j].kda[muertes]);
-  
-    printf("¿Y cuántas asistencias has hecho?: ");
-    scanf("%d", &invocador[i].partida[j].kda[assists]);
+      // KDA Ratio = (K+A) / Max(1,D)
+      if (!invocador[i].partida[0].kda[muertes] >= 1) { invocador[i].partida[0].kda[muertes] = 1; }
     
-    // KDA Ratio = (K+A) / Max(1,D)
-    if (!invocador[i].partida[0].kda[muertes] >= 1) { invocador[i].partida[0].kda[muertes] = 1; }
-  
-    invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
-    invocador[i].partida[0].kda[assists]) / (double)invocador[i].partida[0].kda[muertes];
+      invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
+      invocador[i].partida[0].kda[assists]) / (double)invocador[i].partida[0].kda[muertes];
+      
+      mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
+      mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
+      mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
     
-    mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
-    mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
-    mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
     
+    
+    
+    
+    
+    // For LATER, focus on the above first...
     for (int i = 0; i < JUGADORES; i++)
     {
       printf("\nDATOS JUGADOR %d\n", i+1);
