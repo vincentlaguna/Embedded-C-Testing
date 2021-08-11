@@ -2204,13 +2204,13 @@ typedef   struct
 {
   char    ultCampeon[MAX_STR];
   int     kda[KDA];
-  double  ratioKDA;
 } _Juego;
 
 typedef   struct
 {
   char    nombre[MAX_STR];
   _Juego  partida[3];
+  double  ratioPartidasKDA;
 } _Invocador;
 
 int main(void)
