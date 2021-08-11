@@ -2222,20 +2222,25 @@ int main(void)
   for (int i = 0; i < JUGADORES; i++)
   {
     printf("\nDATOS JUGADOR %d\n", i+1);
+    
+    for (int j = 0; j < PARTIDAS; j++)
+    {
+      
+  
     printf("\n¿Cuál es tu nombre de invocador?: ");
-    scanf("%s", invocador[i].partida[0].nombre);
+    scanf("%s", invocador[i].partida[j].nombre);
   
     printf("¿Con qué campeón has jugado tu última partida?: ");
-    scanf("%s", invocador[i].partida[0].ultCampeon);
+    scanf("%s", invocador[i].partida[j].ultCampeon);
   
     printf("¿Cuántos asesinatos has hecho?: ");
-    scanf("%d", &invocador[i].partida[0].kda[asesinatos]);
+    scanf("%d", &invocador[i].partida[j].kda[asesinatos]);
   
     printf("¿Cuántas veces has muerto?: ");
-    scanf("%d", &invocador[i].partida[0].kda[muertes]);
+    scanf("%d", &invocador[i].partida[j].kda[muertes]);
   
     printf("¿Y cuántas asistencias has hecho?: ");
-    scanf("%d", &invocador[i].partida[0].kda[assists]);
+    scanf("%d", &invocador[i].partida[j].kda[assists]);
     
     // KDA Ratio = (K+A) / Max(1,D)
     if (!invocador[i].partida[0].kda[muertes] >= 1) { invocador[i].partida[0].kda[muertes] = 1; }
