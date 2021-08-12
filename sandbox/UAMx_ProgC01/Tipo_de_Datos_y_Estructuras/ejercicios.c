@@ -2242,10 +2242,7 @@ int main(void)
     
       if (!invocador[i].partida[j].kda[muertes] >= 1) { invocador[i].partida[j].kda[muertes] = 1; }
       
-      mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
-      mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
-      mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
-    
+      // invocador[i].partida[j].kda[muertes];
     }
     // KDA Ratio = (K+A) / Max(1,D)
     
