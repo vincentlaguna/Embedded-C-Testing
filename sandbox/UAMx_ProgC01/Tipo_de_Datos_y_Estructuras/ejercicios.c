@@ -2246,9 +2246,9 @@ int main(void)
       invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
       invocador[i].partida[0].kda[assists]) / (double)invocador[i].partida[0].kda[muertes];
       
-      mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
-      mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
-      mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
+      // mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
+      // mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
+      // mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
     
     
     
