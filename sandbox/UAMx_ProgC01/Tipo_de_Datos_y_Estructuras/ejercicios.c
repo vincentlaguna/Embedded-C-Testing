@@ -2239,17 +2239,20 @@ int main(void)
     
       printf("¿Y cuántas asistencias has hecho?: ");
       scanf("%d", &invocador[i].partida[j].kda[assists]);
+    
+      if (!invocador[i].partida[j].kda[muertes] >= 1) { invocador[i].partida[j].kda[muertes] = 1; }
       
-      // KDA Ratio = (K+A) / Max(1,D)
-      // if (!invocador[i].partida[0].kda[muertes] >= 1) { invocador[i].partida[0].kda[muertes] = 1; }
+      mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
+      mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
+      mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
+    
+    }
+    // KDA Ratio = (K+A) / Max(1,D)
+    
     
       // invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
       // invocador[i].partida[0].kda[assists]) / (double)invocador[i].partida[0].kda[muertes];
       
-      // mediaUsuarios[asesinatos] += invocador[i].partida[0].kda[asesinatos];
-      // mediaUsuarios[muertes]    += invocador[i].partida[0].kda[muertes];
-      // mediaUsuarios[assists]    += invocador[i].partida[0].kda[assists];
-    
     
     
     
