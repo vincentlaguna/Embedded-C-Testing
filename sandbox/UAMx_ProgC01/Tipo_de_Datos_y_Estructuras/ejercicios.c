@@ -2240,9 +2240,10 @@ int main(void)
       scanf("%d", &invocador[i].partida[j].kda[assists]);
     
       if (!invocador[i].partida[j].kda[muertes] >= 1) { invocador[i].partida[j].kda[muertes] = 1; }
-      
-      // invocador[i].partida[j].kda[muertes];
     }
+    
+    printf("\n%s, la media de tu KDA ratio de las" 
+           "3 últimas partidas ha sido %.2lf\n.", )
     // KDA Ratio = (K+A) / Max(1,D)
     
     
