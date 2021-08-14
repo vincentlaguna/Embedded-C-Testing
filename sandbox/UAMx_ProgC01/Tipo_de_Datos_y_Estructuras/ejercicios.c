@@ -2222,12 +2222,11 @@ int main(void)
   for (int i = 0; i < JUGADORES; i++)
   {
     printf("\nDATOS JUGADOR %d\n", i+1);
+    printf("\n¿Cuál es tu nombre de invocador?: ");
+    scanf("%s", invocador[i].partida[j].nombre);
     
     for (int j = 0; j < PARTIDAS; j++)
     {
-      printf("\n¿Cuál es tu nombre de invocador?: ");
-      scanf("%s", invocador[i].partida[j].nombre);
-    
       printf("¿Con qué campeón has jugado partida #%d?: ", j+1);
       scanf("%s", invocador[i].partida[j].ultCampeon);
     
