@@ -2163,17 +2163,17 @@ int main(void)
 // ¿Con qué campeón has jugado tu última partida? Udyr
 // ¿Cuántos asesinatos has hecho? 5
 // ¿Cuántas veces has muerto? 6
-// ¿Y cuántas asistencias has hecho? 3
+// ¿Y cuántas asistencias has hecho? 3 ...1.33
 
 // ¿Con qué campeón jugaste tu penúltima partida? Zyra
 // ¿Cuántos asesinatos hiciste? 3
 // ¿Cuántas veces te mataron? 6
-// ¿Y cuántas asistencias hiciste? 10
+// ¿Y cuántas asistencias hiciste? 10 ...2.17
 
 // ¿Con qué campeón jugaste tu antepenúltima partida? Galio
 // ¿Cuántos asesinatos hiciste? 5
 // ¿Cuántas veces te mataron? 6
-// ¿Y cuántas asistencias hiciste? 10
+// ¿Y cuántas asistencias hiciste? 10 ...2.50
 
 // j2, la media de tu KDA ratio de las 3 últimas partidas ha sido 2.00.
 
@@ -2209,7 +2209,7 @@ typedef   struct
 
 int main(void)
 {
-  double         sumaMediaRatioKDA;
+  double         sumaMediaRatioKDA[JUGADORES];
   _Invocador     invocador[JUGADORES];
   
   for (int i = 0; i < JUGADORES; i++)
@@ -2245,14 +2245,14 @@ int main(void)
     
     for (int x = 0; x < PARTIDAS; x++)
     {
-      sumaMediaRatioKDA += invocador[i].partida[x].ratioKDA;
+      sumaMediaRatioKDA[i] += invocador[i].partida[x].ratioKDA;
     }
     
     invocador[i].mediaRatioKDA = sumaMediaRatioKDA / (double)PARTIDAS;
     
     printf("\n%s, la media de tu KDA ratio de las " 
            "3 últimas partidas ha sido %.2lf.\n\n",
-            invocador[i].nombre, invocador[i].mediaRatioKDA);
+            invocador[i].nombre, invocador[i].mediaRatioKDA[i]);
   }
   
   return(0);
