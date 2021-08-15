@@ -2216,8 +2216,6 @@ typedef   struct
 
 int main(void)
 {
-  static int     totalAsesinatos1;
-  static double  mediaPartidas;
   _Invocador     invocador[JUGADORES];
   
   for (int i = 0; i < JUGADORES; i++)
@@ -2247,119 +2245,16 @@ int main(void)
       invocador[i].totalKDA[assists]    += invocador[i].partida[j].kda[assists];
     }
     // KDA Ratio = (K+A) / Max(1,D)
-    invocador[i].ratioPartidasKDA = invocador.totalKDA[asesinatos] + invocador.totalKDA[muertes]
+    invocador[i].ratioPartidasKDA = invocador.totalKDA[asesinatos] + 
+    invocador.totalKDA[assists]   / (double)invocador[i].totalKDA[muertes];
+    
     printf("\n%s, la media de tu KDA ratio de las" 
-           "3 últimas partidas ha sido %.2lf\n.", )
-    
-    
-    
-      // invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
-      // invocador[i].partida[0].kda[assists]) / (double)invocador[i].partida[0].kda[muertes];
-      
-    
-    
-    
-    
-    
-    // For LATER, focus on the above first...
-    for (int i = 0; i < JUGADORES; i++)
-    {
-      printf("\nDATOS JUGADOR %d\n", i+1);
-      printf("\n¿Cuál es tu nombre de invocador?: ");
-      scanf("%s", invocador[i].partida[1].nombre);
-    
-      printf("¿Con qué campeón has jugado tu última partida?: ");
-      scanf("%s", invocador[i].partida[1].ultCampeon);
-    
-      printf("¿Cuántos asesinatos has hecho?: ");
-      scanf("%d", &invocador[i].partida[1].kda[asesinatos]);
-    
-      printf("¿Cuántas veces has muerto?: ");
-      scanf("%d", &invocador[i].partida[1].kda[muertes]);
-    
-      printf("¿Y cuántas asistencias has hecho?: ");
-      scanf("%d", &invocador[i].partida[1].kda[assists]);
-    
-      // KDA Ratio = (K+A) / Max(1,D)
-      if (!invocador[i].partida[1].kda[muertes] >= 1) { invocador[i].partida[1].kda[muertes] = 1; }
-    
-      invocador[i].partida[1].ratioKDA = (invocador[i].juego.kda[asesinatos] + 
-      invocador[i].partida[1].kda[assists]) / (double)invocador[i].partida[1].kda[muertes];
-      
-      mediaUsuarios[asesinatos] += invocador[i].partida[1].kda[asesinatos];
-      mediaUsuarios[muertes]    += invocador[i].partida[1].kda[muertes];
-      mediaUsuarios[assists]    += invocador[i].partida[1].kda[assists];
-    
-      printf("\nCuenta = mediaUsuarios[asesinatos]: %d, mediaUsuarios[muertes]: %d, "
-            "mediaUsuarios[assists]: %d.\n\n", 
-              mediaUsuarios[asesinatos], 
-              mediaUsuarios[muertes],
-              mediaUsuarios[assists]);
-  
-      // printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
-      //         i+1, invocador[i].nombre, 
-      //         invocador[i].juego.ultCampeon,
-      //         invocador[i].juego.ratioKDA);
-    }
-    
-    for (int i = 0; i < JUGADORES; i++)
-    {
-      printf("\nDATOS JUGADOR %d\n", i+1);
-      printf("\n¿Cuál es tu nombre de invocador?: ");
-      scanf("%s", invocador[i].partida[1].nombre);
-    
-      printf("¿Con qué campeón has jugado tu última partida?: ");
-      scanf("%s", invocador[i].partida[1].ultCampeon);
-    
-      printf("¿Cuántos asesinatos has hecho?: ");
-      scanf("%d", &invocador[i].partida[1].kda[asesinatos]);
-    
-      printf("¿Cuántas veces has muerto?: ");
-      scanf("%d", &invocador[i].partida[1].kda[muertes]);
-    
-      printf("¿Y cuántas asistencias has hecho?: ");
-      scanf("%d", &invocador[i].partida[1].kda[assists]);
-    
-      // KDA Ratio = (K+A) / Max(1,D)
-      if (!invocador[i].partida[1].kda[muertes] >= 1) { invocador[i].partida[1].kda[muertes] = 1; }
-    
-      invocador[i].partida[1].ratioKDA = (invocador[i].juego.kda[asesinatos] + 
-      invocador[i].partida[1].kda[assists]) / (double)invocador[i].partida[1].kda[muertes];
-      
-      mediaUsuarios[asesinatos] += invocador[i].partida[1].kda[asesinatos];
-      mediaUsuarios[muertes]    += invocador[i].partida[1].kda[muertes];
-      mediaUsuarios[assists]    += invocador[i].partida[1].kda[assists];
-    
-      printf("\nCuenta = mediaUsuarios[asesinatos]: %d, mediaUsuarios[muertes]: %d, "
-            "mediaUsuarios[assists]: %d.\n\n", 
-              mediaUsuarios[asesinatos], 
-              mediaUsuarios[muertes],
-              mediaUsuarios[assists]);
-  
-      // printf("\nJugador %d: %s, tu KDA ratio con %s ha sido %.2lf.\n\n", 
-      //         i+1, invocador[i].nombre, 
-      //         invocador[i].juego.ultCampeon,
-      //         invocador[i].juego.ratioKDA);
-    }
-    // KDA Ratio = (K+A) / Max(1,D)
-    if (!mediaUsuarios[muertes] >= 1) { mediaUsuarios[muertes] = 1; }
-  
-    mediaTotal = (mediaUsuarios[asesinatos] + 
-    mediaUsuarios[assists]) / (double)mediaUsuarios[muertes];
-    
-    printf("\nUsuarios %s, %s, %s, %s y %s, el KDA de vuestra partida ha sido "
-           "%d/%d/%d y su ratio %.2lf.\n\n", 
-            invocador[jugador1].nombre, 
-            invocador[jugador2].nombre, 
-            invocador[jugador3].nombre,
-            invocador[jugador4].nombre,
-            invocador[jugador5].nombre,
-            mediaUsuarios[asesinatos],
-            mediaUsuarios[muertes],
-            mediaUsuarios[assists],
-            mediaTotal);
+           "3 últimas partidas ha sido %.2lf\n.",
+            invocador[i].nombre, invocador[i].ratioPartidasKDA);
+  }
   
   return(0);
+  
 }
 
 /*********************************************/
