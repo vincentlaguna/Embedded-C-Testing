@@ -2185,12 +2185,17 @@ int main(void)
 #define   PARTIDAS  3
 #define   JUGADORES 2
 
-static const char *const adj[] =
+static const char *const adj0[] =
 {
   "",
   "pen",
-  "antepen",
+  "antepen"
+};
+
+static const char *const adj1[] =
+{
   "has jugado",
+  "jugaste",
   "jugaste"
 };
 
@@ -2217,7 +2222,6 @@ typedef   struct
 
 int main(void)
 {
-  // char          *adj = adj;
   double         sumaMediaRatioKDA[JUGADORES];
   _Invocador     invocador[JUGADORES];
   
@@ -2230,7 +2234,7 @@ int main(void)
     for (int j = 0; j < PARTIDAS; j++)
     {
       printf("¿Con qué campeón %s tu %súltima partida?: ",
-              *(adj+j+2), *(adj+j));
+              *(adj1+j), *(adj0+j));
       scanf("%s", invocador[i].partida[j].ultCampeon);
     
       printf("¿Cuántos asesinatos has hecho?: ");
@@ -2248,9 +2252,9 @@ int main(void)
     
       invocador[i].partida[j].ratioKDA = (invocador[i].partida[j].kda[asesinatos] +
       invocador[i].partida[j].kda[assists]) / (double)invocador[i].partida[j].kda[muertes];
-      
-      printf("\n%s, la KDA ratio de esta partida es: %.2lf.\n\n",
-             invocador[i].nombre, invocador[i].partida[j].ratioKDA);
+      // Debug
+      // printf("\n%s, la KDA ratio de esta partida es: %.2lf.\n\n",
+      //       invocador[i].nombre, invocador[i].partida[j].ratioKDA);
     }
     
     for (int x = 0; x < PARTIDAS; x++)
@@ -2260,7 +2264,7 @@ int main(void)
     
     invocador[i].mediaRatioKDA = sumaMediaRatioKDA[i] / (double)PARTIDAS;
     
-    printf("\n%s, la media de tu KDA ratio de las " 
+    printf("%s, la media de tu KDA ratio de las " 
            "3 últimas partidas ha sido %.2lf.\n\n",
             invocador[i].nombre, invocador[i].mediaRatioKDA);
   }
