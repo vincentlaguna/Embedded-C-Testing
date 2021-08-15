@@ -2210,12 +2210,13 @@ typedef   struct
 {
   char    nombre[MAX_STR];
   _Juego  partida[3];
+  int     totalKDA[KDA];
   double  ratioPartidasKDA;
 } _Invocador;
 
 int main(void)
 {
-  static int     mediaUsuarios[KDA];
+  static int     totalAsesinatos1;
   static double  mediaPartidas;
   _Invocador     invocador[JUGADORES];
   
@@ -2240,11 +2241,16 @@ int main(void)
       scanf("%d", &invocador[i].partida[j].kda[assists]);
     
       if (!invocador[i].partida[j].kda[muertes] >= 1) { invocador[i].partida[j].kda[muertes] = 1; }
-    }
     
+      invocador[i].totalKDA[asesinatos] += invocador[i].partida[j].kda[asesinatos];
+      invocador[i].totalKDA[muertes]    += invocador[i].partida[j].kda[muertes];
+      invocador[i].totalKDA[assists]    += invocador[i].partida[j].kda[assists];
+    }
+    // KDA Ratio = (K+A) / Max(1,D)
+    invocador[i].ratioPartidasKDA = invocador.totalKDA[asesinatos] + invocador.totalKDA[muertes]
     printf("\n%s, la media de tu KDA ratio de las" 
            "3 últimas partidas ha sido %.2lf\n.", )
-    // KDA Ratio = (K+A) / Max(1,D)
+    
     
     
       // invocador[i].partida[0].ratioKDA = (invocador[i].partida[0].kda[asesinatos] + 
