@@ -2185,6 +2185,14 @@ int main(void)
 #define   PARTIDAS  3
 #define   JUGADORES 2
 
+static const char *const adj[] =
+{
+  "",
+  "pen",
+  "antepen",
+  "has jugado",
+  "jugaste"
+};
 
 enum 
 { 
@@ -2209,6 +2217,7 @@ typedef   struct
 
 int main(void)
 {
+  // char          *adj = adj;
   double         sumaMediaRatioKDA[JUGADORES];
   _Invocador     invocador[JUGADORES];
   
@@ -2220,7 +2229,8 @@ int main(void)
     
     for (int j = 0; j < PARTIDAS; j++)
     {
-      printf("¿Con qué campeón has jugado tu última partida #%d?: ", j+1);
+      printf("¿Con qué campeón %s tu %súltima partida?: ",
+              *(adj+j+2), *(adj+j));
       scanf("%s", invocador[i].partida[j].ultCampeon);
     
       printf("¿Cuántos asesinatos has hecho?: ");
