@@ -2239,27 +2239,28 @@ int main(void)
       printf("¿Y cuántas asistencias has hecho?: ");
       scanf("%d", &invocador[i].partida[j].kda[assists]);
       
-      putchar("\n");
+      putchar('\n');
       // KDA Ratio = (K+A) / Max(1,D)
       if (!invocador[i].partida[j].kda[muertes] >= 1) { invocador[i].partida[j].kda[muertes] = 1; }
     
-      invocador[i].partida[j].ratioKDA = invocador[i].partida[j].kda[asesinatos] +
-      invocador[i].partida[j].kda[assists] / (double)invocador[i].partida[j].kda[muertes];
+      invocador[i].partida[j].ratioKDA = (invocador[i].partida[j].kda[asesinatos] +
+      invocador[i].partida[j].kda[assists]) / (double)invocador[i].partida[j].kda[muertes];
+      
+      printf("\n%s, la KDA ratio de esta partida es: %.2lf.\n\n",
+             invocador[i].nombre, invocador[i].partida[j].ratioKDA);
     }
     
-    for (int i = 0; i < PARTIDAS; i++)
+    for (int x = 0; x < PARTIDAS; x++)
     {
-      double suma =
-      
-      invocador[i].mediaRatioKDA = invocador[i].totalKDA[asesinatos] + 
-      invocador[i].totalKDA[assists]   / (double)invocador[i].totalKDA[muertes];
+      sumaMediaRatioKDA += invocador[i].partida[x].ratioKDA;
     }
+    
+    invocador[i].mediaRatioKDA = sumaMediaRatioKDA / (double)PARTIDAS;
+    
     printf("\n%s, la media de tu KDA ratio de las " 
            "3 últimas partidas ha sido %.2lf.\n\n",
-            invocador[i].nombre, invocador[i].ratioPartidasKDA);
+            invocador[i].nombre, invocador[i].mediaRatioKDA);
   }
-  14.31.13
-  
   
   return(0);
   
