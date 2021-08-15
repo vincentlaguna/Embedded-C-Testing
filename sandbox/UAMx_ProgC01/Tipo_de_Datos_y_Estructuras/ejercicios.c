@@ -2193,13 +2193,6 @@ enum
   assists
 };
 
-enum 
-{ 
-  jugador1, 
-  jugador2, 
-};
-
-
 typedef   struct
 {
   char    ultCampeon[MAX_STR];
