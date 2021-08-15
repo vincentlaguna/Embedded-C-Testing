@@ -2248,11 +2248,11 @@ int main(void)
       sumaMediaRatioKDA[i] += invocador[i].partida[x].ratioKDA;
     }
     
-    invocador[i].mediaRatioKDA = sumaMediaRatioKDA / (double)PARTIDAS;
+    invocador[i].mediaRatioKDA = sumaMediaRatioKDA[i] / (double)PARTIDAS;
     
     printf("\n%s, la media de tu KDA ratio de las " 
            "3 últimas partidas ha sido %.2lf.\n\n",
-            invocador[i].nombre, invocador[i].mediaRatioKDA[i]);
+            invocador[i].nombre, invocador[i].mediaRatioKDA);
   }
   
   return(0);
