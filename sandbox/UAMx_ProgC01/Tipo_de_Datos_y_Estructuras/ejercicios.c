@@ -2283,6 +2283,8 @@ Declare una estructura llamada Suma con una tabla de tres enteros
 (utiliza una macro para definir su tamaño) y un entero para almacenar
 la suma de los elementos de la tabla.
 
+#define TAM 3
+
 typedef struct
 {
   int tabla[TAM];
@@ -2291,6 +2293,11 @@ typedef struct
 Declare otra estructura llamada Resto con una tabla de dos elementos 
 de tipo Suma (utiliza una macro para definir su tamaño) y un entero 
 para almacenar el módulo de la división de las dos sumas.
+
+typedef struct
+{
+  ;
+} Resto;
 
 El programa declarará una variable estructurada 
 a partir de la estructura Resto.
