@@ -2277,56 +2277,68 @@ int main(void)
 
 
 /**************** Prueba 4.1 *****************/
-Escribe un programa en C que:
+// Escribe un programa en C que:
 
-Declare una estructura llamada Suma con una tabla de tres enteros
-(utiliza una macro para definir su tamaño) y un entero para almacenar
-la suma de los elementos de la tabla.
+// Declare una estructura llamada Suma con una tabla de tres enteros
+// (utiliza una macro para definir su tamaño) y un entero para almacenar
+// la suma de los elementos de la tabla.
 
-Declare otra estructura llamada Resto con una tabla de dos elementos 
-de tipo Suma (utiliza una macro para definir su tamaño) y un entero 
-para almacenar el módulo de la división de las dos sumas.
+// Declare otra estructura llamada Resto con una tabla de dos elementos 
+// de tipo Suma (utiliza una macro para definir su tamaño) y un entero 
+// para almacenar el módulo de la división de las dos sumas.
 
-El programa declarará una variable estructurada 
-a partir de la estructura Resto.
+// El programa declarará una variable estructurada 
+// a partir de la estructura Resto.
 
-A continuación solicitará los tres enteros de la primera tabla
-y los guardará en los miembros correspondientes de la variable estructurada.
+// A continuación solicitará los tres enteros de la primera tabla
+// y los guardará en los miembros correspondientes de la variable estructurada.
 
-A continuación calculará la suma de los tres números leídos
-y los guardará en el miembro correspondiente de la variable estructurada.
+// A continuación calculará la suma de los tres números leídos
+// y los guardará en el miembro correspondiente de la variable estructurada.
 
-A continuación solicitará los tres enteros de la segunda tabla
-y los guardará en los miembros correspondientes de la variable estructurada.
+// A continuación solicitará los tres enteros de la segunda tabla
+// y los guardará en los miembros correspondientes de la variable estructurada.
 
-A continuación calculará la suma de los tres números leídos
-y los guardará en el miembro correspondiente de la variable estructurada.
+// A continuación calculará la suma de los tres números leídos
+// y los guardará en el miembro correspondiente de la variable estructurada.
 
-A continuación calculará el resto de la división de las dos sumas
-y lo guardará en el miembro correspondiente de la variable estructurada.
+// A continuación calculará el resto de la división de las dos sumas
+// y lo guardará en el miembro correspondiente de la variable estructurada.
 
-Por último mostrará la información de las sumas y restos por pantalla
-de la forma que se especifica en el ejemplo más abajo.
+// Por último mostrará la información de las sumas y restos por pantalla
+// de la forma que se especifica en el ejemplo más abajo.
 
-Los mensajes se han de mostrar tal y como aparecen en 
-el siguiente ejemplo de ejecución y en el mismo orden 
-(variando sólo según los datos introducidos por el usuario).
+// Los mensajes se han de mostrar tal y como aparecen en 
+// el siguiente ejemplo de ejecución y en el mismo orden 
+// (variando sólo según los datos introducidos por el usuario).
 
-Lo que sigue es un ejemplo de ejecución del programa:
+// Lo que sigue es un ejemplo de ejecución del programa:
 
-Introduce el primer entero de la primera tabla: 14
-Introduce el segundo entero de la primera tabla: 19
-Introduce el tercer entero de la primera tabla: 8
-Introduce el primer entero de la segunda tabla: 4
-Introduce el segundo entero de la segunda tabla: 11
-Introduce el tercer entero de la segunda tabla: 3
-La suma de los elementos de la primera tabla es 41.
-La suma de los elementos de la segnda tabla es 18.
-El resto de la división de ambas sumas es 5.
+// Introduce el primer entero de la primera tabla: 14
+// Introduce el segundo entero de la primera tabla: 19
+// Introduce el tercer entero de la primera tabla: 8
+// Introduce el primer entero de la segunda tabla: 4
+// Introduce el segundo entero de la segunda tabla: 11
+// Introduce el tercer entero de la segunda tabla: 3
+// La suma de los elementos de la primera tabla es 41.
+// La suma de los elementos de la segunda tabla es 18.
+// El resto de la división de ambas sumas es 5.
 
-#define TAM_L 6
 #define TAM_M 3
 #define TAM_S 2
+
+static const char *const posicion[] =
+{
+  "primer",
+  "segundo",
+  "tercer"
+};
+
+static const char *const posicionT[] =
+{
+  "primera",
+  "segunda"
+};
 
 typedef struct
 {
@@ -2337,7 +2349,7 @@ typedef struct
 typedef struct
 {
   Suma tabla_Sumas[TAM_S];
-  int _resto
+  int _resto;
 } Resto;
 
 #include  <stdio.h>
@@ -2346,18 +2358,35 @@ int main(void)
 {
   Resto resto;
   
-  static entrada[TAM_M * 2];
+  int resto_div;
+  
+  static int entrada[TAM_S][TAM_M];
+  
+  putchar('\n');
   
   for (int i = 0; i < TAM_S; i++)
   {
     for (int j = 0; j < TAM_M; j++)
     {
-      scanf("%d", &entrada[j]);
-      resto.tabla_Sumas[i].tabla_suma[j] = entrada[j];
-      resto.tabla_Sumas[i].suma_elementos += entrada[j];
+      printf("Introduce el %s entero de la %s tabla: ",
+              *(posicion+j), *(posicionT+i));
+      scanf("%d", &entrada[i][j]);
+      resto.tabla_Sumas[i].tabla_suma[j] = entrada[i][j];
+      resto.tabla_Sumas[i].suma_elementos += entrada[i][j];
     }
   }
   
+  resto_div = resto.tabla_Sumas[0].suma_elementos % resto.tabla_Sumas[1].suma_elementos;
+  
+  printf("\nLa suma de los elementos de la primera tabla es %d.\n",
+          resto.tabla_Sumas[0].suma_elementos);
+  printf("La suma de los elementos de la segunda tabla es %d.\n",
+          resto.tabla_Sumas[1].suma_elementos);
+  printf("El resto de la división de ambas sumas es %d.\n",
+          resto_div);
+          
+  putchar('\n');        
+          
   return(0);
 }
 
