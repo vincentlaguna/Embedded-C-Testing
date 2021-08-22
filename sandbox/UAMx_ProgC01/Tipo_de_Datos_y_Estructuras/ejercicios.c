@@ -2290,8 +2290,6 @@ para almacenar el módulo de la división de las dos sumas.
 El programa declarará una variable estructurada 
 a partir de la estructura Resto.
 
-Resto resto;
-
 A continuación solicitará los tres enteros de la primera tabla
 y los guardará en los miembros correspondientes de la variable estructurada.
 
@@ -2346,6 +2344,8 @@ typedef struct
 
 int main(void)
 {
+  Resto resto;
+  
   static entrada[TAM_M * 2];
   
   for (int i = 0; i < TAM_S; i++)
