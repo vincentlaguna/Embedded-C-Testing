@@ -2283,24 +2283,9 @@ Declare una estructura llamada Suma con una tabla de tres enteros
 (utiliza una macro para definir su tamaño) y un entero para almacenar
 la suma de los elementos de la tabla.
 
-#define TAM_M 3
-#define TAM_S 2
-
-typedef struct
-{
-  int tabla_suma[TAM_M];
-  int suma_elementos;
-} Suma;
-
 Declare otra estructura llamada Resto con una tabla de dos elementos 
 de tipo Suma (utiliza una macro para definir su tamaño) y un entero 
 para almacenar el módulo de la división de las dos sumas.
-
-typedef struct
-{
-  Suma tabla_Sumas[TAM_S];
-  int _resto
-} Resto;
 
 El programa declarará una variable estructurada 
 a partir de la estructura Resto.
@@ -2309,15 +2294,6 @@ Resto resto;
 
 A continuación solicitará los tres enteros de la primera tabla
 y los guardará en los miembros correspondientes de la variable estructurada.
-
-for (int i = 0; i < TAM_S; i++)
-{
-  for (int j = 0; j < TAM_M; j++)
-  {
-    scanf("%d", &entrada[j]);
-    resto.tabla_Sumas[i].tabla_suma[j] = entrada[j];
-  }
-}
 
 A continuación calculará la suma de los tres números leídos
 y los guardará en el miembro correspondiente de la variable estructurada.
@@ -2350,11 +2326,38 @@ La suma de los elementos de la primera tabla es 41.
 La suma de los elementos de la segnda tabla es 18.
 El resto de la división de ambas sumas es 5.
 
+#define TAM_L 6
+#define TAM_M 3
+#define TAM_S 2
+
+typedef struct
+{
+  int tabla_suma[TAM_M];
+  int suma_elementos;
+} Suma;
+
+typedef struct
+{
+  Suma tabla_Sumas[TAM_S];
+  int _resto
+} Resto;
+
 #include  <stdio.h>
 
 int main(void)
 {
- 
+  static entrada[TAM_M * 2];
+  
+  for (int i = 0; i < TAM_S; i++)
+  {
+    for (int j = 0; j < TAM_M; j++)
+    {
+      scanf("%d", &entrada[j]);
+      resto.tabla_Sumas[i].tabla_suma[j] = entrada[j];
+      resto.tabla_Sumas[i].suma_elementos += entrada[j];
+    }
+  }
+  
   return(0);
 }
 
