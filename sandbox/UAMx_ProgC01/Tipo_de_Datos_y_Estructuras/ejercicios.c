@@ -2289,6 +2289,7 @@ la suma de los elementos de la tabla.
 typedef struct
 {
   int tabla_suma[TAM_M];
+  int suma_elementos;
 } Suma;
 
 Declare otra estructura llamada Resto con una tabla de dos elementos 
@@ -2297,14 +2298,26 @@ para almacenar el módulo de la división de las dos sumas.
 
 typedef struct
 {
-  tabla_resto[TAM_S];
+  Suma tabla_Sumas[TAM_S];
+  int _resto
 } Resto;
 
 El programa declarará una variable estructurada 
 a partir de la estructura Resto.
 
+Resto resto;
+
 A continuación solicitará los tres enteros de la primera tabla
 y los guardará en los miembros correspondientes de la variable estructurada.
+
+for (int i = 0; i < TAM_S; i++)
+{
+  for (int j = 0; j < TAM_M; j++)
+  {
+    scanf("%d", &entrada[j]);
+    resto.tabla_Sumas[i].tabla_suma[j] = entrada[j];
+  }
+}
 
 A continuación calculará la suma de los tres números leídos
 y los guardará en el miembro correspondiente de la variable estructurada.
