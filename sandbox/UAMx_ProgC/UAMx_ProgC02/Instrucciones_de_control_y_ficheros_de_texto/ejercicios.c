@@ -28,7 +28,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Operadores lógicos: múltiples condiciones
 
 #include  <stdio.h>
@@ -47,12 +47,30 @@ int main(void)
   
   printf("El resultado de evaluar (x>=3 || x<2) && x%2==0 es: %d\n\n",
           (x>=3 || x<2) && x%2==0);
- 
+  
   return(0);
 }
 
 /*********************************************/
 
+
+/*************** Ejercicio 1.1 ***************
+Escribe un programa que solicite tu edad y muestre 
+un 1 por pantalla si eres mayor de edad (18 años o más)
+o tu edad no es múltiplo de tres. En caso contrario,
+el programa mostrará un 0.
+
+Prueba qué se muestra si introduces los valores 15, 17, 20 y 21.
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
 
 
 /*********************************************
