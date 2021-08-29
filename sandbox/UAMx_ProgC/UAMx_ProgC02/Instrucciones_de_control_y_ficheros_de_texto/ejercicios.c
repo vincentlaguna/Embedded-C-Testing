@@ -54,7 +54,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.1 ***************/
+/************** Ejercicio 1.1/2 **************/
 // Escribe un programa que solicite tu edad y muestre 
 // un 1 por pantalla si eres mayor de edad (18 años o más)
 // o tu edad no es múltiplo de tres. En caso contrario,
@@ -71,8 +71,10 @@ int main(void)
   printf("\nQue edad tienes: ");
   scanf("%d", &edad);
   
-  printf("\nMayor de edad? (si = 1): %d, multiplo de 3: %d\n\n",
-          edad >= 18 || !(edad % 3 == 0));
+  // printf("\nMayor de edad o no multiplo de 3:? (si=1, no=0): %d\n\n",
+  //         edad >= 18 || (edad % 3 != 0));
+  printf("\nMayor de edad o no multiplo de 3:? (si=1, no=0): %d\n\n",
+          edad >= 18 && (edad % 3 != 0));
   
   return(0);
 }
