@@ -73,7 +73,7 @@ int main(void)
   
   // printf("\nMayor de edad o no multiplo de 3:? (si=1, no=0): %d\n\n",
   //         edad >= 18 || (edad % 3 != 0));
-  printf("\nMayor de edad o no multiplo de 3:? (si=1, no=0): %d\n\n",
+  printf("\nMayor de edad y no es multiplo de 3:? (si=1, no=0): %d\n\n",
           edad >= 18 && (edad % 3 != 0));
   
   return(0);
