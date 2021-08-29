@@ -66,8 +66,14 @@ int main(void)
 
 int main(void)
 {
-  printf("\nQue edad tienes")
-  scanf()
+  int edad;
+  
+  printf("\nQue edad tienes: ");
+  scanf("%d", &edad);
+  
+  printf("\nMayor de edad? (si = 1): %d, multiplo de 3: %d\n\n",
+          edad >= 18 || !(edad % 3 == 0));
+  
   return(0);
 }
 
