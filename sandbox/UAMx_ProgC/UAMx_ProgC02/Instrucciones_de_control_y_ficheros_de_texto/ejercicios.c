@@ -100,10 +100,12 @@ int main(void)
   printf("Tu índice de masa corporal es %.2lf\n", indice);
 
   if (indice < 18.5)
-  {
     printf("Tienes bajo peso\n");
-    printf("El límite inferior de índice de masa corporal es 18.5\n");
-  }
+  else if (indice >= 25)
+    printf("Tienes sobrepeso\n");
+  else
+    printf("Tienes sobrepeso\n");
+  
   return(0);
 }
 
