@@ -168,13 +168,104 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.4 ***************
+/*************** Ejercicio 1.4 ***************/
+// Escribe un programa que solicite al usuario el nombre 
+// de un mes en minúsculas (enero, febrero, ..., diciembre)
+// y responda con un mensaje indicando el número de días 
+// del mes especificado. Si el usuario introduce un 
+// nombre de mes incorrecto, el programa también le informará.
+
+// Utiliza operadores lógicos para agrupar los meses con el 
+// mismo número de días dentro de la misma condición.
+
+// Este sería un ejemplo del programa:
+
+// Introduce el nombre de un mes: febrero
+// febrero tiene 28/29 días
+
+// Otro ejemplo:
+
+// Introduce el nombre de un mes: marzo
+// marzo tiene 31 días
+
+// Y otro:
+
+// Introduce el nombre de un mes: abril
+// abril tiene 30 días
 
 #include  <stdio.h>
+#include  <string.h>
+#define   TAM 12
+
+const char *meses30[] = 
+{
+  "febrero",
+  "abril",
+  "junio",
+  "septiembre",
+  "noviembre"
+}
+
+enum
+{
+  febrero,
+  abril,
+  junio,
+  septiembre,
+  noviembre
+}
+
+const char *meses31[] = 
+{
+  "enero",
+  "marzo",
+  "mayo",
+  "julio",
+  "agosto",
+  "octubre",
+  "diciembre"
+}
+
+enum
+{
+  enero,
+  marzo,
+  mayo,
+  julio,
+  agosto,
+  octubre,
+  diciembre
+}
 
 int main(void)
 {
- 
+  char mes[TAM];
+  
+  printf("\nIntroduce un mes: ");
+  scanf("%s", mes);
+  
+  if (strcmp(mes, mes30[febrero]) == 0)
+  {
+    printf("\n%s tiene 28/29 dias.\n\n", mes);
+  }
+  else
+  {
+    for (int i = 1; i < TAM; i++)
+    {
+      if (strcmp(mes, mes30[i]) == 0)
+      {
+        printf("\n%s tiene 30 dias.\n\n", mes);
+      }
+      else if (strcmp(mes, mes31[i]) == 0)
+      {
+        printf("\n%s tiene 31 dias.\n\n" mes);
+      }
+      else
+      {
+        printf("\nEntrada erronea.\n\n");
+      }
+    }
+  }
   return(0);
 }
 
