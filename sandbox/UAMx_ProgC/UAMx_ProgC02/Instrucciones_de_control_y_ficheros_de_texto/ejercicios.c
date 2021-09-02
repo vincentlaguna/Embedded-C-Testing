@@ -141,7 +141,9 @@ int main(void)
 
 int main(void)
 {
-  printf("\nIntroduce tu edad:");
+  int edad;
+  
+  printf("\nIntroduce tu edad: ");
   scanf("%d", &edad);
   
   if (edad >= 18)
@@ -150,7 +152,10 @@ int main(void)
     {
       printf("Eres mayor de edad y tu edad es múltiplo de tres.\n\n");
     }
-    printf("Eres mayor de edad y tu edad no es múltiplo de tres.\n\n");
+    else
+    {
+      printf("Eres mayor de edad y tu edad no es múltiplo de tres.\n\n");
+    }
   }
   else
   {
