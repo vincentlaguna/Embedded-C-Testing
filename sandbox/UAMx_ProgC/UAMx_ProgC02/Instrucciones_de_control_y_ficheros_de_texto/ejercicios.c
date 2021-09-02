@@ -112,7 +112,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.3 ***************/
+/*************** Ejercicio 1.3 ***************
 // Escribe un programa que compruebe si eres menor de edad y, 
 // si es cierto, muestre el mensaje "Eres menor de edad".
 
@@ -162,6 +162,19 @@ int main(void)
     printf("Eres menor de edad.\n\n");
   }
   
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.4 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
