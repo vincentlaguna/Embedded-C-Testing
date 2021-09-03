@@ -204,16 +204,7 @@ const char *meses30[] =
   "junio",
   "septiembre",
   "noviembre"
-}
-
-enum
-{
-  febrero,
-  abril,
-  junio,
-  septiembre,
-  noviembre
-}
+};
 
 const char *meses31[] = 
 {
@@ -224,41 +215,30 @@ const char *meses31[] =
   "agosto",
   "octubre",
   "diciembre"
-}
-
-enum
-{
-  enero,
-  marzo,
-  mayo,
-  julio,
-  agosto,
-  octubre,
-  diciembre
-}
+};
 
 int main(void)
 {
   char mes[TAM];
   
   printf("\nIntroduce un mes: ");
-  scanf("%s", mes);
+  gets(mes);
   
-  if (strcmp(mes, mes30[febrero]) == 0)
+  if (strcmp(mes, meses30[0]) == 0)
   {
     printf("\n%s tiene 28/29 dias.\n\n", mes);
   }
   else
   {
-    for (int i = 1; i < TAM; i++)
+    for (int i = 1; i < 8; i++)
     {
-      if (strcmp(mes, mes30[i]) == 0)
+      if (strcmp(mes, meses30[i]) == 0)
       {
         printf("\n%s tiene 30 dias.\n\n", mes);
       }
-      else if (strcmp(mes, mes31[i]) == 0)
+      else if (strcmp(mes, meses31[i]) == 0)
       {
-        printf("\n%s tiene 31 dias.\n\n" mes);
+        printf("\n%s tiene 31 dias.\n\n", mes);
       }
       else
       {
