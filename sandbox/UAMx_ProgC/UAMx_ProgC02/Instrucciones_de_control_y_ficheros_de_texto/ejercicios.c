@@ -253,7 +253,29 @@ int main(void)
 
 
 /*************** Ejercicio 1.5 ***************
+Vamos a escribir un programa un poco más complejo,
+que lea del teclado dos fechas en forma de día,
+mes y año separados por espacios en blanco.
+El programa debe mostrar un mensaje indicando cuál 
+de las dos es anterior, o si ambas coinciden.
 
+Este sería un ejemplo del programa:
+
+Por favor, introduce la primera fecha: 11 3 1972
+Por favor, introduce la segunda fecha: 24 2 1989
+La fecha 11/3/1972 es anterior a 24/2/1989
+
+Otro ejemplo:
+
+Por favor, introduce la primera fecha: 12 3 456
+Por favor, introduce la segunda fecha: 12 3 456
+Las dos fechas son iguales
+
+Y otro:
+
+Por favor, introduce la primera fecha: 3 2 2000
+Por favor, introduce la segunda fecha: 1 1 2000
+La fecha 1/1/2000 es anterior a 3/2/2000
 #include  <stdio.h>
 
 int main(void)
