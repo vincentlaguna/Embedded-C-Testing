@@ -168,7 +168,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.4 ***************/
+/*************** Ejercicio 1.4 ***************
 // Escribe un programa que solicite al usuario el nombre 
 // de un mes en minúsculas (enero, febrero, ..., diciembre)
 // y responda con un mensaje indicando el número de días 
@@ -230,7 +230,7 @@ int main(void)
   }
   else
   {
-    for (int i = 1; i < 8; i++)
+    for (int i = 1; i < TAM; i++)
     {
       if (strcmp(mes, meses30[i]) == 0)
       {
@@ -246,6 +246,19 @@ int main(void)
       }
     }
   }
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.5 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
