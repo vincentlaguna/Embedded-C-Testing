@@ -374,19 +374,32 @@ int main(void)
   switch (opcion)
   {
     case 1:          
-      printf("Has elegido comenzar la partida.\n");
+      printf("Has elegido comenzar la partida.\n\n");
       break;
     case 2:          
-      printf("Aquí estará el código para mostrar los ajustes del juego.\n");
+      printf("Aquí estará el código para mostrar los ajustes del juego.\n\n");
       break;
     case 3:          
-      printf("Aquí estará el código para mostrar la ayuda.\n");
+      printf("Aquí estará el código para mostrar la ayuda.\n\n");
       break;
     case 4:          
-      printf("¡Hasta luego!\n");
+      printf("¡Hasta luego!\n\n");
       break;
     default:
-      printf("Opción incorrecta.\n");
+      printf("Opción incorrecta.\n\n");
+    // case 3:
+    //     printf("Ant-Man");
+    //     break;
+    // default:
+    //     printf("Black Widow");
+    //     break;
+    // case 2:
+    // case 1:
+    //     printf("Captain America");
+    //     break;
+    // case 4 ... 6:
+    //     printf("Doctor Strange");
+    //     break;
     }
     
   return(0);
