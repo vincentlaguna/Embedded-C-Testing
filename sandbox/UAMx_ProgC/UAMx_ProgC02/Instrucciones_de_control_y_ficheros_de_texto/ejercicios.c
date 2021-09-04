@@ -278,18 +278,29 @@ int main(void)
 // La fecha 1/1/2000 es anterior a 3/2/2000
 
 #include  <stdio.h>
+#include  <stdbool.h>
 #define   TAM 3
+#define   MAYOR 1
+#define   IGUAL 0
+#define   MENOR -1
 
 int main
 {
-  fecha1[TAM];
-  fecha2[TAM];
+  int fecha1[TAM];
+  int fecha2[TAM];
+  int fecha1Res;
+  int fecha2Res;
   
   printf("\nPor favor, introduce la primera fecha: ");
   scanf("%d %d %d", &fecha1[0], &fecha1[1], &fecha1[2]);
   
   printf("\nPor favor, introduce la segunda fecha: ");
   scanf("%d %d %d", &fecha2[0], &fecha2[1], &fecha2[2]);
+  
+  for (int i = 0; i <= TAM; i++)
+  {
+    
+  }
   
   printf("\nLa fecha %d/%d/%d es anterior a %d/%d/%d\n\n",)
   
