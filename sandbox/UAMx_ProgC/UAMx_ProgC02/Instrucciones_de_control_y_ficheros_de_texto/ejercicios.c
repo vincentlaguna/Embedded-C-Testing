@@ -280,8 +280,11 @@ int main(void)
 #include  <stdio.h>
 #define   TAM 3
 
-int main(void)
+int main
 {
+  fecha1[TAM];
+  fecha2[TAM];
+  
   printf("\nPor favor, introduce la primera fecha: ");
   scanf("%d %d %d", &fecha1[0], &fecha1[1], &fecha1[2]);
   
