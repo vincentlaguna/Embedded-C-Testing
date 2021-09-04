@@ -297,13 +297,17 @@ int main
   printf("\nPor favor, introduce la segunda fecha: ");
   scanf("%d %d %d", &fecha2[0], &fecha2[1], &fecha2[2]);
   
-  for (int i = 0; i <= TAM; i++)
+  if (fecha1[2] > fecha2[2])
   {
-    
+    fecha1Res = MAYOR;
+  }
+  else if (fecha1[2] < fecha1[2])
+  {
+    fecha1Res = MENOR;
   }
   
-  printf("\nLa fecha %d/%d/%d es anterior a %d/%d/%d\n\n",)
   
+  printf("\nLa fecha %d/%d/%d es anterior a %d/%d/%d\n\n",)
   
   return(0);
 }
