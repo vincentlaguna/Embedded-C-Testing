@@ -586,7 +586,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.8 ***************/
+/*************** Ejercicio 1.8 ***************
 // Modifica el conversor de moneda con la opción 
 // numérica para utilizar una enumeración en el switch.
 
@@ -640,6 +640,61 @@ int main(void)
     default:
       printf("\nEntrada erronea.\n\n");
   }
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 1.1 ****************/
+// Declara una estructura llamada Fecha que contenga 
+// tres miembros de tipo entero: dia, mes y anyo.
+
+// Utiliza esa estructura en un programa que solicite
+// la fecha de nacimiento de dos personas y las guarde
+// en dos variables estructuradas.
+
+// El programa ha de comparar las fechas e
+// informar de los siguientes casos:
+
+// Si ambos usuarios han nacido exactamente el mismo día.
+// Si ambos usuarios comparten cumpleaños pero han nacido 
+// en diferente año, cuántos años se llevan de diferencia.
+// Si ambos usuarios no comparten cumpleaños.
+// Los mensajes se han de mostrar tal y como aparecen
+// en los siguientes ejemplos de ejecución y en el mismo 
+// orden (variando solo según los datos introducidos por el usuario).
+
+// Lo que sigue es un ejemplo de ejecución del programa:
+
+// Introduce la fecha de nacimiento del primer usuario 
+// separada por espacios: 17 2 1999
+// Introduce la fecha de nacimiento del segundo usuario 
+// separada por espacios: 17 2 1999
+// ¡Felicidades! Ambos habéis nacido el mismo día.
+
+// Lo que sigue es otro ejemplo de ejecución del programa:
+
+// Introduce la fecha de nacimiento del primer usuario 
+// separada por espacios: 17 2 1995
+// Introduce la fecha de nacimiento del segundo usuario 
+// separada por espacios: 17 2 1999
+// Ambos cumplís años el mismo día. 
+// Os lleváis -4 años de diferencia.
+
+// Lo que sigue es otro ejemplo de ejecución del programa:
+
+// Introduce la fecha de nacimiento del primer usuario 
+// separada por espacios: 17 3 1999
+// Introduce la fecha de nacimiento del segundo usuario 
+// separada por espacios: 17 2 1999
+// Vaya, no compartís cumpleaños.
+
+#include  <stdio.h>
+
+int main(void)
+{
  
   return(0);
 }
