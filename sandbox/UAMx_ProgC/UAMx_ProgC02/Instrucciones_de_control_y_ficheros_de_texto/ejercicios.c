@@ -409,7 +409,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.6 ***************/
+/*************** Ejercicio 1.6 ***************
 // Escribe un conversor de euros a varias monedas mediante la 
 // instrucción switch. El programa ha de solicitar una cantidad
 // en euros, que será traducida a la moneda seleccionada.
@@ -462,6 +462,71 @@ int main(void)
               cantidad, cantidad * CONVERSION_YEN);
       break;
     case 3:
+      printf("\n%.2lf Euros son %.2lf Libras.\n\n",
+              cantidad, cantidad * CONVERSION_LIBRA);
+      break;
+    default:
+      printf("\nEntrada erronea.\n\n");
+  }
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.7 ***************/
+// Modifica el ejercicio anterior para trabajar con caracteres
+// en la instrucción switch. Ahora el menú será de la forma:
+
+// Selecciona una opción:
+// (D)ólar
+// (Y)en japonés
+// (L)ibra esterlina
+
+// El usuario podrá introducir D, Y o L en mayúscula o 
+// minúscula, informando si la opción introducida no es correcta.
+
+// Este sería un ejemplo del programa:
+
+// Introduce una cantidad en euros: 100
+// Selecciona una opción:
+// (D)ólar
+// (Y)en japonés
+// (L)ibra esterlina
+// y
+// 100.00 euros son 10289.20 yenes.
+
+#include  <stdio.h>
+#define   CONVERSION_DOLAR 1.18785
+#define   CONVERSION_YEN   130.309
+#define   CONVERSION_LIBRA 0.856971
+
+int main(void)
+{
+  char opcion;
+  double cantidad;
+  
+  printf("\nIntroduce una cantidad en Euros: ");
+  scanf("%lf", &cantidad);
+  
+  printf("\nSelecciona una opción:\n\n(D)ólar\n(Y)en Japonés\n(L)ibra esterlina\n");
+  scanf("%c", &opcion);
+  
+  switch (opcion)
+  {
+    case D:
+    case d:
+      printf("\n%.2lf Euros son %.2lf Dólares.\n\n",
+              cantidad, cantidad * CONVERSION_DOLAR);
+      break;
+    case Y:
+    case y:
+      printf("\n%.2lf Euros son %.2lf Yenes.\n\n",
+              cantidad, cantidad * CONVERSION_YEN);
+      break;
+    case L:
+    case l:
       printf("\n%.2lf Euros son %.2lf Libras.\n\n",
               cantidad, cantidad * CONVERSION_LIBRA);
       break;
