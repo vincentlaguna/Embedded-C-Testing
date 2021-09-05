@@ -605,31 +605,35 @@ int main(void)
 #define   CONVERSION_YEN   130.309
 #define   CONVERSION_LIBRA 0.856971
 
+enum
+{
+  dolar = 1,
+  yen,
+  libra
+};
+
 int main(void)
 {
-  char opcion;
+  int opcion;
   double cantidad;
   
   printf("\nIntroduce una cantidad en Euros: ");
   scanf("%lf", &cantidad);
   
-  printf("\nSelecciona una opción:\n\n(D)ólar\n(Y)en Japonés\n(L)ibra esterlina\n");
-  scanf("\n%c", &opcion);
+  printf("\nSelecciona una opción:\n\n1. Dólar\n2. Yen Japonés\n3. Libra Esterlina\n");
+  scanf("%d", &opcion);
   
   switch (opcion)
   {
-    case 'D':
-    case 'd':
+    case dolar:
       printf("\n%.2lf Euros son %.2lf Dólares.\n\n",
               cantidad, cantidad * CONVERSION_DOLAR);
       break;
-    case 'Y':
-    case 'y':
+    case yen:
       printf("\n%.2lf Euros son %.2lf Yenes.\n\n",
               cantidad, cantidad * CONVERSION_YEN);
       break;
-    case 'L':
-    case 'l':
+    case libra:
       printf("\n%.2lf Euros son %.2lf Libras.\n\n",
               cantidad, cantidad * CONVERSION_LIBRA);
       break;
