@@ -511,22 +511,22 @@ int main(void)
   scanf("%lf", &cantidad);
   
   printf("\nSelecciona una opción:\n\n(D)ólar\n(Y)en Japonés\n(L)ibra esterlina\n");
-  scanf("%c", &opcion);
+  scanf("\n%c", &opcion);
   
   switch (opcion)
   {
-    case D:
-    case d:
+    case 'D':
+    case 'd':
       printf("\n%.2lf Euros son %.2lf Dólares.\n\n",
               cantidad, cantidad * CONVERSION_DOLAR);
       break;
-    case Y:
-    case y:
+    case 'Y':
+    case 'y':
       printf("\n%.2lf Euros son %.2lf Yenes.\n\n",
               cantidad, cantidad * CONVERSION_YEN);
       break;
-    case L:
-    case l:
+    case 'L':
+    case 'l':
       printf("\n%.2lf Euros son %.2lf Libras.\n\n",
               cantidad, cantidad * CONVERSION_LIBRA);
       break;
