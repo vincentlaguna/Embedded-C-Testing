@@ -693,9 +693,26 @@ int main(void)
 
 #include  <stdio.h>
 
+struct Fecha
+{
+  int dia;
+  int mes;
+  int anyo;
+}
+
 int main(void)
 {
- 
+  struct Fecha fecha1, fecha2;
+  
+  printf("\nIntroduce la fecha de nacimiento del "
+         "primer usuario separada por espacios: ");
+  scanf("%d %d %d", &fecha1.dia, &fecha1.mes, &fecha1.anyo);
+  
+  printf("\nIntroduce la fecha de nacimiento del "
+         "segundo usuario separada por espacios: ");
+  scanf("%d %d %d", &fecha2.dia, &fecha2.mes, &fecha2.anyo);
+  
+  
   return(0);
 }
 
