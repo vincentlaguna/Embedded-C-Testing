@@ -475,7 +475,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.7 ***************/
+/*************** Ejercicio 1.7 ***************
 // Modifica el ejercicio anterior para trabajar con caracteres
 // en la instrucción switch. Ahora el menú será de la forma:
 
@@ -495,6 +495,109 @@ int main(void)
 // (Y)en japonés
 // (L)ibra esterlina
 // y
+// 100.00 euros son 10289.20 yenes.
+
+#include  <stdio.h>
+#define   CONVERSION_DOLAR 1.18785
+#define   CONVERSION_YEN   130.309
+#define   CONVERSION_LIBRA 0.856971
+
+int main(void)
+{
+  char opcion;
+  double cantidad;
+  
+  printf("\nIntroduce una cantidad en Euros: ");
+  scanf("%lf", &cantidad);
+  
+  printf("\nSelecciona una opción:\n\n(D)ólar\n(Y)en Japonés\n(L)ibra esterlina\n");
+  scanf("\n%c", &opcion);
+  
+  switch (opcion)
+  {
+    case 'D':
+    case 'd':
+      printf("\n%.2lf Euros son %.2lf Dólares.\n\n",
+              cantidad, cantidad * CONVERSION_DOLAR);
+      break;
+    case 'Y':
+    case 'y':
+      printf("\n%.2lf Euros son %.2lf Yenes.\n\n",
+              cantidad, cantidad * CONVERSION_YEN);
+      break;
+    case 'L':
+    case 'l':
+      printf("\n%.2lf Euros son %.2lf Libras.\n\n",
+              cantidad, cantidad * CONVERSION_LIBRA);
+      break;
+    default:
+      printf("\nEntrada erronea.\n\n");
+  }
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************
+// Enumeraciones
+
+#include  <stdio.h>
+
+enum
+{
+  jugar = 1,
+  ajustes,
+  ayuda,
+  salir
+};
+
+int main(void)
+{
+  int opcion;
+
+  printf("\nMenú:\n  1. Empezar partida\n  2. Ajustes\n  3. Ayuda\n  4. Salir\n");
+  printf("Selecciona una opción: "); 
+  scanf("%d", &opcion);
+
+  switch (opcion)
+  {
+    case jugar:          
+      printf("Has elegido comenzar la partida.\n\n");
+      break;
+    case ajustes:          
+      printf("Aquí estará el código para mostrar los ajustes del juego.\n\n");
+      break;
+    case ayuda:          
+      printf("Aquí estará el código para mostrar la ayuda.\n\n");
+      break;
+    case salir:          
+      printf("¡Hasta luego!\n\n");
+      break;
+    default:
+      printf("Opción incorrecta.\n\n");
+      break;
+    }
+    
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.8 ***************/
+// Modifica el conversor de moneda con la opción 
+// numérica para utilizar una enumeración en el switch.
+
+// La salida del programa seguirá siendo la misma:
+
+// Introduce una cantidad en euros: 100
+// Selecciona una opción:
+// 1. Dólar
+// 2. Yen japonés
+// 3. Libra esterlina
+// 2
 // 100.00 euros son 10289.20 yenes.
 
 #include  <stdio.h>
