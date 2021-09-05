@@ -692,6 +692,7 @@ int main(void)
 // Vaya, no compartís cumpleaños.
 
 #include  <stdio.h>
+#include  <stdbool.h>
 
 struct Fecha
 {
@@ -703,6 +704,12 @@ struct Fecha
 int main(void)
 {
   struct Fecha fecha1, fecha2;
+  int diferencia;
+  bool mismoDia        = false;
+  bool mismoMes        = false;
+  bool mismoAnyo       = false;
+  bool mismoCumple     = false;
+  bool mismoCumpleEdad = false;
   
   printf("\nIntroduce la fecha de nacimiento del "
          "primer usuario separada por espacios: ");
@@ -712,6 +719,15 @@ int main(void)
          "segundo usuario separada por espacios: ");
   scanf("%d %d %d", &fecha2.dia, &fecha2.mes, &fecha2.anyo);
   
+  if (fecha1.dia == fecha2.dia && fecha1.mes == fecha2.mes &&
+      fecha1.anyo == fecha2.anyo)
+  {
+    mismoCumpleEdad = true;
+  }
+  else if (fecha1.dia == fecha2.dia && fecha1.mes == fecha2.mes)
+  {
+    mismoCumple = true;  
+  }
   
   return(0);
 }
