@@ -436,19 +436,20 @@ int main(void)
 // 100.00 euros son 10289.20 yenes.
 
 #include  <stdio.h>
-#define   CONVERSION_DOLAR 0.841855
-#define   CONVERSION_YEN   0.00767405
-#define   CONVERSION_LIBRA 1.16690
+#define   CONVERSION_DOLAR 1.18785
+#define   CONVERSION_YEN   130.309
+#define   CONVERSION_LIBRA 0.856971
 
 int main(void)
 {
   int opcion;
-  float cantidad;
+  double cantidad;
   
   printf("\nIntroduce una cantidad en Euros: ");
   scanf("%lf", &cantidad);
   
-  printf("\nSelecciona una opción: \n1. Dólar\n2.Yen japonés\n3.Libra esterlina\n");
+  printf("\nSelecciona una opción:\n\n1.Dólar\n2.Yen japonés\n3.Libra esterlina\n");
+  scanf("%d", &opcion);
   
   switch (opcion)
   {
@@ -458,11 +459,11 @@ int main(void)
       break;
     case 2:
       printf("\n%.2lf Euros son %.2lf Yenes.\n\n",
-              cantidad * CONVERSION_YEN);
+              cantidad, cantidad * CONVERSION_YEN);
       break;
     case 3:
       printf("\n%.2lf Euros son %.2lf Libras.\n\n",
-              cantidad * CONVERSION_LIBRA);
+              cantidad, cantidad * CONVERSION_LIBRA);
       break;
     default:
       printf("\nEntrada erronea.\n\n");
