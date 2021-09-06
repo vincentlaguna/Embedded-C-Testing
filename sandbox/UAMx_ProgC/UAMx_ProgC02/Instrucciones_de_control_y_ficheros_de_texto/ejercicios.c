@@ -1106,7 +1106,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // 2. El bucle while y do-while: do-while
 
 #include  <stdio.h>
@@ -1141,6 +1141,51 @@ int main(void)
   }
 
   printf("es %d.\n\n", suma);
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 2.4 ***************/
+// Vamos a modificar el juego del ejercicio 2.3 paraque
+// utilice un bucle do-while, en lugar de un bucle while.
+
+// La salida del programa seguirá siendo la misma:
+// Teclea la clave: 54
+
+// ...10 líneas
+
+// Adivina un número entre 0 y 99: 50
+// Demasiado pequeño. Prueba otra vez: 75
+// Demasiado grande. Prueba otra vez: 62
+// Demasiado grande. Prueba otra vez: 56
+// Demasiado grande. Prueba otra vez: 53
+// Demasiado pequeño. Prueba otra vez: 54
+// ¡Número correcto!
+
+#include  <stdio.h>
+
+int main(void)
+{
+  int tabla[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+  int numero;
+  int i = 0;
+  
+  printf("\n¿Cuántos elementos quieres mostrar por pantalla? \n"
+        "Elige un número entre 1 y 10: ");
+  scanf("%d", &numero);
+  
+  printf("\n");
+  
+  while (i < numero)
+  {
+    printf("%d ", tabla[i]);
+    i++;
+  }
+  
+  printf("\n\n");
   
   return(0);
 }
