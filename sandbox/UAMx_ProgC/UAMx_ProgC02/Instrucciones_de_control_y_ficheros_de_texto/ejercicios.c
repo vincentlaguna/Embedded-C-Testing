@@ -827,7 +827,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // 2. El bucle while y do-while: while
 
 #include  <stdio.h>
@@ -840,16 +840,17 @@ int main(void)
   printf("Selecciona una opción: "); 
   scanf("%d", &opcion);
 
-  if (opcion<1 || opcion>4)
-  {
-    printf("\nOpción incorrecta. Inténtalo de nuevo: "); 
-    scanf("%d", &opcion);
-  }
-  // while (opcion<1 || opcion>4) 
+  // if (opcion<1 || opcion>4)
   // {
-  //   printf("\nOpción incorrecta. Inténtalo de nuevo: ");  
+  //   printf("\nOpción incorrecta. Inténtalo de nuevo: "); 
   //   scanf("%d", &opcion);
   // }
+  
+  while (opcion<1 || opcion>4) 
+  {
+    printf("\nOpción incorrecta. Inténtalo de nuevo: ");  
+    scanf("%d", &opcion);
+  }
 
   switch (opcion) 
   {
@@ -865,6 +866,29 @@ int main(void)
     case 4:          
       printf("¡Hasta luego!\n\n");
       break;
+    }
+    
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// 2. El bucle while y do-while: while
+
+#include  <stdio.h>
+
+#define   DIM 3
+
+int main(void)
+{
+  int i = 0;
+
+    while(i < DIM)
+    {
+      printf("*******************\n");  
+      i++;
     }
     
   return(0);
