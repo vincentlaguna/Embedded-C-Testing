@@ -840,25 +840,30 @@ int main(void)
   printf("Selecciona una opción: "); 
   scanf("%d", &opcion);
 
-  while (opcion<1 || opcion>4) 
+  if (opcion<1 || opcion>4)
   {
-    printf("Opción incorrecta. Inténtalo de nuevo: ");  
+    printf("\nOpción incorrecta. Inténtalo de nuevo: "); 
     scanf("%d", &opcion);
   }
+  // while (opcion<1 || opcion>4) 
+  // {
+  //   printf("\nOpción incorrecta. Inténtalo de nuevo: ");  
+  //   scanf("%d", &opcion);
+  // }
 
   switch (opcion) 
   {
     case 1:          
-      printf("Has elegido comenzar la partida.\n");
+      printf("Has elegido comenzar la partida.\n\n");
       break;
     case 2:          
-      printf("Aquí estará el código para mostrar los ajustes del juego.\n");
+      printf("Aquí estará el código para mostrar los ajustes del juego.\n\n");
       break;
     case 3:          
-      printf("Aquí estará el código para mostrar la ayuda.\n");
+      printf("Aquí estará el código para mostrar la ayuda.\n\n");
       break;
     case 4:          
-      printf("¡Hasta luego!\n");
+      printf("¡Hasta luego!\n\n");
       break;
     }
     
