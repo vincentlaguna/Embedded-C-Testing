@@ -786,15 +786,23 @@ int main(void)
 #include  <stdio.h>
 #include  <stdbool.h>
 
-struct
+struct Numeros
 {
-  int dia;
-  int mes;
-  int anyo;
+  int primer;
+  int segundo;
+  int tercer;
 };
 
 int main(void)
 {
+  struct Numeros numeros;
+  
+  printf("\nIntroduce el primer número: ");
+  scanf("%d", &numeros.primer);
+  
+  printf("\nIntroduce el segundo número: ");
+  scanf("%d", &numeros.segundo);
+  printf("\nIntroduce el tercer número: ");
   
   return(0);
 }
