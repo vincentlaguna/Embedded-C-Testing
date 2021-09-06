@@ -1016,7 +1016,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // 2. El bucle while y do-while: while
 
 #include  <stdio.h>
@@ -1048,6 +1048,58 @@ int main(void)
   }
 
   printf("es %d.\n\n", suma);
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 2.3 ***************/
+// Escribe un programa que inicialice en la declaración
+// una tabla de enteros de tamaño 10 con los valores 
+// que quieras. En nuestro ejemplo lo hemos hecho 
+// con los números pares del 2 al 20.
+
+// A continuación, el programa ha de solicitar al usuario
+// que introduzca el número de valores que quiere que 
+// se muestren por pantalla (del 1 al 10), 
+// que se mostrarán después por pantalla.
+
+// Esto sería un ejemplo del programa:
+
+// ¿Cuántos elementos quieres mostrar por pantalla? 
+// Elige un número entre 1 y 10: 4
+// 2 4 6 8
+
+// Y este, otro:
+
+// ¿Cuántos elementos quieres mostrar por pantalla? 
+// Elige un número entre 1 y 10: 7
+// 2 4 6 8 10 12 14
+
+#include  <stdio.h>
+// #define   DIM 10
+
+int main(void)
+{
+  int tabla[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+  int numero;
+  int i = 0;
+  
+  printf("\n¿Cuántos elementos quieres mostrar por pantalla? \n"
+        "Elige un número entre 1 y 10: ");
+  scanf("%d", &numero);
+  
+  printf("\n");
+  
+  while (i < numero)
+  {
+    printf("%d ", tabla[i]);
+    i++;
+  }
+  
+  printf("\n\n");
   
   return(0);
 }
