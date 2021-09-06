@@ -796,14 +796,22 @@ struct Numeros
 int main(void)
 {
   struct Numeros numeros;
+  int menor;
   
   printf("\nIntroduce el primer número: ");
   scanf("%d", &numeros.primer);
   
   printf("\nIntroduce el segundo número: ");
   scanf("%d", &numeros.segundo);
-  printf("\nIntroduce el tercer número: ");
   
+  printf("\nIntroduce el tercer número: ");
+  scanf("%d", &numeros.tercer);
+  
+  if (numeros.primer < numeros.segundo && numeros.primer < numeros.tercer)
+  {
+    menor = numeros.primer;
+  }
+  else if ()
   return(0);
 }
 
