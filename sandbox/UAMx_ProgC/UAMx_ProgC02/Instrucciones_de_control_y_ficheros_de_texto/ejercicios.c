@@ -908,6 +908,8 @@ int main(void)
 
 // Teclea la clave: 4
 
+// ...10 líneas
+
 // Adivina un número entre 0 y 9: 0
 // Ese no es el número. Prueba otra vez: 1
 // Ese no es el número. Prueba otra vez: 2
@@ -916,10 +918,32 @@ int main(void)
 // ¡Número correcto!
 
 #include  <stdio.h>
+#define   DIM 10
 
 int main(void)
 {
+  int clave;
+  int numeroAdivinado;
+  int i = 0;
+  
+  printf("\nTeclea la clave: ");
+  scanf("%d", &clave);
  
+  while (i < DIM)
+  {
+    printf("\n");
+    i++;
+  }
+  
+  printf("\nAdivina un número entre 0 y 9: ");
+  scanf("%d", &numeroAdivinado);
+  
+  while (numeroAdivinado != clave)
+  {
+    printf("\nEse no es el número. Prueba otra vez: ");
+    scanf("%d", &numeroAdivinado);
+  }
+  
   return(0);
 }
 
