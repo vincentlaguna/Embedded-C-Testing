@@ -784,7 +784,6 @@ int main(void)
 // El número 2 es el menor
 
 #include  <stdio.h>
-#include  <stdbool.h>
 
 struct Numeros
 {
@@ -807,11 +806,21 @@ int main(void)
   printf("\nIntroduce el tercer número: ");
   scanf("%d", &numeros.tercer);
   
-  if (numeros.primer < numeros.segundo && numeros.primer < numeros.tercer)
+  if (numeros.primer <= numeros.segundo && numeros.primer <= numeros.tercer)
   {
     menor = numeros.primer;
   }
-  else if ()
+  else if (numeros.segundo <= numeros.primer && numeros.segundo <= numeros.tercer)
+  {
+    menor =  numeros.segundo;
+  }
+  else if (numeros.tercer <= numeros.primer && numeros.tercer <= numeros.segundo)
+  {
+    menor = numeros.tercer;
+  }
+  
+  printf("\nEl número %d es el menor.\n\n", menor);
+  
   return(0);
 }
 
