@@ -1037,7 +1037,7 @@ int main(void)
     i++;
   }
 
-  printf("La suma de los %d números: ", total);
+  printf("\nLa suma de los %d números: ", total);
 
   i = 0;
   
@@ -1047,7 +1047,7 @@ int main(void)
     i++;
   }
 
-  printf("es %d.", suma);
+  printf("es %d.\n\n", suma);
   
   return(0);
 }
