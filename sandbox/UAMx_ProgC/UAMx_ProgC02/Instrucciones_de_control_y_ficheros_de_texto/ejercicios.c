@@ -1166,27 +1166,42 @@ int main(void)
 // ¡Número correcto!
 
 #include  <stdio.h>
+#define   DIM 10
 
 int main(void)
 {
-  int tabla[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
-  int numero;
+  int clave;
+  int numeroAdivinado;
   int i = 0;
   
-  printf("\n¿Cuántos elementos quieres mostrar por pantalla? \n"
-        "Elige un número entre 1 y 10: ");
-  scanf("%d", &numero);
-    
-  printf("\n");
+  printf("\nTeclea la clave: ");
+  scanf("%d", &clave);
+ 
+  while (i < DIM)
+  {
+    printf("\n");
+    i++;
+  }
+  
+  printf("\nAdivina un número entre 0 y 99: ");
+  scanf("%d", &numeroAdivinado);
   
   do
   {
-    printf("%d ", tabla[i]);
-    i++;
+    if (numeroAdivinado < clave)
+    {
+      printf("\nDemasiado pequeño. Prueba otra vez: ");
+      scanf("%d", &numeroAdivinado);
+    }
+    else if (numeroAdivinado > clave)
+    {
+      printf("\nDemasiado grande. Prueba otra vez: ");
+      scanf("%d", &numeroAdivinado);
+    }
     
-  } while (i < numero);
+  } while (numeroAdivinado != clave);
   
-  printf("\n\n");
+  printf("\n¡Número correcto!\n\n");
   
   return(0);
 }
