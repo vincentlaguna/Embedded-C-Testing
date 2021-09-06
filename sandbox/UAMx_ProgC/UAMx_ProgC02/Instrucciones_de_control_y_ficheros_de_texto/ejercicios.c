@@ -1148,7 +1148,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.4 ***************/
+/*************** Ejercicio 2.4 ***************
 // Vamos a modificar el juego del ejercicio 2.3 paraque
 // utilice un bucle do-while, en lugar de un bucle while.
 
@@ -1202,6 +1202,57 @@ int main(void)
   } while (numeroAdivinado != clave);
   
   printf("\n¡Número correcto!\n\n");
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 2.5 ***************/
+// Vamos a modificar ahora el ejercicio 2.3 para que el 
+// programa compruebe que el número introducido está
+// comprendido entre 1 y 10. En caso contrario, 
+// el programa informará de que el número introducido
+// no es correcto y volverá a solicitar el número tantas
+// veces como sea necesario, hasta que el número sea correcto. 
+// Utiliza para esto un bucle do-while.
+
+// Esto sería un ejemplo del programa:
+
+// ¿Cuántos elementos quieres mostrar por pantalla?
+// Elige un número entre 1 y 10: 42
+// El número introducido no es correcto, vuelve a intentarlo: -4
+// El número introducido no es correcto, vuelve a intentarlo: 4
+// 2 4 6 8
+
+// Y este, otro:
+
+// ¿Cuántos elementos quieres mostrar por pantalla? 
+// Elige un número entre 1 y 10: 7
+// 2 4 6 8 10 12 14
+
+#include  <stdio.h>
+
+int main(void)
+{
+  int tabla[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+  int numero;
+  int i = 0;
+  
+  printf("\n¿Cuántos elementos quieres mostrar por pantalla? \n"
+        "Elige un número entre 1 y 10: ");
+  scanf("%d", &numero);
+  
+  printf("\n");
+  
+  while (i < numero)
+  {
+    printf("%d ", tabla[i]);
+    i++;
+  }
+  
+  printf("\n\n");
   
   return(0);
 }
