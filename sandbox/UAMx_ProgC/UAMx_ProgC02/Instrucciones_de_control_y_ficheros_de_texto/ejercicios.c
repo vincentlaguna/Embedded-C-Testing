@@ -1175,7 +1175,9 @@ int main(void)
   
   printf("\n¿Cuántos elementos quieres mostrar por pantalla? \n"
         "Elige un número entre 1 y 10: ");
-    scanf("%d", &numero);
+  scanf("%d", &numero);
+    
+  printf("\n");
   
   do
   {
@@ -1183,14 +1185,6 @@ int main(void)
     i++;
     
   } while (i < numero);
-  
-  printf("\n");
-  
-  // while (i < numero)
-  // {
-  //   printf("%d ", tabla[i]);
-  //   i++;
-  // }
   
   printf("\n\n");
   
