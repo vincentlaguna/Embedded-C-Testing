@@ -699,15 +699,12 @@ struct Fecha
   int dia;
   int mes;
   int anyo;
-}
+};
 
 int main(void)
 {
   struct Fecha fecha1, fecha2;
   int diferencia;
-  bool mismoDia        = false;
-  bool mismoMes        = false;
-  bool mismoAnyo       = false;
   bool mismoCumple     = false;
   bool mismoCumpleEdad = false;
   
@@ -726,7 +723,30 @@ int main(void)
   }
   else if (fecha1.dia == fecha2.dia && fecha1.mes == fecha2.mes)
   {
-    mismoCumple = true;  
+    mismoCumple = true;
+    
+    if (fecha1.anyo > fecha2.anyo)
+    {
+      diferencia = fecha1.anyo - fecha2.anyo;
+    }
+    else if (fecha1.anyo < fecha2.anyo)
+    {
+      diferencia = fecha2.anyo - fecha1.anyo;
+    }
+  }
+  
+  if (mismoCumpleEdad)
+  {
+    printf("\n¡Felicidades! Ambos habéis nacido el mismo día.\n\n");
+  }
+  else if (mismoCumple)
+  {
+    printf("\nAmbos cumplís años el mismo día. Os lleváis %d años "
+           "de diferencia.\n\n", diferencia);
+  }
+  else
+  {
+    printf("\nVaya, no compartís cumpleaños.\n\n");
   }
   
   return(0);
