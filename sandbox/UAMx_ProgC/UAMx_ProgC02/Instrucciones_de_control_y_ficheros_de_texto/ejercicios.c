@@ -1118,11 +1118,11 @@ int main(void)
 
   do 
   {
-    printf("¿Cuántos números quieres sumar (entre 0 y %d)? ", DIM);
+    printf("\n¿Cuántos números quieres sumar (entre 0 y %d)? ", DIM);
     scanf("%d", &total);
-  } while(total<0 || total>DIM);
+  } while (total < 0 || total > DIM);
 
-  while(i<total) 
+  while (i < total) 
   {
     printf("Introduce un número: ");
     scanf("%d", &tabla[i]);
@@ -1134,14 +1134,14 @@ int main(void)
 
   i=0;
     
-  while(i<total) 
+  while (i < total) 
   {
     printf("%d ", tabla[i]);
     i++;
   }
 
-  printf("es %d.", suma);
-
+  printf("es %d.\n\n", suma);
+  
   return(0);
 }
 
