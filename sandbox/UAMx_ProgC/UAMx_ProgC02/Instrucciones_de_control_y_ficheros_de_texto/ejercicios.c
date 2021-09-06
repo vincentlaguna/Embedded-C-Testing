@@ -647,7 +647,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 1.1 ****************/
+/**************** Prueba 1.1 ****************
 // Declara una estructura llamada Fecha que contenga 
 // tres miembros de tipo entero: dia, mes y anyo.
 
@@ -748,6 +748,53 @@ int main(void)
   {
     printf("\nVaya, no compartís cumpleaños.\n\n");
   }
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 1.2 ****************/
+// El programa que debes escribir necesita un tipo de 
+// dato estructurado que contenga tres miembros de tipo entero.
+
+// El programa debe declarar una variable de este 
+// tipo y solicitar al usuario tres números enteros, 
+// que se deben guardar en los miembros de la variable estructurada.
+
+// El programa ha de informar de cuál es el menor de los tres números.
+
+// Los mensajes se han de mostrar tal y como aparecen 
+// en los siguientes ejemplos de ejecución y en el mismo orden, 
+// variando solo debido a los datos introducidos por el usuario.
+
+// Lo que sigue es un ejemplo de ejecución:
+
+// Introduce el primer número: 17
+// Introduce el segundo número: 6
+// Introduce el tercer número: 8
+// El número 6 es el menor
+
+// Lo que sigue es otro ejemplo de ejecución:
+
+// Introduce el primer número: 2
+// Introduce el segundo número: 2
+// Introduce el tercer número: 4
+// El número 2 es el menor
+
+#include  <stdio.h>
+#include  <stdbool.h>
+
+struct
+{
+  int dia;
+  int mes;
+  int anyo;
+};
+
+int main(void)
+{
   
   return(0);
 }
