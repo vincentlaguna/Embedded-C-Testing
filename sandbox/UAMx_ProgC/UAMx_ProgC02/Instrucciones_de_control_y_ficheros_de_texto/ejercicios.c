@@ -1233,10 +1233,11 @@ int main(void)
 // 2 4 6 8 10 12 14
 
 #include  <stdio.h>
+#define   DIM 10
 
 int main(void)
 {
-  int tabla[] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
+  int tabla[DIM] = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
   int numero;
   int i = 0;
   
@@ -1246,11 +1247,19 @@ int main(void)
   
   printf("\n");
   
-  while (i < numero)
+  do
   {
+    if (numero < 0 || numero > DIM)
+    {
+      printf("\nEl número introducido no es correcto, vuelve a intentarlo: ");
+      scanf("%d", &numero);
+    }
+    
     printf("%d ", tabla[i]);
     i++;
-  }
+  
+    
+  } while (i < numero && !(numero < 0 || numero > DIM));
   
   printf("\n\n");
   
