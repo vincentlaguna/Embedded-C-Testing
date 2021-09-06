@@ -897,7 +897,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.1 ***************/
+/*************** Ejercicio 2.1 ***************
 // Escribe un programa que implemente el siguiente juego: 
 // solicitará un número entero entre 0 y 9, que deberás 
 // teclear sin mirar. Después el número desaparecerá de la
@@ -943,6 +943,72 @@ int main(void)
     printf("\nEse no es el número. Prueba otra vez: ");
     scanf("%d", &numeroAdivinado);
   }
+  
+  printf("\n¡Número correcto!\n\n");
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 2.2 ***************/
+// Modifica el ejercicio anterior para mejorarlo haciendo
+// que el programa te ayude en la búsqueda. Cada vez que 
+// introduzcas un número, te indicará si es menor o mayor 
+// que el que intentas adivinar. Además, para hacerlo 
+// un poco más complejo, vamos a adivinar en el intervalo 0 - 99.
+
+// Este sería un ejemplo de programa:
+
+// Teclea la clave: 54
+
+// ...10 líneas
+
+// Adivina un número entre 0 y 99: 50
+// Demasiado pequeño. Prueba otra vez: 75
+// Demasiado grande. Prueba otra vez: 62
+// Demasiado grande. Prueba otra vez: 56
+// Demasiado grande. Prueba otra vez: 53
+// Demasiado pequeño. Prueba otra vez: 54
+// ¡Número correcto!
+
+#include  <stdio.h>
+#define   DIM 10
+
+int main(void)
+{
+  int clave;
+  int numeroAdivinado;
+  int i = 0;
+  
+  printf("\nTeclea la clave: ");
+  scanf("%d", &clave);
+ 
+  while (i < DIM)
+  {
+    printf("\n");
+    i++;
+  }
+  
+  printf("\nAdivina un número entre 0 y 99: ");
+  scanf("%d", &numeroAdivinado);
+  
+  while (numeroAdivinado != clave)
+  {
+    if (numeroAdivinado < clave)
+    {
+      printf("\nDemasiado pequeño. Prueba otra vez: ");
+      scanf("%d", &numeroAdivinado);
+    }
+    else if (numeroAdivinado > clave)
+    {
+      printf("\nDemasiado grande. Prueba otra vez: ");
+      scanf("%d", &numeroAdivinado);
+    }
+  }
+  
+  printf("\n¡Número correcto!\n\n");
   
   return(0);
 }
