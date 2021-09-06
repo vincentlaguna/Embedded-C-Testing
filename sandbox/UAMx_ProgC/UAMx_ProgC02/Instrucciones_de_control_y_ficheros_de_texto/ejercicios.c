@@ -952,7 +952,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.2 ***************/
+/*************** Ejercicio 2.2 ***************
 // Modifica el ejercicio anterior para mejorarlo haciendo
 // que el programa te ayude en la búsqueda. Cada vez que 
 // introduzcas un número, te indicará si es menor o mayor 
@@ -1009,6 +1009,45 @@ int main(void)
   }
   
   printf("\n¡Número correcto!\n\n");
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// 2. El bucle while y do-while: while
+
+#include  <stdio.h>
+#define   DIM 10
+
+int main(void)
+{
+  int i = 0, suma = 0, total, tabla[DIM];
+
+  printf("\n¿Cuántos números quieres sumar (entre 0 y %d)? ", DIM);
+  scanf("%d", &total);
+
+  while (i < total)
+  {
+    printf("Introduce un número: ");
+    scanf("%d", &tabla[i]);
+    suma += tabla[i];
+    i++;
+  }
+
+  printf("La suma de los %d números: ", total);
+
+  i = 0;
+  
+  while (i < total)
+  {
+    printf("%d ", tabla[i]);
+    i++;
+  }
+
+  printf("es %d.", suma);
   
   return(0);
 }
