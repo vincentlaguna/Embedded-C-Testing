@@ -1271,7 +1271,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.6 ***************/
+/*************** Ejercicio 2.6 ***************
 // Vamos a escribir un programa bucles while y/o do-while,
 // según consideres. Este programa tiene que solicite al 
 // usuario cuántos números quiere leer por teclado (entre 2 y 10),
@@ -1343,17 +1343,22 @@ int main(void)
       i++;
     }
   }
-  // for (int x = 0; x < numero; x++)
-  // {
-  //   if (tabla[x] < tabla[numero])
-  //   {
-  //     printf("El número %d es menor que el número %d",
-  //             tabla[x], tabla[numero]);
-  //   }
-  // }
   
   printf("\n\n");
   
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 0.0 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
@@ -1373,7 +1378,50 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 0.0 ***************
+/*************** Ejercicio 2.7 ***************/
+// Escribe un programa que solicite:
+
+// Una cadena de caracteres en minúsculas. Puedes 
+// considerar que el usuario siempre va a introducir
+// una cadena en minúsculas y sin espacios.
+
+// Un carácter en minúsculas
+// Un carácter en mayúsculas
+// Con dichos datos, el programa tendrá que mostrar:
+
+// La cadena de caracteres en minúsculas, habiendo 
+// cambiado el carácter en minúsculas introducido 
+// por el usuario por el carácter en mayúsculas, s i lo contiene.
+// La cadena resultante, del revés.
+// Recuerda que debes emplear bucles while y/o do-while,
+// según consideres. Asimismo, es necesario realizar una
+// comprobación de errores de los datos introducidos por el usuario.
+
+// Esto sería un ejemplo del programa:
+
+// Introduce una cadena de caracteres en minúsculas: 
+// supercalifragilisticoespialidoso
+
+// Introduce un carácter en minúculas: i
+// Introduce un carácter en mayúsculas: W
+// supercalWfragWlWstWcoespWalWdoso
+// osodWlaWpseocWtsWlWgarfWlacrepus
+
+// Y este, otro:
+
+// Introduce una cadena de caracteres en minúsculas: sagas
+// Introduce un carácter en minúculas: 5
+// Error, el carácter tiene que estar comprendido entre a y z. 
+// Vuelve a intentarlo: F
+// Error, el carácter tiene que estar comprendido entre a y z. 
+// Vuelve a intentarlo: a
+// Introduce un carácter en mayúsculas: 7
+// Error, el carácter tiene que estar comprendido entre A y Z. 
+// Vuelve a intentarlo: g
+// Error, el carácter tiene que estar comprendido entre A y Z. 
+// Vuelve a intentarlo: U
+// sUgUs
+// sUgUs
 
 #include  <stdio.h>
 
