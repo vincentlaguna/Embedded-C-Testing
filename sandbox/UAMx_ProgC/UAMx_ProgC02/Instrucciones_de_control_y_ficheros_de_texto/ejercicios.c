@@ -1429,7 +1429,7 @@ int main(void)
 
 int main(void)
 {
-  // int i = 0;
+  int i = 0;
   char minuscula;
   char mayuscula;
   // char alpha[] = {"abcdefghijklmnopqrstuvwxyz"};
@@ -1462,7 +1462,23 @@ int main(void)
     
   } while (!(islower(minuscula)) || !(isupper(mayuscula)));
   
-  printf("\n%s size: %d\n\n", cadena, strlen(cadena));
+  while (i < strlen(cadena))
+  {
+    if (cadena[i] == minuscula)
+    {
+      cadena[i] = mayuscula;
+      i++;
+    }
+    i++;
+  }
+  
+  printf("\n%s\n", cadena);
+  
+  while (i >= 0)
+  {
+    printf("%c", cadena[i]);
+    i--;
+  }
   
   return(0);
 }
