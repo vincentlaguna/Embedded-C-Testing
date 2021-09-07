@@ -1384,7 +1384,6 @@ int main(void)
 // Una cadena de caracteres en minúsculas. Puedes 
 // considerar que el usuario siempre va a introducir
 // una cadena en minúsculas y sin espacios.
-
 // Un carácter en minúsculas
 // Un carácter en mayúsculas
 // Con dichos datos, el programa tendrá que mostrar:
@@ -1424,10 +1423,46 @@ int main(void)
 // sUgUs
 
 #include  <stdio.h>
+#include  <string.h>
+#include  <ctype.h>
 #define   DIM 64
+
 int main(void)
 {
-  cadena[DIM];
+  // int i = 0;
+  char minuscula;
+  char mayuscula;
+  // char alpha[] = {"abcdefghijklmnopqrstuvwxyz"};
+  char cadena[DIM];
+  
+  printf("\nIntroduce una cadena de caracteres en minúsculas: ");
+  scanf("%s", cadena);
+  
+  printf("\nIntroduce un carácter en minúsculas: ");
+  scanf("\n%c", &minuscula);
+  
+  printf("\nIntroduce un carácter en mayúsculas: ");
+  scanf("\n%c", &mayuscula);
+  
+  do
+  {
+    if (!(islower(minuscula)))
+    {
+      printf("\nError, el carácter tiene que estar comprendido entre a y z.\n"
+             "Vuelve a intentarlo: ");
+      scanf("\n%c", &minuscula);      
+    }
+    
+    if (!(isupper(mayuscula)))
+    {
+      printf("\nError, el carácter tiene que estar comprendido entre A y Z.\n"
+             "Vuelve a intentarlo: ");
+      scanf("\n%c", &mayuscula);
+    }
+    
+  } while (!(islower(minuscula)) || !(isupper(mayuscula)));
+  
+  printf("\n%s size: %d\n\n", cadena, strlen(cadena));
   
   return(0);
 }
