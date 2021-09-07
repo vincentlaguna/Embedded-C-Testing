@@ -1351,34 +1351,7 @@ int main(void)
 
 /*********************************************/
 
-
-/*************** Ejercicio 0.0 ***************
-
-#include  <stdio.h>
-
-int main(void)
-{
- 
-  return(0);
-}
-
-/*********************************************/
-
-
-/*********************************************
-
-#include  <stdio.h>
-
-int main(void)
-{
- 
-  return(0);
-}
-
-/*********************************************/
-
-
-/*************** Ejercicio 2.7 ***************/
+/*************** Ejercicio 2.7 ***************
 // Escribe un programa que solicite:
 
 // Una cadena de caracteres en minúsculas. Puedes 
@@ -1490,4 +1463,64 @@ int main(void)
 
 /*********************************************/
 
+
+/**************** Prueba 2.1 ****************/
+// Escribe un programa en C que pida por teclado 
+// dos palabras y las guarde en dos variables.
+// A continuación crea y escriba en una nueva 
+// variable una tercera palabra que tenga la 
+// concatenación de las dos palabras introducidas, 
+// pero la segunda con sus caracteres en orden inverso. 
+// El programa ha de mostrar las palabras 
+// originales y la nueva palabra por pantalla.
+
+// Lo que sigue es un ejemplo de ejecución:
+
+// Escribe la primera palabra: Certificado
+// Escribe la segunda palabra: Profesional
+// La palabra resultante de concatenar 
+// Certificado y Profesional es: CertificadolanoiseforP
+
+// Otro ejemplo:
+
+// Escribe la primera palabra: Rick
+// Escribe la segunda palabra: diculous
+// La palabra resultante de concatenar 
+// Rick y diculous es: Ricksuolucid
+
+#include  <stdio.h>
+
+int main(void)
+{
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 0.0 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
 
