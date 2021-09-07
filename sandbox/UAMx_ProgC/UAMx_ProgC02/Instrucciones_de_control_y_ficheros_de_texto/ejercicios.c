@@ -1391,7 +1391,7 @@ int main(void)
 
 // La cadena de caracteres en minúsculas, habiendo 
 // cambiado el carácter en minúsculas introducido 
-// por el usuario por el carácter en mayúsculas, s i lo contiene.
+// por el usuario por el carácter en mayúsculas, si lo contiene.
 // La cadena resultante, del revés.
 // Recuerda que debes emplear bucles while y/o do-while,
 // según consideres. Asimismo, es necesario realizar una
@@ -1424,10 +1424,11 @@ int main(void)
 // sUgUs
 
 #include  <stdio.h>
-
+#define   DIM 64
 int main(void)
 {
- 
+  cadena[DIM];
+  
   return(0);
 }
 
