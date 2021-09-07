@@ -1409,7 +1409,7 @@ int main(void)
 // Y este, otro:
 
 // Introduce una cadena de caracteres en minúsculas: sagas
-// Introduce un carácter en minúculas: 5
+// Introduce un carácter en minúsculas: 5
 // Error, el carácter tiene que estar comprendido entre a y z. 
 // Vuelve a intentarlo: F
 // Error, el carácter tiene que estar comprendido entre a y z. 
@@ -1432,35 +1432,38 @@ int main(void)
   int i = 0;
   char minuscula;
   char mayuscula;
-  // char alpha[] = {"abcdefghijklmnopqrstuvwxyz"};
   char cadena[DIM];
   
   printf("\nIntroduce una cadena de caracteres en minúsculas: ");
   scanf("%s", cadena);
   
-  printf("\nIntroduce un carácter en minúsculas: ");
-  scanf("\n%c", &minuscula);
-  
-  printf("\nIntroduce un carácter en mayúsculas: ");
-  scanf("\n%c", &mayuscula);
-  
   do
   {
+    printf("\nIntroduce un carácter en minúsculas: ");
+    scanf("\n%c", &minuscula);
+  
     if (!(islower(minuscula)))
     {
       printf("\nError, el carácter tiene que estar comprendido entre a y z.\n"
              "Vuelve a intentarlo: ");
       scanf("\n%c", &minuscula);      
     }
-    
+  
+  } while (!(islower(minuscula)));
+  
+  do
+  {
+    printf("\nIntroduce un carácter en mayúsculas: ");
+    scanf("\n%c", &mayuscula);
+  
     if (!(isupper(mayuscula)))
     {
       printf("\nError, el carácter tiene que estar comprendido entre A y Z.\n"
              "Vuelve a intentarlo: ");
-      scanf("\n%c", &mayuscula);
+      scanf("\n%c", &mayuscula);      
     }
-    
-  } while (!(islower(minuscula)) || !(isupper(mayuscula)));
+  
+  } while (!(isupper(mayuscula)));
   
   while (i < strlen(cadena))
   {
@@ -1479,6 +1482,8 @@ int main(void)
     printf("%c", cadena[i]);
     i--;
   }
+  
+  printf("\n\n");
   
   return(0);
 }
