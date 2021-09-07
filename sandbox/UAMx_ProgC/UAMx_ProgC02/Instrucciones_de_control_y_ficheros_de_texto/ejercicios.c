@@ -1489,9 +1489,40 @@ int main(void)
 // Rick y diculous es: Ricksuolucid
 
 #include  <stdio.h>
+#include  <string.h>
+#define   DIM 64
 
 int main(void)
 {
+  int  j;
+  int  i = 0;
+  char palabra1[DIM];
+  char palabra2[DIM];
+  char resultado[DIM];
+  
+  printf("\nEscribe la primera palabra: ");
+  scanf("%s", palabra1);
+  
+  printf("\nEscribe la segunda palabra: ");
+  scanf("%s", palabra2);
+  
+  j = strlen(palabra2);
+  
+  while (j >= 0 && i <= strlen(palabra2))
+  {
+    palabra2[i] = palabra2[j];
+    i++;
+    j--;
+    printf("%c = %c", palabra2[i], palabra2[j]);
+  }
+  
+  printf("\nPalabra2: %s\n\n", palabra2);
+  
+  strcpy(resultado, palabra1);
+  strcat(resultado, palabra2);
+  
+  printf("\nPalabra1: %s, palabra2: %s, resultado: %s\n\n",
+          palabra1, palabra2, resultado);
   
   return(0);
 }
