@@ -1573,10 +1573,16 @@ int main(void)
 // Los números tecleados son: 9 17 12 8 7 -5 -1 9 5 3
 
 #include  <stdio.h>
+#define   DIM 10
 
 int main(void)
 {
+  int tabla[DIM];
   
+  printf("\nIntroduzca un número entero (0 para terminar): ");
+  printf("\nMáximo de números alcanzado. Continuando...\n\n");
+  printf("\nLos números tecleados son: ");
+  printf("%d ", x[i]);
   
   return(0);
 }
