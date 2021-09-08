@@ -1494,8 +1494,9 @@ int main(void)
 
 int main(void)
 {
-  int  j;
-  int  i = 0;
+  int  i;
+  int  num = 0;
+  int  tmp = 0;
   char palabra1[DIM];
   char palabra2[DIM];
   char resultado[DIM];
@@ -1506,16 +1507,8 @@ int main(void)
   printf("\nEscribe la segunda palabra: ");
   scanf("%s", palabra2);
   
-  j = strlen(palabra2);
-  
-  while (j >= 0 && i <= strlen(palabra2))
-  {
-    palabra2[i] = palabra2[j];
-    i++;
-    j--;
-    printf("%c = %c", palabra2[i], palabra2[j]);
-  }
-  
+  for (i = 0; i < num/2;)  
+
   printf("\nPalabra2: %s\n\n", palabra2);
   
   strcpy(resultado, palabra1);
