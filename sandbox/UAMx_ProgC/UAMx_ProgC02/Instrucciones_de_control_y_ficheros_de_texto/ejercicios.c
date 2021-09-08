@@ -1499,6 +1499,7 @@ int main(void)
   int  tmp = 0;
   char palabra1[DIM];
   char palabra2[DIM];
+  char palabra2reves[DIM];
   char resultado[DIM];
   
   printf("\nEscribe la primera palabra: ");
@@ -1507,14 +1508,25 @@ int main(void)
   printf("\nEscribe la segunda palabra: ");
   scanf("%s", palabra2);
   
-  for (i = 0; i < num/2;)  
-
-  printf("\nPalabra2: %s\n\n", palabra2);
+  while (palabra2[num] != 0)
+  {
+    num++;
+  }
+  
+  strcpy(palabra2reves, palabra2);
+  
+  while (i < num/2)
+  {
+    tmp = palabra2reves[i];
+    palabra2reves[i] = palabra2reves[num - 1 - i];
+    palabra2reves[num - 1 - i] = tmp;
+    i++;
+  }
   
   strcpy(resultado, palabra1);
-  strcat(resultado, palabra2);
+  strcat(resultado, palabra2reves);
   
-  printf("\nPalabra1: %s, palabra2: %s, resultado: %s\n\n",
+  printf("\nLa palabra resultante de concatenar %s y %s es: %s\n\n",
           palabra1, palabra2, resultado);
   
   return(0);
