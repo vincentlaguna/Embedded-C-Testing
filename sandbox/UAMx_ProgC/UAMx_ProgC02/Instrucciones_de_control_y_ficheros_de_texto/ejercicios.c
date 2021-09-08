@@ -1581,7 +1581,7 @@ int main(void)
   int tabla[DIM];
   int opcion;
   
-  do
+  while (tabla[i] != 0)
   {
     printf("\nIntroduzca un número entero (0 para terminar): ");
     scanf("%d", &tabla[i]);
@@ -1591,8 +1591,7 @@ int main(void)
       break;
     }
     i++;
-    
-  } while (tabla[i] != 0 || i > DIM);
+  }
   
   // printf("\nIntroduzca un número entero (0 para terminar): ");
   // printf("\nLos números tecleados son: ");
