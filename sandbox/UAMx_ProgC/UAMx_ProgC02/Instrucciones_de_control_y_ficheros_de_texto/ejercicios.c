@@ -1579,6 +1579,11 @@ int main(void)
 {
   int tabla[DIM];
   
+  do
+  {
+    printf("\nIntroduzca un número entero (0 para terminar): ");
+    
+  }
   printf("\nIntroduzca un número entero (0 para terminar): ");
   printf("\nMáximo de números alcanzado. Continuando...\n\n");
   printf("\nLos números tecleados son: ");
