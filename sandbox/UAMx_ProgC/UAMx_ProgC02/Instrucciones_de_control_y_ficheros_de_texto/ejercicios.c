@@ -1577,25 +1577,35 @@ int main(void)
 
 int main(void)
 {
-  int i;
+  int i = 0;
   int tabla[DIM];
   int opcion;
   
-  while (tabla[i] != 0)
+  do  
   {
-    printf("\nIntroduzca un número entero (0 para terminar): ");
-    scanf("%d", &tabla[i]);
-    if (i >= 10)
+    if (i <= DIM)
+    {
+      printf("\nIntroduzca un número entero (0 para terminar): ");
+      scanf("%d", &opcion);
+      tabla[i] = opcion;
+    }
+    else if (i > 10)
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       break;
     }
     i++;
-  }
+    
+  } while (opcion != 0);
   
-  // printf("\nIntroduzca un número entero (0 para terminar): ");
-  // printf("\nLos números tecleados son: ");
-  // printf("%d ", x[i]);
+  printf("\nLos números tecleados son: ");
+    
+  while (i >= 0)
+  {
+    printf("%d ", tabla[i]);
+    i--;
+  }
+  printf("\n\n");
   
   return(0);
 }
