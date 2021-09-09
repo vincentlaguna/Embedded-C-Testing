@@ -1618,14 +1618,6 @@ int main(void)
   
   i -= 2;
   
-  for (int j = 0; j < DIM; j++)
-  {
-    if (tabla[j] == 0)
-    {
-      printf("\nNo se ha introducido ningún número.\n\n");
-      return-1;
-    }
-  }
   printf("\nLos números tecleados son: ");
     
   while (i >= 0)
