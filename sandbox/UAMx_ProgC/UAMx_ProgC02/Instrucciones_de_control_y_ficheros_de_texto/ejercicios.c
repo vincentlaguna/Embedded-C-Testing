@@ -1583,7 +1583,7 @@ int main(void)
   
   do  
   {
-    if (i <= DIM)
+    if (i < DIM)
     {
       printf("\nIntroduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
@@ -1597,6 +1597,8 @@ int main(void)
     i++;
     
   } while (opcion != 0);
+  
+  i -= 2;
   
   printf("\nLos números tecleados son: ");
     
