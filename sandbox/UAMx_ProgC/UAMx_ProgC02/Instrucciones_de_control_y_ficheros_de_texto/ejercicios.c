@@ -1583,10 +1583,19 @@ int main(void)
   
   do  
   {
+    printf("\nIntroduzca un número entero (0 para terminar): ");
+    scanf("%d", &opcion);
+    
+    if ((opcion == 0) && (tabla[i] != 0))
+    {
+      printf("\nNo se ha introducido ningún número.\n\n");
+      break;
+    }  
+        
     if (i < DIM)
     {
-      printf("\nIntroduzca un número entero (0 para terminar): ");
-      scanf("%d", &opcion);
+      // printf("\nIntroduzca un número entero (0 para terminar): ");
+      // scanf("%d", &opcion);
       
       if ((opcion == 0) && (tabla[i] != 0))
       {
@@ -1609,6 +1618,14 @@ int main(void)
   
   i -= 2;
   
+  for (int j = 0; j < DIM; j++)
+  {
+    if (tabla[j] == 0)
+    {
+      printf("\nNo se ha introducido ningún número.\n\n");
+      return-1;
+    }
+  }
   printf("\nLos números tecleados son: ");
     
   while (i >= 0)
