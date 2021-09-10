@@ -1579,6 +1579,7 @@ int main(void)
 int main(void)
 {
   int  i = 0;
+  int  suma = 0;
   int  tabla[DIM];
   int  opcion;
   bool vacio = false;
@@ -1620,19 +1621,30 @@ int main(void)
   
   i -= 2;
   
-  for (int j = 0; j < DIM; j++)
+  for (int j = 0; j <= DIM; j++)
   {
-    
+    suma += tabla[j];
   }
   
-  printf("\nLos números tecleados son: ");
-    
-  while (i >= 0)
+  printf("\nsuma = %d\n\n", suma);
+  
+  if (suma == 0)
   {
-    printf("%d ", tabla[i]);
-    i--;
+    printf("\nNo se ha introducido ningún número.\n\n");
+    return(-1);    
   }
-  printf("\n\n");
+  else
+  {
+    printf("\nLos números tecleados son: ");
+    
+    while (i >= 0)
+    {
+      printf("%d ", tabla[i]);
+      i--;
+    }
+  
+    printf("\n\n");
+  }
   
   return(0);
 }
