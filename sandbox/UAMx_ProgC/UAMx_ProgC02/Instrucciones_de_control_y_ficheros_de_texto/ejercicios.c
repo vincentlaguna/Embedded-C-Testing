@@ -1573,6 +1573,7 @@ int main(void)
 // Los números tecleados son: 9 17 12 8 7 -5 -1 9 5 3
 
 #include  <stdio.h>
+#include  <stdlib.h>
 #include  <stdbool.h>
 #define   DIM 10
 
@@ -1621,9 +1622,14 @@ int main(void)
   
   i -= 2;
   
+  printf("\nsuma = %d\n\n", suma);
+  
   for (int j = 0; j <= DIM; j++)
   {
-    suma += tabla[j];
+    if (tabla[j] != 0 || tabla[j] != NULL)
+    {
+      suma += tabla[j];
+    }
   }
   
   printf("\nsuma = %d\n\n", suma);
