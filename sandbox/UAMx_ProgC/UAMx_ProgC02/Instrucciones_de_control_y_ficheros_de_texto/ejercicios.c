@@ -1573,13 +1573,15 @@ int main(void)
 // Los números tecleados son: 9 17 12 8 7 -5 -1 9 5 3
 
 #include  <stdio.h>
+#include  <stdbool.h>
 #define   DIM 10
 
 int main(void)
 {
-  int i = 0;
-  int tabla[DIM];
-  int opcion;
+  int  i = 0;
+  int  tabla[DIM];
+  int  opcion;
+  bool vacio = false;
   
   do  
   {
@@ -1607,7 +1609,7 @@ int main(void)
         tabla[i] = opcion; 
       }
     }
-    else if (i > 10)
+    else if (i > DIM)
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       break;
@@ -1617,6 +1619,11 @@ int main(void)
   } while (opcion != 0);
   
   i -= 2;
+  
+  for (int j = 0; j < DIM; j++)
+  {
+    
+  }
   
   printf("\nLos números tecleados son: ");
     
