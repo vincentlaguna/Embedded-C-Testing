@@ -1592,29 +1592,31 @@ int main(void)
   {
     printf("\nIntroduzca un número entero (0 para terminar): ");
     scanf("%d", &opcion);
-    
-    if ((opcion == 0) && (tabla[i] != 0))
-    {
-      printf("\nNo se ha introducido ningún número.\n\n");
-      break;
-    }  
         
-    if (i < DIM)
+    if (i <= DIM)
     {
       // printf("\nIntroduzca un número entero (0 para terminar): ");
       // scanf("%d", &opcion);
       
-      if ((opcion == 0) && (tabla[i] != 0))
+      // if ((opcion == 0) && (tabla[i] != 0))
+      // {
+      //   printf("\nNo se ha introducido ningún número.\n\n");
+      //   break;
+      // }
+      // else
+      // {
+      //   tabla[i] = opcion; 
+      // }
+      if (opcion != 0)
       {
-        printf("\nNo se ha introducido ningún número.\n\n");
+        tabla[i] = opcion;  
+      }
+      else if (i >= DIM)
+      {
         break;
       }
-      else
-      {
-        tabla[i] = opcion; 
-      }
     }
-    else if (i > DIM)
+    else if (i >= DIM)
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       break;
@@ -1635,20 +1637,6 @@ int main(void)
     }
     temp--;
   }
-  printf("\nsuma = %d\n\n", suma);
-  int size = sizeof(tabla) / sizeof(tabla[i]);
-  printf("\narray size = %d\n\n", size);
-  
-  for (int j = 0; j <= DIM; j++)
-  {
-    if (tabla[j] != 0)
-    {
-      printf("\ntabla[j] = %d\n\n", tabla[j]);
-      suma += tabla[j];
-    }
-  }
-  
-  printf("\nsuma = %d\n\n", suma);
   
   if (suma == 0)
   {
