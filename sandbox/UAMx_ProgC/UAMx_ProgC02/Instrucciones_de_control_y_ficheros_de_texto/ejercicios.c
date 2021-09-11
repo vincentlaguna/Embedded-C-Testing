@@ -1573,17 +1573,20 @@ int main(void)
 // Los números tecleados son: 9 17 12 8 7 -5 -1 9 5 3
 
 #include  <stdio.h>
-// #include  <stddef.h>
+#include  <string.h>
 #include  <stdbool.h>
 #define   DIM 10
 
 int main(void)
 {
   int  i = 0;
+  int  temp = 0;
   int  suma = 0;
   int  tabla[DIM];
   int  opcion;
   bool vacio = false;
+  
+  memset(tabla, 0, DIM);
   
   do  
   {
@@ -1622,11 +1625,23 @@ int main(void)
   
   i -= 2;
   
+  temp = i;
+  
+  while (tabla[temp] > 0)
+  {
+    if (tabla[temp] != 0)
+    {
+      suma += tabla[temp]; 
+    }
+    temp--;
+  }
   printf("\nsuma = %d\n\n", suma);
+  int size = sizeof(tabla) / sizeof(tabla[i]);
+  printf("\narray size = %d\n\n", size);
   
   for (int j = 0; j <= DIM; j++)
   {
-    if (tabla[j] != 0 || tabla[j] != '\0')
+    if (tabla[j] != 0)
     {
       printf("\ntabla[j] = %d\n\n", tabla[j]);
       suma += tabla[j];
