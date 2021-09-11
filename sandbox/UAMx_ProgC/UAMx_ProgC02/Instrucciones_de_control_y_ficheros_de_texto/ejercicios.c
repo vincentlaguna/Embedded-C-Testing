@@ -1590,13 +1590,13 @@ int main(void)
   
   do  
   {
-    printf("\nIntroduzca un número entero (0 para terminar): ");
-    scanf("%d", &opcion);
+    // printf("\nIntroduzca un número entero (0 para terminar): ");
+    // scanf("%d", &opcion);
         
     if (i <= DIM)
     {
-      // printf("\nIntroduzca un número entero (0 para terminar): ");
-      // scanf("%d", &opcion);
+      printf("\nIntroduzca un número entero (0 para terminar): ");
+      scanf("%d", &opcion);
       
       // if ((opcion == 0) && (tabla[i] != 0))
       // {
@@ -1613,6 +1613,7 @@ int main(void)
       }
       else if (i >= DIM)
       {
+        printf("\nMáximo de números alcanzado. Continuando...\n\n");
         break;
       }
     }
@@ -1623,7 +1624,7 @@ int main(void)
     }
     i++;
     
-  } while (opcion != 0);
+  } while (opcion != 0 && i <= DIM);
   
   i -= 2;
   
