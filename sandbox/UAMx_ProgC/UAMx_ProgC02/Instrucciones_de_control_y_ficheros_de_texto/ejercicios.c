@@ -1617,11 +1617,11 @@ int main(void)
         break;
       }
     }
-    else if (i >= DIM)
-    {
-      printf("\nMáximo de números alcanzado. Continuando...\n\n");
-      break;
-    }
+    // else if (i >= DIM)
+    // {
+    //   printf("\nMáximo de números alcanzado. Continuando...\n\n");
+    //   break;
+    // }
     i++;
     
   } while (opcion != 0 && i <= DIM);
