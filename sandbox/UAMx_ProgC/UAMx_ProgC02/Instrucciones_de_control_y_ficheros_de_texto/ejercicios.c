@@ -1595,15 +1595,21 @@ int main(void)
       printf("\nIntroduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
     
-      if (opcion != 0)
-      {
-        tabla[i] = opcion;  
-      }
-      else if (i >= DIM)
-      {
-        printf("\nMáximo de números alcanzado. Continuando...\n\n");
-        break;
-      }
+      // if (opcion != 0)
+      // {
+      //   tabla[i] = opcion;  
+      // }
+      // else if (i >= DIM)
+      // {
+      //   printf("\nMáximo de números alcanzado. Continuando...\n\n");
+      //   break;
+      // }
+      tabla[i] = opcion;  
+    }
+    else if (i >= DIM)
+    {
+      printf("\nMáximo de números alcanzado. Continuando...\n\n");
+      break;
     }
     
     i++;
