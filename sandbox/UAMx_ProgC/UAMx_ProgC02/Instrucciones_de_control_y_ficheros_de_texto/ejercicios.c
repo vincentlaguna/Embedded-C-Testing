@@ -1590,9 +1590,6 @@ int main(void)
   
   do  
   {
-    // printf("\nIntroduzca un número entero (0 para terminar): ");
-    // scanf("%d", &opcion);
-        
     if (i <= DIM)
     {
       printf("\nIntroduzca un número entero (0 para terminar): ");
