@@ -1594,16 +1594,7 @@ int main(void)
     {
       printf("\nIntroduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
-      
-      // if ((opcion == 0) && (tabla[i] != 0))
-      // {
-      //   printf("\nNo se ha introducido ningún número.\n\n");
-      //   break;
-      // }
-      // else
-      // {
-      //   tabla[i] = opcion; 
-      // }
+    
       if (opcion != 0)
       {
         tabla[i] = opcion;  
