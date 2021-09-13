@@ -1574,7 +1574,6 @@ int main(void)
 
 #include  <stdio.h>
 #include  <string.h>
-// #include  <stdbool.h>
 #define   DIM 10
 
 int main(void)
@@ -1584,7 +1583,6 @@ int main(void)
   int  suma = 0;
   int  tabla[DIM];
   int  opcion;
-  // bool vacio = false;
   
   memset(tabla, 0, DIM);
   
@@ -1597,7 +1595,7 @@ int main(void)
     
       tabla[i] = opcion;  
     }
-    else// if (i > DIM)
+    else
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       break;
