@@ -1595,7 +1595,7 @@ int main(void)
     
       tabla[i] = opcion;  
     }
-    else // Necesito cambiar algo aqui para se ejecute esta seccion... 091321
+    else if (i == DIM)// Necesito cambiar algo aqui para se ejecute esta seccion... 091321
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       break;
