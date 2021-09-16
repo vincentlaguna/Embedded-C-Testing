@@ -1588,14 +1588,14 @@ int main(void)
   
   do  
   {
-    if (i <= DIM) 
+    if (i < DIM) 
     {
       printf("\nIntroduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
     
       tabla[i] = opcion;  
     }
-    else if (i > DIM)// Necesito cambiar algo aqui para se ejecute esta seccion... 091321
+    else if (i >= DIM)// Necesito cambiar algo aqui para se ejecute esta seccion... 091321
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       break;
