@@ -1592,12 +1592,12 @@ int main(void)
     {
       printf("\nIntroduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
-    
       tabla[i] = opcion;  
     }
     else if (i >= DIM)// Necesito cambiar algo aqui para se ejecute esta seccion... 091321
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
+      tabla[i] = opcion;
       break;
     }
     printf("%d\n", i);
@@ -1606,7 +1606,6 @@ int main(void)
   } while (opcion != 0 && i <= DIM);
   
   i -= 2;
-  
   temp = i;
   
   while (tabla[temp] > 0)
