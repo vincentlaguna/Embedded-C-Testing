@@ -1594,7 +1594,7 @@ int main(void)
       scanf("%d", &opcion);
       tabla[i] = opcion;  
     }
-    else if (i >= DIM) // Creo que esta listo
+    else if (i >= DIM) // Creo que esta listo menos que no cuenta el ultimo
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       tabla[i] = opcion;
