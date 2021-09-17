@@ -1605,7 +1605,7 @@ int main(void)
     
   } while (opcion != 0 && i <= DIM);
   
-  i -= 2;
+  i -= 1;
   temp = i;
   
   while (tabla[temp] > 0)
