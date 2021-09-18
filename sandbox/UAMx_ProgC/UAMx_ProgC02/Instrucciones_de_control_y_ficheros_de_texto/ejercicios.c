@@ -1600,7 +1600,6 @@ int main(void)
       tabla[i] = opcion;
       break;
     }
-    // printf("%d\n", i); // debug...
     i++;
     
   } while (opcion != 0 && i <= DIM);
