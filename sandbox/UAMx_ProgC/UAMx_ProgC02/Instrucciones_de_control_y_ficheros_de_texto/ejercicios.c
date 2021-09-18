@@ -1594,7 +1594,7 @@ int main(void)
       scanf("%d", &opcion);
       tabla[i] = opcion;  
     }
-    else if (i >= DIM) // Necesito probarlo extensivamente...
+    else if (i >= DIM)
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
       tabla[i] = opcion;
@@ -1616,7 +1616,7 @@ int main(void)
     temp--;
   }
   
-  if (suma == 0)
+  if ((suma == 0) && /*condicion para que todavia muestre los otros numeros guradardos) // Cerregir esta porcion
   {
     printf("\nNo se ha introducido ningún número.\n\n");
     return(-1);    
