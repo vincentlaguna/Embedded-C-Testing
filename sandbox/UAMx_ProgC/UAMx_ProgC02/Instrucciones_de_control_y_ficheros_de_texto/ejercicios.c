@@ -1607,16 +1607,19 @@ int main(void)
   i -= 1;
   temp = i;
   
-  while (tabla[temp] > 0)
+  while (tabla[temp-1] > 0)
   {
     if (tabla[temp] != 0)
     {
-      suma += tabla[temp]; 
+      suma += tabla[temp];
+      printf("\nSuma = %d\n", suma); // Debug...
     }
     temp--;
   }
   
-  if ((suma == 0) && /*condicion para que todavia muestre los otros numeros guradardos) // Cerregir esta porcion
+  printf("\nSuma = %d\n", suma); // Debug...
+  
+  if (suma == 0)
   {
     printf("\nNo se ha introducido ningún número.\n\n");
     return(-1);    
