@@ -1535,7 +1535,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 2.2 ****************/
+/**************** Prueba 2.2 ****************
 // Escribe un programa que lea números enteros del 
 // teclado hasta que se lean 10 números o se introduzca 
 // un 0, lo que ocurra antes. El programa guardará 
@@ -1643,6 +1643,28 @@ int main(void)
 
 /*********************************************/
 
+
+/*************** Ejercicio 0.0 ***************/
+
+#include  <stdio.h>
+
+#define   DIM 3
+
+int main(void)
+{
+  
+  int i;
+
+  for (i=0; i<DIM; i++);
+  {
+    printf("%d\n", i);
+  }
+
+  
+  return(0);
+}
+
+/*********************************************/
 
 /*************** Ejercicio 0.0 ***************
 
