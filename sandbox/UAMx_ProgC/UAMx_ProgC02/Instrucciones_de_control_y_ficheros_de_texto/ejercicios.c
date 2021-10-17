@@ -1595,14 +1595,14 @@ int main(void)
       
       if (tabla[0] == 0)
       {
-        printf("\nNo se ha introducido ningún número.\n\n");
+        printf("No se ha introducido ningún número.\n\n");
         return(-1);
       }
       
     }
     else if (i >= DIM)
     {
-      printf("Máximo de números alcanzado. Continuando...\n\n");
+      printf("Máximo de números alcanzado. Continuando...\n");
       
       if (opcion != 0)
       {
