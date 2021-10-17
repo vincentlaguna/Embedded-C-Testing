@@ -1582,11 +1582,13 @@ int main(void)
   int  tabla[DIM];
   int  opcion;
   
+  putchar('\n');
+  
   do  
   {
     if (i < DIM)
     {
-      printf("\nIntroduzca un número entero (0 para terminar): ");
+      printf("Introduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
       
       tabla[i] = opcion;
@@ -1600,7 +1602,7 @@ int main(void)
     }
     else if (i >= DIM)
     {
-      printf("\nMáximo de números alcanzado. Continuando...\n\n");
+      printf("Máximo de números alcanzado. Continuando...\n\n");
       
       if (opcion != 0)
       {
@@ -1616,7 +1618,7 @@ int main(void)
     
   } while (opcion != 0 && i <= DIM);
   
-  printf("\nLos números tecleados son: ");
+  printf("Los números tecleados son: ");
   
   i--;
     
@@ -1629,8 +1631,8 @@ int main(void)
     else
     {
       printf("%d ", tabla[i]);
-      
     }
+    
     i--;
   }
   
@@ -1638,81 +1640,6 @@ int main(void)
   
   return(0);
 }
-
-
-// #include  <stdio.h>
-// #include  <string.h>
-// #define   DIM 10
-
-// int main(void)
-// {
-//   int  i = 0;
-//   int  temp = 0;
-//   int  suma = 0;
-//   int  tabla[DIM];
-//   int  opcion;
-//   memset(tabla, 0, DIM);
-  
-//   do  
-//   {
-//     if (i < DIM)
-//     {
-//       printf("\nIntroduzca un número entero (0 para terminar): ");
-//       scanf("%d", &opcion);
-//       tabla[i] = opcion;  
-//     }
-//     else if (i >= DIM)
-//     {
-//       printf("\nMáximo de números alcanzado. Continuando...\n\n");
-//       tabla[i] = opcion;
-//       break;
-//     }
-//     i++;
-    
-//   } while (opcion != 0 && i <= DIM);
-  
-//   i -= 1;
-//   temp = i;
-  
-//   while (tabla[temp-1] > 0)
-//   {
-//     if (tabla[temp] != 0)
-//     {
-//       suma += tabla[temp];
-//       printf("\nSuma = %d\n", suma); // Debug...
-//     }
-//     temp--;
-//   }
-  
-//   printf("\nSuma = %d\n", suma); // Debug...
-//   printf("%d", sizeof(tabla / tabla[0]));
-//   if (suma == 0)
-//   {
-//     printf("\nNo se ha introducido ningún número.\n\n");
-//     return(-1);    
-//   }
-//   else
-//   {
-//     printf("\nLos números tecleados son: ");
-    
-//     while (i >= 0)
-//     {
-//       // if (tabla[i] == 0)
-//       // {
-//       //   printf("");
-//       // }
-//       // else
-//       // {
-//         printf("%d ", tabla[i]);
-//         i--;
-//       // }
-//     }
-    
-//     printf("\n\n");
-//   }
-  
-//   return(0);
-// }
 
 /*********************************************/
 
