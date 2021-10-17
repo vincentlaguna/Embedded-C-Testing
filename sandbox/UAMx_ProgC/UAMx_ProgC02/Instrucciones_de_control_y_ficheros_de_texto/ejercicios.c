@@ -1614,7 +1614,7 @@ int main(void)
   {
     if (tabla[i] == 0)
     {
-      printf(" ");
+      putchar(' ');
     }
     printf("%d ", tabla[i]);
     i--;
