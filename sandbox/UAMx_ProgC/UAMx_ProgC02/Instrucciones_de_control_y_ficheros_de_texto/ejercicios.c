@@ -1581,7 +1581,6 @@ int main(void)
   static int  i = 0;
   int  tabla[DIM];
   int  opcion;
-  // memset(tabla, 0, DIM);
   
   do  
   {
@@ -1595,8 +1594,7 @@ int main(void)
       if (tabla[0] == 0)
       {
         printf("\nNo se ha introducido ningún número.\n\n");
-        printf("\n%d\n", i);
-        // return(-1);
+        return(-1);
       }
       
     }
@@ -1610,13 +1608,13 @@ int main(void)
     
   } while (opcion != 0 && i <= DIM);
   
-  if (i == 0)
-  {
-    printf("\nNo se ha introducido ningún número.\n\n");
-    return(-1);    
-  }
-  else
-  {
+  // if (i == 0)
+  // {
+  //   printf("\nNo se ha introducido ningún número.\n\n");
+  //   return(-1);    
+  // }
+  // else
+  // {
     printf("\nLos números tecleados son: ");
     
     --i;
@@ -1626,7 +1624,7 @@ int main(void)
       printf("%d ", tabla[i]);
       i--;
     }
-  }
+  // }
   
   printf("\n\n");
   
