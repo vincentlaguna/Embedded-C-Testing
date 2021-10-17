@@ -1601,14 +1601,24 @@ int main(void)
     else if (i >= DIM)
     {
       printf("\nMáximo de números alcanzado. Continuando...\n\n");
-      tabla[i] = opcion;
-      break;
+      
+      if (opcion != 0)
+      {
+        tabla[i] = opcion;
+        break;  
+      }
+      else
+      {
+        break;
+      }
     }
     i++;
     
   } while (opcion != 0 && i <= DIM);
   
   printf("\nLos números tecleados son: ");
+  
+  i--;
     
   while (i >= 0)
   {
@@ -1616,7 +1626,11 @@ int main(void)
     {
       putchar(' ');
     }
-    printf("%d ", tabla[i]);
+    else
+    {
+      printf("%d ", tabla[i]);
+      
+    }
     i--;
   }
   
