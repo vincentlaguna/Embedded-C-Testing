@@ -1581,7 +1581,7 @@ int main(void)
   static int  i = 0;
   int  tabla[DIM];
   int  opcion;
-  memset(tabla, 0, DIM);
+  // memset(tabla, 0, DIM);
   
   do  
   {
@@ -1589,7 +1589,16 @@ int main(void)
     {
       printf("\nIntroduzca un número entero (0 para terminar): ");
       scanf("%d", &opcion);
-      tabla[i] = opcion;  
+      
+      tabla[i] = opcion;
+      
+      if (tabla[0] == 0)
+      {
+        printf("\nNo se ha introducido ningún número.\n\n");
+        printf("\n%d\n", i);
+        // return(-1);
+      }
+      
     }
     else if (i >= DIM)
     {
@@ -1609,6 +1618,8 @@ int main(void)
   else
   {
     printf("\nLos números tecleados son: ");
+    
+    --i;
     
     while (i >= 0)
     {
