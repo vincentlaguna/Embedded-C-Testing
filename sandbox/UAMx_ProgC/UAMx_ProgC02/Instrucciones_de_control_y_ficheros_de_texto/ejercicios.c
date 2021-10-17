@@ -1608,23 +1608,17 @@ int main(void)
     
   } while (opcion != 0 && i <= DIM);
   
-  // if (i == 0)
-  // {
-  //   printf("\nNo se ha introducido ningún número.\n\n");
-  //   return(-1);    
-  // }
-  // else
-  // {
-    printf("\nLos números tecleados son: ");
+  printf("\nLos números tecleados son: ");
     
-    --i;
-    
-    while (i >= 0)
+  while (i >= 0)
+  {
+    if (tabla[i] == 0)
     {
-      printf("%d ", tabla[i]);
-      i--;
+      printf(" ");
     }
-  // }
+    printf("%d ", tabla[i]);
+    i--;
+  }
   
   printf("\n\n");
   
