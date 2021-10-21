@@ -1694,7 +1694,7 @@ int main(void)
   printf("\nLa tabla del %d es:\n", numero);
   
   
-  for (i = 0; i < DIM; i++)
+  for (i = 1; i <= DIM; i++)
   {
     printf("%d por %d es: %d\n", numero, i, numero * i);
   }
