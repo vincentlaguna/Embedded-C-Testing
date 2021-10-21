@@ -1707,31 +1707,31 @@ int main(void)
 
 
 /*************** Ejercicio 3.1 ***************/
-Escribe un programa que solicite por teclado una cadena de 
-caracteres sin espacios y muestre por pantalla el tamaño de 
-la cadena y la posición intermedia. A continuación, guardará
-en otra cadena la segunda mitad de la cadena original 
-(esto es, desde la posición intermedia hasta el final) 
-y la mostrará por pantalla.
+// Escribe un programa que solicite por teclado una cadena de 
+// caracteres sin espacios y muestre por pantalla el tamaño de 
+// la cadena y la posición intermedia. A continuación, guardará
+// en otra cadena la segunda mitad de la cadena original 
+// (esto es, desde la posición intermedia hasta el final) 
+// y la mostrará por pantalla.
 
-Para este programa, puedes suponer que el usuario siempre
-va a introducir una cadena sin espacios y que su tamaño 
-nunca va a superar al que hayas establecido.
+// Para este programa, puedes suponer que el usuario siempre
+// va a introducir una cadena sin espacios y que su tamaño 
+// nunca va a superar al que hayas establecido.
 
-Esto sería un ejemplo:
+// Esto sería un ejemplo:
 
-Introduce una cadena de caracteres: wubalubadubdub
-La cadena camino tiene una longitud de
-14 caracteres y la mitad es la posición 7.
-La segunda mitad de la cadena wubalubadubdub es adubdub.
+// Introduce una cadena de caracteres: wubalubadubdub
+// La cadena camino tiene una longitud de
+// 14 caracteres y la mitad es la posición 7.
+// La segunda mitad de la cadena wubalubadubdub es adubdub.
 
-Y este, otro:
+// Y este, otro:
 
-Introduce una cadena de caracteres: supercalifragilisticoespialidoso
-La cadena camino tiene una longitud de 32 
-caracteres y la mitad es la posición 16.
-La segunda mitad de la cadena 
-supercalifragilisticoespialidoso es sticoespialidoso.
+// Introduce una cadena de caracteres: supercalifragilisticoespialidoso
+// La cadena camino tiene una longitud de 32 
+// caracteres y la mitad es la posición 16.
+// La segunda mitad de la cadena 
+// supercalifragilisticoespialidoso es sticoespialidoso.
 
 
 #include  <stdio.h>
@@ -1743,23 +1743,28 @@ int main(void)
 {
   
   int   i;
+  int   longitud;
+  int   mitad;
   char  palabra[DIM];
-  char  palabra1[DIM];
+  static char  palabra1[DIM];
   
   printf("\nIntroduce una cadena de caracteres: ");
   gets(palabra);
-  printf("\nLa cadena camino tiene una longitud de %d"
-         "caracteres y la mitad es la posicion %d\n", numero);
+  longitud = strlen(palabra);
+  mitad  = longitud / 2;
+  printf("\nLa cadena %s tiene una longitud de %d "
+         "caracteres y la mitad es la posicion %d.\n",
+          palabra, longitud, mitad);
          
-  printf("\nLa segunda mitad de la cadena %s es %s.\n",
-          palabra, palabra1);
+  printf("\nLa segunda mitad de la cadena %s es ", palabra);
   
-  
-  for (i = 1; i <= DIM; i++)
+  for (i = mitad; i <= longitud-1; i++)
   {
-    printf("%d por %d es: %d\n", numero, i, numero * i);
+    printf("%c", palabra[i]);
   }
-  putchar('\n');
+
+  
+  puts(".\n");
   
   return(0);
 }
