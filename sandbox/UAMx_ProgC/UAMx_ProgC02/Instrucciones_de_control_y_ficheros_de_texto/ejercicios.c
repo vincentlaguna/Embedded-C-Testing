@@ -1706,7 +1706,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.1 ***************/
+/*************** Ejercicio 3.1 ***************
 // Escribe un programa que solicite por teclado una cadena de 
 // caracteres sin espacios y muestre por pantalla el tamaño de 
 // la cadena y la posición intermedia. A continuación, guardará
@@ -1766,6 +1766,34 @@ int main(void)
   
   puts(".\n");
   
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+
+#include  <stdio.h>
+#include  <math.h>
+
+int main(void)
+{
+
+  int i, num, esPrimo=1;
+
+  printf("Introduce un número entero: ");
+  scanf("%d", &num);
+
+  for (i=2; i<=sqrt(num) && esPrimo==1; i++)
+    if (num%i == 0)
+      esPrimo = 0;
+
+  if (esPrimo)
+    printf("%d es primo.", num);
+  else
+    printf("%d no es primo", num);
+
   return(0);
 }
 
