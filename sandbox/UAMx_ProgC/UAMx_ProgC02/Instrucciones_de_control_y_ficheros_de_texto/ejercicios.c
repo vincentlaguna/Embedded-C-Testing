@@ -1775,24 +1775,32 @@ int main(void)
 /*********************************************/
 
 #include  <stdio.h>
+#include  <stdlib.h>
 #include  <math.h>
+
+// double sqrt(double num)
+// {
+//   for (double i = 2.00; i <= num; i++)
+//     if ((i * i) == num)
+//       return i;
+// }
 
 int main(void)
 {
 
-  int i, num, esPrimo=1;
+  int i, num, esPrimo = 1;
 
-  printf("Introduce un número entero: ");
+  printf("\nIntroduce un número entero: ");
   scanf("%d", &num);
 
-  for (i=2; i<=sqrt(num) && esPrimo==1; i++)
+  for (i=2; i <= sqrt(num) && esPrimo == 1; i++)
     if (num%i == 0)
       esPrimo = 0;
 
   if (esPrimo)
-    printf("%d es primo.", num);
+    printf("\n%d es primo.\n\n", num);
   else
-    printf("%d no es primo", num);
+    printf("\n%d no es primo\n\n", num);
 
   return(0);
 }
