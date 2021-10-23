@@ -1788,15 +1788,18 @@ int main(void)
 int main(void)
 {
 
-  int i, num, esPrimo = 1;
+  int i, num, esPrimo;
 
   printf("\nIntroduce un número entero: ");
   scanf("%d", &num);
 
   for (i=2; i <= sqrt(num) && esPrimo == 1; i++)
     if (num%i == 0)
-      esPrimo = 0;
-
+    {
+      // esPrimo = 0;
+      break;
+    }
+    
   if (esPrimo)
     printf("\n%d es primo.\n\n", num);
   else
