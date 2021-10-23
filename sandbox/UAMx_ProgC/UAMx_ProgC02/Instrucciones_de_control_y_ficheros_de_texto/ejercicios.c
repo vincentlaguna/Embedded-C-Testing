@@ -1776,7 +1776,7 @@ int main(void)
 
 #include  <stdio.h>
 #include  <stdlib.h>
-#include  <math.h>
+#include  <math.h> // Link -lm when compiling (GCC)
 
 // double sqrt(double num)
 // {
