@@ -1706,7 +1706,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.1 ***************
+/*************** Ejercicio 3.2 ***************
 // Escribe un programa que solicite por teclado una cadena de 
 // caracteres sin espacios y muestre por pantalla el tamaño de 
 // la cadena y la posición intermedia. A continuación, guardará
@@ -1732,7 +1732,6 @@ int main(void)
 // caracteres y la mitad es la posición 16.
 // La segunda mitad de la cadena 
 // supercalifragilisticoespialidoso es sticoespialidoso.
-
 
 #include  <stdio.h>
 #include  <string.h>
@@ -1772,7 +1771,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 
 #include  <stdio.h>
 #include  <stdlib.h>
@@ -1805,6 +1804,87 @@ int main(void)
   else
     printf("\n%d no es primo\n\n", num);
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.3 ***************/
+Escribe un programa que utilice un bucle para 
+leer hasta 10 números enteros del teclado 
+o que pare de solicitar números si se introduce 0 
+(utiliza la instrucción break para esta situación).
+
+El programa sumará únicamente los números que sean 
+positivos, los negativos no se considerarán para 
+la suma. Antes de terminar el programa mostrará 
+la suma total obtenida, indicando además cuántos 
+números se han leído en total (sin contar el 0)
+y cuántos de ellos eran negativos.
+
+Esto sería un ejemplo del programa:
+
+Introduce un número: 4
+Introduce un número: -2
+Introduce un número: 5
+Introduce un número: -6
+Introduce un número: -11
+Introduce un número: 0
+Se han leído un total de 5 números, de los cuales 3 eran negativos.
+La suma de los 2 valores positivos leídos es: 9.
+
+Y este, otro:
+
+Introduce un número: 10
+Introduce un número: -9
+Introduce un número: 8
+Introduce un número: -7
+Introduce un número: 6
+Introduce un número: -5
+Introduce un número: 4
+Introduce un número: -3
+Introduce un número: 2
+Introduce un número: -1
+Se han leído un total de 10 números, de los cuales 5 eran negativos.
+La suma de los 5 valores positivos leídos es: 30.
+
+#include  <stdio.h>
+
+#define   DIM 10
+
+int main(void)
+{
+  
+  int   i;
+  int   cadena[DIM];
+  int   esNeg = 0;
+  
+  for (i = 0; i <= DIM; i++)
+  {
+    printf("\nIntroduce un número: ");
+    scanf("%d", cadena[i]);
+    
+    if (cadena[i] == 0)
+      break;
+  }
+  
+  longitud = strlen(palabra);
+  mitad  = longitud / 2;
+  printf("\nLa cadena %s tiene una longitud de %d "
+         "caracteres y la mitad es la posicion %d.\n",
+          palabra, longitud, mitad);
+         
+  printf("\nLa segunda mitad de la cadena %s es ", palabra);
+  
+  for (i = mitad; i <= longitud-1; i++)
+  {
+    printf("%c", palabra[i]);
+  }
+
+  
+  puts(".\n");
+  
   return(0);
 }
 
