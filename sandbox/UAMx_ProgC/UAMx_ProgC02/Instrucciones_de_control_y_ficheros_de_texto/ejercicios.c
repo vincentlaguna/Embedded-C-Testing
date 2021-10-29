@@ -1902,12 +1902,134 @@ int main(void)
 
 
 /*************** Ejercicio 3.4 ***************/
+// Vamos a modificar la prueba 2.2 para utilizar 
+// bucles for en vez de while. Recuerda, 
+// el programa lee números enteros del teclado
+// hasta que se lean 10 números o se introduzca
+// un 0, lo que ocurra antes, guardando dichos
+// números en una tabla y mostrándolos en 
+// orden inverso al que han sido introducidos.
+
+// Este sería un ejemplo de programa:
+
+// Introduzca un número entero (0 para terminar): 12
+// Introduzca un número entero (0 para terminar): -6
+// Introduzca un número entero (0 para terminar): 3
+// Introduzca un número entero (0 para terminar): 0
+// Los números tecleados son: 3 -6 12
+
+// Otro ejemplo:
+
+// Introduzca un número entero (0 para terminar): 0
+// No se ha introducido ningún número.
+
+// Un tercer ejemplo:
+
+// Introduzca un número (0 para terminar): 3
+// Introduzca un número (0 para terminar): 5
+// Introduzca un número (0 para terminar): 9
+// Introduzca un número (0 para terminar): -1
+// Introduzca un número (0 para terminar): -5
+// Introduzca un número (0 para terminar): 7
+// Introduzca un número (0 para terminar): 8
+// Introduzca un número (0 para terminar): 12
+// Introduzca un número (0 para terminar): 17
+// Introduzca un número (0 para terminar): 9
+// Máximo de números alcanzado. Continuando...
+// Los números tecleados son: 9 17 12 8 7 -5 -1 9 5 3
 
 #include  <stdio.h>
+#include  <string.h>
+#define   DIM 10
 
 int main(void)
 {
- 
+  int     tabla[DIM];
+  int     opcion;
+  static  int  i;
+  
+  putchar('\n');
+  
+  for (i = 0; i < DIM; i++)
+  {
+    printf("Introduzca un número entero (0 para terminar): ");
+    scanf("%d", &opcion);
+    tabla[i] = opcion;
+    if (tabla[0] == 0)
+    {
+      printf("No se ha introducido ningún número.\n\n");
+      return(-1);
+    }
+    else if (tabla[i] == 0)
+    {
+      break;
+    }
+    if (i >= DIM)
+    {
+      printf("Máximo de números alcanzado. Continuando...\n");
+      if (opcion != 0)
+      {
+        tabla[i] = opcion;
+        break;  
+      }
+      else
+      {
+        break;
+      }
+    }
+  }
+  
+  // do  
+  // {
+  //   if (i < DIM)
+  //   {
+  //     printf("Introduzca un número entero (0 para terminar): ");
+  //     scanf("%d", &opcion);
+  //     tabla[i] = opcion;
+  //     if (tabla[0] == 0)
+  //     {
+  //       printf("No se ha introducido ningún número.\n\n");
+  //       return(-1);
+  //     }
+  //   }
+  //   else if (i >= DIM)
+  //   {
+  //     printf("Máximo de números alcanzado. Continuando...\n");
+      
+  //     if (opcion != 0)
+  //     {
+  //       tabla[i] = opcion;
+  //       break;  
+  //     }
+  //     else
+  //     {
+  //       break;
+  //     }
+  //   }
+  //   i++;
+    
+  // } while (opcion != 0 && i <= DIM);
+  
+  // printf("Los números tecleados son: ");
+  
+  // i--;
+    
+  // while (i >= 0)
+  // {
+  //   if (tabla[i] == 0)
+  //   {
+  //     putchar(' ');
+  //   }
+  //   else
+  //   {
+  //     printf("%d ", tabla[i]);
+  //   }
+    
+  //   i--;
+  // }
+  
+  printf("\n\n");
+  
   return(0);
 }
 
