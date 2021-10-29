@@ -1989,44 +1989,44 @@ int main(void)
 
 
 /*************** Ejercicio 3.5 ***************/
-Si alguna vez te has preguntado cómo se 
-representan los números decimales en binario, 
-en este ejercicio vamos a crear un programa que 
-lo lleve a cabo. Pero no pienses que es tan 
-difícil que se necesita un ordenador, 
-simplemente con papel y boli podrías calcularlo.
+// Si alguna vez te has preguntado cómo se 
+// representan los números decimales en binario, 
+// en este ejercicio vamos a crear un programa que 
+// lo lleve a cabo. Pero no pienses que es tan 
+// difícil que se necesita un ordenador, 
+// simplemente con papel y boli podrías calcularlo.
 
-Los pasos que seguimos para calcular un número
-binario son dividir el número en base 10 por 2. 
-De dicha operación, utilizamos el cociente como
-nuevo divisor y el resto nos lo guardamos, 
-pues formará parte del número binario. 
-Seguimos dividiendo los cocientes resultante 
-por 2 hasta que obtengamos un 1, siendo el 
-último resto el correspondiente con el primer 
-número de la cifra binaria. Puedes consultar 
-un ejemplo en esta página de educalab.
+// Los pasos que seguimos para calcular un número
+// binario son dividir el número en base 10 por 2. 
+// De dicha operación, utilizamos el cociente como
+// nuevo divisor y el resto nos lo guardamos, 
+// pues formará parte del número binario. 
+// Seguimos dividiendo los cocientes resultante 
+// por 2 hasta que obtengamos un 1, siendo el 
+// último resto el correspondiente con el primer 
+// número de la cifra binaria. Puedes consultar 
+// un ejemplo en esta página de educalab.
 
-Ahora te toca escribir un programa que lea por 
-teclado un número entero positivo en base 10 y 
-lo convierta a binario. La conversión se 
-realizará sobre una tabla de enteros, 
-guardando el número binario en orden inverso 
-pero mostrándolo en orden correcto.
+// Ahora te toca escribir un programa que lea por 
+// teclado un número entero positivo en base 10 y 
+// lo convierta a binario. La conversión se 
+// realizará sobre una tabla de enteros, 
+// guardando el número binario en orden inverso 
+// pero mostrándolo en orden correcto.
 
-Como condición para tu programa, es necesario 
-que utilices bucles for cuando necesites 
-recorrer alguna tabla de tu código.
+// Como condición para tu programa, es necesario 
+// que utilices bucles for cuando necesites 
+// recorrer alguna tabla de tu código.
 
-Esto sería un ejemplo del programa:
+// Esto sería un ejemplo del programa:
 
-Introduce un entero positivo: 5
-El número convertido a binario es: 101
+// Introduce un entero positivo: 5
+// El número convertido a binario es: 101
 
-Y este, otro:
+// Y este, otro:
 
-Introduce un entero positivo: 23
-El número convertido a binario es: 10111
+// Introduce un entero positivo: 23
+// El número convertido a binario es: 10111
 
 #include  <stdio.h>
 
@@ -2036,28 +2036,41 @@ El número convertido a binario es: 10111
 int main(void)
 {
   int i;
+  int j;
   int numero;
-  int cociente;
   int resultado[DIM];
   
-  printf("\n\nIntroduce un entero positivo: ");
+  printf("\nIntroduce un entero positivo: ");
   scanf("%d", &numero);
-  
-  for (i = DIM; i > 0; i--)
-  {
-    if ((numero /= DIVISOR) % 2 == 0)
-      resultado[i] = 0;
-    else
-      resultado[i] = 1;
-  }
-  
-  printf("\n\nEl número convertido a binario es: ");
   
   for (i = DIM; i >= 0; i--)
   {
-    printf("%d", resultado[i]);
+    if (numero % 2 == 0)
+    {
+      resultado[i] = 0;
+      numero /= DIVISOR;
+    }
+    else
+    {
+      resultado[i] = 1;
+      numero /= DIVISOR;
+    }
   }
-
+  
+  printf("\nEl número convertido a binario es: ");
+  
+  for (i = 0; i <= DIM; i++)
+  {
+    if (resultado[i] == 1)
+    {
+      j = i;
+      break;
+    }
+  }
+      
+  for (; j <= DIM; j++)
+    printf("%d", resultado[j]);
+    
   printf("\n\n");
   
   return(0);
