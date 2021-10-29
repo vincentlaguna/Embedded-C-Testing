@@ -1810,7 +1810,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.3 ***************/
+/*************** Ejercicio 3.3 ***************
 // Escribe un programa que utilice un bucle para 
 // leer hasta 10 números enteros del teclado 
 // o que pare de solicitar números si se introduce 0 
@@ -1895,6 +1895,19 @@ int main(void)
          "leídos es: %d.\n\n", 
           total, negativos, cuentaPos, suma);
           
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.4 ***************/
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
