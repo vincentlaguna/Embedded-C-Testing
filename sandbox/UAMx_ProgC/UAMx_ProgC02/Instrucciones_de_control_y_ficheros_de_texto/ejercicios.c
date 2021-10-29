@@ -1946,7 +1946,7 @@ int main(void)
 {
   int     tabla[DIM];
   int     opcion;
-  static  int  i;
+  static  int i;
   
   putchar('\n');
   
@@ -1964,20 +1964,41 @@ int main(void)
     {
       break;
     }
-    if (i >= DIM)
+    // if (i >= DIM)
+    // {
+    //   printf("Máximo de números alcanzado. Continuando...\n");
+    //   if (opcion != 0)
+    //   {
+    //     tabla[i] = opcion;
+    //     break;  
+    //   }
+    //   else
+    //   {
+    //     break;
+    //   }
+    // }
+  }
+  
+  if (i == DIM)
+  {
+    printf("Máximo de números alcanzado. Continuando...\n");
+  }
+  
+  printf("Los números tecleados son: ");
+  
+  
+  for (; i >= 0; i--)
+  {
+    if (tabla[i] == 0)
     {
-      printf("Máximo de números alcanzado. Continuando...\n");
-      if (opcion != 0)
-      {
-        tabla[i] = opcion;
-        break;  
-      }
-      else
-      {
-        break;
-      }
+      putchar(' ');
+    }
+    else
+    {
+      printf("%d ", tabla[i]);
     }
   }
+    
   
   // do  
   // {
@@ -1992,42 +2013,9 @@ int main(void)
   //       return(-1);
   //     }
   //   }
-  //   else if (i >= DIM)
-  //   {
-  //     printf("Máximo de números alcanzado. Continuando...\n");
-      
-  //     if (opcion != 0)
-  //     {
-  //       tabla[i] = opcion;
-  //       break;  
-  //     }
-  //     else
-  //     {
-  //       break;
-  //     }
-  //   }
   //   i++;
     
   // } while (opcion != 0 && i <= DIM);
-  
-  // printf("Los números tecleados son: ");
-  
-  // i--;
-    
-  // while (i >= 0)
-  // {
-  //   if (tabla[i] == 0)
-  //   {
-  //     putchar(' ');
-  //   }
-  //   else
-  //   {
-  //     printf("%d ", tabla[i]);
-  //   }
-    
-  //   i--;
-  // }
-  
   printf("\n\n");
   
   return(0);
