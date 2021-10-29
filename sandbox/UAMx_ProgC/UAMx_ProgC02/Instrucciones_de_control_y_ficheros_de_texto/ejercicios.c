@@ -1901,7 +1901,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.4 ***************/
+/*************** Ejercicio 3.4 ***************
 // Vamos a modificar la prueba 2.2 para utilizar 
 // bucles for en vez de while. Recuerda, 
 // el programa lee números enteros del teclado
@@ -1979,6 +1979,77 @@ int main(void)
     else
       printf("%d ", tabla[i]);
   }
+
+  printf("\n\n");
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.5 ***************/
+Si alguna vez te has preguntado cómo se 
+representan los números decimales en binario, 
+en este ejercicio vamos a crear un programa que 
+lo lleve a cabo. Pero no pienses que es tan 
+difícil que se necesita un ordenador, 
+simplemente con papel y boli podrías calcularlo.
+
+Los pasos que seguimos para calcular un número
+binario son dividir el número en base 10 por 2. 
+De dicha operación, utilizamos el cociente como
+nuevo divisor y el resto nos lo guardamos, 
+pues formará parte del número binario. 
+Seguimos dividiendo los cocientes resultante 
+por 2 hasta que obtengamos un 1, siendo el 
+último resto el correspondiente con el primer 
+número de la cifra binaria. Puedes consultar 
+un ejemplo en esta página de educalab.
+
+Ahora te toca escribir un programa que lea por 
+teclado un número entero positivo en base 10 y 
+lo convierta a binario. La conversión se 
+realizará sobre una tabla de enteros, 
+guardando el número binario en orden inverso 
+pero mostrándolo en orden correcto.
+
+Como condición para tu programa, es necesario 
+que utilices bucles for cuando necesites 
+recorrer alguna tabla de tu código.
+
+Esto sería un ejemplo del programa:
+
+Introduce un entero positivo: 5
+El número convertido a binario es: 101
+
+Y este, otro:
+
+Introduce un entero positivo: 23
+El número convertido a binario es: 10111
+
+#include  <stdio.h>
+
+#define   DIM 16
+#define   DIVISOR 2
+
+int main(void)
+{
+  int i;
+  int numero;
+  int cociente;
+  int resultado[DIM];
+  
+  printf("\n\nIntroduce un entero positivo: ");
+  scanf("%d", &numero);
+  
+  for (i = DIM; i > 0; i--)
+  {
+    numero /= DIVISOR;
+    
+  }
+  
+  printf("\n\nEl número convertido a binario es: %d\n" resultado);
 
   printf("\n\n");
   
