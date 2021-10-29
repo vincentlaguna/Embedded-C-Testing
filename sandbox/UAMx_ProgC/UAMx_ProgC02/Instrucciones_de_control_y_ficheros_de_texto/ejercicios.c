@@ -2045,11 +2045,18 @@ int main(void)
   
   for (i = DIM; i > 0; i--)
   {
-    numero /= DIVISOR;
-    
+    if ((numero /= DIVISOR) % 2 == 0)
+      resultado[i] = 0;
+    else
+      resultado[i] = 1;
   }
   
-  printf("\n\nEl número convertido a binario es: %d\n" resultado);
+  printf("\n\nEl número convertido a binario es: ");
+  
+  for (i = DIM; i >= 0; i--)
+  {
+    printf("%d", resultado[i]);
+  }
 
   printf("\n\n");
   
