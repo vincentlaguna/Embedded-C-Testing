@@ -1954,35 +1954,20 @@ int main(void)
   {
     printf("Introduzca un número entero (0 para terminar): ");
     scanf("%d", &opcion);
+    
     tabla[i] = opcion;
+    
     if (tabla[0] == 0)
     {
       printf("No se ha introducido ningún número.\n\n");
       return(-1);
     }
     else if (tabla[i] == 0)
-    {
       break;
-    }
-    // if (i >= DIM)
-    // {
-    //   printf("Máximo de números alcanzado. Continuando...\n");
-    //   if (opcion != 0)
-    //   {
-    //     tabla[i] = opcion;
-    //     break;  
-    //   }
-    //   else
-    //   {
-    //     break;
-    //   }
-    // }
   }
   
   if (i == DIM)
-  {
     printf("Máximo de números alcanzado. Continuando...\n");
-  }
   
   printf("Los números tecleados son: ");
   
@@ -1990,32 +1975,11 @@ int main(void)
   for (; i >= 0; i--)
   {
     if (tabla[i] == 0)
-    {
       putchar(' ');
-    }
     else
-    {
       printf("%d ", tabla[i]);
-    }
   }
-    
-  
-  // do  
-  // {
-  //   if (i < DIM)
-  //   {
-  //     printf("Introduzca un número entero (0 para terminar): ");
-  //     scanf("%d", &opcion);
-  //     tabla[i] = opcion;
-  //     if (tabla[0] == 0)
-  //     {
-  //       printf("No se ha introducido ningún número.\n\n");
-  //       return(-1);
-  //     }
-  //   }
-  //   i++;
-    
-  // } while (opcion != 0 && i <= DIM);
+
   printf("\n\n");
   
   return(0);
