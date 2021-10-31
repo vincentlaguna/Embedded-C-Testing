@@ -2196,7 +2196,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Bluces Anidados
 #include  <stdio.h>
 
@@ -2215,7 +2215,9 @@ int main(void)
   for (i = 0; i < FIL; i++)
   {
     for (j = 0; j < COL; j++)
-      printf("%d ", matriz[i][j]);
+    {
+      printf("%d ", matriz[0][0]);
+    }
     printf("\n");
   }
   
@@ -2226,14 +2228,74 @@ int main(void)
 /*********************************************/
 
 
-
-/*************** Ejercicio 0.0 ***************
+/*************** Ejercicio 3.8 ***************
 
 #include  <stdio.h>
 
 int main(void)
 {
  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 0.0 ***************/
+// Escribe un programa que muestre, utilizando
+// bucles anidados, la suma de dos matrices
+// 3x3 de números enteros.
+
+// Habiendo inicializado en la 
+// declaración las matrices como:
+
+// int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
+// int b[3][3]={0,1,2,4,2,3,1,4,5};
+
+// Esto sería el resultado del programa:
+
+// 1   3   5
+// 8   7   9
+// 8  12  14
+
+#include  <stdio.h>
+
+#define   DIM 3
+
+int main(void)
+{
+  int i, j;
+  
+  int a[DIM][DIM] =
+  {
+    {1,2,3},
+    {4,5,6},
+    {7,8,9}
+    
+  };
+  
+  // int b[3][3]={0,1,2,4,2,3,1,4,5};
+  
+  int b[DIM][DIM] =
+  {
+    {0,1,2},
+    {4,2,3},
+    {1,4,5}
+  };
+  
+  printf("\n");
+  
+  for (i = 0; i < DIM; i++)
+  {
+    for (j = 0; j < DIM; j++)
+    {
+      printf("%d  ", (a[i][j] + b[i][j]));
+    }
+    printf("\n");
+  }
+
+  printf("\n");
+  
   return(0);
 }
 
