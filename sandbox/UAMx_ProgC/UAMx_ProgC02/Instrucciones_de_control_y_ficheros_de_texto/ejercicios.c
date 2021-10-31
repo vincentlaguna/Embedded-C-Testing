@@ -2206,11 +2206,15 @@ int main(void)
 int main(void)
 {
   int i, j;
-  int matriz[FIL][COL];
+  int matriz[FIL][COL] = 
+  {
+    {1,4,2},
+    {3,5,9}
+  };
   
   for (i = 0; i < FIL; i++)
   {
-    for (j = 0; j < COL j++)
+    for (j = 0; j < COL; j++)
       printf("%d ", matriz[i][j]);
     printf("\n");
   }
