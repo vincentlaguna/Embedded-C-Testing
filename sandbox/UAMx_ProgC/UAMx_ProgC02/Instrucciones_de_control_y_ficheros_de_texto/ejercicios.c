@@ -2137,7 +2137,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.7 ***************/
+/*************** Ejercicio 3.7 ***************
 // Vamos a modificarel ejercicio anterior (2.6) 
 // para imprimir las tablas de multiplicar de los 
 // números del 1 al 9 desde el 1 hasta el 
@@ -2194,6 +2194,33 @@ int main(void)
 }
 
 /*********************************************/
+
+
+/*********************************************/
+// Bluces Anidados
+#include  <stdio.h>
+
+#define   FIL 2
+#define   COL 3
+
+int main(void)
+{
+  int i, j;
+  int matriz[FIL][COL];
+  
+  for (i = 0; i < FIL; i++)
+  {
+    for (j = 0; j < COL j++)
+      printf("%d ", matriz[i][j]);
+    printf("\n");
+  }
+  
+  return(0);
+
+}
+
+/*********************************************/
+
 
 
 /*************** Ejercicio 0.0 ***************
