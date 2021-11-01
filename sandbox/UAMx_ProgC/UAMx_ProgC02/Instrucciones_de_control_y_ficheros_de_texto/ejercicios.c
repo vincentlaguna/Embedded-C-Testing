@@ -2321,7 +2321,9 @@ El número 4 es menor que otros 1 números poste
 
 int main(void)
 {
+  printf("\n");
   printf("Introduce el número")
+  printf("\n");
   return(0);
 }
 
