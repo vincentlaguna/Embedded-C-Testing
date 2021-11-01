@@ -2315,14 +2315,19 @@ Introduce el número 5: 5
 El número 2 es menor que otros 3 números posteriores.
 El número 7 es menor que otros 0 números posteriores.
 El número 1 es menor que otros 2 números posteriores.
-El número 4 es menor que otros 1 números poste
+El número 4 es menor que otros 1 números posteriores.
 
 #include  <stdio.h>
+#define   DIM 5
 
 int main(void)
 {
+  int numeros[DIM];
   printf("\n");
-  printf("Introduce el número")
+  printf("Introduce el número: ");
+  scanf("%d", &numeros[i]);
+  printf("El número %d es menor que otros %d números posteriores.");
+  
   printf("\n");
   return(0);
 }
