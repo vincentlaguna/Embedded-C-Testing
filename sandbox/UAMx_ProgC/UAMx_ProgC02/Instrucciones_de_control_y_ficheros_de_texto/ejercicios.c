@@ -2323,12 +2323,18 @@ El número 4 es menor que otros 1 números posteriores.
 int main(void)
 {
   int i, j;
-  int numeros[DIM][DIM];
+  int numeros[DIM];
+  int colocados[DIM];
   printf("\n");
   for (i = 0; i < DIM; i++)
   {
     printf("Introduce el número %d: ");
     scanf("%d", &numeros[i]);
+    
+    for (j = 0; j < DIM; j++)
+    {
+      if (numeros[i] > numeros)  
+    }
   }
   for (j = 0; j < DIM; j++)
   {
