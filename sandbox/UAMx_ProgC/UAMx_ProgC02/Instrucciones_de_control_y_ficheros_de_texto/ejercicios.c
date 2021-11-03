@@ -2322,11 +2322,20 @@ El número 4 es menor que otros 1 números posteriores.
 
 int main(void)
 {
-  int numeros[DIM];
+  int i, j;
+  int numeros[DIM][DIM];
   printf("\n");
-  printf("Introduce el número: ");
-  scanf("%d", &numeros[i]);
-  printf("El número %d es menor que otros %d números posteriores.");
+  for (i = 0; i < DIM; i++)
+  {
+    printf("Introduce el número %d: ");
+    scanf("%d", &numeros[i]);
+  }
+  for (j = 0; j < DIM; j++)
+  {
+    printf("El número %d es menor que otros %d números posteriores.\n",
+            numeros[i]);
+    
+  }
   
   printf("\n");
   return(0);
