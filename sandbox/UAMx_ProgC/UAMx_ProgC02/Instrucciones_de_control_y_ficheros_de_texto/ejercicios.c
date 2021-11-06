@@ -2323,8 +2323,8 @@ int main(void)
 int main(void)
 {
   int i, j;
-  int numeros[DIM];
-  int menores[DIM];
+  static int numeros[DIM];
+  static int colocados[DIM];
   printf("\n");
   for (i = 0; i < DIM; i++)
   {
