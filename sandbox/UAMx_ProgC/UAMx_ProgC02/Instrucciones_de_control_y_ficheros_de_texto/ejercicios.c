@@ -2330,32 +2330,8 @@ int main(void)
   {
     printf("Introduce el número %d: ", i+1);
     scanf("%d", &numeros[i]);
-    
-    // if (numeros[i] < numeros[--i])
-    // {
-    //   colocados[i] = numeros[i];
-    // }
-    // else
-    // {
-    //   colocados[++i] = numeros[i];
-    // }
   }
   
-  for (i = 0; i < DIM; i++)
-  {
-    for (j = 0; j < DIM; j++)
-    {
-      if (numeros[j] < numeros[i])
-      {
-        menores[i]++;
-      }
-    }
-  }
-  
-  for (i = 0; i < DIM-1; i++)
-  {
-    printf("Numeros[%d] <---> Menores[%d]\n", numeros[i], menores[i]);
-  }
   
   // for (j = 0; j < DIM; j++)
   // {
