@@ -2322,7 +2322,7 @@ int main(void)
 
 int main(void)
 {
-  int i, j;
+  int min, max, i, j, x;
   static int numeros[DIM];
   static int colocados[DIM];
   printf("\n");
@@ -2332,12 +2332,18 @@ int main(void)
     scanf("%d", &numeros[i]);
   }
   
+  for (j = 0; j < DIM; j++)
+  {
+    
+  }
   
-  // for (j = 0; j < DIM; j++)
-  // {
-  //   printf("El número %d es menor que otros %d números posteriores.\n",
-  //           numeros[i]);
-  // }
+  printf("\n");
+  for (x = 0; x < DIM; x++)
+  {
+    printf("Numero %d: %d\n", x+1, numeros[x]);
+    // printf("El número %d es menor que otros %d números posteriores.\n",
+            // numeros[i]);
+  }
   
   printf("\n");
   return(0);
