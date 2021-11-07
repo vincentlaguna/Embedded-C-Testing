@@ -2322,41 +2322,55 @@ int main(void)
 
 int main(void)
 {
-  int i, j, temp;
+  int i, j, x, y, z, temp;
   int numeros[DIM];
-  int colocados[DIM];
+  int original[DIM];
   printf("\n");
   for (i = 0; i < DIM; i++)
   {
     printf("Introduce el número %d: ", i+1);
     scanf("%d", &numeros[i]);
   }
+  
+  for (x = 0; x < DIM; ++x)
+  {
+    original[x] = numeros[x];
+  }
+  
   printf("\n");
   for (i = 0; i < DIM; ++i)
   {
-    printf("El número %d es menor que otros ", numeros[i]);
-    
     for (j = i+1; j < DIM; ++j)
     {
       if (numeros[i] > numeros[j])
       {
         temp = numeros[i];
-        // numeros[i] = numeros[j];
-        colocados[i] = numeros[j];
-        // numeros[j] = temp;
-        colocados[j] = temp;
+        numeros[i] = numeros[j];
+        numeros[j] = temp;
       }
     }
-    printf("%d números posteriores\n", temp);
   }
-  printf("\n");
-  for (i = 0; i < DIM; ++i)
+  for (y = 0; y < DIM; y++)
   {
-    printf("Numero %d: %d\n", i+1, numeros[i]);
-    printf("Colocados %d: %d\n\n", i+1, colocados[i]);
-    // printf("El número %d es menor que otros %d números posteriores.\n",
-            // numeros[i]);
+    printf("El número %d es menor que otros ", original[y]);
+    
+    for (z = 0; z < DIM; ++z)
+    {
+      if (original[y] == numeros[z])
+      {
+        printf(" %d ", numeros[z-DIM]);  
+      }
+    }
+    printf("%d números posteriores\n", numeros[y]);
   }
+  // printf("\n");
+  // for (i = 0; i < DIM; ++i)
+  // {
+  //   printf("Numero   %d: %d\n", i+1, numeros[i]);
+  //   printf("original %d: %d\n\n", i+1, original[i]);
+  //   // printf("El número %d es menor que otros %d números posteriores.\n",
+  //           // numeros[i]);
+  // }
   
   printf("\n");
   return(0);
