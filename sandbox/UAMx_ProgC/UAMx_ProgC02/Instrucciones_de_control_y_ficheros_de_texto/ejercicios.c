@@ -2350,19 +2350,19 @@ int main(void)
       }
     }
   }
-  // for (y = 0; y < DIM; y++)
-  // {
-  //   printf("El número %d es menor que otros ", original[y]);
+  for (y = 0; y < DIM; y++)
+  {
+    printf("El número %d es menor que otros ", original[y]);
     
-  //   for (z = 0; z < DIM; ++z)
-  //   {
-  //     if (original[y] == numeros[z])
-  //     {
-  //       printf(" %d ", numeros[z-DIM]);  
-  //     }
-  //   }
-  //   printf("%d números posteriores\n", numeros[y]);
-  // }
+    for (z = 0; z < DIM; ++z)
+    {
+      if (original[y] == numeros[z])
+      {
+        printf(" %d ", numeros[z-DIM]);  
+      }
+    }
+    printf("%d números posteriores\n", numeros[y]);
+  }
   // printf("\n");
   // for (i = 0; i < DIM; ++i)
   // {
