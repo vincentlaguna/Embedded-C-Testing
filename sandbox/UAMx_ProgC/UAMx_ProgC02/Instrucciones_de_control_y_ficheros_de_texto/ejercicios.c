@@ -2315,7 +2315,8 @@ int main(void)
 // El número 2 es menor que otros 3 números posteriores.
 // El número 7 es menor que otros 0 números posteriores.
 // El número 1 es menor que otros 2 números posteriores.
-// El número 4 es menor que otros 1 números posteriores
+// El número 4 es menor que otros 1 números posteriores.
+// El número 5 es menor que otros 0 números posteriores.
 // Otro ejemplo:
 
 // Introduce el número 1: 3
@@ -2338,9 +2339,8 @@ int main(void)
 
 int main(void)
 {
-  int i, j, x, y, z, temp;
+  int i, j, x;
   int numeros[DIM];
-  // int original[DIM];
   int resultados[DIM] = {0};
   printf("\n");
   for (i = 0; i < DIM; i++)
@@ -2348,71 +2348,82 @@ int main(void)
     printf("Introduce el número %d: ", i+1);
     scanf("%d", &numeros[i]);
   }
-  
-  // for (x = 0; x < DIM; ++x)
-  // {
-  //   original[x] = numeros[x];
-  // }
-  printf("\n");
   for (i = 0; i < DIM; ++i)
   {
-    // printf("Numero   %d: %d\n", i+1, numeros[i]);
     for (j = 0; j < DIM; ++j)
     {
       if (numeros[i] < numeros[j])
       {
-        resultados[i] += 1;
+        resultados[i]++;
       }
       else if (numeros[i] == numeros[j])
       {
         resultados[i] = 0;
       }
-      
-      // printf("Second Loop numeros[j]: = %d\n", numeros[j]);
-      // printf("numeros[%d] = %d\n", numeros[i] = numeros[j]);
     }
   }
-  
-  for (x = 0; x < DIM; ++x)
+  for (i = 0; i < DIM; i++)
   {
-    printf("resultados[%d] = %d\n", x+1, resultados[x]);
+    printf("El número %d es menor que otros %d números posteriores\n",
+            numeros[i], resultados[i]);
   }
-  
-  // for (i = 0; i < DIM; ++i)
-  // {
-  //   for (j = i+1; j < DIM; ++j)
-  //   {
-  //     if (numeros[i] > numeros[j])
-  //     {
-  //       temp = numeros[i];
-  //       numeros[i] = numeros[j];
-  //       numeros[j] = temp;
-  //     }
-  //   }
-  // }
-  // for (y = 0; y < DIM; y++)
-  // {
-  //   printf("El número %d es menor que otros ", original[y]);
-    
-  //   for (z = 0; z < DIM; ++z)
-  //   {
-  //     if (original[y] == numeros[z])
-  //     {
-  //       printf(" %d ", numeros[z-DIM]);  
-  //     }
-  //   }
-  //   printf("%d números posteriores\n", numeros[y]);
-  // }
-  // printf("\n");
-  // for (i = 0; i < DIM; ++i)
-  // {
-  //   printf("Numero   %d: %d\n", i+1, numeros[i]);
-  //   printf("original %d: %d\n\n", i+1, original[i]);
-  //   // printf("El número %d es menor que otros %d números posteriores.\n",
-  //           // numeros[i]);
-  // }
-  
   printf("\n");
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 3.2 *****************/
+// Escribe un programa en C que solicite por 
+// teclado una cadena de caracteres y guárdala en
+// una variable del tamaño 128 (utiliza macros).
+
+// Para simplificar, puedes asumir que el usuario va
+// a introducir el carácter '_' en lugar de espacios.
+
+// A continuación, para cada carácter de la cadena, 
+// el programa mostrará por pantalla todas las 
+// vocales minúsculas anteriores a dicho carácter.
+
+// Lo que sigue es un ejemplo de ejecución:
+
+// Escribe una cadena de caracteres: Hola_mundo
+// las vocales anteriores al caracter H son:
+// las vocales anteriores al caracter o son:
+// las vocales anteriores al caracter l son: o
+// las vocales anteriores al caracter a son: o
+// las vocales anteriores al caracter _ son: o a
+// las vocales anteriores al caracter m son: o a
+// las vocales anteriores al caracter u son: o a
+// las vocales anteriores al caracter n son: o a u
+// las vocales anteriores al caracter d son: o a u
+// las vocales anteriores al caracter o son: o a u
+
+// Otro ejemplo:
+
+// Escribe una cadena de caracteres: Yo_soy_tu_padre
+// Las vocales anteriores al caracter Y son:                          
+// Las vocales anteriores al caracter o son:                          
+// Las vocales anteriores al caracter _ son: o                        
+// Las vocales anteriores al caracter s son: o                        
+// Las vocales anteriores al caracter o son: o                        
+// Las vocales anteriores al caracter y son: o o                      
+// Las vocales anteriores al caracter _ son: o o                      
+// Las vocales anteriores al caracter t son: o o                      
+// Las vocales anteriores al caracter u son: o o                      
+// Las vocales anteriores al caracter _ son: o o u                    
+// Las vocales anteriores al caracter p son: o o u                    
+// Las vocales anteriores al caracter a son: o o u                    
+// Las vocales anteriores al caracter d son: o o u a                  
+// Las vocales anteriores al caracter r son: o o u a                  
+// Las vocales anteriores al caracter e son: o o u a
+
+#include  <stdio.h>
+
+int main(void)
+{
+   
   return(0);
 }
 
