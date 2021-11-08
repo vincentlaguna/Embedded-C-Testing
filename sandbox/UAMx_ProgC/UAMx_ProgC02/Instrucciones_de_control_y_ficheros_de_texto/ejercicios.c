@@ -2287,7 +2287,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.1 *****************/
+/**************** Prueba 3.1 *****************
 // Escribe un programa en C que solicite 
 // exactamente por teclado tantos números como 
 // se especifiquen en una macro 
@@ -2420,9 +2420,14 @@ int main(void)
 // Las vocales anteriores al caracter e son: o o u a
 
 #include  <stdio.h>
+#include  <string.h>
+
+#define   TAM 128
 
 int main(void)
 {
+  int i, j, x;
+  char cadena[TAM];
    
   return(0);
 }
