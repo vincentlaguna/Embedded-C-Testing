@@ -2287,7 +2287,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 2.2 *****************/
+/**************** Prueba 3.1 *****************/
 // Escribe un programa en C que solicite 
 // exactamente por teclado tantos números como 
 // se especifiquen en una macro 
@@ -2315,16 +2315,33 @@ int main(void)
 // El número 2 es menor que otros 3 números posteriores.
 // El número 7 es menor que otros 0 números posteriores.
 // El número 1 es menor que otros 2 números posteriores.
-// El número 4 es menor que otros 1 números posteriores.
+// El número 4 es menor que otros 1 números posteriores
+// Otro ejemplo:
+
+// Introduce el número 1: 3
+// Introduce el número 2: 12
+// Introduce el número 3: 9
+// Introduce el número 4: 4
+// Introduce el número 5: 8
+// Introduce el número 6: 1
+// Introduce el número 7: 7
+// El número 3 es menor que otros 5 números posteriores.
+// El número 12 es menor que otros 0 números posteriores.
+// El número 9 es menor que otros 0 números posteriores.
+// El número 4 es menor que otros 2 números posteriores.
+// El número 8 es menor que otros 0 números posteriores.
+// El número 1 es menor que otros 1 números posteriores.
+// El número 7 es menor que otros 0 números posteriores.
 
 #include  <stdio.h>
-#define   DIM 5
+#define   DIM 7
 
 int main(void)
 {
   int i, j, x, y, z, temp;
   int numeros[DIM];
-  int original[DIM];
+  // int original[DIM];
+  int resultados[DIM] = {0};
   printf("\n");
   for (i = 0; i < DIM; i++)
   {
@@ -2332,19 +2349,33 @@ int main(void)
     scanf("%d", &numeros[i]);
   }
   
-  for (x = 0; x < DIM; ++x)
-  {
-    original[x] = numeros[x];
-  }
+  // for (x = 0; x < DIM; ++x)
+  // {
+  //   original[x] = numeros[x];
+  // }
   printf("\n");
   for (i = 0; i < DIM; ++i)
   {
-    printf("Numero   %d: %d\n", i, numeros[i]);
-    for (j = i; j > 0; --j)
+    // printf("Numero   %d: %d\n", i+1, numeros[i]);
+    for (j = 0; j < DIM; ++j)
     {
-      printf("Second Loop: i = %d | j = %d\n", i, j);
-      printf("numeros[%d] = %d\n", numeros[i] = numeros[j]);
+      if (numeros[i] < numeros[j])
+      {
+        resultados[i] += 1;
+      }
+      else if (numeros[i] == numeros[j])
+      {
+        resultados[i] = 0;
+      }
+      
+      // printf("Second Loop numeros[j]: = %d\n", numeros[j]);
+      // printf("numeros[%d] = %d\n", numeros[i] = numeros[j]);
     }
+  }
+  
+  for (x = 0; x < DIM; ++x)
+  {
+    printf("resultados[%d] = %d\n", x+1, resultados[x]);
   }
   
   // for (i = 0; i < DIM; ++i)
