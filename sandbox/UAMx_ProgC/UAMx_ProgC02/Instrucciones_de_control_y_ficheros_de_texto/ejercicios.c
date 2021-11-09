@@ -2442,7 +2442,7 @@ int main(void)
   for (i = 0; i < tam; i++)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j < 6; j++)
+    for (j = 0; j < 5; j++)
     {
       if (cadena[i] == vocales[j])
       {
