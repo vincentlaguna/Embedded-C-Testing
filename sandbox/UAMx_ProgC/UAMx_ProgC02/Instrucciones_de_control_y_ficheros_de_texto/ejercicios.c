@@ -2429,27 +2429,28 @@ int main(void)
   int i, j, x, tam;
   char cadena[TAM] = {0};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
-  tam = sizeof(vocales);
+  // tam = sizeof(vocales);
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
+  tam = strlen(cadena);
   // for (i = 0; i < TAM; i++)
   // {
   //   printf("%c", cadena[i]);
   // }
   putchar('\n');
-  for (i = 0; i < TAM; ++i)
+  for (i = 0; i < tam; i++)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 1; j < tam; ++j)
+    for (j = 0; j <= 5; j++)
     {
       if (cadena[i] == vocales[j])
       {
         printf("%c", vocales[j]);
       }
-      else //if (numeros[i] == numeros[j])
-      {
-         printf(" ");
-      }
+      // else if (cadena[i] != vocales[j])
+      // {
+      //   printf(" ");
+      // }
     }
     puts("\n");
   }
