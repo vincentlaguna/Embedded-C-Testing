@@ -2429,7 +2429,7 @@ int main(void)
   int i, j, x, tam, tam1;
   char cadena[TAM] = {0};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
-  char concuerda[tam1];
+  // char concuerda[tam1];
   // tam = sizeof(vocales);
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
@@ -2449,10 +2449,6 @@ int main(void)
         printf("%c", vocales[j]);
         tam1++;
       }
-      // else if (cadena[i] != vocales[j])
-      // {
-      //   printf(" ");
-      // }
     }
     puts("\n");
   }
