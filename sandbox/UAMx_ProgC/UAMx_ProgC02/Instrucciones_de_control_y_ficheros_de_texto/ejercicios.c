@@ -2454,6 +2454,22 @@ int main(void)
   }
   printf("tam1 = %d\n", tam1);
   
+  putchar('\n');
+  for (i = 0; i < tam; i++)
+  {
+    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+    for (j = 0; j < 5; j++)
+    {
+      if (cadena[i] == vocales[j])
+      {
+        printf("%c", vocales[j]);
+        tam1++;
+      }
+    }
+    puts("\n");
+  }
+  printf("tam1 = %d\n", tam1);
+  
   // printf("las vocales anteriores al caracter %c son: ");
   
   putchar('\n'); 
