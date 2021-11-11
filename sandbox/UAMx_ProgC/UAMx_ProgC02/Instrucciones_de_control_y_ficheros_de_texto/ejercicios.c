@@ -2430,7 +2430,7 @@ int main(void)
   char cadena[TAM] = {0};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
   char concuerda[TAM] = {0};
-  // tam = sizeof(vocales);
+
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
@@ -2449,35 +2449,30 @@ int main(void)
     }
     puts("\n");
   }
-  // concuerda[strlen(concuerda)+1] = '\0';
+  
   printf("\n%s\n", concuerda);
   
-  // putchar('\n');
-  // for (i = 0; i < tam; i++)
+  // for (i = 0; i < tam; ++i)
   // {
-  //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-        
-  //   for (j = 0; j < 5; j++)
+  //   for (j = 0; j < tam; ++j)
   //   {
-  //     if (cadena[i] == vocales[j])
+  //     if (cadena[i] == con[j])
   //     {
-  //       tam1++;
+  //       resultados[i]++;
+  //     }
+  //     else if (numeros[i] == numeros[j])
+  //     {
+  //       resultados[i] = 0;
   //     }
   //   }
-  //   puts("\n");
   // }
-  // printf("tam1 = %d\n", tam1);
+  // for (i = 0; i < DIM; i++)
+  // {
+  //   printf("El número %d es menor que otros %d números posteriores\n",
+  //           numeros[i], resultados[i]);
+  // }
   
-  // // printf("las vocales anteriores al caracter %c son: ");
-  // for (i = 0; i < strlen(cadena); i++)
-  // {
-  //   printf("%c", cadena[i]);
-  // }
-  // putchar('\n'); 
-  // for (i = strlen(cadena); i > 0; i++)
-  // {
-  //   printf("%c", concuerda[i]);
-  // }
+  
   putchar('\n'); 
   return(0);
 }
