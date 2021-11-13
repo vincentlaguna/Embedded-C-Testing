@@ -345,26 +345,29 @@ int main(void)
 
 int esPrimo(int num)
 {
-  
-}
-
-int main()
-{
-  int i, num, esPrimo = 1;
-
-  printf("\nIntroduce un número entero: ");
-  scanf("%d", &num);
+  int i;//, esPrimo = 1;
   
   for (i = 2; i <= sqrt(num); i++)
   {
     if (num % i == 0) 
     {
-      esPrimo = 0;
-      break;
+      // esPrimo = 0;
+      // break;
+      return(0);
     }
   }
 
-  if (esPrimo)
+  return(1);
+  
+}
+
+int main()
+{
+  int num;
+  printf("\nIntroduce un número entero: ");
+  scanf("%d", &num);
+  
+  if (esPrimo(num))
     printf("\n%d es primo.\n\n", num);
   else
     printf("\n%d no es primo\n\n", num);
