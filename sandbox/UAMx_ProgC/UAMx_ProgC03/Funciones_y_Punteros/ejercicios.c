@@ -138,7 +138,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.2 ***************/
+/*************** Ejercicio 1.2 ***************
 // Modifica la función del ejercicio anterior
 // para que sea el programa principal el que 
 // solicite la base y la altura y le pase estos
@@ -187,6 +187,30 @@ int main(void)
   
   calcularAreaTriangulo(base, altura);
   
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Funciones con Retorno
+#include  <stdio.h>
+
+double media(int a, int b)
+{
+  double res = 0.5 * (a + b);
+  
+  return res;
+}
+
+int main(void)
+{
+  int x = 2, y = 3;
+  double res = media(x, y);
+  
+  printf("La media de %d y %d es %.1lf.\n\n", x, y, res);
+ 
   return(0);
 }
 
