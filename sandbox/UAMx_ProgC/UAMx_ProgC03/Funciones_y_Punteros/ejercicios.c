@@ -55,28 +55,28 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.1 ***************/
-Escribe un programa con una función que 
-solicite la base y la altura de un triángulo
-y muestre por pantalla su área.
+/*************** Ejercicio 1.1 ***************
+// Escribe un programa con una función que 
+// solicite la base y la altura de un triángulo
+// y muestre por pantalla su área.
 
-La función main se encargará únicamente de 
-llamar a esta función, y no declarará ninguna
-variable ni tendrá ninguna otra instrucción.
+// La función main se encargará únicamente de 
+// llamar a esta función, y no declarará ninguna
+// variable ni tendrá ninguna otra instrucción.
 
-Este sería un ejemplo del programa:
+// Este sería un ejemplo del programa:
 
-Introduce la base del triángulo: 12
-Introduce la altura del triángulo: 7
-El área del triángulo de base
-12 y altura 7 es 42.00.
+// Introduce la base del triángulo: 12
+// Introduce la altura del triángulo: 7
+// El área del triángulo de base
+// 12 y altura 7 es 42.00.
 
-Y otro:
+// Y otro:
 
-Introduce la base del triángulo: 37
-Introduce la altura del triángulo: 10
-El área del triángulo de base
-37 y altura 10 es 185.00.
+// Introduce la base del triángulo: 37
+// Introduce la altura del triángulo: 10
+// El área del triángulo de base
+// 37 y altura 10 es 185.00.
 
 #include  <stdio.h>
 
@@ -89,14 +89,104 @@ void calcularAreaTriangulo(void)
   printf("\nIntroduce la base del triángulo: ");
   scanf("%d", &base);
   printf("\nIntroduce la altura del triángulo: ");
+  scanf("%d", &altura);
   area = (base * altura) / 2;
-  printf("El área del triángulo de base %d y altura %d es %lf\n",
+  printf("\nEl área del triángulo de base %d y altura %d es %.2lf\n\n",
           base, altura, area);
+  return;
 }
 
 int main(void)
 {
   calcularAreaTriangulo();
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************
+
+#include  <stdio.h>
+
+void media(int a, int b)
+{
+  double res;
+  
+  res = 0.5 * (a + b);
+  
+  printf("La media de %d y %d es %.1lf.", a, b, res);
+  
+  return;
+}
+
+
+int main(void)
+{
+  puts("\n");
+  
+  int x = 2;
+  int y = 3;
+  
+  media(x, y);
+  
+  puts("\n");
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.2 ***************/
+// Modifica la función del ejercicio anterior
+// para que sea el programa principal el que 
+// solicite la base y la altura y le pase estos
+// datos a la función. La función debe calcular 
+// el área y mostrar un mensaje por 
+// pantalla con el valor calculado.
+
+// Ten en cuenta que la salida del programa 
+// continuará siendo la misma a la del 
+// ejercicio 1.1. Este era un ejemplo:
+
+// Introduce la base del triángulo: 12
+// Introduce la altura del triángulo: 7
+// El área del triángulo de base
+// 12 y altura 7 es 42.00.
+
+// Y este, otro:
+
+// Introduce la base del triángulo: 37
+// Introduce la altura del triángulo: 10
+// El área del triángulo de base
+// 37 y altura 10 es 185.00.
+
+#include  <stdio.h>
+
+void calcularAreaTriangulo(int x, int y)
+{
+  double area;
+  
+  area = (x * y) / 2;
+  
+  printf("\nEl área del triángulo de base %d y altura %d es %.2lf\n\n",
+          x, y, area);
+  return;
+}
+
+int main(void)
+{
+  int    base;
+  int    altura;
+  
+  printf("\nIntroduce la base del triángulo: ");
+  scanf("%d", &base);
+  printf("\nIntroduce la altura del triángulo: ");
+  scanf("%d", &altura);
+  
+  calcularAreaTriangulo(base, altura);
+  
   return(0);
 }
 
