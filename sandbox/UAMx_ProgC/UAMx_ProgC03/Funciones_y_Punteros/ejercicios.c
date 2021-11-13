@@ -193,7 +193,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Funciones con Retorno
 #include  <stdio.h>
 
@@ -202,14 +202,29 @@ double media(int a, int b)
   double res = 0.5 * (a + b);
   
   return res;
+  // return;
 }
 
 int main(void)
 {
   int x = 2, y = 3;
+  // media(x, y);
   double res = media(x, y);
   
   printf("La media de %d y %d es %.1lf.\n\n", x, y, res);
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.3 ***************/
+
+#include  <stdio.h>
+
+int main(void)
+{
  
   return(0);
 }
