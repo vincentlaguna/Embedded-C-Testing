@@ -80,17 +80,23 @@ El área del triángulo de base
 
 #include  <stdio.h>
 
-int main(void)
+void calcularAreaTriangulo(void)
 {
-  int base;
-  int altura;
+  int    base;
+  int    altura;
   double area;
   
   printf("\nIntroduce la base del triángulo: ");
   scanf("%d", &base);
   printf("\nIntroduce la altura del triángulo: ");
+  area = (base * altura) / 2;
   printf("El área del triángulo de base %d y altura %d es %lf\n",
-          );
+          base, altura, area);
+}
+
+int main(void)
+{
+  calcularAreaTriangulo();
   return(0);
 }
 
