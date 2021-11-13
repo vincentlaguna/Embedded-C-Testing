@@ -219,16 +219,158 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.3 ***************/
+/*************** Ejercicio 1.3 ***************
+// Modifica el ejercicio anterior para que la 
+// función devuelva el valor del área calculado, 
+// sin solicitar por teclado ni 
+// mostrar por pantalla ningún dato 
+// (no debe contener ningún printf() ni scanf()).
+
+// La función main(), por tanto, 
+// ha de solicitar por teclado el valor 
+// de la base y altura y mostrar por pantalla
+// el resultado calculado por la función.
+
+// Ten en cuenta que la salida del programa 
+// continuará siendo la misma a la de los 
+// ejercicios 1.1 y 1.2. Este era un ejemplo:
+
+// Introduce la base del triángulo: 12
+// Introduce la altura del triángulo: 7
+// El área del triángulo de 
+// base 12 y altura 7 es 42.00.
+
+// Y este, otro:
+
+// Introduce la base del triángulo: 37
+// Introduce la altura del triángulo: 10
+// El área del triángulo de 
+// base 37 y altura 10 es 185.00.
 
 #include  <stdio.h>
 
+double calcularAreaTriangulo(int x, int y)
+{
+  double area = (x * y) / 2;
+  
+  return area;
+}
+
 int main(void)
 {
- 
+  int    base;
+  int    altura;
+  
+  printf("\nIntroduce la base del triángulo: ");
+  scanf("%d", &base);
+  printf("\nIntroduce la altura del triángulo: ");
+  scanf("%d", &altura);
+  
+  printf("\nEl área del triángulo de base %d y altura %d es %.2lf\n\n",
+          base, altura, calcularAreaTriangulo(base, altura));
+  
   return(0);
 }
 
+/*********************************************/
+
+
+/*************** Ejercicio 1.4 ***************/
+// Una de las principales utilidades de las 
+// funciones es que se puedan reutilizar en
+// programas diferentes. Esto es lo que ocurre
+// por ejemplo con las funciones scanf(), printf() 
+// o strcmp(), que realizan una tarea concreta 
+// que se invoca en muchos programas distintos.
+
+// Lo mismo puede ocurrir con cualquiera de 
+// las funciones que estás escribiendo. 
+// Intenta pensar siempre en ellas como 
+// funciones reutilizables que pueden ser 
+// utilizadas en otros programas 
+// main() diferentes. Pueden ser programas que 
+// hagan tareas completamente distintas pero 
+// necesiten resolver el problema concreto que 
+// resuelve esa función y la utilicen en un punto
+// determinado. Muy comúnmente pueden ser 
+// programas escritos por otras personas.
+
+// Utiliza la función esPrimo() que te hemos 
+// mostrado, sin modificarla, para crear un 
+// programa que la llame para imprimir en 
+// pantalla todos los números primos desde 
+// el 2 hasta un número solicitado al 
+// usuario por teclado. De esta forma puedes 
+// comprobar que la misma función esPrimo()
+// se puede utilizar en otro programa que 
+// realice y muestre resultados distintos.
+
+// Este sería un ejemplo del programa:
+
+// Intruduce un número entero positivo: 7
+// El número 2 es primo.
+// El número 3 es primo.
+// El número 4 no es primo.
+// El número 5 es primo.
+// El número 6 no es primo.
+// El número 7 es primo.
+
+// Y otro:
+
+// Intruduce un número entero positivo: 18
+// El número 2 es primo.
+// El número 3 es primo.
+// El número 4 no es primo.
+// El número 5 es primo.
+// El número 6 no es primo.
+// El número 7 es primo.
+// El número 8 no es primo.
+// El número 9 no es primo.
+// El número 10 no es primo.
+// El número 11 es primo.
+// El número 12 no es primo.
+// El número 13 es primo.
+// El número 14 no es primo.
+// El número 15 no es primo.
+// El número 16 no es primo.
+// El número 17 es primo.
+// El número 18 no es primo.
+
+// *Para usar la libreria <math.h>, gcc 
+// necesita compilar con el argumento "-lm"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int esPrimo(int num)
+{
+  
+}
+
+int main()
+{
+  int i, num, esPrimo = 1;
+
+  printf("\nIntroduce un número entero: ");
+  scanf("%d", &num);
+  
+  for (i = 2; i <= sqrt(num); i++)
+  {
+    if (num % i == 0) 
+    {
+      esPrimo = 0;
+      break;
+    }
+  }
+
+  if (esPrimo)
+    printf("\n%d es primo.\n\n", num);
+  else
+    printf("\n%d no es primo\n\n", num);
+
+  return(0);
+}
 /*********************************************/
 
 
