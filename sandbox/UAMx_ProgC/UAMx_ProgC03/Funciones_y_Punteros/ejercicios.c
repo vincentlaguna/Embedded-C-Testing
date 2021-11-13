@@ -360,17 +360,25 @@ int esPrimo(int num)
 
 int main()
 {
-  int num;
+  int num, i = 2;
   printf("\nIntroduce un número entero positivo: ");
   scanf("%d", &num);
   
-  if (esPrimo(num))
-    printf("\nEl número %d es primo.\n\n", num);
-  else
-    printf("\nEl número %d no es primo\n\n", num);
-
+  while (i <= num)
+  {
+    if (esPrimo(i))
+      printf("El número %d es primo.\n", i);
+    else
+      printf("El número %d no es primo\n", i);
+    
+    i++;
+  }
+  
+  puts("\n");
+  
   return(0);
 }
+
 /*********************************************/
 
 
