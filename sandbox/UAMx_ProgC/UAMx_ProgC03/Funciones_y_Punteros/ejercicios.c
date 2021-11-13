@@ -340,19 +340,16 @@ int main(void)
 // necesita compilar con el argumento "-lm"
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
 
 int esPrimo(int num)
 {
-  int i;//, esPrimo = 1;
+  int i;
   
   for (i = 2; i <= sqrt(num); i++)
   {
     if (num % i == 0) 
     {
-      // esPrimo = 0;
-      // break;
       return(0);
     }
   }
@@ -364,13 +361,13 @@ int esPrimo(int num)
 int main()
 {
   int num;
-  printf("\nIntroduce un número entero: ");
+  printf("\nIntroduce un número entero positivo: ");
   scanf("%d", &num);
   
   if (esPrimo(num))
-    printf("\n%d es primo.\n\n", num);
+    printf("\nEl número %d es primo.\n\n", num);
   else
-    printf("\n%d no es primo\n\n", num);
+    printf("\nEl número %d no es primo\n\n", num);
 
   return(0);
 }
