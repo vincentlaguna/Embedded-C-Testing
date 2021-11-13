@@ -275,7 +275,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.4 ***************/
+/*************** Ejercicio 1.4 ***************
 // Una de las principales utilidades de las 
 // funciones es que se puedan reutilizar en
 // programas diferentes. Esto es lo que ocurre
@@ -335,6 +335,75 @@ int main(void)
 // El número 16 no es primo.
 // El número 17 es primo.
 // El número 18 no es primo.
+
+// *Para usar la libreria <math.h>, gcc 
+// necesita compilar con el argumento "-lm"
+
+#include <stdio.h>
+#include <math.h>
+
+int esPrimo(int num)
+{
+  int i;
+  
+  for (i = 2; i <= sqrt(num); i++)
+  {
+    if (num % i == 0) 
+    {
+      return(0);
+    }
+  }
+
+  return(1);
+  
+}
+
+int main()
+{
+  int num, i = 2;
+  printf("\nIntroduce un número entero positivo: ");
+  scanf("%d", &num);
+  
+  while (i <= num)
+  {
+    if (esPrimo(i))
+      printf("El número %d es primo.\n", i);
+    else
+      printf("El número %d no es primo\n", i);
+    
+    i++;
+  }
+  
+  puts("\n");
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.5 ***************/
+// Dos números primos son primos gemelos si están
+// separados por una distancia de dos. Esto es, 
+// si x e y son primos, x ha de ser igual a y+2. 
+// Por ejemplo, 3 y 5, 5 y 7, 11 y 13, 17 y 19 
+// son primos gemelos.
+
+// Escribe un programa que solicite un número 
+// entero superior a tres, compruebe si es primo y
+// en ese caso informe de si tiene un primo gemelo. 
+// Utiliza para ello la función esPrimo(), 
+// nuevamente sin modificarla.
+
+// Estas son las posibles salidas del programa, 
+// habiéndose introducido por 
+// teclado el primer número:
+
+// El número 4 no es primo.
+// El número 23 es primo pero no tiene un primo gemelo.
+// El número 11 es primo y el 13 es primo gemelo.
+// El número 13 es primo y el 11 es primo gemelo.
+// El número 5 es primo y los números 3 y 7 son primos gemelos.
 
 // *Para usar la libreria <math.h>, gcc 
 // necesita compilar con el argumento "-lm"
