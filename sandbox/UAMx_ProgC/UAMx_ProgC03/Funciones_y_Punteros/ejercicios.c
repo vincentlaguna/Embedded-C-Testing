@@ -465,36 +465,36 @@ int main()
 
 
 /*************** Ejercicio 1.6 ***************/
-Escribe una función con el siguiente prototipo:
-int primoMayor(int num). La función recibe un 
-número en la variable num y ha de devolver el 
-mayor de los primos comprendido entre 2 y 
-el valor de num. Esta función ha de valerse
-para esto de llamadas a la función esPrimo(). 
-Recuerda que la función no ha de solicitar
-ningún valor por teclado ni mostrar 
-ningún valor por pantalla.
+// Escribe una función con el siguiente prototipo:
+// int primoMayor(int num). La función recibe un 
+// número en la variable num y ha de devolver el 
+// mayor de los primos comprendido entre 2 y 
+// el valor de num. Esta función ha de valerse
+// para esto de llamadas a la función esPrimo(). 
+// Recuerda que la función no ha de solicitar
+// ningún valor por teclado ni mostrar 
+// ningún valor por pantalla.
 
-Despues, escribe un programa principal que 
-solicite un número mayor o igual a 2, llame 
-a la función primoMayor() y muestre el 
-valor que devuelva por pantalla.
+// Despues, escribe un programa principal que 
+// solicite un número mayor o igual a 2, llame 
+// a la función primoMayor() y muestre el 
+// valor que devuelva por pantalla.
 
-Este sería un ejemplo del programa:
+// Este sería un ejemplo del programa:
 
-Introduce un número superior a 1: 7
-El mayor primo comprendido entre 2 y 7 es 7.
+// Introduce un número superior a 1: 7
+// El mayor primo comprendido entre 2 y 7 es 7.
 
-Otro ejemplo:
+// Otro ejemplo:
 
-Intruduce un número superior a 1: -2
-Intruduce un número superior a 1: 20
-El mayor primo comprendido entre 2 y 20 es 19.
+// Intruduce un número superior a 1: -2
+// Intruduce un número superior a 1: 20
+// El mayor primo comprendido entre 2 y 20 es 19.
 
-Y otro:
+// Y otro:
 
-Intruduce un número superior a 1: 2
-El mayor primo comprendido entre 2 y 2 es 2.
+// Intruduce un número superior a 1: 2
+// El mayor primo comprendido entre 2 y 2 es 2.
 
 // *Para usar la libreria <math.h>, gcc 
 // necesita compilar con el argumento "-lm"
@@ -520,32 +520,41 @@ int esPrimo(int num)
 
 int main()
 {
-  int num;
+  int num, base = 2, res = 0;
   
-  printf("\nIntroduce un número entero positivo superior a 3: ");
-  scanf("%d", &num);
+  do
+  {
+    printf("\nIntroduce un número entero positivo superior a 1: ");
+    scanf("%d", &num);
+    
+  } while (num < 1);
   
-  if (esPrimo(num) && (esPrimo(num-2) && esPrimo(num+2)))
-  {
-    printf("\nEl número %d es primo y los números %d y %d son primos gemelos.\n",
-            num, num-2, num+2);
-  }
-  else if (esPrimo(num) && esPrimo(num+2))
-  {
-    printf("\nEl número %d es primo y el %d es primo gemelo.\n", num, num+2);
-  }
-  else if (esPrimo(num) && esPrimo(num-2))
-  {
-    printf("\nEl número %d es primo y el %d es primo gemelo.\n", num, num-2);
-  }
-  else if (esPrimo(num) && !(esPrimo(num+2)))
-  {
-    printf("\nEl número %d es primo pero no tiene un primo gemelo.\n", num);
-  }
-  else
-  {
-    printf("\nEl número %d no es primo.\n", num); 
-  }
+  // printf("\nIntroduce un número entero positivo superior a 1: ");
+  // scanf("%d", &num2);
+  
+  printf("\nEl mayor primo comprendido entre %d y %d es %d.", base, num, res);
+  
+  // if (esPrimo(num) && (esPrimo(num-2) && esPrimo(num+2)))
+  // {
+  //   printf("\nEl número %d es primo y los números %d y %d son primos gemelos.\n",
+  //           num, num-2, num+2);
+  // }
+  // else if (esPrimo(num) && esPrimo(num+2))
+  // {
+  //   printf("\nEl número %d es primo y el %d es primo gemelo.\n", num, num+2);
+  // }
+  // else if (esPrimo(num) && esPrimo(num-2))
+  // {
+  //   printf("\nEl número %d es primo y el %d es primo gemelo.\n", num, num-2);
+  // }
+  // else if (esPrimo(num) && !(esPrimo(num+2)))
+  // {
+  //   printf("\nEl número %d es primo pero no tiene un primo gemelo.\n", num);
+  // }
+  // else
+  // {
+  //   printf("\nEl número %d no es primo.\n", num); 
+  // }
     
   puts("\n");
   
