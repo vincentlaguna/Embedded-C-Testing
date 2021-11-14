@@ -2422,35 +2422,48 @@ int main(void)
 #include  <stdio.h>
 #include  <string.h>
 
-#define   TAM 128
+#define   TAM  128
+#define   TAMV 5
 
 int main(void)
 {
-  int i, j, x, tam, tam1;
+  int i;
+  int j;
+  int x;
+  int y;
+  int tam;
+  int nvocal;
   char cadena[TAM] = {0};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
-  char concuerda[TAM] = {0};
 
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
+  char concuerda[tam-1];// = {0};
+  // char *concuerda[tam] = {0};
   putchar('\n');
   for (i = 0; i < tam; i++)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j < 5; j++)
+    for (j = 0; j < TAMV; j++)
     {
       if (cadena[i] == vocales[j])
       {
         printf("%c", vocales[j]);
-        concuerda[j] = vocales[j];
-        tam1++;
+        concuerda[i] = vocales[j];
+        nvocal++;
       }
     }
     puts("\n");
   }
   
-  printf("\n%s\n", concuerda);
+  for (x = 0; x <= tam-1; x++)
+  {
+    printf("%c", concuerda[x]);
+  }
+  printf("\nString Length: %d\n", strlen(concuerda));
+  printf("\nnvocal: %d\n", nvocal);
+  // printf("\n%s\n", concuerda);
   
   // for (i = 0; i < tam; ++i)
   // {
