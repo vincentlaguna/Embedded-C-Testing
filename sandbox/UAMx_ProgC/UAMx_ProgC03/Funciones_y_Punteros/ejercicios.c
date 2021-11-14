@@ -557,33 +557,9 @@ int main()
   } while (num < 1);
   
   res = primoMayor(num);
-  // printf("\nIntroduce un número entero positivo superior a 1: ");
-  // scanf("%d", &num2);
   
   printf("\nEl mayor primo comprendido entre %d y %d es %d.", base, num, res);
   
-  // if (esPrimo(num) && (esPrimo(num-2) && esPrimo(num+2)))
-  // {
-  //   printf("\nEl número %d es primo y los números %d y %d son primos gemelos.\n",
-  //           num, num-2, num+2);
-  // }
-  // else if (esPrimo(num) && esPrimo(num+2))
-  // {
-  //   printf("\nEl número %d es primo y el %d es primo gemelo.\n", num, num+2);
-  // }
-  // else if (esPrimo(num) && esPrimo(num-2))
-  // {
-  //   printf("\nEl número %d es primo y el %d es primo gemelo.\n", num, num-2);
-  // }
-  // else if (esPrimo(num) && !(esPrimo(num+2)))
-  // {
-  //   printf("\nEl número %d es primo pero no tiene un primo gemelo.\n", num);
-  // }
-  // else
-  // {
-  //   printf("\nEl número %d no es primo.\n", num); 
-  // }
-    
   puts("\n");
   
   return(0);
