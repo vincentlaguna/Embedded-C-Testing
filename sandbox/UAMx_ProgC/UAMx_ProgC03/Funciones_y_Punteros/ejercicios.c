@@ -518,6 +518,11 @@ int esPrimo(int num)
   
 }
 
+int primoMayor(int a, int b)
+{
+  
+}
+
 int main()
 {
   int num, base = 2, res = 0;
