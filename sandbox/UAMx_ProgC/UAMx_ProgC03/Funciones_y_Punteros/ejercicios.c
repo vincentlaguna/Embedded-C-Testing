@@ -518,9 +518,31 @@ int esPrimo(int num)
   
 }
 
-int primoMayor(int a, int b)
+int primoMayor(int num)
 {
-  for (i = 0; ) 
+  int i, j, x, res = 0;
+  int primos[num];
+  
+  for (i = 0; i <= num; i++)
+  {
+    if (esPrimo(i))
+    {
+      primos[i] = i;
+    }
+  }
+  
+  for (j = 0; j <= num; j++)
+  {
+    for (x = 0; x <= num; x++)
+    {
+      if (primos[x] > primos[i])
+      {
+        res = primos[x];
+      }
+    }
+  }
+  
+  return res;
 }
 
 int main()
@@ -534,6 +556,7 @@ int main()
     
   } while (num < 1);
   
+  res = primoMayor(num);
   // printf("\nIntroduce un número entero positivo superior a 1: ");
   // scanf("%d", &num2);
   
