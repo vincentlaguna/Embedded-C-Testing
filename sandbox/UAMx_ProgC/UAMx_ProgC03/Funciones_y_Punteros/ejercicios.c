@@ -520,7 +520,7 @@ int esPrimo(int num)
 
 int primoMayor(int a, int b)
 {
-  
+  for (i = 0; ) 
 }
 
 int main()
