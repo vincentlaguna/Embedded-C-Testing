@@ -2441,28 +2441,28 @@ int main(void)
   tam = strlen(cadena);
   char concuerda[tam-1];// = {0};
   // char *concuerda[tam] = {0};
-  putchar('\n');
-  for (i = 0; i < tam; i++)
-  {
-    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j < TAMV; j++)
-    {
-      if (cadena[i] == vocales[j])
-      {
-        printf("%c", vocales[j]);
-        concuerda[i] = vocales[j];
-        nvocal++;
-      }
-    }
-    puts("\n");
-  }
+  // putchar('\n');
+  // for (i = 0; i < tam; i++)
+  // {
+  //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+  //   for (j = 0; j < TAMV; j++)
+  //   {
+  //     if (cadena[i] == vocales[j])
+  //     {
+  //       printf("%c", vocales[j]);
+  //       concuerda[i] = vocales[j];
+  //       nvocal++;
+  //     }
+  //   }
+  //   puts("\n");
+  // }
   
-  for (x = 0; x <= tam-1; x++)
-  {
-    printf("%c", concuerda[x]);
-  }
-  printf("\nString Length: %d\n", strlen(concuerda));
-  printf("\nnvocal: %d\n", nvocal);
+  // for (x = 0; x <= tam-1; x++)
+  // {
+  //   printf("%c", concuerda[x]);
+  // }
+  // printf("\nString Length: %d\n", strlen(concuerda));
+  // printf("\nnvocal: %d\n", nvocal);
   // printf("\n%s\n", concuerda);
   
   // for (i = 0; i < tam; ++i)
