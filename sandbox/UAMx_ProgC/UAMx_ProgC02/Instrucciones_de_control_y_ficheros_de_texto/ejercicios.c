@@ -2428,9 +2428,9 @@ int main(void)
 int main(void)
 {
   int i;
-  int j;
-  int x;
-  int y;
+  // int j;
+  // int x;
+  // int y;
   int tam;
   int nvocal;
   char cadena[TAM] = {0};
@@ -2443,11 +2443,6 @@ int main(void)
   // char *concuerda[tam] = {0};
   // putchar('\n');
   
-  for (i = 0; i < DIM; i++)
-  {
-    printf("Introduce el número %d: ", i+1);
-    scanf("%d", &numeros[i]);
-  }
   for (i = 0; i < DIM; ++i)
   {
     for (j = 0; j < DIM; ++j)
