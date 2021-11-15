@@ -2442,6 +2442,26 @@ int main(void)
   char concuerda[tam-1];// = {0};
   // char *concuerda[tam] = {0};
   // putchar('\n');
+  
+  for (i = 0; i < DIM; i++)
+  {
+    printf("Introduce el número %d: ", i+1);
+    scanf("%d", &numeros[i]);
+  }
+  for (i = 0; i < DIM; ++i)
+  {
+    for (j = 0; j < DIM; ++j)
+    {
+      if (numeros[i] < numeros[j])
+      {
+        resultados[i]++;
+      }
+      else if (numeros[i] == numeros[j])
+      {
+        resultados[i] = 0;
+      }
+    }
+  }
   // for (i = 0; i < tam; i++)
   // {
   //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
