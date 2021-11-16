@@ -2428,35 +2428,73 @@ int main(void)
 int main(void)
 {
   int i;
-  // int j;
+  int j;
   // int x;
-  // int y;
+  int y;
+  // int nvocal;
   int tam;
-  int nvocal;
-  char cadena[TAM] = {0};
+  char cadena[TAM] = {'\0'};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
 
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
-  char concuerda[tam-1];// = {0};
+  printf("len: %d, string: %s\n", tam, cadena);
+  char concuerda[tam];// = {'\0'};
   // char *concuerda[tam] = {0};
-  // putchar('\n');
+  putchar('\n');
   
-  for (i = 0; i < DIM; ++i)
+  for (i = 0; i < tam; ++i)
   {
-    for (j = 0; j < DIM; ++j)
+    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+    for (j = 0; j < TAMV; ++j)
     {
-      if (numeros[i] < numeros[j])
+      if (cadena[i] == vocales[j])
       {
-        resultados[i]++;
-      }
-      else if (numeros[i] == numeros[j])
-      {
-        resultados[i] = 0;
+        concuerda[j] = vocales[j];
+        // printf("concuerda[%d] = %c ", x, concuerda[x]);
       }
     }
+      // printf("%c ", vocales[j]);
+      // if (numeros[i] < numeros[j])
+      // {
+      //   resultados[i]++;
+      // }
+      // else if (numeros[i] == numeros[j])
+      // {
+      //   resultados[i] = 0;
+      // }
+    putchar('\n');
   }
+  
+  for (y = 0; y < tam; y++)
+  {
+    printf("%c", concuerda[y]);
+  }
+  
+  for (i = 0; i < tam; ++i)
+  {
+    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+    for (j = 0; j < TAMV; ++j)
+    {
+      if (cadena[i] == vocales[j])
+      {
+        concuerda[j] = vocales[j];
+        // printf("concuerda[%d] = %c ", x, concuerda[x]);
+      }
+    }
+      // printf("%c ", vocales[j]);
+      // if (numeros[i] < numeros[j])
+      // {
+      //   resultados[i]++;
+      // }
+      // else if (numeros[i] == numeros[j])
+      // {
+      //   resultados[i] = 0;
+      // }
+    putchar('\n');
+  }
+  
   // for (i = 0; i < tam; i++)
   // {
   //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
