@@ -2441,7 +2441,7 @@ int main(void)
   tam = strlen(cadena);
   printf("len: %d, string: %s\n", tam, cadena);
   char concuerda[tam];// = {'\0'};
-  // char *concuerda[tam] = {0};
+  char *concuerda[tam];// = {0};
   putchar('\n');
   
   for (i = 0; i < tam; ++i)
