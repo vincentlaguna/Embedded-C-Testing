@@ -2429,7 +2429,7 @@ int main(void)
 
 /*********************************************/
 
-Final del primer trimeste
+// Final del primer trimeste
 
 /*************** Ejercicio 4.2 ***************
 

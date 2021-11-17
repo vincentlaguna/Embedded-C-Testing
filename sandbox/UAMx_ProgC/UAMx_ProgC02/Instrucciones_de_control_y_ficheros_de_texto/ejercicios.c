@@ -2420,6 +2420,7 @@ int main(void)
 // Las vocales anteriores al caracter e son: o o u a
 
 #include  <stdio.h>
+#include  <stdlib.h>
 #include  <string.h>
 
 #define   TAM  128
@@ -2441,7 +2442,8 @@ int main(void)
   tam = strlen(cadena);
   printf("len: %d, string: %s\n", tam, cadena);
   char concuerda[tam];// = {'\0'};
-  char *concuerda[tam];// = {0};
+  // char *fijos[tam];// = {'\0'};
+  char *fijos[tam] = malloc(tam * sizeof(char));
   putchar('\n');
   
   for (i = 0; i < tam; ++i)
@@ -2452,7 +2454,12 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         concuerda[j] = vocales[j];
+        *(*fijos+i) = vocales[j];
         // printf("concuerda[%d] = %c ", x, concuerda[x]);
+      }
+      else
+      {
+        // *(*fijos+i) = ' ';
       }
     }
       // printf("%c ", vocales[j]);
@@ -2469,7 +2476,7 @@ int main(void)
   
   for (y = 0; y < tam; y++)
   {
-    printf("%c", concuerda[y]);
+    printf("%c\n", concuerda[y]);
   }
   
   for (i = 0; i < tam; ++i)
