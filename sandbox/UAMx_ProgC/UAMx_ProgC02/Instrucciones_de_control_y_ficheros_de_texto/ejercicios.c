@@ -2454,7 +2454,7 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         concuerda[j] = vocales[j];
-        *(*fijos + i) = vocales[j];
+        *(*fijos + i) = vocales[j]; // This is the debug point
         // printf("concuerda[%d] = %c ", x, concuerda[x]);
       }
       else
