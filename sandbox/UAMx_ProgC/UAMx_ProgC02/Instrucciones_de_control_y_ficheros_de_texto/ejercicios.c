@@ -2443,7 +2443,7 @@ int main(void)
   printf("len: %d, string: %s\n", tam, cadena);
   char concuerda[tam];// = {'\0'};
   // char *fijos[tam];// = {'\0'};
-  char *fijos[tam];// = malloc(tam * sizeof(char));
+  char fijos[tam][TAMV];// = malloc(tam * sizeof(char));
   putchar('\n');
   
   for (i = 0; i < tam; ++i)
@@ -2454,7 +2454,7 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         concuerda[j] = vocales[j];
-        *(*fijos + i) = vocales[j]; // This is the debug point
+        fijos[i][j] = vocales[j]; // This is the debug point
         // printf("concuerda[%d] = %c ", x, concuerda[x]);
       }
       else
