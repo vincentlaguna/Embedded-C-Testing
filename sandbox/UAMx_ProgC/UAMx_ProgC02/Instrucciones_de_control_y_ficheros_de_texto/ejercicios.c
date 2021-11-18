@@ -2430,7 +2430,7 @@ int main(void)
 {
   int i;
   int j;
-  // int x;
+  int x;
   int y;
   // int nvocal;
   int tam;
@@ -2474,9 +2474,14 @@ int main(void)
     putchar('\n');
   }
   
-  for (y = 0; y < tam; y++)
+  for (x = 0; x < tam; x++)
   {
-    printf("%c\n", concuerda[y]);
+    // printf("%c\n", concuerda[x]);
+    printf("%c\n", fijos[x][x]);
+    for (y = 0; y < TAMV; y++)
+    {
+      printf("%c ", fijos[x][y]);
+    }
   }
   
   for (i = 0; i < tam; ++i)
