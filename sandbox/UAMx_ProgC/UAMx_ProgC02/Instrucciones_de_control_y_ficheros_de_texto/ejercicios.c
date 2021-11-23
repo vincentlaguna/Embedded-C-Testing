@@ -2431,7 +2431,7 @@ int main(void)
   int i;
   int j;
   int x;
-  int y;
+  // int y;
   // int nvocal;
   int tam;
   char cadena[TAM] = {'\0'};
