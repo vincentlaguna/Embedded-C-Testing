@@ -2431,8 +2431,8 @@ int main(void)
   int i;
   int j;
   int x;
-  // int y;
-  // int nvocal;
+  int y;
+  int nvocal;
   int tam;
   char cadena[TAM] = {'\0'};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
@@ -2492,7 +2492,7 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         concuerda[j] = vocales[j];
-        // printf("concuerda[%d] = %c ", x, concuerda[x]);
+        printf("concuerda[%d] = %c ", x, concuerda[x]);
       }
     }
       // printf("%c ", vocales[j]);
