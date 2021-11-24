@@ -2485,7 +2485,7 @@ int main(void)
   }
   
   for (i = 0; i < tam; ++i)
-  {
+  {// Try this in another loop
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
     for (j = 0; j < TAMV; ++j)
     {
