@@ -2446,10 +2446,10 @@ int main(void)
   char fijos[tam][TAMV];// = malloc(tam * sizeof(char));
   putchar('\n');
   
-  for (i = 0; i < tam; ++i)
+  for (i = 0; i <= tam; ++i)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j < TAMV; ++j)
+    for (j = 0; j <= TAMV; ++j)
     {
       if (cadena[i] == vocales[j])
       {
