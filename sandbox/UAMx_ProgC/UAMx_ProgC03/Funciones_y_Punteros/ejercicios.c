@@ -382,7 +382,7 @@ int main()
 /*********************************************/
 
 
-/*************** Ejercicio 1.5 ***************
+/*************** Ejercicio 1.5 ***************/
 // Dos números primos son primos gemelos si están
 // separados por una distancia de dos. Esto es, 
 // si x e y son primos, x ha de ser igual a y+2. 
@@ -464,7 +464,7 @@ int main()
 /*********************************************/
 
 
-/*************** Ejercicio 1.6 ***************/
+/*************** Ejercicio 1.6 ***************
 // Escribe una función con el siguiente prototipo:
 // int primoMayor(int num). La función recibe un 
 // número en la variable num y ha de devolver el 
