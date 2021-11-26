@@ -613,40 +613,65 @@ Introduce otra letra de del abecedario en
 mayúsculas o minúsculas (excepto la ñ): +
 
 Error, solo puedes introducir letras del abecedario.
-Introduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): -
-Introduce otra letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): R
+Introduce una letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): -
+
+Introduce otra letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): R
+
 Error, solo puedes introducir letras del abecedario.
-Introduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): F
-Introduce otra letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): s
+Introduce una letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): F
+
+Introduce otra letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): s
+
 La diferencia entre la F y la s es de 13 caracteres.
 
 Esto es otro ejemplo:
 
-Introduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): t
-Introduce otra letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): m
+Introduce una letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): t
+
+Introduce otra letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): m
+
 La diferencia entre la t y la m es de 7 caracteres.
 
 Otro:
 
-Introduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): T
-Introduce otra letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): m
+Introduce una letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): T
+
+Introduce otra letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): m
+
 La diferencia entre la T y la m es de 7 caracteres.
 
 Otro:
 
-Introduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): a
-Introduce otra letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): A
+Introduce una letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): a
+
+Introduce otra letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): A
+
 La diferencia entre la a y la A es de 0 caracteres.
 
 Y otro:
 
-Introduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): c
-Introduce otra letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): D
+Introduce una letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): c
+
+Introduce otra letra de del abecedario en mayúsculas
+o minúsculas (excepto la ñ): D
+
 La diferencia entre la c y la D es de un carácter.
 
 NOTA1: Fíjate que este último mensaje es diferente a los anteriores, al haber solo un carácter de diferencia.
 
 NOTA2: La función no debe solicitar ningún valor por teclado ni mostrar ningún mensaje por pantalla.
+
 #include  <stdio.h>
 
 int main(void)
