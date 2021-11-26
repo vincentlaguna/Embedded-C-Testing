@@ -660,17 +660,17 @@ La diferencia entre la a y la A es de 0 caracteres.
 
 Y otro:
 
-Introduce una letra de del abecedario en mayúsculas
-o minúsculas (excepto la ñ): c
+// Introduce una letra de del abecedario en mayúsculas
+// o minúsculas (excepto la ñ): c
 
-Introduce otra letra de del abecedario en mayúsculas
-o minúsculas (excepto la ñ): D
+// Introduce otra letra de del abecedario en mayúsculas
+// o minúsculas (excepto la ñ): D
 
-La diferencia entre la c y la D es de un carácter.
+// La diferencia entre la c y la D es de un carácter.
 
-NOTA1: Fíjate que este último mensaje es diferente a los anteriores, al haber solo un carácter de diferencia.
+// NOTA1: Fíjate que este último mensaje es diferente a los anteriores, al haber solo un carácter de diferencia.
 
-NOTA2: La función no debe solicitar ningún valor por teclado ni mostrar ningún mensaje por pantalla.
+// NOTA2: La función no debe solicitar ningún valor por teclado ni mostrar ningún mensaje por pantalla.
 
 #include  <stdio.h>
 
