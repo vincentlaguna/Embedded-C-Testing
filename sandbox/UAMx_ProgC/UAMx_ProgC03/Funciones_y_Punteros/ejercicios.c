@@ -586,6 +586,11 @@ int main()
 // Para los caracteres b y a devolverá 1.
 // Para los caracteres D y b devolverá 2.
 
+int comprobar_alpha(char primera_letra, char segunda_letra)
+{
+  
+}
+
 // Escribe un programa principal que solicite 
 // dos caracteres y llame a la función diferencia.
 // Dependiendo del retorno de la función
