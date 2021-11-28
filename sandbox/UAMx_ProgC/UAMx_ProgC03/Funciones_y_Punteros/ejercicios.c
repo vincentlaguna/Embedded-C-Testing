@@ -586,9 +586,22 @@ int main()
 // Para los caracteres b y a devolverá 1.
 // Para los caracteres D y b devolverá 2.
 
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
 int comprobar_alpha(char primera_letra, char segunda_letra)
 {
+  int diferencia;
   
+  if (isupper(primera_letra))
+    tolower(primera_letra);
+  if (isupper(segunda_letra))
+    tolower(segunda_letra);
+  
+  diferencia = primera_letra - segunda_letra;
+  printf("\nLa diferencia entre %c y %c es: %d\n",
+          primera_letra, segunda_letra, diferencia);
 }
 
 // Escribe un programa principal que solicite 
@@ -681,7 +694,13 @@ int comprobar_alpha(char primera_letra, char segunda_letra)
 
 int main(void)
 {
-  // start here tomorrow
+  char a        = 'a';
+  char b        = 'b';
+  int resultado = 0;
+  
+  comprobar_alpha(a, b);
+  
+  
  
   return(0);
 }
