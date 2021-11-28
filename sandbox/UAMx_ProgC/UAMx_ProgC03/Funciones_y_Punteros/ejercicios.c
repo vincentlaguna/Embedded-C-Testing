@@ -600,6 +600,10 @@ int comprobar_alpha(char primera_letra, char segunda_letra)
     tolower(segunda_letra);
   
   diferencia = primera_letra - segunda_letra;
+  
+  if (diferencia <= 0)
+    diferencia *= -1;
+    
   printf("\nLa diferencia entre %c y %c es: %d\n",
           primera_letra, segunda_letra, diferencia);
 }
@@ -694,7 +698,7 @@ int comprobar_alpha(char primera_letra, char segunda_letra)
 
 int main(void)
 {
-  char a        = 'a';
+  char a        = 'D';
   char b        = 'b';
   int resultado = 0;
   
