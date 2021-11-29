@@ -2446,7 +2446,7 @@ int main(void)
   char fijos[tam][TAMV];// = malloc(tam * sizeof(char));
   putchar('\n');
   
-  for (i = 0; i <= tam; ++i)
+  for (i = 0; i < tam; ++i)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
     for (j = 0; j <= TAMV; ++j)
@@ -2454,6 +2454,8 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         concuerda[j] = vocales[j];
+        printf("%c\n", cadena[i]);
+        printf("%c\n", concuerda[i]);
         fijos[i][j] = vocales[j]; // This is the debug point
         // printf("concuerda[%d] = %c ", x, concuerda[x]);
       }
@@ -2477,12 +2479,15 @@ int main(void)
   for (x = 0; x < tam; x++)
   {
     // printf("%c\n", concuerda[x]);
-    printf("%c\n", fijos[x][x]);
+    printf(" %c", fijos[x][x]);
+    
     for (y = 0; y < TAMV; y++)
     {
       printf("%c ", fijos[x][y]);
     }
   }
+  
+  putchar('\n');
   
   for (i = 0; i < tam; ++i)
   {// Try this in another loop
