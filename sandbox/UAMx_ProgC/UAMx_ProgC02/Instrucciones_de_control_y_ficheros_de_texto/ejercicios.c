@@ -2435,7 +2435,7 @@ int main(void)
   int nvocal;
   int tam;
   char cadena[TAM] = {'\0'};
-  char cadena1[TAM] = {'\0'};
+  char cadena1[TAM] = {'\0'}; // try 2-d array here
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
 
   printf("\nEscribe una cadena de caracteres: ");
