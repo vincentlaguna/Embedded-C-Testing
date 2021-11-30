@@ -2435,15 +2435,16 @@ int main(void)
   int nvocal;
   int tam;
   char cadena[TAM] = {'\0'};
+  char cadena1[TAM] = {'\0'};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
 
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
   printf("len: %d, string: %s\n", tam, cadena);
-  char concuerda[tam];// = {'\0'};
+  // char concuerda[tam];// = {'\0'};
   // char *fijos[tam];// = {'\0'};
-  char fijos[tam][TAMV];// = malloc(tam * sizeof(char));
+  // char fijos[tam][TAMV];// = malloc(tam * sizeof(char));
   putchar('\n');
   
   for (i = 0; i < tam; ++i)
@@ -2453,15 +2454,16 @@ int main(void)
     {
       if (cadena[i] == vocales[j])
       {
-        concuerda[j] = vocales[j];
-        printf("%c\n", cadena[i]);
-        printf("%c\n", concuerda[i]);
-        fijos[i][j] = vocales[j]; // This is the debug point
+        cadena1[i] = vocales[j];
+        printf("%c", cadena[i]);
+        printf(" %c", cadena1[i]);
+        // printf("%c\n", concuerda[i]);
+        // fijos[i][j] = vocales[j]; // This is the debug point
         // printf("concuerda[%d] = %c ", x, concuerda[x]);
       }
       else
       {
-        // *(*fijos+i) = ' ';
+        printf("%c", cadena1[i]);
       }
     }
       // printf("%c ", vocales[j]);
@@ -2476,30 +2478,30 @@ int main(void)
     putchar('\n');
   }
   
-  for (x = 0; x < tam; x++)
-  {
-    // printf("%c\n", concuerda[x]);
-    printf(" %c", fijos[x][x]);
+  // for (x = 0; x < tam; x++)
+  // {
+  //   // printf("%c\n", concuerda[x]);
+  //   printf(" %c", fijos[x][x]);
     
-    for (y = 0; y < TAMV; y++)
-    {
-      printf("%c ", fijos[x][y]);
-    }
-  }
+  //   for (y = 0; y < TAMV; y++)
+  //   {
+  //     printf("%c ", fijos[x][y]);
+  //   }
+  // }
   
   putchar('\n');
   
-  for (i = 0; i < tam; ++i)
-  {// Try this in another loop
-    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j < TAMV; ++j)
-    {
-      if (cadena[i] == vocales[j])
-      {
-        concuerda[j] = vocales[j];
-        printf("concuerda[%d] = %c ", x, concuerda[x]);
-      }
-    }
+  // for (i = 0; i < tam; ++i)
+  // {// Try this in another loop
+  //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+  //   for (j = 0; j < TAMV; ++j)
+  //   {
+  //     if (cadena[i] == vocales[j])
+  //     {
+  //       concuerda[j] = vocales[j];
+  //       printf("concuerda[%d] = %c ", x, concuerda[x]);
+  //     }
+  //   }
       // printf("%c ", vocales[j]);
       // if (numeros[i] < numeros[j])
       // {
@@ -2509,8 +2511,8 @@ int main(void)
       // {
       //   resultados[i] = 0;
       // }
-    putchar('\n');
-  }
+    // putchar('\n');
+  // }
   
   // for (i = 0; i < tam; i++)
   // {
@@ -2557,6 +2559,7 @@ int main(void)
   
   
   putchar('\n'); 
+  
   return(0);
 }
 
