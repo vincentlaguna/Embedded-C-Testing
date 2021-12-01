@@ -2435,7 +2435,7 @@ int main(void)
   int nvocal;
   int tam;
   char cadena[TAM] = {'\0'};
-  char cadena1[TAM][TAMV] = {'\0'}; // try 2-d array here
+  char cadena1[TAM][TAM] = {'\0'}; // try 2-d array here
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
 
   printf("\nEscribe una cadena de caracteres: ");
@@ -2482,11 +2482,11 @@ int main(void)
   {
     // printf("%c\n", concuerda[x]);
     // printf(" %c", fijos[x][x]);
-    printf("%c ", cadena1[x][0]);
+    printf("%c ", cadena1[x][y]);
     
-    for (y = 0; y < TAMV; y++)
+    for (y = 0; y < TAM; y++)
     {
-      printf("%c ", cadena1[0][y]);
+      printf("%c ", cadena1[x][y]);
     }
   }
   
