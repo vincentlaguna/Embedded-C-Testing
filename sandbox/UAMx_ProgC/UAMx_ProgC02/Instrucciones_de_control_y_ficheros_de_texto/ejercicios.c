@@ -2454,7 +2454,7 @@ int main(void)
     {
       if (cadena[i] == vocales[j])
       {
-        cadena1[i][0] = vocales[j];
+        cadena1[0][i] = vocales[j];
         printf("%c", cadena[i]);
         printf(" %c", cadena1[i]);
         // printf("%c\n", concuerda[i]);
