@@ -2478,16 +2478,17 @@ int main(void)
     putchar('\n');
   }
   
-  // for (x = 0; x < tam; x++)
-  // {
-  //   // printf("%c\n", concuerda[x]);
-  //   // printf(" %c", fijos[x][x]);
+  for (x = 0; x < tam; x++)
+  {
+    // printf("%c\n", concuerda[x]);
+    // printf(" %c", fijos[x][x]);
+    printf("%c ", cadena1[x][0]);
     
-  //   for (y = 0; y < TAMV; y++)
-  //   {
-  //     printf("%c ", cadena1[x][y]);
-  //   }
-  // }
+    for (y = 0; y < TAMV; y++)
+    {
+      printf("%c ", cadena1[0][y]);
+    }
+  }
   
   putchar('\n');
   
