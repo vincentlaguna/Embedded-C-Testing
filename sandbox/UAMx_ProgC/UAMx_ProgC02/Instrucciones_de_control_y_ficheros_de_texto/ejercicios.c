@@ -2451,27 +2451,37 @@ int main(void)
     {
       if (cadena[i] == vocales[j])
       {
-        cadena1[i][0] = vocales[j];
         printf("%c", cadena[i]);
-        printf(" %c", cadena1[i][0]);
+        cadena1[i][j] = vocales[i];
       }
       else
       {
-        printf("%c", cadena1[i]);
+        // printf("%c", cadena[i]);
       }
     }
     putchar('\n');
   }
   
-  // for (x = 0; x < tam; x++)
-  // {
-  //   printf("%c ", cadena1[x][y]);
-    
-  //   for (y = 0; y < TAM; y++)
-  //   {
-  //     printf("%c ", cadena1[x][y]);
-  //   }
-  // }
+  putchar('\n');
+  
+  for (i = 0; i < tam; ++i)
+  {
+    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+    for (j = 0; j <= TAMV; ++j)
+    {
+      printf("%c", cadena1[i][j]);
+      
+      if (cadena[i] == vocales[j])
+      {
+        printf("%c", cadena[i]);
+      }
+      else
+      {
+        // printf("%c", cadena[i]);
+      }
+    }
+    putchar('\n');
+  }
   
   putchar('\n'); 
   
