@@ -2433,11 +2433,21 @@ int main(void)
   int x;
   int y;
   int tam;
-  int tam1;
   char cadena[TAM] = {'\0'};
-  char cadena1[TAM][TAM]; // try 2-d array here
-  char *cadena1      = (char *)malloc(sizeof(cadena1));
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
+  char cadena1[TAM][TAM]; // try 2-d array here
+  char *pCadena1 = (char *)malloc(sizeof(cadena1));
+  
+  for (int x = 0; x < TAM; x++)
+  {
+    for (int y = 0; y < TAM; y++)
+    {
+      *(pCadena1 + (x * TAM) + y) = ' ';
+      printf("%c ", *(pCadena1 + ((x * TAM) + y)));
+    }
+    printf("\n");
+  }
+  printf("\n");
 
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
@@ -2454,7 +2464,7 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         printf("%c", cadena[i]);
-        cadena1[i] = vocales[i];
+        // cadena1[i] = vocales[i];
       }
       else
       {
@@ -2466,12 +2476,10 @@ int main(void)
   
   putchar('\n');
   
-  tam1 = strlen(cadena1);
-  
-  for (i = 0; i < tam; ++i)
-  {
-    printf("element %d: %c", i, cadena1[i]);
-  }
+  // for (i = 0; i < tam; ++i)
+  // {
+  //   printf("element %d: %c", i, cadena1[i]);
+  // }
   // for (i = 0; i < tam; ++i)
   // {
   //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
