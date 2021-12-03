@@ -2469,7 +2469,7 @@ int main(void)
   
   for (i = 0; i < tam; ++i)
   {
-    printf("%c", cadena1[i]);
+    printf("element %d: %c", i, cadena1[i]);
   }
   // for (i = 0; i < tam; ++i)
   // {
