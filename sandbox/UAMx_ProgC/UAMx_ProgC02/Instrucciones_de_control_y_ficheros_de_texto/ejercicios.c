@@ -2443,11 +2443,11 @@ int main(void)
     for (int y = 0; y < TAM; y++)
     {
       *(pCadena1 + (x * TAM) + y) = ' ';
-      printf("%c ", *(pCadena1 + ((x * TAM) + y)));
+      // printf("%c ", *(pCadena1 + ((x * TAM) + y)));
     }
-    printf("\n");
+    // printf("\n");
   }
-  printf("\n");
+  // printf("\n");
 
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
@@ -2464,7 +2464,8 @@ int main(void)
       if (cadena[i] == vocales[j])
       {
         printf("%c", cadena[i]);
-        // cadena1[i] = vocales[i];
+        *(pCadena1 + (i * TAM) + j) = vocales[j];
+        printf(" element %d: %c ", i, *(pCadena1 + ((i * TAM) + j)));
       }
       else
       {
@@ -2474,7 +2475,7 @@ int main(void)
     putchar('\n');
   }
   
-  putchar('\n');
+  // putchar('\n');
   
   // for (i = 0; i < tam; ++i)
   // {
