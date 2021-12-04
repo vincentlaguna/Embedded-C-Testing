@@ -2455,7 +2455,7 @@ int main(void)
   printf("len: %d, string: %s\n", tam, cadena);
 
   putchar('\n');
-  
+  // why not
   for (i = 0; i < tam; ++i)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
