@@ -2469,7 +2469,7 @@ int main(void)
       }
       else
       {
-        // printf("%c", cadena[i]);
+        printf("%c", cadena[i]);
       }
     }
     putchar('\n');
