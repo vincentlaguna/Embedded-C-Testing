@@ -2584,7 +2584,7 @@ for (int x = 0; x < TAM; x++)
 #include  <string.h>
 
 #define   TAM  128
-#define   TAMV 6
+#define   TAMV 5
 
 int main(void)
 {
@@ -2600,7 +2600,7 @@ int main(void)
 
   putchar('\n');
 
-  for (i = 1; i < tam; ++i)
+  for (i = 0; i < tam; ++i)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
     for (j = 1; j <= TAMV; ++j)
