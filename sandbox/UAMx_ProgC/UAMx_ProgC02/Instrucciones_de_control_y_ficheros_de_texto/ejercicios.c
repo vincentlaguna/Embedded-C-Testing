@@ -2477,28 +2477,28 @@ int main(void)
   
   // putchar('\n');
   
-  // for (i = 0; i < tam; ++i)
-  // {
-  //   printf("element %d: %c", i, cadena1[i]);
-  // }
-  // for (i = 0; i < tam; ++i)
-  // {
-  //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-  //   for (j = 0; j <= TAMV; ++j)
-  //   {
-  //     printf("%c", cadena1[i]);
+  for (i = 0; i < tam; ++i)
+  {
+    printf("element %d: %c", i, cadena1[i]);
+  }
+  for (i = 0; i < tam; ++i)
+  {
+    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+    for (j = 0; j <= TAMV; ++j)
+    {
+      printf("%c", cadena1[i]);
       
-  //     if (cadena[i] == vocales[j])
-  //     {
-  //       printf("%c", cadena[i]);
-  //     }
-  //     else
-  //     {
-  //       printf("%c", cadena[i]);
-  //     }
-  //   }
-  //   putchar('\n');
-  // }
+      if (cadena[i] == vocales[j])
+      {
+        printf("%c", cadena[i]);
+      }
+      else
+      {
+        printf("%c", cadena[i]);
+      }
+    }
+    putchar('\n');
+  }
   
   putchar('\n'); 
   
