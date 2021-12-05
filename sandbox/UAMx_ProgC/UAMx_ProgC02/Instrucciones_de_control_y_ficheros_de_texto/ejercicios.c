@@ -2442,7 +2442,7 @@ int main(void)
   {
     for (int y = 0; y < TAM; y++)
     {
-      *(pCadena1 + (x * TAM) + y) = ' ';
+      *(pCadena1 + (x * TAM) + y) = '*';
       // printf("%c ", *(pCadena1 + ((x * TAM) + y)));
     }
     // printf("\n");
