@@ -2423,8 +2423,24 @@ int main(void)
 #include  <stdlib.h>
 #include  <string.h>
 
-#define   TAM  128
+// #define   TAM  128
+#define   TAM  11
 #define   TAMV 5
+
+char cadena1[TAM][TAM] =
+{
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
+};
 
 int main(void)
 {
@@ -2435,7 +2451,7 @@ int main(void)
   int tam;
   char cadena[TAM] = {'\0'};
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
-  char cadena1[TAM][TAM]; // try 2-d array here
+  // char cadena1[TAM][TAM]; // try 2-d array here
   char *pCadena1 = (char *)malloc(sizeof(cadena1));
   
   for (int x = 0; x < TAM; x++)
@@ -2448,6 +2464,16 @@ int main(void)
     // printf("\n");
   }
   // printf("\n");
+
+for (int x = 0; x < TAM; x++)
+  {
+    for (int y = 0; y < TAM; y++)
+    {
+      *(pCadena1 + (x * TAM) + y) = '*';
+      printf("%c ", *(pCadena1 + ((x * TAM) + y)));
+    }
+    // printf("\n");
+  }
 
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
@@ -2469,7 +2495,7 @@ int main(void)
       }
       else
       {
-        printf("%c", cadena[i]);
+        printf("%c\n", cadena[i]);
       }
     }
     putchar('\n');
@@ -2477,30 +2503,30 @@ int main(void)
   
   // putchar('\n');
   
-  for (i = 0; i < tam; ++i)
-  {
-    printf("element %d: %c", i, *(cadena1 + i * TAM) + j);
-  }
-  for (i = 0; i < tam; ++i)
-  {
-    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j <= TAMV; ++j)
-    {
-      printf("%c", cadena1[i]);
+  // for (i = 0; i < tam; ++i)
+  // {
+  //   printf("element %d: %c", i, *(cadena1 + i * TAM) + j);
+  // }
+  // for (i = 0; i < tam; ++i)
+  // {
+  //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+  //   for (j = 0; j <= TAMV; ++j)
+  //   {
+  //     printf("%c", cadena1[i]);
       
-      if (cadena[i] == vocales[j])
-      {
-        printf("%c", cadena[i]);
-      }
-      else
-      {
-        printf("%c", cadena[i]);
-      }
-    }
-    putchar('\n');
-  }
+  //     if (cadena[i] == vocales[j])
+  //     {
+  //       printf("%c", cadena[i]);
+  //     }
+  //     else
+  //     {
+  //       printf("%c", cadena[i]);
+  //     }
+  //   }
+  //   putchar('\n');
+  // }
   
-  putchar('\n'); 
+  // putchar('\n'); 
   
   return(0);
 }
