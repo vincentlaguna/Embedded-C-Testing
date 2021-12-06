@@ -2597,6 +2597,7 @@ int main(void)
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
+  contador = tam;
   printf("len: %d, string: %s\n", tam, cadena);
 
   putchar('\n');
@@ -2612,11 +2613,11 @@ int main(void)
         {
           // printf("%c%c", cadena[i-contador], cadena[i-1]);
           printf("%c", cadena[i-1]);
-          contador++;
+          contador--;
         }
         else
         {
-          // printf("%c", cadena[i-contador]);
+          printf("%c", cadena[contador]);
           
         }
       }
