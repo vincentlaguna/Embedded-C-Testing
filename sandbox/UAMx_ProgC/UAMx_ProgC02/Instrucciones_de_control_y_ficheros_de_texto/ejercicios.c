@@ -2606,7 +2606,7 @@ int main(void)
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
     for (j = 1; j <= TAMV; ++j)
     {
-      if (!(i < 0))
+      if (!(i <= 0))
       {
         if (cadena[i-1] == vocales[j])
         {
