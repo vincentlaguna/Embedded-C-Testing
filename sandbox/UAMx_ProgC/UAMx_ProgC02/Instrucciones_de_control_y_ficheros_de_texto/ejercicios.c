@@ -2617,7 +2617,7 @@ int main(void)
         }
         else
         {
-          printf("%c", cadena[contador]);
+          // printf("%c", cadena[contador]);
           
         }
       }
