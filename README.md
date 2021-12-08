@@ -35,6 +35,7 @@ pkg-config --cflags --libs gstreamer-1.0
 
 Updates:
 
+- Created local repo for using with MS VS Code                          12072021
 - Initial commit for Client-Server app on Rpi4                          08052021
 - Creating Test branch from Master (trl_testing)                        07262021
 - Updated source files in trl_testing for feature addition              07252021
