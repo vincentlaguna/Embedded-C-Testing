@@ -2607,9 +2607,13 @@ int main(void)
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
     for (j = 1; j < TAMV; ++j)
     {
+      if (i == contador)
+      {
+        printf("%c\n", cadena[contador]);
+      }
       if (!(i <= 0))
       {
-        if (cadena[i-1] == vocales[j])
+        if (cadena[i-1] == vocales[j]);
         {
           // printf("%c%c", cadena[i-contador], cadena[i-1]);
           printf("%c", cadena[i-1]);
@@ -2617,12 +2621,12 @@ int main(void)
           // cadenaVocales[contador][j] = vocales[j];
           contador++;
         }
-        else
-        {
-          // printf("%c", cadena[i-contador]);
-          // printf("%c", cadena[contador]);
+        // else
+        // {
+        //   // printf("%c", cadena[i-contador]);
+        //   // printf("%c", cadena[contador]);
           
-        }
+        // }
       }
     }
     putchar('\n');
