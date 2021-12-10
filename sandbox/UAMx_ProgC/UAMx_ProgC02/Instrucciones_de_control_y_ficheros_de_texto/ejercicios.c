@@ -2593,7 +2593,7 @@ int main(void)
   int tam;
   char cadena[TAM] = {'\0'};
   char vocales[] = {' ', 'a', 'e', 'i', 'o', 'u'};
-  
+  printf("TESTING\n");
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
