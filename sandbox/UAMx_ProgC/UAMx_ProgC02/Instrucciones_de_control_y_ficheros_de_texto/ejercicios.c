@@ -2584,7 +2584,7 @@ for (int x = 0; x < TAM; x++)
 #include  <string.h>
 
 #define   TAM  128
-#define   TAMV 5
+#define   TAMV 6
 
 int main(void)
 {
@@ -2616,7 +2616,7 @@ int main(void)
             // printf("%c\n", cadena[contador]);
           }
           // printf("%c%c", cadena[i-contador], cadena[i-1]);
-          printf("%c", cadena[i-1]);
+          // printf("%c", cadena[i-1]);
           // printf("%c", cadena[i-contador]);
           // cadenaVocales[contador][j] = vocales[j];
           // contador++;
