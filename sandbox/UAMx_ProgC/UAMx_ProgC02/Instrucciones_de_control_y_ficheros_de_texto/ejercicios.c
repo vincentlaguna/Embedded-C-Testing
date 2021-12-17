@@ -2534,7 +2534,7 @@ for (int x = 0; x < TAM; x++)
 /*********************************************/
 
 
-/**************** Prueba 3.2 *****************/
+/**************** Prueba 3.2 *****************
 // Escribe un programa en C que solicite por 
 // teclado una cadena de caracteres y guárdala en
 // una variable del tamaño 128 (utiliza macros).
@@ -2656,7 +2656,11 @@ int main(void)
 {
  
   return(0);
+/*********************************************/
+
+
 /*************** Ejercicio 0.0 ***************
+
 
 #include  <stdio.h>
 
@@ -2669,9 +2673,14 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************
-
+/*********************************************/
 #include  <stdio.h>
+#include  <stdlib.h>
+
+void testFunction(u_int32_t *pToUint32object)
+{
+
+}
 
 int main(void)
 {
