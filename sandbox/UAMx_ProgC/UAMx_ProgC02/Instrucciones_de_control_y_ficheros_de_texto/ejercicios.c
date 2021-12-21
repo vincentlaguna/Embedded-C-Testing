@@ -2609,21 +2609,23 @@ int main(void)
     {
       if (!(i <= 0))
       {
-        if (cadena[i-1] == vocales[j]);
+        if (cadena[i-1] == vocales[j])
         {
-          if (i == contador)
-          {
-            printf("%c\n", cadena[contador]);
-          } // which one of these will work, leave here... focus on new method
+          printf("%c", cadena[i-1]);
+          // if (i == contador)
+          // {
+            // printf("%c", cadena[contador]);
+            // printf("%c", cadena[i-1]);
+          // } // which one of these will work, leave here... focus on new method
           // printf("%c%c", cadena[i-contador], cadena[i-1]);
           // printf("%c", cadena[i-1]);
           // printf("%c", cadena[i-contador]);
           // cadenaVocales[contador][j] = vocales[j];
-          contador++;
+          // contador++;
         }
         // else
         // {
-        //   printf(" ");
+          // printf(" ");
         //   // printf("%c", cadena[i-contador]);
         //   // printf("%c", cadena[contador]);
         // }
