@@ -2589,7 +2589,7 @@ for (int x = 0; x < TAM; x++)
 int main(void)
 {
   int i, j, x, y;
-  static int contador = 1;
+  // static int contador = 1;
   int tam;
   char cadena[TAM] = {'\0'};
   char vocales[] = {' ', 'a', 'e', 'i', 'o', 'u'};
@@ -2612,38 +2612,27 @@ int main(void)
         if (cadena[i-1] == vocales[j])
         {
           printf("%c", cadena[i-1]);
-          // if (i == contador)
-          // {
-            // printf("%c", cadena[contador]);
-            // printf("%c", cadena[i-1]);
-          // } // which one of these will work, leave here... focus on new method
-          // printf("%c%c", cadena[i-contador], cadena[i-1]);
-          // printf("%c", cadena[i-1]);
-          // printf("%c", cadena[i-contador]);
-          // cadenaVocales[contador][j] = vocales[j];
-          // contador++;
         }
-        // else
-        // {
-          // printf(" ");
-        //   // printf("%c", cadena[i-contador]);
-        //   // printf("%c", cadena[contador]);
-        // }
       }
     }
     putchar('\n');
   }
   
-  // putchar('\n');
-  
-  // for (x = 0; x < tam; x++)
-  // {
-  //   for (y = 0; y < TAMV; y++)
-  //   {
-  //     printf("%c", cadenaVocales[x][y]);
-  //   }
-  //   // putchar('\n'); 
-  // }
+  for (i = 0; i < tam; ++i)
+  {
+    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
+    for (j = 0; j < TAMV; ++j)
+    {
+      if (!(i <= 0))
+      {
+        if (cadena[i-1] == vocales[j])
+        {
+          printf("%c", cadena[i-1]);
+        }
+      }
+    }
+    putchar('\n');
+  }
   
   
   putchar('\n'); 
