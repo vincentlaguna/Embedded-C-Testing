@@ -2589,16 +2589,15 @@ for (int x = 0; x < TAM; x++)
 int main(void)
 {
   int i, j, x, y;
-  // static int contador = 1;
+  static int contador = 0;
   int tam;
   char cadena[TAM] = {'\0'};
+  char cadenaV[TAM] = {'\0'};
   char vocales[] = {' ', 'a', 'e', 'i', 'o', 'u'};
-  printf("TESTING\n");
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
   printf("len: %d, string: %s\n", tam, cadena);
-  // char cadenaVocales[TAM][TAMV];
 
   putchar('\n');
 
@@ -2612,12 +2611,16 @@ int main(void)
         if (cadena[i-1] == vocales[j])
         {
           printf("%c", cadena[i-1]);
+          cadenaV[contador] = vocales[j];
+          contador++;
         }
       }
     }
     putchar('\n');
   }
   
+  putchar('\n');
+
   for (i = 0; i < tam; ++i)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
@@ -2628,6 +2631,7 @@ int main(void)
         if (cadena[i-1] == vocales[j])
         {
           printf("%c", cadena[i-1]);
+          printf("%c ", cadenaV[i-i]);
         }
       }
     }
