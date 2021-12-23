@@ -2633,11 +2633,14 @@ int main(void)
           printf("%c", cadena[i-1]);
           printf("%c ", cadenaV[i-i]);
         }
+        else
+        {
+          printf("%c", cadenaV[i-1]);
+        }
       }
     }
     putchar('\n');
   }
-  
   
   putchar('\n'); 
   
