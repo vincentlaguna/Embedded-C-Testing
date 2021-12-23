@@ -2584,7 +2584,7 @@ for (int x = 0; x < TAM; x++)
 #include  <string.h>
 
 #define   TAM  128
-#define   TAMV 6
+#define   TAMV 5
 
 int main(void)
 {
@@ -2593,7 +2593,7 @@ int main(void)
   int tam;
   char cadena[TAM] = {'\0'};
   char cadenaV[TAM] = {'\0'};
-  char vocales[] = {' ', 'a', 'e', 'i', 'o', 'u'};
+  char vocales[] = {'a', 'e', 'i', 'o', 'u'};
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
   tam = strlen(cadena);
