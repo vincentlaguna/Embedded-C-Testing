@@ -2590,6 +2590,7 @@ int main(void)
 {
   int i, j, x, y;
   static int contador = 0;
+  static int contadorV = 0;
   int tam;
   char cadena[TAM] = {'\0'};
   char cadenaV[TAM] = {'\0'};
@@ -2638,6 +2639,7 @@ int main(void)
         {
           // printf("%c", cadenaV[i-1]);
           printf("%c", cadenaV[j]);
+          // printf("%c", cadenaV[contadorV]);
         }
       }
     }
