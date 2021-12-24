@@ -2615,6 +2615,10 @@ int main(void)
           cadenaV[contador] = vocales[j];
           contador++;
         }
+        else if (cadenaV[contador] != vocales[j])
+        {
+          cadenaV[contador] = ' ';
+        }
       }
     }
     // putchar('\n');
