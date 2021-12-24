@@ -2593,7 +2593,7 @@ int main(void)
   static int contadorV = 0;
   int tam;
   char cadena[TAM] = {'\0'};
-  char cadenaV[TAM] = {'\0'};
+  char cadenaV[TAM] = {'\0'}; // 2d array might work better?
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
