@@ -2637,7 +2637,7 @@ int main(void)
         {
           printf("%c", cadenaV[i]);
           printf("%c", cadena[i-1]);
-          // printf("%c ", cadenaV[i-i]);
+          printf("%c ", cadenaV[i-i]);
         }
         else
         {
