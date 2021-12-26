@@ -2618,7 +2618,7 @@ int main(void)
         }
         else if (cadena[i-1] != vocales[j])
         {
-          cadenaV[contador] = 'x';
+          cadenaV[contador] = ' ';
           printf("%c", cadenaV[contador]);
         }
       }
