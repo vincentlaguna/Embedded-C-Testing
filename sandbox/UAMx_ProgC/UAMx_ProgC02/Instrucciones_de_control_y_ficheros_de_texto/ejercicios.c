@@ -2627,6 +2627,7 @@ int main(void)
   }
   
   putchar('\n');
+  printf("%s\n", cadenaV);
 
   for (i = 0; i < tam; ++i)
   {
@@ -2643,7 +2644,7 @@ int main(void)
         }
         else
         {
-          // printf("%c", cadenaV[i-1]);
+          printf("%c", cadenaV[0]);
           printf("%c", cadenaV[j]);
           // printf("%c", cadenaV[contadorV]);
         }
