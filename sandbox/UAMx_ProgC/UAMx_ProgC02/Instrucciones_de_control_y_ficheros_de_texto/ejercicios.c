@@ -2633,7 +2633,7 @@ int main(void)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
     printf("%c", cadenaV[0]);
-    
+
     for (j = 0; j < contador; ++j)
     {
       if (!(i <= 0))
@@ -2642,7 +2642,7 @@ int main(void)
         {
           printf("%c", cadenaV[i]);
           printf("%c", cadena[i-1]);
-          // printf("%c ", cadenaV[i-i]);
+          printf("%c ", cadenaV[i-i]);
         }
         else
         {
