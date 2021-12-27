@@ -2374,7 +2374,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.2 *****************
+/**************** Prueba 3.2 *****************/
 // Escribe un programa en C que solicite por 
 // teclado una cadena de caracteres y guárdala en
 // una variable del tamaño 128 (utiliza macros).
@@ -2420,167 +2420,6 @@ int main(void)
 // Las vocales anteriores al caracter e son: o o u a
 
 #include  <stdio.h>
-#include  <stdlib.h>
-#include  <string.h>
-
-// #define   TAM  128
-#define   TAM  11
-#define   TAMV 5
-
-char cadena1[TAM][TAM] =
-{
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-  {' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' '},
-};
-
-int main(void)
-{
-  int i;
-  int j;
-  int x;
-  int y;
-  int tam;
-  char cadena[TAM] = {'\0'};
-  char vocales[] = {'a', 'e', 'i', 'o', 'u'};
-  // char cadena1[TAM][TAM]; // try 2-d array here
-  char *pCadena1 = (char *)malloc(sizeof(cadena1));
-  
-  for (int x = 0; x < TAM; x++)
-  {
-    for (int y = 0; y < TAM; y++)
-    {
-      *(pCadena1 + (x * TAM) + y) = '*';
-      // printf("%c ", *(pCadena1 + ((x * TAM) + y)));
-    }
-    // printf("\n");
-  }
-  // printf("\n");
-
-for (int x = 0; x < TAM; x++)
-  {
-    for (int y = 0; y < TAM; y++)
-    {
-      *(pCadena1 + (x * TAM) + y) = '*';
-      printf("%c ", *(pCadena1 + ((x * TAM) + y)));
-    }
-    // printf("\n");
-  }
-
-  printf("\nEscribe una cadena de caracteres: ");
-  scanf("%s", cadena);
-  tam = strlen(cadena);
-  printf("len: %d, string: %s\n", tam, cadena);
-
-  putchar('\n');
-
-  for (i = 0; i < tam; ++i)
-  {
-    printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j <= TAMV; ++j)
-    {
-      if (cadena[i] == vocales[j])
-      {
-        printf("%c", cadena[i]);
-        *(pCadena1 + (i * TAM) + j) = vocales[j];
-        printf(" element %d: %c ", i, *(pCadena1 + ((i * TAM) + j)));
-      }
-      else
-      {
-        printf("%c\n", cadena[i]);
-      }
-    }
-    putchar('\n');
-  }
-  
-  // putchar('\n');
-  
-  // for (i = 0; i < tam; ++i)
-  // {
-  //   printf("element %d: %c", i, *(cadena1 + i * TAM) + j);
-  // }
-  // for (i = 0; i < tam; ++i)
-  // {
-  //   printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-  //   for (j = 0; j <= TAMV; ++j)
-  //   {
-  //     printf("%c", cadena1[i]);
-      
-  //     if (cadena[i] == vocales[j])
-  //     {
-  //       printf("%c", cadena[i]);
-  //     }
-  //     else
-  //     {
-  //       printf("%c", cadena[i]);
-  //     }
-  //   }
-  //   putchar('\n');
-  // }
-  
-  // putchar('\n'); 
-  
-  return(0);
-}
-
-/*********************************************/
-
-
-/**************** Prueba 3.2 *****************
-// Escribe un programa en C que solicite por 
-// teclado una cadena de caracteres y guárdala en
-// una variable del tamaño 128 (utiliza macros).
-
-// Para simplificar, puedes asumir que el usuario va
-// a introducir el carácter '_' en lugar de espacios.
-
-// A continuación, para cada carácter de la cadena, 
-// el programa mostrará por pantalla todas las 
-// vocales minúsculas anteriores a dicho carácter.
-
-// Lo que sigue es un ejemplo de ejecución:
-
-// Escribe una cadena de caracteres: Hola_mundo
-// las vocales anteriores al caracter H son:
-// las vocales anteriores al caracter o son:
-// las vocales anteriores al caracter l son: o
-// las vocales anteriores al caracter a son: o
-// las vocales anteriores al caracter _ son: o a
-// las vocales anteriores al caracter m son: o a
-// las vocales anteriores al caracter u son: o a
-// las vocales anteriores al caracter n son: o a u
-// las vocales anteriores al caracter d son: o a u
-// las vocales anteriores al caracter o son: o a u
-
-// Otro ejemplo:
-
-// Escribe una cadena de caracteres: Yo_soy_tu_padre
-// Las vocales anteriores al caracter Y son:                          
-// Las vocales anteriores al caracter o son:                          
-// Las vocales anteriores al caracter _ son: o                        
-// Las vocales anteriores al caracter s son: o                        
-// Las vocales anteriores al caracter o son: o                        
-// Las vocales anteriores al caracter y son: o o                      
-// Las vocales anteriores al caracter _ son: o o                      
-// Las vocales anteriores al caracter t son: o o                      
-// Las vocales anteriores al caracter u son: o o                      
-// Las vocales anteriores al caracter _ son: o o u                    
-// Las vocales anteriores al caracter p son: o o u                    
-// Las vocales anteriores al caracter a son: o o u                    
-// Las vocales anteriores al caracter d son: o o u a                  
-// Las vocales anteriores al caracter r son: o o u a                  
-// Las vocales anteriores al caracter e son: o o u a
-
-#include  <stdio.h>
-#include  <stdlib.h>
 #include  <string.h>
 
 #define   TAM  128
@@ -2588,94 +2427,44 @@ for (int x = 0; x < TAM; x++)
 
 int main(void)
 {
-  int i, j, x, y;
-  static int contador = 0;
-  static int contadorV = 0;
+  int i, j, x;
   int tam;
+  static int contador = 0;
   char cadena[TAM] = {'\0'};
   char cadenaV[TAM] = {'\0'};
-  // char cadenaV[TAM][TAM] = {{'\0'}, {'\0'}}; // 2d array might work better?
   char vocales[] = {'a', 'e', 'i', 'o', 'u'};
+  
   printf("\nEscribe una cadena de caracteres: ");
   scanf("%s", cadena);
+  
   tam = strlen(cadena);
-  printf("len: %d, string: %s\n", tam, cadena);
-
-  // putchar('\n');
-
-  for (i = 0; i < tam; ++i)
-  {
-    // printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    for (j = 0; j < TAMV; ++j)
-    {
-      if (!(i <= 0))
-      {
-        if (cadena[i-1] == vocales[j])
-        {
-          // printf("%c", cadena[i-1]);
-          cadenaV[contador] = vocales[j];
-          contador++;
-        }
-        else if (cadena[i-1] != vocales[j])
-        {
-          cadenaV[contador] = ' ';
-          printf("%c", cadenaV[contador]);
-        }
-      }
-    }
-    // putchar('\n');
-  }
   
   putchar('\n');
-  int contador1 = 0;
-  printf("%s\n", cadenaV);
 
   for (i = 0; i < tam; ++i)
   {
     printf("Las vocales anteriores al caracter %c son: ", cadena[i]);
-    // printf("%c", cadenaV[0]);
     if (!(i <= 0))
     {
-      if (cadena[i-1] == cadenaV[j])
+      for (x = 0; x < strlen(cadenaV); ++x)
       {
-        printf("%c", cadenaV[contador1]);
-        contador1++;
-        // printf("%c", cadenaV[i]);
-        // printf("%c", cadena[i-1]);
-        // printf("%c ", cadenaV[i-i]);
-      }
-      else
-      {
-        printf("%c", cadenaV[contador1]);
-        // printf("%c", cadenaV[j]);
-        // printf("%c", cadenaV[contadorV]);
+        printf("%c ", cadenaV[x]);
       }
     }
-
-    for (j = 0; j < contador; ++j)
+    for (j = 0; j < TAMV; ++j)
     {
       if (!(i <= 0))
       {
-        if (cadena[i-1] == cadenaV[j])
+        if (cadena[i] == vocales[j])
         {
-          // printf("%c", cadenaV[0]);
-          // printf("%c", cadenaV[i]);
-          // printf("%c", cadena[i-1]);
-          // printf("%c ", cadenaV[i-i]);
-        }
-        else
-        {
-          // printf("%c", cadenaV[0]);
-          // printf("%c", cadenaV[j]);
-          // printf("%c", cadenaV[contadorV]);
+          cadenaV[contador] = vocales[j];
+          contador++;
         }
       }
     }
     putchar('\n');
   }
-  
   putchar('\n'); 
-  
   return(0);
 }
 
@@ -2753,7 +2542,7 @@ int main(int argc, char **argv)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Debugging **argv example 0
 #include  <stdio.h>
 
