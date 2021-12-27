@@ -2627,6 +2627,7 @@ int main(void)
   }
   
   putchar('\n');
+  int contador1 = 0;
   printf("%s\n", cadenaV);
 
   for (i = 0; i < tam; ++i)
@@ -2637,14 +2638,15 @@ int main(void)
     {
       if (cadena[i-1] == cadenaV[j])
       {
-        printf("%c", cadenaV[0]);
+        printf("%c", cadenaV[contador1]);
+        contador1++;
         // printf("%c", cadenaV[i]);
         // printf("%c", cadena[i-1]);
         // printf("%c ", cadenaV[i-i]);
       }
       else
       {
-        printf("%c", cadenaV[0]);
+        printf("%c", cadenaV[contador1]);
         // printf("%c", cadenaV[j]);
         // printf("%c", cadenaV[contadorV]);
       }
