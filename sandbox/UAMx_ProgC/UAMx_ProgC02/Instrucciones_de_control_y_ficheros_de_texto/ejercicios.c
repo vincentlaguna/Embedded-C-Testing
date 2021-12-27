@@ -2720,8 +2720,8 @@ int main(void)
 
 /*********************************************/
 
-/*********************************************/
-// Debugging **argv example
+/*********************************************
+// Debugging **argv example 0
 #include  <stdio.h>
 
 int main(int argc, char **argv)
@@ -2747,6 +2747,32 @@ int main(int argc, char **argv)
 
   printf("\n");
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Debugging **argv example 0
+#include  <stdio.h>
+
+struct 
+{
+  int ***p2p2p2Int;
+  int  **p2p2Int;
+  int   *p2Int;
+  int    Int;
+} p;
+
+int main(int argc, char **argv)
+{
+  
+  p.p2p2p2Int = &p.p2p2Int;
+  p.p2p2Int   = &p.p2Int;
+  p.p2Int     = &p.Int;
+  p.Int       = 0x55555555;
+   
   return(0);
 }
 
