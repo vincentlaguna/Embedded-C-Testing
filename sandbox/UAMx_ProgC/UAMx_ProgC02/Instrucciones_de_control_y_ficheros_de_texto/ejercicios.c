@@ -2640,13 +2640,14 @@ int main(void)
       {
         if (cadena[i-1] == cadenaV[j])
         {
-          printf("%c", cadenaV[i]);
-          printf("%c", cadena[i-1]);
-          printf("%c ", cadenaV[i-i]);
+          printf("%c", cadenaV[0]);
+          // printf("%c", cadenaV[i]);
+          // printf("%c", cadena[i-1]);
+          // printf("%c ", cadenaV[i-i]);
         }
         else
         {
-          printf("%c", cadenaV[j]);
+          // printf("%c", cadenaV[j]);
           // printf("%c", cadenaV[contadorV]);
         }
       }
