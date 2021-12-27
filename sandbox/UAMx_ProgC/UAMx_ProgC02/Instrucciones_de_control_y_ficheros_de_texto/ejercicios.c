@@ -2534,7 +2534,7 @@ for (int x = 0; x < TAM; x++)
 /*********************************************/
 
 
-/**************** Prueba 3.2 *****************/
+/**************** Prueba 3.2 *****************
 // Escribe un programa en C que solicite por 
 // teclado una cadena de caracteres y guárdala en
 // una variable del tamaño 128 (utiliza macros).
@@ -2695,19 +2695,6 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************
-
-#include  <stdio.h>
-
-int main(void)
-{
- 
-  return(0);
-}
-
-/*********************************************/
-
-
 /**************** Prueba 0.0 *****************
 
 #include  <stdio.h>
@@ -2721,3 +2708,46 @@ int main(void)
 /*********************************************/
 
 
+/*********************************************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
+
+/*********************************************/
+
+#include  <stdio.h>
+
+int main(int argc, char **argv)
+{
+  printf("\n");
+
+  int i;
+  // Iterate over array of args
+  for (i = 0; i < argc; i++)
+  {
+    printf("arg %d is %s\n", i, argv[i]);
+  }
+  // Deferencing each string arg (*argv)
+  // via pointer to the pointer to the start
+  // of the array of args (**argv)
+  printf("\n\n");
+
+  for (i = 0; i < argc; i++)
+  {
+    printf("arg %d is %s\n", i, *argv);
+    argv++;
+  }
+
+  printf("\n");
+
+  return(0);
+}
+
+/*********************************************/
