@@ -2374,7 +2374,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.2 *****************/
+/**************** Prueba 3.2 *****************
 // Escribe un programa en C que solicite por 
 // teclado una cadena de caracteres y guárdala en
 // una variable del tamaño 128 (utiliza macros).
