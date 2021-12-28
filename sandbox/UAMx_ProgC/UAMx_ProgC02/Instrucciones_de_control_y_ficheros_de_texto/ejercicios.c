@@ -2482,7 +2482,15 @@ int main(void)
   int     modelo, i;
   double  nota, media;
 
-  return(0);
+  ficha = fopen("notas.txt", "r");
+
+  if (ficha == NULL)
+  {
+    printf("Error abriendo el archivo.\n");
+    return (-1);
+  }
+
+  return(0);  
 }
 
 /*********************************************/
