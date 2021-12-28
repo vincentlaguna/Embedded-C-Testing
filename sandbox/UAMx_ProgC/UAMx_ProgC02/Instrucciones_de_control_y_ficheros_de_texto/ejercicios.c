@@ -2477,7 +2477,10 @@ int main(void)
 
 int main(void)
 {
-  FILE *ficha
+  FILE    *ficha;
+  char    dni[10];
+  int     modelo, i;
+  double  nota, media;
 
   return(0);
 }
