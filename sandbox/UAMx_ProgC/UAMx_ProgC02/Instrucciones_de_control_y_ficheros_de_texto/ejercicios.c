@@ -2490,10 +2490,12 @@ int main(void)
     return (-1);
   }
 
-  for (i = 0; fscanf(ficha, "%s %d %lf") == 3)
+  for (i = 0; fscanf(ficha, "%s %d %lf") == 3); i++)    
   {
-    
+    media++
   }
+
+  fclose(ficha);
 
   return(0);  
 }
