@@ -2495,6 +2495,8 @@ int main(void)
     media++
   }
 
+  printf("");
+
   fclose(ficha);
 
   return(0);  
