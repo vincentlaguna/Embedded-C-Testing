@@ -2490,6 +2490,11 @@ int main(void)
     return (-1);
   }
 
+  for (i = 0; fscanf(ficha, "%s %d %lf") == 3)
+  {
+    
+  }
+
   return(0);  
 }
 
