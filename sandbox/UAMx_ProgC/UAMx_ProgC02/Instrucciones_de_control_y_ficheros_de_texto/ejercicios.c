@@ -2527,22 +2527,28 @@ int main(void)
 // La nota media del modelo 2 es: 7.170
 
 #include  <stdio.h>
+#include  <stdlib.h>
 
-struct 
+typedef struct 
 {
+  // Datos
   int estudiantes;
   int modelo;
   int aciertos;
   int fallos;
   int blancos;
   double calificacion;
-} ;
+
+} Notas;
 
 
 int main(void)
 {
   FILE *ficha;
-  
+  Notas *notas;
+
+  notas = (Notas *)malloc(sizeof(Notas));
+
   ficha = fopen("notas1.txt", "r");
 
   if (ficha == NULL)
@@ -2551,14 +2557,14 @@ int main(void)
     return (-1);
   }
 
-  for (i = 0, media = 0.0; fscanf(ficha, "%s", dni) == 1; i++)    
-  {
-    fscanf(ficha, "%d", &modelo);
-    fscanf(ficha, "%lf", &nota);
-    media += nota;
-  }
+  // for (i = 0, media = 0.0; fscanf(ficha, "%s", dni) == 1; i++)    
+  // {
+  //   fscanf(ficha, "%d", &modelo);
+  //   fscanf(ficha, "%lf", &nota);
+  //   media += nota;
+  // }
 
-  printf("\nLa nota media es = %.2lf\n\n", media / i);
+  // printf("\nLa nota media es = %.2lf\n\n", media / i);
 
   fclose(ficha);
 
