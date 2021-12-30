@@ -2547,9 +2547,11 @@ int main(void)
 {
   FILE  *ficha;
   Notas *notas;
-  int    i, contador1, contador2 = 0;
+
+  int    i;
   double media1;
   double media2;
+  static int contador1, contador2 = 0;
 
   notas = (Notas *)malloc(sizeof(Notas));
   memset(notas, 0, sizeof(Notas));
@@ -2563,7 +2565,7 @@ int main(void)
     return (-1);
   }
 
-  for (i = 0, media1, media2 = 0.0; fscanf(ficha, "%d", &notas->estudiante) == 1; i++)    
+  for (i = 0; fscanf(ficha, "%d", &notas->estudiante) == 1; i++)    
   {
     fscanf(ficha, "%d", &notas->modelo);
     fscanf(ficha, "%d", &notas->aciertos);
@@ -2587,7 +2589,7 @@ int main(void)
 
   printf("\nLa nota media del modelo 1 es = %.3lf\n",
           media1 / contador1);
-  printf("\nLa nota media del modelo 2 es = %.3lf\n\n",
+  printf("La nota media del modelo 2 es = %.3lf\n\n",
           media2 / contador2);
 
   fclose(ficha);
