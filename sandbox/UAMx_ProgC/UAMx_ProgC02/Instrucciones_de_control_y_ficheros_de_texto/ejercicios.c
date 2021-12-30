@@ -2724,10 +2724,10 @@ int main(void)
 {
   FILE     *fEntrada, *fListado;
   Notas    notas[TAM];
-  Listados listados[TAM];
+  // Listados listados[TAM];
   char     entrada[TAM_NOMBRE] = "calificaciones.txt";
   char     listado[TAM_NOMBRE] = "listado.txt";
-  int      i, j;
+  int      nota, i, j;
 
   if ((fEntrada = fopen(entrada, "r")) == NULL)
   {
@@ -2735,32 +2735,65 @@ int main(void)
     return (-1);
   }
 
-  // if ((fListado = fopen(listado, "r")) == NULL)
-  // {
-  //   printf("Error abriendo el archivo %s.\n", listado);
-  //   return (-1);
-  // }
-
-
-  for (i = 0; fscanf(fListado, "%d", &notas[i].estudiante) == 1; i++)    
+  if ((fListado = fopen(listado, "w")) == NULL)
   {
-    fscanf(fListado, "%d", &notas[i].modelo);
-    fscanf(fListado, "%d", &notas[i].aciertos);
-    fscanf(fListado, "%d", &notas[i].fallos);
-    fscanf(fListado, "%d", &notas[i].blancos);
-    fscanf(fListado, "%lf", &notas[i].calificacion);    
+    printf("Error abriendo el archivo %s.\n", listado);
+    return (-1);
   }
 
-    // if (notas->modelo == 1)
-    // {
-    //   media1 += notas->calificacion;
-    //   contador1++;
-    // }
-    // else if (notas->modelo == 2)
-    // {
-    //   media2 += notas->calificacion;
-    //   contador2++;
-    // }
+
+  for (i = 0; fscanf(fEntrada, "%d", &notas[i].estudiante) == 1; i++)    
+  {
+    fscanf(fEntrada, "%d", &notas[i].modelo);
+    fscanf(fEntrada, "%d", &notas[i].aciertos);
+    fscanf(fEntrada, "%d", &notas[i].fallos);
+    fscanf(fEntrada, "%d", &notas[i].blancos);
+    fscanf(fEntrada, "%lf", &notas[i].calificacion);
+    nota = (int)notas[i].calificacion;
+
+    switch (nota)
+    {
+      case (nota < 5): 
+       
+        fprintf(fListado, "%d %.3lf %s\n",
+                notas[i].estudiante, notas[i].calificacion,
+                *(calificacion + Suspenso));
+        break;
+
+      case ((nota >= 5) && (nota < 7)):
+
+        fprintf(fListado, "%d %.3lf %s\n",
+                notas[i].estudiante, notas[i].calificacion,
+                *(calificacion + Aprobado));
+        break;
+
+      case ((nota >= 7) && (nota < 9)):
+
+        fprintf(fListado, "%d %.3lf %s\n",
+                notas[i].estudiante, notas[i].calificacion,
+                *(calificacion + Notable));
+        break;
+
+      case ((nota >= 9) && (nota < 10)):
+
+        fprintf(fListado, "%d %.3lf %s\n",
+                notas[i].estudiante, notas[i].calificacion,
+                *(calificacion + Sobresaliente));
+        break;
+
+      case (nota == 10):
+
+        fprintf(fListado, "%d %.3lf %s\n",
+                notas[i].estudiante, notas[i].calificacion,
+                *(calificacion + Matricula));
+        break;
+      
+      default:
+
+        printf("Error.");
+
+    }
+  }
 
   fclose(fListado);
   fclose(fEntrada);
