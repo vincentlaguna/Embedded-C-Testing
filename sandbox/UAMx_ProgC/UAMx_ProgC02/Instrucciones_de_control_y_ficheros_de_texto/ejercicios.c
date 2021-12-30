@@ -2490,7 +2490,7 @@ int main(void)
     return (-1);
   }
 
-  for (i = 0, media = 0.0; fscanf(ficha, "%s %d %lf", dni, &modelo, &nota) == 3); i++)    
+  for (i = 0, media = 0.0; fscanf(ficha, "%s %d %lf", dni, &modelo, &nota) == 3; i++)    
   {
     media += nota;
   }
