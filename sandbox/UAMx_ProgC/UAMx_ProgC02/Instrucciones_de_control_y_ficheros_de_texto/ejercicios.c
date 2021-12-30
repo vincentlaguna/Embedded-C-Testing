@@ -2653,32 +2653,33 @@ int main(void)
 
 
 /*************** Ejercicio 4.2 ***************/
-Escribe un programa que lea el archivo de 
-calificaciones y genere un nuevo archivo 
-llamado listado.txt que contenga una línea
-por estudiante con la siguiente información: 
-DNI, calificación numérica y 
-calificación alfabética.
+// Escribe un programa que lea el archivo de 
+// calificaciones y genere un nuevo archivo 
+// llamado listado.txt que contenga una línea
+// por estudiante con la siguiente información: 
+// DNI, calificación numérica y 
+// calificación alfabética.
 
-La calificación alfabética será:
+// La calificación alfabética será:
 
-Suspenso si la nota es menor que 5.
-Aprobado si la nota es mayor o igual que 5 y 
-menor que 7.
-Notable si la nota es mayor o igual que 7 y 
-menor que 9.
-Sobresaliente si la nota es mayor o igual que
-9 y menor que 10.
-Matrícula si la nota es igual a 10.
-Las dos primeras filas del archivo generado
-salida serán:
+// Suspenso si la nota es menor que 5.
+// Aprobado si la nota es mayor o igual que 5 y 
+// menor que 7.
+// Notable si la nota es mayor o igual que 7 y 
+// menor que 9.
+// Sobresaliente si la nota es mayor o igual que
+// 9 y menor que 10.
+// Matrícula si la nota es igual a 10.
+// Las dos primeras filas del archivo generado
+// salida serán:
 
-02289512 8.095 notable
-02667819 3.810 suspenso
+// 02289512 8.095 notable
+// 02667819 3.810 suspenso
 
 #include  <stdio.h>
 
-#define   TAM 256
+#define   TAM        256
+#define   TAM_NOMBRE 32
 
 typedef   struct 
 {
@@ -2699,7 +2700,7 @@ typedef   struct
   int     dni;
   double  calif_num;
 
-} Listado;
+} Listados;
 
 static const char *const calificacion[] =
 {
@@ -2721,38 +2722,48 @@ enum
 
 int main(void)
 {
-  FILE    *ficha, *listado;
-  Notas   notas[TAM];
-  Listado listado[TAM];
+  FILE     *fEntrada, *fListado;
+  Notas    notas[TAM];
+  Listados listados[TAM];
+  char     entrada[TAM_NOMBRE] = "calificaciones.txt";
+  char     listado[TAM_NOMBRE] = "listado.txt";
+  int      i, j;
 
-  ficha = fopen("notas1.txt", "r");
-
-  if (ficha == NULL)
+  if ((fEntrada = fopen(entrada, "r")) == NULL)
   {
-    printf("Error abriendo el archivo.\n");
+    printf("Error abriendo el archivo %s.\n", entrada);
     return (-1);
   }
 
-  for (i = 0; fscanf(ficha, "%d", &notas->estudiante) == 1; i++)    
+  // if ((fListado = fopen(listado, "r")) == NULL)
+  // {
+  //   printf("Error abriendo el archivo %s.\n", listado);
+  //   return (-1);
+  // }
+
+
+  for (i = 0; fscanf(fListado, "%d", &notas[i].estudiante) == 1; i++)    
   {
-    fscanf(ficha, "%d", &notas->modelo);
-    fscanf(ficha, "%d", &notas->aciertos);
-    fscanf(ficha, "%d", &notas->fallos);
-    fscanf(ficha, "%d", &notas->blancos);
-    fscanf(ficha, "%lf", &notas->calificacion);    
-    
-    if (notas->modelo == 1)
-    {
-      media1 += notas->calificacion;
-      contador1++;
-    }
-    else if (notas->modelo == 2)
-    {
-      media2 += notas->calificacion;
-      contador2++;
-    }
-    
+    fscanf(fListado, "%d", &notas[i].modelo);
+    fscanf(fListado, "%d", &notas[i].aciertos);
+    fscanf(fListado, "%d", &notas[i].fallos);
+    fscanf(fListado, "%d", &notas[i].blancos);
+    fscanf(fListado, "%lf", &notas[i].calificacion);    
   }
+
+    // if (notas->modelo == 1)
+    // {
+    //   media1 += notas->calificacion;
+    //   contador1++;
+    // }
+    // else if (notas->modelo == 2)
+    // {
+    //   media2 += notas->calificacion;
+    //   contador2++;
+    // }
+
+  fclose(fListado);
+  fclose(fEntrada);
 
   return(0);
 }
