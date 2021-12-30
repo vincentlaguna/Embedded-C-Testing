@@ -2693,15 +2693,6 @@ typedef   struct
 
 } Notas;
 
-typedef   struct
-{
-  /* data */
-  char    calif_alf[TAM];
-  int     dni;
-  double  calif_num;
-
-} Listados;
-
 static const char *const calificacion[] =
 {
   "Suspenso",
@@ -2724,7 +2715,6 @@ int main(void)
 {
   FILE     *fEntrada, *fListado;
   Notas    notas[TAM];
-  // Listados listados[TAM];
   char     entrada[TAM_NOMBRE] = "calificaciones.txt";
   char     listado[TAM_NOMBRE] = "listado.txt";
   int      i, j;
@@ -2778,7 +2768,6 @@ int main(void)
               *(calificacion + Matricula));
     else
       printf("Error.");
-      
   }
 
   fclose(fListado);
