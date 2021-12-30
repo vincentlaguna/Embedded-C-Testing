@@ -2471,7 +2471,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // 4. Archivos de Texto
 #include  <stdio.h>
 
@@ -2502,6 +2502,36 @@ int main(void)
   fclose(ficha);
 
   return(0);  
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.1 ***************/
+// Escribe un programa que lea este archivo 
+// de texto, que contiene los resultados de las 
+// calificaciones de un examen tipo test. C
+// ada línea se compone de: identificador del 
+// estudiante, modelo, número de aciertos, n
+// úmero de fallos, número de respuestas 
+// en blanco y calificación.
+
+// Tras la lectura, tendrá que calcular por 
+// separado la nota media de los 
+// estudiantes del modelo 1 y del modelo 2.
+
+// Según el fichero notas.txt especificado, 
+// esta sería la salida del programa:
+
+// La nota media del modelo 1 es: 7.235
+// La nota media del modelo 2 es: 7.170
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
 }
 
 /*********************************************/
