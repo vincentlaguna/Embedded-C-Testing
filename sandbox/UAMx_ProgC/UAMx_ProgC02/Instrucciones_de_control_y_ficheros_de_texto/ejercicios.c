@@ -2652,7 +2652,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.2 ***************/
+/*************** Ejercicio 4.2 ***************
 // Escribe un programa que lea el archivo de 
 // calificaciones y genere un nuevo archivo 
 // llamado listado.txt que contenga una línea
