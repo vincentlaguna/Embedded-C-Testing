@@ -2528,11 +2528,12 @@ int main(void)
 
 #include  <stdio.h>
 #include  <stdlib.h>
+#include  <string.h>
 
 typedef struct 
 {
   // Datos
-  int estudiantes;
+  int estudiante;
   int modelo;
   int aciertos;
   int fallos;
@@ -2544,10 +2545,14 @@ typedef struct
 
 int main(void)
 {
-  FILE *ficha;
+  FILE  *ficha;
   Notas *notas;
+  int    i;
+  double media;
 
   notas = (Notas *)malloc(sizeof(Notas));
+  memset(notas, 0, sizeof(Notas));
+
 
   ficha = fopen("notas1.txt", "r");
 
@@ -2557,14 +2562,19 @@ int main(void)
     return (-1);
   }
 
-  // for (i = 0, media = 0.0; fscanf(ficha, "%s", dni) == 1; i++)    
-  // {
-  //   fscanf(ficha, "%d", &modelo);
-  //   fscanf(ficha, "%lf", &nota);
-  //   media += nota;
-  // }
+  for (i = 0, media = 0.0; fscanf(ficha, "%d", &notas->estudiante) == 1; i++)    
+  {
+    fscanf(ficha, "%d", &notas->modelo);
+    fscanf(ficha, "%d", &notas->aciertos);
+    fscanf(ficha, "%d", &notas->fallos);
+    fscanf(ficha, "%d", &notas->blancos);
+    fscanf(ficha, "%lf", &notas->calificacion);    
+    
+    media += notas->calificacion;
+  }
 
-  // printf("\nLa nota media es = %.2lf\n\n", media / i);
+
+  printf("\nLa nota media de %d estudiantes es = %.3lf\n\n", i, media / i);
 
   fclose(ficha);
 
