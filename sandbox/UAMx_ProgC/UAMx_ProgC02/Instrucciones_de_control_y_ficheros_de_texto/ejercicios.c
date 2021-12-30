@@ -2605,8 +2605,6 @@ int main(void)
 // 4. Escribiendo a una ficha
 
 #include  <stdio.h>
-#include  <stdlib.h>
-#include  <string.h>
 
 #define   NUM_ESTUD 3
 #define   MAX_DNI   10
@@ -2623,18 +2621,16 @@ typedef struct
 int main(void)
 {
   FILE  *ficha;
-  Notas *notas;
+  Notas  notas[NUM_ESTUD] = 
+  {
+    { "96545675Z", 1, 4.34 },
+    { "96345645D", 1, 7.2 },
+    { "94236532G", 2, 6.56 }
+  };
 
   int    i;
-  double media1;
-  double media2;
-  static int contador1, contador2 = 0;
 
-  notas = (Notas *)malloc(sizeof(Notas));
-  memset(notas, 0, sizeof(Notas));
-
-
-  ficha = fopen("notas1.txt", "r");
+  ficha = fopen("escrito.txt", "w");
 
   if (ficha == NULL)
   {
@@ -2642,32 +2638,11 @@ int main(void)
     return (-1);
   }
 
-  for (i = 0; fscanf(ficha, "%d", &notas->estudiante) == 1; i++)    
+  for (i = 0; i < NUM_ESTUD; i++)    
   {
-    fscanf(ficha, "%d", &notas->modelo);
-    fscanf(ficha, "%d", &notas->aciertos);
-    fscanf(ficha, "%d", &notas->fallos);
-    fscanf(ficha, "%d", &notas->blancos);
-    fscanf(ficha, "%lf", &notas->calificacion);    
-    
-    if (notas->modelo == 1)
-    {
-      media1 += notas->calificacion;
-      contador1++;
-    }
-    else if (notas->modelo == 2)
-    {
-      media2 += notas->calificacion;
-      contador2++;
-    }
-    
+    fprintf(ficha, "%s %d %.2lf\n",
+            notas[i].dni, notas[i].modelo, notas[i].nota);
   }
-
-
-  printf("\nLa nota media del modelo 1 es = %.3lf\n",
-          media1 / contador1);
-  printf("La nota media del modelo 2 es = %.3lf\n\n",
-          media2 / contador2);
 
   fclose(ficha);
 
