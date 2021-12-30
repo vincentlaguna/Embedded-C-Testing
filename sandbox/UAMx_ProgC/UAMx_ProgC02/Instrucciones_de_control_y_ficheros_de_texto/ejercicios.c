@@ -2473,6 +2473,7 @@ int main(void)
 
 /*********************************************
 // 4. Archivos de Texto
+
 #include  <stdio.h>
 
 int main(void)
@@ -2507,7 +2508,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.1 ***************/
+/*************** Ejercicio 4.1 ***************
 // Escribe un programa que lea este archivo 
 // de texto, que contiene los resultados de las 
 // calificaciones de un examen tipo test. 
@@ -2542,6 +2543,82 @@ typedef struct
 
 } Notas;
 
+
+int main(void)
+{
+  FILE  *ficha;
+  Notas *notas;
+
+  int    i;
+  double media1;
+  double media2;
+  static int contador1, contador2 = 0;
+
+  notas = (Notas *)malloc(sizeof(Notas));
+  memset(notas, 0, sizeof(Notas));
+
+
+  ficha = fopen("notas1.txt", "r");
+
+  if (ficha == NULL)
+  {
+    printf("Error abriendo el archivo.\n");
+    return (-1);
+  }
+
+  for (i = 0; fscanf(ficha, "%d", &notas->estudiante) == 1; i++)    
+  {
+    fscanf(ficha, "%d", &notas->modelo);
+    fscanf(ficha, "%d", &notas->aciertos);
+    fscanf(ficha, "%d", &notas->fallos);
+    fscanf(ficha, "%d", &notas->blancos);
+    fscanf(ficha, "%lf", &notas->calificacion);    
+    
+    if (notas->modelo == 1)
+    {
+      media1 += notas->calificacion;
+      contador1++;
+    }
+    else if (notas->modelo == 2)
+    {
+      media2 += notas->calificacion;
+      contador2++;
+    }
+    
+  }
+
+
+  printf("\nLa nota media del modelo 1 es = %.3lf\n",
+          media1 / contador1);
+  printf("La nota media del modelo 2 es = %.3lf\n\n",
+          media2 / contador2);
+
+  fclose(ficha);
+
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// 4. Escribiendo a una ficha
+
+#include  <stdio.h>
+#include  <stdlib.h>
+#include  <string.h>
+
+#define   NUM_ESTUD 3
+#define   MAX_DNI   10
+
+typedef struct 
+{
+  // Datos
+  char    dni[10];
+  int     modelo;
+  double  nota;
+
+} Notas;
 
 int main(void)
 {
