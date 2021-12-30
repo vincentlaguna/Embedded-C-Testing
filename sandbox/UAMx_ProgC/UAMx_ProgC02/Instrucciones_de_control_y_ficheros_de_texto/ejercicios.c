@@ -2510,10 +2510,10 @@ int main(void)
 /*************** Ejercicio 4.1 ***************/
 // Escribe un programa que lea este archivo 
 // de texto, que contiene los resultados de las 
-// calificaciones de un examen tipo test. C
-// ada línea se compone de: identificador del 
-// estudiante, modelo, número de aciertos, n
-// úmero de fallos, número de respuestas 
+// calificaciones de un examen tipo test. 
+// Cada línea se compone de: identificador del 
+// estudiante, modelo, número de aciertos, 
+// número de fallos, número de respuestas 
 // en blanco y calificación.
 
 // Tras la lectura, tendrá que calcular por 
@@ -2528,9 +2528,40 @@ int main(void)
 
 #include  <stdio.h>
 
+struct 
+{
+  int estudiantes;
+  int modelo;
+  int aciertos;
+  int fallos;
+  int blancos;
+  double calificacion;
+} ;
+
+
 int main(void)
 {
- 
+  FILE *ficha;
+  
+  ficha = fopen("notas1.txt", "r");
+
+  if (ficha == NULL)
+  {
+    printf("Error abriendo el archivo.\n");
+    return (-1);
+  }
+
+  for (i = 0, media = 0.0; fscanf(ficha, "%s", dni) == 1; i++)    
+  {
+    fscanf(ficha, "%d", &modelo);
+    fscanf(ficha, "%lf", &nota);
+    media += nota;
+  }
+
+  printf("\nLa nota media es = %.2lf\n\n", media / i);
+
+  fclose(ficha);
+
   return(0);
 }
 
