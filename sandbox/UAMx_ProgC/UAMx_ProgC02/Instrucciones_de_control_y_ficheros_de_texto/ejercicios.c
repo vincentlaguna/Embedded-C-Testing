@@ -2816,7 +2816,7 @@ int main(void)
   char     entrada[TAM_NOMBRE] = "calificaciones.txt";
   char     listado[TAM_NOMBRE] = "listado.txt";
   int      i, j;
-  int      nota = 0;
+  double   media;
 
   if ((fEntrada = fopen(entrada, "r")) == NULL)
   {
