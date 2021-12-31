@@ -2780,17 +2780,18 @@ int main(void)
 
 
 /*************** Ejercicio 4.3 ***************
-Escribe un programa que utilice los datos 
-generados en el fichero listado.txt,
-que has creado en el ejercicio anterior, 
-para calcular la nota media.
+// Escribe un programa que utilice los datos 
+// generados en el fichero listado.txt,
+// que has creado en el ejercicio anterior, 
+// para calcular la nota media.
 
-Esta se guardará al final de ese mismo
-fichero, listado.txt, sin borrar el 
-contenido que ya tiene:
+// Esta se guardará al final de ese mismo
+// fichero, listado.txt, sin borrar el 
+// contenido que ya tiene:
 
-[Información previa]
-La nota media es: 7.20
+// [Información previa]
+// La nota media es: 7.20
+
 #include  <stdio.h>
 
 int main(void)
