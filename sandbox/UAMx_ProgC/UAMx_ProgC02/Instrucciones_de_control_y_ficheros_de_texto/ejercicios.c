@@ -2838,7 +2838,7 @@ int main(void)
     fscanf(fEntrada, "%d", &notas[i].fallos);
     fscanf(fEntrada, "%d", &notas[i].blancos);
     fscanf(fEntrada, "%lf", &notas[i].calificacion);
-    nota = (int)notas[i].calificacion;
+    media += notas[i].calificacion;
 
     if (nota < 5) 
       fprintf(fListado, "%d %.3lf %s\n",
