@@ -2840,33 +2840,33 @@ int main(void)
     fscanf(fEntrada, "%lf", &notas[i].calificacion);
     media += notas[i].calificacion;
 
-    if (nota < 5) 
-      fprintf(fListado, "%d %.3lf %s\n",
-              notas[i].estudiante, notas[i].calificacion,
-              *(calificacion + Suspenso));
+  //   if (nota < 5) 
+  //     fprintf(fListado, "%d %.3lf %s\n",
+  //             notas[i].estudiante, notas[i].calificacion,
+  //             *(calificacion + Suspenso));
 
-    else if ((nota >= 5) && (nota < 7))
-      fprintf(fListado, "%d %.3lf %s\n",
-              notas[i].estudiante, notas[i].calificacion,
-              *(calificacion + Aprobado));
+  //   else if ((nota >= 5) && (nota < 7))
+  //     fprintf(fListado, "%d %.3lf %s\n",
+  //             notas[i].estudiante, notas[i].calificacion,
+  //             *(calificacion + Aprobado));
 
-    else if ((nota >= 7) && (nota < 9))
-      fprintf(fListado, "%d %.3lf %s\n",
-              notas[i].estudiante, notas[i].calificacion,
-              *(calificacion + Notable));
+  //   else if ((nota >= 7) && (nota < 9))
+  //     fprintf(fListado, "%d %.3lf %s\n",
+  //             notas[i].estudiante, notas[i].calificacion,
+  //             *(calificacion + Notable));
 
-    else if ((nota >= 9) && (nota < 10))
-      fprintf(fListado, "%d %.3lf %s\n",
-              notas[i].estudiante, notas[i].calificacion,
-              *(calificacion + Sobresaliente));
+  //   else if ((nota >= 9) && (nota < 10))
+  //     fprintf(fListado, "%d %.3lf %s\n",
+  //             notas[i].estudiante, notas[i].calificacion,
+  //             *(calificacion + Sobresaliente));
 
-    else if (nota == 10)
-      fprintf(fListado, "%d %.3lf %s\n",
-              notas[i].estudiante, notas[i].calificacion,
-              *(calificacion + Matricula));
-    else
-      printf("Error.");
-  }
+  //   else if (nota == 10)
+  //     fprintf(fListado, "%d %.3lf %s\n",
+  //             notas[i].estudiante, notas[i].calificacion,
+  //             *(calificacion + Matricula));
+  //   else
+  //     printf("Error.");
+  // }
 
   fclose(fListado);
   fclose(fEntrada);
