@@ -2868,6 +2868,12 @@ int main(void)
   //     printf("Error.");
   // }
 
+  // for (i = 0; i < NUM_ESTUD; i++)    
+  // {
+  //   fprintf(ficha, "%s %d %.2lf\n",
+  //           notas[i].dni, notas[i].modelo, notas[i].nota);
+  // }
+
   fclose(fListado);
   fclose(fEntrada);
 
