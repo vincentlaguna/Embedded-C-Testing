@@ -2815,8 +2815,8 @@ int main(void)
   Notas    notas[TAM];
   char     entrada[TAM_NOMBRE] = "calificaciones.txt";
   char     listado[TAM_NOMBRE] = "listado.txt";
-  int      i, j;
-  double   media;
+  int      i;
+  double   media, mediaFinal;
 
   if ((fEntrada = fopen(entrada, "r")) == NULL)
   {
@@ -2839,43 +2839,11 @@ int main(void)
     fscanf(fEntrada, "%d", &notas[i].blancos);
     fscanf(fEntrada, "%lf", &notas[i].calificacion);
     media += notas[i].calificacion;
+  }
 
-  //   if (nota < 5) 
-  //     fprintf(fListado, "%d %.3lf %s\n",
-  //             notas[i].estudiante, notas[i].calificacion,
-  //             *(calificacion + Suspenso));
-
-  //   else if ((nota >= 5) && (nota < 7))
-  //     fprintf(fListado, "%d %.3lf %s\n",
-  //             notas[i].estudiante, notas[i].calificacion,
-  //             *(calificacion + Aprobado));
-
-  //   else if ((nota >= 7) && (nota < 9))
-  //     fprintf(fListado, "%d %.3lf %s\n",
-  //             notas[i].estudiante, notas[i].calificacion,
-  //             *(calificacion + Notable));
-
-  //   else if ((nota >= 9) && (nota < 10))
-  //     fprintf(fListado, "%d %.3lf %s\n",
-  //             notas[i].estudiante, notas[i].calificacion,
-  //             *(calificacion + Sobresaliente));
-
-  //   else if (nota == 10)
-  //     fprintf(fListado, "%d %.3lf %s\n",
-  //             notas[i].estudiante, notas[i].calificacion,
-  //             *(calificacion + Matricula));
-  //   else
-  //     printf("Error.");
-  // }
-
-  // for (i = 0; i < NUM_ESTUD; i++)    
-  // {
-  //   fprintf(ficha, "%s %d %.2lf\n",
-  //           notas[i].dni, notas[i].modelo, notas[i].nota);
-  // }
-
-  fclose(fListado);
-  fclose(fEntrada);
+  mediaFinal = media / i; 
+  fclose(fListado)
+  fclose(fEntrada)
 
   return(0);
 }
