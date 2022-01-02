@@ -2842,8 +2842,9 @@ int main(void)
   }
 
   mediaFinal = media / i; 
-  fclose(fListado)
-  fclose(fEntrada)
+
+  fclose(fListado);
+  fclose(fEntrada);
 
   return(0);
 }
