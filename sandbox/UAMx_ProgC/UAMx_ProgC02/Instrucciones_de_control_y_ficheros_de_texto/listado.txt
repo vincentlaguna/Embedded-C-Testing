@@ -69,3 +69,5 @@
 71307312 5.476 Aprobado
 76660945 10.000 Matrícula
 77155569 7.857 Notable
+La Nota Media es: 7.20
+
