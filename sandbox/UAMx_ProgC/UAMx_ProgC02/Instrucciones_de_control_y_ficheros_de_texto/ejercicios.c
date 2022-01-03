@@ -2841,7 +2841,9 @@ int main(void)
     media += notas[i].calificacion;
   }
 
-  mediaFinal = media / i; 
+  mediaFinal = media / i;
+
+  printf("\nLa Nota Media es: %.2lf\n\n", mediaFinal); 
 
   fclose(fListado);
   fclose(fEntrada);
