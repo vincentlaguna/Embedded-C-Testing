@@ -2845,8 +2845,6 @@ int main(void)
 
   fprintf(fListado, "La Nota Media es: %.2lf\n\n", mediaFinal);
 
-  // printf("\nLa Nota Media es: %.2lf\n\n", mediaFinal); 
-
   fclose(fListado);
   fclose(fEntrada);
 
