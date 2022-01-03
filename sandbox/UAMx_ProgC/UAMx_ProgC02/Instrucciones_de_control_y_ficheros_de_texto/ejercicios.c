@@ -2843,6 +2843,8 @@ int main(void)
 
   mediaFinal = media / i;
 
+  fprintf(fListado, "La Nota Media es: %.2lf\n\n", mediaFinal);
+
   printf("\nLa Nota Media es: %.2lf\n\n", mediaFinal); 
 
   fclose(fListado);
