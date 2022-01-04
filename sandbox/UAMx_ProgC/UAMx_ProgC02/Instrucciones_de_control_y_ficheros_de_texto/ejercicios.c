@@ -2902,6 +2902,52 @@ int main(void)
 
 #include  <stdio.h>
 
+#define   TAM       3
+#define   TAM_CAD   32
+
+
+typedef struct 
+{
+  // Datos
+  char    nombre[10];
+  int     modelo;
+  int     nota;
+
+} Notas;
+
+int main(void)
+{
+  FILE  *ficha;
+  Notas  notas[NUM_ESTUD] = 
+  {
+    { "96545675Z", 1, 4.34 },
+    { "96345645D", 1, 7.2 },
+    { "94236532G", 2, 6.56 }
+  };
+
+  int    i;
+
+  ficha = fopen("escrito.txt", "w");
+
+  if (ficha == NULL)
+  {
+    printf("Error abriendo el archivo.\n");
+    return (-1);
+  }
+
+  for (i = 0; i < NUM_ESTUD; i++)    
+  {
+    fprintf(ficha, "%s %d %.2lf\n",
+            notas[i].dni, notas[i].modelo, notas[i].nota);
+  }
+
+  fclose(ficha);
+
+  return(0);
+}
+
+#include  <stdio.h>
+
 #define   TAM        256
 #define   TAM_NOMBRE 32
 
