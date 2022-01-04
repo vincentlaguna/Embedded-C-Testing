@@ -2905,17 +2905,17 @@ int main(void)
 #define   TAM        256
 #define   TAM_NOMBRE 32
 
-typedef   struct 
-{
-  // Datos
-  int     estudiante;
-  int     modelo;
-  int     aciertos;
-  int     fallos;
-  int     blancos;
-  double  calificacion;
+// typedef   struct 
+// {
+//   // Datos
+//   int     estudiante;
+//   int     modelo;
+//   int     aciertos;
+//   int     fallos;
+//   int     blancos;
+//   double  calificacion;
 
-} Notas;
+// } Notas;
 
 int main(void)
 {
