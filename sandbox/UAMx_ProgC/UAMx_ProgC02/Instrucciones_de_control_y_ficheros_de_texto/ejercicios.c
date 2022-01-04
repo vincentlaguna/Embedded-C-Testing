@@ -2909,9 +2909,9 @@ int main(void)
 typedef struct 
 {
   // Datos
-  char    nombre[10];
-  int     modelo;
-  int     nota;
+  char    nombre[TAM_CAD];
+  int     num;
+  int     num1;
 
 } Notas;
 
