@@ -2779,7 +2779,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.3 ***************/
+/*************** Ejercicio 4.3 ***************
 // Escribe un programa que utilice los datos 
 // generados en el fichero listado.txt,
 // que has creado en el ejercicio anterior, 
@@ -2791,6 +2791,114 @@ int main(void)
 
 // [Información previa]
 // La nota media es: 7.20
+
+#include  <stdio.h>
+
+#define   TAM        256
+#define   TAM_NOMBRE 32
+
+typedef   struct 
+{
+  // Datos
+  int     estudiante;
+  int     modelo;
+  int     aciertos;
+  int     fallos;
+  int     blancos;
+  double  calificacion;
+
+} Notas;
+
+int main(void)
+{
+  FILE     *fEntrada, *fListado;
+  Notas    notas[TAM];
+  char     entrada[TAM_NOMBRE] = "calificaciones.txt";
+  char     listado[TAM_NOMBRE] = "listado.txt";
+  int      i;
+  double   media, mediaFinal;
+
+  if ((fEntrada = fopen(entrada, "r")) == NULL)
+  {
+    printf("Error abriendo el archivo %s.\n", entrada);
+    return (-1);
+  }
+
+  if ((fListado = fopen(listado, "a")) == NULL)
+  {
+    printf("Error abriendo el archivo %s.\n", listado);
+    return (-1);
+  }
+
+
+  for (i = 0; fscanf(fEntrada, "%d", &notas[i].estudiante) == 1; i++)    
+  {
+    fscanf(fEntrada, "%d", &notas[i].modelo);
+    fscanf(fEntrada, "%d", &notas[i].aciertos);
+    fscanf(fEntrada, "%d", &notas[i].fallos);
+    fscanf(fEntrada, "%d", &notas[i].blancos);
+    fscanf(fEntrada, "%lf", &notas[i].calificacion);
+    media += notas[i].calificacion;
+  }
+
+  mediaFinal = media / i;
+
+  fprintf(fListado, "La Nota Media es: %.2lf\n\n", mediaFinal);
+
+  fclose(fListado);
+  fclose(fEntrada);
+
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.4 ***************/
+Partiendo de un fichero compuesto por un 
+número indeterminado de filas de 3 columnas, 
+cada una de ellas formada por
+ una cadena y 2 enteros:
+
+Elena 25 43
+Juan 5 8
+Sonia 2 1
+Julia 3 17
+
+Escribe un programa que solicite el nombre 
+del archivo con dichos datos y una letra 
+inicial. A continuación, ha de leer los datos
+del fichero (teniendo en cuenta que el fichero 
+puede tener cualquier número de líneas) 
+y escribir al final del mismo cuántos nombres 
+empiezan por la letra solicitada. 
+El programa acabará informando si el resultado 
+se ha escrito correctamente en el fichero 
+o si este no se ha podido abrir.
+
+Este es un ejemplo de ejecución basado en los 
+datos anteriores (Elena, Juan, Sonia, Julia), 
+que hemos guardado en datos.txt:
+
+Teclea el nombre del archivo: datas.txt
+Teclea una inicial: J
+Error: no se pudo abrir el fichero datas.txt.
+
+Y otro:
+
+Teclea el nombre del archivo: datos.txt
+Teclea una inicial: J
+El resultado se ha guardado correctamente 
+al final del fichero datos.txt
+
+En este segundo ejemplo, el fichero datos.txt 
+habrá quedado de la forma:
+
+Elena 25 43
+Juan 5 8
+Sonia 2 1
+Julia 3 17
+Hay 2 nombres que empiezan por la inicial J.
 
 #include  <stdio.h>
 
