@@ -2902,8 +2902,8 @@ int main(void)
 
 #include  <stdio.h>
 
-#define   TAM       3
-#define   TAM_CAD   32
+#define   TAM        256
+#define   TAM_CAD    32
 
 
 typedef struct 
@@ -2915,65 +2915,22 @@ typedef struct
 
 } Notas;
 
-int main(void)
-{
-  FILE  *ficha;
-  Notas  notas[NUM_ESTUD] = 
-  {
-    { "96545675Z", 1, 4.34 },
-    { "96345645D", 1, 7.2 },
-    { "94236532G", 2, 6.56 }
-  };
 
-  int    i;
-
-  ficha = fopen("escrito.txt", "w");
-
-  if (ficha == NULL)
-  {
-    printf("Error abriendo el archivo.\n");
-    return (-1);
-  }
-
-  for (i = 0; i < NUM_ESTUD; i++)    
-  {
-    fprintf(ficha, "%s %d %.2lf\n",
-            notas[i].dni, notas[i].modelo, notas[i].nota);
-  }
-
-  fclose(ficha);
-
-  return(0);
-}
-
-#include  <stdio.h>
-
-#define   TAM        256
-#define   TAM_NOMBRE 32
 
 int main(void)
 {
-  FILE     *fdatos, *fdata;
+  FILE     *fdatos;
   Notas    notas[TAM];
-  char     datos[TAM_NOMBRE] = "datos.txt";
-  char     data[TAM_NOMBRE] = "data.txt";
+  char     datos[TAM_CAD] = "datos.txt";
   int      i;
-  double   media, mediaFinal;
 
-  if ((fEntrada = fopen(entrada, "r")) == NULL)
+  if ((fEntrada = fopen(datos, "r")) == NULL)
   {
     printf("Error abriendo el archivo %s.\n", datos);
     return (-1);
   }
 
-  if ((fListado = fopen(listado, "a")) == NULL)
-  {
-    printf("Error abriendo el archivo %s.\n", data);
-    return (-1);
-  }
-
-
-  for (i = 0; fscanf(fEntrada, "%d", &notas[i].estudiante) == 1; i++)    
+  for (i = 0; fscanf(fdatos, "%d", &notas[i].estudiante) == 1; i++)    
   {
     fscanf(fEntrada, "%d", &notas[i].modelo);
     fscanf(fEntrada, "%d", &notas[i].aciertos);
@@ -2992,6 +2949,9 @@ int main(void)
 
   return(0);
 }
+
+
+
 
 /*********************************************/
 
