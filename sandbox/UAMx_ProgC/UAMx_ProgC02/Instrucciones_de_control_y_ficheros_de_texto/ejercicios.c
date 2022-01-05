@@ -2953,10 +2953,10 @@ int main(void)
 
 int main(void)
 {
-  FILE     *fEntrada, *fListado;
+  FILE     *fdatos, *fdata;
   Notas    notas[TAM];
-  char     entrada[TAM_NOMBRE] = "calificaciones.txt";
-  char     listado[TAM_NOMBRE] = "listado.txt";
+  char     entrada[TAM_NOMBRE] = "datos.txt";
+  char     listado[TAM_NOMBRE] = "data.txt";
   int      i;
   double   media, mediaFinal;
 
