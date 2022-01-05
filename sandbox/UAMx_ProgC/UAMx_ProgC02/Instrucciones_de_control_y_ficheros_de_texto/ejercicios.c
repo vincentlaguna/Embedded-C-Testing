@@ -2951,18 +2951,6 @@ int main(void)
 #define   TAM        256
 #define   TAM_NOMBRE 32
 
-// typedef   struct 
-// {
-//   // Datos
-//   int     estudiante;
-//   int     modelo;
-//   int     aciertos;
-//   int     fallos;
-//   int     blancos;
-//   double  calificacion;
-
-// } Notas;
-
 int main(void)
 {
   FILE     *fEntrada, *fListado;
