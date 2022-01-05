@@ -2915,8 +2915,6 @@ typedef struct
 
 } Notas;
 
-
-
 int main(void)
 {
   FILE     *fdatos;
@@ -2930,28 +2928,26 @@ int main(void)
     return (-1);
   }
 
+  for (i = 0; i < NUM_ESTUD; i++)    
+  {
+    fprintf(ficha, "%s %d %.2lf\n",
+            notas[i].dni, notas[i].modelo, notas[i].nota);
+  }
+
   for (i = 0; fscanf(fdatos, "%d", &notas[i].estudiante) == 1; i++)    
   {
-    fscanf(fEntrada, "%d", &notas[i].modelo);
-    fscanf(fEntrada, "%d", &notas[i].aciertos);
-    fscanf(fEntrada, "%d", &notas[i].fallos);
-    fscanf(fEntrada, "%d", &notas[i].blancos);
-    fscanf(fEntrada, "%lf", &notas[i].calificacion);
+    fscanf(fdatos, "%d", &notas[i].modelo);
+    fscanf(fdatos, "%d", &notas[i].aciertos);
+    fscanf(fdatos, "%d", &notas[i].fallos);
     media += notas[i].calificacion;
   }
 
   mediaFinal = media / i;
 
-  fprintf(fListado, "La Nota Media es: %.2lf\n\n", mediaFinal);
-
   fclose(fListado);
-  fclose(fEntrada);
 
   return(0);
 }
-
-
-
 
 /*********************************************/
 
