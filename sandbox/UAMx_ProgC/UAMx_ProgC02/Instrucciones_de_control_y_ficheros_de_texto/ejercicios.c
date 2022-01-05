@@ -2955,20 +2955,20 @@ int main(void)
 {
   FILE     *fdatos, *fdata;
   Notas    notas[TAM];
-  char     entrada[TAM_NOMBRE] = "datos.txt";
-  char     listado[TAM_NOMBRE] = "data.txt";
+  char     datos[TAM_NOMBRE] = "datos.txt";
+  char     data[TAM_NOMBRE] = "data.txt";
   int      i;
   double   media, mediaFinal;
 
   if ((fEntrada = fopen(entrada, "r")) == NULL)
   {
-    printf("Error abriendo el archivo %s.\n", entrada);
+    printf("Error abriendo el archivo %s.\n", datos);
     return (-1);
   }
 
   if ((fListado = fopen(listado, "a")) == NULL)
   {
-    printf("Error abriendo el archivo %s.\n", listado);
+    printf("Error abriendo el archivo %s.\n", data);
     return (-1);
   }
 
