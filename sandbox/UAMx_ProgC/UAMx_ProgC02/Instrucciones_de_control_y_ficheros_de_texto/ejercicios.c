@@ -2917,11 +2917,18 @@ typedef struct
 
 int main(void)
 {
-  FILE     *fdatos;
-  Notas    notas[TAM];
-  char     datos[TAM_CAD] = "datos.txt";
-  int      i;
+  FILE  *fdatos;
+  int   i;    
+  char  inicial;
+  Notas notas[TAM];
+  char  datos[TAM_CAD];
 
+  printf("\nTeclea el nombre del archivo: ");
+  scanf("%s", datos);
+
+  printf("Teclea una inicial: ");
+  scanf("%c", &inicial);
+  
   if ((fEntrada = fopen(datos, "r")) == NULL)
   {
     printf("Error abriendo el archivo %s.\n", datos);
@@ -2935,6 +2942,8 @@ int main(void)
     // logic
   }
 
+  printf("El resultado se ha guardado correctamente al final del fichero %s\n", datos);
+  
   fclose(fdatos);
 
   return(0);
