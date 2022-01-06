@@ -2939,7 +2939,11 @@ int main(void)
   {
     fscanf(fdatos, "%d", &notas[i].num);
     fscanf(fdatos, "%d", &notas[i].num1);
-    // logic
+    
+    while (notas[i].nombre)
+    {
+      if ()
+    }
   }
 
   printf("El resultado se ha guardado correctamente al final del fichero %s\n", datos);
