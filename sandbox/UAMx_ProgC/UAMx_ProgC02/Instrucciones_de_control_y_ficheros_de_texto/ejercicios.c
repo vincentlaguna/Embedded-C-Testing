@@ -2943,14 +2943,14 @@ int main(void)
     
     while (notas[i].nombre)
     {
-      if (nombre[0] == inicial)
+      if (notas.nombre[0] == inicial)
       contador++;
     }
   }
 
   fprintf(fFicha, "Hay 2 nombres que empiezan por la inicial %c.\n", inicial);
 
-  printf("El resultado se ha guardado correctamente al final del fichero %s\n", fFicha);
+  printf("El resultado se ha guardado correctamente al final del fichero %s\n", ficha);
   
   fclose(fFicha);
 
