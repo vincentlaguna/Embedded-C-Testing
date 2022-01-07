@@ -2948,6 +2948,8 @@ int main(void)
     }
   }
 
+  fprintf(fFicha, "Hay 2 nombres que empiezan por la inicial %c.\n", inicial);
+
   printf("El resultado se ha guardado correctamente al final del fichero %s\n", fFicha);
   
   fclose(fFicha);
