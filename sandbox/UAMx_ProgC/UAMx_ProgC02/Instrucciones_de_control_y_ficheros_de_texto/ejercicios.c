@@ -2925,16 +2925,16 @@ int main(void)
   char  ficha[TAM_CAD];
 
   printf("\nTeclea el nombre del archivo: ");
-  scanf("%s", ficha);
+  gets("%s", ficha);
 
-  printf("Teclea una inicial: ");
-  scanf("%c", &inicial);
-  
   if ((fFicha = fopen(ficha, "r")) == NULL)
   {
     printf("Error: no se pudo abrir el fichero %s.\n", ficha);
     return (-1);
   }
+
+  printf("Teclea una inicial: ");
+  scanf("%c", &inicial);
 
  for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
   {
