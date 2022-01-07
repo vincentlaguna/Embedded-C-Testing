@@ -2936,14 +2936,14 @@ int main(void)
     return (-1);
   }
 
- for (i = 0; fscanf(fFicha, "%s %d %d", &notas[i].nombre) == 1; i++)    
+ for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
   {
     fscanf(fFicha, "%d", &notas[i].num);
     fscanf(fFicha, "%d", &notas[i].num1);
     
     while (notas[i].nombre)
     {
-      if (notas.nombre[0] == inicial)
+      if (notas[i].nombre[0] == inicial)
       contador++;
     }
   }
