@@ -2919,22 +2919,22 @@ int main(void)
 {
   FILE  *fFicha;
   int   i;
-  int   contador;    
-  char  inicial;
+  static int contador;    
+  char  inicial = 'J';
   Notas notas[TAM];
-  char  ficha[TAM_CAD];
+  char  ficha[] = "datos.txt";
 
-  printf("\nTeclea el nombre del archivo: ");
-  gets("%s", ficha);
+  // printf("\nTeclea el nombre del archivo: ");
+  // gets("%s", ficha);
 
-  if ((fFicha = fopen(ficha, "r")) == NULL)
+  if ((fFicha = fopen(ficha, "a")) == NULL)
   {
     printf("Error: no se pudo abrir el fichero %s.\n", ficha);
     return (-1);
   }
 
-  printf("Teclea una inicial: ");
-  scanf("%c", &inicial);
+  // printf("Teclea una inicial: ");
+  // scanf("%c", &inicial);
 
  for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
   {
@@ -2944,11 +2944,13 @@ int main(void)
     while (notas[i].nombre)
     {
       if (notas[i].nombre[0] == inicial)
-      contador++;
+      {
+        contador++;
+      }
     }
   }
 
-  fprintf(fFicha, "Hay 2 nombres que empiezan por la inicial %c.\n", inicial);
+  fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
 
   printf("El resultado se ha guardado correctamente al final del fichero %s\n", ficha);
   
