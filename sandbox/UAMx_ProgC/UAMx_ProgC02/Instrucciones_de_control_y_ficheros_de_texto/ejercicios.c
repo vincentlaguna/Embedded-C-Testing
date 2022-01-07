@@ -2917,29 +2917,29 @@ typedef struct
 
 int main(void)
 {
-  FILE  *fdatos;
+  FILE  *fFicha;
   int   i;
   int   contador;    
   char  inicial;
   Notas notas[TAM];
-  char  datos[TAM_CAD];
+  char  ficha[TAM_CAD];
 
   printf("\nTeclea el nombre del archivo: ");
-  scanf("%s", datos);
+  scanf("%s", ficha);
 
   printf("Teclea una inicial: ");
   scanf("%c", &inicial);
   
-  if ((fEntrada = fopen(datos, "r")) == NULL)
+  if ((fFicha = fopen(ficha, "r")) == NULL)
   {
-    printf("Error abriendo el archivo %s.\n", datos);
+    printf("Error: no se pudo abrir el fichero %s.\n", ficha);
     return (-1);
   }
 
- for (i = 0; fscanf(fdatos, "%s %d %d", &notas[i].nombre) == 1; i++)    
+ for (i = 0; fscanf(fFicha, "%s %d %d", &notas[i].nombre) == 1; i++)    
   {
-    fscanf(fdatos, "%d", &notas[i].num);
-    fscanf(fdatos, "%d", &notas[i].num1);
+    fscanf(fFicha, "%d", &notas[i].num);
+    fscanf(fFicha, "%d", &notas[i].num1);
     
     while (notas[i].nombre)
     {
@@ -2948,9 +2948,9 @@ int main(void)
     }
   }
 
-  printf("El resultado se ha guardado correctamente al final del fichero %s\n", datos);
+  printf("El resultado se ha guardado correctamente al final del fichero %s\n", fFicha);
   
-  fclose(fdatos);
+  fclose(fFicha);
 
   return(0);
 }
