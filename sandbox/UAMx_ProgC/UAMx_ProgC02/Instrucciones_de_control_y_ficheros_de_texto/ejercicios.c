@@ -2918,7 +2918,8 @@ typedef struct
 int main(void)
 {
   FILE  *fdatos;
-  int   i;    
+  int   i;
+  int   contador;    
   char  inicial;
   Notas notas[TAM];
   char  datos[TAM_CAD];
@@ -2942,7 +2943,8 @@ int main(void)
     
     while (notas[i].nombre)
     {
-      if ()
+      if (nombre[0] == inicial)
+      contador++;
     }
   }
 
