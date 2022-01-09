@@ -2936,12 +2936,12 @@ int main(void)
   // printf("Teclea una inicial: ");
   // scanf("%c", &inicial);
 
-//  for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
+ for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
   {
     fscanf(fFicha, "%d", &notas[i].num);
     fscanf(fFicha, "%d", &notas[i].num1);
     
-    while (notas[i].nombre != NULL)
+    for// (notas[i].nombre != NULL)
     {
       if (notas[i].nombre[0] == inicial)
       {
