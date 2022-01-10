@@ -2942,7 +2942,7 @@ int main(void)
     fscanf(fFicha, "%d", &notas[i].num);
     fscanf(fFicha, "%d", &notas[i].num1);
     
-    for (int j = 0; j < strlen(notas[i].nombre); j++);// (notas[i].nombre != NULL)
+    while (notas[i].nombre != NULL)
     {
       if (notas[i].nombre[0] == inicial)
       {
