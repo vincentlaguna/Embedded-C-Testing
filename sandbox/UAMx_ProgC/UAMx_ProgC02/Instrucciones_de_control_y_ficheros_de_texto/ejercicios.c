@@ -2901,6 +2901,7 @@ int main(void)
 // Hay 2 nombres que empiezan por la inicial J.
 
 #include  <stdio.h>
+#include  <string.h>
 
 #define   TAM        256
 #define   TAM_CAD    32

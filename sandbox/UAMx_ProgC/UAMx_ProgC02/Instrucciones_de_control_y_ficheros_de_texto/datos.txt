@@ -4,3 +4,4 @@ Sonia 2 1
 Julia 3 17
 Hay 0 nombres que empiezan por la inicial J.
 Hay 0 nombres que empiezan por la inicial J.
+Hay 0 nombres que empiezan por la inicial J.
