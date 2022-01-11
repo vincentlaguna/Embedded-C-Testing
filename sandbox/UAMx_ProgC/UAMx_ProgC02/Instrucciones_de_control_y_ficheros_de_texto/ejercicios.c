@@ -2942,15 +2942,17 @@ int main(void)
     fscanf(fFicha, "%d", &notas[i].num);
     fscanf(fFicha, "%d", &notas[i].num1);
     
-    while (notas[i].nombre != NULL)
-    {
-      if (notas[i].nombre[0] == inicial)
-      {
-        fprintf(fFicha, "%d\n", i);
-        contador++;
-      }
-    }
+    // while (notas[i].nombre != NULL)
+    // {
+    //   if (notas[i].nombre[0] == inicial)
+    //   {
+    //     fprintf(fFicha, "%d\n", i);
+    //     contador++;
+    //   }
+    // }
   }
+
+  printf("\nnombre 1: %s\n", notas[0].nombre);
 
   fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
 
