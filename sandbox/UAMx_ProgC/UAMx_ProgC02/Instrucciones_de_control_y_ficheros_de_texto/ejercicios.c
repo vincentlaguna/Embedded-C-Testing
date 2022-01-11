@@ -2922,7 +2922,7 @@ int main(void)
   int   i;
   static int contador;    
   char  inicial = 'J';
-  Notas notas[TAM];
+  static Notas notas[TAM];
   char  ficha[] = "datos.txt";
 
   // printf("\nTeclea el nombre del archivo: ");
@@ -2954,7 +2954,7 @@ int main(void)
 
   printf("\nnombre 1: %s\n", notas[0].nombre);
 
-  fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
+  // fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
 
   printf("El resultado se ha guardado correctamente al final del fichero %s\n", ficha);
   
