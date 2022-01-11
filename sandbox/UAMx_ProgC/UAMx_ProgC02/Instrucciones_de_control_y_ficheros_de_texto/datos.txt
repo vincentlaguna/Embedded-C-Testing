@@ -2,4 +2,3 @@ Elena 25 43
 Juan 5 8
 Sonia 2 1
 Julia 3 17
-Hay 0 nombres que empiezan por la inicial J.

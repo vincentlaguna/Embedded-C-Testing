@@ -2952,6 +2952,15 @@ int main(void)
     // }
   }
 
+  while (notas[0].nombre != NULL)
+    {
+      if (notas[0].nombre[0] == inicial)
+      {
+        printf("\nnombre 1: %s\n", notas[0].nombre);
+        // fprintf(fFicha, "%d\n", i);
+        contador++;
+      }
+    }
   printf("\nnombre 1: %s\n", notas[0].nombre);
 
   // fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
