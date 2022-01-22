@@ -2918,15 +2918,30 @@ typedef struct
 
 int main(void)
 {
-  FILE  *fFicha;
-  int   i;
+  FILE    *fFicha;
+  int     i;
   static int contador;    
-  char  inicial = 'J';
-  static Notas notas[TAM];
-  char  ficha[] = "datos.txt";
+  char    inicial;
+  static  Notas notas[TAM];
+  char    ficha[TAM_CAD];
 
-  // printf("\nTeclea el nombre del archivo: ");
-  // gets("%s", ficha);
+  printf("\nTeclea el nombre del archivo: ");
+  fgets("%s", ficha);
+
+  if ((fFicha = fopen(ficha, "r")) == NULL)
+  {
+    printf("Error: no se pudo abrir el fichero %s.\n", ficha);
+    return (-1);
+  }
+
+  printf("Teclea una inicial: ");
+  scanf("%c", &inicial);
+
+ for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
+  {
+    fscanf(fFicha, "%d", &notas[i].num);
+    fscanf(fFicha, "%d", &notas[i].num1);
+  }
 
   if ((fFicha = fopen(ficha, "a")) == NULL)
   {
@@ -2934,36 +2949,19 @@ int main(void)
     return (-1);
   }
 
-  // printf("Teclea una inicial: ");
-  // scanf("%c", &inicial);
-
- for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
+  while (i > 0)
   {
-    fscanf(fFicha, "%d", &notas[i].num);
-    fscanf(fFicha, "%d", &notas[i].num1);
-    
-    // while (notas[i].nombre != NULL)
-    // {
-    //   if (notas[i].nombre[0] == inicial)
-    //   {
-    //     fprintf(fFicha, "%d\n", i);
-    //     contador++;
-    //   }
-    // }
-  }
 
-  while (notas[0].nombre != NULL)
+    if (notas[i].nombre[0] == 'J')
     {
-      if (notas[0].nombre[0] == inicial)
-      {
-        printf("\nnombre 1: %s\n", notas[0].nombre);
-        // fprintf(fFicha, "%d\n", i);
-        contador++;
-      }
+      fprintf(fFicha, "%c ", notas[i].nombre[0]);
+      contador++;
+      i--;
     }
-  printf("\nnombre 1: %s\n", notas[0].nombre);
-
-  // fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
+    i--;
+  }
+  
+  fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
 
   printf("El resultado se ha guardado correctamente al final del fichero %s\n", ficha);
   
