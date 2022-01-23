@@ -2926,7 +2926,7 @@ int main(void)
   char    ficha[TAM_CAD];
 
   printf("\nTeclea el nombre del archivo: ");
-  fgets("%s", ficha);
+  ("%s", ficha);
 
   if ((fFicha = fopen(ficha, "r")) == NULL)
   {
