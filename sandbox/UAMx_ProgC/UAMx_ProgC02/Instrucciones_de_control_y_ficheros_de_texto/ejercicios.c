@@ -2935,7 +2935,7 @@ int main(void)
   }
 
   printf("Teclea una inicial: ");
-  scanf("%c", &inicial);
+  // scanf("%c", &inicial); FIX ME
 
  for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
   {
