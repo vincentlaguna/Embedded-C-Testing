@@ -2953,9 +2953,9 @@ int main(void)
   while (i > 0)
   {
 
-    if (notas[i].nombre[0] == 'J')
+    if (notas[i].nombre[0] == inicial)
     {
-      fprintf(fFicha, "%c ", notas[i].nombre[0]);
+      // fprintf(fFicha, "%c ", notas[i].nombre[0]);
       contador++;
       i--;
     }
