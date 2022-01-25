@@ -3049,17 +3049,19 @@ typedef struct
 
 int main(void)
 {
-  FILE    *fFicha;
-  int     i;
-  static int contador;    
-  char    inicial;
-  static  Notas notas[TAM];
-  char    ficha[TAM_CAD];
+  FILE        *fFichaE;
+  FILE        *fFichaS;
+  int         i;   
+  char        inicial;
+  static      Notas notas[TAM];
+  char        fichaE[TAM_CAD];
+  char        fichaS[TAM_CAD];
+  static int  contador;
 
   printf("\nTeclea el nombre del archivo: ");
   gets(fichaE);
 
-  if ((fFicha = fopen(ficha, "r")) == NULL)
+  if ((fFichaE = fopen(fichaE, "r")) == NULL)
   {
     printf("Error: no se pudo abrir el fichero %s.\n", fichaE);
     return (-1);
@@ -3068,7 +3070,7 @@ int main(void)
   printf("\nTeclea el nombre del archivo de salida: ");
   gets(fichaS);
 
-  if ((fFicha = fopen(ficha, "r")) == NULL)
+  if ((fFichaS = fopen(fichaS, "w")) == NULL)
   {
     printf("Error: no se pudo abrir el fichero %s.\n", fichaS);
     return (-1);
@@ -3084,11 +3086,11 @@ int main(void)
     fscanf(fFicha, "%d", &notas[i].num1);
   }
 
-  if ((fFicha = fopen(ficha, "a")) == NULL)
-  {
-    printf("Error: no se pudo abrir el fichero %s.\n", ficha);
-    return (-1);
-  }
+  // if ((fFicha = fopen(ficha, "a")) == NULL)
+  // {
+  //   printf("Error: no se pudo abrir el fichero %s.\n", ficha);
+  //   return (-1);
+  // }
 
   while (i > 0)
   {
