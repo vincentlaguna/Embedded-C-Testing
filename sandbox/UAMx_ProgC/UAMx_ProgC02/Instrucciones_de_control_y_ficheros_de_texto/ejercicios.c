@@ -3052,10 +3052,10 @@ int main(void)
   FILE        *fFichaE;
   FILE        *fFichaS;
   int         i;   
-  char        inicial;
-  static      Notas notas[TAM];
   char        fichaE[TAM_CAD];
   char        fichaS[TAM_CAD];
+  static      Notas notas[TAM];
+  static int  limite;
   static int  contador;
 
   printf("\nTeclea el nombre del archivo: ");
@@ -3076,7 +3076,7 @@ int main(void)
     return (-1);
   } 
 
-  printf("Teclea una inicial: ");
+  printf("Teclea el valor del límite: ");
   scanf("%c", &inicial);
   
 
@@ -3106,7 +3106,7 @@ int main(void)
   
   fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
 
-  printf("El resultado se ha guardado correctamente al final del fichero %s\n", ficha);
+  printf("Se ha creado correctamente el fichero nombres.txt con los resultados\n");
   
   fclose(fFicha);
 
