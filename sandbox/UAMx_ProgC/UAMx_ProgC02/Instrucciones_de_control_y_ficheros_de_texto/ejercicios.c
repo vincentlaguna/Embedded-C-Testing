@@ -3077,7 +3077,7 @@ int main(void)
   } 
 
   printf("Teclea el valor del límite: ");
-  scanf("%c", &inicial);
+  scanf("%d", &limite);
   
 
  for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
