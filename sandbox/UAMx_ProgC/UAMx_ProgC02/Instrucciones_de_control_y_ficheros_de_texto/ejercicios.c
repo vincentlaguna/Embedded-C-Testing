@@ -3057,13 +3057,22 @@ int main(void)
   char    ficha[TAM_CAD];
 
   printf("\nTeclea el nombre del archivo: ");
-  gets(ficha);
+  gets(fichaE);
 
   if ((fFicha = fopen(ficha, "r")) == NULL)
   {
-    printf("Error: no se pudo abrir el fichero %s.\n", ficha);
+    printf("Error: no se pudo abrir el fichero %s.\n", fichaE);
     return (-1);
   }
+
+  printf("\nTeclea el nombre del archivo de salida: ");
+  gets(fichaS);
+
+  if ((fFicha = fopen(ficha, "r")) == NULL)
+  {
+    printf("Error: no se pudo abrir el fichero %s.\n", fichaS);
+    return (-1);
+  } 
 
   printf("Teclea una inicial: ");
   scanf("%c", &inicial);
