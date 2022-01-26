@@ -3080,30 +3080,19 @@ int main(void)
   scanf("%d", &limite);
   
 
- for (i = 0; fscanf(fFicha, "%s", notas[i].nombre) == 1; i++)    
+ for (i = 0; fscanf(fFichaE, "%s", notas[i].nombre) == 1; i++)    
   {
     fscanf(fFicha, "%d", &notas[i].num);
     fscanf(fFicha, "%d", &notas[i].num1);
   }
 
-  // if ((fFicha = fopen(ficha, "a")) == NULL)
-  // {
-  //   printf("Error: no se pudo abrir el fichero %s.\n", ficha);
-  //   return (-1);
-  // }
-
-  while (i > 0)
+  if (notas[i].nombre[0] == inicial)
   {
-
-    if (notas[i].nombre[0] == inicial)
-    {
-      // fprintf(fFicha, "%c ", notas[i].nombre[0]);
-      contador++;
-      i--;
-    }
+    // fprintf(fFicha, "%c ", notas[i].nombre[0]);
+    contador++;
     i--;
   }
-  
+
   fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
 
   printf("Se ha creado correctamente el fichero nombres.txt con los resultados\n");
