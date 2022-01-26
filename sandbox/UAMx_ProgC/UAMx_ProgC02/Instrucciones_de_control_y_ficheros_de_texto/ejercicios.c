@@ -3086,18 +3086,17 @@ int main(void)
     fscanf(fFicha, "%d", &notas[i].num1);
   }
 
-  if (notas[i].nombre[0] == inicial)
+  for (;i > 0; i++)
   {
-    // fprintf(fFicha, "%c ", notas[i].nombre[0]);
-    contador++;
-    i--;
-  }
-
-  fprintf(fFicha, "Hay %d nombres que empiezan por la inicial %c.\n", contador, inicial);
+    if (notas[i].num + notas[i].num1 < limite)
+    {
+      fprintf(fFichaS, "%s\n", notas[i].nombre);
+    }
 
   printf("Se ha creado correctamente el fichero nombres.txt con los resultados\n");
   
-  fclose(fFicha);
+  fclose(fFichaE);
+  fclose(fFichaS);
 
   return(0);
 }
