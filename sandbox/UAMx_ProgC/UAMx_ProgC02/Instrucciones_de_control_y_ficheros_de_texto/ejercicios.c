@@ -3076,7 +3076,7 @@ int main(void)
     return (-1);
   } 
 
-  printf("Teclea el valor del límite: ");
+  printf("\nTeclea el valor del límite: ");
   scanf("%d", &limite);
   
 
@@ -3086,12 +3086,13 @@ int main(void)
     fscanf(fFichaE, "%d", &notas[i].num1);
   }
 
-  for (;i > 0; i--)
+  while (i > 0)
   {
     if ((notas[i].num + notas[i].num1) < limite)
     {
       fprintf(fFichaS, "%s\n", notas[i].nombre);
     }
+    i--;
   }
   printf("Se ha creado correctamente el fichero nombres.txt con los resultados\n");
   
