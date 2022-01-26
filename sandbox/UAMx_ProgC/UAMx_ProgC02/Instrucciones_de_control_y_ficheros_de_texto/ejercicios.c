@@ -3084,17 +3084,22 @@ int main(void)
   {
     fscanf(fFichaE, "%d", &notas[i].num);
     fscanf(fFichaE, "%d", &notas[i].num1);
-  }
 
-  while (i > 0)
-  {
-    if ((notas[i].num + notas[i].num1) < limite)
+    if (((notas[i].num) + (notas[i].num1)) < limite)
     {
       fprintf(fFichaS, "%s\n", notas[i].nombre);
     }
-    i--;
   }
-  printf("Se ha creado correctamente el fichero nombres.txt con los resultados\n");
+
+  // while (i > 0)
+  // {
+  //   if (((notas[i].num) + (notas[i].num1)) < limite)
+  //   {
+  //     fprintf(fFichaS, "%s\n", notas[i].nombre);
+  //   }
+  //   i--;
+  // }
+  printf("\nSe ha creado correctamente el fichero nombres.txt con los resultados\n");
   
   fclose(fFichaE);
   fclose(fFichaS);

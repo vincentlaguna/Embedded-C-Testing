@@ -1,4 +1,3 @@
-Elena 25 43
-Juan 5 8
-Sonia 2 1
-Julia 3 17
+Elena 5 3
+Juan 24 8
+Sonia 12 1
