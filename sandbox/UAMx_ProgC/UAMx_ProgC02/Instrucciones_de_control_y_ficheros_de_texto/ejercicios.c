@@ -2974,7 +2974,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 4.1 *****************/
+/**************** Prueba 4.1 *****************
 // Partiendo de un fichero compuesto por un número
 // indeterminado de filas de 3 columnas, 
 // cada una de ellas formada por una cadena 
@@ -3109,7 +3109,41 @@ int main(void)
 
 /*********************************************/
 
+
+/*********************************************/
+// Simple Hash Map example
+
+#include  <stdio.h>
+#include  <string.h>
+
+#define   TABLE_SIZE
+
+typedef   struct
+{
+  unsigned int age;
+  char     name[MAX_LEN];
+
+} Person;
+
+unsigned int hash(Person *person);
+
+int main(void)
+{
+  Person hash_table[TABLE_SIZE];
+
+
+
+  return(0);
+}
+
+unsigned int hash(Person *person)
+{
+  
+}
+
+/*********************************************/
  
+
 /*************** Ejercicio 0.0 ***************
 
 #include  <stdio.h>
