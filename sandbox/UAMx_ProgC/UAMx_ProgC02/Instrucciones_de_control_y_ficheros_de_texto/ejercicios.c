@@ -3138,7 +3138,7 @@ int main(void)
 
 unsigned int hash(Person *person)
 {
-  
+  return 5;
 }
 
 /*********************************************/
