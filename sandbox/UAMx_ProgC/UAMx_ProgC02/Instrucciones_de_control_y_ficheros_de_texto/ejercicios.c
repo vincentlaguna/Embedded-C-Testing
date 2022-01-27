@@ -3114,30 +3114,39 @@ int main(void)
 // Simple Hash Map example
 
 #include  <stdio.h>
+#include  <stdlib.h>
+#include  <stdint.h>
+#include  <stdbool.h>
 #include  <string.h>
 
-#define   TABLE_SIZE
+#define   MAX_LEN     256
+#define   TABLE_SIZE  10
 
 typedef   struct
 {
-  unsigned int age;
-  char     name[MAX_LEN];
-
+   char   name[MAX_LEN];
+   int    age;
+ 
 } Person;
 
-unsigned int hash(Person *person);
+unsigned int hash(char *person);
 
 int main(void)
 {
-  Person hash_table[TABLE_SIZE];
-
-
+  // Person hash_table[TABLE_SIZE];
+  printf("Name_A = %u\n", hash("Name_A"));
+  printf("Name_B = %u\n", hash("Name_B"));
+  printf("Name_C = %u\n", hash("Name_C"));
+  printf("Name_D = %u\n", hash("Name_D"));
+  printf("Name_E = %u\n", hash("Name_E"));
+  printf("Name_F = %u\n", hash("Name_F"));
 
   return(0);
 }
 
-unsigned int hash(Person *person)
+unsigned int hash(char *person)
 {
+  int length = strnlen(person, MAX_LEN);
   return 5;
 }
 
