@@ -3129,9 +3129,10 @@ typedef   struct
  
 } Person;
 
+bool init_hash_table(void);
 unsigned int hash(char *person);
 
-Person =  hash_table[TABLE_SIZE];
+Person hash_table[TABLE_SIZE];
 
 int main(void)
 {
@@ -3158,6 +3159,14 @@ unsigned int hash(char *person)
   }
 
   return hs;
+}
+
+bool init_hash_table(void)
+{
+  for (int i = 0; i < TABLE_SIZE; i++)
+  {
+    hash_table[i] = NULL;
+  }
 }
 
 /*********************************************/
