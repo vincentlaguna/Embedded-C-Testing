@@ -3147,6 +3147,8 @@ int main(void)
 unsigned int hash(char *person)
 {
   int length = strnlen(person, MAX_LEN);
+
+  // for () here
   return 5;
 }
 
