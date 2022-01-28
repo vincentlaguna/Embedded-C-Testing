@@ -3146,10 +3146,15 @@ int main(void)
 
 unsigned int hash(char *person)
 {
+  unsigned int hs;
   int length = strnlen(person, MAX_LEN);
 
-  // for () here
-  return 5;
+  for (int i = 0; i < length; i++)
+  {
+    hs += i * length;
+  }
+
+  return hs;
 }
 
 /*********************************************/
