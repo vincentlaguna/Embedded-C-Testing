@@ -2974,7 +2974,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 4.1 *****************
+/**************** Prueba 4.1 *****************/
 // Partiendo de un fichero compuesto por un número
 // indeterminado de filas de 3 columnas, 
 // cada una de ellas formada por una cadena 
@@ -3091,14 +3091,6 @@ int main(void)
     }
   }
 
-  // while (i > 0)
-  // {
-  //   if (((notas[i].num) + (notas[i].num1)) < limite)
-  //   {
-  //     fprintf(fFichaS, "%s\n", notas[i].nombre);
-  //   }
-  //   i--;
-  // }
   printf("\nSe ha creado correctamente el fichero nombres.txt con los resultados\n");
   
   fclose(fFichaE);
@@ -3110,7 +3102,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Simple Hash Map example
 
 #include  <stdio.h>
@@ -3244,6 +3236,21 @@ Person  *ht_lookup(char *person)
   if (hash_table[index] != NULL && strncmp(hash_table[index]->name, person, TABLE_SIZE) == 0)
   {
     return hash_table[index];
+  }
+  else
+  {
+    return NULL;
+  }
+}
+
+Person  *ht_delete(char *person)
+{
+
+  int index = hash(person);
+
+  if (hash_table[index] != NULL && strncmp(hash_table[index]->name, person, TABLE_SIZE) == 0)
+  {
+    hash_table[index] = NULL;
   }
   else
   {
