@@ -3129,9 +3129,10 @@ typedef   struct
  
 } Person;
 
-void  init_hash_table(void);
-void  print_table(void);
-bool  ht_insert(Person *person);
+void         init_hash_table(void);
+void         print_table(void);
+bool         ht_insert(Person *person);
+Person       *ht_lookup(char *person);
 unsigned int hash(char *person);
 
 Person *hash_table[TABLE_SIZE];
@@ -3139,21 +3140,39 @@ Person *hash_table[TABLE_SIZE];
 int main(void)
 {
   init_hash_table();
-  print_table();
-
-  Person person_0 = {person_0.name = "Name_A", age = 30};
-  Person person_1 = {person_1.name = "Name_B", age = 40};
-  Person person_2 = {person_2.name = "Name_C", age = 50};
+  
+  Person person_0 = {"Name_A", 30};
+  Person person_1 = {"Name_B", 40};
+  Person person_2 = {"Name_C", 50};
 
   ht_insert(&person_0);
   ht_insert(&person_1);
   ht_insert(&person_2);
-  // printf("Name_A = %u\n", hash("Name_A"));
-  // printf("Name_B = %u\n", hash("Name_B"));
-  // printf("Name_C = %u\n", hash("Name_C"));
-  // printf("Name_D = %u\n", hash("Name_D"));
-  // printf("Name_E = %u\n", hash("Name_E"));
-  // printf("Name_F = %u\n", hash("Name_F"));
+  
+  print_table();
+  
+  Person *tmp = ht_lookup("Name_D");
+
+  if (tmp == NULL)
+  {
+    printf("\nNot Found...\n");
+  }
+  else
+  {
+    printf("\nFound %s.\n\n", tmp->name);
+  }
+
+  tmp = ht_lookup("Name_B");
+
+  if (tmp == NULL)
+  {
+    printf("\nNot Found...\n");
+  }
+  else
+  {
+    printf("\nFound %s.\n\n", tmp->name);
+  }
+
 
   return(0);
 }
@@ -3202,6 +3221,7 @@ void init_hash_table(void)
 
 void print_table(void)
 {
+  printf("Start->\n");
   for (int i = 0; i < TABLE_SIZE; i++)
   {
     if (hash_table[i] == NULL)
@@ -3212,6 +3232,22 @@ void print_table(void)
     {
       printf("\t%i\t%s\n", i, hash_table[i]->name);
     }
+  }
+  printf("<-End\n");
+}
+
+Person  *ht_lookup(char *person)
+{
+
+  int index = hash(person);
+
+  if (hash_table[index] != NULL && strncmp(hash_table[index]->name, person, TABLE_SIZE) == 0)
+  {
+    return hash_table[index];
+  }
+  else
+  {
+    return NULL;
   }
 }
 
