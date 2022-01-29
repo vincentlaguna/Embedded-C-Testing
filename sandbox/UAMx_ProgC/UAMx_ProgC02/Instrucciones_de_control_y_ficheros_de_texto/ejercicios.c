@@ -3131,14 +3131,23 @@ typedef   struct
 
 void  init_hash_table(void);
 void  print_table(void);
+bool  ht_insert(Person *person);
 unsigned int hash(char *person);
 
 Person *hash_table[TABLE_SIZE];
 
 int main(void)
 {
-  // Person hash_table[TABLE_SIZE];
+  init_hash_table();
   print_table();
+
+  Person person_0 = {person_0.name = "Name_A", age = 30};
+  Person person_1 = {person_1.name = "Name_B", age = 40};
+  Person person_2 = {person_2.name = "Name_C", age = 50};
+
+  ht_insert(&person_0);
+  ht_insert(&person_1);
+  ht_insert(&person_2);
   // printf("Name_A = %u\n", hash("Name_A"));
   // printf("Name_B = %u\n", hash("Name_B"));
   // printf("Name_C = %u\n", hash("Name_C"));
@@ -3163,6 +3172,26 @@ unsigned int hash(char *person)
   return hs;
 }
 
+bool ht_insert(Person *person)
+{
+  if (person == NULL)
+  {
+    return false;
+  }
+  
+  int index = hash(person->name);
+
+  if (hash_table[index] != NULL)
+  {
+    return false;
+  }
+
+  hash_table[index] = person;
+
+  return true;
+
+}
+
 void init_hash_table(void)
 {
   for (int i = 0; i < TABLE_SIZE; i++)
@@ -3171,7 +3200,7 @@ void init_hash_table(void)
   }
 }
 
-void  print_table(void)
+void print_table(void)
 {
   for (int i = 0; i < TABLE_SIZE; i++)
   {
