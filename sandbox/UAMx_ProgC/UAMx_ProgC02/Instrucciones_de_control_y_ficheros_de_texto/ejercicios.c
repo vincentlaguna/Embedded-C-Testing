@@ -3155,8 +3155,8 @@ unsigned int hash(char *person)
 
   for (int i = 0; i < length; i++)
   {
-    hs += i * length;
-    hs = (hs * length + 1) % TABLE_SIZE;
+    hs += person[i];
+    hs = (hs * person[i]) % TABLE_SIZE;
   }
 
   return hs;
