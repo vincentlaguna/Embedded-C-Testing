@@ -3132,11 +3132,11 @@ typedef   struct
 bool init_hash_table(void);
 unsigned int hash(char *person);
 
-// Person hash_table[TABLE_SIZE];
+Person *hash_table[TABLE_SIZE];
 
 int main(void)
 {
-  Person hash_table[TABLE_SIZE];
+  // Person hash_table[TABLE_SIZE];
 
   printf("Name_A = %u\n", hash("Name_A"));
   printf("Name_B = %u\n", hash("Name_B"));
