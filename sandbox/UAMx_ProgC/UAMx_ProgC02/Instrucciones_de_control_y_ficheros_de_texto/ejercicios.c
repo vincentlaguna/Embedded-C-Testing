@@ -3129,7 +3129,8 @@ typedef   struct
  
 } Person;
 
-bool init_hash_table(void);
+void  init_hash_table(void);
+void  print_table(void);
 unsigned int hash(char *person);
 
 Person *hash_table[TABLE_SIZE];
@@ -3137,13 +3138,13 @@ Person *hash_table[TABLE_SIZE];
 int main(void)
 {
   // Person hash_table[TABLE_SIZE];
-
-  printf("Name_A = %u\n", hash("Name_A"));
-  printf("Name_B = %u\n", hash("Name_B"));
-  printf("Name_C = %u\n", hash("Name_C"));
-  printf("Name_D = %u\n", hash("Name_D"));
-  printf("Name_E = %u\n", hash("Name_E"));
-  printf("Name_F = %u\n", hash("Name_F"));
+  print_table();
+  // printf("Name_A = %u\n", hash("Name_A"));
+  // printf("Name_B = %u\n", hash("Name_B"));
+  // printf("Name_C = %u\n", hash("Name_C"));
+  // printf("Name_D = %u\n", hash("Name_D"));
+  // printf("Name_E = %u\n", hash("Name_E"));
+  // printf("Name_F = %u\n", hash("Name_F"));
 
   return(0);
 }
@@ -3162,11 +3163,26 @@ unsigned int hash(char *person)
   return hs;
 }
 
-bool init_hash_table(void)
+void init_hash_table(void)
 {
   for (int i = 0; i < TABLE_SIZE; i++)
   {
     hash_table[i] = NULL;
+  }
+}
+
+void  print_table(void)
+{
+  for (int i = 0; i < TABLE_SIZE; i++)
+  {
+    if (hash_table[i] == NULL)
+    {
+      printf("\t%i\t-----\n", i);
+    }
+    else
+    {
+      printf("\t%i\t%s\n", i, hash_table[i]->name);
+    }
   }
 }
 
