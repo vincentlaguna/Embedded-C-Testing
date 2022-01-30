@@ -3173,7 +3173,7 @@ int main(void)
   char        fichaS[TAM_CAD];
   static      Notas notas[TAM];
   static int  limite;
-  static int  contador;
+  // static int  contador;
 
   printf("\nTeclea el nombre del archivo: ");
   gets(fichaE);
