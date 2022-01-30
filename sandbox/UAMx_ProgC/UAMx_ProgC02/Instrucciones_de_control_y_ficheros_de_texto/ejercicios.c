@@ -3154,7 +3154,6 @@ int main(void)
 #define   TAM        256
 #define   TAM_CAD    32
 
-
 typedef struct 
 {
   // Datos
@@ -3167,7 +3166,7 @@ typedef struct
 int main(void)
 {
   FILE        *fFichaE;
-  FILE        *fFichaS;
+  // FILE        *fFichaS;
   int         i;   
   char        fichaE[TAM_CAD];
   char        fichaS[TAM_CAD];
@@ -3184,14 +3183,14 @@ int main(void)
     return (-1);
   }
 
-  printf("\nTeclea el nombre del archivo de salida: ");
-  gets(fichaS);
+  // printf("\nTeclea el nombre del archivo de salida: ");
+  // gets(fichaS);
 
-  if ((fFichaS = fopen(fichaS, "w")) == NULL)
-  {
-    printf("Error: no se pudo abrir el fichero %s.\n", fichaS);
-    return (-1);
-  } 
+  // if ((fFichaS = fopen(fichaS, "w")) == NULL)
+  // {
+  //   printf("Error: no se pudo abrir el fichero %s.\n", fichaS);
+  //   return (-1);
+  // } 
 
   printf("\nTeclea el valor del lÃ­mite: ");
   scanf("%d", &limite);
