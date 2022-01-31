@@ -3198,12 +3198,12 @@ int main(void)
   scanf("%d", &limite);
   
 
- for (i = 0; fscanf(fFichaE, "%d", nums[i].ent_0) == 1; i++)    
+ for (i = 0; fscanf(fFichaE, "%d", &nums[i].ent_0) == 1; i++)    
   {
     fscanf(fFichaE, "%d", &nums[i].ent_1);
     fscanf(fFichaE, "%lf", &nums[i].real);
     fscanf(fFichaE, "%d", &nums[i].ent_2);
-    fscanf(fFichaE, "%d", &nums[i].ent_2);
+    fscanf(fFichaE, "%d", &nums[i].ent_3);
 
     if (((nums[i].ent_0) + (nums[i].ent_1)) < limite)
     {
@@ -3216,7 +3216,7 @@ int main(void)
     }
   }
 
-  printf("\nSe ha creado correctamente el fichero nombres.txt con los resultados\n");
+  // printf("\nSe ha creado correctamente el fichero nombres.txt con los resultados\n");
   
   fclose(fFichaE);
   // fclose(fFichaS);
