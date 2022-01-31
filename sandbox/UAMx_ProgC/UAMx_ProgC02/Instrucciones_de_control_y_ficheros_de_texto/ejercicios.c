@@ -3189,7 +3189,7 @@ int main(void)
 
  for (i = 0; fscanf(fFichaE, "%d", &nums[i].ent_0) == 1; i++)    
   {
-    if (fscanf(fFichaE, "%d", &nums[i].ent_1) <= limite);
+    fscanf(fFichaE, "%d", &nums[i].ent_1);
     fscanf(fFichaE, "%lf", &nums[i].real);
     fscanf(fFichaE, "%d", &nums[i].ent_2);
     fscanf(fFichaE, "%d", &nums[i].ent_3);
