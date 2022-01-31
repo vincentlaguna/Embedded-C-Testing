@@ -3168,12 +3168,11 @@ typedef struct
 int main(void)
 {
   FILE        *fFichaE;
-  // FILE        *fFichaS;
   int         i;   
   char        fichaE[TAM_CAD];
-  // char        fichaS[TAM_CAD];
   static      Numeros nums[TAM];
   static int  limite;
+  static double media;
   // static int  contador;
 
   printf("\nTeclea el nombre del archivo: ");
@@ -3184,15 +3183,6 @@ int main(void)
     printf("Error: no se pudo abrir el fichero %s.\n", fichaE);
     return (-1);
   }
-
-  // printf("\nTeclea el nombre del archivo de salida: ");
-  // gets(fichaS);
-
-  // if ((fFichaS = fopen(fichaS, "w")) == NULL)
-  // {
-  //   printf("Error: no se pudo abrir el fichero %s.\n", fichaS);
-  //   return (-1);
-  // } 
 
   printf("\nTeclea un número entero: ");
   scanf("%d", &limite);
@@ -3207,19 +3197,17 @@ int main(void)
 
     if (((nums[i].ent_0) + (nums[i].ent_1)) < limite)
     {
-      // fprintf(fFichaS, "%s\n", notas[i].nombre);
       for (int j = i; j > 0; j--)
       {
-        printf("%d %d %lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
+        printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
                 nums[j].real, nums[j].ent_2, nums[j].ent_3);
       }
     }
   }
 
-  // printf("\nSe ha creado correctamente el fichero nombres.txt con los resultados\n");
+  printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
   fclose(fFichaE);
-  // fclose(fFichaS);
 
   return(0);
 }
