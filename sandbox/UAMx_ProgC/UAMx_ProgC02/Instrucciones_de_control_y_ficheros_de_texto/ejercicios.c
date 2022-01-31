@@ -3157,11 +3157,13 @@ int main(void)
 typedef struct 
 {
   // Datos
-  char    nombre[TAM_CAD];
-  int     num;
-  int     num1;
+  int     ent_0; 
+  int     ent_1;
+  int     ent_2;
+  int     ent_3;
+  double  real; 
 
-} Notas;
+} Numeros;
 
 int main(void)
 {
@@ -3169,8 +3171,8 @@ int main(void)
   // FILE        *fFichaS;
   int         i;   
   char        fichaE[TAM_CAD];
-  char        fichaS[TAM_CAD];
-  static      Notas notas[TAM];
+  // char        fichaS[TAM_CAD];
+  static      Numeros nums[TAM];
   static int  limite;
   // static int  contador;
 
