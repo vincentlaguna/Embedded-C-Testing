@@ -3208,17 +3208,10 @@ int main(void)
     fscanf(fFichaE, "%d", &nums[i].ent_2);
     fscanf(fFichaE, "%d", &nums[i].ent_3);
 
-    // if (((nums[i].ent_1) + (nums[i].ent_1)) < limite)
-    // {
-      // for (int j = i; j >= 0; j--)
-      // {
-      //   // media += nums[j].ent_1;
-      //   printf("%d.: %d %d %.2lf %d %d\n", j, nums[j].ent_0, nums[j].ent_1,
-      //           nums[j].real, nums[j].ent_2, nums[j].ent_3);
-      // }
-  }
-  // }
+    media += nums[i].ent_1;
 
+  }
+  
   for (j = 0; j < i; j++)
   {
     // media += nums[j].ent_1;
@@ -3226,7 +3219,7 @@ int main(void)
             nums[j].real, nums[j].ent_2, nums[j].ent_3);
   }
   
-  media = media / 2;
+  media = media / i;
 
   printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
