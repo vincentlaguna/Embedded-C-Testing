@@ -3186,7 +3186,7 @@ int main(void)
   printf("\nTeclea un número entero: ");
   scanf("%d", &limite);
   
-  // 25 43 3.4 5 8
+// 25 43 3.4 5 8
 // 12 3 -1.2 12 3
 // 2 7 1.3 8 4
 
@@ -3209,10 +3209,10 @@ int main(void)
 
     // if (((nums[i].ent_1) + (nums[i].ent_1)) < limite)
     // {
-      for (int j = ++i; j > 0; --j)
+      for (int j = i; j > 0; j--)
       {
         // media += nums[j].ent_1;
-        printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
+        printf("%d.: %d %d %.2lf %d %d\n", j, nums[j].ent_0, nums[j].ent_1,
                 nums[j].real, nums[j].ent_2, nums[j].ent_3);
       }
   }
