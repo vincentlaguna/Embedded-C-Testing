@@ -3194,25 +3194,32 @@ int main(void)
   //   return (-1);
   // } 
 
-  printf("\nTeclea el valor del lÃ­mite: ");
+  printf("\nTeclea un número entero: ");
   scanf("%d", &limite);
   
 
- for (i = 0; fscanf(fFichaE, "%s", notas[i].nombre) == 1; i++)    
+ for (i = 0; fscanf(fFichaE, "%d", nums[i].ent_0) == 1; i++)    
   {
-    fscanf(fFichaE, "%d", &notas[i].num);
-    fscanf(fFichaE, "%d", &notas[i].num1);
+    fscanf(fFichaE, "%d", &nums[i].ent_1);
+    fscanf(fFichaE, "%lf", &nums[i].real);
+    fscanf(fFichaE, "%d", &nums[i].ent_2);
+    fscanf(fFichaE, "%d", &nums[i].ent_2);
 
-    if (((notas[i].num) + (notas[i].num1)) < limite)
+    if (((nums[i].ent_0) + (nums[i].ent_1)) < limite)
     {
-      fprintf(fFichaS, "%s\n", notas[i].nombre);
+      // fprintf(fFichaS, "%s\n", notas[i].nombre);
+      for (int j = i; j > 0; j--)
+      {
+        printf("%d %d %lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
+                nums[j].real, nums[j].ent_2, nums[j].ent_3);
+      }
     }
   }
 
   printf("\nSe ha creado correctamente el fichero nombres.txt con los resultados\n");
   
   fclose(fFichaE);
-  fclose(fFichaS);
+  // fclose(fFichaS);
 
   return(0);
 }
