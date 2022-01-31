@@ -3186,8 +3186,21 @@ int main(void)
   printf("\nTeclea un número entero: ");
   scanf("%d", &limite);
   
+  // 25 43 3.4 5 8
+// 12 3 -1.2 12 3
+// 2 7 1.3 8 4
 
- for (i = 0; fscanf(fFichaE, "%d", &nums[i].ent_0) == 1; i++)    
+// El programa ha de solicitar el nombre del 
+// archivo con los datos, así como un valor entero. 
+// A continuación debe calcular la media de los 
+// valores de la segunda columna para los que la 
+// cuarta columna es mayor que el entero
+// introducido por teclado.
+
+// Por ejemplo, si se introduce el valor 5,
+// se calculará (3 + 7) / 2, es decir, 5.
+
+  for (i = 0; fscanf(fFichaE, "%d", &nums[i].ent_0) == 1; i++)    
   {
     fscanf(fFichaE, "%d", &nums[i].ent_1);
     fscanf(fFichaE, "%lf", &nums[i].real);
@@ -3202,7 +3215,7 @@ int main(void)
         printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
                 nums[j].real, nums[j].ent_2, nums[j].ent_3);
       }
-    }
+  }
   // }
 
   // for (int j = i; j >= 0; j--)
