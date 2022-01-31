@@ -3169,7 +3169,8 @@ int main(void)
 {
   FILE        *fFichaE;
   int         i = 0;
-  int         j = 0;   
+  int         j = 0;
+  int         x = 0;  
   char        fichaE[TAM_CAD];
   static      Numeros nums[TAM];
   static int  limite;
@@ -3207,16 +3208,18 @@ int main(void)
     fscanf(fFichaE, "%lf", &nums[i].real);
     fscanf(fFichaE, "%d", &nums[i].ent_2);
     fscanf(fFichaE, "%d", &nums[i].ent_3);
-
-    media += nums[i].ent_1;
-
   }
   
-  for (j = 0; j < i; j++)
+  for (x = 0; x < i; x++)
   {
+    for (j = 0; j < i; j++)
+    {
+      if (nums[x].ent_1)
+      printf("%d\n", nums[j].ent_2);
+    }
     // media += nums[j].ent_1;
-    printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
-            nums[j].real, nums[j].ent_2, nums[j].ent_3);
+    printf("%d %d %.2lf %d %d\n", nums[x].ent_0, nums[x].ent_1,
+            nums[x].real, nums[x].ent_2, nums[x].ent_3);
   }
   
   media = media / i;
