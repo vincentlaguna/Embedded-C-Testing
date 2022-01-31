@@ -3219,7 +3219,7 @@ int main(void)
   }
   // }
 
-  for (j = i; j > 0; j--)
+  for (j = 0; j < i; j++)
   {
     // media += nums[j].ent_1;
     printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
