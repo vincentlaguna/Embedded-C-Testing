@@ -3173,7 +3173,6 @@ int main(void)
   static      Numeros nums[TAM];
   static int  limite;
   static double media;
-  // static int  contador;
 
   printf("\nTeclea el nombre del archivo: ");
   gets(fichaE);
@@ -3190,20 +3189,30 @@ int main(void)
 
  for (i = 0; fscanf(fFichaE, "%d", &nums[i].ent_0) == 1; i++)    
   {
-    fscanf(fFichaE, "%d", &nums[i].ent_1);
+    if (fscanf(fFichaE, "%d", &nums[i].ent_1) <= limite);
     fscanf(fFichaE, "%lf", &nums[i].real);
     fscanf(fFichaE, "%d", &nums[i].ent_2);
     fscanf(fFichaE, "%d", &nums[i].ent_3);
 
-    if (((nums[i].ent_0) + (nums[i].ent_1)) < limite)
-    {
-      for (int j = i; j > 0; j--)
-      {
-        printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
-                nums[j].real, nums[j].ent_2, nums[j].ent_3);
-      }
+    // if (((nums[i].ent_1) + (nums[i].ent_1)) < limite)
+    // {
+      // for (int j = i; j >= 0; j--)
+      // {
+      //   media += nums[j].ent_1;
+      //   // printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
+      //   //         nums[j].real, nums[j].ent_2, nums[j].ent_3);
+      // }
     }
+  // }
+
+  for (int j = i; j >= 0; j--)
+  {
+    media += nums[j].ent_1;
+    // printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
+    //         nums[j].real, nums[j].ent_2, nums[j].ent_3);
   }
+  
+  media = media / 2;
 
   printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
