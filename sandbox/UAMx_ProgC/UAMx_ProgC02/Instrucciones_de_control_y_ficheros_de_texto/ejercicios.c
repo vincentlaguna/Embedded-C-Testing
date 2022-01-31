@@ -3209,21 +3209,21 @@ int main(void)
 
     // if (((nums[i].ent_1) + (nums[i].ent_1)) < limite)
     // {
-      for (int j = i; j > 0; j--)
-      {
-        // media += nums[j].ent_1;
-        printf("%d.: %d %d %.2lf %d %d\n", j, nums[j].ent_0, nums[j].ent_1,
-                nums[j].real, nums[j].ent_2, nums[j].ent_3);
-      }
+      // for (int j = i; j >= 0; j--)
+      // {
+      //   // media += nums[j].ent_1;
+      //   printf("%d.: %d %d %.2lf %d %d\n", j, nums[j].ent_0, nums[j].ent_1,
+      //           nums[j].real, nums[j].ent_2, nums[j].ent_3);
+      // }
   }
   // }
 
-  // for (int j = i; j >= 0; j--)
-  // {
-  //   media += nums[j].ent_1;
-  //   // printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
-  //   //         nums[j].real, nums[j].ent_2, nums[j].ent_3);
-  // }
+  for (int j = i; j > 0; j--)
+  {
+    // media += nums[j].ent_1;
+    printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
+            nums[j].real, nums[j].ent_2, nums[j].ent_3);
+  }
   
   media = media / 2;
 
