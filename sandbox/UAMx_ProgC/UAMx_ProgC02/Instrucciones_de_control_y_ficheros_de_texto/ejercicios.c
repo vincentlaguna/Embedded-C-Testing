@@ -3168,7 +3168,8 @@ typedef struct
 int main(void)
 {
   FILE        *fFichaE;
-  int         i;   
+  int         i = 0;
+  int         j = 0;   
   char        fichaE[TAM_CAD];
   static      Numeros nums[TAM];
   static int  limite;
@@ -3218,7 +3219,7 @@ int main(void)
   }
   // }
 
-  for (int j = i; j > 0; j--)
+  for (j = i; j > 0; j--)
   {
     // media += nums[j].ent_1;
     printf("%d %d %.2lf %d %d\n", nums[j].ent_0, nums[j].ent_1,
