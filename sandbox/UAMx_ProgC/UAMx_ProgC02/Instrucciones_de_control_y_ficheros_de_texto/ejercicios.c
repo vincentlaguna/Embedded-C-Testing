@@ -3174,6 +3174,7 @@ int main(void)
   char        fichaE[TAM_CAD];
   static      Numeros nums[TAM];
   static int  limite;
+  static int  limiteIgual;
   static double media;
 
   printf("\nTeclea el nombre del archivo: ");
