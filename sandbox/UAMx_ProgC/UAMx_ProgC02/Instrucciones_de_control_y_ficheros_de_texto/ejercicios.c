@@ -3171,10 +3171,11 @@ int main(void)
   int         i = 0;
   int         j = 0;
   int         x = 0;  
+  int         cadena[TAM_CAD];
   char        fichaE[TAM_CAD];
   static      Numeros nums[TAM];
   static int  limite;
-  static int  limiteIgual;
+  static double limiteIgual = 0.00;
   static double media;
 
   printf("\nTeclea el nombre del archivo: ");
@@ -3209,46 +3210,20 @@ int main(void)
     fscanf(fFichaE, "%lf", &nums[i].real);
     fscanf(fFichaE, "%d", &nums[i].ent_2);
     fscanf(fFichaE, "%d", &nums[i].ent_3);
-  }
-  
-  for (x = 0; x < i; x++)
-  {
-    for (j = 0; j < i; j++)
+
+    if ((nums[i].ent_1 % limite) <= i)
     {
-      if (((nums[x].ent_1 + nums[x+1].ent_1 + nums[x+2].ent_1) / i) <= limite)
-      {
-        if (limite == nums[j].ent_3)
-        {
-          printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, (double)limite);
-        }
-      }
-      else if (((nums[x].ent_1 + nums[x+1].ent_1) / i-1) <= limite)
-      {
-        if (limite == nums[j].ent_3)
-        {
-          printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, (double)limite);
-        }
-      }
-      else if (((nums[x].ent_1 + nums[x+2].ent_1) / i-1) <= limite)
-      {
-        if (limite == nums[j].ent_3)
-        {
-          printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, (double)limite);
-        }
-      }
-      else
-      {
-        break;
-        // printf("0.00");
-      }
-      // printf("%d\n", nums[j].ent_2);
+      cadena[i] = nums[i].ent_1;
     }
-    // media += nums[j].ent_1;
-    printf("%d %d %.2lf %d %d\n", nums[x].ent_0, nums[x].ent_1,
-            nums[x].real, nums[x].ent_2, nums[x].ent_3);
   }
   
-  media = media / i;
+
+  
+ 
+  
+    
+  // printf("%d %d %.2lf %d %d\n", nums[x].ent_0, nums[x].ent_1,
+  //         nums[x].real, nums[x].ent_2, nums[x].ent_3);
 
   // printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
