@@ -3214,8 +3214,33 @@ int main(void)
   {
     for (j = 0; j < i; j++)
     {
-      if (nums[x].ent_1)
-      printf("%d\n", nums[j].ent_2);
+      if (((nums[x].ent_1 + nums[x+1].ent_1 + nums[x+2].ent_1) / i) <= limite)
+      {
+        if (limite == nums[j].ent_3)
+        {
+          printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, (double)limite);
+        }
+      }
+      else if (((nums[x].ent_1 + nums[x+1].ent_1) / i-1) <= limite)
+      {
+        if (limite == nums[j].ent_3)
+        {
+          printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, (double)limite);
+        }
+      }
+      else if (((nums[x].ent_1 + nums[x+2].ent_1) / i-1) <= limite)
+      {
+        if (limite == nums[j].ent_3)
+        {
+          printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, (double)limite);
+        }
+      }
+      else
+      {
+        break;
+        // printf("0.00");
+      }
+      // printf("%d\n", nums[j].ent_2);
     }
     // media += nums[j].ent_1;
     printf("%d %d %.2lf %d %d\n", nums[x].ent_0, nums[x].ent_1,
@@ -3224,7 +3249,7 @@ int main(void)
   
   media = media / i;
 
-  printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
+  // printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
   fclose(fFichaE);
 
