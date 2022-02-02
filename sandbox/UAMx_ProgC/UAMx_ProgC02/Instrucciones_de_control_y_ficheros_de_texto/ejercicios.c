@@ -3171,9 +3171,9 @@ int main(void)
   int         i = 0;
   int         j = 0;
   int         x = 0;  
-  int         cadena[TAM_CAD];
   char        fichaE[TAM_CAD];
   static      Numeros nums[TAM];
+  static int  cadena[TAM_CAD] = {0};
   static int  limite;
   static double limiteIgual = 0.00;
   static double media;
