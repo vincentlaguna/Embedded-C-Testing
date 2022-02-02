@@ -3211,7 +3211,7 @@ int main(void)
     fscanf(fFichaE, "%d", &nums[i].ent_2);
     fscanf(fFichaE, "%d", &nums[i].ent_3);
 
-    if ((nums[i].ent_1 % limite) <= i)
+    if (((nums[i].ent_1 % limite) <= i) || (nums[i].ent_1 <= limite))
     {
       cadena[i] = nums[i].ent_1;
       printf("%d\n", cadena[i]);
