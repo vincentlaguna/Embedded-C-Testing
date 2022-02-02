@@ -3217,15 +3217,19 @@ int main(void)
     }
   }
   
-
+  for (j = 0; j < i; j++)
+  {
+    media += cadena[j];
+    printf("%d\n", media);
+  }
   
- 
+  media = media / i;
   
     
   // printf("%d %d %.2lf %d %d\n", nums[x].ent_0, nums[x].ent_1,
   //         nums[x].real, nums[x].ent_2, nums[x].ent_3);
 
-  // printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
+  printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
   fclose(fFichaE);
 
