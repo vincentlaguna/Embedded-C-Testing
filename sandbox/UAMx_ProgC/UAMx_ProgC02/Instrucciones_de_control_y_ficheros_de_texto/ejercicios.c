@@ -3214,6 +3214,7 @@ int main(void)
     if ((nums[i].ent_1 % limite) <= i)
     {
       cadena[i] = nums[i].ent_1;
+      printf("%d\n", cadena[i]);
     }
   }
   
