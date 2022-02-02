@@ -3170,12 +3170,11 @@ int main(void)
   FILE        *fFichaE;
   int         i = 0;
   int         j = 0;
-  int         x = 0;  
   char        fichaE[TAM_CAD];
   static      Numeros nums[TAM];
-  static int  cadena[TAM_CAD] = {0};
+  static int  cadena[TAM] = {0};
   static int  limite;
-  static double limiteIgual = 0.00;
+  static int  contador;
   static double media;
 
   printf("\nTeclea el nombre del archivo: ");
@@ -3190,20 +3189,6 @@ int main(void)
   printf("\nTeclea un número entero: ");
   scanf("%d", &limite);
   
-// 25 43 3.4 5 8
-// 12 3 -1.2 12 3
-// 2 7 1.3 8 4
-
-// El programa ha de solicitar el nombre del 
-// archivo con los datos, así como un valor entero. 
-// A continuación debe calcular la media de los 
-// valores de la segunda columna para los que la 
-// cuarta columna es mayor que el entero
-// introducido por teclado.
-
-// Por ejemplo, si se introduce el valor 5,
-// se calculará (3 + 7) / 2, es decir, 5.
-
   for (i = 0; fscanf(fFichaE, "%d", &nums[i].ent_0) == 1; i++)    
   {
     fscanf(fFichaE, "%d", &nums[i].ent_1);
@@ -3214,22 +3199,24 @@ int main(void)
     if (((nums[i].ent_1 % limite) <= i) || (nums[i].ent_1 <= limite))
     {
       cadena[i] = nums[i].ent_1;
+      contador++;
       printf("%d\n", cadena[i]);
     }
   }
   
-  for (j = 0; j <= i; j++)
+  for (j = 0; j <= contador; j++)
   {
     media += cadena[j];
     printf("%lf\n", media);
   }
   
-  media = media / i;
-  
-    
-  // printf("%d %d %.2lf %d %d\n", nums[x].ent_0, nums[x].ent_1,
-  //         nums[x].real, nums[x].ent_2, nums[x].ent_3);
+  media = media / contador;
 
+  if (media != limite)
+  {
+    media = 0;
+  }
+  
   printf("\nLa media de la segunda columna con el límite igual a %d es: %.2lf\n", limite, media);
   
   fclose(fFichaE);
