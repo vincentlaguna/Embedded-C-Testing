@@ -704,7 +704,7 @@ int main(void)
   
   comprobar_alpha(a, b);
   
-  
+  // Recoger aqui 02032022
  
   return(0);
 }
