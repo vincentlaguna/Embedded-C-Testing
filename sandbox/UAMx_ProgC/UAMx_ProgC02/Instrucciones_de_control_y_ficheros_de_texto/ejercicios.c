@@ -3102,7 +3102,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 4.2 *****************/
+/**************** Prueba 4.2 *****************
 // Partiendo de un fichero compuesto por un 
 // número indeterminado de filas de 5 columnas, 
 // cada una de ellas formada por 2 enteros, 
