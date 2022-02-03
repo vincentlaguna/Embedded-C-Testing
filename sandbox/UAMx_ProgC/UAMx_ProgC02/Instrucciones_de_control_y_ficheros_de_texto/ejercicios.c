@@ -3353,7 +3353,7 @@ void print_table(void)
   printf("<-End\n");
 }
 
-Person  *ht_lookup(char *person)
+Person  *ht_lookup(char *person) // Continue here...
 {
 
   int index = hash(person);
