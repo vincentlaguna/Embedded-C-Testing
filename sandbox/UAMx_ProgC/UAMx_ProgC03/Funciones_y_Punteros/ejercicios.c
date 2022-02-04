@@ -603,6 +603,15 @@ int diferencia(char primera_letra, char segunda_letra)
     }
   }
 
+  if ((segunda_letra < 65) || (segunda_letra > 90))
+  {
+    if ((segunda_letra < 97) || (segunda_letra) > 122)
+    {
+      printf("Returning exit code = -1\n");
+      return(-1);
+    }
+  }
+
   if (isupper(primera_letra))
     tolower(primera_letra);
   if (isupper(segunda_letra))
@@ -710,12 +719,12 @@ int diferencia(char primera_letra, char segunda_letra)
 
 int main(void)
 {
-  char a        = 'D';
-  char b        = 'b';
-  char c        = ']';
+  char primera  = 'D';
+  char segunda  = 'b';
+  char error    = ']';
   int resultado = 0;
   
-  diferencia(c, b);
+  diferencia(primera, segunda);
   
   // Recoger aqui 02032022
  
