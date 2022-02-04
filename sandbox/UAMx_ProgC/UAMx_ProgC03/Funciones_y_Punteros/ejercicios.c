@@ -590,10 +590,19 @@ int main()
 #include <string.h>
 #include <ctype.h>
 
-int comprobar_alpha(char primera_letra, char segunda_letra)
+int diferencia(char primera_letra, char segunda_letra)
 {
   int diferencia;
   
+  if ((primera_letra < 65) || (primera_letra > 90))
+  {
+    if ((primera_letra < 97) || (primera_letra) > 122)
+    {
+      printf("Returning exit code = -1\n");
+      return(-1);
+    }
+  }
+
   if (isupper(primera_letra))
     tolower(primera_letra);
   if (isupper(segunda_letra))
@@ -606,6 +615,9 @@ int comprobar_alpha(char primera_letra, char segunda_letra)
     
   printf("\nLa diferencia entre %c y %c es: %d\n",
           primera_letra, segunda_letra, diferencia);
+  
+  return diferencia;
+
 }
 
 // Escribe un programa principal que solicite 
@@ -700,9 +712,10 @@ int main(void)
 {
   char a        = 'D';
   char b        = 'b';
+  char c        = ']';
   int resultado = 0;
   
-  comprobar_alpha(a, b);
+  diferencia(c, b);
   
   // Recoger aqui 02032022
  
