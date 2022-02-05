@@ -593,31 +593,33 @@ int main()
 int diferencia(char primera_letra, char segunda_letra)
 {
   int diferencia;
-  
-  if ((primera_letra < 65) || (primera_letra > 90))
+  unsigned char primera = primera_letra;
+  unsigned char segunda = segunda_letra;
+
+  if ((primera < 65) || (primera > 90))
   {
-    if ((primera_letra < 97) || (primera_letra) > 122)
+    if ((primera < 97) || (primera) > 122)
     {
       printf("Returning exit code = -1\n");
       return(-1);
     }
   }
 
-  if ((segunda_letra < 65) || (segunda_letra > 90))
+  if ((segunda < 65) || (segunda > 90))
   {
-    if ((segunda_letra < 97) || (segunda_letra) > 122)
+    if ((segunda < 97) || (segunda) > 122)
     {
       printf("Returning exit code = -1\n");
       return(-1);
     }
   }
 
-  if (isupper(primera_letra))
-    tolower(primera_letra);
-  if (isupper(segunda_letra))
-    tolower(segunda_letra);
+  if (isupper((unsigned char) primera_letra))
+    primera = tolower((unsigned char)primera);
+  if (isupper((unsigned char) segunda_letra))
+    segunda = tolower((unsigned char)segunda);
   
-  diferencia = primera_letra - segunda_letra;
+  diferencia = primera - segunda;
   
   if (diferencia <= 0)
     diferencia *= -1;
