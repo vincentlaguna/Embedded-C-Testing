@@ -596,13 +596,19 @@ int diferencia(char primera_letra, char segunda_letra)
   unsigned char primera = primera_letra;
   unsigned char segunda = segunda_letra;
 
-  if ((primera < 65) || (primera > 90))
+  // if ((primera < 65) || (primera > 90))
+  // {
+  //   if ((primera < 97) || (primera) > 122)
+  //   {
+  //     printf("Returning exit code = -1\n");
+  //     return(-1);
+  //   }
+  // }
+
+if (!isalpha(primera))
   {
-    if ((primera < 97) || (primera) > 122)
-    {
-      printf("Returning exit code = -1\n");
-      return(-1);
-    }
+    printf("Returning exit code = -1\n");
+    return(-1);
   }
 
   if ((segunda < 65) || (segunda > 90))
@@ -717,18 +723,20 @@ int diferencia(char primera_letra, char segunda_letra)
 
 // NOTA2: La función no debe solicitar ningún valor por teclado ni mostrar ningún mensaje por pantalla.
 
-#include  <stdio.h>
 
 int main(void)
 {
-  // char primera  = 'D';
-  // char segunda  = 'b';
-  // char primera  = '&';
-  // char segunda  = 'a';
-  char primera  = 'D'; 
-  char segunda  = 'j';
-  char error    = ']';
+
+  char primera; 
+  char segunda;
   
+  printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+  scanf("%c", &primera);
+
+  // printf("Error, solo puedes introducir letras del abecedario.\n");
+
+  printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+  scanf("\n%c", &segunda);
   
   diferencia(primera, segunda);
   
