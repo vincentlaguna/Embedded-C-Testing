@@ -721,15 +721,17 @@ int diferencia(char primera_letra, char segunda_letra)
 
 int main(void)
 {
-  char primera  = 'D';
-  char segunda  = 'b';
+  // char primera  = 'D';
+  // char segunda  = 'b';
+  // char primera  = '&';
+  // char segunda  = 'a';
+  char primera  = 'D'; 
+  char segunda  = 'j';
   char error    = ']';
-  int resultado = 0;
+  
   
   diferencia(primera, segunda);
   
-  // Recoger aqui 02032022
- 
   return(0);
 }
 
