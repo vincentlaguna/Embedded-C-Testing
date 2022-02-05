@@ -605,20 +605,26 @@ int diferencia(char primera_letra, char segunda_letra)
   //   }
   // }
 
-if (!isalpha(primera))
+  if (!isalpha(primera))
   {
     printf("Returning exit code = -1\n");
     return(-1);
   }
 
-  if ((segunda < 65) || (segunda > 90))
-  {
-    if ((segunda < 97) || (segunda) > 122)
-    {
-      printf("Returning exit code = -1\n");
-      return(-1);
-    }
-  }
+  // if ((segunda < 65) || (segunda > 90))
+  // {
+  //   if ((segunda < 97) || (segunda) > 122)
+  //   {
+  //     printf("Returning exit code = -1\n");
+  //     return(-1);
+  //   }
+  // }
+
+  // if (!isalpha(primera))
+  // {
+  //   printf("Returning exit code = -1\n");
+  //   return(-1);
+  // }
 
   if (isupper((unsigned char) primera_letra))
     primera = tolower((unsigned char)primera);
@@ -727,16 +733,44 @@ if (!isalpha(primera))
 int main(void)
 {
 
+  int  resultado;
   char primera; 
   char segunda;
   
-  printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
-  scanf("%c", &primera);
+  do
+  {
+    printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+    scanf("%c", &primera);
+    
+    printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+    scanf("\n%c", &segunda);
+
+    if ((!isalpha(primera)) || (!isalpha(segunda)))
+    {
+      printf("\nError, solo puedes introducir letras del abecedario.\n");   
+    }
+
+  } while ((!isalpha(primera)) && (!isalpha(segunda)));
+  
+  // printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+  // scanf("%c", &primera);
 
   // printf("Error, solo puedes introducir letras del abecedario.\n");
 
-  printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
-  scanf("\n%c", &segunda);
+  // do
+  // {
+  //   printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+  //   scanf("\n%c", &segunda);
+
+  //   if (!isalpha(segunda))
+  //   {
+  //     printf("Error, solo puedes introducir letras del abecedario.\n");   
+  //   }
+
+  // } while (!isalpha(segunda));
+  
+  // printf("\nIntroduce una letra de del abecedario en mayúsculas o minúsculas (excepto la ñ): ");
+  // scanf("\n%c", &segunda);
   
   diferencia(primera, segunda);
   
