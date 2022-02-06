@@ -821,7 +821,23 @@ int main(void)
 
 int main(void)
 {
- 
+  int    num_0, num_1, *p_0, *p_1;
+  double media, *p_media;
+  
+  p_0     = &num_0;
+  p_1     = &num_1;
+  p_media = &media;
+
+  printf("\nIntroduce un número: ");
+  scanf("%d", p_0);
+
+  printf("Introduce otro número: ");
+  scanf("%d", p_1);
+
+  *p_media = ((double)*p_0 + (double)*p_1) / 2;
+
+  printf("media = %.2lf\n\n", *p_media);
+
   return(0);
 }
 
