@@ -784,7 +784,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.1 ***************/
+/*************** Ejercicio 2.1 ***************
 // Escribe un programa que calcule la media de 
 // dos enteros introducidos por teclado y la 
 // muestre por pantalla, pero utilizando 
@@ -883,7 +883,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************
+/*********************************************/
 // Simple Hash Map example
 #include  <stdio.h>
 #include  <stdlib.h>
