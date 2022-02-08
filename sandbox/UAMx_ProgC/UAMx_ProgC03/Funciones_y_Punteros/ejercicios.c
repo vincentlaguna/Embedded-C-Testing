@@ -972,14 +972,18 @@ bool ht_insert(Person *person)
   
   int index = hash(person->name);
 
-  if (hash_table[index] != NULL)
+  for (int i = 0; i < TABLE_SIZE; i++)
   {
-    return false;
+    int try = (i + index) % TABLE_SIZE;
+    
+    if (hash_table[try] == NULL)
+    {
+      hash_table[try] = person;
+      return true;
+    }
   }
 
-  hash_table[index] = person;
-
-  return true;
+  return false;
 
 }
 
