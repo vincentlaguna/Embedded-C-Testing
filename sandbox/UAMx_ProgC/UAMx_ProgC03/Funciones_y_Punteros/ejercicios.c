@@ -902,33 +902,39 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.2 ***************/
-// Escribe una función llamada niParesniNones que
-// reciba dos enteros y modifique el segundo 
-// incrementándole en uno en el caso de que ambos
-// sean pares o impares, de forma que las 
-// variables dejarán de ser pares o 
-// impares a la vez.
+/*************** Ejercicio 2.3 ***************/
+// Vamos a escribir un programa que calcule la
+// media y la varianza de dos números enteros
+// utilizando una función con el siguiente prototipo:
 
-// El programa principal solicitará ambos 
-// números al usuario, llamará a la función y 
-// volverá a mostrar los números por pantalla tras
-// la llamada, por lo que dentro de la función 
-// no debe haber ningún printf() ni scanf().
+// void estadistica (int x, int y, double *pMedia, double *pVar);
+
+// En los parámetros pMedia y pVar deberán guardarse
+// los valores que calculemos. De esta forma,
+// conseguiremosque una función devuelva dos cálculos, 
+// lo cual no puede hacerse mediante la instrucción return.
+
+// La fórmula de la media es: (x+y)/2
+// La fórmula de la varianza es: ((x-media)*(x-media) + (y-media)*(y-media)) /2
+
+// El main ha de solicitar los dos números por 
+// teclado y, tras llamar a la función, mostrar
+// la media y la varianza por pantalla, pues la
+// función no debe tener ningún printf() ni scanf().
 
 // Este sería un ejemplo del programa:
 
-// Introduce un número entero: 4
-// Introduce otro número entero: 9
-// Los números tras llamar a la función son:
-// 4 y 9.
+// Introduce un número: 17
+// Introduce otro número: 31
+// Media = 24.00
+// Varianza = 49.00
 
 // Y otro:
 
-// Introduce un número entero: 5
-// Introduce otro número entero: 7
-// Los números tras llamar a la función son:
-// 5 y 8.
+// Introduce un número: 182
+// Introduce otro número: 56
+// Media = 119.00
+// Varianza = 3969.00
 
 void niParesniNones(int *num_0, int *num_1)
 {
