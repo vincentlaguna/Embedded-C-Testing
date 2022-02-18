@@ -844,6 +844,122 @@ int main(void)
 /*********************************************/
 
 
+/*************** Ejercicio 2.2 ***************
+// Escribe una función llamada niParesniNones que
+// reciba dos enteros y modifique el segundo 
+// incrementándole en uno en el caso de que ambos
+// sean pares o impares, de forma que las 
+// variables dejarán de ser pares o 
+// impares a la vez.
+
+// El programa principal solicitará ambos 
+// números al usuario, llamará a la función y 
+// volverá a mostrar los números por pantalla tras
+// la llamada, por lo que dentro de la función 
+// no debe haber ningún printf() ni scanf().
+
+// Este sería un ejemplo del programa:
+
+// Introduce un número entero: 4
+// Introduce otro número entero: 9
+// Los números tras llamar a la función son:
+// 4 y 9.
+
+// Y otro:
+
+// Introduce un número entero: 5
+// Introduce otro número entero: 7
+// Los números tras llamar a la función son:
+// 5 y 8.
+
+void niParesniNones(int *num_0, int *num_1)
+{
+  if (((*num_0 % 2 == 0) && (*num_1 % 2 == 0))
+     || ((*num_0 % 2 != 0) && (*num_1 % 2 != 0)))
+      (*num_1)++;
+}
+
+#include  <stdio.h>
+
+int main(void)
+{
+  int num_0, num_1;
+  
+  printf("\nIntroduce un número entero: ");
+  scanf("%d", &num_0);
+
+  printf("\nIntroduce otro número entero: ");
+  scanf("%d", &num_1);
+
+  niParesniNones(&num_0, &num_1);
+
+  printf("\nLos números tras llamar a la función son: %d y %d.\n\n",
+          num_0, num_1);
+  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 2.2 ***************/
+// Escribe una función llamada niParesniNones que
+// reciba dos enteros y modifique el segundo 
+// incrementándole en uno en el caso de que ambos
+// sean pares o impares, de forma que las 
+// variables dejarán de ser pares o 
+// impares a la vez.
+
+// El programa principal solicitará ambos 
+// números al usuario, llamará a la función y 
+// volverá a mostrar los números por pantalla tras
+// la llamada, por lo que dentro de la función 
+// no debe haber ningún printf() ni scanf().
+
+// Este sería un ejemplo del programa:
+
+// Introduce un número entero: 4
+// Introduce otro número entero: 9
+// Los números tras llamar a la función son:
+// 4 y 9.
+
+// Y otro:
+
+// Introduce un número entero: 5
+// Introduce otro número entero: 7
+// Los números tras llamar a la función son:
+// 5 y 8.
+
+void niParesniNones(int *num_0, int *num_1)
+{
+  if (((*num_0 % 2 == 0) && (*num_1 % 2 == 0))
+     || ((*num_0 % 2 != 0) && (*num_1 % 2 != 0)))
+      (*num_1)++;
+}
+
+#include  <stdio.h>
+
+int main(void)
+{
+  int num_0, num_1;
+  
+  printf("\nIntroduce un número entero: ");
+  scanf("%d", &num_0);
+
+  printf("\nIntroduce otro número entero: ");
+  scanf("%d", &num_1);
+
+  niParesniNones(&num_0, &num_1);
+
+  printf("\nLos números tras llamar a la función son: %d y %d.\n\n",
+          num_0, num_1);
+  
+  return(0);
+}
+
+/*********************************************/
+
+
 /*********************************************
 
 #include  <stdio.h>
@@ -883,7 +999,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Simple Hash Map example
 #include  <stdio.h>
 #include  <stdlib.h>
