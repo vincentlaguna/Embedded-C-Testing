@@ -936,29 +936,32 @@ int main(void)
 // Media = 119.00
 // Varianza = 3969.00
 
-void niParesniNones(int *num_0, int *num_1)
-{
-  if (((*num_0 % 2 == 0) && (*num_1 % 2 == 0))
-     || ((*num_0 % 2 != 0) && (*num_1 % 2 != 0)))
-      (*num_1)++;
-}
-
 #include  <stdio.h>
+
+void estadistica (int x, int y, double *pMedia, double *pVar)
+{
+  *pMedia = ((x + y) / 2);
+  *pVar = (((x-(*pMedia)) * (x-(*pMedia))) + ((y-(*pMedia)) * (y-(*pMedia)))) / 2;
+}
 
 int main(void)
 {
   int num_0, num_1;
-  
-  printf("\nIntroduce un número entero: ");
+  double media, varianza = 0;
+  double *p_0 = NULL;
+  double *p_1 = NULL;
+  p_0 = &media;
+  p_1 = &varianza;
+
+  printf("\nIntroduce un número: ");
   scanf("%d", &num_0);
 
-  printf("\nIntroduce otro número entero: ");
+  printf("\nIntroduce otro número: ");
   scanf("%d", &num_1);
 
-  niParesniNones(&num_0, &num_1);
+  estadistica(num_0, num_1, p_0, p_1);
 
-  printf("\nLos números tras llamar a la función son: %d y %d.\n\n",
-          num_0, num_1);
+  printf("\nMedia: %.2lf\nVarianza: %.2lf.\n\n", *p_0, *p_1);
   
   return(0);
 }
