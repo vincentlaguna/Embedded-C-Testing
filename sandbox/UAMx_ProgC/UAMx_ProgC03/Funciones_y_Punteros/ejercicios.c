@@ -902,7 +902,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 2.3 ***************/
+/*************** Ejercicio 2.3 ***************
 // Vamos a escribir un programa que calcule la
 // media y la varianza de dos números enteros
 // utilizando una función con el siguiente prototipo:
@@ -1008,7 +1008,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************
+/*********************************************/
 // Simple Hash Map example
 #include  <stdio.h>
 #include  <stdlib.h>
