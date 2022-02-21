@@ -1144,16 +1144,14 @@ Person  *ht_lookup(char *person)
 
   for (int i = 0; i < TABLE_SIZE; i++)
   {
-    // Continue here...
-  }
-
-  if (hash_table[index] != NULL && strncmp(hash_table[index]->name, person, TABLE_SIZE) == 0)
-  {
-    return hash_table[index];
-  }
-  else
-  {
-    return NULL;
+    if (hash_table[index] != NULL && strncmp(hash_table[index]->name, person, TABLE_SIZE) == 0)
+    {
+      return hash_table[index];
+    }
+    else
+    {
+      return NULL;
+    }
   }
 }
 
