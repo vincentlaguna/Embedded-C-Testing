@@ -1056,7 +1056,7 @@ int main(void)
   }
   else
   {
-    printf("\nFound %s.\n\n", tmp->name);
+    printf("\nFound %s.\n\n", *tmp->name);
   }
 
   tmp = ht_lookup("Name_B");
@@ -1067,7 +1067,7 @@ int main(void)
   }
   else
   {
-    printf("\nFound %s.\n\n", tmp->name);
+    // printf("\nFound %s.\n\n", tmp->name);
   }
 
 
@@ -1156,7 +1156,7 @@ Person  *ht_delete(char *person)
 
   if (hash_table[index] != NULL && strncmp(hash_table[index]->name, person, TABLE_SIZE) == 0)
   {
-    hash_table[index] = NULL;
+    return hash_table[index];
   }
   else
   {
