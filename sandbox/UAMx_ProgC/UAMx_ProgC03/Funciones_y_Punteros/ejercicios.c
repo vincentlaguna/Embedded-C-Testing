@@ -1145,7 +1145,7 @@ Person  *ht_lookup(char *person)
   for (int i = 0; i < TABLE_SIZE; i++)
   {
     int attempt = (index + 1) % TABLE_SIZE;
-    
+    // continue here please
   }
 }
 
