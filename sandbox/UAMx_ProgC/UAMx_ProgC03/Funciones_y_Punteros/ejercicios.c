@@ -1056,7 +1056,7 @@ int main(void)
   }
   else
   {
-    printf("\nFound %s.\n\n", *tmp->name);
+    printf("\nFound %s.\n\n", tmp->name);
   }
 
   tmp = ht_lookup("Name_B");
