@@ -1004,8 +1004,8 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
-// Paso de argumento de tipo estructura
+/*********************************************
+// Paso de argumento de tipo estructura #0
 #include  <stdio.h>
 
 typedef struct
@@ -1025,9 +1025,14 @@ void escribir_fecha(Fecha fecha)
 
 void inicializar_fecha(Fecha *pFecha)
 {
-  (*pFecha).dia  = 1;
-  (*pFecha).mes  = 1;
-  (*pFecha).anyo = 2000;
+  // (*pFecha).dia  = 1;
+  // (*pFecha).mes  = 1;
+  // (*pFecha).anyo = 2000;
+
+  pFecha->dia  = 1;
+  pFecha->mes  = 1;
+  pFecha->anyo = 2000;
+
 }
 
 int main(void)
@@ -1040,6 +1045,69 @@ int main(void)
 
   escribir_fecha(fecha);
  
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Paso de argumento de tipo estructura #1
+#include  <stdio.h>
+
+#define   TAM 10000
+
+typedef struct
+{
+  
+  int datos[TAM];
+  int ocupadas;
+
+} Tabla;
+
+void inicializar_tabla(Tabla *tabla)
+{
+  tabla->ocupadas = 0;
+}
+
+double media_tabla(Tabla *tabla)
+{
+  int i, suma;
+
+  for (i = suma = 0; i < tabla->ocupadas; i++)
+    suma += tabla->datos[i];
+  return (double)suma / tabla->ocupadas;
+}
+
+int main(void)
+{
+  Tabla  tabla;
+  int i, num;
+  double med;
+ 
+  inicializar_tabla(&tabla);
+
+  do
+  {
+    printf("Cuantos valores vas a leer (entre 1 y %d)?: ", TAM);
+    scanf("%d", &num);
+
+    if (num < 1 || num > TAM)
+      printf("\nError, tienes que introducir un numero entre el 1 y el %d\n", TAM);
+
+  } while (num < 1 || num > TAM);
+  
+  for (i = 0; i < num; i++)
+  {
+    printf("Introduce el dato %d: ", i + 1);
+    scanf("%d", &tabla.datos[i]);
+    tabla.ocupadas++;
+  }
+
+  med = media_tabla(&tabla);
+
+  printf("\nLa media de los datos leidos es: %.2lf\n\n", med);
+
   return(0);
 }
 
