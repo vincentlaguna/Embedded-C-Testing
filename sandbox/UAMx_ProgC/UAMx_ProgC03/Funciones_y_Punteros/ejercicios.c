@@ -1017,8 +1017,28 @@ typedef struct
 
 } Fecha;
 
+void escribir_fecha(Fecha fecha)
+{
+  printf("\n%d/%d/%d\n\n", fecha.dia,
+          fecha.mes, fecha.anyo);
+}
+
+void inicializar_fecha(Fecha *pFecha)
+{
+  (*pFecha).dia  = 1;
+  (*pFecha).mes  = 1;
+  (*pFecha).anyo = 2000;
+}
+
 int main(void)
 {
+  Fecha fecha = {10, 03, 1989};
+
+  escribir_fecha(fecha);
+
+  inicializar_fecha(&fecha);
+
+  escribir_fecha(fecha);
  
   return(0);
 }
