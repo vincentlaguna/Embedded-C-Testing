@@ -987,7 +987,7 @@ void incrementarB(int *y)
 void incrementarA(int *x)
 {
   (*x)++;
-  incrementarC(x);
+  incrementarB(x);
 }
 
 int main(void)
