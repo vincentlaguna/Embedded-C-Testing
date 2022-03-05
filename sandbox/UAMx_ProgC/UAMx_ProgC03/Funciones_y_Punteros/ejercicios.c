@@ -969,7 +969,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Paso de argumentos por valor o referencia
 #include  <stdio.h>
 
@@ -997,6 +997,28 @@ int main(void)
   incrementarA(&i);
 
   printf("\nEl valor final de i = %d\n\n", i);
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Paso de argumento de tipo estructura
+#include  <stdio.h>
+
+typedef struct
+{
+  
+  int dia;
+  int mes;
+  int anyo;
+
+} Fecha;
+
+int main(void)
+{
  
   return(0);
 }
