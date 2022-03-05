@@ -1051,7 +1051,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Paso de argumento de tipo estructura #1
 #include  <stdio.h>
 
@@ -1108,6 +1108,41 @@ int main(void)
 
   printf("\nLa media de los datos leidos es: %.2lf\n\n", med);
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 1.4 ***************/
+// Escribe una función llamada incrementaDia que 
+// reciba como argumento una estructura Fecha 
+// (como la vista en la explicación del vídeo) 
+// y la aumente en un día.
+
+// NOTA: Para simplificar, no tengas en cuenta 
+// los años bisiestos y considera que todos 
+// los meses tienen 30 días.
+
+// Este sería un ejemplo del programa:
+
+// Introduce un día: 19
+// Introduce un mes: 09
+// Introduce un año: 2028
+// El día siguiente al introducido es: 20/09/2028.
+
+// Y otro:
+
+// Introduce un día: 31
+// Introduce un mes: 12
+// Introduce un año: 2018
+// El día siguiente al introducido es: 1/1/2019.
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
