@@ -969,6 +969,41 @@ int main(void)
 /*********************************************/
 
 
+/*********************************************/
+// Paso de argumentos por valor o referencia
+#include  <stdio.h>
+
+void incrementarC(int *z)
+{
+  (*z)++;
+}
+
+void incrementarB(int *y)
+{
+  (*y)++;
+  incrementarC(y);
+}
+
+void incrementarA(int *x)
+{
+  (*x)++;
+  incrementarC(x);
+}
+
+int main(void)
+{
+  int i = 1;
+
+  incrementarA(&i);
+
+  printf("\nEl valor final de i = %d\n\n", i);
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
 /*********************************************
 
 #include  <stdio.h>
@@ -1008,7 +1043,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Simple Hash Map example
 #include  <stdio.h>
 #include  <stdlib.h>
