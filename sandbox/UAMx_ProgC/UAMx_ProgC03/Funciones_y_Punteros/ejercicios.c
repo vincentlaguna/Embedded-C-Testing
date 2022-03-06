@@ -1139,6 +1139,7 @@ int main(void)
 // El día siguiente al introducido es: 1/1/2019.
 
 #include  <stdio.h>
+#include  <stdlib.h>
 
 typedef struct
 {
@@ -1177,17 +1178,18 @@ void incrementaDia(Fecha *fecha)
 int main(void)
 {
   Fecha *fecha;
+  fecha = (Fecha *)malloc(1 * sizeof(Fecha));
 
   printf("Introduce un día: ");
-  scanf("%d", fecha->dia);
+  scanf("%d", &fecha->dia);
 
   printf("Introduce un mes: ");
-  scanf("%d", fecha->mes);
+  scanf("%d", &fecha->mes);
 
   printf("Introduce un año: ");
-  scanf("%d", fecha->anyo);
+  scanf("%d", &fecha->anyo);
   
-  incrementaDia(&fecha);
+  incrementaDia(fecha);
  
   return(0);
 }
