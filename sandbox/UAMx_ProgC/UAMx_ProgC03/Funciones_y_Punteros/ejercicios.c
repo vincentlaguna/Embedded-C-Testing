@@ -1137,7 +1137,7 @@ int main(void)
 // Introduce un mes: 12
 // Introduce un año: 2018
 // El día siguiente al introducido es: 1/1/2019.
-
+// Funciona 03062022
 #include  <stdio.h>
 #include  <stdlib.h>
 
