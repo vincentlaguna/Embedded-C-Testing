@@ -1140,8 +1140,54 @@ int main(void)
 
 #include  <stdio.h>
 
+typedef struct
+{
+  
+  int dia;
+  int mes;
+  int anyo;
+
+} Fecha;
+
+void incrementaDia(Fecha *fecha)
+{
+  if ((fecha->dia == 31) || (fecha->mes == 12))
+  {  
+    if ((fecha->dia == 31) && (fecha->mes == 12))
+    {
+      fecha->dia  = 1;
+      fecha->mes  = 1;
+      fecha->anyo++;
+    }
+    else if (fecha->dia == 31)
+    {
+      fecha->dia = 1;
+      fecha->mes++;
+    }
+    else
+      fecha->dia++;
+  }
+  else
+    fecha->dia++;
+    
+  printf("\nl día siguiente al introducido es: %d/%d/%d\n\n",
+          fecha->dia, fecha->mes, fecha->anyo);
+}
+
 int main(void)
 {
+  Fecha *fecha;
+
+  printf("Introduce un día: ");
+  scanf("%d", fecha->dia);
+
+  printf("Introduce un mes: ");
+  scanf("%d", fecha->mes);
+
+  printf("Introduce un año: ");
+  scanf("%d", fecha->anyo);
+  
+  incrementaDia(&fecha);
  
   return(0);
 }
