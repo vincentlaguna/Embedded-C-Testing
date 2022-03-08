@@ -1114,7 +1114,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.4 ***************/
+/*************** Ejercicio 1.4 ***************
 // Escribe una función llamada incrementaDia que 
 // reciba como argumento una estructura Fecha 
 // (como la vista en la explicación del vídeo) 
@@ -1197,8 +1197,21 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 1.5 ***************
-// start here 03072022
+/**************** Prueba 2.1 *****************/
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 0.0 ***************
+
 #include  <stdio.h>
 
 int main(void)
