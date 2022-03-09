@@ -1252,10 +1252,71 @@ El menor divisor de 9 es 3 y su mayor divisor es 3
 (sin contar la unidad y él mismo).
 
 #include  <stdio.h>
+#include <math.h>
 
-int main(void)
+int menorMayorDivisor(int num, int *menor, int *mayor);
+
+
+int esPrimo(int num)
 {
- 
+  int i;
+  
+  for (i = 2; i <= sqrt(num); i++)
+  {
+    if (num % i == 0) 
+    {
+      return(0);
+    }
+  }
+
+  return(1);
+  
+}
+
+int primoMayor(int num)
+{
+  int i, j, x, res = 0;
+  int primos[num];
+  
+  for (i = 0; i <= num; i++)
+  {
+    if (esPrimo(i))
+    {
+      primos[i] = i;
+    }
+  }
+  
+  for (j = 0; j <= num; j++)
+  {
+    for (x = 0; x <= num; x++)
+    {
+      if (primos[x] > primos[i])
+      {
+        res = primos[x];
+      }
+    }
+  }
+  
+  return res;
+}
+
+int main()
+{
+  int num, base = 2, res = 0;
+  
+  do
+  {
+    printf("\nIntroduce un número entero positivo superior a 1: ");
+    scanf("%d", &num);
+    
+  } while (num < 1);
+  
+  res = primoMayor(num);
+  
+  printf("\nEl mayor primo comprendido entre %d y %d es %d.", base, num, res);
+  
+  puts("\n");
+  
   return(0);
 }
 
