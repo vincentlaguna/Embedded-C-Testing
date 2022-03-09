@@ -1311,7 +1311,7 @@ int main()
   
   res = primoMayor(num);
   
-  printf("\nEl mayor primo comprendido entre %d y %d es %d.", base, num, res);
+  printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n.", base, num, res);
   
   puts("\n");
   
