@@ -1273,13 +1273,12 @@ int esPrimo(int num)
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
   int i, j, x, res = 0;
-  int primos[num];
   
-  for (i = 0; i <= num; i++)
+  for (i = 1; i <= num; i++)
   {
-    if (esPrimo(i))
+    for (j = 1; j <= num; j++)
     {
-      primos[i] = i;
+      if // continue here... 03102022
     }
   }
   
