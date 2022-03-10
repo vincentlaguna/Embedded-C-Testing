@@ -1278,8 +1278,10 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   {
     for (j = 1; j <= num; j++)
     {
-      if // continue here... 03102022
-    }
+      if (num % i == 0)
+      {
+        // continue here... 03102022
+      } 
   }
   
   return res;
