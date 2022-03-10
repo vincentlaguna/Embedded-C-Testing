@@ -1282,17 +1282,6 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     }
   }
   
-  for (j = 0; j <= num; j++)
-  {
-    for (x = 0; x <= num; x++)
-    {
-      if (primos[x] > primos[i])
-      {
-        res = primos[x];
-      }
-    }
-  }
-  
   return res;
 }
 
