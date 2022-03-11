@@ -1254,21 +1254,21 @@ int main(void)
 #include  <stdio.h>
 #include <math.h>
 
-int esPrimo(int num)
-{
-  int i;
+// int esPrimo(int num)
+// {
+//   int i;
   
-  for (i = 2; i <= sqrt(num); i++)
-  {
-    if (num % i == 0) 
-    {
-      return(0);
-    }
-  }
+//   for (i = 2; i <= sqrt(num); i++)
+//   {
+//     if (num % i == 0) 
+//     {
+//       return(0);
+//     }
+//   }
 
-  return(1);
+//   return(1);
   
-}
+// }
 
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
