@@ -1287,7 +1287,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   return res;
 }
 
-
+// change functionality
 int main()
 {
   int num, base = 2, res = 0;
