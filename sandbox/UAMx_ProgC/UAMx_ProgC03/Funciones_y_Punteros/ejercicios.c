@@ -1272,7 +1272,8 @@ int main(void)
 
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
-  int i, j, x, res = 0;
+  int i, j, bajo, res = 0;
+  int alto = num;
   
   for (i = 1; i <= num; i++)
   {
@@ -1280,7 +1281,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     {
       if (num % i == 0)
       {
-        // continue here... 03102022
+        
       } 
   }
   
