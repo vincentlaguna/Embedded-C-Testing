@@ -1272,20 +1272,28 @@ int main(void)
 
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
-  int i, j, bajo, res = 0;
-  int alto = num;
-  
-  for (i = 1; i <= num; i++)
+  int i, j, bajo, menor_res, mayor_res, res = 0;
+
+  while (i <= num)
   {
-    for (j = 1; j <= num; j++)
+    for (; i <= num; i++)
     {
       if (num % i == 0)
       {
-        
-      } 
+        if (menor_res < i)
+          menor_res = i;
+        if (mayor_res > i)
+          mayor_res = i;
+      }
+      else
+        res = 1;
+    }
   }
-  
-  return res;
+
+  *menor = menor_res;
+  *mayor = mayor_res;
+
+  return ;
 }
 
 // change functionality
