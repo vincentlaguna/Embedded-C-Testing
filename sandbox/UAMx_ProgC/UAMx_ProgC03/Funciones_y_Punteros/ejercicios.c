@@ -1308,7 +1308,7 @@ int main()
     
   } while (num < 1);
   
-  res = primoMayor(num);
+  res = menorMayorDivisor(num, &a, &b);
   
   printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n.", num, res);
   
