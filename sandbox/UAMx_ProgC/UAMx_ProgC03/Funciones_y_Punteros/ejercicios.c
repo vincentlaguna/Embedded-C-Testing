@@ -1299,7 +1299,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 // change functionality
 int main()
 {
-  int num, base = 2, res = 0;
+  int num, res = 0;
   
   do
   {
@@ -1310,7 +1310,7 @@ int main()
   
   res = primoMayor(num);
   
-  printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n.", base, num, res);
+  printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n.", num, res);
   
   puts("\n");
   
