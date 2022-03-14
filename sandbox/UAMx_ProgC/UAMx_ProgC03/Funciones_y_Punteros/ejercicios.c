@@ -1272,7 +1272,8 @@ int main(void)
 
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
-  int i, j, bajo, menor_res, mayor_res, res = 0;
+  int i = 2;
+  int menor_res, mayor_res, res = 0;
 
   while (i <= num)
   {
@@ -1286,12 +1287,13 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
           mayor_res = i;
       }
       else
-        res = 1;
+        res = 0;
     }
   }
 
   *menor = menor_res;
   *mayor = mayor_res;
+  res = 1;
 
   return(res);
 }
@@ -1300,7 +1302,8 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 int main()
 {
   int num, num_a, num_b, res = 0;
-  //int *p_num_a, *p_num_b;
+  int *p_num_a; 
+  int *p_num_b;
   p_num_a = &num_a;
   p_num_b = &num_b;
 
@@ -1311,7 +1314,7 @@ int main()
     
   } while (num < 1);
   
-  res = menorMayorDivisor(num, p_num_a, p_num_b);
+  res = menorMayorDivisor(num, &p_num_a, &p_num_b);
   
   printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n\n.", num, *p_num_a, *p_num_b);
   
