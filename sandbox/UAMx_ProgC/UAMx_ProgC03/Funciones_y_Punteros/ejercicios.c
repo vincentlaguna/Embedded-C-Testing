@@ -1307,12 +1307,8 @@ int main()
   p_num_a = &num_a;
   p_num_b = &num_b;
 
-  do
-  {
-    printf("\nIntroduce un número: ");
-    scanf("%d", &num);
-    
-  } while (num < 1);
+  printf("\nIntroduce un número: ");
+  scanf("%d", &num);
   
   res = menorMayorDivisor(num, &p_num_a, &p_num_b);
   
