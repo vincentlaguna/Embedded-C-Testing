@@ -1274,7 +1274,8 @@ int main(void)
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
   int i = 2;
-  int menor_res, mayor_res, res = 0;
+  int menor_res, res = 0;
+  int mayor_res = num-1;
 
   while (i <= num)
   {
@@ -1288,7 +1289,10 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
         mayor_res = i;  
 
         if (mayor_res > i)
+        {
           mayor_res = i;
+        }  
+
       }
       else
         res = 0;
