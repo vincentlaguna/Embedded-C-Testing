@@ -1253,7 +1253,7 @@ int main(void)
 
 #include  <stdio.h>
 #include  <stdlib.h>
-#include <math.h>
+#include  <math.h>
 
 // int esPrimo(int num)
 // {
@@ -1288,7 +1288,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
           
         mayor_res = i;  
 
-        if (mayor_res > i)
+        if ((mayor_res--) > i)
         {
           mayor_res = i;
         }  
