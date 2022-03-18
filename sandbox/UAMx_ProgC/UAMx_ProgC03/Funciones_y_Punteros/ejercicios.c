@@ -1299,7 +1299,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     }
   }
 
-  *menor = menor_res;
+  *menor = menor_res; // Problem gettingjunk values... 03172022
   *mayor = mayor_res;
   res = 1;
 
