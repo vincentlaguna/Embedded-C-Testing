@@ -1277,29 +1277,20 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   int menor_res, res = 0;
   int mayor_res = num-1;
 
-  while (i <= num)
+  while (i < num)
   {
-    for (; i <= num; i++)
+    if (num % i == 0)
     {
-      if (num % i == 0)
+      if (mayor_res < i)
       {
-        if (menor_res < i)
-          menor_res = i;
-          
-        mayor_res = i;  
-
-        if ((--mayor_res) > i)
-        {
-          mayor_res = i;
-        }  
-
-      }
-      else
-        res = 0;
+        mayor_res = i;
+        break;
+      }    
     }
+    i++;    
   }
 
-  *menor = menor_res; // Problem gettingjunk values... 03172022 avoided seg-faulting
+  *menor = menor_res; // Problem getting junk values... 03172022 avoided seg-faulting
   *mayor = mayor_res;
   res = 1;
 
