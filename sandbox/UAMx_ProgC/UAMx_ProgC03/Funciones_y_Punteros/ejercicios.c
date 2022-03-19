@@ -1287,7 +1287,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
         break;
       }    
     }
-    i++;    
+    i++; // make the other vars static maybe?
   }
 
   *menor = menor_res; // Problem getting junk values... 03172022 avoided seg-faulting
