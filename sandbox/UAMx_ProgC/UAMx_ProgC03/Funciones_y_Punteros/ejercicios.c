@@ -1255,22 +1255,6 @@ int main(void)
 #include  <stdlib.h>
 #include  <math.h>
 
-// int esPrimo(int num)
-// {
-//   int i;
-  
-//   for (i = 2; i <= sqrt(num); i++)
-//   {
-//     if (num % i == 0) 
-//     {
-//       return(0);
-//     }
-//   }
-
-//   return(1);
-  
-// }
-
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
   int i, menor_res, res = 0;
@@ -1295,13 +1279,20 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
     for (i = 2; i <= mayor_res; i++)
     {
-      if (num % i == 0)
+      if ((num % i == 0) && !(res))
       {
         menor_res = i;
         res = 1;
         break;
       }
     }
+
+    if (mayor_res == menor_res)
+    {
+      printf("El número %d no tiene divisores menores ni mayores.\n", num);
+      res = 0;
+    }
+
     *menor = menor_res;
     *mayor = mayor_res;
   }
@@ -1311,7 +1302,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
 int main()
 {
-  int num, num_a, num_b, res = 0;
+  int num, num_a, num_b, res, es_primo = 0;
   int *p_num_a = NULL;
   int *p_num_b = NULL;
   p_num_a = &num_a;
@@ -1319,15 +1310,25 @@ int main()
 
   do
   {
+    if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
+    {
+      es_primo = 1;
+      break;  
+    }
+
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
 
   } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
-  
 
-  printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
-         "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
-  
+  if (es_primo)
+  {
+    return(-1);
+  }
+  else
+    printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
+           "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
+
   return(0);
 }
 
