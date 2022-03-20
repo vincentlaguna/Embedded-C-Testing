@@ -1273,24 +1273,29 @@ int main(void)
 
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
-  int i = 2;
+  int i;
   static int menor_res, res = 0;
   int mayor_res = num;
 
-  while (i < num)
+  for (i = num -1; i >= 2; --i)
   {
     if (num % i == 0)
     {
-      if (mayor_res < i)
-      {
-        mayor_res = i;
-        break;
-      }    
+      mayor_res = i;
+      break;
     }
-    i++; // make the other vars static maybe?
   }
 
-  *menor = menor_res; // Problem getting junk values... 03172022 avoided seg-faulting
+  for (i = 2; i < mayor_res; i++)
+  {
+    if (num % i == 0)
+    {
+      menor_res = i;
+      break;
+    }
+  }
+
+  *menor = menor_res;
   *mayor = mayor_res;
   res = 1;
 
