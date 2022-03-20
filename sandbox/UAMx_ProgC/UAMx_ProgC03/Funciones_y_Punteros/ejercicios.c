@@ -1278,6 +1278,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
   if (num < 2)
   {
+    printf("Error. Debes introducir un número mayor o igual a 2.\n");
     res = 0;
   }
   else
@@ -1305,14 +1306,9 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     *mayor = mayor_res;
   }
 
-  
-
-  
-
   return(res);
 }
 
-// change functionality
 int main()
 {
   int num, num_a, num_b, res = 0;
@@ -1328,12 +1324,6 @@ int main()
 
   } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
   
-  printf("\nIntroduce un número: ");
-  scanf("%d", &num);
-  
-  //res = menorMayorDivisor(num, p_num_a, p_num_b);
-  
-  printf("Error. Debes introducir un número mayor o igual a 2.\n"
 
   printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
          "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
