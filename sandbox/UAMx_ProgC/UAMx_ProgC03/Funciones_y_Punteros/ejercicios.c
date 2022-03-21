@@ -1313,7 +1313,8 @@ int main()
     if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
     {
       es_primo = 1;
-      break;  
+      //break;
+      goto exit;  
     }
 
     printf("\nIntroduce un número: ");
@@ -1328,6 +1329,8 @@ int main()
   else
     printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
            "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
+
+  exit:
 
   return(0);
 }
