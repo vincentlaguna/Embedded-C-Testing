@@ -1289,7 +1289,6 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
     if (mayor_res == menor_res)
     {
-      // printf("El número %d no tiene divisores menores ni mayores.\n", num);
       res = 0;
     }
 
@@ -1313,9 +1312,7 @@ int main()
     if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
     {
       es_primo = 1;
-      //break;
       printf("El número %d no tiene divisores menores ni mayores.\n", num);
-      // goto exit;
       break;  
     }
 
