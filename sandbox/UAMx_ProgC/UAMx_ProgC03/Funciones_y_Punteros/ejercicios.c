@@ -1312,7 +1312,7 @@ int main()
     if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
     {
       es_primo = 1;
-      printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods
+      printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods - re-think while loop in main - 03232022
       break;  
     }
 
