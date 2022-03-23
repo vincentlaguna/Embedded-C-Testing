@@ -1271,7 +1271,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     {
       if (num % i == 0)
       {
-        mayor_res = i;
+        menor_res = i;
         res = 1;
         break;
       }
@@ -1281,16 +1281,16 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     {
       if ((num % i == 0) && !(res))
       {
-        menor_res = i;
+        mayor_res = i;
         res = 1;
         break;
       }
     }
 
-    if (mayor_res == menor_res)
-    {
-      res = 0;
-    }
+    // if (mayor_res == menor_res)
+    // {
+    //   res = 0;
+    // }
 
     *menor = menor_res;
     *mayor = mayor_res;
@@ -1309,12 +1309,12 @@ int main()
 
   do
   {
-    if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
-    {
-      es_primo = 1;
-      printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods - re-think while loop in main - 03232022
-      break;  
-    }
+    // if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
+    // {
+    //   es_primo = 1;
+    //   printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods - re-think while loop in main - 03232022
+    //   break;  
+    // }
 
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
