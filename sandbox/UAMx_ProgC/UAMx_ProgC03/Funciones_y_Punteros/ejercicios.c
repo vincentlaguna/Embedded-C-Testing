@@ -1307,8 +1307,8 @@ int main()
   p_num_a = &num_a;
   p_num_b = &num_b;
 
-  do
-  {
+  // do
+  // {
     // if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
     // {
     //   es_primo = 1;
@@ -1319,13 +1319,15 @@ int main()
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
 
-  } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
+  // } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
 
-  if (es_primo)
-  {
-    return(-1);
-  }
-  else
+  menorMayorDivisor(num, p_num_a, p_num_b);
+
+  // if (es_primo)
+  // {
+  //   return(-1);
+  // }
+  // else
     printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
            "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
 
