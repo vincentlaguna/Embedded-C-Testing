@@ -1271,7 +1271,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     {
       if (num % i == 0)
       {
-        menor_res = i;
+        mayor_res = i;
         res = 1;
         break;
       }
@@ -1281,7 +1281,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
     {
       if ((num % i == 0) && !(res))
       {
-        mayor_res = i;
+        menor_res = i;
         res = 1;
         break;
       }
