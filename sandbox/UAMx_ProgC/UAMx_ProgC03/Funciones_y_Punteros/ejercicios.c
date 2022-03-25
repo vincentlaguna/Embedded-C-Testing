@@ -1260,7 +1260,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   int i, menor_res, res = 0;
   int mayor_res = num;
 
-  if (num < 2) // Still not working the way it's supposed to...
+  if (num < 2)
   {
     printf("Error. Debes introducir un número mayor o igual a 2.\n");
     res = 0;
