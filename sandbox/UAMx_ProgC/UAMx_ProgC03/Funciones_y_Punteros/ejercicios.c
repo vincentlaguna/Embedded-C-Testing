@@ -1262,7 +1262,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
   if (num < 2)
   {
-    printf("Error. Debes introducir un número mayor o igual a 2.\n");
+    // printf("Error. Debes introducir un número mayor o igual a 2.\n");
     res = 0;
   }
   else
