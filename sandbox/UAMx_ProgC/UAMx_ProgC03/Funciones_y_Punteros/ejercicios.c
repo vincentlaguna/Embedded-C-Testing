@@ -1287,10 +1287,10 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
       }
     }
 
-    if (mayor_res == menor_res)
-    {
-      res = 0;
-    }
+    // if (mayor_res == menor_res)
+    // {
+    //   res = 0;
+    // }
 
     *menor = menor_res;
     *mayor = mayor_res;
@@ -1299,7 +1299,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   return(res);
 }
 
-int main()
+int main() // maybe rollback to the "most working version..." 03282022
 {
   int num, num_a, num_b, res, es_primo = 0;
   int *p_num_a = NULL;
