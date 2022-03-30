@@ -1307,19 +1307,19 @@ int main() // maybe rollback to the "most working version..." 03282022
   p_num_a = &num_a;
   p_num_b = &num_b;
 
-  // do
-  // {
-  //   if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
-  //   {
-  //     es_primo = 1;
-  //     printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods - re-think while loop in main - 03232022
-  //     break;  
-  //   }
+  do
+  {
+    if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
+    {
+      //es_primo = 1;
+      printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods - re-think while loop in main - 03232022
+      break;  
+    }
 
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
 
-  // } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
+  } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
 
   res = menorMayorDivisor(num, p_num_a, p_num_b);
   printf("%d\n", res);
