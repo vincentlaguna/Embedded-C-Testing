@@ -1279,7 +1279,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
     for (i = 2; i <= mayor_res; i++)
     {
-      if ((num % i == 0) && !(res))
+      if ((num % i == 0)) //&& !(res))
       {
         menor_res = i;
         res = 1;
