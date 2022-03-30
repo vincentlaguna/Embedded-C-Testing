@@ -1321,8 +1321,8 @@ int main() // maybe rollback to the "most working version..." 03282022
 
   // } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
 
-  menorMayorDivisor(num, p_num_a, p_num_b);
-
+  res = menorMayorDivisor(num, p_num_a, p_num_b);
+  printf("%d\n", res);
   // if (es_primo)
   // {
   //   return(-1);
