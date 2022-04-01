@@ -1286,11 +1286,11 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
         break;
       }
     }
-
-    // if (mayor_res == menor_res)
-    // {
-    //   res = 0;
-    // }
+    // This part currently works, but the other output still prints 04012022
+    if (mayor_res == menor_res)
+    {
+      res = 0;
+    }
 
     *menor = menor_res;
     *mayor = mayor_res;
