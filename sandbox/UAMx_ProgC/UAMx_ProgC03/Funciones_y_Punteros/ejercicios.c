@@ -1287,9 +1287,9 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
       }
     }
     // This part currently works, but the other output still prints 04012022
-    if (mayor_res == menor_res)
+    if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) != num))
     {
-      res = 0;
+      res = 1;
     }
 
     *menor = menor_res;
@@ -1299,7 +1299,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   return(res);
 }
 
-int main() // maybe rollback to the "most working version..." 03282022 
+int main()
 {
   int num, num_a, num_b, res, es_primo = 0;
   int *p_num_a = NULL;
@@ -1313,6 +1313,7 @@ int main() // maybe rollback to the "most working version..." 03282022
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
     
+    // if (((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b)) && ((*p_num_a && *p_num_b) == num))
     if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
     {
       //es_primo = 1;
@@ -1338,13 +1339,15 @@ int main() // maybe rollback to the "most working version..." 03282022
   //   scanf("%d", &num);
   // } 
 
-  // res = menorMayorDivisor(num, p_num_a, p_num_b);
+  res = menorMayorDivisor(num, p_num_a, p_num_b);
   // printf("%d\n", res);
   // if (es_primo)
   // {
   //   return(-1);
   // }
   // else
+  if (res)
+    
     printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
            "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
 
