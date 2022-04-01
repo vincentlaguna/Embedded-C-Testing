@@ -1338,8 +1338,8 @@ int main() // maybe rollback to the "most working version..." 03282022
   //   scanf("%d", &num);
   // } 
 
-  res = menorMayorDivisor(num, p_num_a, p_num_b);
-  printf("%d\n", res);
+  // res = menorMayorDivisor(num, p_num_a, p_num_b);
+  // printf("%d\n", res);
   // if (es_primo)
   // {
   //   return(-1);
