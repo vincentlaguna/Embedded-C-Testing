@@ -1331,8 +1331,6 @@ int main()
 /**************** Prueba 2.2 *****************/
 Escribe una función con el siguiente prototipo:
 
-int cifras(int num, int * primera, int * ultima);
-
 La función recibe un número entero en la variable
 num y ha de calcular los siguientes valores:
 
@@ -1350,6 +1348,11 @@ NOTA: La función ha de trabajar siempre con el
 número en formato entero, sin considerarlo o 
 convertirlo a caracteres o cadena de caracteres
 y sin utilizar funciones como itoa o sprintf.
+
+int cifras(int num, int * primera, int * ultima)
+{
+  
+}
 
 Escribe un programa que solicite el número por
 teclado, llame a la función y muestre el 
@@ -1388,7 +1391,15 @@ cifra es el 4 y su última cifra es el 4.
 
 int main(void)
 {
- 
+  int num, cantitad, primer, ultima = 0;
+
+  printf("\nIntroduce un número entero:");
+  scanf("%d", &num);
+
+  printf("\nEl número %d tiene %d cifras."
+         "Su primera cifra es el %d y su última cifra es el %d\n\n.",
+          num, cantitad, primer, ultima);
+
   return(0);
 }
 
