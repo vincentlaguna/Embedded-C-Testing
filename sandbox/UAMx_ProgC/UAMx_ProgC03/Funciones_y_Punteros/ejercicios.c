@@ -1260,7 +1260,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   int i, menor_res, res = 0;
   int mayor_res = num;
 
-  if (num < 2)
+  if (num < 2) // add secondary condition...
   { // Cannot get rid of this printing out twice.... need to refactor
     printf("Error. Debes introducir un número mayor o igual a 2.\n");
     // res = 0; // Same result if this is active or not??? 04022022
