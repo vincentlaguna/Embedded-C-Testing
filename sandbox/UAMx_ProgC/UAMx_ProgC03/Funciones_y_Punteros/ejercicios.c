@@ -1263,7 +1263,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
   if (num < 2)
   { // Cannot get rid of this printing out twice.... need to refactor
     printf("Error. Debes introducir un número mayor o igual a 2.\n");
-    // res = 0; // Same result if this is active or not??? 04012022
+    // res = 0; // Same result if this is active or not??? 04022022
   }
   else
   {
@@ -1279,14 +1279,14 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
     for (i = 2; i <= mayor_res; i++)
     {
-      if ((num % i == 0)) //&& !(res))
+      if ((num % i == 0))
       {
         menor_res = i;
         res = 1;
         break;
       }
     }
-    // This part currently works, but the other output still prints 04012022
+    // This part currently works, but the other output still prints 04022022
     if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) == num))
     {
       res = 1;
@@ -1313,8 +1313,7 @@ int main()
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
     menorMayorDivisor(num, p_num_a, p_num_b);
-    // if (((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b)) && ((*p_num_a && *p_num_b) == num))
-    //if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
+    
     if (*p_num_a == *p_num_b && *p_num_a == num)
     {
       //es_primo = 1;
@@ -1322,31 +1321,12 @@ int main()
       break;  
     }
 
-    // printf("\nIntroduce un número: ");
-    // scanf("%d", &num);
 
   } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
 
-  // while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)))
-  // {
-  //   if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
-  //   {
-  //     //es_primo = 1;
-  //     printf("El número %d no tiene divisores menores ni mayores.\n", num); // still needs mods - re-think while loop in main - 03232022
-  //     break;  
-  //   }
-
-  //   printf("\nIntroduce un número: ");
-  //   scanf("%d", &num);
-  // } 
 
   res = menorMayorDivisor(num, p_num_a, p_num_b);
-  // printf("%d\n", res);
-  // if (es_primo)
-  // {
-  //   return(-1);
-  // }
-  // else
+  
   if ((res) && (num != *p_num_a))
     
     printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
