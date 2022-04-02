@@ -1258,44 +1258,33 @@ int main(void)
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
   int i, menor_res, res = 0;
-  int         mayor_res = num;
-  static int       flag = 0;
+  int mayor_res = num;
 
-  if ((num < 2) && (!flag))
-  { 
-    // printf("Error. Debes introducir un número mayor o igual a 2.\n");
-    flag++;
-  }
-  else
+  for (i = num -1; i >= 2; --i)
   {
-    for (i = num -1; i >= 2; --i)
+    if (num % i == 0)
     {
-      if (num % i == 0)
-      {
-        mayor_res = i;
-        res = 1;
-        break;
-      }
-    }
-
-    for (i = 2; i <= mayor_res; i++)
-    {
-      if ((num % i == 0))
-      {
-        menor_res = i;
-        res = 1;
-        break;
-      }
-    }
-
-    if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) == num))
-    {
+      mayor_res = i;
       res = 1;
+      break;
     }
-
-    *menor = menor_res;
-    *mayor = mayor_res;
   }
+
+  for (i = 2; i <= mayor_res; i++)
+  {
+    if ((num % i == 0))
+    {
+      menor_res = i;
+      res = 1;
+      break;
+    }
+  }
+
+  if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) == num))
+    res = 1;
+
+  *menor = menor_res;
+  *mayor = mayor_res;
 
   return(res);
 }
@@ -1322,7 +1311,7 @@ int main()
     
     if (*p_num_a == *p_num_b && *p_num_a == num)
     {
-      printf("El número %d no tiene divisores menores ni mayores.\n", num);
+      printf("\nEl número %d no tiene divisores menores ni mayores.\n\n", num);
       break;  
     }
 
