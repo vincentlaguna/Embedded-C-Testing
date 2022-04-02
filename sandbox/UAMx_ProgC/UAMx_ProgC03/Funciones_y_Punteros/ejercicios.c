@@ -1287,7 +1287,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
       }
     }
     // This part currently works, but the other output still prints 04012022
-    if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) != num))
+    if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) == num))
     {
       res = 1;
     }
