@@ -1258,12 +1258,13 @@ int main(void)
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
   int i, menor_res, res = 0;
-  int mayor_res = num;
+  int         mayor_res = num;
+  static int       flag = 0;
 
-  if (num < 2) // add secondary condition...
-  { // Cannot get rid of this printing out twice.... need to refactor
-    printf("Error. Debes introducir un número mayor o igual a 2.\n");
-    // res = 0; // Same result if this is active or not??? 04022022
+  if ((num < 2) && (!flag))
+  { 
+    // printf("Error. Debes introducir un número mayor o igual a 2.\n");
+    flag++;
   }
   else
   {
@@ -1286,7 +1287,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
         break;
       }
     }
-    // This part currently works, but the other output still prints 04022022
+
     if ((mayor_res == menor_res) && ((mayor_res) && (menor_res) == num))
     {
       res = 1;
@@ -1301,7 +1302,7 @@ int menorMayorDivisor(int num, int *menor, int *mayor)
 
 int main()
 {
-  int num, num_a, num_b, res, es_primo = 0;
+  int num, num_a, num_b, res = 0;
   int *p_num_a = NULL;
   int *p_num_b = NULL;
   p_num_a = &num_a;
@@ -1309,21 +1310,23 @@ int main()
 
   do
   {
-    
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
+    
+    if (num < 2)
+    { 
+      printf("Error. Debes introducir un número mayor o igual a 2.\n");
+    }
+
     menorMayorDivisor(num, p_num_a, p_num_b);
     
     if (*p_num_a == *p_num_b && *p_num_a == num)
     {
-      //es_primo = 1;
       printf("El número %d no tiene divisores menores ni mayores.\n", num);
       break;  
     }
 
-
   } while (!(res = menorMayorDivisor(num, p_num_a, p_num_b)));
-
 
   res = menorMayorDivisor(num, p_num_a, p_num_b);
   
@@ -1331,8 +1334,6 @@ int main()
     
     printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
            "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
-
-  exit:
 
   return(0);
 }
