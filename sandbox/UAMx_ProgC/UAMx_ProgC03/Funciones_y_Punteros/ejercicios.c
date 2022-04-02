@@ -1312,9 +1312,10 @@ int main()
     
     printf("\nIntroduce un número: ");
     scanf("%d", &num);
-    
+    menorMayorDivisor(num, p_num_a, p_num_b);
     // if (((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b)) && ((*p_num_a && *p_num_b) == num))
-    if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
+    //if ((!(res = menorMayorDivisor(num, p_num_a, p_num_b))) && (*p_num_a == *p_num_b))
+    if (*p_num_a == *p_num_b && *p_num_a == num)
     {
       //es_primo = 1;
       printf("El número %d no tiene divisores menores ni mayores.\n", num);
@@ -1346,7 +1347,7 @@ int main()
   //   return(-1);
   // }
   // else
-  if (res)
+  if ((res) && (num != *p_num_a))
     
     printf("\nEl menor divisor de %d es %d y su mayor divisor es %d\n"
            "(sin contar la unidad y él mismo).\n\n", num, *p_num_a, *p_num_b);
