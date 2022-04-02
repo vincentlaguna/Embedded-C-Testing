@@ -1252,8 +1252,6 @@ int main(void)
 // (sin contar la unidad y él mismo).
 
 #include  <stdio.h>
-#include  <stdlib.h>
-#include  <math.h>
 
 int menorMayorDivisor(int num, int *menor, int *mayor)
 {
