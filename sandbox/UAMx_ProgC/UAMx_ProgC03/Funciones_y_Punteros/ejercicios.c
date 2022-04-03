@@ -1386,11 +1386,17 @@ int main()
 
 int cifras(int num, int *primera, int *ultima)
 {
-  int res = 0;
+  int flag, res = 0;
 
-  switch (num)
+  if (num % 1000 == 0)
   {
-    case: 
+    flag = 1000;
+  }
+  
+  switch (flag)
+  {
+    case 1: ;
+    break; 
   }
 
   return(res);
