@@ -1388,6 +1388,11 @@ int cifras(int num, int *primera, int *ultima)
 {
   int res = 0;
 
+  switch (num)
+  {
+    case: 
+  }
+
   return(res);
 }
 
