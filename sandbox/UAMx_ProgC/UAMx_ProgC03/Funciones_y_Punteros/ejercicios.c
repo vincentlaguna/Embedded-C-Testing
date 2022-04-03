@@ -1413,7 +1413,7 @@ int main(void)
   printf("\nIntroduce un número entero:");
   scanf("%d", &num);
 
-  int cifras(num, primera, ultima);
+  cifras(num, primera, ultima);
 
   printf("\nEl número %d tiene %d cifras."
          "Su primera cifra es el %d y su última cifra es el %d\n\n.",
