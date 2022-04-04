@@ -1388,6 +1388,8 @@ int cifras(int num, int *primera, int *ultima)
 {
   int flag, res = 0;
 
+  // Maybe convert the number from decimal to binary here? 04032022
+
   if (num % 1000 == 0)
   {
     flag = 1000;
