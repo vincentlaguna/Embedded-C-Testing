@@ -1384,29 +1384,25 @@ int main()
 
 #include  <stdio.h>
 
+#define CUATRO 1000
+
 int cifras(int num, int *primera, int *ultima)
 {
   int flag, res = 0;
 
   // Maybe convert the number from decimal to binary here? 04032022
 
-  if (num % 1000 == 0)
+  if ((num % 1000) < 9)
   {
-    flag = 1000;
+    res = num % 1000;
   }
-  
-  // switch (flag)
-  // {
-  //   case 1: ;
-  //   break; 
-  // }
 
   return(res);
 }
 
 int main(void)
 {
-  int num, cantitad, primera, ultima = 0;
+  int num, cantidad, primera, ultima = 0;
   int *p_primera = NULL;
   int *p_ultima  = NULL;
   p_primera      = &primera;
@@ -1415,11 +1411,11 @@ int main(void)
   printf("\nIntroduce un número entero:");
   scanf("%d", &num);
 
-  cifras(num, primera, ultima);
+  cantidad = cifras(num, primera, ultima);
 
   printf("\nEl número %d tiene %d cifras."
          "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-          num, cantitad, primera, ultima);
+          num, cantidad, primera, ultima);
 
   return(0);
 }
