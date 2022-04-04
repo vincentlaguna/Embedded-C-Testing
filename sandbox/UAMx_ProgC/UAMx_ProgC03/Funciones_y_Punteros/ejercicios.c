@@ -1395,11 +1395,11 @@ int cifras(int num, int *primera, int *ultima)
     flag = 1000;
   }
   
-  switch (flag)
-  {
-    case 1: ;
-    break; 
-  }
+  // switch (flag)
+  // {
+  //   case 1: ;
+  //   break; 
+  // }
 
   return(res);
 }
