@@ -1392,7 +1392,7 @@ int cifras(int num, int *primera, int *ultima)
 
   // Maybe convert the number from decimal to binary here? 04032022
 
-  if ((num % 1000) < 9)
+  if (num % 1000 <= 9)
   {
     res = num % 1000;
   }
@@ -1408,12 +1408,12 @@ int main(void)
   p_primera      = &primera;
   p_ultima       = &ultima;
 
-  printf("\nIntroduce un número entero:");
+  printf("\nIntroduce un número entero: ");
   scanf("%d", &num);
 
   cantidad = cifras(num, primera, ultima);
 
-  printf("\nEl número %d tiene %d cifras."
+  printf("\nEl número %d tiene %d cifras.\n"
          "Su primera cifra es el %d y su última cifra es el %d\n\n.",
           num, cantidad, primera, ultima);
 
