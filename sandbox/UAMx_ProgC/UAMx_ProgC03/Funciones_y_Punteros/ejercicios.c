@@ -1391,11 +1391,19 @@ int cifras(int num, int *primera, int *ultima)
   static int res;
 
   // Maybe convert the number from decimal to binary here? 04032022
-
-  if (num % 1000 < 10)
+  
+  if (num % 1000000 < 10)
   {
-    res = num / 1000;
+    res = num / 1000000;
   }
+  else if (num % 100000 < 10)
+  {
+    res = num / 100000; 
+  }
+  else if (num % 10000 < 10)
+  {
+    res = num / 10000; 
+  } // And so on... 04062022
 
   return(res);
 }
