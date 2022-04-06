@@ -1403,7 +1403,7 @@ int cifras(int num, int *primera, int *ultima)
   else if (num % 10000 < 10)
   {
     res = num / 10000; 
-  } // And so on... 04062022
+  } // And so on... 04062022 Broke it...
 
   return(res);
 }
