@@ -1388,13 +1388,13 @@ int main()
 
 int cifras(int num, int *primera, int *ultima)
 {
-  int flag, res = 0;
+  static int res;
 
   // Maybe convert the number from decimal to binary here? 04032022
 
-  if (num % 1000 <= 9)
+  if (num % 1000 < 10)
   {
-    res = num % 1000;
+    res = num / 1000;
   }
 
   return(res);
