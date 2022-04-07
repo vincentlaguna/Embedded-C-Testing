@@ -1396,10 +1396,10 @@ int cifras(int num, int *primera, int *ultima)
   {
     res = 7;
   }
-  // else if (num % 100000 < 10)
-  // {
-  //   res = num / 100000; 
-  // }
+  else if (num % 100000 < 10)
+  {
+    res = 6; 
+  }
   // else if (num % 10000 < 10)
   // {
   //   res = num / 10000; 
