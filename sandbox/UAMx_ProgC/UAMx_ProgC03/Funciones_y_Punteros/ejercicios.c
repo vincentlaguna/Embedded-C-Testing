@@ -1404,10 +1404,10 @@ int cifras(int num, int *primera, int *ultima)
   {
     res = 5; 
   }
-  // else if (num % 10000 < 10)
-  // {
-  //   res = 5; 
-  // }
+  else if (num % 1000 < 10)
+  {
+    res = 4; 
+  }
 
   return(res);
 }
