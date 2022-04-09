@@ -1400,19 +1400,19 @@ int cifras(unsigned int num, int *primera, int *ultima)
   {
     res = 6; 
   }
-  else if (num / 10000 < 10)
+  else if ((num / 10000 < 10) && (num / 10000 > 4))
   {
     res = 5; 
   }
-  else if (num / 1000 < 10)
+  else if ((num / 1000 < 10) && (num / 1000 > 3))
   {
     res = 4; 
   }
-  else if (num / 100 < 10)
+  else if ((num / 100 < 10) && (num / 100 > 2))
   {
     res = 3; 
   }
-  else if (num / 10 < 10)
+  else if ((num / 10 <= 10) && (num / 10 >= 1))
   {
     res = 2; 
   }
