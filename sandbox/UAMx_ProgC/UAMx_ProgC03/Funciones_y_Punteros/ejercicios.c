@@ -1386,27 +1386,39 @@ int main()
 
 #define CUATRO 1000
 
-int cifras(int num, int *primera, int *ultima)
+int cifras(unsigned int num, int *primera, int *ultima)
 {
-  static int res;
+  static unsigned int res;
 
   // Maybe convert the number from decimal to binary here? 04032022
   
-  if (num % 1000000 < 10)
+  if ((num / 1000000 < 10) && (num / 1000000 > 6))
   {
     res = 7;
   }
-  else if (num % 100000 < 10)
+  else if ((num / 100000 < 10) && (num / 100000 > 5))
   {
     res = 6; 
   }
-  else if (num % 10000 < 10)
+  else if (num / 10000 < 10)
   {
     res = 5; 
   }
-  else if (num % 1000 < 10)
+  else if (num / 1000 < 10)
   {
     res = 4; 
+  }
+  else if (num / 100 < 10)
+  {
+    res = 3; 
+  }
+  else if (num / 10 < 10)
+  {
+    res = 2; 
+  }
+  else
+  {
+    res = 1; 
   }
 
   return(res);
