@@ -1406,7 +1406,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   {
     res = 4; 
   }
-  else if ((num / 100 < 10) && (num / 100 > 2))
+  else if ((num / 100 < 10) && (num / 100 >= 1))
   {
     res = 3; 
   }
