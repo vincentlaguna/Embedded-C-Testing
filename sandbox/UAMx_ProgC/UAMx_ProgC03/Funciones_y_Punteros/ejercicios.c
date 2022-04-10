@@ -1389,8 +1389,6 @@ int main()
 int cifras(unsigned int num, int *primera, int *ultima)
 {
   static unsigned int res;
-
-  // Maybe convert the number from decimal to binary here? 04032022
   
   if ((num / 1000000 < 10) && (num / 1000000 > 6))
   {
