@@ -1393,6 +1393,10 @@ int cifras(unsigned int num, int *primera, int *ultima)
   if ((num / 1000000 < 10) && (num / 1000000 > 6))
   {
     res = 7;
+    for (int i = 0; i < num; i++)
+    {
+      if (num % i == 0)
+    }
   }
   else if ((num / 100000 < 10) && (num / 100000 > 5))
   {
