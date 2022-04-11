@@ -1384,11 +1384,11 @@ int main()
 
 #include  <stdio.h>
 
-#define CUATRO 1000
-
 int cifras(unsigned int num, int *primera, int *ultima)
 {
   static unsigned int res;
+  int prim, ult = 0;
+
   
   if ((num / 1000000 < 10) && (num / 1000000 > 6))
   {
@@ -1396,6 +1396,9 @@ int cifras(unsigned int num, int *primera, int *ultima)
     for (int i = 0; i < num; i++)
     {
       if (num % i == 0)
+      {
+        ult = i;
+      }
     }
   }
   else if ((num / 100000 < 10) && (num / 100000 > 5))
@@ -1426,18 +1429,21 @@ int cifras(unsigned int num, int *primera, int *ultima)
   return(res);
 }
 
+*primera = prim;
+*ultima  = ult;
+
 int main(void)
 {
-  int num, cantidad, primera, ultima = 0;
+  int num, cantidad, prim, ult = 0;
   int *p_primera = NULL;
   int *p_ultima  = NULL;
-  p_primera      = &primera;
-  p_ultima       = &ultima;
+  p_primera      = &prim;
+  p_ultima       = &ult;
 
   printf("\nIntroduce un número entero: ");
   scanf("%d", &num);
 
-  cantidad = cifras(num, primera, ultima);
+  cantidad = cifras(num, p_primera, p_ultima);
 
   printf("\nEl número %d tiene %d cifras.\n"
          "Su primera cifra es el %d y su última cifra es el %d\n\n.",
