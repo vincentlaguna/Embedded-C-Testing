@@ -1387,7 +1387,8 @@ int main()
 int cifras(unsigned int num, int *primera, int *ultima)
 {
   static unsigned int res;
-  int prim, ult = 0;
+  int prim = 0; 
+  int ult = 0;
 
   
   if ((num / 1000000 < 10) && (num / 1000000 > 6))
