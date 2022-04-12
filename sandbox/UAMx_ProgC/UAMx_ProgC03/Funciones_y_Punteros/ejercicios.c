@@ -1427,19 +1427,20 @@ int cifras(unsigned int num, int *primera, int *ultima)
     res = 1; 
   }
 
+  // *primera = prim;
+  ultima = ult;
+
   return(res);
 }
 
-*primera = prim;
-*ultima  = ult;
 
 int main(void)
 {
   int num, cantidad, prim, ult = 0;
   int *p_primera = NULL;
   int *p_ultima  = NULL;
-  p_primera      = &prim;
-  p_ultima       = &ult;
+  // p_primera      = &prim;
+  // p_ultima       = &ult;
 
   printf("\nIntroduce un número entero: ");
   scanf("%d", &num);
@@ -1448,7 +1449,7 @@ int main(void)
 
   printf("\nEl número %d tiene %d cifras.\n"
          "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-          num, cantidad, primera, ultima);
+          num, cantidad, *p_primera, *p_ultima);
 
   return(0);
 }
