@@ -1449,7 +1449,7 @@ int main(void)
 
   printf("\nEl número %d tiene %d cifras.\n"
          "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-          num, cantidad, *p_primera, *p_ultima);
+          num, cantidad, p_primera, p_ultima);
 
   return(0);
 }
