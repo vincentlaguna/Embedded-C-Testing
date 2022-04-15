@@ -1390,7 +1390,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   int prim = 0; 
   int ult = 0;
 
-  
+  // multiply by 100?
   if ((num / 1000000 < 10) && (num / 1000000 > 6))
   {
     res = 7;
