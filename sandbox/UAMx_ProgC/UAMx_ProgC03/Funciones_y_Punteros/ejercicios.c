@@ -1390,45 +1390,62 @@ int cifras(unsigned int num, int *primera, int *ultima)
   int prim = 0; 
   int ult = 0;
 
-  // multiply by 100?
-  if ((num / 1000000 < 10) && (num / 1000000 > 6))
+  int a[10], number, i, j;
+  printf("\n Please Enter the Number You want to Convert  :  ");
+  scanf("%d", &number);
+    
+  for(i = 0; number > 0; i++)
   {
-    res = 7;
-    for (int i = 0; i < num; i++)
-    {
-      if (num % i == 0)
-      {
-        ult = i;
-      }
+    a[i] = number % 2;
+    number = number / 2;
+  }
+    
+  printf("\n Binary Number of a Given Number =  ");
+  for(j = i - 1; j >= 0; j--)  {
+      printf(" %d ", a[j]);
     }
-  }
-  else if ((num / 100000 < 10) && (num / 100000 > 5))
-  {
-    res = 6; 
-  }
-  else if ((num / 10000 < 10) && (num / 10000 > 4))
-  {
-    res = 5; 
-  }
-  else if ((num / 1000 < 10) && (num / 1000 > 3))
-  {
-    res = 4; 
-  }
-  else if ((num / 100 < 10) && (num / 100 >= 1))
-  {
-    res = 3; 
-  }
-  else if ((num / 10 <= 10) && (num / 10 >= 1))
-  {
-    res = 2; 
-  }
-  else
-  {
-    res = 1; 
-  }
+  
+  printf("\n");
 
-  // *primera = prim;
-  ultima = ult;
+  // // multiply by 100?
+  // if ((num / 1000000 < 10) && (num / 1000000 > 6))
+  // {
+  //   res = 7;
+  //   for (int i = 0; i < num; i++)
+  //   {
+  //     if (num % i == 0)
+  //     {
+  //       ult = i;
+  //     }
+  //   }
+  // }
+  // else if ((num / 100000 < 10) && (num / 100000 > 5))
+  // {
+  //   res = 6; 
+  // }
+  // else if ((num / 10000 < 10) && (num / 10000 > 4))
+  // {
+  //   res = 5; 
+  // }
+  // else if ((num / 1000 < 10) && (num / 1000 > 3))
+  // {
+  //   res = 4; 
+  // }
+  // else if ((num / 100 < 10) && (num / 100 >= 1))
+  // {
+  //   res = 3; 
+  // }
+  // else if ((num / 10 <= 10) && (num / 10 >= 1))
+  // {
+  //   res = 2; 
+  // }
+  // else
+  // {
+  //   res = 1; 
+  // }
+
+  // // *primera = prim;
+  // ultima = ult;
 
   return(res);
 }
