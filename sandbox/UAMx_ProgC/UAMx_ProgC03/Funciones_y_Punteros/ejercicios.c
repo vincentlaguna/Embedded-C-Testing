@@ -1390,14 +1390,14 @@ int cifras(unsigned int num, int *primera, int *ultima)
   //int prim = 0; 
   //int ult = 0;
 
-  int a[10], number, i, j;
-  printf("\n Please Enter the Number You want to Convert  :  ");
-  scanf("%d", &number);
+  int a[10], i, j;
+  // printf("\n Please Enter the Number You want to Convert  :  ");
+  // scanf("%d", &number);
     
-  for(i = 0; number > 0; i++)
+  for(i = 0; num > 0; i++)
   {
-    a[i] = number % 2;
-    number = number / 2;
+    a[i] = num % 2;
+    num = num / 2;
   }
     
   printf("\n Binary Number of a Given Number =  ");
