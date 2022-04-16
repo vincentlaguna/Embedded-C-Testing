@@ -1386,9 +1386,9 @@ int main()
 
 int cifras(unsigned int num, int *primera, int *ultima)
 {
-  static unsigned int res;
-  int prim = 0; 
-  int ult = 0;
+  static unsigned int res = 0;
+  //int prim = 0; 
+  //int ult = 0;
 
   int a[10], number, i, j;
   printf("\n Please Enter the Number You want to Convert  :  ");
