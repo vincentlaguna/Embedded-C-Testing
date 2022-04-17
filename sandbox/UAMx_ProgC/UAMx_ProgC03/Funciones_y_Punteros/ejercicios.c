@@ -1398,7 +1398,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   temp = num;
   // temp = temp / 10;
   
-  while (temp > 0)
+  while (temp != 0)
   {
     temp /= 10;
     res++;
