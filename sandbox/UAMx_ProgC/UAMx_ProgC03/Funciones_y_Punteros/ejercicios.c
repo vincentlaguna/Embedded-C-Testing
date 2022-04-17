@@ -1383,15 +1383,32 @@ int main()
 // cifra es el 4 y su última cifra es el 4.
 
 #include  <stdio.h>
+#include  <math.h>
 
 int cifras(unsigned int num, int *primera, int *ultima)
 {
   static unsigned int res = 0;
-  //int prim = 0; 
-  //int ult = 0;
-  ultima = num % 10;
+  int prim = 0; 
+  int ult = 0;
+  int temp = 0;
   
-  printf("\nUltima es: %d\n", ultima);
+  ult = num % 10;
+  // res = log10(num);
+  // prim = num / pow(10, res);
+  temp = num;
+  // temp = temp / 10;
+  
+  while (temp > 0)
+  {
+    temp /= 10;
+    res++;
+  }
+
+  ultima = ult;
+  primera = prim;
+  
+
+  printf("\nUltima es: %d\nPrimera es: %d\nResultado es: %d\nTemp es: %d\n", ultima, primera, res, temp);
   //res = (*ultima);
   
   //int a[10], i, j;
@@ -1469,9 +1486,9 @@ int main(void)
 
   cantidad = cifras(num, p_primera, p_ultima);
 
-  printf("\nEl número %d tiene %d cifras.\n"
-         "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-          num, cantidad, p_primera, p_ultima);
+  // printf("\nEl número %d tiene %d cifras.\n"
+  //        "Su primera cifra es el %d y su última cifra es el %d\n\n.",
+  //         num, cantidad, p_primera, *(p_ultima));
 
   return(0);
 }
