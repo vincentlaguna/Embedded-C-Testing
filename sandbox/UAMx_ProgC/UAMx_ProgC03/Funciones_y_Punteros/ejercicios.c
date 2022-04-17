@@ -1389,10 +1389,12 @@ int cifras(unsigned int num, int *primera, int *ultima)
   static unsigned int res = 0;
   //int prim = 0; 
   //int ult = 0;
-  *ultima = num % 10;
-  res = (*ultima);
+  ultima = num % 10;
   
-  int a[10], i, j;
+  printf("\nUltima es: %d\n", ultima);
+  //res = (*ultima);
+  
+  //int a[10], i, j;
   // printf("\n Please Enter the Number You want to Convert  :  ");
   // scanf("%d", &number);
     
@@ -1450,7 +1452,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   // // *primera = prim;
   // ultima = ult;
 
-  return(res);
+  //return(res);
 }
 
 
