@@ -1389,24 +1389,26 @@ int cifras(unsigned int num, int *primera, int *ultima)
   static unsigned int res = 0;
   //int prim = 0; 
   //int ult = 0;
-
+  *ultima = num % 10;
+  res = (*ultima);
+  
   int a[10], i, j;
   // printf("\n Please Enter the Number You want to Convert  :  ");
   // scanf("%d", &number);
     
-  for(i = 0; num > 0; i++)
-  {
-    a[i] = num % 2;
-    num = num / 2;
-  }
+  // for(i = 0; num > 0; i++)
+  // {
+  //   a[i] = num % 2;
+  //   num = num / 2;
+  // }
     
-  printf("\n Binary Number of a Given Number =  ");
-  for(j = i - 1; j >= 0; j--)  
-  {
-    printf(" %d ", a[j]);
-  }
+  // printf("\n Binary Number of a Given Number =  ");
+  // for(j = i - 1; j >= 0; j--)  
+  // {
+  //   printf(" %d ", a[j]);
+  // }
   
-  printf("\n");
+  // printf("\n");
 
   // // multiply by 100?
   // if ((num / 1000000 < 10) && (num / 1000000 > 6))
