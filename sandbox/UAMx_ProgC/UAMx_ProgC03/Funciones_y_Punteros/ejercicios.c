@@ -1392,6 +1392,11 @@ int cifras(unsigned int num, int *primera, int *ultima)
   int ult = 0;
   //int temp = 0;
   
+  if (num < 0)
+  {
+    num *= -1;
+  }
+
   ult = num % 10;
   res = log10(num);
   printf("\nlog10(num): %d\n", res);
@@ -1495,9 +1500,9 @@ int main(void)
 
   cantidad = cifras(num, p_primera, p_ultima);
 
-  printf("\nEl número %d tiene %d cifras.\n"
-         "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-          num, cantidad, p_primera, *(p_ultima));
+  // printf("\nEl número %d tiene %d cifras.\n"
+  //        "Su primera cifra es el %d y su última cifra es el %d\n\n.",
+  //         num, cantidad, p_primera, *(p_ultima));
 
   return(0);
 }
