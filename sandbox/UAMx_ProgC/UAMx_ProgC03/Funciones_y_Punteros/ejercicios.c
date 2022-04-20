@@ -1390,10 +1390,10 @@ int cifras(unsigned int num, int *primera, int *ultima)
   static unsigned int res = 0;
   int prim = 0; 
   int ult = 0;
-  int temp = 0;
+  //int temp = 0;
   
   ult = num % 10;
-  res = log10(num); // Find alternative?
+  res = log10(num);
   printf("\nlog10(num): %d\n", res);
   prim = num / pow(10, res);
   // temp = num;
@@ -1417,7 +1417,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   primera = prim;
   
 
-  printf("\nUltima es: %d\nPrimera es: %d\nResultado es: %d\nTemp es: %d\n", ultima, primera, res, temp);
+  printf("\nUltima es: %d\nPrimera es: %d\nResultado es: %d\nTemp es: %d\n", ultima, primera, res);
   //res = (*ultima);
   
   //int a[10], i, j;
@@ -1478,7 +1478,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   // // *primera = prim;
   // ultima = ult;
 
-  //return(res);
+  return(res);
 }
 
 
@@ -1495,9 +1495,9 @@ int main(void)
 
   cantidad = cifras(num, p_primera, p_ultima);
 
-  // printf("\nEl número %d tiene %d cifras.\n"
-  //        "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-  //         num, cantidad, p_primera, *(p_ultima));
+  printf("\nEl número %d tiene %d cifras.\n"
+         "Su primera cifra es el %d y su última cifra es el %d\n\n.",
+          num, cantidad, p_primera, *(p_ultima));
 
   return(0);
 }
