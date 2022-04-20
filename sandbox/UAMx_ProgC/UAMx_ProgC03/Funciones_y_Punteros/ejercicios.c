@@ -1393,18 +1393,26 @@ int cifras(unsigned int num, int *primera, int *ultima)
   int temp = 0;
   
   ult = num % 10;
-  //res = log10(num); // Find alternative?
+  res = log10(num); // Find alternative?
   printf("\nlog10(num): %d\n", res);
-  //prim = num / pow(10, res);
-  temp = num;
-  temp = temp / 10;
+  prim = num / pow(10, res);
+  // temp = num;
+  // temp = temp / 10;
   
-  while (temp != 0)
+  if ((num / 10) < 10)
   {
-    temp /= 10;
-    ++res;
+    res++;
   }
-  prim = temp;
+  else
+  {
+    res += 1;
+  }
+  // while (temp != 0)
+  // {
+  //   temp /= 10;
+  //   ++res;
+  // }
+  // prim = temp;
   ultima = ult;
   primera = prim;
   
