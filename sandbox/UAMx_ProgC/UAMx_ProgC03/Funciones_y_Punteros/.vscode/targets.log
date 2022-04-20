@@ -1,79 +1,41 @@
 make all -f /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/ --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/: Is a directory.  Stop.
-
 # GNU Make 4.2.1
- 
 # Built for x86_64-pc-linux-gnu
- 
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
- 
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
- 
 # This is free software: you are free to change and redistribute it.
- 
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
- 
-# Make data base, printed on Tue Apr 19 11:22:05 2022
- 
+# Make data base, printed on Tue Apr 19 22:15:04 2022
 
 # Variables
- 
 
- 
 # environment
- 
 GNUMAKEFLAGS := 
- 
 # automatic
- 
 <D = $(patsubst %/,%,$(dir $<))
- 
 # automatic
- 
 ?F = $(notdir $?)
- 
 # environment
- 
 DESKTOP_SESSION = ubuntu
- 
 # default
- 
 .SHELLFLAGS := -c
- 
 # environment
- 
 XDG_SESSION_CLASS = user
- 
 # environment
- 
 XDG_SESSION_TYPE = x11
- 
 # environment
- 
 VSCODE_LOG_NATIVE = false
- 
 # automatic
- 
 ?D = $(patsubst %/,%,$(dir $?))
- 
 # environment
- 
 IM_CONFIG_PHASE = 1
- 
 # automatic
- 
 @D = $(patsubst %/,%,$(dir $@))
- 
 # environment
- 
 XAUTHORITY = /run/user/1000/gdm/Xauthority
- 
 # environment
- 
 GDMSESSION = ubuntu
- 
 # environment
 XMODIFIERS = @im=ibus
 # makefile
@@ -85,7 +47,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:55135
+JOURNAL_STREAM = 8:55487
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from '/home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/', line 1)
@@ -103,7 +65,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1109
+MANAGERPID = 1041
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -115,7 +77,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/vl-workstation-0:@/tmp/.ICE-unix/1420,unix/vl-workstation-0:/tmp/.ICE-unix/1420
+SESSION_MANAGER = local/vl-workstation-0:@/tmp/.ICE-unix/1385,unix/vl-workstation-0:/tmp/.ICE-unix/1385
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -125,7 +87,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 17f0527659c240fc80092fe0706b30ff
+INVOCATION_ID = 7ea9f96d92b1406180a70613603293a9
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -135,7 +97,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 12119
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2432
 # automatic
 %F = $(notdir $%)
 # environment
@@ -147,7 +109,7 @@ PWD = /home/ubuntu/workspace/Test_Space_0/sandbox/UAMx_ProgC/UAMx_ProgC03/Funcio
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1366
+SSH_AGENT_PID = 1279
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -183,7 +145,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-919a9404-2869-4202-b805-b4f2ba97e8c1.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-58571f12-e140-4ca9-b890-82b11ea4fa26.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -241,7 +203,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 12119
+VSCODE_PID = 2432
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=11/110=10%
 
@@ -293,6 +255,8 @@ all:
 # strcache performance: lookups = 9 / hit rate = 33%
 # hash-table stats:
 # Load=6/8192=0%, Rehash=0, Collisions=0/9=0%
-# Finished Make data base on Tue Apr 19 11:22:05 2022
+# Finished Make data base on Tue Apr 19 22:15:04 2022
 
  
+make: *** /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/: Is a directory.  Stop.
+

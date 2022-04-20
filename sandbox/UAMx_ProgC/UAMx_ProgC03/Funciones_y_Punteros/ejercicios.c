@@ -1395,16 +1395,16 @@ int cifras(unsigned int num, int *primera, int *ultima)
   ult = num % 10;
   //res = log10(num); // Find alternative?
   printf("\nlog10(num): %d\n", res);
-  prim = num / pow(10, res);
+  //prim = num / pow(10, res);
   temp = num;
   temp = temp / 10;
   
   while (temp != 0)
   {
     temp /= 10;
-    res++;
+    ++res;
   }
-
+  prim = temp;
   ultima = ult;
   primera = prim;
   
