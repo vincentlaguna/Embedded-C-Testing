@@ -1390,7 +1390,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   static unsigned int res = 0;
   int prim = 0; 
   int ult = 0;
-  signed int temp = num;
+  int temp = num;
   
   if (num < 0)
   {
