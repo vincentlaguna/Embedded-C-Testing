@@ -1422,7 +1422,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   primera = prim;
   
 
-  printf("\nUltima es: %d\nPrimera es: %d\nResultado es: %d\nTemp es: %d\n", ultima, primera, res);
+  printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\nTemp es: %d\n", primera, ultima, res);
   //res = (*ultima);
   
   //int a[10], i, j;
