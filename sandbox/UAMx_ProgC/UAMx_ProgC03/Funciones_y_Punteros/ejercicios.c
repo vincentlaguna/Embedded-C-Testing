@@ -1390,21 +1390,32 @@ int cifras(unsigned int num, int *primera, int *ultima)
   static unsigned int res = 0;
   int prim = 0; 
   int ult = 0;
-  //int temp = 0;
+  signed int temp = num;
   
   if (num < 0)
   {
-    num *= -1;
+    temp *= -1;
   }
 
-  ult = num % 10;
-  res = log10(num);
+  ult = temp % 10;
+  
+  if (ult < 0)
+  {
+    ult *= -1;
+  }
+
+  res = log10(temp);
   printf("\nlog10(num): %d\n", res);
-  prim = num / pow(10, res);
+  prim = temp / pow(10, res);
   // temp = num;
   // temp = temp / 10;
   
-  if ((num / 10) < 10)
+  if (prim < 0)
+  {
+    prim *= -1;
+  }
+
+  if ((temp / 10) < 10)
   {
     res++;
   }
@@ -1422,7 +1433,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   primera = prim;
   
 
-  printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\nTemp es: %d\n", primera, ultima, res);
+  printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\n", primera, ultima, res);
   //res = (*ultima);
   
   //int a[10], i, j;
