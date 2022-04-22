@@ -1,51 +1,99 @@
 make all -f /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/ --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 4.2.1
-# Built for x86_64-pc-linux-gnu
-# Copyright (C) 1988-2016 Free Software Foundation, Inc.
-# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
-# This is free software: you are free to change and redistribute it.
-# There is NO WARRANTY, to the extent permitted by law.
+make: *** /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/: Is a directory.  Stop.
 
-# Make data base, printed on Fri Apr 22 16:09:04 2022
+# GNU Make 4.2.1
+ 
+# Built for x86_64-pc-linux-gnu
+ 
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
+ 
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+ 
+# This is free software: you are free to change and redistribute it.
+ 
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+ 
+# Make data base, printed on Fri Apr 22 19:53:21 2022
+ 
 
 # Variables
+ 
 
+ 
 # environment
+ 
 GNUMAKEFLAGS := 
+ 
 # automatic
+ 
 <D = $(patsubst %/,%,$(dir $<))
+ 
 # automatic
+ 
 ?F = $(notdir $?)
+ 
 # environment
+ 
 DESKTOP_SESSION = ubuntu
+ 
 # default
+ 
 .SHELLFLAGS := -c
+ 
 # environment
+ 
 XDG_SESSION_CLASS = user
+ 
 # environment
+ 
 XDG_SESSION_TYPE = x11
+ 
 # environment
+ 
 VSCODE_LOG_NATIVE = false
+ 
 # automatic
+ 
 ?D = $(patsubst %/,%,$(dir $?))
+ 
 # environment
+ 
 IM_CONFIG_PHASE = 1
+ 
 # automatic
+ 
 @D = $(patsubst %/,%,$(dir $@))
+ 
 # environment
+ 
 XAUTHORITY = /run/user/1000/gdm/Xauthority
+ 
 # environment
+ 
 GDMSESSION = ubuntu
+ 
 # environment
+ 
 XMODIFIERS = @im=ibus
+ 
 # makefile
+ 
 CURDIR := /home/ubuntu/workspace/Test_Space_0/sandbox/UAMx_ProgC/UAMx_ProgC03/Funciones_y_Punteros
+ 
 # makefile
+ 
 SHELL = /bin/sh
+ 
 # environment
+ 
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+ 
 # environment
+ 
 _ = /usr/share/code/code
+ 
 # environment
 JOURNAL_STREAM = 8:55129
 # environment
@@ -97,7 +145,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2423
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6445
 # automatic
 %F = $(notdir $%)
 # environment
@@ -145,7 +193,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-3291dd41-a4ff-4b1a-a4e2-9a66c862fded.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-25d44fe9-2b4e-45b2-ae70-9a8bcfc39814.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -203,7 +251,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 2423
+VSCODE_PID = 6445
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=11/110=10%
 
@@ -255,8 +303,6 @@ all:
 # strcache performance: lookups = 9 / hit rate = 33%
 # hash-table stats:
 # Load=6/8192=0%, Rehash=0, Collisions=0/9=0%
-# Finished Make data base on Fri Apr 22 16:09:04 2022
+# Finished Make data base on Fri Apr 22 19:53:21 2022
 
  
-make: *** /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/: Is a directory.  Stop.
-
