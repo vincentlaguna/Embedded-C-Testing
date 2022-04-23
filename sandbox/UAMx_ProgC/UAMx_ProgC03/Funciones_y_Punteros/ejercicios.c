@@ -1407,8 +1407,6 @@ int cifras(unsigned int num, int *primera, int *ultima)
   res = log10(temp);
   printf("\nlog10(num): %d\n", res);
   prim = temp / pow(10, res);
-  // temp = num;
-  // temp = temp / 10;
   
   if (prim < 0)
   {
@@ -1423,12 +1421,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   {
     res += 1;
   }
-  // while (temp != 0)
-  // {
-  //   temp /= 10;
-  //   ++res;
-  // }
-  // prim = temp;
+  
   ultima = ult;
   primera = prim;
   
@@ -1436,24 +1429,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\n", primera, ultima, res);
   //res = (*ultima);
   
-  //int a[10], i, j;
-  // printf("\n Please Enter the Number You want to Convert:  ");
-  // scanf("%d", &number);
-    
-  // for(i = 0; num > 0; i++)
-  // {
-  //   a[i] = num % 2;
-  //   num = num / 2;
-  // }
-    
-  // printf("\n Binary Number of a Given Number =  ");
-  // for(j = i - 1; j >= 0; j--)  
-  // {
-  //   printf(" %d ", a[j]);
-  // }
   
-  // printf("\n");
-
   // // multiply by 100?
   // if ((num / 1000000 < 10) && (num / 1000000 > 6))
   // {
@@ -1714,6 +1690,38 @@ Person  *ht_delete(char *person)
   {
     return NULL;
   }
+}
+
+/*********************************************/
+
+
+/*********************************************
+//Decimal to Binary
+
+#include  <stdio.h>
+
+int main(void)
+{
+  int a[10], i, j;
+  printf("\n Please Enter the Number You want to Convert:  ");
+  scanf("%d", &number);
+    
+  for (i = 0; num > 0; i++)
+  {
+    a[i] = num % 2;
+    num = num / 2;
+  }
+    
+  printf("\n Binary Number of a Given Number =  ");
+  
+  for (j = i - 1; j >= 0; j--)  
+  {
+    printf(" %d ", a[j]);
+  }
+  
+  printf("\n");
+
+  return(0);
 }
 
 /*********************************************/
