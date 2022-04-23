@@ -1328,7 +1328,7 @@ int main()
 /*********************************************/
 
 
-/**************** Prueba 2.2 *****************/
+/**************** Prueba 2.2 *****************
 // Escribe una función con el siguiente prototipo:
 
 // La función recibe un número entero en la variable
@@ -1383,6 +1383,7 @@ int main()
 // cifra es el 4 y su última cifra es el 4.
 
 #include  <stdio.h>
+#include  <stdlib.h>
 #include  <math.h>
 
 int cifras(unsigned int num, int *primera, int *ultima)
@@ -1394,7 +1395,6 @@ int cifras(unsigned int num, int *primera, int *ultima)
   
   if (temp < 0)
   {
-    //temp = (temp * (-1));
     temp *= -1;
   }
 
@@ -1406,7 +1406,6 @@ int cifras(unsigned int num, int *primera, int *ultima)
   }
 
   res = log10(temp);
-  printf("\nlog10(num): %d\n", res);
   prim = temp / pow(10, res);
   
   if (prim < 0)
@@ -1423,34 +1422,66 @@ int cifras(unsigned int num, int *primera, int *ultima)
     res += 1;
   }
   
-  ultima = &ult;
-  primera = &prim;
+  *ultima = (int)ult;
+  *primera = (int)prim;
   
-  // printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\n", primera, ultima, res);
-
   return(res);
 }
 
 
 int main(void)
 {
-  int num, cantidad, prim, ult = 0;
-  int *p_primera = NULL;
-  int *p_ultima  = NULL;
-  // p_primera      = &prim;
-  // p_ultima       = &ult;
+  int num = 0;
+  int cantidad = 0;
+  int p = 0;
+  int u = 0;
+  int *p_primera = malloc(sizeof(int));
+  int *p_ultima  = malloc(sizeof(int));
+  p_primera      = &p;
+  p_ultima       = &u;
 
   printf("\nIntroduce un número entero: ");
   scanf("%d", &num);
 
   cantidad = cifras(num, p_primera, p_ultima);
 
-  printf("\nnum = %d\n", num);
-  printf("\ncantidad = %d\n", cantidad);
-  printf("\nprimera = %d\n", *(p_primera));
-  printf("\nultima = %d\n", *(p_ultima));
-  // printf("\nEl número %d tiene %d cifras.\nSu primera cifra es el %d y su última cifra es el %d\n\n.", num, cantidad, *(p_primera), *(p_ultima));
+  printf("\nEl número %d tiene %d cifras."
+         "\nSu primera cifra es el %d y su última cifra es el %d\n\n.",
+          num, cantidad, *(p_primera), *(p_ultima));
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.1 ***************
+Escribe un programa que calcule la longitud de 
+una cadena de caracteres leída del teclado 
+utilizando un puntero a char para recorrer los 
+caracteres de la cadena. Fíjate en que con ella 
+vamos a imitar la funcionalidad de strlen().
+
+Recuerda que, si p apunta a un carácter de la 
+cadena, *p es el carácter y p++ apunta al 
+siguiente carácter.
+
+Este sería un ejemplo del programa:
+
+Introduce una cadena: supercalifragilisticoespialidoso
+supercalifragilisticoespialidoso tiene 32 caracteres.
+
+Y otro:
+
+Introduce una cadena: Recuerda que no puedes 
+guardar más de una palabra con scanf().
+Recuerda tiene 8 caracteres.
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
