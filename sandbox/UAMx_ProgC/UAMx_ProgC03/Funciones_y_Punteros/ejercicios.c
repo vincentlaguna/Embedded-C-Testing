@@ -1394,7 +1394,8 @@ int cifras(unsigned int num, int *primera, int *ultima)
   
   if (temp < 0)
   {
-    temp = (temp * (-1));
+    //temp = (temp * (-1));
+    temp *= -1;
   }
 
   ult = temp % 10;
@@ -1444,9 +1445,9 @@ int main(void)
 
   cantidad = cifras(num, p_primera, p_ultima);
 
-  // printf("\nEl número %d tiene %d cifras.\n"
-  //        "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-  //         num, cantidad, p_primera, *(p_ultima));
+  printf("\nEl número %d tiene %d cifras.\n"
+         "Su primera cifra es el %d y su última cifra es el %d\n\n.",
+          num, cantidad, p_primera, *(p_ultima));
 
   return(0);
 }
