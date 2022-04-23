@@ -1387,10 +1387,10 @@ int main()
 
 int cifras(unsigned int num, int *primera, int *ultima)
 {
-  static unsigned int res = 0;
-  int prim = 0; 
+  int res = 0;
+  int prim = 0;
   int ult = 0;
-  int temp = num;
+  int temp = (int)num;
   
   if (temp < 0)
   {
@@ -1423,10 +1423,10 @@ int cifras(unsigned int num, int *primera, int *ultima)
     res += 1;
   }
   
-  ultima = ult;
-  primera = prim;
+  ultima = &ult;
+  primera = &prim;
   
-  printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\n", primera, ultima, res);
+  // printf("\nPrimera es: %d\nUltima es: %d\nResultado es: %d\n", primera, ultima, res);
 
   return(res);
 }
@@ -1445,9 +1445,11 @@ int main(void)
 
   cantidad = cifras(num, p_primera, p_ultima);
 
-  printf("\nEl número %d tiene %d cifras.\n"
-         "Su primera cifra es el %d y su última cifra es el %d\n\n.",
-          num, cantidad, p_primera, *(p_ultima));
+  printf("\nnum = %d\n", num);
+  printf("\ncantidad = %d\n", cantidad);
+  printf("\nprimera = %d\n", *(p_primera));
+  printf("\nultima = %d\n", *(p_ultima));
+  // printf("\nEl número %d tiene %d cifras.\nSu primera cifra es el %d y su última cifra es el %d\n\n.", num, cantidad, *(p_primera), *(p_ultima));
 
   return(0);
 }
