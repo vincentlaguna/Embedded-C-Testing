@@ -1455,27 +1455,27 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.1 ***************
-Escribe un programa que calcule la longitud de 
-una cadena de caracteres leída del teclado 
-utilizando un puntero a char para recorrer los 
-caracteres de la cadena. Fíjate en que con ella 
-vamos a imitar la funcionalidad de strlen().
+/*************** Ejercicio 3.1 ***************/
+// Escribe un programa que calcule la longitud de 
+// una cadena de caracteres leída del teclado 
+// utilizando un puntero a char para recorrer los 
+// caracteres de la cadena. Fíjate en que con ella 
+// vamos a imitar la funcionalidad de strlen().
 
-Recuerda que, si p apunta a un carácter de la 
-cadena, *p es el carácter y p++ apunta al 
-siguiente carácter.
+// Recuerda que, si p apunta a un carácter de la 
+// cadena, *p es el carácter y p++ apunta al 
+// siguiente carácter.
 
-Este sería un ejemplo del programa:
+// Este sería un ejemplo del programa:
 
-Introduce una cadena: supercalifragilisticoespialidoso
-supercalifragilisticoespialidoso tiene 32 caracteres.
+// Introduce una cadena: supercalifragilisticoespialidoso
+// supercalifragilisticoespialidoso tiene 32 caracteres.
 
-Y otro:
+// Y otro:
 
-Introduce una cadena: Recuerda que no puedes 
-guardar más de una palabra con scanf().
-Recuerda tiene 8 caracteres.
+// Introduce una cadena: Recuerda que no puedes 
+// guardar más de una palabra con scanf().
+// Recuerda tiene 8 caracteres.
 
 #include  <stdio.h>
 
