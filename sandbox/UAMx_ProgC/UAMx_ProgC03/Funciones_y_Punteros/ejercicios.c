@@ -1392,7 +1392,7 @@ int cifras(unsigned int num, int *primera, int *ultima)
   int ult = 0;
   int temp = num;
   
-  if (num < 0)
+  if (temp < 0)
   {
     temp = (temp * (-1));
   }
