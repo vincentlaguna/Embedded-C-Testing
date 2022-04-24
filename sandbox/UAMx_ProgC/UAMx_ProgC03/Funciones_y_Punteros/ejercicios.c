@@ -1455,7 +1455,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.1 ***************/
+/*************** Ejercicio 3.1 ***************
 // Escribe un programa que calcule la longitud de 
 // una cadena de caracteres leída del teclado 
 // utilizando un puntero a char para recorrer los 
@@ -1500,6 +1500,37 @@ int main(void)
   printf("tiene %d caracteres.\n\n", cuenta);
 
   return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.2 ***************/
+// Completa el siguiente programa para que 
+// escriba en la pantalla el valor de los elementos 
+// de cada una de las tablas (a y b) sin usar su 
+// nombre, solo los punteros p y q. Para ello 
+// necesitarás incrementar estos punteros.
+
+// Esta sería la salida del programa:
+
+// Lista a: 1 | Lista b: 1.20
+// Lista a: 2 | Lista b: 3.10
+// Lista a: 3 | Lista b: 2.50
+
+#include <stdio.h>
+
+#define TAM 3
+
+int main(void) 
+{
+  int i, a[TAM]={1,2,3}, *p;
+  double b[TAM]={1.2,3.1,2.5}, *q;
+
+  /* Escribe aquí tu código. */
+
+  return(0);
+
 }
 
 /*********************************************/
