@@ -1525,9 +1525,16 @@ int main(void)
 int main(void) 
 {
   int i, a[TAM]={1,2,3}, *p;
-  double b[TAM]={1.2,3.1,2.5}, *q;
+  double b[TAM]={1.2,3.1,2.5}, *q; 
 
-  /* Escribe aquí tu código. */
+  printf("\n");
+
+  for (i = 0, p = a, q = b; i < TAM; p++, q++, i++)
+  {
+    printf("\nLista a: %d | Lista b: %.2lf\n", *p, *q);
+  }
+  
+  printf("\n");
 
   return(0);
 
