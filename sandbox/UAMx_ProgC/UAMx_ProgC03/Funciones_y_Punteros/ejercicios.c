@@ -1505,7 +1505,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.2 ***************/
+/*************** Ejercicio 3.2 ***************
 // Completa el siguiente programa para que 
 // escriba en la pantalla el valor de los elementos 
 // de cada una de las tablas (a y b) sin usar su 
@@ -1538,6 +1538,19 @@ int main(void)
 
   return(0);
 
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.3 ***************/
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
 }
 
 /*********************************************/
