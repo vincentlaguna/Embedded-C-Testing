@@ -1544,12 +1544,58 @@ int main(void)
 
 
 /*************** Ejercicio 3.3 ***************/
+// Escribe una función que incremente los elementos 
+// de una tabla de enteros en una cierta cantidad 
+// pasada como argumento pero fijado como macro. 
+// En total la función ha de tener tres argumentos: 
+// la tabla, la dimensión de la tabla y 
+// el valor del incremento.
+
+// En main declara e inicializa la tabla, muestra 
+// el contenido de la tabla por pantalla, llama a 
+// la función y vuelve a mostrar el contenido 
+// de la tabla por pantalla.
+
+// Este sería un ejemplo del programa con la macro 5:
+
+// El contenido de la tabla es: 2 4 7
+// El nuevo contenido de la tabla es: 7 9 12
+
+// Otro ejemplo con la macro 42:
+
+// El contenido de la tabla es 8 24 65
+// El nuevo contenido de la tabla es: 50 66 107
 
 #include  <stdio.h>
 
+#define   DIM 3
+#define   INCREMENTO 5
+
+void incrementarTabla(int *pTabla, int dim, int incremento)
+{
+  // int *p;
+
+  for (int i = 0; i < dim; i++, pTabla++)
+  {
+    // printf("Tabla Elemento[%d] = %d\n", i, *pTabla);
+    *pTabla += incremento;
+    // printf("Tabla Elemento[%d] = %d\n", i, *pTabla);
+  }
+  printf("\n");
+}
+
 int main(void)
 {
- 
+  int *p;
+  int tabla[DIM] = {2, 4, 7};
+  p = tabla;
+
+  printf("\nEl contenido de la tabla es: %d %d %d\n\n", tabla[0], tabla[1], tabla[2]);
+
+  incrementarTabla(p, DIM, INCREMENTO);
+
+  printf("\nEl nuevo contenido de la tabla es: %d %d %d\n\n", tabla[0], tabla[1], tabla[2]);
+
   return(0);
 }
 
