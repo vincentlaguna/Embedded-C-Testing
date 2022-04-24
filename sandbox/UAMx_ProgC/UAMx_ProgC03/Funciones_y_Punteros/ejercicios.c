@@ -1569,28 +1569,25 @@ int main(void)
 #include  <stdio.h>
 
 #define   DIM 3
-#define   INCREMENTO 5
+// #define   INCREMENTO 5
+#define   INCREMENTO 42
 
 void incrementarTabla(int *pTabla, int dim, int incremento)
 {
-  // int *p;
-
   for (int i = 0; i < dim; i++, pTabla++)
   {
-    // printf("Tabla Elemento[%d] = %d\n", i, *pTabla);
     *pTabla += incremento;
-    // printf("Tabla Elemento[%d] = %d\n", i, *pTabla);
   }
-  printf("\n");
 }
 
 int main(void)
 {
   int *p;
-  int tabla[DIM] = {2, 4, 7};
+  // int tabla[DIM] = {2, 4, 7};
+  int tabla[DIM] = {8, 24, 65};
   p = tabla;
 
-  printf("\nEl contenido de la tabla es: %d %d %d\n\n", tabla[0], tabla[1], tabla[2]);
+  printf("\nEl contenido de la tabla es: %d %d %d\n", tabla[0], tabla[1], tabla[2]);
 
   incrementarTabla(p, DIM, INCREMENTO);
 
