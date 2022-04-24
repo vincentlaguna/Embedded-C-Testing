@@ -1479,9 +1479,26 @@ int main(void)
 
 #include  <stdio.h>
 
+#define   TAM 128
+
 int main(void)
 {
- 
+  char cadena[TAM];
+  char *c;
+  int cuenta = 0;
+
+  printf("\nIntroduce una cadena: ");
+  scanf("%s", cadena);
+  printf("\n");
+
+  for (c = cadena; *c != '\0'; cuenta++, c++)
+  {
+    printf("%c", *c);
+  }
+
+  printf(" ");
+  printf("tiene %d caracteres.\n\n", cuenta);
+
   return(0);
 }
 
