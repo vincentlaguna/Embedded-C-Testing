@@ -1543,7 +1543,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.3 ***************/
+/*************** Ejercicio 3.3 ***************
 // Escribe una función que incremente los elementos 
 // de una tabla de enteros en una cierta cantidad 
 // pasada como argumento pero fijado como macro. 
