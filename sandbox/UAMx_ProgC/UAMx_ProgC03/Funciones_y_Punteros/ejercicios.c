@@ -1599,7 +1599,8 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
+// Incrementa datos[i] por uno
 
 #include <stdio.h>
 
@@ -1613,16 +1614,54 @@ void incrementa(int *p, int num)
     p[i]++;
 }
 
-int main() 
+int main(void) 
 {
   int i, datos[DIM] = {2,3,5};
 
-  incrementa(datos, DIM);
+  incrementa(datos+1, DIM-1);
 
   for (i=0; i<DIM; i++)
     printf("%d ", datos[i]);
 
-  return 0;
+  return(0);
+
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// Apendiendo caracteres al final de cadena
+
+#include <stdio.h>
+#include <string.h>
+
+#define DIM 10
+
+void agregar_txt(char *cadena) 
+{
+  int i = strlen(cadena);
+
+  cadena[i] = '.';
+  i++;
+  cadena[i] = 't';
+  i++;
+  cadena[i] = 'x';
+  i++;
+  cadena[i] = 't';
+  i++;
+  cadena[i] = 0;
+
+}
+
+int main(void) 
+{
+  char nombre[DIM] = "data";
+
+  agregar_txt(nombre);
+  printf("%s", nombre);
+
+  return(0);
 
 }
 
