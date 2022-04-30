@@ -1654,12 +1654,20 @@ void agregar_txt(char *cadena)
 
 }
 
+void minu_a_mayu(char *p) 
+{
+  for (; *p!= 0; p++)
+    *p += 'A'-'a';
+    // *p += 'a'+'A';
+}
+
 int main(void) 
 {
   char nombre[DIM] = "data";
 
-  agregar_txt(nombre);
-  printf("%s", nombre);
+  // agregar_txt(nombre);
+  minu_a_mayu(nombre);
+  printf("\n%s\n\n", nombre);
 
   return(0);
 
