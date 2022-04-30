@@ -1630,7 +1630,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // Apendiendo caracteres al final de cadena
 
 #include <stdio.h>
@@ -1658,7 +1658,7 @@ void minu_a_mayu(char *p)
 {
   for (; *p!= 0; p++)
     *p += 'A'-'a';
-    // *p += 'a'+'A';
+    // *p += 'a'+'A'; // Nope...
 }
 
 int main(void) 
@@ -1667,10 +1667,51 @@ int main(void)
 
   // agregar_txt(nombre);
   minu_a_mayu(nombre);
-  printf("\n%s\n\n", nombre);
+  printf("\n%s\n\n", nombre+1);
 
   return(0);
 
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 3.4 ***************/
+// Escribe una función que pase una cadena de 
+// caracteres de minúsculas a mayúsculas, 
+// devolviendo el tamaño de la cadena.
+
+// El programa principal debe solicitar una 
+// cadena al usuario, llamar a la función y 
+// mostrar la cadena convertida por 
+// pantalla junto con su tamaño.
+
+// Puedes suponer que los usuarios 
+// siempre introducirán por teclado 
+// una cadena en minúsculas.
+
+// Este sería un ejemplo del programa:
+
+// Introduce una cadena de caracteres en 
+// minúsculas: supercalifragilisticoespialidoso
+
+// La cadena en mayúsculas 
+// es SUPERCALIFRAGILISTICOESPIALIDOSO 
+// y su tamaño 32.
+
+// Y otro:
+
+// Introduce una cadena: recuerda que no 
+// puedes guardar más de una palabra con scanf()
+
+// La cadena en mayúsculas es RECUERDA y su tamaño 8. 
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
 }
 
 /*********************************************/
