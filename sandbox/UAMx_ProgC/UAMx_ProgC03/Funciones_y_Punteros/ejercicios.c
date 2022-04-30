@@ -1676,7 +1676,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 3.4 ***************/
+/*************** Ejercicio 3.4 ***************
 // Escribe una función que pase una cadena de 
 // caracteres de minúsculas a mayúsculas, 
 // devolviendo el tamaño de la cadena.
@@ -1705,6 +1705,105 @@ int main(void)
 // puedes guardar más de una palabra con scanf()
 
 // La cadena en mayúsculas es RECUERDA y su tamaño 8. 
+
+#include <stdio.h>
+#include <string.h>
+
+#define DIM 128
+
+int minu_a_mayu(char *cadena) 
+{
+  int res = strlen(cadena);
+
+  for (; *cadena != 0; cadena++)
+    *cadena += 'A'-'a';
+
+  return(res);
+}
+
+int main(void)
+{
+  int  res = 0;
+  char cadena[DIM];
+
+  printf("\nIntroduce una cadena de caracteres en minúsculas: ");
+  scanf("%s",cadena);
+
+  res = minu_a_mayu(cadena);
+
+  printf("\nLa cadena en mayúsculas es %s y su tamaño %d\n\n.",
+          cadena, res);
+          
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 3.1 *****************/
+// Escribe un programa con las 
+// siguientes estructuras:
+
+// Una estructura llamada Contacto con un campo 
+// llamado nombre y otro llamado apellido.
+
+// Una estructura llamada Agenda con un campo 
+// para una tabla de hasta 100 contactos y otro 
+// campo para un entero que almacene el número 
+// de contactos guardados en la agenda.
+
+// A continuación, escribe las siguientes funciones:
+
+// La función con prototipo 
+// void iniciarAgenda(Agenda *ag); 
+// que inicialice a cero la variable que contiene 
+// el número de contactos de la agenda.
+
+// La función con prototipo 
+// void addContacto(Agenda *ag, char *nom, char *apell); 
+// que añada un nuevo contacto a la agenda.
+
+// La función con prototipo 
+// void mostrarAgenda(Agenda ag); 
+// que muestre todos los contactos de la agenda por pantalla.
+
+// En el programa principal declara una variable 
+// de tipo Agenda llamada agenda, una cadena 
+// de caracteres llamada nombre, una cadena de 
+// caracteres llamada apellido, un entero llamado 
+// i y un entero llamado num. 
+// Después, realiza los siguietnes pasos:
+
+// Llama a la función iniciarAgenda() 
+// para inicializar el número de contactos a cero.
+
+// Pregunta cuántos contactos se han de añadir 
+// a la agenda (guardando el número en la variable num).
+
+// Léelos (utilizando las variables nombre y apellido) 
+// y guárdalos en la agenda mediante la función addContacto().
+
+// Muestra todos los contactos introducidos por 
+// pantalla utilizando la función mostrarAgenda().
+
+// Lo que sigue es un ejemplo de ejecución del programa:
+
+// ¿Cuántos contactos quieres guardar en la agenda?: 0
+// ERROR: el valor debe estar entre 1 y 100.
+// ¿Cuántos contactos quieres guardar en la agenda?: 102
+// ERROR: el valor debe estar entre 1 y 100.
+// ¿Cuántos contactos quieres guardar en la agenda?: 3
+// Introduce el nombre del contacto 1: Daenerys
+// Introduce el apellido del contacto 1: Targaryen
+// Introduce el nombre del contacto 2: Jon
+// Introduce el apellido del contacto 2: Snow
+// Introduce el nombre del contacto 3: Cersei
+// Introduce el apellido del contacto 3: Lannister
+
+// Hay 3 contactos en la agenda:
+// Contacto 1: Daenerys Targaryen
+// Contacto 2: Jon Snow
+// Contacto 3: Cersei Lannister
 
 #include  <stdio.h>
 
