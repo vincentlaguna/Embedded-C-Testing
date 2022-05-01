@@ -1754,18 +1754,6 @@ int main(void)
 
 // A continuación, escribe las siguientes funciones:
 
-typedef struct Contacto
-{
-  char nombre[DIM];
-  char apellido;
-} Contacto;
-
-struct Agenda
-{
-  Contacto contactos[DIM];
-  int cantitad;
-};
-
 // La función con prototipo 
 // void iniciarAgenda(Agenda *ag); 
 // que inicialice a cero la variable que contiene 
@@ -1774,6 +1762,51 @@ struct Agenda
 // La función con prototipo 
 // void addContacto(Agenda *ag, char *nom, char *apell); 
 // que añada un nuevo contacto a la agenda.
+
+#include  <stdlib.h>
+#define   DIM 100
+
+typedef struct Contacto
+{
+  char nombre[DIM];
+  char apellido[DIM];
+
+} Contacto;
+
+typedef struct Agenda
+{
+  Contacto contactos[DIM];
+  int cantitad;
+  
+} Agenda;
+
+void iniciarAgenda(Agenda *ag)
+{
+  int cantidad = 0;
+  ag->cantitad = cantidad;
+}
+
+void addContacto(Agenda *ag, char *nom, char *apell)
+{
+  for (int i = 0; i < DIM; i++)
+  {
+    if (ag->contactos[i].nombre == NULL)
+    {
+      *ag->contactos[i].nombre   = nom;
+      *ag->contactos[i].apellido = apell;
+    }
+  }
+}
+
+void mostrarAgenda(Agenda ag)
+{
+  for (int i = 0; i < DIM; i++)
+  {
+    if (ag.contactos[i].nombre != NULL)
+    printf("\nContacto #%d:\nNombre: %s\nAppellido: %s\n\n",
+            i, ag.contactos[i].nombre, ag.contactos[i].appellido);
+  }
+}
 
 // La función con prototipo 
 // void mostrarAgenda(Agenda ag); 
