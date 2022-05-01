@@ -1837,7 +1837,7 @@ void iniciarAgenda(Agenda *ag)
     *ag->contactos[i].nombre   = NULL;
     *ag->contactos[i].apellido = NULL;
   // *ag->contactos = NULL;
-  
+  }
 }
 
 void addContacto(Agenda *ag, char *nom, char *apell)
@@ -1888,7 +1888,7 @@ int main(void)
     printf("\nIntroduce el apellido del contacto %d: ", i);
     scanf("\n%s", apellido);
 
-    addContacto(&pAgenda, nombre, apellido);
+    addContacto(pAgenda, nombre, apellido);
 
   }
 
