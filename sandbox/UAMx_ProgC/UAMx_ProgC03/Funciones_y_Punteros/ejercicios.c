@@ -1806,7 +1806,9 @@ int main(void)
 // Contacto 3: Cersei Lannister
 
 #include  <stdio.h>
+#include  <string.h>
 #include  <stdlib.h>
+
 #define   DIM 100
 
 typedef struct Contacto
@@ -1827,16 +1829,27 @@ void iniciarAgenda(Agenda *ag)
 {
   int cantidad = 0;
   ag->cantitad = cantidad;
+  
+  for (int i = 0; i < DIM; i++)
+  {
+    *ag->contactos[i].nombre   = (Agenda *)malloc(sizeof(Agenda));
+    *ag->contactos[i].apellido = (Agenda *)malloc(sizeof(Agenda));
+    *ag->contactos[i].nombre   = NULL;
+    *ag->contactos[i].apellido = NULL;
+    ag->cantitad = cantidad;
+  }
+  // *ag->contactos = NULL;
+  
 }
 
 void addContacto(Agenda *ag, char *nom, char *apell)
 {
-  for (int i = 0; i < DIM; i++)
+  for (int i = 0; i <= DIM; i++)
   {
     if (ag->contactos[i].nombre == NULL)
     {
-      *ag->contactos[i].nombre   = nom;
-      *ag->contactos[i].apellido = apell;
+      *ag->contactos[i].nombre   = *nom;
+      *ag->contactos[i].apellido = *apell;
     }
   }
 }
@@ -1846,8 +1859,7 @@ void mostrarAgenda(Agenda ag)
   for (int i = 0; i < DIM; i++)
   {
     if (ag.contactos[i].nombre != NULL)
-    printf("\nContacto %d: %s %s\n",
-            i, ag.contactos[i].nombre, ag.contactos[i].appellido);
+    printf("\nContacto %d: %s %s\n", i, ag.contactos[i].nombre, ag.contactos[i].apellido);
   }
 }
 
@@ -1859,8 +1871,8 @@ int main(void)
   
   int    i;
   int    num;
-  char   nombre[DIM];
-  char   appellido[DIM];
+  char   nombre[DIM] = {0};
+  char   apellido[DIM] = {0};
   
   iniciarAgenda(pAgenda);
 
@@ -1870,12 +1882,15 @@ int main(void)
   // if (num <= 0)
     // printf("\nERROR: el valor debe estar entre 1 y 100.\n");
 
-  for (; i < num; i++)
+  for (i = 1; i <= num; i++)
   {
     printf("\nIntroduce el nombre del contacto %d: ", i);
     scanf("%s", nombre);
-    printf("Introduce el apellido del contacto %d", i);
-    scanf("%s", nombre);
+    strcpy(agenda.contactos[i].nombre, nombre);
+
+    printf("\nIntroduce el apellido del contacto %d: ", i);
+    scanf("\n%s", apellido);
+    *pAgenda->contactos[i].apellido = apellido;
   }
 
   printf("\n\nHay %d contactos en la agenda:\n", pAgenda->cantitad);
