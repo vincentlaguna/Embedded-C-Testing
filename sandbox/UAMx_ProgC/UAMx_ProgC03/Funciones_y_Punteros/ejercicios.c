@@ -1832,12 +1832,10 @@ void iniciarAgenda(Agenda *ag)
   
   for (int i = 0; i < DIM; i++)
   {
-    *ag->contactos[i].nombre   = (Agenda *)malloc(sizeof(Agenda));
-    *ag->contactos[i].apellido = (Agenda *)malloc(sizeof(Agenda));
+    *ag->contactos[i].nombre   = (char *)malloc(DIM * sizeof(char));
+    *ag->contactos[i].apellido = (char *)malloc(DIM * sizeof(char));
     *ag->contactos[i].nombre   = NULL;
     *ag->contactos[i].apellido = NULL;
-    ag->cantitad = cantidad;
-  }
   // *ag->contactos = NULL;
   
 }
@@ -1865,8 +1863,8 @@ void mostrarAgenda(Agenda ag)
 
 int main(void)
 {
-  Agenda  *pAgenda = (Agenda *)malloc(sizeof(Agenda));
   Agenda  agenda;
+  Agenda  *pAgenda;// = (Agenda *)malloc(sizeof(Agenda));
   pAgenda = &agenda;
   
   int    i;
@@ -1886,16 +1884,17 @@ int main(void)
   {
     printf("\nIntroduce el nombre del contacto %d: ", i);
     scanf("%s", nombre);
-    strcpy(agenda.contactos[i].nombre, nombre);
 
     printf("\nIntroduce el apellido del contacto %d: ", i);
     scanf("\n%s", apellido);
-    *pAgenda->contactos[i].apellido = apellido;
+
+    addContacto(&pAgenda, nombre, apellido);
+
   }
 
-  printf("\n\nHay %d contactos en la agenda:\n", pAgenda->cantitad);
+  // printf("\n\nHay %d contactos en la agenda:\n", pAgenda->cantitad);
 
-  for (; i >= 0; i--)
+  for (i = 0; i < DIM; i++)
   {
     mostrarAgenda(agenda);
   }
