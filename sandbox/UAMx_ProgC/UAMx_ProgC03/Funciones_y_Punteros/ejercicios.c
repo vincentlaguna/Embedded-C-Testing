@@ -1763,51 +1763,6 @@ int main(void)
 // void addContacto(Agenda *ag, char *nom, char *apell); 
 // que añada un nuevo contacto a la agenda.
 
-#include  <stdlib.h>
-#define   DIM 100
-
-typedef struct Contacto
-{
-  char nombre[DIM];
-  char apellido[DIM];
-
-} Contacto;
-
-typedef struct Agenda
-{
-  Contacto contactos[DIM];
-  int cantitad;
-  
-} Agenda;
-
-void iniciarAgenda(Agenda *ag)
-{
-  int cantidad = 0;
-  ag->cantitad = cantidad;
-}
-
-void addContacto(Agenda *ag, char *nom, char *apell)
-{
-  for (int i = 0; i < DIM; i++)
-  {
-    if (ag->contactos[i].nombre == NULL)
-    {
-      *ag->contactos[i].nombre   = nom;
-      *ag->contactos[i].apellido = apell;
-    }
-  }
-}
-
-void mostrarAgenda(Agenda ag)
-{
-  for (int i = 0; i < DIM; i++)
-  {
-    if (ag.contactos[i].nombre != NULL)
-    printf("\nContacto #%d:\nNombre: %s\nAppellido: %s\n\n",
-            i, ag.contactos[i].nombre, ag.contactos[i].appellido);
-  }
-}
-
 // La función con prototipo 
 // void mostrarAgenda(Agenda ag); 
 // que muestre todos los contactos de la agenda por pantalla.
@@ -1851,10 +1806,85 @@ void mostrarAgenda(Agenda ag)
 // Contacto 3: Cersei Lannister
 
 #include  <stdio.h>
+#include  <stdlib.h>
+#define   DIM 100
+
+typedef struct Contacto
+{
+  char nombre[DIM];
+  char apellido[DIM];
+
+} Contacto;
+
+typedef struct Agenda
+{
+  Contacto contactos[DIM];
+  int cantitad;
+  
+} Agenda;
+
+void iniciarAgenda(Agenda *ag)
+{
+  int cantidad = 0;
+  ag->cantitad = cantidad;
+}
+
+void addContacto(Agenda *ag, char *nom, char *apell)
+{
+  for (int i = 0; i < DIM; i++)
+  {
+    if (ag->contactos[i].nombre == NULL)
+    {
+      *ag->contactos[i].nombre   = nom;
+      *ag->contactos[i].apellido = apell;
+    }
+  }
+}
+
+void mostrarAgenda(Agenda ag)
+{
+  for (int i = 0; i < DIM; i++)
+  {
+    if (ag.contactos[i].nombre != NULL)
+    printf("\nContacto %d: %s %s\n",
+            i, ag.contactos[i].nombre, ag.contactos[i].appellido);
+  }
+}
 
 int main(void)
 {
- 
+  Agenda  *pAgenda = (Agenda *)malloc(sizeof(Agenda));
+  Agenda  agenda;
+  pAgenda = &agenda;
+  
+  int    i;
+  int    num;
+  char   nombre[DIM];
+  char   appellido[DIM];
+  
+  iniciarAgenda(pAgenda);
+
+  printf("\n¿Cuántos contactos quieres guardar en la agenda?: ");
+  scanf("%d", &num);
+
+  // if (num <= 0)
+    // printf("\nERROR: el valor debe estar entre 1 y 100.\n");
+
+  for (; i < num; i++)
+  {
+    printf("\nIntroduce el nombre del contacto %d: ", i);
+    scanf("%s", nombre);
+    printf("Introduce el apellido del contacto %d", i);
+    scanf("%s", nombre);
+  }
+
+  printf("\n\nHay %d contactos en la agenda:\n", pAgenda->cantitad);
+
+  for (; i >= 0; i--)
+  {
+    mostrarAgenda(agenda);
+  }
+
   return(0);
 }
 
