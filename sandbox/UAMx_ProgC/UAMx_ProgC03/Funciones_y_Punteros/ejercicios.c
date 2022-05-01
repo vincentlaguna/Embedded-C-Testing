@@ -1754,6 +1754,18 @@ int main(void)
 
 // A continuación, escribe las siguientes funciones:
 
+typedef struct Contacto
+{
+  char nombre[DIM];
+  char apellido;
+} Contacto;
+
+struct Agenda
+{
+  Contacto contactos[DIM];
+  int cantitad;
+};
+
 // La función con prototipo 
 // void iniciarAgenda(Agenda *ag); 
 // que inicialice a cero la variable que contiene 
