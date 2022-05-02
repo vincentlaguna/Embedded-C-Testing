@@ -1842,7 +1842,7 @@ void iniciarAgenda(Agenda *ag)
 
 void addContacto(Agenda *ag, char *nom, char *apell)
 {
-  for (int i = 0; i <= DIM; i++)
+  for (int i = 0; i <= ag->cantitad; i++)
   {
     if (*ag->contactos[i].nombre == NULL) // Here is the problem right now 050122
     {
@@ -1879,6 +1879,8 @@ int main(void)
 
   // if (num <= 0)
     // printf("\nERROR: el valor debe estar entre 1 y 100.\n");
+
+  pAgenda->cantitad = num;
 
   for (i = 1; i <= num; i++)
   {
