@@ -1830,21 +1830,21 @@ void iniciarAgenda(Agenda *ag)
   int cantidad = 0;
   ag->cantitad = cantidad;
   
-  for (int i = 0; i < DIM; i++)
-  {
-    *ag->contactos[i].nombre   = (char *)malloc(DIM * sizeof(char));
-    *ag->contactos[i].apellido = (char *)malloc(DIM * sizeof(char));
-    *ag->contactos[i].nombre   = NULL;
-    *ag->contactos[i].apellido = NULL;
-  // *ag->contactos = NULL;
-  }
+  // for (int i = 0; i < DIM; i++)
+  // {
+  //   *ag->contactos[i].nombre   = (char *)malloc(DIM * sizeof(char));
+  //   *ag->contactos[i].apellido = (char *)malloc(DIM * sizeof(char));
+  //   *ag->contactos[i].nombre   = NULL;
+  //   *ag->contactos[i].apellido = NULL;
+  // // *ag->contactos = NULL;
+  // }
 }
 
 void addContacto(Agenda *ag, char *nom, char *apell)
 {
   for (int i = 0; i <= DIM; i++)
   {
-    if (ag->contactos[i].nombre == NULL)
+    if (*ag->contactos[i].nombre == NULL) // Here is the problem right now 050122
     {
       *ag->contactos[i].nombre   = *nom;
       *ag->contactos[i].apellido = *apell;
@@ -1894,7 +1894,7 @@ int main(void)
 
   // printf("\n\nHay %d contactos en la agenda:\n", pAgenda->cantitad);
 
-  for (i = 0; i < DIM; i++)
+  for (i = 0; i < num; i++)
   {
     mostrarAgenda(agenda);
   }

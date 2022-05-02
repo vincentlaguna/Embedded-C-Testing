@@ -15,7 +15,7 @@ make: *** /home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM
  
 
  
-# Make data base, printed on Sun May  1 12:39:19 2022
+# Make data base, printed on Sun May  1 22:57:36 2022
  
 
 # Variables
@@ -71,11 +71,17 @@ IM_CONFIG_PHASE = 1
 XAUTHORITY = /run/user/1000/gdm/Xauthority
  
 # environment
+ 
 GDMSESSION = ubuntu
+ 
 # environment
+ 
 XMODIFIERS = @im=ibus
+ 
 # makefile
+ 
 CURDIR := /home/ubuntu/workspace/Test_Space_0/sandbox/UAMx_ProgC/UAMx_ProgC03/Funciones_y_Punteros
+ 
 # makefile
 SHELL = /bin/sh
 # environment
@@ -83,7 +89,7 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 _ = /usr/share/code/code
 # environment
-JOURNAL_STREAM = 8:56473
+JOURNAL_STREAM = 8:54079
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from '/home/ubuntu/workspace/Test_DEV_0/SRC_Builds/DEVT_1.0/REM_Protocol/REM_Srv_v1.0/', line 1)
@@ -101,7 +107,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1100
+MANAGERPID = 1058
 # environment
 LESSOPEN = | /usr/bin/lesspipe %s
 # environment
@@ -113,7 +119,7 @@ PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
-SESSION_MANAGER = local/vl-workstation-0:@/tmp/.ICE-unix/1448,unix/vl-workstation-0:/tmp/.ICE-unix/1448
+SESSION_MANAGER = local/vl-workstation-0:@/tmp/.ICE-unix/1391,unix/vl-workstation-0:/tmp/.ICE-unix/1391
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -123,7 +129,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = dfa042072aec4889a8c2b12619c3ef66
+INVOCATION_ID = 0178e3944cf0476cab0a8420ca9fca87
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -133,7 +139,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3953
+GIO_LAUNCHED_DESKTOP_FILE_PID = 2408
 # automatic
 %F = $(notdir $%)
 # environment
@@ -145,7 +151,7 @@ PWD = /home/ubuntu/workspace/Test_Space_0/sandbox/UAMx_ProgC/UAMx_ProgC03/Funcio
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1395
+SSH_AGENT_PID = 1338
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -181,7 +187,7 @@ SHLVL = 0
 # environment
 GNOME_SHELL_SESSION_MODE = ubuntu
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-126f3eb7-8fa4-47f7-b219-058fa0e5fbc4.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-fbf433b4-43c3-42b8-9dba-99950246a53f.sock
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -239,7 +245,7 @@ GJS_DEBUG_OUTPUT = stderr
 # environment
 LANG = C
 # environment
-VSCODE_PID = 3953
+VSCODE_PID = 2408
 # variable set hash-table stats:
 # Load=97/1024=9%, Rehash=0, Collisions=11/110=10%
 
@@ -291,6 +297,6 @@ all:
 # strcache performance: lookups = 9 / hit rate = 33%
 # hash-table stats:
 # Load=6/8192=0%, Rehash=0, Collisions=0/9=0%
-# Finished Make data base on Sun May  1 12:39:20 2022
+# Finished Make data base on Sun May  1 22:57:36 2022
 
  
