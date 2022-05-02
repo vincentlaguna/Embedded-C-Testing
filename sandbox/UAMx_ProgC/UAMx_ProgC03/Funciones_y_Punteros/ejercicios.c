@@ -1842,9 +1842,13 @@ void iniciarAgenda(Agenda *ag)
 
 void addContacto(Agenda *ag, char *nom, char *apell)
 {
+  char nombre[DIM];
+  strcpy(nombre, nom);
+
   for (int i = 0; i <= ag->cantitad; i++)
   {
-    if (*ag->contactos[i].nombre == NULL) // Here is the problem right now 050122
+    // if (*ag->contactos[i].nombre == NULL) // Here is the problem right now 050122
+    if (strcmp(nombre, ag->contactos[i].nombre) != 0)
     {
       *ag->contactos[i].nombre   = *nom;
       *ag->contactos[i].apellido = *apell;
@@ -1854,9 +1858,11 @@ void addContacto(Agenda *ag, char *nom, char *apell)
 
 void mostrarAgenda(Agenda ag)
 {
+  // char empty[DIM] = {'\0'};
   for (int i = 0; i < DIM; i++)
   {
     if (ag.contactos[i].nombre != NULL)
+    // if (strcmp(empty, ag.contactos[i].nombre) != 0)
     printf("\nContacto %d: %s %s\n", i, ag.contactos[i].nombre, ag.contactos[i].apellido);
   }
 }
