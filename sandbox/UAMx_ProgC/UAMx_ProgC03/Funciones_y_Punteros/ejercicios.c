@@ -1834,7 +1834,7 @@ void iniciarAgenda(Agenda *ag)
   {
     *ag->contactos[i].nombre   = (char *)malloc(DIM * sizeof(char));
     *ag->contactos[i].apellido = (char *)malloc(DIM * sizeof(char));
-    *ag->contactos[i].nombre   = NULL;
+    ag->contactos[i].nombre[i]   = NULL;
     *ag->contactos[i].apellido = NULL;
   // *ag->contactos = NULL;
   }
