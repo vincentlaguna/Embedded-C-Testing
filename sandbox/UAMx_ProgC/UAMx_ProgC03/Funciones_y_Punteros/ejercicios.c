@@ -1821,91 +1821,71 @@ typedef struct Contacto
 typedef struct Agenda
 {
   Contacto contactos[DIM];
-  int cantitad;
+  int cantidad;
   
 } Agenda;
 
 void iniciarAgenda(Agenda *ag)
 {
   int cantidad = 0;
-  ag->cantitad = cantidad;
-  
-  for (int i = 0; i <= DIM; i++)
-  {
-    *ag->contactos[i].nombre   = (char *)malloc(DIM * sizeof(char));
-    *ag->contactos[i].apellido = (char *)malloc(DIM * sizeof(char));
-    ag->contactos[i].nombre[i]   = NULL;
-    *ag->contactos[i].apellido = NULL;
-  // *ag->contactos = NULL;
-  }
+  ag->cantidad = cantidad;
 }
 
 void addContacto(Agenda *ag, char *nom, char *apell)
 {
-  char nombre[DIM];
-  strcpy(nombre, nom);
-
-  for (int i = 0; i <= ag->cantitad; i++)
-  {
-    // if (*ag->contactos[i].nombre == NULL) // Here is the problem right now 050122
-    if (strcmp(nombre, ag->contactos[i].nombre) != 0)
-    {
-      *ag->contactos[i].nombre   = *nom;
-      *ag->contactos[i].apellido = *apell;
-    }
-  }
+  *ag->contactos[ag->cantidad].nombre = (char *)malloc(DIM * sizeof(char));
+  *ag->contactos[ag->cantidad].apellido = (char *)malloc(DIM * sizeof(char));
+  printf("\n==%s==%s==%d==\n", nom, apell, ag->cantidad);
+  strcpy(ag->contactos[ag->cantidad].nombre, nom);
+  strcpy(ag->contactos[ag->cantidad].apellido, apell);
+  printf("\n==%s==%s==%d==\n", ag->contactos[ag->cantidad].nombre, ag->contactos[ag->cantidad].apellido, ag->cantidad);
 }
 
 void mostrarAgenda(Agenda ag)
 {
-  // char empty[DIM] = {'\0'};
-  for (int i = 0; i < DIM; i++)
+  for (int i = 0; i < ag.cantidad; i++)
   {
-    if (ag.contactos[i].nombre != NULL)
-    // if (strcmp(empty, ag.contactos[i].nombre) != 0)
-    printf("\nContacto %d: %s %s\n", i, ag.contactos[i].nombre, ag.contactos[i].apellido);
+    printf("\nContacto %d: %s %s\n", i+1, ag.contactos[i].nombre, ag.contactos[i].apellido);
   }
 }
 
 int main(void)
 {
   Agenda  agenda;
-  Agenda  *pAgenda;// = (Agenda *)malloc(sizeof(Agenda));
+  Agenda  *pAgenda = (Agenda *)malloc(sizeof(Agenda));
   pAgenda = &agenda;
   
   int    i;
   int    num;
-  char   nombre[DIM] = {0};
-  char   apellido[DIM] = {0};
   
   iniciarAgenda(pAgenda);
 
-  printf("\n¿Cuántos contactos quieres guardar en la agenda?: ");
-  scanf("%d", &num);
+  do
+  {
+    printf("\n¿Cuántos contactos quieres guardar en la agenda?: ");
+    scanf("%d", &num);
 
   // if (num <= 0)
-    // printf("\nERROR: el valor debe estar entre 1 y 100.\n");
-
-  pAgenda->cantitad = num;
-
-  for (i = 1; i <= num; i++)
+    printf("\nERROR: el valor debe estar entre 1 y 100.\n");
+    
+  } while ((num > 99) || (num < 1));
+  
+  for (i = 0; i < num; i++)
   {
-    printf("\nIntroduce el nombre del contacto %d: ", i);
+    char  nombre[DIM];
+    char  apellido[DIM];
+    
+    printf("\nIntroduce el nombre del contacto %d: ", i+1);
     scanf("%s", nombre);
-
-    printf("\nIntroduce el apellido del contacto %d: ", i);
+      
+    printf("\nIntroduce el apellido del contacto %d: ", i+1);
     scanf("%s", apellido);
 
     addContacto(pAgenda, nombre, apellido);
-
+    pAgenda->cantidad++;
   }
-
-  // printf("\n\nHay %d contactos en la agenda:\n", pAgenda->cantitad);
-
-  for (i = 0; i < num; i++)
-  {
-    mostrarAgenda(agenda);
-  }
+  
+  mostrarAgenda(agenda);
 
   return(0);
 }
