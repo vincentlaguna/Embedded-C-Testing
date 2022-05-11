@@ -1835,14 +1835,15 @@ void addContacto(Agenda *ag, char *nom, char *apell)
 {
   *ag->contactos[ag->cantidad].nombre = (char *)malloc(DIM * sizeof(char));
   *ag->contactos[ag->cantidad].apellido = (char *)malloc(DIM * sizeof(char));
-  printf("\n==%s==%s==%d==\n", nom, apell, ag->cantidad);
+ 
   strcpy(ag->contactos[ag->cantidad].nombre, nom);
   strcpy(ag->contactos[ag->cantidad].apellido, apell);
-  printf("\n==%s==%s==%d==\n", ag->contactos[ag->cantidad].nombre, ag->contactos[ag->cantidad].apellido, ag->cantidad);
 }
 
 void mostrarAgenda(Agenda ag)
 {
+  printf("\n\nHay %d contactos en la agenda:\n", ag.cantidad);
+  
   for (int i = 0; i < ag.cantidad; i++)
   {
     printf("\nContacto %d: %s %s\n", i+1, ag.contactos[i].nombre, ag.contactos[i].apellido);
