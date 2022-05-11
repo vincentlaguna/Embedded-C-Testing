@@ -1740,7 +1740,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.1 *****************/
+/**************** Prueba 3.1 *****************
 // Escribe un programa con las 
 // siguientes estructuras:
 
@@ -1888,6 +1888,57 @@ int main(void)
   
   mostrarAgenda(agenda);
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 3.2 *****************/
+Escribe un programa con el siguiente 
+prototipo de función:
+
+void numeroDeVocales(int *vocales, char *palabra)
+
+La función contará las vocales de palabra y
+almacenará el número de cada vocal en la 
+tabla vocales de la siguiente manera: 
+en la posición 0 la cantidad de aes, 
+en la posición 1 la cantidad de es 
+y así sucesivamente hasta las úes.
+
+El programa principal solicitará una 
+palabra y llamará a numeroDeVocales() 
+para calcular las vocales que tiene. 
+Por último mostrará la cantidad de cada 
+una de las vocales por pantalla.
+
+Lo que sigue es un ejemplo de
+ejecución del programa:
+
+Introduce una palabra: Especiero
+La palabra Especiero tiene:
+A o a: 0
+E o e: 3
+I o i: 1
+O u o: 1
+U o u: 0
+
+Y otro:
+
+Introduce una palabra:  supercalifragilisticoespialidoso
+La palabra supercalifragilisticoespialidoso tiene:
+A o a: 3
+E o e: 2
+I o i: 6
+O u o: 3
+U o u: 1
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
