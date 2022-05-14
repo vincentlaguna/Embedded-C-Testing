@@ -1909,6 +1909,7 @@ int main(void)
 #include  <stdlib.h>
 
 #define   DIM 128
+#define   DIM_VOCALES 5
 
 void numeroDeVocales(int *vocales, char *palabra)
 {
@@ -1955,6 +1956,11 @@ int main(void)
   numeroDeVocales(pNumero, pCadena);
   
   printf("\nLa palabra %s tiene:\n", pCadena);
+
+  for (int i = 0; i < DIM_VOCALES; i++)
+  {
+    printf("")
+  }
   // A o a: 0
   // E o e: 3
   // I o i: 1
