@@ -1905,17 +1905,6 @@ int main(void)
 // en la posición 1 la cantidad de es 
 // y así sucesivamente hasta las úes.
 
-#include  <stdio.h>
-#include  <stdlib.h>
-
-#define   DIM 128
-#define   DIM_VOCALES 5
-
-void numeroDeVocales(int *vocales, char *palabra)
-{
-  printf("\nNumero = %d\nPalabra = %s\n", *vocales, palabra);
-}
-
 // El programa principal solicitará una 
 // palabra y llamará a numeroDeVocales() 
 // para calcular las vocales que tiene. 
@@ -1943,35 +1932,50 @@ void numeroDeVocales(int *vocales, char *palabra)
 // O u o: 3
 // U o u: 1
 
+#include  <stdio.h>
+#include  <stdlib.h>
+
+#define   DIM 128
+#define   DIM_VOCALES 5
+
+void numeroDeVocales(int *vocales, char *palabra)
+{
+  printf("\nNumero = %d\nPalabra = %s\n", *vocales, palabra);
+  *(vocales + 1) = 69;
+
+  int len = strlen(palabra);
+  printf("length: %d\n", len);
+
+  for (int i = 0; i <= len; i++)
+  {
+    // comprueba vocales aqui
+  }
+}
+
 int main(void)
 {
   char    cadena[DIM];
   char    *pCadena = malloc(DIM * sizeof(char));
   int     numero[] = {1,2,3,4,5};
-  int     *pNumero;// = malloc(DIM_VOCALES * sizeof(int));
+  // int     *pNumero;// = malloc(DIM_VOCALES * sizeof(int));
   pCadena = cadena;
-  pNumero = &numero;
+  // pNumero = &numero;
 
   printf("\nIntroduce una palabra: ");
   scanf("%s", pCadena);
-  numeroDeVocales(pNumero, pCadena);
+  numeroDeVocales(numero, pCadena);
   
   printf("\nLa palabra %s tiene:\n", pCadena);
 
   // for (int i = 0; i < DIM_VOCALES; i++)
   // {
-  //   printf("A o a: %d\n",pNumero);
+  //   printf("%c o %c: %d\n", char * array + i, char * array lower-case + i, pNumero);
   // }
-  printf("A o a: %d\n",pNumero);
-  printf("E o e: %d\n",pNumero+1);
-  printf("I o i: %d\n",pNumero+2);
-  printf("O o o: %d\n",pNumero+3);
-  printf("U o u: %d\n",pNumero+4);
-  // A o a: 0
-  // E o e: 3
-  // I o i: 1
-  // O u o: 1
-  // U o u: 0
+  printf("A o a: %d\n",*(numero));
+  printf("E o e: %d\n",*(numero+1));
+  printf("I o i: %d\n",*(numero+2));
+  printf("O o o: %d\n",*(numero+3));
+  printf("U o u: %d\n",*(numero+4));
 
   return(0);
 }
