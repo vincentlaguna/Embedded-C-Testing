@@ -1913,7 +1913,7 @@ int main(void)
 
 void numeroDeVocales(int *vocales, char *palabra)
 {
-  printf("\nNumero = %d\nPalabra = %s\n\n", *vocales, palabra);
+  printf("\nNumero = %d\nPalabra = %s\n", *vocales, palabra);
 }
 
 // El programa principal solicitará una 
@@ -1945,11 +1945,12 @@ void numeroDeVocales(int *vocales, char *palabra)
 
 int main(void)
 {
-  char cadena[DIM];
-  char *pCadena = malloc(DIM * sizeof(char));
+  char    cadena[DIM];
+  char    *pCadena = malloc(DIM * sizeof(char));
+  int     numero[] = {1,2,3,4,5};
+  int     *pNumero;// = malloc(DIM_VOCALES * sizeof(int));
   pCadena = cadena;
-  int  numero = 0;
-  int *pNumero = &numero;
+  pNumero = &numero;
 
   printf("\nIntroduce una palabra: ");
   scanf("%s", pCadena);
@@ -1957,10 +1958,15 @@ int main(void)
   
   printf("\nLa palabra %s tiene:\n", pCadena);
 
-  for (int i = 0; i < DIM_VOCALES; i++)
-  {
-    printf("")
-  }
+  // for (int i = 0; i < DIM_VOCALES; i++)
+  // {
+  //   printf("A o a: %d\n",pNumero);
+  // }
+  printf("A o a: %d\n",pNumero);
+  printf("E o e: %d\n",pNumero+1);
+  printf("I o i: %d\n",pNumero+2);
+  printf("O o o: %d\n",pNumero+3);
+  printf("U o u: %d\n",pNumero+4);
   // A o a: 0
   // E o e: 3
   // I o i: 1
