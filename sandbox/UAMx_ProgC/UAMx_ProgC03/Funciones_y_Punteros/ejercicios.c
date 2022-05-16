@@ -1934,6 +1934,7 @@ int main(void)
 
 #include  <stdio.h>
 #include  <stdlib.h>
+#include  <string.h>
 
 #define   DIM 128
 #define   DIM_VOCALES 5
@@ -1941,16 +1942,36 @@ int main(void)
 void numeroDeVocales(int *vocales, char *palabra)
 {
   printf("\nNumero = %d\nPalabra = %s\n", *vocales, palabra);
-  *(vocales + 1) = 69;
+  // *(vocales + 1) = 69;
   char vocal;
   int len = strlen(palabra);
   printf("length: %d\n", len);
 
   for (int i = 0; i <= len; i++)
   {
+    vocal = palabra[i];
+    // printf("%c\n", vocal);
     switch (vocal)
     {
-      case (vocal == 'a')
+      case ('A'): 
+      case ('a'): *(vocales) += 1;
+      break;
+
+      case ('E'): 
+      case ('e'): *(vocales+1) += 1;
+      break;
+      
+      case ('I'): 
+      case ('i'): *(vocales+2) += 1;
+      break;
+      
+      case ('O'): 
+      case ('o'): *(vocales+3) += 1;
+      break;
+
+      case ('U'): 
+      case ('u'): *(vocales+4) += 1;
+      break;
     }
   }
 }
@@ -1959,7 +1980,7 @@ int main(void)
 {
   char    cadena[DIM];
   char    *pCadena = malloc(DIM * sizeof(char));
-  int     numero[] = {1,2,3,4,5};
+  int     numero[DIM_VOCALES] = {0};
   // int     *pNumero;// = malloc(DIM_VOCALES * sizeof(int));
   pCadena = cadena;
   // pNumero = &numero;
