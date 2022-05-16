@@ -1942,13 +1942,16 @@ void numeroDeVocales(int *vocales, char *palabra)
 {
   printf("\nNumero = %d\nPalabra = %s\n", *vocales, palabra);
   *(vocales + 1) = 69;
-
+  char vocal;
   int len = strlen(palabra);
   printf("length: %d\n", len);
 
   for (int i = 0; i <= len; i++)
   {
-    // comprueba vocales aqui
+    switch (vocal)
+    {
+      case (vocal == 'a')
+    }
   }
 }
 
