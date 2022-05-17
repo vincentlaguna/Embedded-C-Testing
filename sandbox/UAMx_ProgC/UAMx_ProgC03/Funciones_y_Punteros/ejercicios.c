@@ -1939,18 +1939,24 @@ int main(void)
 #define   DIM 128
 #define   DIM_VOCALES 5
 
+static const char *const vocales[] =
+{
+  "A o a",
+  "E o a",
+  "I o i",
+  "O o o",
+  "U o u"
+};
+
 void numeroDeVocales(int *vocales, char *palabra)
 {
-  printf("\nNumero = %d\nPalabra = %s\n", *vocales, palabra);
-  // *(vocales + 1) = 69;
   char vocal;
-  int len = strlen(palabra);
-  printf("length: %d\n", len);
+  int largura = strlen(palabra);
 
-  for (int i = 0; i <= len; i++)
+  for (int i = 0; i <= largura; i++)
   {
     vocal = palabra[i];
-    // printf("%c\n", vocal);
+    
     switch (vocal)
     {
       case ('A'): 
@@ -1981,25 +1987,21 @@ int main(void)
   char    cadena[DIM];
   char    *pCadena = malloc(DIM * sizeof(char));
   int     numero[DIM_VOCALES] = {0};
-  // int     *pNumero;// = malloc(DIM_VOCALES * sizeof(int));
   pCadena = cadena;
-  // pNumero = &numero;
 
   printf("\nIntroduce una palabra: ");
   scanf("%s", pCadena);
+  
   numeroDeVocales(numero, pCadena);
   
   printf("\nLa palabra %s tiene:\n", pCadena);
 
-  // for (int i = 0; i < DIM_VOCALES; i++)
-  // {
-  //   printf("%c o %c: %d\n", char * array + i, char * array lower-case + i, pNumero);
-  // }
-  printf("A o a: %d\n",*(numero));
-  printf("E o e: %d\n",*(numero+1));
-  printf("I o i: %d\n",*(numero+2));
-  printf("O o o: %d\n",*(numero+3));
-  printf("U o u: %d\n",*(numero+4));
+  for (int i = 0; i < DIM_VOCALES; i++)
+  {
+    printf("%s: %d\n", *(vocales+i), *(numero+i));
+  }
+
+  putchar('\n');
 
   return(0);
 }
