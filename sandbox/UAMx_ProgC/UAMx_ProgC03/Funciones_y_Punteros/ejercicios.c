@@ -1894,7 +1894,7 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 3.2 *****************/
+/**************** Prueba 3.2 *****************
 // Escribe un programa con el siguiente 
 // prototipo de función:
 
@@ -2002,6 +2002,39 @@ int main(void)
   }
 
   putchar('\n');
+
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************/
+// 4. Reserva dinamica de memoria
+
+#include  <stdio.h>
+#include  <stdlib.h>
+
+int main(void)
+{
+  int i;
+  int n;
+  int *edades;
+  double total;
+
+  printf("\nCuantas personas acudieron a la fiesta?: ");
+  scanf("%d", &n);
+
+  edades = (int *)malloc(n * sizeof(int));
+
+  for (i = 0; i < n; i++)
+  {
+    printf("Entra la edad de la persona %d: ", i+1);
+    scanf("%d", &edades[i]);
+    total += edades[i];
+  }
+
+  printf("\nLa media edad de las personas que acudieron la fiesta es: %.2lf\n\n", (total / n));
 
   return(0);
 }
