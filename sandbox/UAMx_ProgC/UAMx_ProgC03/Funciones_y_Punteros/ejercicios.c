@@ -2009,7 +2009,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // 4. Reserva dinamica de memoria
 
 #include  <stdio.h>
@@ -2036,6 +2036,58 @@ int main(void)
 
   printf("\nLa media edad de las personas que acudieron la fiesta es: %.2lf\n\n", (total / n));
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 0.0 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 0.0 *****************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+
+/*************** Ejercicio 0.0 ***************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
+
+/*********************************************/
+
+
+/**************** Prueba 0.0 *****************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
   return(0);
 }
 
