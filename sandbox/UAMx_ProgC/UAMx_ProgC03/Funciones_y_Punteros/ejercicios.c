@@ -2009,7 +2009,7 @@ int main(void)
 /*********************************************/
 
 
-/*********************************************/
+/*********************************************
 // 4. Reserva dinamica de memoria
 
 #include  <stdio.h>
@@ -2036,6 +2036,65 @@ int main(void)
 
   printf("\nLa media edad de las personas que acudieron la fiesta es: %.2lf\n\n", (total / n));
 
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.1 ***************/
+// Escribe un programa que calcule la media de 
+// varios números enteros introducidos por el 
+// usuario. Este tendrá que primero especificar
+// cuántos quiere introducir y después 
+// escribirlos de uno en uno.
+
+// Fíjate en que, puesto que la cantidad de 
+// enteros depende del número introducido por 
+// el usuario, necesitamos trabajar 
+// con memoria dinámica.
+
+// Este sería un ejemplo del programa:
+
+// Introduce cuántos enteros se van a leer: 6
+// Introduce el numero 1: 567
+// Introduce el numero 2: -345
+// Introduce el numero 3: 255
+// Introduce el numero 4: 853
+// Introduce el numero 5: -92
+// Introduce el numero 6: 10
+// La media de los números leídos es: 208.00
+
+// Y otro:
+
+// Introduce cuántos enteros se van a leer: -4
+// Error. No se ha podido reservar memoria.
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  int i;
+  int num;
+  int *enteros;
+  double total;
+
+  printf("\nIntroduce cuántos enteros se van a leer: n");
+  scanf("%d", &num);
+
+  enteros = (int *)malloc(num * sizeof(int));
+
+  for (i = 0; i < num; i++)
+  {
+    printf("Introduce el numero %d: ");
+    scanf("%d", &enteros[i]);
+    total += enteros[i];
+  }
+
+  printf("\nLa media de los números leídos es: %.2lf\n\n", (total / num));
+
+  
   return(0);
 }
 
