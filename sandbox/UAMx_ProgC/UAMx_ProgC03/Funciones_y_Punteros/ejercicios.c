@@ -2042,7 +2042,6 @@ int main(void)
 /*********************************************/
 
 
-<<<<<<< HEAD
 /*************** Ejercicio 4.1 ***************/
 // Escribe un programa que calcule la media de 
 // varios números enteros introducidos por el 
@@ -2070,77 +2069,40 @@ int main(void)
 
 // Introduce cuántos enteros se van a leer: -4
 // Error. No se ha podido reservar memoria.
-=======
-/*************** Ejercicio 0.0 ***************
 
 #include  <stdio.h>
-
-int main(void)
-{
-  return(0);
-}
-
-/*********************************************/
-
-
-/**************** Prueba 0.0 *****************
->>>>>>> refs/remotes/origin/master
-
-#include  <stdio.h>
+#include  <stdlib.h>
 
 int main(void)
 {
  
-<<<<<<< HEAD
   int i;
   int num;
   int *enteros;
   double total;
 
-  printf("\nIntroduce cuántos enteros se van a leer: n");
+  printf("\nIntroduce cuántos enteros se van a leer: ");
   scanf("%d", &num);
+
+  if (num < 0)
+  {
+    printf("\nError. No se ha podido reservar memoria.\n\n");
+    return(-1);
+  }
 
   enteros = (int *)malloc(num * sizeof(int));
 
   for (i = 0; i < num; i++)
   {
-    printf("Introduce el numero %d: ");
+    printf("Introduce el numero %d: ", i+1);
     scanf("%d", &enteros[i]);
+
     total += enteros[i];
   }
 
   printf("\nLa media de los números leídos es: %.2lf\n\n", (total / num));
 
   
-=======
-  return(0);
-}
-
-/*********************************************/
-
-
-
-/*************** Ejercicio 0.0 ***************
-
-#include  <stdio.h>
-
-int main(void)
-{
- 
-  return(0);
-}
-
-/*********************************************/
-
-
-/**************** Prueba 0.0 *****************
-
-#include  <stdio.h>
-
-int main(void)
-{
- 
->>>>>>> refs/remotes/origin/master
   return(0);
 }
 
