@@ -2232,6 +2232,59 @@ int main(void)
   return(0);
 }
 
+// Ejemplo:
+/*
+#include <stdio.h>
+#include <stdlib.h>
+ 
+typedef struct {
+    int dia;
+    int mes;
+    int anyo;
+} Fecha;
+
+int main() {
+    int i, dim, mas_antigua;
+    Fecha *fechas;
+
+    printf("Introduce la dimensión de la tabla: ");
+    scanf("%d", &dim);
+
+    fechas = (Fecha *) malloc(dim * sizeof(Fecha));
+    if (fechas == NULL) {
+        printf("Error. No se ha podido reservar memoria.\n");
+        return 1;
+    }
+
+    for (i=0; i<dim; i++) {
+        do {
+            printf("\nIntroduce día de la fecha %d: ", i+1);
+            scanf("%d", &fechas[i].dia);
+            printf("Introduce mes de la fecha %d: ", i+1);
+            scanf("%d", &fechas[i].mes);
+            printf("Introduce año de la fecha %d: ", i+1);
+            scanf("%d", &fechas[i].anyo);
+        } while(fechas[i].dia> 31 || fechas[i].dia<1 || fechas[i].mes<1 || fechas[i].mes>12 || fechas[i].anyo<0);
+    }
+    
+    // Cálculo de la fecha más antigua
+    for (i=1, mas_antigua=0; i<dim; i++) {
+        if (fechas[i].anyo < fechas[mas_antigua].anyo)
+            mas_antigua = i;
+        else if (fechas[i].anyo == fechas[mas_antigua].anyo) {
+            if (fechas[i].mes < fechas[mas_antigua].mes)
+                mas_antigua = i;
+            else if ( (fechas[i].mes == fechas[mas_antigua].mes) && (fechas[i].dia < fechas[mas_antigua].dia) )
+                mas_antigua = i;
+        }
+    }
+
+    printf("La fecha más antigua es: %d/%d/%d", fechas[mas_antigua].dia, fechas[mas_antigua].mes, fechas[mas_antigua].anyo);
+
+    free(fechas);
+
+    return 0;
+*/
 /*********************************************/
 
 
