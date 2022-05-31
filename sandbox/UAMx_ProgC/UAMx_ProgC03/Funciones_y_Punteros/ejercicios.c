@@ -2042,7 +2042,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.1 ***************/
+/*************** Ejercicio 4.1 ***************
 // Escribe un programa que calcule la media de 
 // varios números enteros introducidos por el 
 // usuario. Este tendrá que primero especificar
@@ -2102,7 +2102,133 @@ int main(void)
 
   printf("\nLa media de los números leídos es: %.2lf\n\n", (total / num));
 
-  
+  free(enteros);
+
+  return(0);
+}
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.2 ***************/
+// Escribe un programa que reserve memoria 
+// dinámica para una tabla de 
+// elementos de tipo Fecha:
+
+// typedef struct 
+// {
+//   int dia;
+//   int mes;
+//   int anyo;
+// } Fecha;
+
+// El programa debe declarar un puntero a Fecha y 
+// solicitar al usuario la dimensión de la tabla. 
+// Una vez leída la dimensión, dim, debe reservar 
+// memoria con una instrucción como la siguiente:
+
+// A continuación, el programa debe solicitar el
+// día, mes y año de cada fecha y guardarlos en 
+// los elementos correspondientes, para mostrar 
+// al final la fecha más antigua 
+// de todas las introducidas.
+
+// Esta sería la salida del programa:
+
+// Introduce la dimensión de la tabla: 3
+
+// Introduce día de la fecha 1: 23
+// Introduce mes de la fecha 1: 10
+// Introduce año de la fecha 1: 2018
+
+// Introduce día de la fecha 2: 20
+// Introduce mes de la fecha 2: 11
+// Introduce año de la fecha 2: 2018
+
+// Introduce día de la fecha 3: 18
+// Introduce mes de la fecha 3: 12
+// Introduce año de la fecha 3: 2018
+// La fecha más antigua es: 23/10/2018
+
+#include  <stdio.h>
+#include  <stdlib.h>
+
+typedef struct
+{
+  int dia;
+  int mes;
+  int anyo;
+
+} Fecha;
+
+enum
+{
+  dia,
+  mes,
+  anyo
+};
+
+const char* dma[] =
+{
+  "día",
+  "mes",
+  "año"
+};
+
+
+int main(void)
+{
+  int     i;
+  int     j;
+  int     dim;
+  static  int  flag;
+  Fecha   *fechas;
+
+  printf("Introduce la dimensión de la tabla: ");
+  scanf("%d", &dim);
+
+  fechas = (Fecha *) malloc(dim * sizeof(Fecha));
+
+  for (i = 0; i < dim; i++)
+  {
+    puts("\n");
+
+    printf("Introduce %s de la fecha %d: ", *(dma + dia), i+1);
+    scanf("%d", &(fechas+i)->dia);
+
+    printf("Introduce %s de la fecha %d: ", *(dma + mes), i+1);
+    scanf("%d", &(fechas+i)->mes);
+
+    printf("Introduce %s de la fecha %d: ", *(dma + anyo), i+1);
+    scanf("%d", &(fechas+i)->anyo);
+  }
+
+  for (i = 0; i < dim; i++)
+  {
+    for (j = 0; j < dim; j++)
+    {
+      if ((fechas+i)->anyo < (fechas+j)->anyo)
+      {
+        flag = i;
+
+        if ((fechas+i)->mes < (fechas+j)->mes)
+        {
+          flag = i;
+
+          if ((fechas+i)->dia < (fechas+j)->dia)
+          {
+            flag = i;
+          }
+        }
+      }
+    }
+    
+  }
+
+  printf("\nLa fecha más antigua es: %d/%d/%d\n\n", (fechas+flag)->dia, (fechas+flag)->mes, (fechas+flag)->anyo);
+
+  free(fechas);
+
   return(0);
 }
 
