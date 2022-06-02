@@ -2288,47 +2288,107 @@ int main() {
 /*********************************************/
 
 
-/*********************************************/
-// Reserva dinámica de memoria de tablas bidimensionales (matrices)
+/*********************************************
+// Reserva dinámica de memoria de tablas 
+// bidimensionales (matrices)
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-    int i, j, estudiantes, examenes;
-    double **notas;
+int main() 
+{
+  int i, j, estudiantes, examenes;
+  double **notas;
 
-    printf("¿Cuántos estudiantes hay en tu clase? ");
-    scanf("%d", &estudiantes);
-    printf("¿Cuántos exámenes habéis hecho? ");
-    scanf("%d", &examenes);
+  printf("¿Cuántos estudiantes hay en tu clase? ");
+  scanf("%d", &estudiantes);
+  printf("¿Cuántos exámenes habéis hecho? ");
+  scanf("%d", &examenes);
 
-    notas = (double**) malloc(examenes*sizeof(double*));
-    if (notas == NULL) {
-        printf("La reserva de memoria ha fallado.");
-        return 1;
-    }
+  notas = (double**) malloc(examenes*sizeof(double*));
+  
+  if (notas == NULL) 
+  {
+    printf("La reserva de memoria ha fallado.");
+    return(1);
+  }
 
-    for (i=0; i<examenes; i++) {
-        notas[i] = (double*) malloc(estudiantes*sizeof(double));
+  for (i = 0; i < examenes; i++) 
+  {
+    notas[i] = (double*) malloc(estudiantes*sizeof(double));
         
-        if (notas[i] == NULL) {
-            for (j=0; j<i; j++)
-                free(notas[j]);
-            free(notas);            
-            printf("La reserva de memoria ha fallado.");
-            return 1;
-        }  
-    }
+    if (notas[i] == NULL) 
+    {
+      for (j = 0; j < i; j++)
+      {
+        free(notas[j]);
+      }    
+      
+      free(notas);            
+            
+      printf("La reserva de memoria ha fallado.");
+      
+      return(1);
+    }  
+  }
 
     // Código para almacenar las notas de los estudiantes para cada examen.
 
-    for (i=0; i<examenes; i++)
-        free(notas[i]);
-    free(notas);
+  for (i=0; i<examenes; i++)
+  {
+    free(notas[i]);
+  }
+  
+  free(notas);
 
-    return 0;
+  return(0);
+}
 
+/*********************************************/
+
+
+/*************** Ejercicio 4.3 ***************/
+Crea un programa que almacene en una tabla 
+bidimensional del tamaño especificado por el 
+usuario los enteros que considere y después 
+los muestre por pantalla con formato de matriz.
+
+Este sería un ejemplo del programa:
+
+Introduce el número de filas de la matriz: 2
+Introduce el número de columnas de la matriz: 5
+Introduce el valor de la la fila 1 y la columna 1: 0
+Introduce el valor de la la fila 1 y la columna 2: 1
+Introduce el valor de la la fila 1 y la columna 3: 2
+Introduce el valor de la la fila 1 y la columna 4: 3
+Introduce el valor de la la fila 1 y la columna 5: 4
+Introduce el valor de la la fila 2 y la columna 1: 5
+Introduce el valor de la la fila 2 y la columna 2: 6
+Introduce el valor de la la fila 2 y la columna 3: 7
+Introduce el valor de la la fila 2 y la columna 4: 8
+Introduce el valor de la la fila 2 y la columna 5: 9
+
+Matriz:
+
+0   1   2   3   4
+5   6   7   8   9
+
+#include  <stdio.h>
+#include  <stdlib.h>
+
+int main(void)
+{
+  printf("\nIntroduce el número de fila de la matriz: ");
+  scanf("%d", &filas);
+   
+  printf("\nIntroduce el número de columnas de la matriz: ");
+  scanf("%d", &columnas);
+ 
+  printf("\nIntroduce el valor de la fila %d y la columna %d: %d\n", i, j, *(matriz + ((x * columnas) + y)));
+  scanf("%d", &matriz);
+ 
+  return(0);
+}
 
 /*********************************************/
 
