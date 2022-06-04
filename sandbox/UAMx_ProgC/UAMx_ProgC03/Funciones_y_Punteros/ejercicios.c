@@ -2348,44 +2348,90 @@ int main()
 
 
 /*************** Ejercicio 4.3 ***************/
-Crea un programa que almacene en una tabla 
-bidimensional del tamaño especificado por el 
-usuario los enteros que considere y después 
-los muestre por pantalla con formato de matriz.
+// Crea un programa que almacene en una tabla 
+// bidimensional del tamaño especificado por el 
+// usuario los enteros que considere y después 
+// los muestre por pantalla con formato de matriz.
 
-Este sería un ejemplo del programa:
+// Este sería un ejemplo del programa:
 
-Introduce el número de filas de la matriz: 2
-Introduce el número de columnas de la matriz: 5
-Introduce el valor de la la fila 1 y la columna 1: 0
-Introduce el valor de la la fila 1 y la columna 2: 1
-Introduce el valor de la la fila 1 y la columna 3: 2
-Introduce el valor de la la fila 1 y la columna 4: 3
-Introduce el valor de la la fila 1 y la columna 5: 4
-Introduce el valor de la la fila 2 y la columna 1: 5
-Introduce el valor de la la fila 2 y la columna 2: 6
-Introduce el valor de la la fila 2 y la columna 3: 7
-Introduce el valor de la la fila 2 y la columna 4: 8
-Introduce el valor de la la fila 2 y la columna 5: 9
+// Introduce el número de filas de la matriz: 2
+// Introduce el número de columnas de la matriz: 5
+// Introduce el valor de la la fila 1 y la columna 1: 0
+// Introduce el valor de la la fila 1 y la columna 2: 1
+// Introduce el valor de la la fila 1 y la columna 3: 2
+// Introduce el valor de la la fila 1 y la columna 4: 3
+// Introduce el valor de la la fila 1 y la columna 5: 4
+// Introduce el valor de la la fila 2 y la columna 1: 5
+// Introduce el valor de la la fila 2 y la columna 2: 6
+// Introduce el valor de la la fila 2 y la columna 3: 7
+// Introduce el valor de la la fila 2 y la columna 4: 8
+// Introduce el valor de la la fila 2 y la columna 5: 9
 
-Matriz:
+// Matriz:
 
-0   1   2   3   4
-5   6   7   8   9
+// 0   1   2   3   4
+// 5   6   7   8   9
 
 #include  <stdio.h>
 #include  <stdlib.h>
 
 int main(void)
 {
+  
+  int filas;
+  int columnas;
+  int **matriz;
+
   printf("\nIntroduce el número de fila de la matriz: ");
   scanf("%d", &filas);
    
   printf("\nIntroduce el número de columnas de la matriz: ");
   scanf("%d", &columnas);
- 
+
+  matriz = (int**)calloc(filas, sizeof(int));
+
+  if (matriz == NULL)
+  {
+    printf("La reserva de memoria ha fallado.");
+    return(1);    
+  }
+
+  for (int i = 0; i < columnas; i++)
+  {
+    *(matriz + i) = (int *)calloc(columnas, sizeof(int));
+
+    // if (matriz == NULL)
+    // {
+    //   printf("La reserva de memoria ha fallado.");
+    //   return(1);    
+    // }
+
+    if (*(matriz + i) == NULL) 
+    {
+      for (int j = 0; j < i; j++)
+      {
+        free(*(matriz + j));
+      }
+
+      free(matriz);            
+            
+      printf("La reserva de memoria ha fallado.");
+      
+      return(1);
+    }    
+  }
+  
+  for (i=0; i<examenes; i++)
+  {
+    free(notas[i]);
+  }
+  
+  
+  free(notas);
   printf("\nIntroduce el valor de la fila %d y la columna %d: %d\n", i, j, *(matriz + ((x * columnas) + y)));
   scanf("%d", &matriz);
+
  
   return(0);
 }
