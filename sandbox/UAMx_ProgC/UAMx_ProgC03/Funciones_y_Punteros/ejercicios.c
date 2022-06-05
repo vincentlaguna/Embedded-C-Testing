@@ -2347,7 +2347,7 @@ int main()
 /*********************************************/
 
 
-/*************** Ejercicio 4.3 ***************/
+/*************** Ejercicio 4.3 ***************
 // Crea un programa que almacene en una tabla 
 // bidimensional del tamaño especificado por el 
 // usuario los enteros que considere y después 
@@ -2379,6 +2379,7 @@ int main()
 int main(void)
 {
   
+  int i, j, x, y, z;
   int filas;
   int columnas;
   int **matriz;
@@ -2407,34 +2408,196 @@ int main(void)
     //   return(1);    
     // }
 
-    if (*(matriz + i) == NULL) 
-    {
-      for (int j = 0; j < i; j++)
-      {
-        free(*(matriz + j));
-      }
+    // if (*(matriz + i) == NULL) 
+    // {
+    //   for (int j = 0; j < i; j++)
+    //   {
+    //     free(*(matriz + j));
+    //   }
 
-      free(matriz);            
+    //   free(matriz);            
             
-      printf("La reserva de memoria ha fallado.");
+    //   printf("La reserva de memoria ha fallado.");
       
-      return(1);
-    }    
+    //   return(1);
+    // }    
   }
   
-  for (i=0; i<examenes; i++)
-  {
-    free(notas[i]);
-  }
-  
-  
-  free(notas);
-  printf("\nIntroduce el valor de la fila %d y la columna %d: %d\n", i, j, *(matriz + ((x * columnas) + y)));
-  scanf("%d", &matriz);
+  printf("\n");
 
- 
+  for (x = 0; x < filas; x++)
+  {
+    for (y = 0; y < columnas; y++)
+    {
+      printf("Introduce el valor de la filas %d y la columna %d: ", x+1, y+1);
+      // scanf("%d", (&matriz + (x * columnas) + y));
+      scanf("%d", &matriz[x][y]);
+    }
+  }
+
+  printf("\nMatriz\n\n");
+
+  for (x = 0; x < filas; x++)
+  {
+
+    // printf("%d\t", **(matriz + (x * columnas) + y));
+    // printf("%d\t", matriz[x][y]);
+
+    for (y = 0; y < columnas; y++)
+    {
+      // printf("%d\t", **(matriz + (x * columnas) + y));
+      printf("%d\t", matriz[x][y]);
+    }
+
+    printf("\n\n");
+  }
+
+  printf("\n");
+
+  // for (z = 0; z < columnas; z++)
+  // {
+  //   free(matriz[z]);
+  // }
+    
+  free(matriz);
+
   return(0);
 }
+
+/*********************************************/
+
+
+/*************** Ejercicio 4.4 ***************/
+// Escribe una función que muestre por pantalla 
+// si cada carácter de la primera cadena de 
+// caracteres recibida como parámetro aparece o 
+// no en la segunda cadena recibida, 
+// pero que no devuelva nada.
+
+// El programa principal debe solicitar el tamaño 
+// máximo que van a tener las cadenas de caracteres, 
+// reservar memoria para ambas con ese tamaño, 
+// learlas por teclado y llamar a la función anterior.
+
+// Lo que sigue es un ejemplo de ejecución del programa:
+
+// Introduce el tamaño máximo de las cadenas de caracteres: 30
+// Introduce una cadena: casa
+// Introduce otra cadena: practica
+// El carácter c aparece en la cadena practica
+// El carácter a aparece en la cadena practica
+// El carácter s NO aparece en la cadena practica
+// El carácter a aparece en la cadena practica
+
+// Lo que sigue es otro ejemplo de ejecución:
+
+// Introduce el tamaño máximo de las cadenas de caracteres: -2
+// Error, no se puede reservar memoria para la primera cadena.
+
+// NOTA 1: No es necesario comprobar si el tamaño 
+// introducido por el usuario es correcto.
+
+// NOTA 2: Puedes suponer que el usuario nunca va a 
+// introducir cadenas de tamaño superior al 
+// especificado previamente y que estas no 
+// van a contener espacios.
+
+// NOTA 3: La función es la que mostrará los 
+// mensajes "El carácter...", mientras que en 
+// el main() se mostrarán el resto de mensajes.
+
+#include  <stdio.h>
+#include  <stdlib.h>
+#include  <string.h>
+
+#define   DIM 128
+#define   DIM_VOCALES 5
+
+void comparar(*cadena_1, *cadena_2)
+{
+  int c;
+
+  while (cadena1)
+  {
+    printf("%c", cadena1[c]);
+    c++;
+  }
+}
+
+int main(void)
+{
+  printf("");
+  scanf("")
+  return(0);
+}
+
+
+// static const char *const vocales[] =
+// {
+//   "A o a",
+//   "E o a",
+//   "I o i",
+//   "O o o",
+//   "U o u"
+// };
+
+// void numeroDeVocales(int *vocales, char *palabra)
+// {
+//   char vocal;
+//   int largura = strlen(palabra);
+
+//   for (int i = 0; i <= largura; i++)
+//   {
+//     vocal = palabra[i];
+    
+//     switch (vocal)
+//     {
+//       case ('A'): 
+//       case ('a'): *(vocales) += 1;
+//       break;
+
+//       case ('E'): 
+//       case ('e'): *(vocales+1) += 1;
+//       break;
+      
+//       case ('I'): 
+//       case ('i'): *(vocales+2) += 1;
+//       break;
+      
+//       case ('O'): 
+//       case ('o'): *(vocales+3) += 1;
+//       break;
+
+//       case ('U'): 
+//       case ('u'): *(vocales+4) += 1;
+//       break;
+//     }
+//   }
+// }
+
+// int main(void)
+// {
+//   char    cadena[DIM];
+//   char    *pCadena = malloc(DIM * sizeof(char));
+//   int     numero[DIM_VOCALES] = {0};
+//   pCadena = cadena;
+
+//   printf("\nIntroduce una palabra: ");
+//   scanf("%s", pCadena);
+  
+//   numeroDeVocales(numero, pCadena);
+  
+//   printf("\nLa palabra %s tiene:\n", pCadena);
+
+//   for (int i = 0; i < DIM_VOCALES; i++)
+//   {
+//     printf("%s: %d\n", *(vocales+i), *(numero+i));
+//   }
+
+//   putchar('\n');
+
+//   return(0);
+// }
 
 /*********************************************/
 
