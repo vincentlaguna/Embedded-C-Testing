@@ -2511,23 +2511,38 @@ int main(void)
 #include  <string.h>
 
 #define   DIM 128
-#define   DIM_VOCALES 5
 
-void comparar(*cadena_1, *cadena_2)
+void comparar(char *cadena_1, char *cadena_2)
 {
   int c;
 
-  while (cadena1)
+  while (cadena_1)
   {
-    printf("%c", cadena1[c]);
+    printf("%c", cadena_1[c]);
     c++;
   }
 }
 
 int main(void)
 {
-  printf("");
-  scanf("")
+  int tamMax;
+  
+  printf("\nIntroduce el tamaño máximo de las cadenas de caracteres: ");
+  scanf("%d", &tamMax);
+
+  char    cadena_1[tamMax];
+  char    cadena_2[tamMax];
+  char    *pCadena_1 = malloc(tamMax * sizeof(char));
+  char    *pCadena_2 = malloc(tamMax * sizeof(char));
+  pCadena_1 = cadena_1;
+  pCadena_2 = cadena_2;
+
+  printf("\nIntroduce una cadena: ");
+  scanf("%s", pCadena_1);
+
+  printf("\nIntroduce otra cadena: ");
+  scanf("%s", pCadena_2);
+
   return(0);
 }
 
