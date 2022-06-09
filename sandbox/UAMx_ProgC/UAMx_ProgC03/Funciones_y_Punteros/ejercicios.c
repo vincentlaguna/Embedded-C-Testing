@@ -2623,7 +2623,6 @@ int main(void)
 
 int main(void)
 {
- 
   return(0);
 }
 
@@ -2840,6 +2839,23 @@ int main(void)
   }
   
   printf("\n");
+
+  return(0);
+}
+
+/*********************************************/
+
+
+/*********************************************
+// Quick on-the-go sandbox to play in the sand
+
+#include  <stdio.h>
+
+int main(void)
+{
+  int hex = 0xb7;
+
+  printf("\n%x\n", hex % 256);
 
   return(0);
 }
