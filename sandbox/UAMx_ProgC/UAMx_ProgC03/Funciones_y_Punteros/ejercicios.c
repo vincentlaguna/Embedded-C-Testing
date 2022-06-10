@@ -2709,7 +2709,7 @@ int main(void)
 /*********************************************/
 
 
-/*************** Ejercicio 4.5 ***************/
+/*************** Ejercicio 4.5 ***************
 // Escribe una función que concatene dos cadenas 
 // de entrada. Para ello deberá recibir tres 
 // parámetros: las dos cadenas de entrada, y la 
@@ -2816,7 +2816,113 @@ int main(void)
 /*********************************************/
 
 
-/**************** Prueba 4.1 *****************
+/**************** Prueba 4.1 *****************/
+// Escribe un programa con las dos funciones siguientes:
+
+int* numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
+{
+  
+}
+
+Recibirá una tabla de enteros (original), 
+su tamaño (tamanoOriginal) y un puntero a la 
+variable con el tamaño de la tabla que va a 
+crear durante su ejecución (tamanoTablaPares).
+    
+Comprobará si los argumentos recibidos no son 
+correctos (si alguno de los dos punteros apunta 
+a NULL o el tamanoOriginal es menor que 1). 
+En este caso debe devolver NULL.
+
+Contará cuántos números pares tiene la tabla 
+recibida. Reservará memoria para una nueva 
+tabla del tamaño de números pares contados. 
+Si la memoria no se ha podido reservar 
+correctamente, deberá devolver NULL.
+    
+Guardará en la nueva tabla los números 
+pares de la tabla original.
+
+Devolverá el puntero a la nueva tabla.
+    
+NOTA: Esta función no mostrará ningún mensaje por pantalla.
+
+int mostrarTabla(int *tabla, int tamano);
+
+Comprobara si los argumentos recibidos no son 
+correctos (si el puntero es NULL o si el tamano 
+es menor que 1). En ese caso debe devolver 0.
+
+A continuación mostrará por pantalla los 
+elementos de la tabla, separados por un espacio.
+La función acabará devolviendo 1.
+
+NOTA: Esta función no tiene que mostrar por 
+pantalla ningún otro mensaje, solo los números 
+que contiene la tabla separados por espacios.
+
+El programa principal debe solicitar al 
+usuario que introduzca diez números.
+
+A continuación ha de llamar a la función 
+numerosPares para obtener una tabla 
+con los números pares. Después ha de llamar 
+a la función mostrarTabla para mostrar 
+por pantalla los números pares obtenidos.
+
+El programa debe comprobar el retorno de 
+ambas funciones. Si alguna devuelve error, 
+se debe informar y terminar con return 1; 
+si todo ha ido bien, el programa 
+debe terminar con return 0.
+
+Lo que sigue es un ejemplo de ejecución del programa:
+
+Introduce 10 números uno a uno:
+Número 1: 12
+Número 2: 56
+Número 3: 45
+Número 4: 78
+Número 5: 9
+Número 6: 13
+Número 7: 44
+Número 8: 98
+Número 9: 11
+Número 10: 7
+Los números pares de la tabla son: 12 56 78 44 98
+
+Otro ejemplo de ejecución sería:
+
+Introduce 10 números uno a uno: 
+Número 1: 41
+Número 2: 63
+Número 3: 33
+Número 4: 65
+Número 5: 321
+Número 6: 43
+Número 7: 5
+Número 8: 23
+Número 9: 541
+Número 10: 27
+La tabla no tiene ningún número par.
+
+Puedes simular que se produce un error, por ejemplo, 
+llamando a la función numerosPares() con un tamaño 
+de tabla original negativo. En ese caso, 
+otro ejemplo de ejecución sería:
+
+Introduce 10 números uno a uno:
+Número 1: 4
+Número 2: 6
+Número 3: 342
+Número 4: 4654
+Número 5: 321
+Número 6: 43
+Número 7: 564
+Número 8: 23
+Número 9: 54
+Número 10: 2
+Error en la ejecución del programa.
 
 #include  <stdio.h>
 
