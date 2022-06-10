@@ -2746,36 +2746,29 @@ int main(void)
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int concatenarCadenas(char *cadena1, char *cadena2, char *cadenaRes) 
 {
   int i, j, res, flag;
 
-  for(i=0; cadena1[i]!=0; i++) 
+  for (i = 0; cadena1[i] != 0; i++) 
   {
-    for(j=flag=0; cadena2[j]!=0; j++)
-    {
-      if (cadena1[i]==cadena2[j])
-      {
-        flag=1;
-      }
-    }
-    if (flag)
-    {
-      printf("El carácter %c aparece en la cadena %s\n", cadena1[i], cadena2);
-    }
-    else
-    {
-      printf("El carácter %c NO aparece en la cadena %s\n", cadena1[i], cadena2);
-    } 
+    cadenaRes[i] = cadena1[i];
   }
+
+  for (j = 0; cadena2[j] != 0; j++, i++) 
+  {
+    cadenaRes[i] = cadena2[j];
+  }
+
   return(res = strlen(cadenaRes));
 }
 
 int main(void) 
 {
   char *c1, *c2, *c3;
-  int tam;
+  int tam, tamLong;
 
   printf("Introduce el tamaño máximo de las cadenas de caracteres: ");
   scanf("%d", &tam);
@@ -2807,10 +2800,14 @@ int main(void)
   printf("Introduce otra cadena: ");
   scanf("%s", c2);
 
-  concatenarCadenas(c1, c2, c3);
+  tamLong = concatenarCadenas(c1, c2, c3);
+
+  printf("Cadena concatenada: %s\n", c3);
+  printf("Longitud: %d\n\n", tamLong);
 
   free(c1);
   free(c2);
+  free(c3);
 
   return(0);
 
