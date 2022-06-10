@@ -2506,21 +2506,111 @@ int main(void)
 // mensajes "El carácter...", mientras que en 
 // el main() se mostrarán el resto de mensajes.
 
+/*
 #include  <stdio.h>
 #include  <stdlib.h>
 #include  <string.h>
 
 #define   DIM 128
+#define   TRUE 1
+#define   FALSE 0
 
 void comparar(char *cadena_1, char *cadena_2)
 {
-  int c;
+  int mayor;
+  int menor;
+  int bandera;
+  char cadena[DIM] = {0};
 
-  while (cadena_1)
+  if (strlen(cadena_1) > strlen(cadena_2))
   {
-    printf("%c", cadena_1[c]);
-    c++;
+    mayor = strlen(cadena_1);
+    menor = strlen(cadena_2);
+    bandera = TRUE;
   }
+  else
+  {
+    mayor = strlen(cadena_2);
+    menor = strlen(cadena_1);
+    bandera = FALSE;
+  }
+
+  for (int i = 0; i <= mayor; i++)
+  {
+    // printf("%c\n", cadena_1[i]);
+    for (int j = 0; j <= mayor; j++)
+    {
+      // printf("%c\n", cadena_1[i]);
+      if (bandera)
+      {
+        if ((cadena_2[i] != '\0') && (cadena_1[j] == cadena_2[i]))
+        {
+          cadena[i] = cadena_2[i];
+        }
+      }
+      else
+      {
+        if ((cadena_1[i] != '\0') && (cadena_2[j] == cadena_1[i]))
+        {
+          cadena[i] = cadena_1[i];
+        }
+      }
+    }
+  }  
+
+  printf("\n");
+
+  for (int i = 0; i <= strlen(cadena); i++)
+  {
+    printf("%c", cadena[i]);
+  }
+
+  printf("\n\n");
+  
+  if (bandera)
+  {
+    for (int i = 0; i <= mayor; i++)
+    {
+      if (cadena_2[i] != '\0')
+      {
+        for (int j = 0; j <= mayor; j++)
+        {
+          if (cadena[i] == cadena_1[j])
+          {
+            printf("El carácter %c aparece en la cadena %s\n", cadena_2[i], cadena_1);
+          }
+          else
+          {
+            printf("El carácter %c no aparece en la cadena %s\n", cadena_2[i], cadena_1);
+          }
+        }
+      }
+    }  
+  }
+  else
+  {
+    for (int i = 0; i <= mayor; i++)
+    {
+      if (cadena_1[i] != '\0')
+      {
+        // printf("El carácter %c aparece en la cadena %s\n", cadena_1[i], cadena_2);
+        for (int j = 0; j <= mayor; j++)
+        {
+          if (cadena[i] == cadena_2[j])
+          {
+            printf("El carácter %c aparece en la cadena %s\n", cadena_1[i], cadena_2);
+          }
+          else
+          {
+            printf("El carácter %c no aparece en la cadena %s\n", cadena_1[i], cadena_2);
+          }
+        }
+      }
+    }
+  }
+
+  
+  printf("\n");
 }
 
 int main(void)
@@ -2532,8 +2622,8 @@ int main(void)
 
   char    cadena_1[tamMax];
   char    cadena_2[tamMax];
-  char    *pCadena_1 = malloc(tamMax * sizeof(char));
-  char    *pCadena_2 = malloc(tamMax * sizeof(char));
+  char    *pCadena_1 = calloc(tamMax, sizeof(char));
+  char    *pCadena_2 = calloc(tamMax, sizeof(char));
   pCadena_1 = cadena_1;
   pCadena_2 = cadena_2;
 
@@ -2543,76 +2633,201 @@ int main(void)
   printf("\nIntroduce otra cadena: ");
   scanf("%s", pCadena_2);
 
+  printf("\n");
+
+  comparar(pCadena_1, pCadena_2);
+
+  printf("\n\n");
+
   return(0);
 }
+*/
+/*
+#include <stdio.h>
+#include <stdlib.h>
 
+void comparaCadenas(char *cadena1, char *cadena2) 
+{
+  int i, j, flag;
 
-// static const char *const vocales[] =
-// {
-//   "A o a",
-//   "E o a",
-//   "I o i",
-//   "O o o",
-//   "U o u"
-// };
+  for(i=0; cadena1[i]!=0; i++) 
+  {
+    for(j=flag=0; cadena2[j]!=0; j++)
+    {
+      if (cadena1[i]==cadena2[j])
+      {
+        flag=1;
+      }
+    }
+    if (flag)
+    {
+      printf("El carácter %c aparece en la cadena %s\n", cadena1[i], cadena2);
+    }
+    else
+    {
+      printf("El carácter %c NO aparece en la cadena %s\n", cadena1[i], cadena2);
+    } 
+  }
+}
 
-// void numeroDeVocales(int *vocales, char *palabra)
-// {
-//   char vocal;
-//   int largura = strlen(palabra);
+int main(void) 
+{
+  char *c1, *c2;
+  int tam;
 
-//   for (int i = 0; i <= largura; i++)
-//   {
-//     vocal = palabra[i];
+  printf("Introduce el tamaño máximo de las cadenas de caracteres: ");
+  scanf("%d", &tam);
+
+  if ((c1 = (char *)malloc((tam + 1) * sizeof(char))) == NULL) 
+  {
+    printf("Error, no se puede reservar memoria para la primera cadena.");
+    return(1);
+  }
+
+  if ((c2 = (char *)malloc((tam + 1) * sizeof(char))) == NULL) 
+  {
+    printf("Error, no se puede reservar memoria para la segunda cadena.");  
+    free(c1); // Antes de terminar el programa con return 1 hay que liberar la memoria reservada hasta el momento
+    return(1);
+  }
+
+  printf("Introduce una cadena: ");
+  scanf("%s", c1);
     
-//     switch (vocal)
-//     {
-//       case ('A'): 
-//       case ('a'): *(vocales) += 1;
-//       break;
+  printf("Introduce otra cadena: ");
+  scanf("%s", c2);
 
-//       case ('E'): 
-//       case ('e'): *(vocales+1) += 1;
-//       break;
-      
-//       case ('I'): 
-//       case ('i'): *(vocales+2) += 1;
-//       break;
-      
-//       case ('O'): 
-//       case ('o'): *(vocales+3) += 1;
-//       break;
+  comparaCadenas(c1, c2);
 
-//       case ('U'): 
-//       case ('u'): *(vocales+4) += 1;
-//       break;
-//     }
-//   }
-// }
+  free(c1);
+  free(c2);
 
-// int main(void)
-// {
-//   char    cadena[DIM];
-//   char    *pCadena = malloc(DIM * sizeof(char));
-//   int     numero[DIM_VOCALES] = {0};
-//   pCadena = cadena;
+  return(0);
 
-//   printf("\nIntroduce una palabra: ");
-//   scanf("%s", pCadena);
-  
-//   numeroDeVocales(numero, pCadena);
-  
-//   printf("\nLa palabra %s tiene:\n", pCadena);
+}
+*/
+/*********************************************/
 
-//   for (int i = 0; i < DIM_VOCALES; i++)
-//   {
-//     printf("%s: %d\n", *(vocales+i), *(numero+i));
-//   }
 
-//   putchar('\n');
+/*************** Ejercicio 4.5 ***************/
+// Escribe una función que concatene dos cadenas 
+// de entrada. Para ello deberá recibir tres 
+// parámetros: las dos cadenas de entrada, y la 
+// cadena donde se guardará el resultado. 
+// La función debe devolver, además, 
+// la longitud de la cadena concatenada.
 
-//   return(0);
-// }
+// Para probar la función, escribe un programa 
+// principal que solicite el tamaño máximo que van 
+// a tener las cadenas de caracteres, reserve la 
+// memoria que estas necesiten, las lea por 
+// teclado y llame a la función anterior.
+
+// NOTA 1: No es necesario comprobar si el tamaño 
+// introducido por el usuario es correcto.
+
+// NOTA 2: Puedes suponer que el usuario nunca va a 
+// introducir cadenas de tamaño superior al 
+// especificado previamente y que estas 
+// no van a contener espacios.
+
+// Lo que sigue es un ejemplo de ejecución del programa:
+
+// Introduce el tamaño máximo de las cadenas de caracteres: 32
+// Introduce una cadena: wubaluba
+// Introduce otra cadena: dubdub
+// Cadena concatenada: wubalubadubdub
+// Longitud: 14
+
+// Lo que sigue es otro ejemplo de ejecución:
+
+// Introduce el tamaño máximo de las cadenas de caracteres: -2
+// Error, no se puede reservar memoria para la primera cadena.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int concatenarCadenas(char *cadena1, char *cadena2, char *cadenaRes) 
+{
+  int i, j, res, flag;
+
+  for(i=0; cadena1[i]!=0; i++) 
+  {
+    for(j=flag=0; cadena2[j]!=0; j++)
+    {
+      if (cadena1[i]==cadena2[j])
+      {
+        flag=1;
+      }
+    }
+    if (flag)
+    {
+      printf("El carácter %c aparece en la cadena %s\n", cadena1[i], cadena2);
+    }
+    else
+    {
+      printf("El carácter %c NO aparece en la cadena %s\n", cadena1[i], cadena2);
+    } 
+  }
+  return(res = strlen(cadenaRes));
+}
+
+int main(void) 
+{
+  char *c1, *c2, *c3;
+  int tam;
+
+  printf("Introduce el tamaño máximo de las cadenas de caracteres: ");
+  scanf("%d", &tam);
+
+  if ((c1 = (char *)malloc((tam + 1) * sizeof(char))) == NULL) 
+  {
+    printf("Error, no se puede reservar memoria para la primera cadena.");
+    return(1);
+  }
+
+  if ((c2 = (char *)malloc((tam + 1) * sizeof(char))) == NULL) 
+  {
+    printf("Error, no se puede reservar memoria para la segunda cadena.");  
+    free(c1); // Antes de terminar el programa con return 1 hay que liberar la memoria reservada hasta el momento
+    return(1);
+  }
+
+  if ((c3 = (char *)malloc((tam + 1) * sizeof(char))) == NULL) 
+  {
+    printf("Error, no se puede reservar memoria para la tercera cadena.");  
+    free(c1);
+    free(c2);
+    return(1);
+  }
+
+  printf("Introduce una cadena: ");
+  scanf("%s", c1);
+    
+  printf("Introduce otra cadena: ");
+  scanf("%s", c2);
+
+  concatenarCadenas(c1, c2, c3);
+
+  free(c1);
+  free(c2);
+
+  return(0);
+
+}
+
+/*********************************************/
+
+
+/**************** Prueba 4.1 *****************
+
+#include  <stdio.h>
+
+int main(void)
+{
+ 
+  return(0);
+}
 
 /*********************************************/
 
