@@ -2935,6 +2935,12 @@ int *numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
   if (tamanoTablaPares == NULL)
     return(NULL);
 
+  if ((tamanoOriginal != DIM))
+  {
+    printf("Error en la ejecución del programa.\n");
+    return(NULL);
+  }
+
   for (int i = 0; i < tamanoOriginal; i++)
   {
     if (original[i] % 2 == 0)
@@ -2943,8 +2949,6 @@ int *numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
     }
   }
   
-  printf("Contador: %d\n", contadorPares);
-
   tablaPares = (int *)malloc(contadorPares * sizeof(int));
 
   if (tablaPares == NULL)
@@ -2962,34 +2966,42 @@ int *numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
   }
 
   *tamanoTablaPares = contadorPares;
-  
-  for (int x = 0; x < contadorPares; x++)
+
+  if (contadorPares == 0)
   {
-    printf("%d ", tablaPares[x]);
+    printf("La tabla no tiene ningún número par.\n\n");
+    return(NULL);  
   }
- 
-  return(tablaPares);
+  else
+  {
+    return(tablaPares);
+  } 
 }
 
+int mostrarTabla(int *tabla, int tamano)
+{
+  int res = 1;
+
+  if (tabla == NULL)
+    return(0);
+
+  if (tamano < 1)
+    return(0);
+
+  for (int i = 0; i < tamano; i++)
+  {
+    printf("%d ", tabla[i]);
+  }
+
+  return(res);
+}
 
 int main(void)
 {
   int *cadena, *tamanoTablaPares, *tablaRes;
-  int tam = DIM;
+  int tamPares = 0;
   tamanoTablaPares = (int *)malloc(sizeof(int));
   *tamanoTablaPares = 0;
-  // if ((cadena = (int *)malloc((DIM * sizeof(int))) == NULL))
-  // {
-  //   printf("Error, no se puede reservar memoria para la cadena original.");
-  //   return(1);
-  // }
-
-  // if ((tablaRes = (int *)malloc(((*tamanoTablaPares) * sizeof(int))) == NULL))
-  // {
-  //   printf("Error, no se puede reservar memoria para la cadena de retorno.");  
-  //   free(cadena); // Antes de terminar el programa con return 1 hay que liberar la memoria reservada hasta el momento
-  //   return(1);
-  // }
 
   cadena = (int *)malloc(DIM * sizeof(int));
   tablaRes = (int *)malloc(DIM * sizeof(int));
@@ -3001,18 +3013,27 @@ int main(void)
     printf("Número %d: ", i+1);
     scanf("%d", &cadena[i]);
   }
+  
   tablaRes = numerosPares(cadena, DIM, tamanoTablaPares);
+  
+  if (tablaRes == NULL)
+    return(1);
+  
+  tamPares = *tamanoTablaPares;
+  
+  printf("Los números pares de la tabla son: ");
 
-  printf("\n");
-
-  for (int i = 0; i < *(tamanoTablaPares); i++)
+  if (mostrarTabla(tablaRes, tamPares) == 0)
   {
-    printf("%d ", tablaRes[i]);
+    printf("No se pudo mostrar la tabla de pares.\n");
+    return(1);
   }
+
   free(cadena);
   free(tamanoTablaPares);
   free(tablaRes);
-
+  printf("\n\n");
+  
   return(0);
 }
 
