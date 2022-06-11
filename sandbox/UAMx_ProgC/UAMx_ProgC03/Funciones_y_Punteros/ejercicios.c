@@ -2924,22 +2924,44 @@ int main(void)
 
 #define  DIM 10
 
-int* numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
+int *numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
 {
   int *tablaPares;
-  int contadorPares;
+  int contadorPares = 0;
 
-  if (((original || tamanoTablaPares) == NULL) || (tamanoOriginal < 1))
+  if (original == NULL)
     return(NULL);
 
-  if ((tablaPares = (int *)malloc((*tamanoTablaPares) * sizeof(int))) == NULL)
+  if (tamanoTablaPares == NULL)
     return(NULL);
 
-  for (int i = 0; i <= tamanoOriginal; i++)
+  // if ((tablaPares = (int *)malloc((*tamanoTablaPares) * sizeof(int))) == NULL)
+  //   return(NULL);
+
+  // tablaPares = (int *)malloc(DIM * sizeof(int));
+
+  for (int i = 0; i < tamanoOriginal; i++)
   {
-    printf("%d\n", *(original + i));
+    // printf("%d\n", *(original + i));
+    if (original[i] % 2 == 0)
+    {
+      tablaPares[contadorPares] = original[i];
+      // tablaPares++;
+      contadorPares++;
+    }
   }
   
+  printf("Contador: %d\n", contadorPares);
+
+  *tamanoTablaPares = contadorPares;
+  
+  
+  for (int j = 0; j < contadorPares; j++)
+  {
+    printf("%d ", tablaPares[j]);
+  }
+
+  return(tablaPares);
 }
 
 
@@ -2947,7 +2969,8 @@ int main(void)
 {
   int *cadena, *tamanoTablaPares, *tablaRes;
   int tam = DIM;
-
+  tamanoTablaPares = (int *)malloc(sizeof(int));
+  *tamanoTablaPares = 0;
   // if ((cadena = (int *)malloc((DIM * sizeof(int))) == NULL))
   // {
   //   printf("Error, no se puede reservar memoria para la cadena original.");
@@ -2962,19 +2985,26 @@ int main(void)
   // }
 
   cadena = (int *)malloc(DIM * sizeof(int));
+  tablaRes = (int *)malloc(DIM * sizeof(int));
 
-  printf("Introduce %d números uno a uno: ", DIM);
+  printf("Introduce %d números uno a uno:\n", DIM);
 
   for (int i = 0; i < DIM; i++)
   {
-    printf("\nNúmero %d: ", i+1);
+    printf("Número %d: ", i+1);
     scanf("%d", &cadena[i]);
   }
+  tablaRes = numerosPares(cadena, DIM, tamanoTablaPares);
 
-  for (int i = 0; i < DIM; i++)
-  {
-    printf("%d\n", cadena[i]);
-  }
+  printf("\n");
+
+  // for (int i = 0; i < *(tamanoTablaPares); i++)
+  // {
+  //   printf("%d ", tablaRes[i]);
+  // }
+  free(cadena);
+  free(tamanoTablaPares);
+  // free(tablaRes);
 
   return(0);
 }
