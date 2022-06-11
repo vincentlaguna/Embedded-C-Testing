@@ -2935,32 +2935,39 @@ int *numerosPares(int *original, int tamanoOriginal, int *tamanoTablaPares)
   if (tamanoTablaPares == NULL)
     return(NULL);
 
-  // if ((tablaPares = (int *)malloc((*tamanoTablaPares) * sizeof(int))) == NULL)
-  //   return(NULL);
-
-  // tablaPares = (int *)malloc(DIM * sizeof(int));
-
   for (int i = 0; i < tamanoOriginal; i++)
   {
-    // printf("%d\n", *(original + i));
     if (original[i] % 2 == 0)
     {
-      tablaPares[contadorPares] = original[i];
-      // tablaPares++;
       contadorPares++;
     }
   }
   
   printf("Contador: %d\n", contadorPares);
 
-  *tamanoTablaPares = contadorPares;
-  
-  
-  for (int j = 0; j < contadorPares; j++)
+  tablaPares = (int *)malloc(contadorPares * sizeof(int));
+
+  if (tablaPares == NULL)
+    return(NULL);
+
+  contadorPares = 0;
+
+  for (int i = 0; i < tamanoOriginal; i++)
   {
-    printf("%d ", tablaPares[j]);
+    if (original[i] % 2 == 0)
+    {
+      tablaPares[contadorPares] = original[i];
+      contadorPares++;
+    }
   }
 
+  *tamanoTablaPares = contadorPares;
+  
+  for (int x = 0; x < contadorPares; x++)
+  {
+    printf("%d ", tablaPares[x]);
+  }
+ 
   return(tablaPares);
 }
 
@@ -2998,13 +3005,13 @@ int main(void)
 
   printf("\n");
 
-  // for (int i = 0; i < *(tamanoTablaPares); i++)
-  // {
-  //   printf("%d ", tablaRes[i]);
-  // }
+  for (int i = 0; i < *(tamanoTablaPares); i++)
+  {
+    printf("%d ", tablaRes[i]);
+  }
   free(cadena);
   free(tamanoTablaPares);
-  // free(tablaRes);
+  free(tablaRes);
 
   return(0);
 }
